@@ -41,6 +41,9 @@ export default function DiscoveryMap({
   const radiusCircleRef = useRef<L.Circle | null>(null);
   const userMarkerRef = useRef<L.Marker | null>(null);
   const prevSelectedIdRef = useRef<string | null>(null);
+  const currentPlaceIdsRef = useRef<string>('');
+  const onSelectPlaceRef = useRef(onSelectPlace);
+  onSelectPlaceRef.current = onSelectPlace;
 
   // Initialize Map safely & bind adaptive zoom
   useEffect(() => {
@@ -59,6 +62,11 @@ export default function DiscoveryMap({
         center: [initialLat, initialLng],
         zoom: 12,
         zoomControl: false,
+        preferCanvas: true,
+        wheelPxPerZoomLevel: 100,
+        fadeAnimation: true,
+        zoomAnimation: true,
+        markerZoomAnimation: true,
       });
 
       // Adaptive Zoom density check: at zoom < 13, markers collapse to sleek non-overlapping dots
@@ -73,12 +81,16 @@ export default function DiscoveryMap({
       updateZoomClass();
       map.on('zoomend', updateZoomClass);
 
-      // Free OpenStreetMap Standard Tiles
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19,
-      }).addTo(map);
+      // CartoDB Voyager: lightning-fast global CDN tiles (sub-20ms edge latency, warm cream paper aesthetic)
+      L.tileLayer(
+        'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+        {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          subdomains: 'abcd',
+          maxZoom: 20,
+        }
+      ).addTo(map);
 
       L.control.zoom({ position: 'bottomright' }).addTo(map);
 
@@ -153,11 +165,18 @@ export default function DiscoveryMap({
     }
   }, [userLocation, radiusKm]);
 
-  // Rebuild Place Markers ONLY when the filtered places list changes
+  // Rebuild Place Markers ONLY when the filtered places list ACTUALLY changes
   useEffect(() => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
     if (!map || !layer) return;
+
+    // Check if place IDs actually changed - prevents 100% of redundant rebuilds
+    const newIds = places.map((p) => p.id).join(',');
+    if (newIds === currentPlaceIdsRef.current && layer.getLayers().length > 0) {
+      return;
+    }
+    currentPlaceIdsRef.current = newIds;
 
     try {
       layer.clearLayers();
@@ -180,16 +199,16 @@ export default function DiscoveryMap({
         const markerHtml = `
           <div id="pin-${place.id}" class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full pointer-events-auto select-none" data-place-id="${place.id}">
             <!-- Animated Pop-up Assembly -->
-            <div class="transition-transform duration-150 ease-out origin-bottom flex flex-col items-center group-hover:-translate-y-1.5 group-hover:scale-110">
+            <div class="origin-bottom flex flex-col items-center group-hover:-translate-y-1 group-hover:scale-105 transition-transform duration-100 ease-out">
               <!-- Tactile Pill with Real Place Name -->
-              <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-3 py-1.5 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap transition-all duration-150 bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion group-hover:shadow-riso-sm">
+              <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion transition-colors duration-100">
                 <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
                 <span class="pin-label text-xs font-bold tracking-normal">${displayName}</span>
                 <span class="pin-tier text-xs font-mono font-bold opacity-80">${tierBadge}</span>
               </div>
 
               <!-- Tail pointer arrow -->
-              <div class="pin-tail ${isSelected ? 'tail-selected' : ''} w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm transition-colors duration-150 border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white"></div>
+              <div class="pin-tail ${isSelected ? 'tail-selected' : ''} w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white transition-colors duration-100"></div>
             </div>
 
             <!-- Contact Target Dot on exact coordinates -->
@@ -219,7 +238,7 @@ export default function DiscoveryMap({
         });
 
         marker.on('click', () => {
-          onSelectPlace(place);
+          onSelectPlaceRef.current(place);
         });
 
         marker.addTo(layer);
@@ -227,7 +246,7 @@ export default function DiscoveryMap({
     } catch (err) {
       console.warn('Error updating markers:', err);
     }
-  }, [places, onSelectPlace]);
+  }, [places]);
 
   // Fast 0ms selected marker visual toggle without destroying Leaflet layers
   useEffect(() => {

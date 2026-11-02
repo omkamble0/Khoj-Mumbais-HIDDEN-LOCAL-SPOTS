@@ -113,7 +113,6 @@ body {
 
 /* Custom Marker Smoothing & Adaptive Progressive Zoom */
 .custom-pin {
-  will-change: transform;
   pointer-events: auto;
 }
 

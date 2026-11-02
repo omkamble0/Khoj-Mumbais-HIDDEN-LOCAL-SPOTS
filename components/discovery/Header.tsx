@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Compass, LocateFixed, Search, Map, LayoutGrid, Heart } from 'lucide-react';
 
 interface HeaderProps {
@@ -28,6 +28,20 @@ export default function Header({
   savedCount,
   onOpenSaved,
 }: HeaderProps) {
+  const [localQuery, setLocalQuery] = useState(searchQuery);
+
+  useEffect(() => {
+    setLocalQuery(searchQuery);
+  }, [searchQuery]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (localQuery !== searchQuery) {
+        onSearchChange(localQuery);
+      }
+    }, 120);
+    return () => clearTimeout(timer);
+  }, [localQuery, searchQuery, onSearchChange]);
   return (
     <header className="sticky top-0 left-0 right-0 z-40 bg-wabi/95 backdrop-blur-md border-b-2 border-sumi shadow-sm font-sans">
       {/* Top Telemetry Strip */}
@@ -108,8 +122,8 @@ export default function Header({
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
             <input
               type="text"
-              value={searchQuery}
-              onChange={(e) => onSearchChange(e.target.value)}
+              value={localQuery}
+              onChange={(e) => setLocalQuery(e.target.value)}
               placeholder="Search ruins, cliffs, serene tanks, parks..."
               className="w-full pl-10 pr-4 py-2.5 text-sm font-sans font-medium bg-wabi-100 rounded-xl border-2 border-sumi focus:outline-none focus:ring-2 focus:ring-vermilion text-sumi placeholder-slate-500 shadow-riso-sm"
             />

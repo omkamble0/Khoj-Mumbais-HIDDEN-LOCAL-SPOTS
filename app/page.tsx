@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import DynamicMap from '@/components/map/DynamicMap';
 import Header from '@/components/discovery/Header';
 import FilterBar from '@/components/discovery/FilterBar';
@@ -172,14 +172,22 @@ export default function HomePage() {
     );
   };
 
-  const handleFilterChange = (updated: Partial<FilterState>) => {
+  const handleFilterChange = useCallback((updated: Partial<FilterState>) => {
     setFilters((prev) => ({ ...prev, ...updated }));
-  };
+  }, []);
 
-  const handleSelectFromZine = (place: Place) => {
+  const handleSearchChange = useCallback((q: string) => {
+    setFilters((prev) => ({ ...prev, searchQuery: q }));
+  }, []);
+
+  const handleSelectPlace = useCallback((place: Place) => {
+    setSelectedPlace(place);
+  }, []);
+
+  const handleSelectFromZine = useCallback((place: Place) => {
     setSelectedPlace(place);
     setViewMode('map');
-  };
+  }, []);
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-wabi flex flex-col font-sans">
@@ -189,7 +197,7 @@ export default function HomePage() {
         onLocateMe={handleLocateMe}
         isLocating={isLocating}
         searchQuery={filters.searchQuery}
-        onSearchChange={(q) => handleFilterChange({ searchQuery: q })}
+        onSearchChange={handleSearchChange}
         viewMode={viewMode}
         onToggleView={(m) => setViewMode(m)}
         totalSpots={filteredPlaces.length}
@@ -218,7 +226,7 @@ export default function HomePage() {
               places={filteredPlaces}
               userLocation={userLocation}
               selectedPlace={selectedPlace}
-              onSelectPlace={(p) => setSelectedPlace(p)}
+              onSelectPlace={handleSelectPlace}
               radiusKm={filters.radiusKm}
             />
           </div>
