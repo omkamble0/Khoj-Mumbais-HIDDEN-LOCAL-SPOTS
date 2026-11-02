@@ -22,6 +22,9 @@ interface PlaceCardDrawerProps {
   onOpenReport: (place: Place) => void;
 }
 
+const FALLBACK_IMAGE =
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80';
+
 export default function PlaceCardDrawer({
   place,
   onClose,
@@ -62,13 +65,16 @@ export default function PlaceCardDrawer({
   const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:left-auto md:right-6 md:bottom-6 md:w-[440px] transition-transform duration-300 ease-out">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[440px] transition-transform duration-300 ease-out font-kaluk">
       <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85vh] flex flex-col">
         {/* Card Header Media & Actions */}
         <div className="relative h-48 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
           <img
             src={place.photo_url}
             alt={place.name}
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
+            }}
             className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500 contrast-105"
           />
           {/* Subtle Halftone Dot Pattern */}
@@ -95,10 +101,10 @@ export default function PlaceCardDrawer({
             </button>
           </div>
 
-          {/* Top Hanko Stamp Tag */}
+          {/* Top English Tag */}
           <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
-            <span className="hanko-stamp bg-sumi text-wabi border-sumi text-[10px]">
-              秘境 · {place.category.replace('_', ' ')}
+            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-sumi text-wabi border border-sumi shadow-riso-sm">
+              {place.category.replace('_', ' ')}
             </span>
             {place.distance_meters !== undefined && (
               <span className="text-[10px] font-mono font-bold bg-wabi text-sumi border border-sumi px-2 py-0.5 rounded shadow-riso-sm">
@@ -109,7 +115,7 @@ export default function PlaceCardDrawer({
 
           {/* Subtitle & Coordinates Banner */}
           <div className="absolute bottom-2 left-3 right-3 bg-sumi/90 backdrop-blur-sm text-wabi p-2.5 rounded-xl border border-white/20">
-            <h2 className="font-serif font-black text-lg leading-tight text-white drop-shadow-sm">
+            <h2 className="font-display font-black text-lg leading-tight text-white drop-shadow-sm">
               {place.name}
             </h2>
             <div className="flex items-center justify-between text-[10px] font-mono text-slate-300 mt-1">
@@ -123,7 +129,7 @@ export default function PlaceCardDrawer({
 
         {/* Scrollable Content Body */}
         <div className="p-4 overflow-y-auto space-y-3.5 text-xs">
-          {/* Key Metrics Grid (Riso Neo-Brutalist Tiles) */}
+          {/* Key Metrics Grid */}
           <div className="grid grid-cols-3 gap-2">
             {/* Hiddenness Score */}
             <div className="bg-wabi-100 border-2 border-sumi p-2 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
@@ -134,19 +140,19 @@ export default function PlaceCardDrawer({
               <span className="text-[9px] font-mono uppercase text-slate-600 font-bold">Hidden Score</span>
             </div>
 
-            {/* Crowd Velocity */}
+            {/* Crowd Level */}
             <div className="bg-wabi-100 border-2 border-sumi p-2 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
               <div className="flex items-center gap-1 text-sumi font-black font-mono text-xs">
                 <Users className="w-3.5 h-3.5 text-matcha" />
                 <span>
                   {place.crowd_level <= 1
-                    ? 'Deep Quiet'
+                    ? 'Very Quiet'
                     : place.crowd_level === 2
                     ? 'Low Crowd'
                     : 'Moderate'}
                 </span>
               </div>
-              <span className="text-[9px] font-mono uppercase text-slate-600 font-bold">Wabi-Sabi Flow</span>
+              <span className="text-[9px] font-mono uppercase text-slate-600 font-bold">Crowd Level</span>
             </div>
 
             {/* Atmosphere / Vibe */}
@@ -164,7 +170,7 @@ export default function PlaceCardDrawer({
             {place.description}
           </p>
 
-          {/* Best Light & Timing */}
+          {/* Recommended Time */}
           <div className="flex items-start gap-2 bg-amber-50/80 border-2 border-sumi p-2.5 rounded-xl text-sumi shadow-riso-sm">
             <Clock className="w-4 h-4 text-vermilion flex-shrink-0 mt-0.5" />
             <div>
@@ -200,7 +206,7 @@ export default function PlaceCardDrawer({
             ))}
           </div>
 
-          {/* Action Row (Image 3 'elsewhere.' inspired buttons) */}
+          {/* Action Row */}
           <div className="pt-2 flex items-center gap-2 border-t border-sumi/15">
             <a
               href={googleMapsUrl}

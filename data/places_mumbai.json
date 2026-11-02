@@ -20,7 +20,7 @@
     "best_time_to_visit": "Early morning (6:30 AM - 8:30 AM) or sunset",
     "description": "An 800-year-old sacred freshwater reservoir surrounded by narrow ancient alleyways, temples, and duck ponds, creating an oasis of deep silence in South Mumbai.",
     "vibe_tags": ["serene", "ancient-heritage", "quiet-walk", "reflections", "hidden-gem"],
-    "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+    "photo_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_heritage"
   },
   {
@@ -50,9 +50,9 @@
   {
     "id": "mumbai-sagar-upvan-colaba",
     "slug": "sagar-upvan-bpt-garden",
-    "name": "Sagar Upvan (BPT Botanical Garden)",
+    "name": "Sagar Upvan Coastal Garden",
     "category": "quiet_chill",
-    "subcategory": "Seaside Botanical Garden",
+    "subcategory": "Seaside Botanical Sanctuary",
     "city": "Mumbai",
     "neighborhood": "Colaba",
     "latitude": 18.9056,
@@ -92,7 +92,7 @@
     "best_time_to_visit": "Morning (7:00 AM - 10:00 AM)",
     "description": "Perched atop a cone-shaped hillock, this 1669 British bastion features weathered stone battlements and a quiet terraced garden overlooking the salt pans and central city.",
     "vibe_tags": ["historic-ruin", "stone-walls", "solitude", "viewpoint", "heritage"],
-    "photo_url": "https://images.unsplash.com/photo-1599813957575-5246738982c7?w=1000&auto=format&fit=crop&q=80",
+    "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_heritage"
   },
   {
@@ -236,13 +236,13 @@
     "best_time_to_visit": "Early morning or overcast monsoon",
     "description": "Constructed in 1560 by the Siddis of Janjira and later captured by the Portuguese and Marathas, this quiet hilltop fort ruin overlooks Panvel Creek and leafy artisan streets.",
     "vibe_tags": ["hilltop-ruin", "panvel-creek", "solitude", "leafy", "navi-mumbai"],
-    "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
+    "photo_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_heritage"
   },
   {
     "id": "mumbai-castella-de-aguada",
     "slug": "bandra-fort-castella-de-aguada-arches",
-    "name": "Castella de Aguada (Bandra Fort) Quiet Arches",
+    "name": "Castella de Aguada (Bandra Fort)",
     "category": "ruin_historic",
     "subcategory": "1640 Portuguese Watchtower",
     "city": "Mumbai",
@@ -257,10 +257,10 @@
     "safety_score": 0.91,
     "accessibility_score": 0.92,
     "crowd_level": 3,
-    "best_time_to_visit": "Weekday mornings (7:00 AM - 10:00 AM) to beat sunset couples",
+    "best_time_to_visit": "Weekday mornings (7:00 AM - 10:00 AM) to beat sunset crowds",
     "description": "Constructed in 1640 by the Portuguese as a coastal watchtower, its weathered granite arches frame crashing sea waves and panoramic views across Mahim Bay.",
     "vibe_tags": ["portuguese-ruins", "stone-arches", "ocean-vista", "sea-breeze", "heritage"],
-    "photo_url": "https://images.unsplash.com/photo-1599813957575-5246738982c7?w=1000&auto=format&fit=crop&q=80",
+    "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_heritage"
   },
   {
@@ -308,7 +308,7 @@
     "best_time_to_visit": "Midday after the cave tour before the return ferry",
     "description": "While tourists crowd the rock-cut Shiva caves, a discreet hiking trail climbs to the top of Cannon Hill where two massive British cannons sit silently amidst dense island flora overlooking the ocean shipping lanes.",
     "vibe_tags": ["island-trail", "hidden-cannons", "harbor-view", "solitude", "adventure"],
-    "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_heritage"
   },
   {
@@ -330,7 +330,7 @@
     "accessibility_score": 0.84,
     "crowd_level": 2,
     "best_time_to_visit": "Low tide sunsets",
-    "description": "Just beneath the noisy promenade path, natural volcanic tide pools create natural stone terraces where you can sit inches above gentle breaking waves and watch hermit crabs in quiet contemplation.",
+    "description": "Just beneath the busy promenade, natural volcanic tide pools create natural stone terraces where you can sit inches above gentle breaking waves and watch marine life in quiet contemplation.",
     "vibe_tags": ["tidepools", "sound-of-waves", "sunset", "marine-life", "coastal"],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_nature"
@@ -338,7 +338,7 @@
   {
     "id": "mumbai-mahim-nature-park",
     "slug": "mahim-nature-park-quiet-trails",
-    "name": "Maharashtra Nature Park (Mahim Creek)",
+    "name": "Maharashtra Nature Park Trails",
     "category": "nature_forest",
     "subcategory": "Restored Urban Forest",
     "city": "Mumbai",
@@ -354,9 +354,9 @@
     "accessibility_score": 0.88,
     "crowd_level": 1,
     "best_time_to_visit": "Weekday mornings (8:30 AM - 11:00 AM)",
-    "description": "Once a city garbage dump, this 37-acre miracle of ecological restoration is now a dense forest with over 14,000 trees, 38 butterfly species, and quiet nature trails along the Mithi River creek.",
+    "description": "Once a city landfill, this 37-acre miracle of ecological restoration is now a dense forest with over 14,000 trees, 38 butterfly species, and quiet nature trails along the Mithi River creek.",
     "vibe_tags": ["urban-forest", "butterflies", "bird-haven", "deep-quiet", "oasis"],
-    "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
+    "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_parks"
   }
 ]

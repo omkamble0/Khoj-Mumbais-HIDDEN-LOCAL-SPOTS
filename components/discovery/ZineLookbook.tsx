@@ -1,46 +1,61 @@
 'use client';
 
 import React from 'react';
-import { Place } from '@/lib/types';
+import { Place, FilterState } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
-import { ArrowUpRight, Compass, EyeOff, MapPin, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import FilterBar from './FilterBar';
 
 interface ZineLookbookProps {
   places: Place[];
   onSelectPlace: (place: Place) => void;
+  filters: FilterState;
+  onFilterChange: (updated: Partial<FilterState>) => void;
 }
 
-export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProps) {
-  return (
-    <div className="w-full h-full overflow-y-auto px-4 md:px-8 py-28 md:py-32 bg-washi">
-      {/* Hero Header Ticker (Inspired by 'elsewhere.' and Ghibli/Beams slides) */}
-      <div className="max-w-6xl mx-auto mb-8 bg-sumi text-wabi p-6 md:p-8 rounded-3xl border-2 border-sumi shadow-riso relative overflow-hidden">
-        {/* Background Decorative Stamp */}
-        <div className="absolute right-4 -bottom-6 text-slate-800 font-serif font-black text-8xl md:text-9xl select-none opacity-40 pointer-events-none">
-          探索
-        </div>
+const FALLBACK_IMAGE =
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80';
 
+export default function ZineLookbook({
+  places,
+  onSelectPlace,
+  filters,
+  onFilterChange,
+}: ZineLookbookProps) {
+  return (
+    <div className="w-full h-full overflow-y-auto px-4 md:px-8 py-6 bg-washi font-kaluk">
+      {/* Hero Header Banner */}
+      <div className="max-w-6xl mx-auto mb-6 bg-sumi text-wabi p-6 md:p-8 rounded-3xl border-2 border-sumi shadow-riso relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="hanko-stamp bg-vermilion text-white border-white text-xs">
-              KHOJ ISSUE #01 · खोज
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
+              MUMBAI ISSUE #01 · KHOJ
             </span>
-            <span className="text-[11px] font-mono tracking-widest text-slate-300">
-              18.9453° N · 72.8258° E · WABI-SABI LOCATIONS
+            <span className="text-[11px] font-mono text-slate-300">
+              18.9453° N, 72.8258° E · HIDDEN LOCAL SPOTS
             </span>
           </div>
 
-          <h2 className="font-serif font-black text-3xl md:text-5xl tracking-tight text-wabi leading-none mb-3">
-            KHOJ. <span className="italic font-normal text-amber-300">Get Lost. Feel Found.</span>
+          <h2 className="font-display font-black text-3xl md:text-5xl tracking-tight text-wabi leading-tight mb-2">
+            Get Lost. <span className="italic font-normal text-amber-300">Feel Found.</span>
           </h2>
 
           <p className="text-xs md:text-sm text-slate-300 font-sans leading-relaxed">
-            Curated quiet sanctuaries, Portuguese battlements engulfed by banyan roots, 66-million-year-old basalt columns, and sacred freshwater tanks where the city whispers.
+            Curated quiet sanctuaries, Portuguese battlements engulfed by banyan roots, 66-million-year-old volcanic basalt columns, and sacred freshwater tanks where the city whispers.
           </p>
         </div>
       </div>
 
-      {/* Grid of Riso / Dither Inspired Editorial Cards (Image 1 & 2 inspired) */}
+      {/* Integrated Filter Bar (Never overlapping!) */}
+      <div className="max-w-6xl mx-auto mb-6">
+        <FilterBar
+          filters={filters}
+          onChange={onFilterChange}
+          totalFound={places.length}
+        />
+      </div>
+
+      {/* Grid of Clean Editorial Cards in Kaluk Sans */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-24">
         {places.map((place, idx) => {
           return (
@@ -49,18 +64,21 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
               onClick={() => onSelectPlace(place)}
               className="group cursor-pointer bg-wabi rounded-2xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:translate-y-[-2px] transition-all duration-200 overflow-hidden flex flex-col justify-between"
             >
-              {/* Card Media with Dither / Grain Texture */}
+              {/* Card Media with Dither Dot Texture */}
               <div className="relative h-56 w-full bg-sumi-800 overflow-hidden border-b-2 border-sumi">
                 <img
                   src={place.photo_url}
                   alt={place.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 contrast-110"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
+                  }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 contrast-105"
                 />
-                
-                {/* Dither dot overlay effect */}
-                <div className="absolute inset-0 bg-riso-dots opacity-30 pointer-events-none" />
 
-                {/* Hanko Stamp Pill */}
+                {/* Dither dot overlay effect */}
+                <div className="absolute inset-0 bg-riso-dots opacity-25 pointer-events-none" />
+
+                {/* English Category Tag */}
                 <div className="absolute top-3 left-3 flex items-center gap-1.5">
                   <span className="px-2 py-0.5 rounded-md text-[10px] font-mono font-black uppercase tracking-wider bg-wabi text-sumi border border-sumi shadow-riso-sm">
                     #{String(idx + 1).padStart(2, '0')} {place.category.replace('_', ' ')}
@@ -83,18 +101,18 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
                 </div>
               </div>
 
-              {/* Card Editorial Text Body (Image 1 style typography) */}
+              {/* Card Body in Kaluk Sans */}
               <div className="p-4 flex flex-col flex-1 justify-between gap-3">
                 <div>
                   <div className="flex items-center gap-2 text-[10px] font-mono uppercase text-slate-500 mb-1">
-                    <span>ARCHIVE REF: {place.id.slice(0, 10)}</span>
+                    <span>REF: {place.id.slice(0, 10)}</span>
                     <span>•</span>
                     <span className="text-emerald-700 font-bold">
-                      {place.safety_level === 'high' ? 'SAFE & PUBLIC' : 'DAYLIGHT VISIT'}
+                      {place.safety_level === 'high' ? 'VERIFIED SAFE & PUBLIC' : 'DAYLIGHT VISIT'}
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-black text-lg text-sumi leading-snug group-hover:text-vermilion transition-colors">
+                  <h3 className="font-display font-black text-lg text-sumi leading-snug group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h3>
 
@@ -109,7 +127,7 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
                     {place.vibe_tags.slice(0, 2).map((t) => (
                       <span
                         key={t}
-                        className="text-[10px] font-mono bg-wabi-200 border border-sumi/20 px-1.5 py-0.5 rounded text-slate-700"
+                        className="text-[10px] font-mono bg-wabi-200 border border-sumi/20 px-1.5 py-0.5 rounded text-slate-700 font-bold"
                       >
                         #{t}
                       </span>
@@ -128,4 +146,3 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
     </div>
   );
 }
-

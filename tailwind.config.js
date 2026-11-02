@@ -47,18 +47,29 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: [
-          'Newsreader',
-          'Playfair Display',
-          'Didot',
-          'Bodoni MT',
-          'Georgia',
-          'serif',
+        sans: [
+          '"Kaluk Sans"',
+          '"Plus Jakarta Sans"',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
+        kaluk: [
+          '"Kaluk Sans"',
+          '"Plus Jakarta Sans"',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
+        display: [
+          '"Cabinet Grotesk"',
+          '"Kaluk Sans"',
+          '"Plus Jakarta Sans"',
+          'sans-serif',
         ],
         mono: [
+          '"Space Mono"',
           'ui-monospace',
-          'Space Mono',
-          'JetBrains Mono',
           'Menlo',
           'Consolas',
           'monospace',

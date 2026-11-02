@@ -12,16 +12,16 @@ interface DiscoveryMapProps {
   radiusKm: number;
 }
 
-// Indo-Japanese earthy & vibrant palette
-const CATEGORY_COLORS: Record<string, { bg: string; text: string; kanji: string }> = {
-  viewpoint: { bg: '#ff3e18', text: '#ffffff', kanji: '景' }, // Vermilion / View
-  ruin_historic: { bg: '#173664', text: '#ffffff', kanji: '城' }, // Cobalt / Fort
-  historical: { bg: '#8b4513', text: '#ffffff', kanji: '古' }, // Rust / Ancient
-  nature_forest: { bg: '#2d5339', text: '#ffffff', kanji: '森' }, // Matcha / Forest
-  scenic: { bg: '#cf9866', text: '#141518', kanji: '山' }, // Ochre / Nature
-  quiet_chill: { bg: '#4a5d4e', text: '#ffffff', kanji: '静' }, // Sage / Quiet
-  waterfront: { bg: '#1f6e8c', text: '#ffffff', kanji: '水' }, // Deep Water
-  hidden_gem: { bg: '#ff3e18', text: '#ffffff', kanji: '秘' }, // Secret
+// Clean English Category Badges
+const CATEGORY_STYLES: Record<string, { bg: string; text: string; label: string }> = {
+  viewpoint: { bg: '#ff3e18', text: '#ffffff', label: 'VIEW' },
+  ruin_historic: { bg: '#173664', text: '#ffffff', label: 'FORT' },
+  historical: { bg: '#8b4513', text: '#ffffff', label: 'HERITAGE' },
+  nature_forest: { bg: '#2d5339', text: '#ffffff', label: 'FOREST' },
+  scenic: { bg: '#cf9866', text: '#141518', label: 'SCENIC' },
+  quiet_chill: { bg: '#3a5043', text: '#ffffff', label: 'CALM' },
+  waterfront: { bg: '#1f6e8c', text: '#ffffff', label: 'COAST' },
+  hidden_gem: { bg: '#ff3e18', text: '#ffffff', label: 'SECRET' },
 };
 
 export default function DiscoveryMap({
@@ -63,10 +63,10 @@ export default function DiscoveryMap({
     markersLayerRef.current = L.layerGroup().addTo(map);
     mapInstanceRef.current = map;
 
-    // Trigger size calculation after DOM render
+    // Trigger recalculation of dimensions
     setTimeout(() => {
       map.invalidateSize();
-    }, 100);
+    }, 150);
 
     return () => {
       map.remove();
@@ -83,7 +83,7 @@ export default function DiscoveryMap({
       className: 'user-location-pin',
       html: `
         <div class="relative flex items-center justify-center w-10 h-10">
-          <div class="absolute w-10 h-10 bg-vermilion rounded-full opacity-25 animate-ping"></div>
+          <div class="absolute w-10 h-10 bg-vermilion rounded-full opacity-30 animate-ping"></div>
           <div class="w-5 h-5 bg-vermilion border-2 border-white rounded-full shadow-riso-sm flex items-center justify-center">
             <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
           </div>
@@ -102,7 +102,7 @@ export default function DiscoveryMap({
       }).addTo(map);
     }
 
-    // Radius circle in dark sumi dashed line
+    // Radius circle
     if (radiusCircleRef.current) {
       radiusCircleRef.current.setLatLng([userLocation.lat, userLocation.lng]);
       radiusCircleRef.current.setRadius(radiusKm * 1000);
@@ -118,7 +118,7 @@ export default function DiscoveryMap({
     }
   }, [userLocation, radiusKm]);
 
-  // Update Place Markers (Japanese Hanko Stamp / Riso Style)
+  // Update Place Markers in Kaluk Sans English
   useEffect(() => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
@@ -128,18 +128,18 @@ export default function DiscoveryMap({
 
     places.forEach((place) => {
       const isSelected = selectedPlace?.id === place.id;
-      const theme = CATEGORY_COLORS[place.category] || { bg: '#ff3e18', text: '#fff', kanji: '秘' };
+      const theme = CATEGORY_STYLES[place.category] || { bg: '#ff3e18', text: '#fff', label: 'SPOT' };
 
       const markerHtml = `
         <div class="custom-pin cursor-pointer flex flex-col items-center group transition-transform duration-200">
           <div class="relative flex items-center justify-center ${
             isSelected ? 'scale-125 z-50' : ''
           }">
-            <!-- Hanko Stamp Box -->
-            <div class="px-1.5 py-1 rounded-lg border-2 border-sumi flex items-center gap-1 shadow-riso-sm transition-all"
+            <!-- English Pill Badge -->
+            <div class="px-2 py-0.5 rounded-lg border-2 border-sumi flex items-center gap-1 shadow-riso-sm transition-all font-kaluk"
                  style="background-color: ${isSelected ? '#ffffff' : theme.bg}; color: ${isSelected ? '#141518' : theme.text};">
-              <span class="text-[10px] font-black font-serif">${theme.kanji}</span>
-              <span class="text-[10px] font-mono font-bold">
+              <span class="text-[9px] font-bold tracking-wider">${theme.label}</span>
+              <span class="text-[10px] font-mono font-black border-l border-current/30 pl-1">
                 ${Math.round(place.hiddenness_score * 100)}%
               </span>
             </div>
@@ -153,8 +153,8 @@ export default function DiscoveryMap({
       const customIcon = L.divIcon({
         className: 'place-marker-icon',
         html: markerHtml,
-        iconSize: [48, 48],
-        iconAnchor: [24, 40],
+        iconSize: [60, 48],
+        iconAnchor: [30, 40],
       });
 
       const marker = L.marker([place.latitude, place.longitude], {
