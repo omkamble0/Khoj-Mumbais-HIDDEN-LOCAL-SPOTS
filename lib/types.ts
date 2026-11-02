@@ -53,3 +53,4 @@ export interface PlaceReportPayload {
   reason: 'private_property' | 'unsafe' | 'closed' | 'wrong_location' | 'other';
   details?: string;
 }
+

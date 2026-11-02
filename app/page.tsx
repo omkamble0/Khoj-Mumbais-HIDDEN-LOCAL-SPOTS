@@ -5,6 +5,7 @@ import DynamicMap from '@/components/map/DynamicMap';
 import Header from '@/components/discovery/Header';
 import FilterBar from '@/components/discovery/FilterBar';
 import PlaceCardDrawer from '@/components/discovery/PlaceCardDrawer';
+import ZineLookbook from '@/components/discovery/ZineLookbook';
 import ReportModal from '@/components/discovery/ReportModal';
 import { Place, FilterState } from '@/lib/types';
 
@@ -19,7 +20,7 @@ export default function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [viewMode, setViewMode] = useState<'map' | 'zine'>('map');
 
   const [filters, setFilters] = useState<FilterState>({
     category: 'all',
@@ -32,7 +33,6 @@ export default function HomePage() {
   // Fetch places from our nearby API route
   const fetchPlaces = useCallback(async () => {
     try {
-      setIsLoading(true);
       const center = userLocation || DEFAULT_MUMBAI_CENTER;
       const params = new URLSearchParams({
         lat: center.lat.toString(),
@@ -50,8 +50,6 @@ export default function HomePage() {
       setPlaces(data.places || []);
     } catch (err) {
       console.error('Failed to load places:', err);
-    } finally {
-      setIsLoading(false);
     }
   }, [userLocation, filters]);
 
@@ -79,7 +77,6 @@ export default function HomePage() {
     );
   };
 
-  // Re-fetch on filter or location changes
   useEffect(() => {
     fetchPlaces();
   }, [fetchPlaces]);
@@ -88,19 +85,27 @@ export default function HomePage() {
     setFilters((prev) => ({ ...prev, ...updated }));
   };
 
+  const handleSelectFromZine = (place: Place) => {
+    setSelectedPlace(place);
+    setViewMode('map');
+  };
+
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-slate-100 flex flex-col">
-      {/* Top Header */}
+    <main className="relative w-screen h-screen overflow-hidden bg-wabi flex flex-col font-sans">
+      {/* Top Header & HUD */}
       <Header
         currentCity="Mumbai"
         onLocateMe={handleLocateMe}
         isLocating={isLocating}
         searchQuery={filters.searchQuery}
         onSearchChange={(q) => handleFilterChange({ searchQuery: q })}
+        viewMode={viewMode}
+        onToggleView={(m) => setViewMode(m)}
+        totalSpots={places.length}
       />
 
       {/* Floating Filter Bar */}
-      <div className="absolute top-24 md:top-20 left-4 right-4 md:left-6 md:right-auto md:w-[460px] z-20 pointer-events-auto">
+      <div className="absolute top-28 md:top-24 left-3 right-3 md:left-6 md:right-auto md:w-[480px] z-20 pointer-events-auto">
         <FilterBar
           filters={filters}
           onChange={handleFilterChange}
@@ -108,16 +113,25 @@ export default function HomePage() {
         />
       </div>
 
-      {/* Interactive Map Core */}
-      <div className="flex-1 w-full h-full relative z-0">
-        <DynamicMap
-          places={places}
-          userLocation={userLocation}
-          selectedPlace={selectedPlace}
-          onSelectPlace={(p) => setSelectedPlace(p)}
-          radiusKm={filters.radiusKm}
-        />
-      </div>
+      {/* Main Content: Map View or Zine Lookbook View */}
+      {viewMode === 'map' ? (
+        <div className="flex-1 w-full h-full relative z-0">
+          <DynamicMap
+            places={places}
+            userLocation={userLocation}
+            selectedPlace={selectedPlace}
+            onSelectPlace={(p) => setSelectedPlace(p)}
+            radiusKm={filters.radiusKm}
+          />
+        </div>
+      ) : (
+        <div className="flex-1 w-full h-full relative z-0">
+          <ZineLookbook
+            places={places}
+            onSelectPlace={handleSelectFromZine}
+          />
+        </div>
+      )}
 
       {/* Place Detail Card Drawer */}
       <PlaceCardDrawer

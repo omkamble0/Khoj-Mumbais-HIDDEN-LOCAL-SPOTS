@@ -12,16 +12,16 @@ interface DiscoveryMapProps {
   radiusKm: number;
 }
 
-// Map category to color scheme
-const CATEGORY_COLORS: Record<string, string> = {
-  viewpoint: '#f59e0b', // Amber
-  ruin_historic: '#8b5cf6', // Violet
-  historical: '#6366f1', // Indigo
-  nature_forest: '#10b981', // Emerald
-  scenic: '#06b6d4', // Cyan
-  quiet_chill: '#14b8a6', // Teal
-  waterfront: '#3b82f6', // Blue
-  hidden_gem: '#ec4899', // Pink
+// Indo-Japanese earthy & vibrant palette
+const CATEGORY_COLORS: Record<string, { bg: string; text: string; kanji: string }> = {
+  viewpoint: { bg: '#ff3e18', text: '#ffffff', kanji: '景' }, // Vermilion / View
+  ruin_historic: { bg: '#173664', text: '#ffffff', kanji: '城' }, // Cobalt / Fort
+  historical: { bg: '#8b4513', text: '#ffffff', kanji: '古' }, // Rust / Ancient
+  nature_forest: { bg: '#2d5339', text: '#ffffff', kanji: '森' }, // Matcha / Forest
+  scenic: { bg: '#cf9866', text: '#141518', kanji: '山' }, // Ochre / Nature
+  quiet_chill: { bg: '#4a5d4e', text: '#ffffff', kanji: '静' }, // Sage / Quiet
+  waterfront: { bg: '#1f6e8c', text: '#ffffff', kanji: '水' }, // Deep Water
+  hidden_gem: { bg: '#ff3e18', text: '#ffffff', kanji: '秘' }, // Secret
 };
 
 export default function DiscoveryMap({
@@ -51,14 +51,13 @@ export default function DiscoveryMap({
       zoomControl: false,
     });
 
-    // 100% Free OpenStreetMap standard tiles (Zero API key or sign-up required)
+    // Free OpenStreetMap Standard Tiles (No API key required)
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19,
     }).addTo(map);
 
-    // Reposition zoom controls to bottom-right
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
     markersLayerRef.current = L.layerGroup().addTo(map);
@@ -70,22 +69,23 @@ export default function DiscoveryMap({
     };
   }, []);
 
-  // Update User Location Marker & Radius Circle
+  // Update User Location Marker & Radius
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map || !userLocation) return;
 
-    // Pulse animation user marker
     const userIcon = L.divIcon({
       className: 'user-location-pin',
       html: `
-        <div class="relative flex items-center justify-center w-8 h-8">
-          <div class="absolute w-8 h-8 bg-blue-500 rounded-full opacity-30 animate-ping"></div>
-          <div class="w-4 h-4 bg-blue-600 border-2 border-white rounded-full shadow-lg"></div>
+        <div class="relative flex items-center justify-center w-10 h-10">
+          <div class="absolute w-10 h-10 bg-vermilion rounded-full opacity-25 animate-ping"></div>
+          <div class="w-5 h-5 bg-vermilion border-2 border-white rounded-full shadow-riso-sm flex items-center justify-center">
+            <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+          </div>
         </div>
       `,
-      iconSize: [32, 32],
-      iconAnchor: [16, 16],
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
     });
 
     if (userMarkerRef.current) {
@@ -97,23 +97,23 @@ export default function DiscoveryMap({
       }).addTo(map);
     }
 
-    // Draw radius boundary
+    // Radius circle in dark sumi dashed line
     if (radiusCircleRef.current) {
       radiusCircleRef.current.setLatLng([userLocation.lat, userLocation.lng]);
       radiusCircleRef.current.setRadius(radiusKm * 1000);
     } else {
       radiusCircleRef.current = L.circle([userLocation.lat, userLocation.lng], {
         radius: radiusKm * 1000,
-        color: '#3b82f6',
-        fillColor: '#3b82f6',
-        fillOpacity: 0.05,
+        color: '#ff3e18',
+        fillColor: '#ff3e18',
+        fillOpacity: 0.04,
         weight: 1.5,
-        dashArray: '4, 8',
+        dashArray: '5, 8',
       }).addTo(map);
     }
   }, [userLocation, radiusKm]);
 
-  // Update Place Markers
+  // Update Place Markers (Japanese Hanko Stamp / Riso Style)
   useEffect(() => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
@@ -123,23 +123,24 @@ export default function DiscoveryMap({
 
     places.forEach((place) => {
       const isSelected = selectedPlace?.id === place.id;
-      const color = CATEGORY_COLORS[place.category] || '#10b981';
+      const theme = CATEGORY_COLORS[place.category] || { bg: '#ff3e18', text: '#fff', kanji: '秘' };
 
       const markerHtml = `
         <div class="custom-pin cursor-pointer flex flex-col items-center group transition-transform duration-200">
           <div class="relative flex items-center justify-center ${
             isSelected ? 'scale-125 z-50' : ''
           }">
-            <div class="w-8 h-8 rounded-full shadow-md flex items-center justify-center border-2 ${
-              isSelected ? 'border-slate-900 bg-white ring-4 ring-emerald-400' : 'border-white'
-            }" style="background-color: ${isSelected ? '#ffffff' : color}">
-              <span class="text-xs font-bold ${isSelected ? 'text-slate-900' : 'text-white'}">
+            <!-- Hanko Stamp Box -->
+            <div class="px-1.5 py-1 rounded-lg border-2 border-sumi flex items-center gap-1 shadow-riso-sm transition-all"
+                 style="background-color: ${isSelected ? '#ffffff' : theme.bg}; color: ${isSelected ? '#141518' : theme.text};">
+              <span class="text-[10px] font-black font-serif">${theme.kanji}</span>
+              <span class="text-[10px] font-mono font-bold">
                 ${Math.round(place.hiddenness_score * 100)}%
               </span>
             </div>
-            <div class="w-1.5 h-1.5 rotate-45 -mt-1 shadow-sm" style="background-color: ${
-              isSelected ? '#0f172a' : color
-            }"></div>
+            <!-- Pin Pointer Tail -->
+            <div class="w-1.5 h-1.5 rotate-45 -mt-1 border-r border-b border-sumi shadow-sm"
+                 style="background-color: ${isSelected ? '#ffffff' : theme.bg}"></div>
           </div>
         </div>
       `;
@@ -147,8 +148,8 @@ export default function DiscoveryMap({
       const customIcon = L.divIcon({
         className: 'place-marker-icon',
         html: markerHtml,
-        iconSize: [36, 44],
-        iconAnchor: [18, 40],
+        iconSize: [48, 48],
+        iconAnchor: [24, 40],
       });
 
       const marker = L.marker([place.latitude, place.longitude], {
@@ -164,7 +165,7 @@ export default function DiscoveryMap({
     });
   }, [places, selectedPlace, onSelectPlace]);
 
-  // Pan to selected place when updated from list
+  // Pan to selected place
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map || !selectedPlace) return;
@@ -180,4 +181,3 @@ export default function DiscoveryMap({
     </div>
   );
 }
-

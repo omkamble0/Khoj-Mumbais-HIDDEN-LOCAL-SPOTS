@@ -52,3 +52,4 @@ export function computeCompositeScore(place: Place, distanceMeters: number): num
 
   return Math.round(score * 100) / 100;
 }
+

@@ -25,3 +25,4 @@ const DiscoveryMap = dynamic(() => import('./DiscoveryMap'), {
 export default function DynamicMap(props: DynamicMapProps) {
   return <DiscoveryMap {...props} />;
 }
+

@@ -54,3 +54,4 @@ python scripts/ingest_mumbai.py
    ```
 2. Import the repository into [Vercel](https://vercel.com).
 3. Vercel automatically detects Next.js and deploys it with SSL, edge caching, and serverless API routes at $0 cost!
+

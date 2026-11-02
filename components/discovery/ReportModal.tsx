@@ -129,3 +129,4 @@ export default function ReportModal({ place, isOpen, onClose }: ReportModalProps
     </div>
   );
 }
+
