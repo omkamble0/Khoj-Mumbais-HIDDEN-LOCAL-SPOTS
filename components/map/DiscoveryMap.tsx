@@ -12,7 +12,6 @@ interface DiscoveryMapProps {
   radiusKm: number;
 }
 
-// Clean English Category Badges
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; label: string }> = {
   viewpoint: { bg: '#ff3e18', text: '#ffffff', label: 'VIEW' },
   ruin_historic: { bg: '#173664', text: '#ffffff', label: 'FORT' },
@@ -37,40 +36,55 @@ export default function DiscoveryMap({
   const radiusCircleRef = useRef<L.Circle | null>(null);
   const userMarkerRef = useRef<L.Marker | null>(null);
 
-  // Initialize Map
+  // Initialize Map safely (immune to StrictMode double mount)
   useEffect(() => {
-    if (!mapContainerRef.current || mapInstanceRef.current) return;
+    if (!mapContainerRef.current) return;
+    if (mapInstanceRef.current) return;
 
-    // Default to Mumbai center
-    const initialLat = userLocation?.lat || 19.0418;
-    const initialLng = userLocation?.lng || 72.8398;
+    try {
+      // Clear any lingering leaflet instance id
+      if ((mapContainerRef.current as any)._leaflet_id) {
+        (mapContainerRef.current as any)._leaflet_id = null;
+      }
 
-    const map = L.map(mapContainerRef.current, {
-      center: [initialLat, initialLng],
-      zoom: 12,
-      zoomControl: false,
-    });
+      const initialLat = userLocation?.lat || 19.0418;
+      const initialLng = userLocation?.lng || 72.8398;
 
-    // Free OpenStreetMap Standard Tiles (No API key required)
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19,
-    }).addTo(map);
+      const map = L.map(mapContainerRef.current, {
+        center: [initialLat, initialLng],
+        zoom: 12,
+        zoomControl: false,
+      });
 
-    L.control.zoom({ position: 'bottomright' }).addTo(map);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+      }).addTo(map);
 
-    markersLayerRef.current = L.layerGroup().addTo(map);
-    mapInstanceRef.current = map;
+      L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    // Trigger recalculation of dimensions
-    setTimeout(() => {
-      map.invalidateSize();
-    }, 150);
+      markersLayerRef.current = L.layerGroup().addTo(map);
+      mapInstanceRef.current = map;
+
+      setTimeout(() => {
+        if (mapInstanceRef.current) {
+          mapInstanceRef.current.invalidateSize();
+        }
+      }, 200);
+    } catch (err) {
+      console.warn('Map initialization warning:', err);
+    }
 
     return () => {
-      map.remove();
-      mapInstanceRef.current = null;
+      try {
+        if (mapInstanceRef.current) {
+          mapInstanceRef.current.remove();
+          mapInstanceRef.current = null;
+        }
+      } catch (err) {
+        console.warn('Map cleanup error:', err);
+      }
     };
   }, []);
 
@@ -79,42 +93,45 @@ export default function DiscoveryMap({
     const map = mapInstanceRef.current;
     if (!map || !userLocation) return;
 
-    const userIcon = L.divIcon({
-      className: 'user-location-pin',
-      html: `
-        <div class="relative flex items-center justify-center w-10 h-10">
-          <div class="absolute w-10 h-10 bg-vermilion rounded-full opacity-30 animate-ping"></div>
-          <div class="w-5 h-5 bg-vermilion border-2 border-white rounded-full shadow-riso-sm flex items-center justify-center">
-            <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+    try {
+      const userIcon = L.divIcon({
+        className: 'user-location-pin',
+        html: `
+          <div class="relative flex items-center justify-center w-10 h-10">
+            <div class="absolute w-10 h-10 bg-vermilion rounded-full opacity-30 animate-ping"></div>
+            <div class="w-5 h-5 bg-vermilion border-2 border-white rounded-full shadow-riso-sm flex items-center justify-center">
+              <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+            </div>
           </div>
-        </div>
-      `,
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-    });
+        `,
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+      });
 
-    if (userMarkerRef.current) {
-      userMarkerRef.current.setLatLng([userLocation.lat, userLocation.lng]);
-    } else {
-      userMarkerRef.current = L.marker([userLocation.lat, userLocation.lng], {
-        icon: userIcon,
-        zIndexOffset: 1000,
-      }).addTo(map);
-    }
+      if (userMarkerRef.current) {
+        userMarkerRef.current.setLatLng([userLocation.lat, userLocation.lng]);
+      } else {
+        userMarkerRef.current = L.marker([userLocation.lat, userLocation.lng], {
+          icon: userIcon,
+          zIndexOffset: 1000,
+        }).addTo(map);
+      }
 
-    // Radius circle
-    if (radiusCircleRef.current) {
-      radiusCircleRef.current.setLatLng([userLocation.lat, userLocation.lng]);
-      radiusCircleRef.current.setRadius(radiusKm * 1000);
-    } else {
-      radiusCircleRef.current = L.circle([userLocation.lat, userLocation.lng], {
-        radius: radiusKm * 1000,
-        color: '#ff3e18',
-        fillColor: '#ff3e18',
-        fillOpacity: 0.04,
-        weight: 1.5,
-        dashArray: '5, 8',
-      }).addTo(map);
+      if (radiusCircleRef.current) {
+        radiusCircleRef.current.setLatLng([userLocation.lat, userLocation.lng]);
+        radiusCircleRef.current.setRadius(radiusKm * 1000);
+      } else {
+        radiusCircleRef.current = L.circle([userLocation.lat, userLocation.lng], {
+          radius: radiusKm * 1000,
+          color: '#ff3e18',
+          fillColor: '#ff3e18',
+          fillOpacity: 0.04,
+          weight: 1.5,
+          dashArray: '5, 8',
+        }).addTo(map);
+      }
+    } catch (err) {
+      console.warn('Error updating user location marker:', err);
     }
   }, [userLocation, radiusKm]);
 
@@ -124,60 +141,66 @@ export default function DiscoveryMap({
     const layer = markersLayerRef.current;
     if (!map || !layer) return;
 
-    layer.clearLayers();
+    try {
+      layer.clearLayers();
 
-    places.forEach((place) => {
-      const isSelected = selectedPlace?.id === place.id;
-      const theme = CATEGORY_STYLES[place.category] || { bg: '#ff3e18', text: '#fff', label: 'SPOT' };
+      places.forEach((place) => {
+        const isSelected = selectedPlace?.id === place.id;
+        const theme = CATEGORY_STYLES[place.category] || { bg: '#ff3e18', text: '#fff', label: 'SPOT' };
 
-      const markerHtml = `
-        <div class="custom-pin cursor-pointer flex flex-col items-center group transition-transform duration-200">
-          <div class="relative flex items-center justify-center ${
-            isSelected ? 'scale-125 z-50' : ''
-          }">
-            <!-- English Pill Badge -->
-            <div class="px-2 py-0.5 rounded-lg border-2 border-sumi flex items-center gap-1 shadow-riso-sm transition-all font-kaluk"
-                 style="background-color: ${isSelected ? '#ffffff' : theme.bg}; color: ${isSelected ? '#141518' : theme.text};">
-              <span class="text-[9px] font-bold tracking-wider">${theme.label}</span>
-              <span class="text-[10px] font-mono font-black border-l border-current/30 pl-1">
-                ${Math.round(place.hiddenness_score * 100)}%
-              </span>
+        const markerHtml = `
+          <div class="custom-pin cursor-pointer flex flex-col items-center group transition-transform duration-200">
+            <div class="relative flex items-center justify-center ${
+              isSelected ? 'scale-125 z-50' : ''
+            }">
+              <div class="px-2 py-0.5 rounded-lg border-2 border-sumi flex items-center gap-1 shadow-riso-sm transition-all font-kaluk"
+                   style="background-color: ${isSelected ? '#ffffff' : theme.bg}; color: ${isSelected ? '#141518' : theme.text};">
+                <span class="text-[9px] font-bold tracking-wider">${theme.label}</span>
+                <span class="text-[10px] font-mono font-black border-l border-current/30 pl-1">
+                  ${Math.round(place.hiddenness_score * 100)}%
+                </span>
+              </div>
+              <div class="w-1.5 h-1.5 rotate-45 -mt-1 border-r border-b border-sumi shadow-sm"
+                   style="background-color: ${isSelected ? '#ffffff' : theme.bg}"></div>
             </div>
-            <!-- Pin Pointer Tail -->
-            <div class="w-1.5 h-1.5 rotate-45 -mt-1 border-r border-b border-sumi shadow-sm"
-                 style="background-color: ${isSelected ? '#ffffff' : theme.bg}"></div>
           </div>
-        </div>
-      `;
+        `;
 
-      const customIcon = L.divIcon({
-        className: 'place-marker-icon',
-        html: markerHtml,
-        iconSize: [60, 48],
-        iconAnchor: [30, 40],
+        const customIcon = L.divIcon({
+          className: 'place-marker-icon',
+          html: markerHtml,
+          iconSize: [60, 48],
+          iconAnchor: [30, 40],
+        });
+
+        const marker = L.marker([place.latitude, place.longitude], {
+          icon: customIcon,
+        });
+
+        marker.on('click', () => {
+          onSelectPlace(place);
+          map.panTo([place.latitude, place.longitude], { animate: true, duration: 0.5 });
+        });
+
+        marker.addTo(layer);
       });
-
-      const marker = L.marker([place.latitude, place.longitude], {
-        icon: customIcon,
-      });
-
-      marker.on('click', () => {
-        onSelectPlace(place);
-        map.panTo([place.latitude, place.longitude], { animate: true, duration: 0.5 });
-      });
-
-      marker.addTo(layer);
-    });
+    } catch (err) {
+      console.warn('Error updating markers:', err);
+    }
   }, [places, selectedPlace, onSelectPlace]);
 
   // Pan to selected place
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map || !selectedPlace) return;
-    map.panTo([selectedPlace.latitude, selectedPlace.longitude], {
-      animate: true,
-      duration: 0.6,
-    });
+    try {
+      map.panTo([selectedPlace.latitude, selectedPlace.longitude], {
+        animate: true,
+        duration: 0.6,
+      });
+    } catch (err) {
+      console.warn('Error panning map:', err);
+    }
   }, [selectedPlace]);
 
   return (
