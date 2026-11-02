@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Place, FilterState } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import FilterBar from './FilterBar';
 
 interface ZineLookbookProps {
@@ -16,14 +16,36 @@ interface ZineLookbookProps {
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80';
 
+const PAGE_SIZE = 9;
+
 export default function ZineLookbook({
   places,
   onSelectPlace,
   filters,
   onFilterChange,
 }: ZineLookbookProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Automatically reset to page 1 whenever filters change or places count changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [places.length, filters.category, filters.spotTier, filters.radiusKm, filters.searchQuery]);
+
+  const totalPages = Math.ceil(places.length / PAGE_SIZE) || 1;
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const startIndex = (safeCurrentPage - 1) * PAGE_SIZE;
+  const currentPlaces = places.slice(startIndex, startIndex + PAGE_SIZE);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage < 1 || newPage > totalPages) return;
+    setCurrentPage(newPage);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="w-full h-full overflow-y-auto px-3 sm:px-4 md:px-8 py-4 sm:py-6 bg-washi font-sans">
+    <div className="w-full px-3 sm:px-4 md:px-8 py-4 sm:py-6 bg-washi font-sans">
       {/* Hero Header Banner */}
       <div className="max-w-6xl mx-auto mb-4 sm:mb-6 bg-sumi text-wabi p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-sumi shadow-riso relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
@@ -55,9 +77,9 @@ export default function ZineLookbook({
         />
       </div>
 
-      {/* Grid of Clean Editorial Cards (Generously proportioned for unconstrained typography) */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 pb-32">
-        {places.map((place) => {
+      {/* Grid of Clean Editorial Cards (9 spots per page) */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 pb-12">
+        {currentPlaces.map((place) => {
           return (
             <article
               key={place.id}
@@ -153,6 +175,66 @@ export default function ZineLookbook({
           );
         })}
       </div>
+
+      {/* Pagination Bar (Editorial 9-place pagination) */}
+      {totalPages > 1 && (
+        <div className="max-w-7xl mx-auto mb-24 flex flex-col sm:flex-row items-center justify-between gap-4 bg-wabi p-4 sm:p-5 rounded-2xl border-2 border-sumi shadow-riso font-mono">
+          <div className="text-xs text-slate-600 font-bold">
+            SHOWING <span className="text-sumi font-black">{startIndex + 1}–{Math.min(startIndex + PAGE_SIZE, places.length)}</span> OF <span className="text-sumi font-black">{places.length}</span> SANCTUARIES (PAGE {safeCurrentPage} OF {totalPages})
+          </div>
+
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Prev button */}
+            <button
+              onClick={() => handlePageChange(safeCurrentPage - 1)}
+              disabled={safeCurrentPage === 1}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-xl border-2 border-sumi text-xs font-bold transition-all disabled:opacity-30 disabled:pointer-events-none bg-wabi hover:bg-amber-100 shadow-riso-sm"
+              aria-label="Previous Page"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              <span>PREV</span>
+            </button>
+
+            {/* Page Numbers */}
+            <div className="flex items-center gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => {
+                if (totalPages > 7) {
+                  if (p !== 1 && p !== totalPages && Math.abs(p - safeCurrentPage) > 1) {
+                    if (p === 2 || p === totalPages - 1) {
+                      return <span key={p} className="px-1 text-slate-400 font-bold">...</span>;
+                    }
+                    return null;
+                  }
+                }
+                return (
+                  <button
+                    key={p}
+                    onClick={() => handlePageChange(p)}
+                    className={`w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center border-2 transition-all ${
+                      safeCurrentPage === p
+                        ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
+                        : 'bg-wabi text-sumi border-sumi/30 hover:border-sumi hover:bg-amber-100'
+                    }`}
+                  >
+                    {p}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Next button */}
+            <button
+              onClick={() => handlePageChange(safeCurrentPage + 1)}
+              disabled={safeCurrentPage === totalPages}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-xl border-2 border-sumi text-xs font-bold transition-all disabled:opacity-30 disabled:pointer-events-none bg-wabi hover:bg-amber-100 shadow-riso-sm"
+              aria-label="Next Page"
+            >
+              <span>NEXT</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

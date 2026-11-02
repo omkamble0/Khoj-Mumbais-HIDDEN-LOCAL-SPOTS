@@ -43,7 +43,7 @@ export default function Header({
     return () => clearTimeout(timer);
   }, [localQuery, searchQuery, onSearchChange]);
   return (
-    <header className="sticky top-0 left-0 right-0 z-40 border-b-2 border-sumi shadow-sm font-sans flex-shrink-0 bg-wabi">
+    <header className="relative w-full border-b-2 border-sumi shadow-sm font-sans flex-shrink-0 bg-wabi">
       {/* Top Telemetry Strip */}
       <div className="bg-sumi text-wabi-100 px-3 sm:px-4 py-1.5 flex items-center justify-between text-xs font-mono tracking-wider overflow-hidden">
         <div className="flex items-center gap-2 min-w-0">
@@ -64,31 +64,38 @@ export default function Header({
         className="relative w-full bg-cover bg-center overflow-hidden border-b border-sumi/20 shadow-inner"
         style={{ backgroundImage: `url('/images/khoj_header_banner_hd.png')` }}
       >
-        <div className="bg-wabi/40 backdrop-blur-[1px] w-full h-full">
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3">
+        <div className="bg-wabi/20 backdrop-blur-[0.5px] w-full h-full">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3">
             {/* Brand & Mobile Action Bar */}
             <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-3">
-              <div className="flex items-center gap-2.5 sm:gap-3 bg-wabi/85 backdrop-blur-sm px-3 py-1.5 rounded-2xl border-2 border-sumi shadow-riso-sm">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0">
+              {/* Clickable brand area: uses the background artwork on desktop, pill on mobile to prevent duplicate logo */}
+              <a 
+                href="/" 
+                className="flex items-center gap-2.5 sm:gap-3 bg-wabi/90 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none px-2.5 py-1.5 md:p-0 rounded-2xl border-2 border-sumi md:border-0 shadow-riso-sm md:shadow-none"
+                title="KHOJ Mumbai"
+              >
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0 md:hidden">
                   <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="flex items-center gap-1.5 sm:gap-2 md:hidden">
                     <span className="font-ananda font-normal text-2xl sm:text-3xl tracking-wide text-sumi leading-none">
                       KHOJ<span className="text-vermilion">.</span>
                     </span>
-                    <span className="font-ananda text-sm sm:text-base text-slate-700 tracking-wide font-normal hidden sm:inline">
+                    <span className="font-ananda text-sm sm:text-base text-slate-700 tracking-wide font-normal">
                       खोज
                     </span>
                     <span className="px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-bold bg-sumi text-wabi uppercase">
                       Mumbai
                     </span>
                   </div>
-                  <p className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                  <p className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold md:hidden">
                     Hidden & Underrated Places
                   </p>
+                  {/* Desktop invisible anchor matching banner's painted logo area */}
+                  <div className="hidden md:block w-52 h-10 cursor-pointer" />
                 </div>
-              </div>
+              </a>
 
               {/* Mobile Actions: Near Me, Saved & View Toggle */}
               <div className="flex md:hidden items-center gap-1.5">
@@ -176,7 +183,7 @@ export default function Header({
                   }`}
                 >
                   <LayoutGrid className="w-3.5 h-3.5" />
-                  <span>ZINE LOOKBOOK</span>
+                  <span> LOOKBOOK</span>
                 </button>
               </div>
 

@@ -190,8 +190,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative w-screen h-[100dvh] overflow-hidden bg-wabi flex flex-col font-sans">
-      {/* 1. Global Non-Overlapping App Header */}
+    <div className={`relative w-screen bg-wabi flex flex-col font-sans ${viewMode === 'map' ? 'h-[100dvh] overflow-hidden' : 'min-h-[100dvh] overflow-y-auto'}`}>
+      {/* 1. Global App Header (At the top of the page - stays at top and scrolls away in lookbook) */}
       <Header
         currentCity="Mumbai"
         onLocateMe={handleLocateMe}
@@ -209,7 +209,7 @@ export default function HomePage() {
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
-      <main className="relative flex-1 w-full h-[calc(100dvh-130px)] md:h-[calc(100dvh-80px)] overflow-hidden">
+      <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden' : 'flex-1'}`}>
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
             {/* Docked Map Filter Island */}
@@ -231,7 +231,7 @@ export default function HomePage() {
             />
           </div>
         ) : (
-          <div className="w-full h-full relative z-0">
+          <div className="w-full relative z-0">
             {/* Zine Lookbook View */}
             <ZineLookbook
               places={filteredPlaces}
