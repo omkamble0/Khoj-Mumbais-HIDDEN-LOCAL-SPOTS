@@ -81,16 +81,13 @@ export default function DiscoveryMap({
       updateZoomClass();
       map.on('zoomend', updateZoomClass);
 
-      // CartoDB Voyager: lightning-fast global CDN tiles (sub-20ms edge latency, warm cream paper aesthetic)
-      L.tileLayer(
-        'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-        {
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-          subdomains: 'abcd',
-          maxZoom: 20,
-        }
-      ).addTo(map);
+      // Fast parallel OpenStreetMap tiles (100% Free, Zero API Keys, Zero Watermarks)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: ['a', 'b', 'c'],
+        maxZoom: 19,
+      }).addTo(map);
 
       L.control.zoom({ position: 'bottomright' }).addTo(map);
 
