@@ -47,24 +47,34 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: [
-          '"Kaluk Sans"',
-          '"Plus Jakarta Sans"',
-          'system-ui',
-          '-apple-system',
-          'sans-serif',
-        ],
-        kaluk: [
-          '"Kaluk Sans"',
-          '"Plus Jakarta Sans"',
-          'system-ui',
-          '-apple-system',
-          'sans-serif',
+        ananda: [
+          '"Ananda Namaste"',
+          '"Neptouch 3"',
+          '"Neptouch"',
+          '"Yatra One"',
+          '"Rozha One"',
+          'serif',
         ],
         display: [
+          '"Ananda Namaste"',
+          '"Neptouch 3"',
+          '"Neptouch"',
+          '"Yatra One"',
           '"Cabinet Grotesk"',
-          '"Kaluk Sans"',
+          'serif',
+        ],
+        kaluk: [
+          '"Ananda Namaste"',
+          '"Neptouch 3"',
           '"Plus Jakarta Sans"',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
+        sans: [
+          '"Plus Jakarta Sans"',
+          'system-ui',
+          '-apple-system',
           'sans-serif',
         ],
         mono: [

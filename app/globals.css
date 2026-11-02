@@ -1,10 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Cabinet+Grotesk:wght@500;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&family=Rozha+One&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Cabinet+Grotesk:wght@500;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Ananda Namaste';
+    src: url('/fonts/AnandaNamaste.ttf') format('truetype'),
+         local('Ananda Namaste'),
+         local('AnandaNamaste');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Neptouch 3';
+    src: url('/fonts/AnandaNamaste.ttf') format('truetype'),
+         local('Neptouch 3'),
+         local('Neptouch3'),
+         local('Ananda Neptouch');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
   @font-face {
     font-family: 'Kaluk Sans';
     font-style: normal;
@@ -23,7 +44,7 @@
 body {
   color: var(--sumi-ink);
   background: var(--wabi-bg);
-  font-family: 'Kaluk Sans', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Ananda Namaste', 'Neptouch 3', 'Kaluk Sans', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
