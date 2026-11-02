@@ -52,8 +52,8 @@ const RADII = [5, 10, 20, 40];
 export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
   return (
     <div className="bg-wabi/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2 sm:space-y-2.5">
-      {/* Category Horizontal Scrolling Pills with visible styled scrollbar */}
-      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 sm:pb-2.5 category-scrollbar">
+      {/* Category Horizontal Scrolling Pills */}
+      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1">
         {CATEGORIES.map((cat) => {
           const isActive = filters.category === cat.id;
           return (

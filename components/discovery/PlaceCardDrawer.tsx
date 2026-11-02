@@ -160,9 +160,9 @@ export default function PlaceCardDrawer({
 
         {/* 2. Scrollable Editorial Body (Spacious & uncluttered) */}
         <div className="p-5 sm:p-6 md:p-7 overflow-y-auto space-y-4 sm:space-y-5">
-          {/* Title & Location Header (Generous spacing and line-height) */}
+          {/* Title & Location Header: Clean, modern, highly readable typography */}
           <div className="space-y-1.5 pb-1">
-            <h2 className="font-display font-normal text-3xl sm:text-4xl lg:text-[42px] text-sumi leading-[1.3] tracking-wide break-words pt-1 pb-1">
+            <h2 className="font-sans font-bold text-2xl sm:text-3xl lg:text-4xl text-sumi leading-snug tracking-tight break-words">
               {place.name}
             </h2>
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono pt-1">

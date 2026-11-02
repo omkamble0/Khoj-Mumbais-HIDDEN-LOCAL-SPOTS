@@ -51,14 +51,14 @@ export default function ZineLookbook({
         <div className="relative z-10 max-w-2xl">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2">
             <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded text-[10px] sm:text-xs font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
-              MUMBAI ISSUE #01 · KHOJ
+              MUMBAI ISSUE #01
             </span>
             <span className="text-[10px] sm:text-xs font-mono text-slate-300">
-              18.9453° N, 72.8258° E · HIDDEN LOCAL SPOTS
+              KHOJ · 18.9453° N, 72.8258° E · HIDDEN LOCAL SPOTS
             </span>
           </div>
 
-          <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-6xl tracking-wide text-wabi leading-[1.25] mb-2">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-5xl tracking-wide text-wabi leading-tight mb-2">
             Get Lost. <span className="italic font-normal text-amber-300">Feel Found.</span>
           </h2>
 
@@ -142,8 +142,8 @@ export default function ZineLookbook({
                     </span>
                   </div>
 
-                  {/* Place Title in Ananda Namaste Display with generous height & breathing space */}
-                  <h3 className="font-display font-normal text-2xl sm:text-3xl lg:text-4xl text-sumi leading-[1.35] tracking-wide pt-1 pb-1 group-hover:text-vermilion transition-colors">
+                  {/* Place Title: Crisp, bold modern typography matching Image 3 (no forced squished text) */}
+                  <h3 className="font-sans font-bold text-xl sm:text-2xl text-sumi tracking-tight leading-snug group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h3>
 

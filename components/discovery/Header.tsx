@@ -50,12 +50,12 @@ export default function Header({
           <span className="w-2 h-2 rounded-full bg-vermilion animate-pulse flex-shrink-0"></span>
           <span className="font-bold text-vermilion text-xs sm:text-sm flex-shrink-0">KHOJ</span>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI · 18°58′N, 72°50′E</span>
+          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI </span>
         </div>
         <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
           <span className="text-amber-400 font-bold text-[11px] sm:text-xs">● {totalSpots} SPOTS</span>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-emerald-400 font-semibold hidden sm:inline">VERIFIED PUBLIC ACCESS</span>
+          <span className="text-emerald-400 font-semibold hidden sm:inline"></span>
         </div>
       </div>
 
@@ -68,32 +68,30 @@ export default function Header({
           <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2.5 flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-3">
             {/* Brand & Mobile Action Bar */}
             <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-3">
-              {/* Clickable brand area: uses the background artwork on desktop, pill on mobile to prevent duplicate logo */}
+              {/* Elevated Tactile 3D Pop-up Brand Pill (matches SAVED, MAP VIEW, LOOKBOOK) */}
               <a 
                 href="/" 
-                className="flex items-center gap-2.5 sm:gap-3 bg-wabi/90 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none px-2.5 py-1.5 md:p-0 rounded-2xl border-2 border-sumi md:border-0 shadow-riso-sm md:shadow-none"
-                title="KHOJ Mumbai"
+                className="flex items-center gap-2.5 sm:gap-3 bg-wabi/95 hover:bg-white backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all group flex-shrink-0"
+                title="KHOJ Mumbai - Discover Hidden & Underrated Sanctuaries"
               >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0 md:hidden">
-                  <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1.5 sm:gap-2 md:hidden">
-                    <span className="font-ananda font-normal text-2xl sm:text-3xl tracking-wide text-sumi leading-none">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <span className="font-ananda font-normal text-xl sm:text-2xl lg:text-3xl tracking-wide text-sumi leading-none">
                       KHOJ<span className="text-vermilion">.</span>
                     </span>
-                    <span className="font-ananda text-sm sm:text-base text-slate-700 tracking-wide font-normal">
+                    <span className="font-ananda text-xs sm:text-sm lg:text-base text-slate-700 tracking-wide font-normal">
                       खोज
                     </span>
-                    <span className="px-1.5 py-0.5 rounded text-[10px] sm:text-xs font-mono font-bold bg-sumi text-wabi uppercase">
+                    <span className="px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] lg:text-xs font-mono font-bold bg-sumi text-wabi uppercase shadow-sm">
                       Mumbai
                     </span>
                   </div>
-                  <p className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold md:hidden">
+                  <p className="text-[9px] sm:text-[10px] lg:text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold mt-0.5">
                     Hidden & Underrated Places
                   </p>
-                  {/* Desktop invisible anchor matching banner's painted logo area */}
-                  <div className="hidden md:block w-52 h-10 cursor-pointer" />
                 </div>
               </a>
 
