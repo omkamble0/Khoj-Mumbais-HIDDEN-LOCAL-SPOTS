@@ -50,12 +50,12 @@ export default function Header({
           <span className="w-2 h-2 rounded-full bg-vermilion animate-pulse flex-shrink-0"></span>
           <span className="font-bold text-vermilion text-xs sm:text-sm flex-shrink-0">KHOJ</span>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI · 18°58′N, 72°50′E</span>
+          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI </span>
         </div>
         <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
           <span className="text-amber-400 font-bold text-[11px] sm:text-xs">● {totalSpots} SANCTUARIES</span>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-emerald-400 font-semibold hidden sm:inline text-[11px] sm:text-xs">VERIFIED PUBLIC ACCESS</span>
+          <span className="text-emerald-400 font-semibold hidden sm:inline text-[11px] sm:text-xs"></span>
         </div>
       </div>
 

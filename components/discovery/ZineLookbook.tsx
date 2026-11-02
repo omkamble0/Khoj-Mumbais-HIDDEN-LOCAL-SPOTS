@@ -51,10 +51,10 @@ export default function ZineLookbook({
         <div className="relative z-10 max-w-2xl">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2">
             <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded text-[10px] sm:text-xs font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
-              MUMBAI ISSUE #01
+              MUMBAI
             </span>
             <span className="text-[10px] sm:text-xs font-mono text-slate-300">
-              KHOJ · 18.9453° N, 72.8258° E · HIDDEN LOCAL SPOTS
+              KHOJ HIDDEN LOCAL SPOTS
             </span>
           </div>
 
@@ -107,13 +107,12 @@ export default function ZineLookbook({
                   <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
                     {place.category.replace('_', ' ')}
                   </span>
-                  <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
-                    place.spot_tier === 'iconic'
+                  <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${place.spot_tier === 'iconic'
                       ? 'bg-amber-400 text-sumi border-amber-500/40'
                       : place.spot_tier === 'underrated'
-                      ? 'bg-cobalt text-white border-blue-400/40'
-                      : 'bg-vermilion text-white border-rose-400/40'
-                  }`}>
+                        ? 'bg-cobalt text-white border-blue-400/40'
+                        : 'bg-vermilion text-white border-rose-400/40'
+                    }`}>
                     {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
                   </span>
                 </div>
@@ -210,11 +209,10 @@ export default function ZineLookbook({
                   <button
                     key={p}
                     onClick={() => handlePageChange(p)}
-                    className={`w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center border-2 transition-all ${
-                      safeCurrentPage === p
+                    className={`w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center border-2 transition-all ${safeCurrentPage === p
                         ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
                         : 'bg-wabi text-sumi border-sumi/30 hover:border-sumi hover:bg-amber-100'
-                    }`}
+                      }`}
                   >
                     {p}
                   </button>
