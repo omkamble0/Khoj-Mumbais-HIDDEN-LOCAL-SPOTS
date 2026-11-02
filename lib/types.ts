@@ -1,8 +1,10 @@
 export type PlaceCategory =
   | 'all'
+  | 'walks'
+  | 'treks'
+  | 'gardens'
   | 'cafes'
   | 'forts'
-  | 'parks'
   | 'viewpoints'
   | 'waterfront'
   | 'heritage';
@@ -15,7 +17,7 @@ export interface Place {
   id: string;
   slug: string;
   name: string;
-  short_name?: string; // Short name for the map pin (e.g. "Worli Fort", "Subko Cafe")
+  short_name?: string;
   category: PlaceCategory;
   subcategory: string;
   spot_tier: SpotTier; // 'iconic' | 'underrated' | 'hidden_gem'

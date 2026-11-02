@@ -4,13 +4,14 @@ import React from 'react';
 import { PlaceCategory, FilterState, SpotTier } from '@/lib/types';
 import {
   Compass,
+  Footprints,
+  Mountain,
+  Flower2,
   Coffee,
   Shield,
-  Trees,
-  Mountain,
+  Eye,
   Droplets,
   Landmark,
-  SlidersHorizontal,
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -21,10 +22,12 @@ interface FilterBarProps {
 
 const CATEGORIES: { id: PlaceCategory; label: string; icon: React.ReactNode }[] = [
   { id: 'all', label: 'ALL SPOTS', icon: <Compass className="w-3.5 h-3.5" /> },
+  { id: 'walks', label: 'WALKS', icon: <Footprints className="w-3.5 h-3.5" /> },
+  { id: 'treks', label: 'TREKS', icon: <Mountain className="w-3.5 h-3.5" /> },
+  { id: 'gardens', label: 'GARDENS', icon: <Flower2 className="w-3.5 h-3.5" /> },
   { id: 'cafes', label: 'CAFÉS', icon: <Coffee className="w-3.5 h-3.5" /> },
   { id: 'forts', label: 'FORTS', icon: <Shield className="w-3.5 h-3.5" /> },
-  { id: 'parks', label: 'PARKS', icon: <Trees className="w-3.5 h-3.5" /> },
-  { id: 'viewpoints', label: 'VIEWPOINTS', icon: <Mountain className="w-3.5 h-3.5" /> },
+  { id: 'viewpoints', label: 'VIEWPOINTS', icon: <Eye className="w-3.5 h-3.5" /> },
   { id: 'waterfront', label: 'WATERFRONT', icon: <Droplets className="w-3.5 h-3.5" /> },
   { id: 'heritage', label: 'HERITAGE', icon: <Landmark className="w-3.5 h-3.5" /> },
 ];
@@ -41,7 +44,7 @@ const RADII = [5, 10, 20, 40];
 export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
   return (
     <div className="bg-wabi/95 backdrop-blur-md p-3 rounded-2xl border-2 border-sumi shadow-riso font-kaluk space-y-2">
-      {/* Category Pills (Cafés, Forts, Parks, Viewpoints, etc.) */}
+      {/* Category Horizontal Scrolling Pills */}
       <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
         {CATEGORIES.map((cat) => {
           const isActive = filters.category === cat.id;
@@ -70,7 +73,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
             <button
               key={tier.id}
               onClick={() => onChange({ spotTier: tier.id })}
-              className={`px-2 py-0.5 rounded-lg text-[11px] font-mono font-bold border transition-colors ${
+              className={`px-2.5 py-0.5 rounded-lg text-[11px] font-mono font-bold border transition-colors ${
                 filters.spotTier === tier.id
                   ? 'bg-sumi text-wabi border-sumi'
                   : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi'

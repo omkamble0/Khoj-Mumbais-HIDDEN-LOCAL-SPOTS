@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import DynamicMap from '@/components/map/DynamicMap';
 import Header from '@/components/discovery/Header';
 import FilterBar from '@/components/discovery/FilterBar';
@@ -8,6 +8,7 @@ import PlaceCardDrawer from '@/components/discovery/PlaceCardDrawer';
 import ZineLookbook from '@/components/discovery/ZineLookbook';
 import ReportModal from '@/components/discovery/ReportModal';
 import { Place, FilterState } from '@/lib/types';
+import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
 const DEFAULT_MUMBAI_CENTER = { lat: 19.0418, lng: 72.8398 };
@@ -16,7 +17,7 @@ export default function HomePage() {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(
     DEFAULT_MUMBAI_CENTER
   );
-  const [places, setPlaces] = useState<Place[]>([]);
+  const [allPlaces, setAllPlaces] = useState<Place[]>([]);
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
@@ -30,30 +31,82 @@ export default function HomePage() {
     searchQuery: '',
   });
 
-  // Fetch places from nearby API route
-  const fetchPlaces = useCallback(async () => {
-    try {
-      const center = userLocation || DEFAULT_MUMBAI_CENTER;
-      const params = new URLSearchParams({
-        lat: center.lat.toString(),
-        lng: center.lng.toString(),
-        radiusKm: filters.radiusKm.toString(),
-        category: filters.category,
-        spotTier: filters.spotTier,
-        maxCrowd: filters.maxCrowdLevel.toString(),
-        q: filters.searchQuery,
-      });
-
-      const res = await fetch(`/api/places/nearby?${params.toString()}`);
-      if (!res.ok) throw new Error('API fetch failed');
-      const data = await res.json();
-      setPlaces(data.places || []);
-    } catch (err) {
-      console.error('Failed to load places:', err);
+  // Load master places dataset once on mount
+  useEffect(() => {
+    async function loadInitialPlaces() {
+      try {
+        const res = await fetch('/api/places/nearby?radiusKm=100');
+        if (res.ok) {
+          const data = await res.json();
+          setAllPlaces(data.places || []);
+        }
+      } catch (e) {
+        console.error('Failed to load initial places:', e);
+      }
     }
-  }, [userLocation, filters]);
+    loadInitialPlaces();
+  }, []);
 
-  // Request browser geolocation
+  // INSTANT in-memory filtering: 0ms latency on filter clicks and search typing!
+  const filteredPlaces = useMemo(() => {
+    const center = userLocation || DEFAULT_MUMBAI_CENTER;
+    const radiusMeters = filters.radiusKm * 1000;
+    const query = filters.searchQuery.toLowerCase().trim();
+
+    return allPlaces
+      .map((place) => {
+        const distance = calculateDistanceMeters(
+          center.lat,
+          center.lng,
+          place.latitude,
+          place.longitude
+        );
+        return {
+          ...place,
+          distance_meters: Math.round(distance),
+          composite_score: computeCompositeScore(place, distance),
+        };
+      })
+      .filter((place) => {
+        // Distance radius filter
+        if (place.distance_meters !== undefined && place.distance_meters > radiusMeters) {
+          return false;
+        }
+
+        // Category filter
+        if (filters.category !== 'all' && place.category !== filters.category) {
+          return false;
+        }
+
+        // Spot tier filter
+        if (filters.spotTier !== 'all' && place.spot_tier !== filters.spotTier) {
+          return false;
+        }
+
+        // Crowd filter
+        if (place.crowd_level > filters.maxCrowdLevel) {
+          return false;
+        }
+
+        // Instant text query search
+        if (query) {
+          const mName = place.name.toLowerCase().includes(query);
+          const mShort = place.short_name?.toLowerCase().includes(query);
+          const mDesc = place.description.toLowerCase().includes(query);
+          const mNeighbor = place.neighborhood?.toLowerCase().includes(query);
+          const mCat = place.category.toLowerCase().includes(query);
+          const mTags = place.vibe_tags.some((t) => t.toLowerCase().includes(query));
+          if (!mName && !mShort && !mDesc && !mNeighbor && !mCat && !mTags) {
+            return false;
+          }
+        }
+
+        return true;
+      })
+      .sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0));
+  }, [allPlaces, userLocation, filters]);
+
+  // Instant location toggle
   const handleLocateMe = () => {
     if (!navigator.geolocation) {
       alert('Geolocation is not supported by your browser.');
@@ -69,17 +122,13 @@ export default function HomePage() {
         setIsLocating(false);
       },
       (err) => {
-        console.warn('Geolocation denied or unavailable, using Mumbai center:', err.message);
+        console.warn('Geolocation denied, keeping Mumbai center:', err.message);
         setUserLocation(DEFAULT_MUMBAI_CENTER);
         setIsLocating(false);
       },
-      { timeout: 10000, enableHighAccuracy: true }
+      { timeout: 8000, enableHighAccuracy: true }
     );
   };
-
-  useEffect(() => {
-    fetchPlaces();
-  }, [fetchPlaces]);
 
   const handleFilterChange = (updated: Partial<FilterState>) => {
     setFilters((prev) => ({ ...prev, ...updated }));
@@ -101,25 +150,25 @@ export default function HomePage() {
         onSearchChange={(q) => handleFilterChange({ searchQuery: q })}
         viewMode={viewMode}
         onToggleView={(m) => setViewMode(m)}
-        totalSpots={places.length}
+        totalSpots={filteredPlaces.length}
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
       <main className="relative flex-1 w-full h-[calc(100vh-80px)] overflow-hidden">
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
-            {/* Docked Map Filter Island (Cleanly positioned with ample breathing room) */}
-            <div className="absolute top-4 left-4 right-4 md:left-6 md:right-auto md:w-[490px] z-20 pointer-events-auto">
+            {/* Docked Map Filter Island */}
+            <div className="absolute top-4 left-4 right-4 md:left-6 md:right-auto md:w-[500px] z-20 pointer-events-auto">
               <FilterBar
                 filters={filters}
                 onChange={handleFilterChange}
-                totalFound={places.length}
+                totalFound={filteredPlaces.length}
               />
             </div>
 
             {/* Map Canvas */}
             <DynamicMap
-              places={places}
+              places={filteredPlaces}
               userLocation={userLocation}
               selectedPlace={selectedPlace}
               onSelectPlace={(p) => setSelectedPlace(p)}
@@ -128,9 +177,9 @@ export default function HomePage() {
           </div>
         ) : (
           <div className="w-full h-full relative z-0">
-            {/* Zine Lookbook View (Filter bar is integrated directly in page flow) */}
+            {/* Zine Lookbook View */}
             <ZineLookbook
-              places={places}
+              places={filteredPlaces}
               onSelectPlace={handleSelectFromZine}
               filters={filters}
               onFilterChange={handleFilterChange}
