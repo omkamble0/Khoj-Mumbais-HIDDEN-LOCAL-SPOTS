@@ -190,5 +190,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_cafes"
+  },
+  {
+    "id": "mumbai-bambaiya-coffee-co",
+    "slug": "bambaiya-coffee-co-chimbai-bandra-west",
+    "name": "Bambaiya Coffee Co.",
+    "short_name": "Bambaiya Coffee Co.",
+    "category": "cafes",
+    "subcategory": "Seaside Fishing Alley Artisan Kiosk",
+    "spot_tier": "hidden_gem",
+    "city": "Mumbai",
+    "neighborhood": "Chimbai, Bandra West",
+    "latitude": 19.05444,
+    "longitude": 72.84056,
+    "access_type": "commercial",
+    "safety_level": "high",
+    "safety_notes": "Walk-in coffee takeaway. Friendly fishing neighborhood.",
+    "hiddenness_score": 0.85,
+    "vibe_score": 0.93,
+    "safety_score": 0.94,
+    "accessibility_score": 0.88,
+    "crowd_level": 1,
+    "best_time_to_visit": "Early morning sea stroll (7:00 AM - 9:00 AM)",
+    "description": "An intimate hole-in-the-wall specialty coffee kiosk in Chimbai fishing village, serving single-origin pour-overs steps away from the crashing waves and wooden catamarans.",
+    "vibe_tags": [
+      "artisan-coffee",
+      "fishing-village",
+      "sea-breeze",
+      "hidden-nook",
+      "bandra"
+    ],
+    "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Bandra_Worli_Sea_Link_at_night.jpg/1280px-Bandra_Worli_Sea_Link_at_night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "source": "curated_wikimedia"
   }
 ]

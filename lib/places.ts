@@ -71,3 +71,4 @@ export function syncCombinedPlacesJson(): void {
     console.error('Error syncing combined places json:', error);
   }
 }
+
