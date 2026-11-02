@@ -1,23 +1,24 @@
 export type PlaceCategory =
   | 'all'
-  | 'scenic'
-  | 'quiet_chill'
-  | 'historical'
-  | 'nature_forest'
-  | 'viewpoint'
-  | 'ruin_historic'
+  | 'cafes'
+  | 'forts'
+  | 'parks'
+  | 'viewpoints'
   | 'waterfront'
-  | 'hidden_gem';
+  | 'heritage';
 
-export type AccessType = 'public' | 'permissive' | 'trail_required' | 'unknown';
+export type SpotTier = 'all' | 'hidden_gem' | 'underrated' | 'iconic';
+export type AccessType = 'public' | 'permissive' | 'commercial' | 'trail_required';
 export type SafetyLevel = 'low' | 'medium' | 'high';
 
 export interface Place {
   id: string;
   slug: string;
   name: string;
+  short_name?: string; // Short name for the map pin (e.g. "Worli Fort", "Subko Cafe")
   category: PlaceCategory;
   subcategory: string;
+  spot_tier: SpotTier; // 'iconic' | 'underrated' | 'hidden_gem'
   city: string;
   neighborhood?: string;
   latitude: number;
@@ -41,11 +42,10 @@ export interface Place {
 
 export interface FilterState {
   category: PlaceCategory;
-  radiusKm: number; // e.g. 5, 10, 25, 50
-  maxCrowdLevel: number; // 1 to 5
-  minHiddenness: number; // 0.0 to 1.0
+  spotTier: SpotTier;
+  radiusKm: number;
+  maxCrowdLevel: number;
   searchQuery: string;
-  selectedVibe?: string;
 }
 
 export interface PlaceReportPayload {
@@ -53,4 +53,3 @@ export interface PlaceReportPayload {
   reason: 'private_property' | 'unsafe' | 'closed' | 'wrong_location' | 'other';
   details?: string;
 }
-

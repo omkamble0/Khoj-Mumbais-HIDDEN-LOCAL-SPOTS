@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { Place, PlaceCategory } from '@/lib/types';
+import { Place, PlaceCategory, SpotTier } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 
 export const dynamic = 'force-dynamic';
@@ -10,16 +10,14 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
 
-    // Default to Mumbai center (e.g. Dadar / Bandra) if user hasn't provided location yet
     const lat = parseFloat(searchParams.get('lat') || '19.0418');
     const lng = parseFloat(searchParams.get('lng') || '72.8398');
-    const radiusKm = parseFloat(searchParams.get('radiusKm') || '25');
+    const radiusKm = parseFloat(searchParams.get('radiusKm') || '40');
     const category = (searchParams.get('category') || 'all') as PlaceCategory;
+    const spotTier = (searchParams.get('spotTier') || 'all') as SpotTier;
     const maxCrowd = parseInt(searchParams.get('maxCrowd') || '5', 10);
-    const minHiddenness = parseFloat(searchParams.get('minHiddenness') || '0.0');
     const query = (searchParams.get('q') || '').toLowerCase().trim();
 
-    // Read local seed dataset
     const filePath = path.join(process.cwd(), 'data', 'places_mumbai.json');
     if (!fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Data file not found' }, { status: 404 });
@@ -28,7 +26,6 @@ export async function GET(request: NextRequest) {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const places: Place[] = JSON.parse(fileContent);
 
-    // Enrich with distance and composite scores
     const enrichedPlaces: Place[] = places.map((place) => {
       const distance = calculateDistanceMeters(lat, lng, place.latitude, place.longitude);
       const compositeScore = computeCompositeScore(place, distance);
@@ -39,7 +36,6 @@ export async function GET(request: NextRequest) {
       };
     });
 
-    // Apply filtering
     const radiusMeters = radiusKm * 1000;
     const filtered = enrichedPlaces.filter((place) => {
       // Radius filter
@@ -47,8 +43,13 @@ export async function GET(request: NextRequest) {
         return false;
       }
 
-      // Category filter
+      // Category filter (cafes, forts, parks, viewpoints, waterfront, heritage)
       if (category !== 'all' && place.category !== category) {
+        return false;
+      }
+
+      // Tier filter (hidden_gem, underrated, iconic)
+      if (spotTier !== 'all' && place.spot_tier !== spotTier) {
         return false;
       }
 
@@ -57,18 +58,15 @@ export async function GET(request: NextRequest) {
         return false;
       }
 
-      // Hiddenness filter
-      if (place.hiddenness_score < minHiddenness) {
-        return false;
-      }
-
-      // Text query match
+      // Text query search
       if (query) {
         const matchName = place.name.toLowerCase().includes(query);
+        const matchShort = place.short_name?.toLowerCase().includes(query);
         const matchDesc = place.description.toLowerCase().includes(query);
         const matchNeighborhood = place.neighborhood?.toLowerCase().includes(query);
+        const matchCategory = place.category.toLowerCase().includes(query);
         const matchTags = place.vibe_tags.some((tag) => tag.toLowerCase().includes(query));
-        if (!matchName && !matchDesc && !matchNeighborhood && !matchTags) {
+        if (!matchName && !matchShort && !matchDesc && !matchNeighborhood && !matchCategory && !matchTags) {
           return false;
         }
       }
@@ -76,7 +74,7 @@ export async function GET(request: NextRequest) {
       return true;
     });
 
-    // Sort by composite score descending (highest quality hidden/safe/nearby first)
+    // Sort by composite score
     filtered.sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0));
 
     return NextResponse.json({

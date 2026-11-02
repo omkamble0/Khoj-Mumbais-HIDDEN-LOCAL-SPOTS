@@ -24,9 +24,9 @@ export default function HomePage() {
 
   const [filters, setFilters] = useState<FilterState>({
     category: 'all',
-    radiusKm: 25,
+    spotTier: 'all',
+    radiusKm: 40,
     maxCrowdLevel: 5,
-    minHiddenness: 0.0,
     searchQuery: '',
   });
 
@@ -39,8 +39,8 @@ export default function HomePage() {
         lng: center.lng.toString(),
         radiusKm: filters.radiusKm.toString(),
         category: filters.category,
+        spotTier: filters.spotTier,
         maxCrowd: filters.maxCrowdLevel.toString(),
-        minHiddenness: filters.minHiddenness.toString(),
         q: filters.searchQuery,
       });
 

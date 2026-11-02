@@ -85,9 +85,17 @@ export default function ZineLookbook({
                   </span>
                 </div>
 
-                {/* Hiddenness Stamp */}
-                <div className="absolute top-3 right-3 bg-vermilion text-white border border-sumi rounded-lg px-2 py-0.5 font-mono text-xs font-black shadow-riso-sm">
-                  {Math.round(place.hiddenness_score * 100)}% HIDDEN
+                {/* Tier & Hiddenness Stamp */}
+                <div className="absolute top-3 right-3 flex items-center gap-1">
+                  <span className={`px-2 py-0.5 rounded-lg font-mono text-[10px] font-black uppercase border border-sumi shadow-riso-sm ${
+                    place.spot_tier === 'iconic'
+                      ? 'bg-amber-400 text-sumi'
+                      : place.spot_tier === 'underrated'
+                      ? 'bg-cobalt text-white'
+                      : 'bg-vermilion text-white'
+                  }`}>
+                    {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
+                  </span>
                 </div>
 
                 {/* Subtitle bottom banner */}

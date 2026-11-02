@@ -101,10 +101,19 @@ export default function PlaceCardDrawer({
             </button>
           </div>
 
-          {/* Top English Tag */}
+          {/* Top English Tag & Tier Badge */}
           <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
             <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-sumi text-wabi border border-sumi shadow-riso-sm">
-              {place.category.replace('_', ' ')}
+              {place.category.toUpperCase()}
+            </span>
+            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase border border-sumi shadow-riso-sm ${
+              place.spot_tier === 'iconic'
+                ? 'bg-amber-400 text-sumi'
+                : place.spot_tier === 'underrated'
+                ? 'bg-cobalt text-white'
+                : 'bg-vermilion text-white'
+            }`}>
+              {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
             </span>
             {place.distance_meters !== undefined && (
               <span className="text-[10px] font-mono font-bold bg-wabi text-sumi border border-sumi px-2 py-0.5 rounded shadow-riso-sm">

@@ -12,15 +12,14 @@ interface DiscoveryMapProps {
   radiusKm: number;
 }
 
-const CATEGORY_STYLES: Record<string, { bg: string; text: string; label: string }> = {
-  viewpoint: { bg: '#ff3e18', text: '#ffffff', label: 'VIEW' },
-  ruin_historic: { bg: '#173664', text: '#ffffff', label: 'FORT' },
-  historical: { bg: '#8b4513', text: '#ffffff', label: 'HERITAGE' },
-  nature_forest: { bg: '#2d5339', text: '#ffffff', label: 'FOREST' },
-  scenic: { bg: '#cf9866', text: '#141518', label: 'SCENIC' },
-  quiet_chill: { bg: '#3a5043', text: '#ffffff', label: 'CALM' },
-  waterfront: { bg: '#1f6e8c', text: '#ffffff', label: 'COAST' },
-  hidden_gem: { bg: '#ff3e18', text: '#ffffff', label: 'SECRET' },
+// Category Theme Accents
+const CATEGORY_COLORS: Record<string, { dot: string; border: string; bg: string }> = {
+  cafes: { dot: '#d97706', border: '#b45309', bg: '#fffbeb' },       // Amber
+  forts: { dot: '#2563eb', border: '#1d4ed8', bg: '#eff6ff' },       // Blue
+  parks: { dot: '#16a34a', border: '#15803d', bg: '#f0fdf4' },       // Emerald
+  viewpoints: { dot: '#ff3e18', border: '#e52c07', bg: '#fff1ee' },  // Vermilion
+  waterfront: { dot: '#0891b2', border: '#0e7490', bg: '#ecfeff' },  // Cyan
+  heritage: { dot: '#7c3aed', border: '#6d28d9', bg: '#f5f3ff' },    // Purple
 };
 
 export default function DiscoveryMap({
@@ -36,13 +35,12 @@ export default function DiscoveryMap({
   const radiusCircleRef = useRef<L.Circle | null>(null);
   const userMarkerRef = useRef<L.Marker | null>(null);
 
-  // Initialize Map safely (immune to StrictMode double mount)
+  // Initialize Map safely
   useEffect(() => {
     if (!mapContainerRef.current) return;
     if (mapInstanceRef.current) return;
 
     try {
-      // Clear any lingering leaflet instance id
       if ((mapContainerRef.current as any)._leaflet_id) {
         (mapContainerRef.current as any)._leaflet_id = null;
       }
@@ -56,6 +54,7 @@ export default function DiscoveryMap({
         zoomControl: false,
       });
 
+      // Free OpenStreetMap Standard Tiles
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -135,7 +134,7 @@ export default function DiscoveryMap({
     }
   }, [userLocation, radiusKm]);
 
-  // Update Place Markers in Kaluk Sans English
+  // Update Place Markers showing REAL PLACE NAMES (e.g. "Worli Fort", "Subko Café")
   useEffect(() => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
@@ -146,31 +145,47 @@ export default function DiscoveryMap({
 
       places.forEach((place) => {
         const isSelected = selectedPlace?.id === place.id;
-        const theme = CATEGORY_STYLES[place.category] || { bg: '#ff3e18', text: '#fff', label: 'SPOT' };
+        const theme = CATEGORY_COLORS[place.category] || { dot: '#ff3e18', border: '#e52c07', bg: '#fff1ee' };
+        
+        // Display real name (short_name or name)
+        const displayName = place.short_name || place.name.split(' ')[0] + ' ' + (place.name.split(' ')[1] || '');
+
+        // Tier icon badge
+        const tierBadge =
+          place.spot_tier === 'iconic'
+            ? '★'
+            : place.spot_tier === 'hidden_gem'
+            ? '✦'
+            : '●';
 
         const markerHtml = `
           <div class="custom-pin cursor-pointer flex flex-col items-center group transition-transform duration-200">
             <div class="relative flex items-center justify-center ${
-              isSelected ? 'scale-125 z-50' : ''
+              isSelected ? 'scale-115 z-50' : ''
             }">
-              <div class="px-2 py-0.5 rounded-lg border-2 border-sumi flex items-center gap-1 shadow-riso-sm transition-all font-kaluk"
-                   style="background-color: ${isSelected ? '#ffffff' : theme.bg}; color: ${isSelected ? '#141518' : theme.text};">
-                <span class="text-[9px] font-bold tracking-wider">${theme.label}</span>
-                <span class="text-[10px] font-mono font-black border-l border-current/30 pl-1">
-                  ${Math.round(place.hiddenness_score * 100)}%
-                </span>
+              <!-- Tactile Pill with Real Place Name -->
+              <div class="px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm transition-all font-kaluk whitespace-nowrap ${
+                isSelected
+                  ? 'bg-sumi text-wabi ring-4 ring-vermilion/30'
+                  : 'bg-wabi text-sumi hover:bg-white'
+              }">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
+                <span class="text-xs font-black tracking-tight">${displayName}</span>
+                <span class="text-[10px] font-mono font-bold opacity-75">${tierBadge}</span>
               </div>
+
+              <!-- Tail pointer -->
               <div class="w-1.5 h-1.5 rotate-45 -mt-1 border-r border-b border-sumi shadow-sm"
-                   style="background-color: ${isSelected ? '#ffffff' : theme.bg}"></div>
+                   style="background-color: ${isSelected ? '#141518' : '#faf6ee'}"></div>
             </div>
           </div>
         `;
 
         const customIcon = L.divIcon({
-          className: 'place-marker-icon',
+          className: 'place-name-pin',
           html: markerHtml,
-          iconSize: [60, 48],
-          iconAnchor: [30, 40],
+          iconSize: [120, 36],
+          iconAnchor: [60, 32],
         });
 
         const marker = L.marker([place.latitude, place.longitude], {
