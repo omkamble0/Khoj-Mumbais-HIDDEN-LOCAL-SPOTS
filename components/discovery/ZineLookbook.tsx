@@ -55,17 +55,17 @@ export default function ZineLookbook({
         />
       </div>
 
-      {/* Grid of Clean Editorial Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pb-28">
+      {/* Grid of Clean Editorial Cards (Generously proportioned for unconstrained typography) */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 pb-32">
         {places.map((place) => {
           return (
             <article
               key={place.id}
               onClick={() => onSelectPlace(place)}
-              className="group cursor-pointer bg-wabi rounded-2xl sm:rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between active:scale-[0.99]"
+              className="group cursor-pointer bg-wabi rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between active:scale-[0.99]"
             >
-              {/* Card Media (Clean, cinematic, no awkward bottom black bar) */}
-              <div className="relative h-48 sm:h-60 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi">
+              {/* Card Media (Expansive, cinematic framing) */}
+              <div className="relative h-56 sm:h-64 md:h-72 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi flex-shrink-0">
                 <img
                   src={place.photo_url}
                   alt={place.name}
@@ -81,11 +81,11 @@ export default function ZineLookbook({
                 <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
 
                 {/* Floating Category & Tier Tag on Top Left */}
-                <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5 z-10">
-                  <span className="px-3 py-1 rounded-lg text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
+                <div className="absolute top-3.5 left-3.5 flex items-center gap-2 z-10">
+                  <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
                     {place.category.replace('_', ' ')}
                   </span>
-                  <span className={`px-2.5 py-1 rounded-lg text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
+                  <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
                     place.spot_tier === 'iconic'
                       ? 'bg-amber-400 text-sumi border-amber-500/40'
                       : place.spot_tier === 'underrated'
@@ -99,53 +99,53 @@ export default function ZineLookbook({
                 {/* Distance Pill on Top Right */}
                 {place.distance_meters !== undefined && (
                   <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 shadow-sm">
+                    <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 shadow-sm">
                       {formatDistance(place.distance_meters)}
                     </span>
                   </div>
                 )}
               </div>
 
-              {/* Card Content (Airy, expansive, sophisticated editorial typography) */}
-              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between gap-3 sm:gap-4">
-                <div className="space-y-1.5 sm:space-y-2">
+              {/* Card Content (Expansive, spacious editorial layout with room to breathe) */}
+              <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between gap-5">
+                <div className="space-y-2.5">
                   {/* Location Subtitle */}
-                  <div className="flex items-center justify-between text-xs font-mono text-slate-500">
-                    <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-1.5 truncate max-w-[200px]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-vermilion inline-block flex-shrink-0"></span>
-                      <span className="truncate">{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-slate-500">
+                    <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-vermilion inline-block flex-shrink-0"></span>
+                      <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
                     </span>
-                    <span className="text-emerald-700 font-bold tracking-wider uppercase text-[10px] sm:text-[11px] flex-shrink-0">
+                    <span className="text-emerald-700 font-bold tracking-wider uppercase text-xs flex-shrink-0">
                       {place.safety_level === 'high' ? 'Verified Safe' : 'Daylight Visit'}
                     </span>
                   </div>
 
-                  {/* Place Title in Ananda Namaste Display with proper line-height */}
-                  <h3 className="font-display font-normal text-2xl sm:text-2xl md:text-3xl text-sumi leading-[1.3] tracking-wide pt-1 group-hover:text-vermilion transition-colors">
+                  {/* Place Title in Ananda Namaste Display with generous height & breathing space */}
+                  <h3 className="font-display font-normal text-2xl sm:text-3xl lg:text-4xl text-sumi leading-[1.35] tracking-wide pt-1 pb-1 group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h3>
 
-                  {/* Narrative Snippet */}
-                  <p className="text-xs sm:text-sm text-slate-700 line-clamp-3 leading-relaxed font-sans pt-0.5">
+                  {/* Narrative Snippet (Spacious and readable) */}
+                  <p className="text-sm sm:text-[15px] text-slate-700 leading-relaxed font-sans line-clamp-4 pt-1">
                     {place.description}
                   </p>
                 </div>
 
                 {/* Footer Strip with Tags and Action */}
-                <div className="pt-2.5 sm:pt-3 border-t border-sumi/15 flex items-center justify-between">
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    {place.vibe_tags.slice(0, 2).map((t) => (
+                <div className="pt-4 border-t border-sumi/15 flex items-center justify-between">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {place.vibe_tags.slice(0, 3).map((t) => (
                       <span
                         key={t}
-                        className="text-[10px] sm:text-xs font-mono bg-wabi-100 border border-sumi/20 px-2 sm:px-2.5 py-0.5 rounded-md text-slate-700 font-medium"
+                        className="text-xs font-mono bg-wabi-100 border border-sumi/20 px-3 py-1 rounded-lg text-slate-700 font-medium"
                       >
                         #{t}
                       </span>
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-0.5 transition-all flex-shrink-0">
-                    VIEW SPOT <ArrowUpRight className="w-3.5 h-3.5" />
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-1 transition-all flex-shrink-0">
+                    VIEW SPOT <ArrowUpRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>

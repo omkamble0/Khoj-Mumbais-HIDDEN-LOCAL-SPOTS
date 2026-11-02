@@ -94,13 +94,13 @@ export default function PlaceCardDrawer({
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${destinationQuery}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[460px] pb-safe transition-transform duration-300 ease-out font-sans">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[540px] lg:w-[580px] pb-safe transition-transform duration-300 ease-out font-sans">
       <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85dvh] md:max-h-[88vh] flex flex-col">
         {/* Mobile Tactile Drag Pill */}
         <div className="w-12 h-1.5 bg-sumi/30 rounded-full mx-auto my-2 md:hidden flex-shrink-0" />
 
-        {/* 1. Cinematic Hero Photo (Unobstructed, full view) */}
-        <div className="relative h-44 sm:h-56 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
+        {/* 1. Cinematic Hero Photo (Expansive view) */}
+        <div className="relative h-52 sm:h-64 md:h-72 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
           <img
             src={place.photo_url}
             alt={place.name}
@@ -113,14 +113,14 @@ export default function PlaceCardDrawer({
           <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
           
           {/* Soft bottom vignette gradient for smooth transition */}
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-sumi/50 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-sumi/60 to-transparent pointer-events-none" />
 
           {/* Floating Top Left Badges */}
-          <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 flex flex-wrap items-center gap-1.5 z-10">
-            <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
+          <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-2 z-10">
+            <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
               {place.category.toUpperCase()}
             </span>
-            <span className={`px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
+            <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
               place.spot_tier === 'iconic'
                 ? 'bg-amber-400 text-sumi border-amber-500/50'
                 : place.spot_tier === 'underrated'
@@ -130,17 +130,17 @@ export default function PlaceCardDrawer({
               {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
             </span>
             {place.distance_meters !== undefined && (
-              <span className="text-[10px] sm:text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-2 sm:px-2.5 py-1 rounded-lg shadow-sm">
+              <span className="text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-3 py-1 rounded-xl shadow-sm">
                 {formatDistance(place.distance_meters)}
               </span>
             )}
           </div>
 
           {/* Floating Top Right Actions */}
-          <div className="absolute top-2.5 sm:top-3 right-2.5 sm:right-3 flex items-center gap-2 z-10">
+          <div className="absolute top-3.5 right-3.5 flex items-center gap-2 z-10">
             <button
               onClick={toggleFavorite}
-              className={`p-2 sm:p-2.5 rounded-xl border border-sumi/40 backdrop-blur-md shadow-md transition-all active:scale-95 ${
+              className={`p-2.5 rounded-xl border border-sumi/40 backdrop-blur-md shadow-md transition-all active:scale-95 ${
                 isFavorited
                   ? 'bg-vermilion text-white'
                   : 'bg-wabi/90 text-sumi hover:bg-white'
@@ -151,48 +151,48 @@ export default function PlaceCardDrawer({
             </button>
             <button
               onClick={onClose}
-              className="p-2 sm:p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors"
+              className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* 2. Scrollable Editorial Body */}
-        <div className="p-4 sm:p-5 overflow-y-auto space-y-3.5 sm:space-y-4">
-          {/* Title & Location Header (Spacious, elegant, natural room to breathe) */}
-          <div className="space-y-1 pb-0.5">
-            <h2 className="font-display font-normal text-2xl sm:text-3xl md:text-4xl text-sumi leading-[1.25] tracking-wide break-words pt-1">
+        {/* 2. Scrollable Editorial Body (Spacious & uncluttered) */}
+        <div className="p-5 sm:p-6 md:p-7 overflow-y-auto space-y-4 sm:space-y-5">
+          {/* Title & Location Header (Generous spacing and line-height) */}
+          <div className="space-y-1.5 pb-1">
+            <h2 className="font-display font-normal text-3xl sm:text-4xl lg:text-[42px] text-sumi leading-[1.3] tracking-wide break-words pt-1 pb-1">
               {place.name}
             </h2>
-            <div className="flex flex-wrap items-center justify-between gap-1.5 text-xs font-mono pt-0.5">
-              <span className="text-slate-600 font-semibold tracking-wide flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-vermilion inline-block"></span>
-                {place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono pt-1">
+              <span className="text-slate-700 font-semibold tracking-wide flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-vermilion inline-block"></span>
+                <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
               </span>
-              <span className="text-amber-800 font-bold bg-amber-100/80 border border-amber-300/50 px-2 py-0.5 rounded-md tracking-wider text-[11px]">
+              <span className="text-amber-800 font-bold bg-amber-100/90 border border-amber-300/60 px-2.5 py-1 rounded-md tracking-wider text-xs">
                 {place.latitude.toFixed(4)}°N, {place.longitude.toFixed(4)}°E
               </span>
             </div>
           </div>
 
-          {/* Unified Telemetry Strip (Integrated single card with divider lines) */}
-          <div className="bg-wabi-100/90 border border-sumi/20 rounded-2xl p-3 shadow-riso-sm grid grid-cols-3 divide-x divide-sumi/15">
+          {/* Unified Telemetry Strip (Roomy metrics) */}
+          <div className="bg-wabi-100/90 border border-sumi/20 rounded-2xl p-4 shadow-riso-sm grid grid-cols-3 divide-x divide-sumi/15">
             {/* Hiddenness Score */}
             <div className="flex flex-col items-center justify-center text-center px-2">
-              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base">
-                <EyeOff className="w-4 h-4 text-vermilion flex-shrink-0" />
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base sm:text-lg">
+                <EyeOff className="w-4 h-4 sm:w-5 sm:h-5 text-vermilion flex-shrink-0" />
                 <span>{Math.round(place.hiddenness_score * 100)}%</span>
               </div>
-              <span className="text-[11px] font-mono uppercase text-slate-500 font-bold mt-0.5 tracking-wider">
+              <span className="text-xs font-mono uppercase text-slate-500 font-bold mt-1 tracking-wider">
                 Hiddenness
               </span>
             </div>
 
             {/* Crowd Level */}
             <div className="flex flex-col items-center justify-center text-center px-2">
-              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-sm">
-                <Users className="w-4 h-4 text-matcha flex-shrink-0" />
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-sm sm:text-base">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-matcha flex-shrink-0" />
                 <span className="truncate">
                   {place.crowd_level <= 1
                     ? 'Very Quiet'
@@ -201,55 +201,55 @@ export default function PlaceCardDrawer({
                     : 'Moderate'}
                 </span>
               </div>
-              <span className="text-[11px] font-mono uppercase text-slate-500 font-bold mt-0.5 tracking-wider">
+              <span className="text-xs font-mono uppercase text-slate-500 font-bold mt-1 tracking-wider">
                 Crowd Level
               </span>
             </div>
 
             {/* Atmosphere / Vibe */}
             <div className="flex flex-col items-center justify-center text-center px-2">
-              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base">
-                <Sparkles className="w-4 h-4 text-ochre flex-shrink-0" />
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base sm:text-lg">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-ochre flex-shrink-0" />
                 <span>{Math.round(place.vibe_score * 100)}%</span>
               </div>
-              <span className="text-[11px] font-mono uppercase text-slate-500 font-bold mt-0.5 tracking-wider">
+              <span className="text-xs font-mono uppercase text-slate-500 font-bold mt-1 tracking-wider">
                 Vibe Score
               </span>
             </div>
           </div>
 
-          {/* Narrative Description (Generous line height, readable modern typography) */}
-          <p className="text-slate-800 text-sm md:text-[15px] leading-relaxed font-sans">
+          {/* Narrative Description (Generous line height, readable typography) */}
+          <p className="text-slate-800 text-sm sm:text-base leading-relaxed font-sans pt-0.5">
             {place.description}
           </p>
 
-          {/* Integrated Field Notes (Best Time + Access & Safety in one harmonic card) */}
+          {/* Integrated Field Notes (Best Time + Access & Safety) */}
           <div className="bg-wabi-100/70 border border-sumi/20 rounded-2xl overflow-hidden shadow-riso-sm divide-y divide-sumi/15">
             {/* Best Time Row */}
-            <div className="p-3.5 flex items-start gap-3">
-              <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-300/40">
-                <Clock className="w-4 h-4" />
+            <div className="p-4 flex items-start gap-3.5">
+              <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-300/40">
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">
                   Golden Hour / Best Window
                 </span>
-                <p className="text-xs md:text-sm font-semibold text-sumi mt-0.5">
+                <p className="text-xs sm:text-sm font-semibold text-sumi mt-0.5">
                   {place.best_time_to_visit}
                 </p>
               </div>
             </div>
 
             {/* Safety & Access Row */}
-            <div className="p-3.5 flex items-start gap-3">
-              <div className="w-7 h-7 rounded-lg bg-matcha-50 text-matcha-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-matcha/30">
-                <ShieldCheck className="w-4 h-4" />
+            <div className="p-4 flex items-start gap-3.5">
+              <div className="w-8 h-8 rounded-xl bg-matcha-50 text-matcha-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-matcha/30">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">
                   Access & Safety Profile
                 </span>
-                <p className="text-xs md:text-sm text-slate-700 mt-0.5">
+                <p className="text-xs sm:text-sm text-slate-700 mt-0.5">
                   <span className="font-bold text-sumi">
                     {place.safety_level === 'high' ? 'Verified Public & Safe' : 'Daylight Visit Advised'}:
                   </span>{' '}
