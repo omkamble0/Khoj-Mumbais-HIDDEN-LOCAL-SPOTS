@@ -51,16 +51,12 @@ export default function DiscoveryMap({
       zoomControl: false,
     });
 
-    // Clean, modern, free raster tiles: CartoDB Voyager
-    L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-      {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19,
-      }
-    ).addTo(map);
+    // 100% Free OpenStreetMap standard tiles (Zero API key or sign-up required)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
 
     // Reposition zoom controls to bottom-right
     L.control.zoom({ position: 'bottomright' }).addTo(map);
@@ -184,3 +180,4 @@ export default function DiscoveryMap({
     </div>
   );
 }
+
