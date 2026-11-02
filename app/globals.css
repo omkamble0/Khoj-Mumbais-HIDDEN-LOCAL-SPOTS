@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'leaflet/dist/leaflet.css';
-
 :root {
   --wabi-bg: #faf6ee;
   --sumi-ink: #141518;

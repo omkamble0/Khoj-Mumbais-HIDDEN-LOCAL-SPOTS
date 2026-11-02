@@ -63,6 +63,11 @@ export default function DiscoveryMap({
     markersLayerRef.current = L.layerGroup().addTo(map);
     mapInstanceRef.current = map;
 
+    // Trigger size calculation after DOM render
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 100);
+
     return () => {
       map.remove();
       mapInstanceRef.current = null;
@@ -176,8 +181,8 @@ export default function DiscoveryMap({
   }, [selectedPlace]);
 
   return (
-    <div className="relative w-full h-full">
-      <div ref={mapContainerRef} className="w-full h-full z-0" />
+    <div className="relative w-full h-full min-h-[400px]">
+      <div ref={mapContainerRef} className="w-full h-full min-h-[400px] z-0" style={{ minHeight: '100%' }} />
     </div>
   );
 }

@@ -50,13 +50,15 @@ export default function Header({
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <h1 className="font-serif font-black text-base text-sumi tracking-tight">
-                elsewhere<span className="text-vermilion">.</span>
+              <h1 className="font-serif font-black text-xl text-sumi tracking-tight">
+                KHOJ<span className="text-vermilion font-mono">.</span>
               </h1>
-              <span className="hanko-stamp text-[9px]">मुंबई</span>
+              <span className="hanko-stamp text-[10px] bg-vermilion/10 text-vermilion border-vermilion font-bold">
+                खोज · 秘境
+              </span>
             </div>
             <p className="text-[10px] font-mono uppercase tracking-wider text-slate-600">
-              Quiet & Underrated Places
+              Hidden Local Sanctuaries
             </p>
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
         <div className="relative z-10 max-w-2xl">
           <div className="flex items-center gap-2 mb-3">
             <span className="hanko-stamp bg-vermilion text-white border-white text-xs">
-              MUMBAI ISSUE #01
+              KHOJ ISSUE #01 · खोज
             </span>
             <span className="text-[11px] font-mono tracking-widest text-slate-300">
               18.9453° N · 72.8258° E · WABI-SABI LOCATIONS
@@ -31,7 +31,7 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
           </div>
 
           <h2 className="font-serif font-black text-3xl md:text-5xl tracking-tight text-wabi leading-none mb-3">
-            Get Lost. <span className="italic font-normal text-amber-300">Feel Found.</span>
+            KHOJ. <span className="italic font-normal text-amber-300">Get Lost. Feel Found.</span>
           </h2>
 
           <p className="text-xs md:text-sm text-slate-300 font-sans leading-relaxed">
@@ -128,3 +128,4 @@ export default function ZineLookbook({ places, onSelectPlace }: ZineLookbookProp
     </div>
   );
 }
+

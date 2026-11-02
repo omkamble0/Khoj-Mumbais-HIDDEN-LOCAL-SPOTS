@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from 'next';
+import 'leaflet/dist/leaflet.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'HiddenSpot | Underrated & Quiet Places Near You',
+  title: 'KHOJ | खोज · Hidden & Quiet Places Near You',
   description:
     'Discover peaceful, scenic, and hidden local spots in Mumbai and beyond without the tourist crowds.',
 };
