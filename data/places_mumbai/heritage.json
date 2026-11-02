@@ -94,5 +94,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_heritage"
+  },
+  {
+    "id": "mumbai-portuguese-church-dadar",
+    "slug": "our-lady-of-salvation-portuguese-church",
+    "name": "Portuguese Church (Salvation)",
+    "short_name": "Portuguese Church",
+    "category": "heritage",
+    "subcategory": "1977 Charles Correa Tropical Brutalist Masterpiece",
+    "spot_tier": "underrated",
+    "city": "Mumbai",
+    "neighborhood": "Dadar West",
+    "latitude": 19.0221,
+    "longitude": 72.8368,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Active church and civic architecture monument. Quiet respectful visits.",
+    "hiddenness_score": 0.78,
+    "vibe_score": 0.96,
+    "safety_score": 0.98,
+    "accessibility_score": 0.94,
+    "crowd_level": 1,
+    "best_time_to_visit": "Midday when sunlight filters through shell-shaped concrete domes",
+    "description": "Rebuilt in 1977 by legendary architect Charles Correa on the site of a 1596 Portuguese foundation, featuring exposed concrete shell domes, courtyard skylights, and deep meditative quiet.",
+    "vibe_tags": [
+      "charles-correa",
+      "brutalist-heritage",
+      "shell-domes",
+      "meditative-light",
+      "dadar"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_heritage"
   }
 ]

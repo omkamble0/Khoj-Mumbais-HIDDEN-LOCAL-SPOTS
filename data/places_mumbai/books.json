@@ -94,5 +94,36 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_books"
+  },
+  {
+    "id": "mumbai-title-waves-bandra",
+    "slug": "title-waves-independent-bookshop",
+    "name": "Title Waves",
+    "short_name": "Title Waves",
+    "category": "books",
+    "subcategory": "Spacious Independent Bookstore & Reading Nook",
+    "spot_tier": "underrated",
+    "city": "Mumbai",
+    "neighborhood": "Bandra West",
+    "latitude": 19.0624,
+    "longitude": 72.8327,
+    "access_type": "commercial",
+    "safety_level": "high",
+    "safety_notes": "Spacious book haven with in-house cafe. Free browsing.",
+    "hiddenness_score": 0.65,
+    "vibe_score": 0.95,
+    "safety_score": 0.98,
+    "accessibility_score": 0.95,
+    "crowd_level": 2,
+    "best_time_to_visit": "Weekday afternoons for quiet reading in soft armchairs",
+    "description": "One of Mumbai's largest independent boutique bookstores, featuring expansive carpeted aisles, dedicated philosophy and design sections, listening stations, and cozy armchairs.",
+    "vibe_tags": [
+      "indie-bookshop",
+      "reading-armchairs",
+      "quiet-browsing",
+      "bandra"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_books"
   }
 ]
