@@ -14,6 +14,8 @@ import {
   X,
   ArrowUpRight,
   Sparkles,
+  Share2,
+  Check,
 } from 'lucide-react';
 
 interface PlaceCardDrawerProps {
@@ -31,6 +33,7 @@ export default function PlaceCardDrawer({
   onOpenReport,
 }: PlaceCardDrawerProps) {
   const [isFavorited, setIsFavorited] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (!place) return;
@@ -58,6 +61,26 @@ export default function PlaceCardDrawer({
     } catch (e) {
       console.error(e);
     }
+  };
+
+  const handleShare = async () => {
+    if (!place) return;
+    const shareData = {
+      title: `${place.name} · KHOJ`,
+      text: `Check out ${place.name} in ${place.neighborhood || 'Mumbai'} on KHOJ: ${place.description}`,
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        // Fallback to clipboard
+      }
+    }
+    navigator.clipboard.writeText(`${place.name} - ${window.location.href}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   if (!place) return null;
@@ -234,6 +257,14 @@ export default function PlaceCardDrawer({
                 <span>Wander Here (Directions)</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
+
+              <button
+                onClick={handleShare}
+                className="p-2.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-colors"
+                title="Share this spot"
+              >
+                {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
+              </button>
 
               <button
                 onClick={() => onOpenReport(place)}

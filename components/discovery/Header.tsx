@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Compass, LocateFixed, Search, Map, LayoutGrid } from 'lucide-react';
+import { Compass, LocateFixed, Search, Map, LayoutGrid, Heart } from 'lucide-react';
 
 interface HeaderProps {
   currentCity: string;
@@ -12,6 +12,8 @@ interface HeaderProps {
   viewMode: 'map' | 'zine';
   onToggleView: (mode: 'map' | 'zine') => void;
   totalSpots: number;
+  savedCount: number;
+  onOpenSaved: () => void;
 }
 
 export default function Header({
@@ -23,6 +25,8 @@ export default function Header({
   viewMode,
   onToggleView,
   totalSpots,
+  savedCount,
+  onOpenSaved,
 }: HeaderProps) {
   return (
     <header className="sticky top-0 left-0 right-0 z-40 bg-wabi/95 backdrop-blur-md border-b-2 border-sumi shadow-sm font-kaluk">
@@ -64,26 +68,37 @@ export default function Header({
             </div>
           </div>
 
-          {/* Mobile View Toggle */}
-          <div className="flex md:hidden items-center bg-wabi-200 border-2 border-sumi rounded-xl p-0.5 shadow-riso-sm">
+          {/* Mobile Actions: Saved & View Toggle */}
+          <div className="flex md:hidden items-center gap-2">
             <button
-              onClick={() => onToggleView('map')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
-                viewMode === 'map' ? 'bg-sumi text-wabi' : 'text-sumi'
-              }`}
+              onClick={onOpenSaved}
+              className="flex items-center gap-1 px-2.5 py-1.5 bg-wabi border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold text-sumi hover:bg-amber-100"
+              title="View saved sanctuaries"
             >
-              <Map className="w-3.5 h-3.5" />
-              <span>MAP</span>
+              <Heart className={`w-3.5 h-3.5 ${savedCount > 0 ? 'text-vermilion fill-current' : 'text-slate-500'}`} />
+              <span>{savedCount}</span>
             </button>
-            <button
-              onClick={() => onToggleView('zine')}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
-                viewMode === 'zine' ? 'bg-vermilion text-white' : 'text-sumi'
-              }`}
-            >
-              <LayoutGrid className="w-3.5 h-3.5" />
-              <span>ZINE</span>
-            </button>
+
+            <div className="flex items-center bg-wabi-200 border-2 border-sumi rounded-xl p-0.5 shadow-riso-sm">
+              <button
+                onClick={() => onToggleView('map')}
+                className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
+                  viewMode === 'map' ? 'bg-sumi text-wabi' : 'text-sumi'
+                }`}
+              >
+                <Map className="w-3.5 h-3.5" />
+                <span>MAP</span>
+              </button>
+              <button
+                onClick={() => onToggleView('zine')}
+                className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
+                  viewMode === 'zine' ? 'bg-vermilion text-white' : 'text-sumi'
+                }`}
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>ZINE</span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -101,8 +116,17 @@ export default function Header({
           </div>
         </div>
 
-        {/* Desktop View Switcher & Geolocation */}
+        {/* Desktop View Switcher, Saved & Geolocation */}
         <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+          <button
+            onClick={onOpenSaved}
+            className="flex items-center gap-1.5 px-3 py-2 bg-wabi border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold text-sumi hover:bg-amber-100 transition-colors"
+            title="Saved sanctuaries"
+          >
+            <Heart className={`w-3.5 h-3.5 ${savedCount > 0 ? 'text-vermilion fill-current' : 'text-slate-500'}`} />
+            <span>SAVED ({savedCount})</span>
+          </button>
+
           <div className="flex items-center bg-wabi-200 border-2 border-sumi rounded-xl p-0.5 shadow-riso-sm">
             <button
               onClick={() => onToggleView('map')}

@@ -7,6 +7,7 @@ import FilterBar from '@/components/discovery/FilterBar';
 import PlaceCardDrawer from '@/components/discovery/PlaceCardDrawer';
 import ZineLookbook from '@/components/discovery/ZineLookbook';
 import ReportModal from '@/components/discovery/ReportModal';
+import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 
@@ -22,6 +23,8 @@ export default function HomePage() {
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
   const [viewMode, setViewMode] = useState<'map' | 'zine'>('map');
+  const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
+  const [savedPlaceIds, setSavedPlaceIds] = useState<string[]>([]);
 
   const [filters, setFilters] = useState<FilterState>({
     category: 'all',
@@ -31,7 +34,7 @@ export default function HomePage() {
     searchQuery: '',
   });
 
-  // Load master places dataset once on mount
+  // Load master places dataset & saved favorites once on mount
   useEffect(() => {
     async function loadInitialPlaces() {
       try {
@@ -45,7 +48,39 @@ export default function HomePage() {
       }
     }
     loadInitialPlaces();
+
+    try {
+      const favs = JSON.parse(localStorage.getItem('hidden_favs') || '[]');
+      setSavedPlaceIds(favs);
+    } catch {
+      setSavedPlaceIds([]);
+    }
   }, []);
+
+  // Update favorites list whenever drawer state or storage changes
+  const refreshFavorites = () => {
+    try {
+      const favs = JSON.parse(localStorage.getItem('hidden_favs') || '[]');
+      setSavedPlaceIds(favs);
+    } catch {
+      setSavedPlaceIds([]);
+    }
+  };
+
+  const handleRemoveFavorite = (placeId: string) => {
+    const updated = savedPlaceIds.filter((id) => id !== placeId);
+    setSavedPlaceIds(updated);
+    localStorage.setItem('hidden_favs', JSON.stringify(updated));
+  };
+
+  const handleClearAllFavorites = () => {
+    setSavedPlaceIds([]);
+    localStorage.setItem('hidden_favs', JSON.stringify([]));
+  };
+
+  const savedPlaces = useMemo(() => {
+    return allPlaces.filter((p) => savedPlaceIds.includes(p.id));
+  }, [allPlaces, savedPlaceIds]);
 
   // INSTANT in-memory filtering: 0ms latency on filter clicks and search typing!
   const filteredPlaces = useMemo(() => {
@@ -151,6 +186,11 @@ export default function HomePage() {
         viewMode={viewMode}
         onToggleView={(m) => setViewMode(m)}
         totalSpots={filteredPlaces.length}
+        savedCount={savedPlaces.length}
+        onOpenSaved={() => {
+          refreshFavorites();
+          setIsSavedDrawerOpen(true);
+        }}
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
@@ -191,11 +231,27 @@ export default function HomePage() {
       {/* 3. Place Detail Card Drawer */}
       <PlaceCardDrawer
         place={selectedPlace}
-        onClose={() => setSelectedPlace(null)}
+        onClose={() => {
+          setSelectedPlace(null);
+          refreshFavorites();
+        }}
         onOpenReport={(p) => setReportingPlace(p)}
       />
 
-      {/* 4. Safety Report Modal */}
+      {/* 4. Saved Places Tray */}
+      <SavedPlacesDrawer
+        isOpen={isSavedDrawerOpen}
+        onClose={() => setIsSavedDrawerOpen(false)}
+        savedPlaces={savedPlaces}
+        onSelectPlace={(p) => {
+          setSelectedPlace(p);
+          setViewMode('map');
+        }}
+        onRemoveFavorite={handleRemoveFavorite}
+        onClearAll={handleClearAllFavorites}
+      />
+
+      {/* 5. Safety Report Modal */}
       {reportingPlace && (
         <ReportModal
           place={reportingPlace}
