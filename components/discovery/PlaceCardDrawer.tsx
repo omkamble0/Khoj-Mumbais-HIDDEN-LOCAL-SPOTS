@@ -94,10 +94,13 @@ export default function PlaceCardDrawer({
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${destinationQuery}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[480px] transition-transform duration-300 ease-out font-sans">
-      <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[88vh] flex flex-col">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[460px] pb-safe transition-transform duration-300 ease-out font-sans">
+      <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85dvh] md:max-h-[88vh] flex flex-col">
+        {/* Mobile Tactile Drag Pill */}
+        <div className="w-12 h-1.5 bg-sumi/30 rounded-full mx-auto my-2 md:hidden flex-shrink-0" />
+
         {/* 1. Cinematic Hero Photo (Unobstructed, full view) */}
-        <div className="relative h-60 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
+        <div className="relative h-44 sm:h-56 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
           <img
             src={place.photo_url}
             alt={place.name}
@@ -113,11 +116,11 @@ export default function PlaceCardDrawer({
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-sumi/50 to-transparent pointer-events-none" />
 
           {/* Floating Top Left Badges */}
-          <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
-            <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
+          <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 flex flex-wrap items-center gap-1.5 z-10">
+            <span className="px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
               {place.category.toUpperCase()}
             </span>
-            <span className={`px-2.5 py-1 rounded-lg text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
+            <span className={`px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
               place.spot_tier === 'iconic'
                 ? 'bg-amber-400 text-sumi border-amber-500/50'
                 : place.spot_tier === 'underrated'
@@ -127,17 +130,17 @@ export default function PlaceCardDrawer({
               {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
             </span>
             {place.distance_meters !== undefined && (
-              <span className="text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-2.5 py-1 rounded-lg shadow-sm">
+              <span className="text-[10px] sm:text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-2 sm:px-2.5 py-1 rounded-lg shadow-sm">
                 {formatDistance(place.distance_meters)}
               </span>
             )}
           </div>
 
           {/* Floating Top Right Actions */}
-          <div className="absolute top-3 right-3 flex items-center gap-2 z-10">
+          <div className="absolute top-2.5 sm:top-3 right-2.5 sm:right-3 flex items-center gap-2 z-10">
             <button
               onClick={toggleFavorite}
-              className={`p-2.5 rounded-xl border border-sumi/40 backdrop-blur-md shadow-md transition-all ${
+              className={`p-2 sm:p-2.5 rounded-xl border border-sumi/40 backdrop-blur-md shadow-md transition-all active:scale-95 ${
                 isFavorited
                   ? 'bg-vermilion text-white'
                   : 'bg-wabi/90 text-sumi hover:bg-white'
@@ -148,7 +151,7 @@ export default function PlaceCardDrawer({
             </button>
             <button
               onClick={onClose}
-              className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white transition-colors"
+              className="p-2 sm:p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -156,18 +159,18 @@ export default function PlaceCardDrawer({
         </div>
 
         {/* 2. Scrollable Editorial Body */}
-        <div className="p-5 overflow-y-auto space-y-4">
+        <div className="p-4 sm:p-5 overflow-y-auto space-y-3.5 sm:space-y-4">
           {/* Title & Location Header (Spacious, elegant, natural room to breathe) */}
-          <div className="space-y-1.5 pb-1">
-            <h2 className="font-display font-normal text-3xl md:text-4xl text-sumi leading-[1.3] tracking-wide break-words pt-1">
+          <div className="space-y-1 pb-0.5">
+            <h2 className="font-display font-normal text-2xl sm:text-3xl md:text-4xl text-sumi leading-[1.25] tracking-wide break-words pt-1">
               {place.name}
             </h2>
-            <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono pt-0.5">
+            <div className="flex flex-wrap items-center justify-between gap-1.5 text-xs font-mono pt-0.5">
               <span className="text-slate-600 font-semibold tracking-wide flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-vermilion inline-block"></span>
                 {place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}
               </span>
-              <span className="text-amber-800 font-bold bg-amber-100/80 border border-amber-300/50 px-2.5 py-0.5 rounded-md tracking-wider">
+              <span className="text-amber-800 font-bold bg-amber-100/80 border border-amber-300/50 px-2 py-0.5 rounded-md tracking-wider text-[11px]">
                 {place.latitude.toFixed(4)}°N, {place.longitude.toFixed(4)}°E
               </span>
             </div>
@@ -269,22 +272,22 @@ export default function PlaceCardDrawer({
           </div>
 
           {/* Action Row */}
-          <div className="pt-3 flex flex-col gap-2.5 border-t border-sumi/15">
-            <div className="flex items-center gap-2.5">
+          <div className="pt-3 pb-2 sm:pb-0 flex flex-col gap-2.5 border-t border-sumi/15">
+            <div className="flex items-center gap-2 sm:gap-2.5">
               <a
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2.5 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3.5 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
+                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group active:scale-[0.99]"
               >
                 <Navigation className="w-4 h-4 text-amber-300" />
-                <span>Wander Here (Directions)</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <span className="truncate">WANDER HERE (DIRECTIONS)</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
               </a>
 
               <button
                 onClick={handleShare}
-                className="p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-colors"
+                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-colors active:scale-95 flex-shrink-0"
                 title="Share this spot"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
@@ -292,7 +295,7 @@ export default function PlaceCardDrawer({
 
               <button
                 onClick={() => onOpenReport(place)}
-                className="p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors"
+                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors active:scale-95 flex-shrink-0"
                 title="Report issue (closed, private property, unsafe)"
               >
                 <AlertTriangle className="w-4 h-4" />
@@ -303,7 +306,7 @@ export default function PlaceCardDrawer({
               href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center text-xs font-mono text-slate-500 hover:text-vermilion font-medium underline tracking-wide"
+              className="text-center text-[11px] sm:text-xs font-mono text-slate-500 hover:text-vermilion font-medium underline tracking-wide py-1"
             >
               Verify official landmark card & reviews on Google Maps ↗
             </a>

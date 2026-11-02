@@ -190,7 +190,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-wabi flex flex-col font-sans">
+    <div className="relative w-screen h-[100dvh] overflow-hidden bg-wabi flex flex-col font-sans">
       {/* 1. Global Non-Overlapping App Header */}
       <Header
         currentCity="Mumbai"
@@ -209,11 +209,11 @@ export default function HomePage() {
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
-      <main className="relative flex-1 w-full h-[calc(100vh-80px)] overflow-hidden">
+      <main className="relative flex-1 w-full h-[calc(100dvh-130px)] md:h-[calc(100dvh-80px)] overflow-hidden">
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
             {/* Docked Map Filter Island */}
-            <div className="absolute top-4 left-4 right-4 md:left-6 md:right-auto md:max-w-2xl z-20 pointer-events-auto">
+            <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-6 sm:right-auto sm:max-w-2xl z-20 pointer-events-auto">
               <FilterBar
                 filters={filters}
                 onChange={handleFilterChange}

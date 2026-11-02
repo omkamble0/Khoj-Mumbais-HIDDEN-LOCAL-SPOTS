@@ -23,31 +23,31 @@ export default function ZineLookbook({
   onFilterChange,
 }: ZineLookbookProps) {
   return (
-    <div className="w-full h-full overflow-y-auto px-4 md:px-8 py-6 bg-washi font-sans">
+    <div className="w-full h-full overflow-y-auto px-3 sm:px-4 md:px-8 py-4 sm:py-6 bg-washi font-sans">
       {/* Hero Header Banner */}
-      <div className="max-w-6xl mx-auto mb-6 bg-sumi text-wabi p-6 md:p-8 rounded-3xl border-2 border-sumi shadow-riso relative overflow-hidden">
+      <div className="max-w-6xl mx-auto mb-4 sm:mb-6 bg-sumi text-wabi p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-sumi shadow-riso relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="px-2.5 py-1 rounded text-xs font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2">
+            <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded text-[10px] sm:text-xs font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
               MUMBAI ISSUE #01 · KHOJ
             </span>
-            <span className="text-xs font-mono text-slate-300">
+            <span className="text-[10px] sm:text-xs font-mono text-slate-300">
               18.9453° N, 72.8258° E · HIDDEN LOCAL SPOTS
             </span>
           </div>
 
-          <h2 className="font-display font-normal text-4xl md:text-6xl tracking-wide text-wabi leading-[1.25] mb-2">
+          <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-6xl tracking-wide text-wabi leading-[1.25] mb-2">
             Get Lost. <span className="italic font-normal text-amber-300">Feel Found.</span>
           </h2>
 
-          <p className="text-sm md:text-base text-slate-200 font-sans leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-slate-200 font-sans leading-relaxed">
             Curated quiet sanctuaries, Portuguese battlements engulfed by banyan roots, 66-million-year-old volcanic basalt columns, and sacred freshwater tanks where the city whispers.
           </p>
         </div>
       </div>
 
       {/* Integrated Filter Bar (Never overlapping!) */}
-      <div className="max-w-6xl mx-auto mb-6">
+      <div className="max-w-6xl mx-auto mb-4 sm:mb-6">
         <FilterBar
           filters={filters}
           onChange={onFilterChange}
@@ -56,16 +56,16 @@ export default function ZineLookbook({
       </div>
 
       {/* Grid of Clean Editorial Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pb-28">
         {places.map((place) => {
           return (
             <article
               key={place.id}
               onClick={() => onSelectPlace(place)}
-              className="group cursor-pointer bg-wabi rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between"
+              className="group cursor-pointer bg-wabi rounded-2xl sm:rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between active:scale-[0.99]"
             >
               {/* Card Media (Clean, cinematic, no awkward bottom black bar) */}
-              <div className="relative h-60 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi">
+              <div className="relative h-48 sm:h-60 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi">
                 <img
                   src={place.photo_url}
                   alt={place.name}
@@ -107,44 +107,44 @@ export default function ZineLookbook({
               </div>
 
               {/* Card Content (Airy, expansive, sophisticated editorial typography) */}
-              <div className="p-5 flex flex-col flex-1 justify-between gap-4">
-                <div className="space-y-2">
+              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between gap-3 sm:gap-4">
+                <div className="space-y-1.5 sm:space-y-2">
                   {/* Location Subtitle */}
                   <div className="flex items-center justify-between text-xs font-mono text-slate-500">
-                    <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-vermilion inline-block"></span>
-                      {place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}
+                    <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-1.5 truncate max-w-[200px]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-vermilion inline-block flex-shrink-0"></span>
+                      <span className="truncate">{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
                     </span>
-                    <span className="text-emerald-700 font-bold tracking-wider uppercase text-[11px]">
+                    <span className="text-emerald-700 font-bold tracking-wider uppercase text-[10px] sm:text-[11px] flex-shrink-0">
                       {place.safety_level === 'high' ? 'Verified Safe' : 'Daylight Visit'}
                     </span>
                   </div>
 
                   {/* Place Title in Ananda Namaste Display with proper line-height */}
-                  <h3 className="font-display font-normal text-2xl md:text-3xl text-sumi leading-[1.3] tracking-wide pt-1 group-hover:text-vermilion transition-colors">
+                  <h3 className="font-display font-normal text-2xl sm:text-2xl md:text-3xl text-sumi leading-[1.3] tracking-wide pt-1 group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h3>
 
                   {/* Narrative Snippet */}
-                  <p className="text-sm text-slate-700 line-clamp-3 leading-relaxed font-sans pt-0.5">
+                  <p className="text-xs sm:text-sm text-slate-700 line-clamp-3 leading-relaxed font-sans pt-0.5">
                     {place.description}
                   </p>
                 </div>
 
                 {/* Footer Strip with Tags and Action */}
-                <div className="pt-3 border-t border-sumi/15 flex items-center justify-between">
+                <div className="pt-2.5 sm:pt-3 border-t border-sumi/15 flex items-center justify-between">
                   <div className="flex flex-wrap items-center gap-1.5">
                     {place.vibe_tags.slice(0, 2).map((t) => (
                       <span
                         key={t}
-                        className="text-xs font-mono bg-wabi-100 border border-sumi/20 px-2.5 py-0.5 rounded-md text-slate-700 font-medium"
+                        className="text-[10px] sm:text-xs font-mono bg-wabi-100 border border-sumi/20 px-2 sm:px-2.5 py-0.5 rounded-md text-slate-700 font-medium"
                       >
                         #{t}
                       </span>
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-0.5 transition-all">
+                  <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-0.5 transition-all flex-shrink-0">
                     VIEW SPOT <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>

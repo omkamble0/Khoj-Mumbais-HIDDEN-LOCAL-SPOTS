@@ -29,7 +29,7 @@ export default function SavedPlacesDrawer({
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-sumi/40 backdrop-blur-sm transition-opacity font-sans">
-      <div className="relative w-full max-w-md h-full bg-wabi border-l-2 border-sumi shadow-2xl flex flex-col justify-between overflow-hidden">
+      <div className="relative w-full max-w-md h-full bg-wabi border-l-2 border-sumi shadow-2xl flex flex-col justify-between overflow-hidden pb-safe">
         {/* Header */}
         <div className="p-4 bg-wabi border-b-2 border-sumi flex items-center justify-between">
           <div className="flex items-center gap-2.5">

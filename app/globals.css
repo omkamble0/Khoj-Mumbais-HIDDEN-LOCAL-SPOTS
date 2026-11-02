@@ -111,6 +111,18 @@ body {
   padding: 2px 8px !important;
 }
 
+/* Hide bulky zoom buttons on mobile phones where natural pinch-to-zoom is used */
+@media (max-width: 768px) {
+  .leaflet-control-zoom {
+    display: none !important;
+  }
+}
+
+/* Safe Area Insets for iPhones with bottom home indicator bar */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0.75rem));
+}
+
 /* Custom Marker Smoothing & Adaptive Progressive Zoom */
 .custom-pin {
   pointer-events: auto;

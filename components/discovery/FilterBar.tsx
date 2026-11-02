@@ -51,16 +51,16 @@ const RADII = [5, 10, 20, 40];
 
 export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
   return (
-    <div className="bg-wabi/95 backdrop-blur-md p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2.5">
+    <div className="bg-wabi/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2 sm:space-y-2.5">
       {/* Category Horizontal Scrolling Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-0.5 sm:pb-1 no-scrollbar">
         {CATEGORIES.map((cat) => {
           const isActive = filters.category === cat.id;
           return (
             <button
               key={cat.id}
               onClick={() => onChange({ category: cat.id })}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all duration-150 border-2 ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all duration-150 border-2 ${
                 isActive
                   ? 'bg-vermilion text-white border-sumi shadow-riso-sm translate-y-[-1px]'
                   : 'bg-wabi-100 text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi-200'
@@ -73,15 +73,15 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         })}
       </div>
 
-      {/* Spot Tier & Radius Strip */}
-      <div className="flex flex-wrap items-center justify-between gap-2.5 text-xs border-t border-sumi/15 pt-2.5">
+      {/* Spot Tier & Radius Strip (Single horizontal scrollable row on mobile, full width flex on desktop) */}
+      <div className="flex items-center justify-between gap-2 overflow-x-auto no-scrollbar border-t border-sumi/15 pt-2 text-xs">
         {/* Tier Selector (Hidden vs Underrated vs Iconic) */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
           {SPOT_TIERS.map((tier) => (
             <button
               key={tier.id}
               onClick={() => onChange({ spotTier: tier.id })}
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold border transition-colors ${
+              className={`px-2 sm:px-3 py-1 rounded-lg text-[11px] sm:text-xs font-mono font-bold whitespace-nowrap border transition-colors ${
                 filters.spotTier === tier.id
                   ? 'bg-sumi text-wabi border-sumi shadow-sm'
                   : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
@@ -93,14 +93,14 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         </div>
 
         {/* Radius Filter & Total Count */}
-        <div className="flex items-center gap-2.5 font-mono">
-          <div className="flex items-center gap-1.5">
-            <span className="text-xs font-bold text-slate-600 uppercase">RADIUS:</span>
+        <div className="flex items-center gap-2 sm:gap-2.5 font-mono flex-shrink-0">
+          <div className="flex items-center gap-1 sm:gap-1.5">
+            <span className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase hidden xs:inline">RADIUS:</span>
             {RADII.map((r) => (
               <button
                 key={r}
                 onClick={() => onChange({ radiusKm: r })}
-                className={`px-2.5 py-1 rounded-md font-mono text-xs font-bold border transition-colors ${
+                className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md font-mono text-[11px] sm:text-xs font-bold border transition-colors ${
                   filters.radiusKm === r
                     ? 'bg-vermilion text-white border-sumi shadow-sm'
                     : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
@@ -111,7 +111,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
             ))}
           </div>
 
-          <span className="font-mono text-xs font-black bg-wabi-200 text-sumi border border-sumi/40 px-2.5 py-1 rounded-full shadow-sm">
+          <span className="font-mono text-[10px] sm:text-xs font-black bg-wabi-200 text-sumi border border-sumi/40 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm whitespace-nowrap">
             {totalFound} SPOTS
           </span>
         </div>
