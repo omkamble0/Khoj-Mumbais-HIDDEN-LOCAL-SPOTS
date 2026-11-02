@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-import { Place } from '@/lib/types';
+import { getPlaceById } from '@/lib/places';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,15 +9,7 @@ export async function GET(
 ) {
   try {
     const { id } = params;
-    const filePath = path.join(process.cwd(), 'data', 'places_mumbai.json');
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ error: 'Data file not found' }, { status: 404 });
-    }
-
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const places: Place[] = JSON.parse(fileContent);
-
-    const place = places.find((p) => p.id === id || p.slug === id);
+    const place = getPlaceById(id);
     if (!place) {
       return NextResponse.json({ error: 'Place not found' }, { status: 404 });
     }

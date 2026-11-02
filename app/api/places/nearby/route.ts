@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { Place, PlaceCategory, SpotTier } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
+import { getAllPlaces } from '@/lib/places';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,13 +17,10 @@ export async function GET(request: NextRequest) {
     const maxCrowd = parseInt(searchParams.get('maxCrowd') || '5', 10);
     const query = (searchParams.get('q') || '').toLowerCase().trim();
 
-    const filePath = path.join(process.cwd(), 'data', 'places_mumbai.json');
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ error: 'Data file not found' }, { status: 404 });
+    const places: Place[] = getAllPlaces();
+    if (places.length === 0) {
+      return NextResponse.json({ error: 'No places found' }, { status: 404 });
     }
-
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const places: Place[] = JSON.parse(fileContent);
 
     const enrichedPlaces: Place[] = places.map((place) => {
       const distance = calculateDistanceMeters(lat, lng, place.latitude, place.longitude);

@@ -7,7 +7,11 @@ export type PlaceCategory =
   | 'forts'
   | 'viewpoints'
   | 'waterfront'
-  | 'heritage';
+  | 'heritage'
+  | 'books'
+  | 'culture'
+  | 'spiritual'
+  | 'bazaars';
 
 export type SpotTier = 'all' | 'hidden_gem' | 'underrated' | 'iconic';
 export type AccessType = 'public' | 'permissive' | 'commercial' | 'trail_required';

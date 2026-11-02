@@ -14,14 +14,18 @@ interface DiscoveryMapProps {
 
 // Category Theme Accents
 const CATEGORY_COLORS: Record<string, { dot: string; border: string; bg: string }> = {
+  cafes: { dot: '#d97706', border: '#b45309', bg: '#fffbeb' },      // Amber
+  forts: { dot: '#2563eb', border: '#1d4ed8', bg: '#eff6ff' },      // Blue
   walks: { dot: '#059669', border: '#047857', bg: '#ecfdf5' },      // Emerald Walk
   treks: { dot: '#15803d', border: '#166534', bg: '#f0fdf4' },      // Forest Trek
   gardens: { dot: '#10b981', border: '#059669', bg: '#d1fae5' },    // Garden Green
-  cafes: { dot: '#d97706', border: '#b45309', bg: '#fffbeb' },      // Amber
-  forts: { dot: '#2563eb', border: '#1d4ed8', bg: '#eff6ff' },      // Blue
   viewpoints: { dot: '#ff3e18', border: '#e52c07', bg: '#fff1ee' }, // Vermilion
   waterfront: { dot: '#0891b2', border: '#0e7490', bg: '#ecfeff' }, // Cyan
   heritage: { dot: '#7c3aed', border: '#6d28d9', bg: '#f5f3ff' },   // Purple
+  books: { dot: '#b45309', border: '#92400e', bg: '#fef3c7' },      // Warm Ochre
+  culture: { dot: '#e11d48', border: '#be123c', bg: '#ffe4e6' },    // Rose
+  spiritual: { dot: '#6366f1', border: '#4f46e5', bg: '#e0e7ff' },  // Indigo
+  bazaars: { dot: '#ea580c', border: '#c2410c', bg: '#ffedd5' },    // Terracotta
 };
 
 export default function DiscoveryMap({

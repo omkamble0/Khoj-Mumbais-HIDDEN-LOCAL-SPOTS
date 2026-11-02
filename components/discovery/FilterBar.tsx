@@ -12,6 +12,10 @@ import {
   Eye,
   Droplets,
   Landmark,
+  BookOpen,
+  Palette,
+  Sparkles,
+  ShoppingBag,
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -22,14 +26,18 @@ interface FilterBarProps {
 
 const CATEGORIES: { id: PlaceCategory; label: string; icon: React.ReactNode }[] = [
   { id: 'all', label: 'ALL SPOTS', icon: <Compass className="w-3.5 h-3.5" /> },
+  { id: 'cafes', label: 'CAFÉS', icon: <Coffee className="w-3.5 h-3.5" /> },
+  { id: 'forts', label: 'FORTS', icon: <Shield className="w-3.5 h-3.5" /> },
   { id: 'walks', label: 'WALKS', icon: <Footprints className="w-3.5 h-3.5" /> },
   { id: 'treks', label: 'TREKS', icon: <Mountain className="w-3.5 h-3.5" /> },
   { id: 'gardens', label: 'GARDENS', icon: <Flower2 className="w-3.5 h-3.5" /> },
-  { id: 'cafes', label: 'CAFÉS', icon: <Coffee className="w-3.5 h-3.5" /> },
-  { id: 'forts', label: 'FORTS', icon: <Shield className="w-3.5 h-3.5" /> },
   { id: 'viewpoints', label: 'VIEWPOINTS', icon: <Eye className="w-3.5 h-3.5" /> },
   { id: 'waterfront', label: 'WATERFRONT', icon: <Droplets className="w-3.5 h-3.5" /> },
   { id: 'heritage', label: 'HERITAGE', icon: <Landmark className="w-3.5 h-3.5" /> },
+  { id: 'books', label: 'BOOKS & LIBS', icon: <BookOpen className="w-3.5 h-3.5" /> },
+  { id: 'culture', label: 'ART & CULTURE', icon: <Palette className="w-3.5 h-3.5" /> },
+  { id: 'spiritual', label: 'SACRED PLACES', icon: <Sparkles className="w-3.5 h-3.5" /> },
+  { id: 'bazaars', label: 'BAZAARS', icon: <ShoppingBag className="w-3.5 h-3.5" /> },
 ];
 
 const SPOT_TIERS: { id: SpotTier; label: string }[] = [
