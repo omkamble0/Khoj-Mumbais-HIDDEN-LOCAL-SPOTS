@@ -158,5 +158,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_bazaars"
+  },
+  {
+    "id": "mumbai-lalbaug-mirchi-galli",
+    "slug": "lalbaug-mirchi-galli-spice-market",
+    "name": "Lalbaug Mirchi Galli",
+    "short_name": "Mirchi Galli",
+    "category": "bazaars",
+    "subcategory": "Century-Old Pungent Stone-Ground Spice Alley",
+    "spot_tier": "underrated",
+    "city": "Mumbai",
+    "neighborhood": "Lalbaug, Parel",
+    "latitude": 18.9912,
+    "longitude": 72.8365,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Pungent spice aromas in the air. Wear comfortable walking shoes.",
+    "hiddenness_score": 0.76,
+    "vibe_score": 0.94,
+    "safety_score": 0.94,
+    "accessibility_score": 0.92,
+    "crowd_level": 3,
+    "best_time_to_visit": "Morning (9:30 AM - 12:00 PM) when sun shines on crimson chili mounds",
+    "description": "An intense sensory explosion where families bring custom spice recipes to be ground in massive vintage pounding machines amidst mounds of fiery Kashmiri and Byadgi red chilies.",
+    "vibe_tags": [
+      "spice-grinding",
+      "red-chili-mounds",
+      "sensory-bazaar",
+      "heritage-trade",
+      "lalbaug"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

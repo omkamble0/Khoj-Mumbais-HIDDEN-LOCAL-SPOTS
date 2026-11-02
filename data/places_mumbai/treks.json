@@ -158,5 +158,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_treks"
+  },
+  {
+    "id": "mumbai-yeoor-bamboo-sanctuary",
+    "slug": "yeoor-hills-bamboo-grove-trail",
+    "name": "Yeoor Bamboo Trail",
+    "short_name": "Yeoor Bamboo Grove",
+    "category": "treks",
+    "subcategory": "Wild Bamboo Canopy & Natural Spring Hike",
+    "spot_tier": "hidden_gem",
+    "city": "Thane",
+    "neighborhood": "Upvan Buffer Zone, Thane West",
+    "latitude": 19.2312,
+    "longitude": 72.9415,
+    "access_type": "trail_required",
+    "safety_level": "medium",
+    "safety_notes": "Gentle gradient trail. Wear trail shoes; pristine natural stream crossings.",
+    "hiddenness_score": 0.89,
+    "vibe_score": 0.95,
+    "safety_score": 0.86,
+    "accessibility_score": 0.76,
+    "crowd_level": 1,
+    "best_time_to_visit": "Sunrise (6:30 AM - 9:00 AM) when fog covers the bamboo canopies",
+    "description": "A secluded forest path branching off the main Yeoor ridge, meandering through towering wild bamboo groves, seasonal mountain streams, and sweet morning mountain air.",
+    "vibe_tags": [
+      "bamboo-canopy",
+      "mountain-streams",
+      "misty-woods",
+      "deep-nature",
+      "thane"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

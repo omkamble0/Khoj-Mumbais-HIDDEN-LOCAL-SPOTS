@@ -158,5 +158,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_culture"
+  },
+  {
+    "id": "mumbai-artisans-centre-kala-ghoda",
+    "slug": "artisans-indigenous-craft-gallery",
+    "name": "ARTISANS' Gallery",
+    "short_name": "ARTISANS' Gallery",
+    "category": "culture",
+    "subcategory": "Heritage Handcrafted Indigenous Arts Enclave",
+    "spot_tier": "underrated",
+    "city": "Mumbai",
+    "neighborhood": "Kala Ghoda, Fort",
+    "latitude": 18.9282,
+    "longitude": 72.8329,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Intimate gallery space. Free walk-in exhibitions of indigenous mastercraft.",
+    "hiddenness_score": 0.77,
+    "vibe_score": 0.95,
+    "safety_score": 0.98,
+    "accessibility_score": 0.94,
+    "crowd_level": 1,
+    "best_time_to_visit": "Afternoon cultural browsing",
+    "description": "An intimate social enterprise gallery showcasing authentic Indian handmade textiles, tribal art, and ceramics in a heritage setting, creating a bridge between master artisans and city explorers.",
+    "vibe_tags": [
+      "indigenous-craft",
+      "handloom-textiles",
+      "tribal-art",
+      "kala-ghoda",
+      "intimate-space"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

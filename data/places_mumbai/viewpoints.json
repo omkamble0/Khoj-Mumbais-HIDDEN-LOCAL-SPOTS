@@ -158,5 +158,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_viewpoints"
+  },
+  {
+    "id": "mumbai-khandeshwar-lake-promontory",
+    "slug": "khandeshwar-lake-sahayadri-view",
+    "name": "Khandeshwar Lake Lookout",
+    "short_name": "Khandeshwar Lake",
+    "category": "viewpoints",
+    "subcategory": "Misty Sahyadri Mountain Range Promontory",
+    "spot_tier": "underrated",
+    "city": "Navi Mumbai",
+    "neighborhood": "Panvel / Khanda Colony",
+    "latitude": 18.9984,
+    "longitude": 73.1092,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Paved lakeside stone promenade. Benches facing mountain ridges.",
+    "hiddenness_score": 0.86,
+    "vibe_score": 0.93,
+    "safety_score": 0.94,
+    "accessibility_score": 0.88,
+    "crowd_level": 1,
+    "best_time_to_visit": "Sunrise or overcast dusk for mountain silhouettes",
+    "description": "A tranquil freshwater lake surrounded by the jagged silhouettes of the Sahyadri mountains, offering glass-like water reflections, cool breezes, and zero commercial noise.",
+    "vibe_tags": [
+      "lake-lookout",
+      "mountain-silhouettes",
+      "glass-reflections",
+      "serenity",
+      "panvel"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

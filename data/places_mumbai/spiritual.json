@@ -190,5 +190,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_spiritual"
+  },
+  {
+    "id": "mumbai-nipponzan-myohoji-temple",
+    "slug": "nipponzan-myohoji-japanese-buddhist-temple",
+    "name": "Nipponzan Myohoji Temple",
+    "short_name": "Japanese Buddhist Temple",
+    "category": "spiritual",
+    "subcategory": "1931 Japanese Buddhist Sanctuary & Peace Drum",
+    "spot_tier": "hidden_gem",
+    "city": "Mumbai",
+    "neighborhood": "Worli Naka",
+    "latitude": 18.9982,
+    "longitude": 72.8184,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Shoeless entrance. Quiet chanting rituals morning and evening.",
+    "hiddenness_score": 0.94,
+    "vibe_score": 0.98,
+    "safety_score": 0.98,
+    "accessibility_score": 0.91,
+    "crowd_level": 1,
+    "best_time_to_visit": "Evening chanting (5:30 PM - 6:30 PM) with resonating peace drums",
+    "description": "Founded in 1931 by Japanese monk Nichidatsu Fuji, this temple is an oasis of silence featuring authentic stone toro lanterns, Japanese calligraphy, golden Buddha statues, and rhythmic drum chanting.",
+    "vibe_tags": [
+      "japanese-temple",
+      "peace-drums",
+      "taiko-echoes",
+      "deep-tranquility",
+      "worli"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

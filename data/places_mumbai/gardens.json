@@ -190,5 +190,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_gardens"
+  },
+  {
+    "id": "mumbai-godrej-mangrove-park",
+    "slug": "godrej-mangrove-marine-park",
+    "name": "Soonabai Godrej Marine Ecology Park",
+    "short_name": "Godrej Mangrove Sanctuary",
+    "category": "gardens",
+    "subcategory": "2,000-Acre Coastal Wetland & Bird Haven",
+    "spot_tier": "hidden_gem",
+    "city": "Mumbai",
+    "neighborhood": "Vikhroli East",
+    "latitude": 19.0982,
+    "longitude": 72.9348,
+    "access_type": "permissive",
+    "safety_level": "high",
+    "safety_notes": "Protected private reserve. Elevated wooden boardwalk and birdwatching hide.",
+    "hiddenness_score": 0.92,
+    "vibe_score": 0.96,
+    "safety_score": 0.98,
+    "accessibility_score": 0.85,
+    "crowd_level": 1,
+    "best_time_to_visit": "Winter morning (7:30 AM - 10:30 AM) during high avian migration",
+    "description": "Mumbai's largest private mangrove reserve spanning 2,000 acres, featuring elevated wooden boardwalks over wetland mudflats, 206 bird species, and vast silence on the eastern coast.",
+    "vibe_tags": [
+      "mangrove-reserve",
+      "wooden-boardwalk",
+      "birdwatching-tower",
+      "wetlands",
+      "vikhroli"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

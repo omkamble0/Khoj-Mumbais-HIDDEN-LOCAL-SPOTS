@@ -286,5 +286,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_forts"
+  },
+  {
+    "id": "mumbai-riwa-fort-kala-killa",
+    "slug": "riwa-fort-kala-killa-dharavi",
+    "name": "Riwa Fort (Kala Killa)",
+    "short_name": "Riwa Fort",
+    "category": "forts",
+    "subcategory": "1737 Black Stone River Guard Bastion",
+    "spot_tier": "hidden_gem",
+    "city": "Mumbai",
+    "neighborhood": "Dharavi / Mahim Creek",
+    "latitude": 19.0494,
+    "longitude": 72.8582,
+    "access_type": "public",
+    "safety_level": "medium",
+    "safety_notes": "Maintained by ASI inside municipal garden. Visit during daylight hours.",
+    "hiddenness_score": 0.95,
+    "vibe_score": 0.85,
+    "safety_score": 0.84,
+    "accessibility_score": 0.8,
+    "crowd_level": 1,
+    "best_time_to_visit": "Morning (8:00 AM - 10:30 AM)",
+    "description": "Constructed in 1737 by Governor Gerald Aungier out of dark volcanic basalt to guard the northern boundary of Bombay against Portuguese and Maratha forces on the Mahim river creek.",
+    "vibe_tags": [
+      "black-stone-fort",
+      "1737-bastion",
+      "historic-ruin",
+      "asi-monument",
+      "central-mumbai"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

@@ -190,5 +190,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_waterfront"
+  },
+  {
+    "id": "mumbai-erangal-beach-dunes",
+    "slug": "erangal-beach-sand-dunes-madh",
+    "name": "Erangal Beach Dunes",
+    "short_name": "Erangal Sand Dunes",
+    "category": "waterfront",
+    "subcategory": "Secluded Coastal Village & 1575 Stone Church",
+    "spot_tier": "hidden_gem",
+    "city": "Mumbai",
+    "neighborhood": "Erangal, Madh Island",
+    "latitude": 19.1482,
+    "longitude": 72.7938,
+    "access_type": "public",
+    "safety_level": "medium",
+    "safety_notes": "Uncommercialized village beach. Respect fishing outriggers.",
+    "hiddenness_score": 0.91,
+    "vibe_score": 0.96,
+    "safety_score": 0.85,
+    "accessibility_score": 0.72,
+    "crowd_level": 1,
+    "best_time_to_visit": "Late afternoon (4:00 PM - 6:30 PM) sunset",
+    "description": "A quiet coastal haven far from Mumbai's noisy beaches, where golden sand dunes meet crashing waves right beside the 1575 Portuguese stone Church of St. Bonaventure.",
+    "vibe_tags": [
+      "sand-dunes",
+      "1575-stone-church",
+      "wooden-boats",
+      "secluded-beach",
+      "madh"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]

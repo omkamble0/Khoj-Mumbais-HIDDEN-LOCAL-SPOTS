@@ -125,5 +125,37 @@
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
     "source": "curated_books"
+  },
+  {
+    "id": "mumbai-peoples-free-reading-room",
+    "slug": "peoples-free-reading-room-dhobi-talao",
+    "name": "People's Free Reading Room",
+    "short_name": "Free Reading Room",
+    "category": "books",
+    "subcategory": "1891 Victorian Public Reading Sanctuary",
+    "spot_tier": "hidden_gem",
+    "city": "Mumbai",
+    "neighborhood": "Dhobi Talao / Marine Lines",
+    "latitude": 18.9431,
+    "longitude": 72.8279,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Free historic public library. Total pin-drop silence observed.",
+    "hiddenness_score": 0.89,
+    "vibe_score": 0.96,
+    "safety_score": 0.98,
+    "accessibility_score": 0.95,
+    "crowd_level": 1,
+    "best_time_to_visit": "Afternoon reading (2:00 PM - 5:00 PM) by tall shuttered windows",
+    "description": "Founded in 1891, this quiet Victorian reading hall with high beamed ceilings, brass lamps, and mahogany reading desks provides free daily access to newspapers and antique volumes in deep silence.",
+    "vibe_tags": [
+      "1891-reading-hall",
+      "victorian-desks",
+      "pin-drop-silence",
+      "free-library",
+      "dhobi-talao"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_underrated"
   }
 ]
