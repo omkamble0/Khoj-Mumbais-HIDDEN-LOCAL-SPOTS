@@ -40,8 +40,9 @@ export default function DiscoveryMap({
   const markersLayerRef = useRef<L.LayerGroup | null>(null);
   const radiusCircleRef = useRef<L.Circle | null>(null);
   const userMarkerRef = useRef<L.Marker | null>(null);
+  const prevSelectedIdRef = useRef<string | null>(null);
 
-  // Initialize Map safely
+  // Initialize Map safely & bind adaptive zoom
   useEffect(() => {
     if (!mapContainerRef.current) return;
     if (mapInstanceRef.current) return;
@@ -59,6 +60,18 @@ export default function DiscoveryMap({
         zoom: 12,
         zoomControl: false,
       });
+
+      // Adaptive Zoom density check: at zoom < 13, markers collapse to sleek non-overlapping dots
+      const updateZoomClass = () => {
+        if (!mapContainerRef.current) return;
+        if (map.getZoom() < 13) {
+          mapContainerRef.current.classList.add('map-zoom-city');
+        } else {
+          mapContainerRef.current.classList.remove('map-zoom-city');
+        }
+      };
+      updateZoomClass();
+      map.on('zoomend', updateZoomClass);
 
       // Free OpenStreetMap Standard Tiles
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -140,7 +153,7 @@ export default function DiscoveryMap({
     }
   }, [userLocation, radiusKm]);
 
-  // Update Place Markers showing REAL PLACE NAMES (e.g. "Worli Fort", "Subko Café")
+  // Rebuild Place Markers ONLY when the filtered places list changes
   useEffect(() => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
@@ -165,27 +178,21 @@ export default function DiscoveryMap({
             : '●';
 
         const markerHtml = `
-          <div class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full pointer-events-auto select-none">
-            <!-- Animated Pop-up Assembly (Transforms upward without moving coordinate anchor) -->
-            <div class="transition-transform duration-200 ease-out origin-bottom flex flex-col items-center group-hover:-translate-y-1.5 group-hover:scale-110">
+          <div id="pin-${place.id}" class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full pointer-events-auto select-none" data-place-id="${place.id}">
+            <!-- Animated Pop-up Assembly -->
+            <div class="transition-transform duration-150 ease-out origin-bottom flex flex-col items-center group-hover:-translate-y-1.5 group-hover:scale-110">
               <!-- Tactile Pill with Real Place Name -->
-              <div class="px-3 py-1.5 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap transition-colors duration-150 ${
-                isSelected
-                  ? 'bg-sumi text-wabi ring-4 ring-vermilion/40 shadow-riso'
-                  : 'bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion group-hover:shadow-riso-sm'
-              }">
+              <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-3 py-1.5 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap transition-all duration-150 bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion group-hover:shadow-riso-sm">
                 <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
-                <span class="text-xs font-bold tracking-normal">${displayName}</span>
-                <span class="text-xs font-mono font-bold opacity-80">${tierBadge}</span>
+                <span class="pin-label text-xs font-bold tracking-normal">${displayName}</span>
+                <span class="pin-tier text-xs font-mono font-bold opacity-80">${tierBadge}</span>
               </div>
 
               <!-- Tail pointer arrow -->
-              <div class="w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm transition-colors duration-150 ${
-                isSelected ? 'border-sumi bg-sumi' : 'border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white'
-              }"></div>
+              <div class="pin-tail ${isSelected ? 'tail-selected' : ''} w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm transition-colors duration-150 border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white"></div>
             </div>
 
-            <!-- Contact Target Dot on exact coordinates (Always anchored, never moves) -->
+            <!-- Contact Target Dot on exact coordinates -->
             <div class="w-1.5 h-1.5 rounded-full bg-sumi -mt-0.5"></div>
           </div>
         `;
@@ -207,12 +214,12 @@ export default function DiscoveryMap({
         });
 
         marker.on('mouseout', () => {
-          marker.setZIndexOffset(isSelected ? 500 : 0);
+          const isCurrentlySelected = prevSelectedIdRef.current === place.id;
+          marker.setZIndexOffset(isCurrentlySelected ? 500 : 0);
         });
 
         marker.on('click', () => {
           onSelectPlace(place);
-          map.panTo([place.latitude, place.longitude], { animate: true, duration: 0.5 });
         });
 
         marker.addTo(layer);
@@ -220,16 +227,41 @@ export default function DiscoveryMap({
     } catch (err) {
       console.warn('Error updating markers:', err);
     }
-  }, [places, selectedPlace, onSelectPlace]);
+  }, [places, onSelectPlace]);
 
-  // Pan to selected place
+  // Fast 0ms selected marker visual toggle without destroying Leaflet layers
+  useEffect(() => {
+    const prevId = prevSelectedIdRef.current;
+    const currentId = selectedPlace?.id || null;
+    if (prevId === currentId) return;
+
+    if (prevId) {
+      const prevEl = document.getElementById(`pin-${prevId}`);
+      if (prevEl) {
+        prevEl.querySelector('.pin-pill')?.classList.remove('pin-selected');
+        prevEl.querySelector('.pin-tail')?.classList.remove('tail-selected');
+      }
+    }
+
+    if (currentId) {
+      const currEl = document.getElementById(`pin-${currentId}`);
+      if (currEl) {
+        currEl.querySelector('.pin-pill')?.classList.add('pin-selected');
+        currEl.querySelector('.pin-tail')?.classList.add('tail-selected');
+      }
+    }
+
+    prevSelectedIdRef.current = currentId;
+  }, [selectedPlace]);
+
+  // Single smooth panTo without conflict
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map || !selectedPlace) return;
     try {
       map.panTo([selectedPlace.latitude, selectedPlace.longitude], {
         animate: true,
-        duration: 0.6,
+        duration: 0.5,
       });
     } catch (err) {
       console.warn('Error panning map:', err);

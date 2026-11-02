@@ -69,6 +69,8 @@ export default function ZineLookbook({
                 <img
                   src={place.photo_url}
                   alt={place.name}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
                   }}

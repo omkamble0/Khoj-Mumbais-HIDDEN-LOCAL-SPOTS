@@ -111,10 +111,56 @@ body {
   padding: 2px 8px !important;
 }
 
-/* Custom Marker Smoothing */
+/* Custom Marker Smoothing & Adaptive Progressive Zoom */
 .custom-pin {
   will-change: transform;
   pointer-events: auto;
+}
+
+/* In City Overview (zoom < 13), non-selected pins condense into sleek tactile dots to avoid 60-pin text overlap */
+.map-zoom-city .pin-pill:not(.pin-selected) {
+  padding: 4px;
+  border-radius: 9999px;
+  box-shadow: 2px 2px 0px #141518;
+}
+.map-zoom-city .pin-pill:not(.pin-selected) .pin-label,
+.map-zoom-city .pin-pill:not(.pin-selected) .pin-tier {
+  display: none;
+}
+.map-zoom-city .custom-pin:not(:hover) .pin-tail:not(.tail-selected) {
+  display: none;
+}
+
+/* Hovering any pin at city zoom smoothly pops up the full place name pill */
+.map-zoom-city .custom-pin:hover .pin-pill:not(.pin-selected) {
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+.map-zoom-city .custom-pin:hover .pin-pill:not(.pin-selected) .pin-label,
+.map-zoom-city .custom-pin:hover .pin-pill:not(.pin-selected) .pin-tier {
+  display: inline;
+}
+.map-zoom-city .custom-pin:hover .pin-tail {
+  display: block;
+}
+
+/* Selected marker is always illuminated, expanded, and elevated */
+.pin-selected {
+  background-color: #141518 !important;
+  color: #faf6ee !important;
+  padding: 6px 12px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 0 3px rgba(255, 62, 24, 0.45), 3px 3px 0px #141518 !important;
+  z-index: 9999 !important;
+}
+.pin-selected .pin-label,
+.pin-selected .pin-tier {
+  display: inline !important;
+}
+.tail-selected {
+  background-color: #141518 !important;
+  border-color: #141518 !important;
+  display: block !important;
 }
 
 /* Custom Scrollbars */
