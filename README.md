@@ -15,7 +15,7 @@
 
 ---
 
-## Tech Stack ($0 Student-Budget)
+## Tech Stack 
 
 - **Frontend:** Next.js 14 (App Router, React 18, TypeScript, Tailwind CSS)
 - **Map:** Leaflet.js with CartoDB Voyager raster tiles
