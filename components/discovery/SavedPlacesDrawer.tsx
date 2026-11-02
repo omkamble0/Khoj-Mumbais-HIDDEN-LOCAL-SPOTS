@@ -37,7 +37,7 @@ export default function SavedPlacesDrawer({
               <Heart className="w-5 h-5 fill-current" />
             </div>
             <div>
-              <h2 className="font-display font-bold text-xl md:text-2xl text-sumi tracking-wide">Saved Sanctuaries</h2>
+              <h2 className="font-display font-black text-2xl text-sumi tracking-tight">Saved Sanctuaries</h2>
               <p className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">
                 {savedPlaces.length} {savedPlaces.length === 1 ? 'place' : 'places'} bookmarked
               </p>

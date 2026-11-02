@@ -69,8 +69,11 @@ export default function Header({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-3xl md:text-4xl tracking-wide text-sumi leading-none">
+                <span className="font-ananda font-bold text-3xl md:text-4xl tracking-wide text-sumi leading-none">
                   KHOJ<span className="text-vermilion">.</span>
+                </span>
+                <span className="font-ananda text-base text-slate-700 tracking-wide font-bold hidden sm:inline">
+                  खोज
                 </span>
                 <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-sumi text-wabi uppercase">
                   Mumbai

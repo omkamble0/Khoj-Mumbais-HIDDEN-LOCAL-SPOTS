@@ -159,7 +159,7 @@ export default function PlaceCardDrawer({
         <div className="p-5 overflow-y-auto space-y-4">
           {/* Title & Location Header (Spacious, elegant, natural room to breathe) */}
           <div className="space-y-1.5 pb-1">
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-sumi leading-[1.18] tracking-wide break-words">
+            <h2 className="font-display font-black text-3xl md:text-4xl text-sumi leading-tight tracking-tight break-words">
               {place.name}
             </h2>
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono pt-0.5">
