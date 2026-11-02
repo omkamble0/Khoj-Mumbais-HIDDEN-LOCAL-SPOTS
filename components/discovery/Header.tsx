@@ -59,10 +59,10 @@ export default function Header({
         </div>
       </div>
 
-      {/* Main Navigation Bar with User's Custom Desi Gen-Z Collage Banner Background */}
+      {/* Main Navigation Bar with Mumbai Art & Culture Collage Banner Background */}
       <div 
-        className="relative w-full bg-cover bg-center overflow-hidden border-b-2 border-sumi shadow-sm min-h-[76px] sm:min-h-[82px] flex items-center"
-        style={{ backgroundImage: `url('/images/desi_genz_header_banner.png')` }}
+        className="relative w-full bg-cover bg-center overflow-hidden border-b-2 border-sumi shadow-sm min-h-[80px] sm:min-h-[88px] flex items-center"
+        style={{ backgroundImage: `url('/images/mumbai_art_and_culture_banner_hd.png')` }}
       >
         <div className="w-full h-full bg-sumi/5 py-2.5 sm:py-3">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-4">
