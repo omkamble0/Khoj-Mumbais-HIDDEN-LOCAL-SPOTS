@@ -94,29 +94,53 @@ export default function PlaceCardDrawer({
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${destinationQuery}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[460px] transition-transform duration-300 ease-out font-sans">
-      <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85vh] flex flex-col">
-        {/* Card Header Media & Actions */}
-        <div className="relative h-52 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[480px] transition-transform duration-300 ease-out font-sans">
+      <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[88vh] flex flex-col">
+        {/* 1. Cinematic Hero Photo (Unobstructed, full view) */}
+        <div className="relative h-60 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
           <img
             src={place.photo_url}
             alt={place.name}
             onError={(e) => {
               (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
             }}
-            className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500 contrast-105"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 contrast-105"
           />
           {/* Subtle Halftone Dot Pattern */}
-          <div className="absolute inset-0 bg-riso-dots opacity-25 pointer-events-none" />
+          <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
+          
+          {/* Soft bottom vignette gradient for smooth transition */}
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-sumi/50 to-transparent pointer-events-none" />
 
-          {/* Close & Favorite Top Actions */}
+          {/* Floating Top Left Badges */}
+          <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
+            <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
+              {place.category.toUpperCase()}
+            </span>
+            <span className={`px-2.5 py-1 rounded-lg text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
+              place.spot_tier === 'iconic'
+                ? 'bg-amber-400 text-sumi border-amber-500/50'
+                : place.spot_tier === 'underrated'
+                ? 'bg-cobalt text-white border-blue-400/50'
+                : 'bg-vermilion text-white border-rose-400/50'
+            }`}>
+              {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
+            </span>
+            {place.distance_meters !== undefined && (
+              <span className="text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-2.5 py-1 rounded-lg shadow-sm">
+                {formatDistance(place.distance_meters)}
+              </span>
+            )}
+          </div>
+
+          {/* Floating Top Right Actions */}
           <div className="absolute top-3 right-3 flex items-center gap-2 z-10">
             <button
               onClick={toggleFavorite}
-              className={`p-2.5 rounded-xl border-2 border-sumi shadow-riso-sm transition-all ${
+              className={`p-2.5 rounded-xl border border-sumi/40 backdrop-blur-md shadow-md transition-all ${
                 isFavorited
                   ? 'bg-vermilion text-white'
-                  : 'bg-wabi text-sumi hover:bg-rose-50'
+                  : 'bg-wabi/90 text-sumi hover:bg-white'
               }`}
               title="Save to favorites"
             >
@@ -124,65 +148,49 @@ export default function PlaceCardDrawer({
             </button>
             <button
               onClick={onClose}
-              className="p-2.5 rounded-xl bg-wabi text-sumi border-2 border-sumi shadow-riso-sm hover:bg-slate-200 transition-colors"
+              className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
+        </div>
 
-          {/* Top English Tag & Tier Badge */}
-          <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
-            <span className="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider bg-sumi text-wabi border border-sumi shadow-riso-sm">
-              {place.category.toUpperCase()}
-            </span>
-            <span className={`px-2.5 py-1 rounded text-xs font-mono font-black uppercase border border-sumi shadow-riso-sm ${
-              place.spot_tier === 'iconic'
-                ? 'bg-amber-400 text-sumi'
-                : place.spot_tier === 'underrated'
-                ? 'bg-cobalt text-white'
-                : 'bg-vermilion text-white'
-            }`}>
-              {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
-            </span>
-            {place.distance_meters !== undefined && (
-              <span className="text-xs font-mono font-bold bg-wabi text-sumi border border-sumi px-2.5 py-1 rounded shadow-riso-sm">
-                {formatDistance(place.distance_meters)}
-              </span>
-            )}
-          </div>
-
-          {/* Subtitle & Coordinates Banner */}
-          <div className="absolute bottom-2.5 left-3 right-3 bg-sumi/95 backdrop-blur-md text-wabi p-3 rounded-2xl border border-white/20">
-            <h2 className="font-display font-bold text-2xl md:text-3xl leading-snug tracking-wide text-white drop-shadow-md">
+        {/* 2. Scrollable Editorial Body */}
+        <div className="p-5 overflow-y-auto space-y-4">
+          {/* Title & Location Header (Spacious, elegant, natural room to breathe) */}
+          <div className="space-y-1.5 pb-1">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-sumi leading-[1.18] tracking-wide break-words">
               {place.name}
             </h2>
-            <div className="flex items-center justify-between text-xs font-mono text-slate-200 mt-1 font-medium">
-              <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
-              <span className="text-amber-300 font-bold tracking-wider">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono pt-0.5">
+              <span className="text-slate-600 font-semibold tracking-wide flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-vermilion inline-block"></span>
+                {place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}
+              </span>
+              <span className="text-amber-800 font-bold bg-amber-100/80 border border-amber-300/50 px-2.5 py-0.5 rounded-md tracking-wider">
                 {place.latitude.toFixed(4)}°N, {place.longitude.toFixed(4)}°E
               </span>
             </div>
           </div>
-        </div>
 
-        {/* Scrollable Content Body */}
-        <div className="p-4.5 overflow-y-auto space-y-4 text-sm">
-          {/* Key Metrics Grid */}
-          <div className="grid grid-cols-3 gap-2.5">
+          {/* Unified Telemetry Strip (Integrated single card with divider lines) */}
+          <div className="bg-wabi-100/90 border border-sumi/20 rounded-2xl p-3 shadow-riso-sm grid grid-cols-3 divide-x divide-sumi/15">
             {/* Hiddenness Score */}
-            <div className="bg-wabi-100 border-2 border-sumi p-2.5 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
+            <div className="flex flex-col items-center justify-center text-center px-2">
               <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base">
-                <EyeOff className="w-4 h-4 text-vermilion" />
+                <EyeOff className="w-4 h-4 text-vermilion flex-shrink-0" />
                 <span>{Math.round(place.hiddenness_score * 100)}%</span>
               </div>
-              <span className="text-xs font-mono uppercase text-slate-600 font-bold mt-0.5">Hidden Score</span>
+              <span className="text-[11px] font-mono uppercase text-slate-500 font-bold mt-0.5 tracking-wider">
+                Hiddenness
+              </span>
             </div>
 
             {/* Crowd Level */}
-            <div className="bg-wabi-100 border-2 border-sumi p-2.5 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
-              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-xs">
-                <Users className="w-4 h-4 text-matcha" />
-                <span>
+            <div className="flex flex-col items-center justify-center text-center px-2">
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-sm">
+                <Users className="w-4 h-4 text-matcha flex-shrink-0" />
+                <span className="truncate">
                   {place.crowd_level <= 1
                     ? 'Very Quiet'
                     : place.crowd_level === 2
@@ -190,54 +198,70 @@ export default function PlaceCardDrawer({
                     : 'Moderate'}
                 </span>
               </div>
-              <span className="text-xs font-mono uppercase text-slate-600 font-bold mt-0.5">Crowd Level</span>
+              <span className="text-[11px] font-mono uppercase text-slate-500 font-bold mt-0.5 tracking-wider">
+                Crowd Level
+              </span>
             </div>
 
             {/* Atmosphere / Vibe */}
-            <div className="bg-wabi-100 border-2 border-sumi p-2.5 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
+            <div className="flex flex-col items-center justify-center text-center px-2">
               <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base">
-                <Sparkles className="w-4 h-4 text-ochre" />
+                <Sparkles className="w-4 h-4 text-ochre flex-shrink-0" />
                 <span>{Math.round(place.vibe_score * 100)}%</span>
               </div>
-              <span className="text-xs font-mono uppercase text-slate-600 font-bold mt-0.5">Vibe Rating</span>
+              <span className="text-[11px] font-mono uppercase text-slate-500 font-bold mt-0.5 tracking-wider">
+                Vibe Score
+              </span>
             </div>
           </div>
 
-          {/* Description */}
-          <p className="text-slate-800 leading-relaxed text-sm font-sans">
+          {/* Narrative Description (Generous line height, readable modern typography) */}
+          <p className="text-slate-800 text-sm md:text-[15px] leading-relaxed font-sans">
             {place.description}
           </p>
 
-          {/* Recommended Time */}
-          <div className="flex items-start gap-2.5 bg-amber-50/90 border-2 border-sumi p-3 rounded-xl text-sumi shadow-riso-sm">
-            <Clock className="w-4 h-4 text-vermilion flex-shrink-0 mt-0.5" />
-            <div>
-              <span className="font-mono font-bold text-xs uppercase block text-slate-600">
-                Golden Hour / Recommended Time:
-              </span>
-              <span className="font-sans font-semibold text-sm text-sumi">
-                {place.best_time_to_visit}
-              </span>
+          {/* Integrated Field Notes (Best Time + Access & Safety in one harmonic card) */}
+          <div className="bg-wabi-100/70 border border-sumi/20 rounded-2xl overflow-hidden shadow-riso-sm divide-y divide-sumi/15">
+            {/* Best Time Row */}
+            <div className="p-3.5 flex items-start gap-3">
+              <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-300/40">
+                <Clock className="w-4 h-4" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                  Golden Hour / Best Window
+                </span>
+                <p className="text-xs md:text-sm font-semibold text-sumi mt-0.5">
+                  {place.best_time_to_visit}
+                </p>
+              </div>
+            </div>
+
+            {/* Safety & Access Row */}
+            <div className="p-3.5 flex items-start gap-3">
+              <div className="w-7 h-7 rounded-lg bg-matcha-50 text-matcha-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-matcha/30">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                  Access & Safety Profile
+                </span>
+                <p className="text-xs md:text-sm text-slate-700 mt-0.5">
+                  <span className="font-bold text-sumi">
+                    {place.safety_level === 'high' ? 'Verified Public & Safe' : 'Daylight Visit Advised'}:
+                  </span>{' '}
+                  {place.safety_notes}
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Safety Notice Badge */}
-          <div className="flex items-start gap-2.5 p-3 rounded-xl border-2 border-sumi bg-matcha-50 text-matcha-700 shadow-riso-sm">
-            <ShieldCheck className="w-4 h-4 text-matcha flex-shrink-0 mt-0.5" />
-            <div className="text-xs font-sans">
-              <span className="font-bold">
-                {place.safety_level === 'high' ? 'Verified Public & Safe' : 'Daylight Visit Advised'}:
-              </span>{' '}
-              <span className="text-slate-700">{place.safety_notes}</span>
-            </div>
-          </div>
-
-          {/* Vibe Tags */}
+          {/* Vibe Tags Strip */}
           <div className="flex flex-wrap gap-2 pt-1">
             {place.vibe_tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-1 bg-wabi-200 border border-sumi/30 text-sumi rounded-lg text-xs font-mono font-bold"
+                className="px-3 py-1 bg-wabi-200/90 text-slate-700 rounded-full text-xs font-mono font-medium border border-sumi/15 hover:border-sumi/40 transition-colors"
               >
                 #{tag}
               </span>
@@ -245,13 +269,13 @@ export default function PlaceCardDrawer({
           </div>
 
           {/* Action Row */}
-          <div className="pt-2 flex flex-col gap-2.5 border-t border-sumi/15">
-            <div className="flex items-center gap-2">
+          <div className="pt-3 flex flex-col gap-2.5 border-t border-sumi/15">
+            <div className="flex items-center gap-2.5">
               <a
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
+                className="flex-1 flex items-center justify-center gap-2.5 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3.5 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
               >
                 <Navigation className="w-4 h-4 text-amber-300" />
                 <span>Wander Here (Directions)</span>
@@ -260,7 +284,7 @@ export default function PlaceCardDrawer({
 
               <button
                 onClick={handleShare}
-                className="p-2.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-colors"
+                className="p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-colors"
                 title="Share this spot"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
@@ -268,7 +292,7 @@ export default function PlaceCardDrawer({
 
               <button
                 onClick={() => onOpenReport(place)}
-                className="p-2.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors"
+                className="p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors"
                 title="Report issue (closed, private property, unsafe)"
               >
                 <AlertTriangle className="w-4 h-4" />
@@ -279,7 +303,7 @@ export default function PlaceCardDrawer({
               href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center text-[10px] font-mono text-slate-500 hover:text-vermilion font-bold underline"
+              className="text-center text-xs font-mono text-slate-500 hover:text-vermilion font-medium underline tracking-wide"
             >
               Verify official landmark card & reviews on Google Maps ↗
             </a>
