@@ -259,35 +259,23 @@ export default function PlaceCardDrawer({
             </div>
           </div>
 
-          {/* Vibe Tags Strip */}
-          <div className="flex flex-wrap gap-2 pt-1">
-            {place.vibe_tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-wabi-200/90 text-slate-700 rounded-full text-xs font-mono font-medium border border-sumi/15 hover:border-sumi/40 transition-colors"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Action Row */}
-          <div className="pt-3 pb-2 sm:pb-0 flex flex-col gap-2.5 border-t border-sumi/15">
+          {/* Action Row (Wander Here, Share, Report, & Google Maps above hashtags) */}
+          <div className="pt-2 flex flex-col gap-2.5">
             <div className="flex items-center gap-2 sm:gap-2.5">
               <a
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group active:scale-[0.99]"
+                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider group active:scale-[0.99]"
               >
-                <Navigation className="w-4 h-4 text-amber-300" />
+                <Navigation className="w-4 h-4 text-amber-300 group-hover:rotate-45 transition-transform" />
                 <span className="truncate">WANDER HERE (DIRECTIONS)</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
               </a>
 
               <button
                 onClick={handleShare}
-                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-colors active:scale-95 flex-shrink-0"
+                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-all active:scale-95 flex-shrink-0"
                 title="Share this spot"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
@@ -295,7 +283,7 @@ export default function PlaceCardDrawer({
 
               <button
                 onClick={() => onOpenReport(place)}
-                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors active:scale-95 flex-shrink-0"
+                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-all active:scale-95 flex-shrink-0"
                 title="Report issue (closed, private property, unsafe)"
               >
                 <AlertTriangle className="w-4 h-4" />
@@ -306,10 +294,24 @@ export default function PlaceCardDrawer({
               href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center text-[11px] sm:text-xs font-mono text-slate-500 hover:text-vermilion font-medium underline tracking-wide py-1"
+              className="text-center text-[11px] sm:text-xs font-mono text-slate-500 hover:text-vermilion font-medium underline tracking-wide py-0.5 transition-colors"
             >
               Verify official landmark card & reviews on Google Maps ↗
             </a>
+          </div>
+
+          {/* Vibe Tags Strip (At the very end of the card) */}
+          <div className="pt-3 pb-2 border-t border-sumi/15">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+              {place.vibe_tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2.5 sm:px-3 py-1 bg-wabi-100/90 text-slate-600 rounded-lg text-[11px] sm:text-xs font-mono font-medium border border-sumi/15 hover:border-sumi/40 hover:bg-wabi-200 transition-colors"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
