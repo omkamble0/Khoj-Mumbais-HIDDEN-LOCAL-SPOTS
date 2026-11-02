@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased min-h-screen bg-wabi text-sumi font-kaluk selection:bg-vermilion selection:text-white">
+      <body className="antialiased min-h-screen bg-wabi text-sumi font-sans selection:bg-vermilion selection:text-white">
         {children}
       </body>
     </html>

@@ -28,17 +28,17 @@ export default function SavedPlacesDrawer({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-sumi/40 backdrop-blur-sm transition-opacity font-kaluk">
+    <div className="fixed inset-0 z-50 flex justify-end bg-sumi/40 backdrop-blur-sm transition-opacity font-sans">
       <div className="relative w-full max-w-md h-full bg-wabi border-l-2 border-sumi shadow-2xl flex flex-col justify-between overflow-hidden">
         {/* Header */}
         <div className="p-4 bg-wabi border-b-2 border-sumi flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-vermilion text-white flex items-center justify-center border-2 border-sumi shadow-riso-sm">
-              <Heart className="w-4 h-4 fill-current" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-vermilion text-white flex items-center justify-center border-2 border-sumi shadow-riso-sm">
+              <Heart className="w-5 h-5 fill-current" />
             </div>
             <div>
-              <h2 className="font-display font-black text-lg text-sumi">Saved Sanctuaries</h2>
-              <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+              <h2 className="font-display font-bold text-xl md:text-2xl text-sumi tracking-wide">Saved Sanctuaries</h2>
+              <p className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">
                 {savedPlaces.length} {savedPlaces.length === 1 ? 'place' : 'places'} bookmarked
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function SavedPlacesDrawer({
                     <span className="text-[9px] font-mono font-bold uppercase px-1.5 py-0.2 rounded bg-sumi text-wabi">
                       {place.category}
                     </span>
-                    <span className={`text-[9px] font-mono font-bold px-1.5 py-0.2 rounded ${
+                    <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
                       place.spot_tier === 'iconic'
                         ? 'bg-amber-400 text-sumi'
                         : place.spot_tier === 'underrated'
@@ -115,16 +115,16 @@ export default function SavedPlacesDrawer({
                     </span>
                   </div>
 
-                  <h4 className="font-display font-black text-sm text-sumi truncate group-hover:text-vermilion transition-colors">
+                  <h4 className="font-display font-bold text-base md:text-lg text-sumi truncate tracking-wide group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h4>
 
-                  <p className="text-[11px] font-mono text-slate-500 truncate">
+                  <p className="text-xs font-mono text-slate-500 truncate mt-0.5">
                     {place.neighborhood ? `${place.neighborhood}, Mumbai` : place.city}
                   </p>
 
                   {place.distance_meters !== undefined && (
-                    <span className="text-[10px] font-mono text-amber-700 font-bold">
+                    <span className="text-xs font-mono text-amber-700 font-bold mt-0.5 inline-block">
                       {formatDistance(place.distance_meters)} away
                     </span>
                   )}

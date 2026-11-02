@@ -44,7 +44,7 @@
 body {
   color: var(--sumi-ink);
   background: var(--wabi-bg);
-  font-family: 'Ananda Namaste', 'Neptouch 3', 'Kaluk Sans', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

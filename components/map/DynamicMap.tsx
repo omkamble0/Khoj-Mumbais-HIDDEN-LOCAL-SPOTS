@@ -33,8 +33,8 @@ class MapErrorBoundary extends Component<{ children: ReactNode }, { hasError: bo
       return (
         <div className="w-full h-full min-h-[400px] flex flex-col items-center justify-center bg-wabi p-6 text-center border-2 border-dashed border-sumi/20 rounded-2xl">
           <AlertCircle className="w-10 h-10 text-vermilion mb-2" />
-          <h3 className="font-display font-bold text-base text-sumi">Map Preview Unavailable</h3>
-          <p className="text-xs text-slate-600 max-w-sm mt-1 mb-4 font-sans">
+          <h3 className="font-display font-bold text-lg tracking-wide text-sumi">Map Preview Unavailable</h3>
+          <p className="text-sm text-slate-600 max-w-sm mt-1 mb-4 font-sans">
             The interactive map canvas encountered a rendering conflict. You can switch to the Zine Lookbook view to browse all Mumbai sanctuaries.
           </p>
           <button

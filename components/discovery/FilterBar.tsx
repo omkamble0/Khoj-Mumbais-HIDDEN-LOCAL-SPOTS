@@ -51,40 +51,40 @@ const RADII = [5, 10, 20, 40];
 
 export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
   return (
-    <div className="bg-wabi/95 backdrop-blur-md p-3 rounded-2xl border-2 border-sumi shadow-riso font-kaluk space-y-2">
+    <div className="bg-wabi/95 backdrop-blur-md p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2.5">
       {/* Category Horizontal Scrolling Pills */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
         {CATEGORIES.map((cat) => {
           const isActive = filters.category === cat.id;
           return (
             <button
               key={cat.id}
               onClick={() => onChange({ category: cat.id })}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold whitespace-nowrap transition-all duration-150 border-2 ${
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all duration-150 border-2 ${
                 isActive
                   ? 'bg-vermilion text-white border-sumi shadow-riso-sm translate-y-[-1px]'
                   : 'bg-wabi-100 text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi-200'
               }`}
             >
               {cat.icon}
-              <span>{cat.label}</span>
+              <span className="tracking-wide">{cat.label}</span>
             </button>
           );
         })}
       </div>
 
       {/* Spot Tier & Radius Strip */}
-      <div className="flex flex-wrap items-center justify-between gap-2 text-xs border-t border-sumi/15 pt-2">
+      <div className="flex flex-wrap items-center justify-between gap-2.5 text-xs border-t border-sumi/15 pt-2.5">
         {/* Tier Selector (Hidden vs Underrated vs Iconic) */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           {SPOT_TIERS.map((tier) => (
             <button
               key={tier.id}
               onClick={() => onChange({ spotTier: tier.id })}
-              className={`px-2.5 py-0.5 rounded-lg text-[11px] font-mono font-bold border transition-colors ${
+              className={`px-3 py-1 rounded-lg text-xs font-mono font-bold border transition-colors ${
                 filters.spotTier === tier.id
-                  ? 'bg-sumi text-wabi border-sumi'
-                  : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi'
+                  ? 'bg-sumi text-wabi border-sumi shadow-sm'
+                  : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
               }`}
             >
               {tier.label}
@@ -93,25 +93,25 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         </div>
 
         {/* Radius Filter & Total Count */}
-        <div className="flex items-center gap-2 font-mono">
-          <div className="flex items-center gap-1">
-            <span className="text-[10px] font-bold text-slate-500 uppercase">RADIUS:</span>
+        <div className="flex items-center gap-2.5 font-mono">
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-bold text-slate-600 uppercase">RADIUS:</span>
             {RADII.map((r) => (
               <button
                 key={r}
                 onClick={() => onChange({ radiusKm: r })}
-                className={`px-2 py-0.5 rounded font-mono text-[10px] font-bold border transition-colors ${
+                className={`px-2.5 py-1 rounded-md font-mono text-xs font-bold border transition-colors ${
                   filters.radiusKm === r
-                    ? 'bg-vermilion text-white border-sumi'
-                    : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi'
+                    ? 'bg-vermilion text-white border-sumi shadow-sm'
+                    : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
                 }`}
               >
-                {r}k
+                {r}km
               </button>
             ))}
           </div>
 
-          <span className="font-mono text-[10px] font-black bg-wabi-200 text-sumi border border-sumi/40 px-2 py-0.5 rounded-full">
+          <span className="font-mono text-xs font-black bg-wabi-200 text-sumi border border-sumi/40 px-2.5 py-1 rounded-full shadow-sm">
             {totalFound} SPOTS
           </span>
         </div>

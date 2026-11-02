@@ -169,14 +169,14 @@ export default function DiscoveryMap({
             <!-- Animated Pop-up Assembly (Transforms upward without moving coordinate anchor) -->
             <div class="transition-transform duration-200 ease-out origin-bottom flex flex-col items-center group-hover:-translate-y-1.5 group-hover:scale-110">
               <!-- Tactile Pill with Real Place Name -->
-              <div class="px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-kaluk whitespace-nowrap transition-colors duration-150 ${
+              <div class="px-3 py-1.5 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap transition-colors duration-150 ${
                 isSelected
                   ? 'bg-sumi text-wabi ring-4 ring-vermilion/40 shadow-riso'
                   : 'bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion group-hover:shadow-riso-sm'
               }">
-                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
-                <span class="text-xs font-black tracking-tight">${displayName}</span>
-                <span class="text-[10px] font-mono font-bold opacity-75">${tierBadge}</span>
+                <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
+                <span class="text-xs font-bold tracking-normal">${displayName}</span>
+                <span class="text-xs font-mono font-bold opacity-80">${tierBadge}</span>
               </div>
 
               <!-- Tail pointer arrow -->

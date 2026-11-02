@@ -94,10 +94,10 @@ export default function PlaceCardDrawer({
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${destinationQuery}`;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[440px] transition-transform duration-300 ease-out font-kaluk">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[460px] transition-transform duration-300 ease-out font-sans">
       <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85vh] flex flex-col">
         {/* Card Header Media & Actions */}
-        <div className="relative h-48 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
+        <div className="relative h-52 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
           <img
             src={place.photo_url}
             alt={place.name}
@@ -113,7 +113,7 @@ export default function PlaceCardDrawer({
           <div className="absolute top-3 right-3 flex items-center gap-2 z-10">
             <button
               onClick={toggleFavorite}
-              className={`p-2 rounded-xl border-2 border-sumi shadow-riso-sm transition-all ${
+              className={`p-2.5 rounded-xl border-2 border-sumi shadow-riso-sm transition-all ${
                 isFavorited
                   ? 'bg-vermilion text-white'
                   : 'bg-wabi text-sumi hover:bg-rose-50'
@@ -124,7 +124,7 @@ export default function PlaceCardDrawer({
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-xl bg-wabi text-sumi border-2 border-sumi shadow-riso-sm hover:bg-slate-200 transition-colors"
+              className="p-2.5 rounded-xl bg-wabi text-sumi border-2 border-sumi shadow-riso-sm hover:bg-slate-200 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -132,10 +132,10 @@ export default function PlaceCardDrawer({
 
           {/* Top English Tag & Tier Badge */}
           <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
-            <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider bg-sumi text-wabi border border-sumi shadow-riso-sm">
+            <span className="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider bg-sumi text-wabi border border-sumi shadow-riso-sm">
               {place.category.toUpperCase()}
             </span>
-            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-black uppercase border border-sumi shadow-riso-sm ${
+            <span className={`px-2.5 py-1 rounded text-xs font-mono font-black uppercase border border-sumi shadow-riso-sm ${
               place.spot_tier === 'iconic'
                 ? 'bg-amber-400 text-sumi'
                 : place.spot_tier === 'underrated'
@@ -145,20 +145,20 @@ export default function PlaceCardDrawer({
               {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
             </span>
             {place.distance_meters !== undefined && (
-              <span className="text-[10px] font-mono font-bold bg-wabi text-sumi border border-sumi px-2 py-0.5 rounded shadow-riso-sm">
+              <span className="text-xs font-mono font-bold bg-wabi text-sumi border border-sumi px-2.5 py-1 rounded shadow-riso-sm">
                 {formatDistance(place.distance_meters)}
               </span>
             )}
           </div>
 
           {/* Subtitle & Coordinates Banner */}
-          <div className="absolute bottom-2 left-3 right-3 bg-sumi/90 backdrop-blur-sm text-wabi p-2.5 rounded-xl border border-white/20">
-            <h2 className="font-display font-black text-lg leading-tight text-white drop-shadow-sm">
+          <div className="absolute bottom-2.5 left-3 right-3 bg-sumi/95 backdrop-blur-md text-wabi p-3 rounded-2xl border border-white/20">
+            <h2 className="font-display font-bold text-2xl md:text-3xl leading-snug tracking-wide text-white drop-shadow-md">
               {place.name}
             </h2>
-            <div className="flex items-center justify-between text-[10px] font-mono text-slate-300 mt-1">
+            <div className="flex items-center justify-between text-xs font-mono text-slate-200 mt-1 font-medium">
               <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
-              <span className="text-amber-300 font-bold">
+              <span className="text-amber-300 font-bold tracking-wider">
                 {place.latitude.toFixed(4)}°N, {place.longitude.toFixed(4)}°E
               </span>
             </div>
@@ -166,22 +166,22 @@ export default function PlaceCardDrawer({
         </div>
 
         {/* Scrollable Content Body */}
-        <div className="p-4 overflow-y-auto space-y-3.5 text-xs">
+        <div className="p-4.5 overflow-y-auto space-y-4 text-sm">
           {/* Key Metrics Grid */}
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-2.5">
             {/* Hiddenness Score */}
-            <div className="bg-wabi-100 border-2 border-sumi p-2 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
-              <div className="flex items-center gap-1 text-sumi font-black font-mono text-sm">
-                <EyeOff className="w-3.5 h-3.5 text-vermilion" />
+            <div className="bg-wabi-100 border-2 border-sumi p-2.5 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base">
+                <EyeOff className="w-4 h-4 text-vermilion" />
                 <span>{Math.round(place.hiddenness_score * 100)}%</span>
               </div>
-              <span className="text-[9px] font-mono uppercase text-slate-600 font-bold">Hidden Score</span>
+              <span className="text-xs font-mono uppercase text-slate-600 font-bold mt-0.5">Hidden Score</span>
             </div>
 
             {/* Crowd Level */}
-            <div className="bg-wabi-100 border-2 border-sumi p-2 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
-              <div className="flex items-center gap-1 text-sumi font-black font-mono text-xs">
-                <Users className="w-3.5 h-3.5 text-matcha" />
+            <div className="bg-wabi-100 border-2 border-sumi p-2.5 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-xs">
+                <Users className="w-4 h-4 text-matcha" />
                 <span>
                   {place.crowd_level <= 1
                     ? 'Very Quiet'
@@ -190,41 +190,41 @@ export default function PlaceCardDrawer({
                     : 'Moderate'}
                 </span>
               </div>
-              <span className="text-[9px] font-mono uppercase text-slate-600 font-bold">Crowd Level</span>
+              <span className="text-xs font-mono uppercase text-slate-600 font-bold mt-0.5">Crowd Level</span>
             </div>
 
             {/* Atmosphere / Vibe */}
-            <div className="bg-wabi-100 border-2 border-sumi p-2 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
-              <div className="flex items-center gap-1 text-sumi font-black font-mono text-sm">
-                <Sparkles className="w-3.5 h-3.5 text-ochre" />
+            <div className="bg-wabi-100 border-2 border-sumi p-2.5 rounded-xl flex flex-col items-center justify-center text-center shadow-riso-sm">
+              <div className="flex items-center gap-1.5 text-sumi font-black font-mono text-base">
+                <Sparkles className="w-4 h-4 text-ochre" />
                 <span>{Math.round(place.vibe_score * 100)}%</span>
               </div>
-              <span className="text-[9px] font-mono uppercase text-slate-600 font-bold">Vibe Rating</span>
+              <span className="text-xs font-mono uppercase text-slate-600 font-bold mt-0.5">Vibe Rating</span>
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-slate-800 leading-relaxed text-xs font-sans">
+          <p className="text-slate-800 leading-relaxed text-sm font-sans">
             {place.description}
           </p>
 
           {/* Recommended Time */}
-          <div className="flex items-start gap-2 bg-amber-50/80 border-2 border-sumi p-2.5 rounded-xl text-sumi shadow-riso-sm">
+          <div className="flex items-start gap-2.5 bg-amber-50/90 border-2 border-sumi p-3 rounded-xl text-sumi shadow-riso-sm">
             <Clock className="w-4 h-4 text-vermilion flex-shrink-0 mt-0.5" />
             <div>
-              <span className="font-mono font-bold text-[10px] uppercase block text-slate-600">
+              <span className="font-mono font-bold text-xs uppercase block text-slate-600">
                 Golden Hour / Recommended Time:
               </span>
-              <span className="font-sans font-semibold text-xs text-sumi">
+              <span className="font-sans font-semibold text-sm text-sumi">
                 {place.best_time_to_visit}
               </span>
             </div>
           </div>
 
           {/* Safety Notice Badge */}
-          <div className="flex items-start gap-2 p-2.5 rounded-xl border-2 border-sumi bg-matcha-50 text-matcha-700 shadow-riso-sm">
+          <div className="flex items-start gap-2.5 p-3 rounded-xl border-2 border-sumi bg-matcha-50 text-matcha-700 shadow-riso-sm">
             <ShieldCheck className="w-4 h-4 text-matcha flex-shrink-0 mt-0.5" />
-            <div className="text-[11px] font-sans">
+            <div className="text-xs font-sans">
               <span className="font-bold">
                 {place.safety_level === 'high' ? 'Verified Public & Safe' : 'Daylight Visit Advised'}:
               </span>{' '}
@@ -233,11 +233,11 @@ export default function PlaceCardDrawer({
           </div>
 
           {/* Vibe Tags */}
-          <div className="flex flex-wrap gap-1.5 pt-1">
+          <div className="flex flex-wrap gap-2 pt-1">
             {place.vibe_tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-0.5 bg-wabi-200 border border-sumi/30 text-sumi rounded-md text-[10px] font-mono font-bold"
+                className="px-2.5 py-1 bg-wabi-200 border border-sumi/30 text-sumi rounded-lg text-xs font-mono font-bold"
               >
                 #{tag}
               </span>
@@ -245,17 +245,17 @@ export default function PlaceCardDrawer({
           </div>
 
           {/* Action Row */}
-          <div className="pt-2 flex flex-col gap-2 border-t border-sumi/15">
+          <div className="pt-2 flex flex-col gap-2.5 border-t border-sumi/15">
             <div className="flex items-center gap-2">
               <a
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
+                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
               >
-                <Navigation className="w-3.5 h-3.5 text-amber-300" />
+                <Navigation className="w-4 h-4 text-amber-300" />
                 <span>Wander Here (Directions)</span>
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               <button

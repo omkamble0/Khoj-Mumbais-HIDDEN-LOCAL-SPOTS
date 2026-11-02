@@ -63,15 +63,13 @@ module.exports = {
           '"Cabinet Grotesk"',
           'serif',
         ],
-        kaluk: [
-          '"Ananda Namaste"',
-          '"Neptouch 3"',
+        sans: [
           '"Plus Jakarta Sans"',
           'system-ui',
           '-apple-system',
           'sans-serif',
         ],
-        sans: [
+        kaluk: [
           '"Plus Jakarta Sans"',
           'system-ui',
           '-apple-system',

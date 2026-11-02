@@ -29,40 +29,40 @@ export default function Header({
   onOpenSaved,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 left-0 right-0 z-40 bg-wabi/95 backdrop-blur-md border-b-2 border-sumi shadow-sm font-kaluk">
+    <header className="sticky top-0 left-0 right-0 z-40 bg-wabi/95 backdrop-blur-md border-b-2 border-sumi shadow-sm font-sans">
       {/* Top Telemetry Strip */}
-      <div className="bg-sumi text-wabi-100 px-4 py-1 flex items-center justify-between text-[11px] font-mono tracking-wider">
+      <div className="bg-sumi text-wabi-100 px-4 py-1.5 flex items-center justify-between text-xs font-mono tracking-wider">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-vermilion animate-pulse"></span>
-          <span className="font-bold text-vermilion">KHOJ</span>
+          <span className="font-bold text-vermilion text-sm">KHOJ</span>
           <span className="text-slate-500">|</span>
-          <span className="text-slate-300">MUMBAI REGION · 18°58′N, 72°50′E</span>
+          <span className="text-slate-300 font-medium">MUMBAI REGION · 18°58′N, 72°50′E</span>
         </div>
         <div className="flex items-center gap-2.5">
           <span className="text-amber-400 font-bold">● {totalSpots} SANCTUARIES</span>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-emerald-400 hidden sm:inline">VERIFIED PUBLIC ACCESS</span>
+          <span className="text-emerald-400 font-semibold hidden sm:inline">VERIFIED PUBLIC ACCESS</span>
         </div>
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-2.5 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
         {/* Brand */}
         <div className="flex items-center justify-between w-full md:w-auto gap-3">
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0">
               <Compass className="w-5 h-5" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-display font-black text-2xl tracking-tight text-sumi">
+              <div className="flex items-center gap-2">
+                <span className="font-display font-bold text-3xl md:text-4xl tracking-wide text-sumi leading-none">
                   KHOJ<span className="text-vermilion">.</span>
                 </span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-sumi text-wabi uppercase">
+                <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-sumi text-wabi uppercase">
                   Mumbai
                 </span>
               </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-slate-500 -mt-0.5">
+              <p className="text-xs font-mono uppercase tracking-wider text-slate-500 mt-0.5 font-semibold">
                 Hidden & Underrated Places
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function Header({
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search ruins, cliffs, serene tanks, parks..."
-              className="w-full pl-9 pr-3 py-2 text-xs font-sans font-medium bg-wabi-100 rounded-xl border-2 border-sumi focus:outline-none focus:ring-2 focus:ring-vermilion text-sumi placeholder-slate-500 shadow-riso-sm"
+              className="w-full pl-10 pr-4 py-2.5 text-sm font-sans font-medium bg-wabi-100 rounded-xl border-2 border-sumi focus:outline-none focus:ring-2 focus:ring-vermilion text-sumi placeholder-slate-500 shadow-riso-sm"
             />
           </div>
         </div>
