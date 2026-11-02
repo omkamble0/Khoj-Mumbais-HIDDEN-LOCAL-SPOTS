@@ -165,23 +165,27 @@ export default function DiscoveryMap({
             : '●';
 
         const markerHtml = `
-          <div class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full transition-transform duration-200 pointer-events-auto">
-            <!-- Tactile Pill with Real Place Name -->
-            <div class="px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm transition-all font-kaluk whitespace-nowrap ${
-              isSelected
-                ? 'bg-sumi text-wabi ring-4 ring-vermilion/40 scale-105'
-                : 'bg-wabi text-sumi hover:bg-white'
-            }">
-              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
-              <span class="text-xs font-black tracking-tight">${displayName}</span>
-              <span class="text-[10px] font-mono font-bold opacity-75">${tierBadge}</span>
+          <div class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full pointer-events-auto select-none">
+            <!-- Animated Pop-up Assembly (Transforms upward without moving coordinate anchor) -->
+            <div class="transition-transform duration-200 ease-out origin-bottom flex flex-col items-center group-hover:-translate-y-1.5 group-hover:scale-110">
+              <!-- Tactile Pill with Real Place Name -->
+              <div class="px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-kaluk whitespace-nowrap transition-colors duration-150 ${
+                isSelected
+                  ? 'bg-sumi text-wabi ring-4 ring-vermilion/40 shadow-riso'
+                  : 'bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion group-hover:shadow-riso-sm'
+              }">
+                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
+                <span class="text-xs font-black tracking-tight">${displayName}</span>
+                <span class="text-[10px] font-mono font-bold opacity-75">${tierBadge}</span>
+              </div>
+
+              <!-- Tail pointer arrow -->
+              <div class="w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm transition-colors duration-150 ${
+                isSelected ? 'border-sumi bg-sumi' : 'border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white'
+              }"></div>
             </div>
 
-            <!-- Tail pointer arrow pointing directly to target -->
-            <div class="w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 border-sumi shadow-sm"
-                 style="background-color: ${isSelected ? '#141518' : '#faf6ee'}"></div>
-
-            <!-- Contact Target Dot on exact coordinates -->
+            <!-- Contact Target Dot on exact coordinates (Always anchored, never moves) -->
             <div class="w-1.5 h-1.5 rounded-full bg-sumi -mt-0.5"></div>
           </div>
         `;
@@ -195,6 +199,15 @@ export default function DiscoveryMap({
 
         const marker = L.marker([place.latitude, place.longitude], {
           icon: customIcon,
+          zIndexOffset: isSelected ? 500 : 0,
+        });
+
+        marker.on('mouseover', () => {
+          marker.setZIndexOffset(1000);
+        });
+
+        marker.on('mouseout', () => {
+          marker.setZIndexOffset(isSelected ? 500 : 0);
         });
 
         marker.on('click', () => {

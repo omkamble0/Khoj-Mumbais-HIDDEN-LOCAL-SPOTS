@@ -65,6 +65,11 @@ body {
   background: transparent !important;
   border: none !important;
   overflow: visible !important;
+  z-index: 10;
+}
+
+.place-name-pin:hover {
+  z-index: 9999 !important;
 }
 
 .user-location-pin {
@@ -83,13 +88,10 @@ body {
   padding: 2px 8px !important;
 }
 
-/* Custom Marker Hover */
+/* Custom Marker Smoothing */
 .custom-pin {
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.custom-pin:hover {
-  transform: scale(1.15);
+  will-change: transform;
+  pointer-events: auto;
 }
 
 /* Custom Scrollbars */
