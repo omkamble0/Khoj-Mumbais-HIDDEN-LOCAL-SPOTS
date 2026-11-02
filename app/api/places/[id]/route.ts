@@ -24,9 +24,12 @@ export async function GET(
       return NextResponse.json({ error: 'Place not found' }, { status: 404 });
     }
 
-    // Generate turn-by-turn deep links
-    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
-    const appleMapsUrl = `https://maps.apple.com/?daddr=${place.latitude},${place.longitude}`;
+    // Generate turn-by-turn deep links targeting verified landmark entity
+    const destinationQuery = encodeURIComponent(
+      `${place.name}, ${place.neighborhood ? place.neighborhood + ', ' : ''}Mumbai`
+    );
+    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationQuery}`;
+    const appleMapsUrl = `https://maps.apple.com/?daddr=${place.latitude},${place.longitude}&q=${encodeURIComponent(place.name)}`;
 
     return NextResponse.json({
       status: 'success',

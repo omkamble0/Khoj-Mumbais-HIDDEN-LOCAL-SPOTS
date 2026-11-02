@@ -62,7 +62,13 @@ export default function PlaceCardDrawer({
 
   if (!place) return null;
 
-  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
+  // Query by exact Place Name + Neighborhood + Mumbai so Google Maps pins to the verified POI entity
+  // instead of reverse-geocoding coordinates to a random street or apartment block
+  const destinationQuery = encodeURIComponent(
+    `${place.name}, ${place.neighborhood ? place.neighborhood + ', ' : ''}Mumbai`
+  );
+  const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationQuery}`;
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${destinationQuery}`;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[440px] transition-transform duration-300 ease-out font-kaluk">
@@ -216,25 +222,36 @@ export default function PlaceCardDrawer({
           </div>
 
           {/* Action Row */}
-          <div className="pt-2 flex items-center gap-2 border-t border-sumi/15">
+          <div className="pt-2 flex flex-col gap-2 border-t border-sumi/15">
+            <div className="flex items-center gap-2">
+              <a
+                href={googleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
+              >
+                <Navigation className="w-3.5 h-3.5 text-amber-300" />
+                <span>Wander Here (Directions)</span>
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+
+              <button
+                onClick={() => onOpenReport(place)}
+                className="p-2.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors"
+                title="Report issue (closed, private property, unsafe)"
+              >
+                <AlertTriangle className="w-4 h-4" />
+              </button>
+            </div>
+
             <a
-              href={googleMapsUrl}
+              href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-4 rounded-xl border-2 border-sumi shadow-riso transition-all text-xs uppercase tracking-wider group"
+              className="text-center text-[10px] font-mono text-slate-500 hover:text-vermilion font-bold underline"
             >
-              <Navigation className="w-3.5 h-3.5 text-amber-300" />
-              <span>Wander Here</span>
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              Verify official landmark card & reviews on Google Maps ↗
             </a>
-
-            <button
-              onClick={() => onOpenReport(place)}
-              className="p-2.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-colors"
-              title="Report issue (closed, private property, unsafe)"
-            >
-              <AlertTriangle className="w-4 h-4" />
-            </button>
           </div>
         </div>
       </div>

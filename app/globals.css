@@ -61,6 +61,18 @@ body {
 }
 
 /* Leaflet Clean Up */
+.place-name-pin {
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+.user-location-pin {
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
 .leaflet-control-attribution {
   font-size: 10px !important;
   background: rgba(250, 246, 238, 0.9) !important;

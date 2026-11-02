@@ -161,33 +161,32 @@ export default function DiscoveryMap({
             : '●';
 
         const markerHtml = `
-          <div class="custom-pin cursor-pointer flex flex-col items-center group transition-transform duration-200">
-            <div class="relative flex items-center justify-center ${
-              isSelected ? 'scale-115 z-50' : ''
+          <div class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full transition-transform duration-200 pointer-events-auto">
+            <!-- Tactile Pill with Real Place Name -->
+            <div class="px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm transition-all font-kaluk whitespace-nowrap ${
+              isSelected
+                ? 'bg-sumi text-wabi ring-4 ring-vermilion/40 scale-105'
+                : 'bg-wabi text-sumi hover:bg-white'
             }">
-              <!-- Tactile Pill with Real Place Name -->
-              <div class="px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm transition-all font-kaluk whitespace-nowrap ${
-                isSelected
-                  ? 'bg-sumi text-wabi ring-4 ring-vermilion/30'
-                  : 'bg-wabi text-sumi hover:bg-white'
-              }">
-                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
-                <span class="text-xs font-black tracking-tight">${displayName}</span>
-                <span class="text-[10px] font-mono font-bold opacity-75">${tierBadge}</span>
-              </div>
-
-              <!-- Tail pointer -->
-              <div class="w-1.5 h-1.5 rotate-45 -mt-1 border-r border-b border-sumi shadow-sm"
-                   style="background-color: ${isSelected ? '#141518' : '#faf6ee'}"></div>
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
+              <span class="text-xs font-black tracking-tight">${displayName}</span>
+              <span class="text-[10px] font-mono font-bold opacity-75">${tierBadge}</span>
             </div>
+
+            <!-- Tail pointer arrow pointing directly to target -->
+            <div class="w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 border-sumi shadow-sm"
+                 style="background-color: ${isSelected ? '#141518' : '#faf6ee'}"></div>
+
+            <!-- Contact Target Dot on exact coordinates -->
+            <div class="w-1.5 h-1.5 rounded-full bg-sumi -mt-0.5"></div>
           </div>
         `;
 
         const customIcon = L.divIcon({
           className: 'place-name-pin',
           html: markerHtml,
-          iconSize: [120, 36],
-          iconAnchor: [60, 32],
+          iconSize: [0, 0],
+          iconAnchor: [0, 0],
         });
 
         const marker = L.marker([place.latitude, place.longitude], {
