@@ -2,15 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import { Place, PlaceCategory } from './types';
 
+// Statically bundled fallback for zero-failure reliability in serverless/webpack
+import fallbackPlaces from '../data/places_mumbai.json';
+
 const MUMBAI_DIR = path.join(process.cwd(), 'data', 'places_mumbai');
 const SINGLE_FILE = path.join(process.cwd(), 'data', 'places_mumbai.json');
 
 /**
  * Loads all places across modular category files in data/places_mumbai/*.json
- * Fallback to data/places_mumbai.json if the directory is missing.
+ * With multi-layer fallback to single JSON and statically bundled JSON.
  */
 export function getAllPlaces(): Place[] {
   try {
+    // 1. Try reading modular directory
     if (fs.existsSync(MUMBAI_DIR)) {
       const files = fs.readdirSync(MUMBAI_DIR).filter((f) => f.endsWith('.json'));
       if (files.length > 0) {
@@ -25,20 +29,26 @@ export function getAllPlaces(): Place[] {
             console.error(`Error parsing ${file}:`, err);
           }
         }
-        return allPlaces;
+        if (allPlaces.length > 0) {
+          return allPlaces;
+        }
       }
     }
 
-    // Fallback to legacy single file
+    // 2. Fallback to single file on disk
     if (fs.existsSync(SINGLE_FILE)) {
       const content = fs.readFileSync(SINGLE_FILE, 'utf-8');
-      return JSON.parse(content);
+      const parsed = JSON.parse(content);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
     }
   } catch (error) {
-    console.error('Error loading places:', error);
+    console.error('Error loading places from disk:', error);
   }
 
-  return [];
+  // 3. Guaranteed fallback: statically bundled JSON
+  return (fallbackPlaces as Place[]) || [];
 }
 
 /**

@@ -10,6 +10,7 @@ import ReportModal from '@/components/discovery/ReportModal';
 import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
+import initialPlacesData from '@/data/places_mumbai.json';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
 const DEFAULT_MUMBAI_CENTER = { lat: 19.0418, lng: 72.8398 };
@@ -18,7 +19,9 @@ export default function HomePage() {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(
     DEFAULT_MUMBAI_CENTER
   );
-  const [allPlaces, setAllPlaces] = useState<Place[]>([]);
+  const [allPlaces, setAllPlaces] = useState<Place[]>(
+    Array.isArray(initialPlacesData) ? (initialPlacesData as Place[]) : []
+  );
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
