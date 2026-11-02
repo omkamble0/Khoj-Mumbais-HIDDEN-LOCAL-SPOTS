@@ -37,7 +37,7 @@ export default function SavedPlacesDrawer({
               <Heart className="w-5 h-5 fill-current" />
             </div>
             <div>
-              <h2 className="font-display font-black text-2xl text-sumi tracking-tight">Saved Sanctuaries</h2>
+              <h2 className="font-display font-normal text-2xl md:text-3xl text-sumi tracking-wide leading-snug">Saved Sanctuaries</h2>
               <p className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">
                 {savedPlaces.length} {savedPlaces.length === 1 ? 'place' : 'places'} bookmarked
               </p>
@@ -115,7 +115,7 @@ export default function SavedPlacesDrawer({
                     </span>
                   </div>
 
-                  <h4 className="font-display font-bold text-base md:text-lg text-sumi truncate tracking-wide group-hover:text-vermilion transition-colors">
+                  <h4 className="font-display font-normal text-lg md:text-xl text-sumi truncate tracking-wide leading-snug group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h4>
 

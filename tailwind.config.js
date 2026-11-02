@@ -48,11 +48,12 @@ module.exports = {
       },
       fontFamily: {
         display: [
-          '"Cabinet Grotesk"',
-          '"Plus Jakarta Sans"',
-          'system-ui',
-          '-apple-system',
-          'sans-serif',
+          '"Ananda Namaste"',
+          '"Neptouch 3"',
+          '"Neptouch"',
+          '"Yatra One"',
+          '"Rozha One"',
+          'serif',
         ],
         ananda: [
           '"Ananda Namaste"',

@@ -36,7 +36,7 @@ export default function ZineLookbook({
             </span>
           </div>
 
-          <h2 className="font-display font-bold text-4xl md:text-6xl tracking-wide text-wabi leading-tight mb-2">
+          <h2 className="font-display font-normal text-4xl md:text-6xl tracking-wide text-wabi leading-[1.25] mb-2">
             Get Lost. <span className="italic font-normal text-amber-300">Feel Found.</span>
           </h2>
 
@@ -120,8 +120,8 @@ export default function ZineLookbook({
                     </span>
                   </div>
 
-                  {/* Place Title in Bold Architectural Display */}
-                  <h3 className="font-display font-black text-2xl text-sumi leading-tight tracking-tight group-hover:text-vermilion transition-colors">
+                  {/* Place Title in Ananda Namaste Display with proper line-height */}
+                  <h3 className="font-display font-normal text-2xl md:text-3xl text-sumi leading-[1.3] tracking-wide pt-1 group-hover:text-vermilion transition-colors">
                     {place.name}
                   </h3>
 
