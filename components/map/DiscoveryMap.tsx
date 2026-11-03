@@ -15,6 +15,7 @@ interface DiscoveryMapProps {
 // Category Theme Accents
 const CATEGORY_COLORS: Record<string, { dot: string; border: string; bg: string }> = {
   cafes: { dot: '#d97706', border: '#b45309', bg: '#fffbeb' },      // Amber
+  bars: { dot: '#be185d', border: '#9d174d', bg: '#fdf2f8' },       // Deep Wine Rose
   forts: { dot: '#2563eb', border: '#1d4ed8', bg: '#eff6ff' },      // Blue
   walks: { dot: '#059669', border: '#047857', bg: '#ecfdf5' },      // Emerald Walk
   treks: { dot: '#15803d', border: '#166534', bg: '#f0fdf4' },      // Forest Trek

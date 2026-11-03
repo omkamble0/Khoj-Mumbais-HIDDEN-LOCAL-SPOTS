@@ -11,7 +11,8 @@ export type PlaceCategory =
   | 'books'
   | 'culture'
   | 'spiritual'
-  | 'bazaars';
+  | 'bazaars'
+  | 'bars';
 
 export type SpotTier = 'all' | 'hidden_gem' | 'underrated' | 'iconic';
 export type AccessType = 'public' | 'permissive' | 'commercial' | 'trail_required';

@@ -16,6 +16,7 @@ import {
   Palette,
   Sparkles,
   ShoppingBag,
+  Wine,
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -27,6 +28,7 @@ interface FilterBarProps {
 const CATEGORIES: { id: PlaceCategory; label: string; icon: React.ReactNode }[] = [
   { id: 'all', label: 'ALL SPOTS', icon: <Compass className="w-3.5 h-3.5" /> },
   { id: 'cafes', label: 'CAFÉS', icon: <Coffee className="w-3.5 h-3.5" /> },
+  { id: 'bars', label: 'BARS', icon: <Wine className="w-3.5 h-3.5" /> },
   { id: 'forts', label: 'FORTS', icon: <Shield className="w-3.5 h-3.5" /> },
   { id: 'walks', label: 'WALKS', icon: <Footprints className="w-3.5 h-3.5" /> },
   { id: 'treks', label: 'TREKS', icon: <Mountain className="w-3.5 h-3.5" /> },
