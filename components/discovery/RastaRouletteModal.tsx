@@ -282,7 +282,7 @@ export default function RastaRouletteModal({
           <div className="flex items-center justify-between text-xs font-mono bg-wabi p-2 rounded-xl border border-sumi/20">
             <div className="flex items-center gap-1.5 min-w-0">
               <span className="w-2 h-2 rounded-full flex-shrink-0 bg-emerald-600" />
-              <span className="font-bold text-sumi">MUMBAI RADAR:</span>
+              <span className="font-bold text-sumi">MUMBAI :</span>
               <span className="text-vermilion font-bold truncate">{currentWindow.icon} {currentWindow.label}</span>
               <span className="text-slate-500 text-[11px] hidden sm:inline">({timeString})</span>
             </div>

@@ -72,7 +72,7 @@ export default function Header({
             title="Click to roll Rasta Roulette for this vibe window"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="text-slate-400 font-medium">RADAR:</span>
+            <span className="text-slate-400 font-medium">:</span>
             <span className="text-amber-300 font-bold">{vibeInfo.window.icon} {vibeInfo.window.label.toUpperCase()}</span>
             <span className="text-slate-400">({vibeInfo.timeString})</span>
           </div>

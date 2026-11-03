@@ -543,3 +543,4 @@ with open(file_path, 'w', encoding='utf-8') as f:
     json.dump(current_places, f, indent=2, ensure_ascii=False)
 
 print(f"Successfully added {added_count} new chaotic bars! Total catalog now: {len(current_places)}")
+

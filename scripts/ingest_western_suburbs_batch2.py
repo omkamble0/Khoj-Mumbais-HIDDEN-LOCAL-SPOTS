@@ -367,3 +367,4 @@ for cat in categories:
 print("Modular sync completed:")
 for cat, count in cat_counts.items():
     print(f"  {cat}: {count} places")
+
