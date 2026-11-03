@@ -11,6 +11,8 @@ interface DiscoveryMapProps {
   selectedPlace: Place | null;
   onSelectPlace: (place: Place) => void;
   radiusKm: number;
+  isBlinking?: boolean;
+  onToggleBlinking?: () => void;
 }
 
 // Category Theme Accents
@@ -36,6 +38,8 @@ export default function DiscoveryMap({
   selectedPlace,
   onSelectPlace,
   radiusKm,
+  isBlinking = false,
+  onToggleBlinking,
 }: DiscoveryMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -170,8 +174,8 @@ export default function DiscoveryMap({
     const layer = markersLayerRef.current;
     if (!map || !layer) return;
 
-    // Check if place IDs actually changed - prevents 100% of redundant rebuilds
-    const newIds = places.map((p) => p.id).join(',');
+    // Check if place IDs or blinking state actually changed - prevents redundant rebuilds
+    const newIds = `${places.map((p) => p.id).join(',')}_blink_${isBlinking}`;
     if (newIds === currentPlaceIdsRef.current && layer.getLayers().length > 0) {
       return;
     }
@@ -204,7 +208,7 @@ export default function DiscoveryMap({
               <!-- Tactile Pill with Real Place Name -->
               <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion transition-colors duration-100">
                 <span class="w-2.5 h-2.5 rounded-full flex-shrink-0 relative flex items-center justify-center" style="background-color: ${theme.dot};">
-                  ${isPeaking ? `<span class="absolute w-4 h-4 rounded-full bg-emerald-500 opacity-60 animate-ping"></span>` : ''}
+                  ${isPeaking ? (isBlinking ? `<span class="absolute w-4 h-4 rounded-full bg-emerald-500 opacity-60 animate-ping"></span>` : `<span class="absolute w-3.5 h-3.5 rounded-full border border-emerald-500 bg-emerald-500/25"></span>`) : ''}
                 </span>
                 <span class="pin-label text-xs font-bold tracking-normal">${displayName}</span>
                 <span class="pin-tier text-xs font-mono font-bold opacity-80">${tierBadge}</span>
@@ -250,7 +254,7 @@ export default function DiscoveryMap({
     } catch (err) {
       console.warn('Error updating markers:', err);
     }
-  }, [places]);
+  }, [places, isBlinking]);
 
   // Fast 0ms selected marker visual toggle without destroying Leaflet layers
   useEffect(() => {
@@ -294,6 +298,20 @@ export default function DiscoveryMap({
   return (
     <div className="relative w-full h-full min-h-[400px]">
       <div ref={mapContainerRef} className="w-full h-full min-h-[400px] z-0" style={{ minHeight: '100%' }} />
+
+      {/* Floating Radar Pulse / Blinking Toggle */}
+      {onToggleBlinking && (
+        <div className="absolute bottom-6 left-3 sm:left-6 z-20 pointer-events-auto flex items-center gap-2">
+          <button
+            onClick={onToggleBlinking}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border-2 border-sumi bg-wabi/95 hover:bg-white text-sumi shadow-riso hover:shadow-riso-sm text-xs font-mono font-bold transition-all active:scale-95"
+            title={isBlinking ? 'Click to stop blinking animations' : 'Click to enable blinking animations'}
+          >
+            <span className={`w-2 h-2 rounded-full ${isBlinking ? 'bg-emerald-500 animate-ping' : 'bg-slate-400'}`} />
+            <span>{isBlinking ? 'BLINKING: ON' : 'STOP BLINKING: ACTIVE'}</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

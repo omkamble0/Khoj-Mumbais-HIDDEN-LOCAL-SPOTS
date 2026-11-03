@@ -11,6 +11,8 @@ interface DynamicMapProps {
   selectedPlace: Place | null;
   onSelectPlace: (place: Place) => void;
   radiusKm: number;
+  isBlinking?: boolean;
+  onToggleBlinking?: () => void;
 }
 
 // Error Boundary to prevent any client-side Leaflet exception from white-screening the page
