@@ -65,9 +65,11 @@ export default function PlaceCardDrawer({
 
   const handleShare = async () => {
     if (!place) return;
+    const cleanCity = place.city ? place.city.replace(/\s*\/\s*MMR(\s*Coast)?/i, '').trim() : 'Mumbai';
+    const mapsLink = `https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}`;
     const shareData = {
       title: `${place.name} · KHOJ`,
-      text: `Check out ${place.name} in ${place.neighborhood || 'Mumbai'} on KHOJ: ${place.description}`,
+      text: `Discover ${place.name} (${place.neighborhood ? place.neighborhood + ', ' : ''}${cleanCity}) on KHOJ: ${place.description}\n📍 Maps: ${mapsLink}`,
       url: window.location.href,
     };
     if (navigator.share) {
@@ -78,20 +80,24 @@ export default function PlaceCardDrawer({
         // Fallback to clipboard
       }
     }
-    navigator.clipboard.writeText(`${place.name} - ${window.location.href}`);
+    navigator.clipboard.writeText(`${place.name} (${place.neighborhood ? place.neighborhood + ', ' : ''}${cleanCity})\n${place.description}\n📍 Google Maps: ${mapsLink}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   if (!place) return null;
 
-  // Query by exact Place Name + Neighborhood + Mumbai so Google Maps pins to the verified POI entity
-  // instead of reverse-geocoding coordinates to a random street or apartment block
-  const destinationQuery = encodeURIComponent(
-    `${place.name}, ${place.neighborhood ? place.neighborhood + ', ' : ''}Mumbai`
+  // Clean city name for accurate landmark knowledge graph search (e.g. Alibaug, Thane, Navi Mumbai, Matheran, Mumbai)
+  const cleanCity = place.city ? place.city.replace(/\s*\/\s*MMR(\s*Coast)?/i, '').trim() : 'Mumbai';
+  const landmarkSearchQuery = encodeURIComponent(
+    [place.name, place.neighborhood, cleanCity].filter(Boolean).join(', ')
   );
-  const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationQuery}`;
-  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${destinationQuery}`;
+
+  // Directions link uses exact verified GPS coordinates for 100% foolproof turn-by-turn navigation
+  const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
+  
+  // Landmark card link opens Google Places knowledge card with reviews, photos, and ratings
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${landmarkSearchQuery}`;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[540px] lg:w-[580px] pb-safe transition-transform duration-300 ease-out font-sans">
