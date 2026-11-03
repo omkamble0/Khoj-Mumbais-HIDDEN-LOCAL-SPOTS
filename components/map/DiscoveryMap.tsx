@@ -50,14 +50,43 @@ export default function DiscoveryMap({
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
   const markersLayerRef = useRef<L.LayerGroup | null>(null);
+  const markerPoolRef = useRef<Map<string, L.Marker>>(new Map());
   const radiusCircleRef = useRef<L.Circle | null>(null);
   const userMarkerRef = useRef<L.Marker | null>(null);
   const prevSelectedIdRef = useRef<string | null>(null);
   const currentPlaceIdsRef = useRef<string>('');
   const onSelectPlaceRef = useRef(onSelectPlace);
   onSelectPlaceRef.current = onSelectPlace;
+  const selectedPlaceRef = useRef(selectedPlace);
+  selectedPlaceRef.current = selectedPlace;
 
-  // Initialize Map safely & bind adaptive zoom
+  // Viewport Culling: only renders markers within map bounds (+25% cushion)
+  const syncVisibleMarkers = () => {
+    const map = mapInstanceRef.current;
+    const layer = markersLayerRef.current;
+    if (!map || !layer) return;
+
+    const bounds = map.getBounds().pad(0.25);
+    const pool = markerPoolRef.current;
+    const currentSelectedId = selectedPlaceRef.current?.id;
+
+    pool.forEach((marker, placeId) => {
+      const latLng = marker.getLatLng();
+      const isVisible = bounds.contains(latLng) || placeId === currentSelectedId;
+      const isAttached = layer.hasLayer(marker);
+
+      if (isVisible && !isAttached) {
+        layer.addLayer(marker);
+      } else if (!isVisible && isAttached) {
+        layer.removeLayer(marker);
+      }
+    });
+  };
+
+  const syncVisibleMarkersRef = useRef(syncVisibleMarkers);
+  syncVisibleMarkersRef.current = syncVisibleMarkers;
+
+  // Initialize Map safely & bind adaptive zoom + viewport culling
   useEffect(() => {
     if (!mapContainerRef.current) return;
     if (mapInstanceRef.current) return;
@@ -81,17 +110,26 @@ export default function DiscoveryMap({
         preferCanvas: true,
       });
 
-      // Adaptive Zoom density check: at zoom < 13, markers collapse to sleek non-overlapping dots
+      // Adaptive Zoom density check: at zoom < 14, markers collapse to sleek non-overlapping dots
+      // preventing massive label collisions in dense clusters like Bandra, Fort, and Lower Parel
       const updateZoomClass = () => {
         if (!mapContainerRef.current) return;
-        if (map.getZoom() < 13) {
+        if (map.getZoom() < 14) {
           mapContainerRef.current.classList.add('map-zoom-city');
         } else {
           mapContainerRef.current.classList.remove('map-zoom-city');
         }
       };
       updateZoomClass();
-      map.on('zoomend', updateZoomClass);
+
+      // Viewport culling event hooks
+      map.on('moveend', () => {
+        syncVisibleMarkersRef.current();
+      });
+      map.on('zoomend', () => {
+        updateZoomClass();
+        syncVisibleMarkersRef.current();
+      });
 
       // Lightweight OpenStreetMap tiles (smooth native tile streaming without clipping stalls)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -190,6 +228,7 @@ export default function DiscoveryMap({
 
     try {
       layer.clearLayers();
+      const newPool = new Map<string, L.Marker>();
       const { window: currentWindow } = getCurrentVibeWindow();
 
       places.forEach((place) => {
@@ -256,8 +295,12 @@ export default function DiscoveryMap({
           onSelectPlaceRef.current(place);
         });
 
-        marker.addTo(layer);
+        newPool.set(place.id, marker);
       });
+
+      markerPoolRef.current = newPool;
+      // Perform spatial viewport culling: only inject visible markers into DOM
+      syncVisibleMarkers();
     } catch (err) {
       console.warn('Error updating markers:', err);
     }
@@ -267,6 +310,7 @@ export default function DiscoveryMap({
   useEffect(() => {
     const prevId = prevSelectedIdRef.current;
     const currentId = selectedPlace?.id || null;
+    selectedPlaceRef.current = selectedPlace;
     if (prevId === currentId) return;
 
     if (prevId) {
@@ -278,6 +322,10 @@ export default function DiscoveryMap({
     }
 
     if (currentId) {
+      const marker = markerPoolRef.current.get(currentId);
+      if (marker && markersLayerRef.current && !markersLayerRef.current.hasLayer(marker)) {
+        markersLayerRef.current.addLayer(marker);
+      }
       const currEl = document.getElementById(`pin-${currentId}`);
       if (currEl) {
         currEl.querySelector('.pin-pill')?.classList.add('pin-selected');

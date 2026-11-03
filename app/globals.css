@@ -124,11 +124,19 @@ body {
 }
 
 /* Custom Marker Smoothing & Adaptive Progressive Zoom */
-.custom-pin {
-  pointer-events: auto;
+.place-name-pin {
+  will-change: transform;
 }
 
-/* In City Overview (zoom < 13), non-selected pins condense into sleek tactile dots to avoid 60-pin text overlap */
+.custom-pin {
+  pointer-events: auto;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  contain: layout style;
+}
+
+/* In Overview & Neighborhoods (zoom < 14), non-selected pins condense into sleek tactile dots to avoid 60-pin text collisions in dense areas */
 .map-zoom-city .pin-pill:not(.pin-selected) {
   padding: 4px;
   border-radius: 9999px;
@@ -142,7 +150,10 @@ body {
   display: none;
 }
 
-/* Hovering any pin at city zoom smoothly pops up the full place name pill */
+/* Hovering any pin at overview zoom smoothly pops up the full place name pill */
+.map-zoom-city .custom-pin:hover {
+  z-index: 1000 !important;
+}
 .map-zoom-city .custom-pin:hover .pin-pill:not(.pin-selected) {
   padding: 6px 12px;
   border-radius: 12px;
