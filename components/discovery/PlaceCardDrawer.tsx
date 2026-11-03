@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Place } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
+import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
 import {
   Navigation,
   ShieldCheck,
@@ -99,6 +100,9 @@ export default function PlaceCardDrawer({
   // Landmark card link opens Google Places knowledge card with reviews, photos, and ratings
   const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${landmarkSearchQuery}`;
 
+  const { window: currentVibeWindow } = getCurrentVibeWindow();
+  const peakInfo = checkIsPlacePeakingNow(place, currentVibeWindow);
+
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[540px] lg:w-[580px] pb-safe transition-transform duration-300 ease-out font-sans">
       <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85dvh] md:max-h-[88vh] flex flex-col">
@@ -138,6 +142,12 @@ export default function PlaceCardDrawer({
             {place.distance_meters !== undefined && (
               <span className="text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-3 py-1 rounded-xl shadow-sm">
                 {formatDistance(place.distance_meters)}
+              </span>
+            )}
+            {peakInfo.isPeaking && (
+              <span className="text-xs font-mono font-bold bg-emerald-600 text-white backdrop-blur-md border border-emerald-400 px-3 py-1 rounded-xl shadow-md flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                <span>{currentVibeWindow.icon} PEAK TIME NOW</span>
               </span>
             )}
           </div>
@@ -181,6 +191,24 @@ export default function PlaceCardDrawer({
               </span>
             </div>
           </div>
+
+          {/* Live Vibe Radar Active Window Callout */}
+          {peakInfo.isPeaking && (
+            <div className="bg-emerald-50 border-2 border-emerald-500/50 rounded-2xl p-3.5 flex items-center gap-3 text-emerald-950 shadow-riso-sm">
+              <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 text-base shadow-sm">
+                {currentVibeWindow.icon}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 font-mono text-[11px] font-bold text-emerald-700 uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping" />
+                  <span>VIBE RADAR: PEAKING RIGHT NOW</span>
+                </div>
+                <p className="text-xs sm:text-sm font-semibold text-emerald-900 mt-0.5">
+                  {peakInfo.reason}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Unified Telemetry Strip (Roomy metrics) */}
           <div className="bg-wabi-100/90 border border-sumi/20 rounded-2xl p-4 shadow-riso-sm grid grid-cols-3 divide-x divide-sumi/15">

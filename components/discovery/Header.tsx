@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Compass, LocateFixed, Search, Map, LayoutGrid, Heart } from 'lucide-react';
+import { Compass, LocateFixed, Search, Map, LayoutGrid, Heart, Dices } from 'lucide-react';
+import { getCurrentVibeWindow } from '@/lib/vibeRadar';
 
 interface HeaderProps {
   currentCity: string;
@@ -14,6 +15,7 @@ interface HeaderProps {
   totalSpots: number;
   savedCount: number;
   onOpenSaved: () => void;
+  onOpenRoulette: () => void;
 }
 
 export default function Header({
@@ -27,8 +29,18 @@ export default function Header({
   totalSpots,
   savedCount,
   onOpenSaved,
+  onOpenRoulette,
 }: HeaderProps) {
   const [localQuery, setLocalQuery] = useState(searchQuery);
+  const [vibeInfo, setVibeInfo] = useState(() => getCurrentVibeWindow());
+
+  // Periodically update live vibe window
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVibeInfo(getCurrentVibeWindow());
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     setLocalQuery(searchQuery);
@@ -50,12 +62,32 @@ export default function Header({
           <span className="w-2 h-2 rounded-full bg-vermilion animate-pulse flex-shrink-0"></span>
           <span className="font-bold text-vermilion text-xs sm:text-sm flex-shrink-0">KHOJ</span>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI </span>
+          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI</span>
+          
+          {/* Live Vibe Radar Telemetry Indicator */}
+          <span className="text-slate-500 hidden md:inline">|</span>
+          <div 
+            onClick={onOpenRoulette}
+            className="hidden md:flex items-center gap-1.5 cursor-pointer bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors text-[11px]"
+            title="Click to roll Rasta Roulette for this vibe window"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <span className="text-slate-400 font-medium">RADAR:</span>
+            <span className="text-amber-300 font-bold">{vibeInfo.window.icon} {vibeInfo.window.label.toUpperCase()}</span>
+            <span className="text-slate-400">({vibeInfo.timeString})</span>
+          </div>
         </div>
         <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
-          <span className="text-amber-400 font-bold text-[11px] sm:text-xs">● {totalSpots} SANCTUARIES</span>
+          <button
+            onClick={onOpenRoulette}
+            className="flex items-center gap-1 text-vermilion hover:text-white font-bold text-[11px] sm:text-xs bg-vermilion/20 hover:bg-vermilion px-2 py-0.5 rounded transition-all"
+            title="Roll Rasta Roulette"
+          >
+            <Dices className="w-3.5 h-3.5" />
+            <span className="hidden xs:inline">ROULETTE</span>
+          </button>
           <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-emerald-400 font-semibold hidden sm:inline text-[11px] sm:text-xs"></span>
+          <span className="text-amber-400 font-bold text-[11px] sm:text-xs">● {totalSpots} SANCTUARIES</span>
         </div>
       </div>
 
@@ -97,6 +129,15 @@ export default function Header({
 
               {/* Mobile Actions: Near Me, Saved & View Toggle */}
               <div className="flex md:hidden items-center gap-1.5">
+                <button
+                  onClick={onOpenRoulette}
+                  className="p-1.5 sm:p-2 bg-vermilion text-white border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold hover:bg-vermilion/90 flex items-center justify-center active:scale-95 transition-transform"
+                  title="Roll Rasta Roulette"
+                  aria-label="Roll Rasta Roulette"
+                >
+                  <Dices className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                </button>
+
                 <button
                   onClick={onLocateMe}
                   disabled={isLocating}
@@ -162,8 +203,17 @@ export default function Header({
               </div>
             </div>
 
-            {/* Desktop View Switcher, Saved & Geolocation (Elevated Pop-up pills over right collage) */}
+            {/* Desktop View Switcher, Saved, Roulette & Geolocation (Elevated Pop-up pills over right collage) */}
             <div className="hidden md:flex items-center gap-2 flex-shrink-0">
+              <button
+                onClick={onOpenRoulette}
+                className="flex items-center gap-1.5 px-3.5 py-2 bg-vermilion hover:bg-vermilion/90 text-white border-2 border-sumi rounded-2xl shadow-riso hover:shadow-riso-sm hover:-translate-y-0.5 text-xs font-mono font-bold transition-all active:scale-95"
+                title="Roll Rasta Roulette for a random sanctuary"
+              >
+                <Dices className="w-3.5 h-3.5 text-white" />
+                <span>ROULETTE 🎲</span>
+              </button>
+
               <button
                 onClick={onOpenSaved}
                 className="flex items-center gap-1.5 px-3.5 py-2 bg-wabi/95 hover:bg-white border-2 border-sumi rounded-2xl shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 text-xs font-mono font-bold text-sumi transition-all"

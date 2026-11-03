@@ -8,6 +8,7 @@ import PlaceCardDrawer from '@/components/discovery/PlaceCardDrawer';
 import ZineLookbook from '@/components/discovery/ZineLookbook';
 import ReportModal from '@/components/discovery/ReportModal';
 import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
+import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 import initialPlacesData from '@/data/places_mumbai.json';
@@ -27,6 +28,7 @@ export default function HomePage() {
   const [isLocating, setIsLocating] = useState(false);
   const [viewMode, setViewMode] = useState<'map' | 'zine'>('map');
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
+  const [isRouletteOpen, setIsRouletteOpen] = useState(false);
   const [savedPlaceIds, setSavedPlaceIds] = useState<string[]>([]);
 
   const [filters, setFilters] = useState<FilterState>({
@@ -208,6 +210,7 @@ export default function HomePage() {
           refreshFavorites();
           setIsSavedDrawerOpen(true);
         }}
+        onOpenRoulette={() => setIsRouletteOpen(true)}
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
@@ -276,6 +279,19 @@ export default function HomePage() {
           onClose={() => setReportingPlace(null)}
         />
       )}
+
+      {/* 6. Rasta Roulette (Serendipity Generator) Modal */}
+      <RastaRouletteModal
+        isOpen={isRouletteOpen}
+        onClose={() => setIsRouletteOpen(false)}
+        places={allPlaces}
+        userLocation={userLocation}
+        onSelectPlace={(place) => {
+          setSelectedPlace(place);
+          setViewMode('map');
+        }}
+        currentCategory={filters.category}
+      />
     </div>
   );
 }

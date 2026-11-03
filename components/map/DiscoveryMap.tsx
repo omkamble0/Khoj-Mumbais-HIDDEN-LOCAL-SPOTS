@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import { Place } from '@/lib/types';
+import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
 
 interface DiscoveryMapProps {
   places: Place[];
@@ -178,10 +179,12 @@ export default function DiscoveryMap({
 
     try {
       layer.clearLayers();
+      const { window: currentWindow } = getCurrentVibeWindow();
 
       places.forEach((place) => {
         const isSelected = selectedPlace?.id === place.id;
         const theme = CATEGORY_COLORS[place.category] || { dot: '#ff3e18', border: '#e52c07', bg: '#fff1ee' };
+        const isPeaking = checkIsPlacePeakingNow(place, currentWindow).isPeaking;
         
         // Display real name (short_name or name)
         const displayName = place.short_name || place.name.split(' ')[0] + ' ' + (place.name.split(' ')[1] || '');
@@ -200,9 +203,12 @@ export default function DiscoveryMap({
             <div class="origin-bottom flex flex-col items-center group-hover:-translate-y-1 group-hover:scale-105 transition-transform duration-100 ease-out">
               <!-- Tactile Pill with Real Place Name -->
               <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion transition-colors duration-100">
-                <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background-color: ${theme.dot};"></span>
+                <span class="w-2.5 h-2.5 rounded-full flex-shrink-0 relative flex items-center justify-center" style="background-color: ${theme.dot};">
+                  ${isPeaking ? `<span class="absolute w-4 h-4 rounded-full bg-emerald-500 opacity-60 animate-ping"></span>` : ''}
+                </span>
                 <span class="pin-label text-xs font-bold tracking-normal">${displayName}</span>
                 <span class="pin-tier text-xs font-mono font-bold opacity-80">${tierBadge}</span>
+                ${isPeaking ? `<span class="pin-tier text-[10px] text-emerald-600 font-bold" title="Peaking Now">⚡</span>` : ''}
               </div>
 
               <!-- Tail pointer arrow -->

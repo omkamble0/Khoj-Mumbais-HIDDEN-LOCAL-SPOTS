@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { Place, FilterState } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import FilterBar from './FilterBar';
+import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
 
 interface ZineLookbookProps {
   places: Place[];
@@ -25,6 +26,7 @@ export default function ZineLookbook({
   onFilterChange,
 }: ZineLookbookProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const { window: currentWindow } = getCurrentVibeWindow();
 
   // Automatically reset to page 1 whenever filters change or places count changes
   useEffect(() => {
@@ -102,8 +104,8 @@ export default function ZineLookbook({
                 {/* Subtle Halftone Dot Texture */}
                 <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
 
-                {/* Floating Category & Tier Tag on Top Left */}
-                <div className="absolute top-3.5 left-3.5 flex items-center gap-2 z-10">
+                {/* Floating Category, Tier Tag & Peak Radar on Top Left */}
+                <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-1.5 z-10 max-w-[80%]">
                   <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
                     {place.category.replace('_', ' ')}
                   </span>
@@ -115,6 +117,12 @@ export default function ZineLookbook({
                     }`}>
                     {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
                   </span>
+                  {checkIsPlacePeakingNow(place, currentWindow).isPeaking && (
+                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase bg-emerald-600 text-white shadow-sm flex items-center gap-1 border border-emerald-400/50">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                      <span>{currentWindow.icon} PEAK NOW</span>
+                    </span>
+                  )}
                 </div>
 
                 {/* Distance Pill on Top Right */}
