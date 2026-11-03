@@ -34,8 +34,8 @@ export async function GET(request: NextRequest) {
 
     const radiusMeters = radiusKm * 1000;
     const filtered = enrichedPlaces.filter((place) => {
-      // Radius filter
-      if (place.distance_meters !== undefined && place.distance_meters > radiusMeters) {
+      // Radius filter (skip distance cutoff when radiusKm >= 120 / All MMR)
+      if (radiusKm < 120 && place.distance_meters !== undefined && place.distance_meters > radiusMeters) {
         return false;
       }
 

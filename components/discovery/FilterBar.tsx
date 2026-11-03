@@ -49,7 +49,7 @@ const SPOT_TIERS: { id: SpotTier; label: string }[] = [
   { id: 'iconic', label: '★ Iconic' },
 ];
 
-const RADII = [5, 10, 20, 40];
+const RADII = [10, 25, 50, 120];
 
 export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
   return (
@@ -108,7 +108,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
                     : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
                 }`}
               >
-                {r}km
+                {r >= 120 ? 'All' : `${r}km`}
               </button>
             ))}
           </div>

@@ -32,7 +32,7 @@ export default function HomePage() {
   const [filters, setFilters] = useState<FilterState>({
     category: 'all',
     spotTier: 'all',
-    radiusKm: 40,
+    radiusKm: 120,
     maxCrowdLevel: 5,
     searchQuery: '',
   });
@@ -41,13 +41,15 @@ export default function HomePage() {
   useEffect(() => {
     async function loadInitialPlaces() {
       try {
-        const res = await fetch('/api/places/nearby?radiusKm=100');
+        const res = await fetch('/api/places/nearby?radiusKm=500');
         if (res.ok) {
           const data = await res.json();
-          setAllPlaces(data.places || []);
+          if (Array.isArray(data.places) && data.places.length >= initialPlacesData.length) {
+            setAllPlaces(data.places);
+          }
         }
       } catch (e) {
-        console.error('Failed to load initial places:', e);
+        console.warn('Using bundled initial places dataset:', e);
       }
     }
     loadInitialPlaces();
@@ -110,8 +112,8 @@ export default function HomePage() {
 
     return placesWithScores
       .filter((place) => {
-        // Distance radius filter
-        if (place.distance_meters !== undefined && place.distance_meters > radiusMeters) {
+        // Distance radius filter (skip distance cutoff when All MMR / 120km is active)
+        if (filters.radiusKm < 120 && place.distance_meters !== undefined && place.distance_meters > radiusMeters) {
           return false;
         }
 
