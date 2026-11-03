@@ -14,7 +14,16 @@ const SINGLE_FILE = path.join(process.cwd(), 'data', 'places_mumbai.json');
  */
 export function getAllPlaces(): Place[] {
   try {
-    // 1. Try reading modular directory
+    // 1. Try reading master single JSON file on disk (primary source of truth)
+    if (fs.existsSync(SINGLE_FILE)) {
+      const content = fs.readFileSync(SINGLE_FILE, 'utf-8');
+      const parsed = JSON.parse(content);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
+    }
+
+    // 2. Fallback to modular directory
     if (fs.existsSync(MUMBAI_DIR)) {
       const files = fs.readdirSync(MUMBAI_DIR).filter((f) => f.endsWith('.json'));
       if (files.length > 0) {
@@ -32,15 +41,6 @@ export function getAllPlaces(): Place[] {
         if (allPlaces.length > 0) {
           return allPlaces;
         }
-      }
-    }
-
-    // 2. Fallback to single file on disk
-    if (fs.existsSync(SINGLE_FILE)) {
-      const content = fs.readFileSync(SINGLE_FILE, 'utf-8');
-      const parsed = JSON.parse(content);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
       }
     }
   } catch (error) {
