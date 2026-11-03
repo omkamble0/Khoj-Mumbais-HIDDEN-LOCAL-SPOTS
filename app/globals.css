@@ -174,27 +174,15 @@ body {
   display: block !important;
 }
 
-/* Tactile Horizontal Sliding Bar for Categories & Tiers */
+/* Tactile Horizontal Sliding Bar (Clean, no native browser scrollbar duplicates) */
 .sliding-bar {
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: #ff3e18 rgba(20, 21, 24, 0.12);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .sliding-bar::-webkit-scrollbar {
-  height: 5px;
-}
-.sliding-bar::-webkit-scrollbar-track {
-  background: rgba(20, 21, 24, 0.08);
-  border-radius: 9999px;
-  margin: 0 4px;
-}
-.sliding-bar::-webkit-scrollbar-thumb {
-  background: #ff3e18;
-  border-radius: 9999px;
-}
-.sliding-bar::-webkit-scrollbar-thumb:hover {
-  background: #141518;
+  display: none;
 }
 
 /* Custom Visible Horizontal Scrollbar for Category Pills */

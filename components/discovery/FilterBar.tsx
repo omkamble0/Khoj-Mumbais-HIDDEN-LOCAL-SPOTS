@@ -119,6 +119,32 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
     }
   };
 
+  // Click on the category sliding bar track to navigate
+  const handleCatTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    if (categoryScrollRef.current) {
+      const { scrollWidth, clientWidth } = categoryScrollRef.current;
+      categoryScrollRef.current.scrollTo({
+        left: ratio * (scrollWidth - clientWidth),
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  // Click on the tier sliding bar track to navigate
+  const handleTierTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    if (tierScrollRef.current) {
+      const { scrollWidth, clientWidth } = tierScrollRef.current;
+      tierScrollRef.current.scrollTo({
+        left: ratio * (scrollWidth - clientWidth),
+        behavior: 'smooth',
+      });
+    }
+  };
+
   // Drag-to-slide mouse interaction
   const attachDragScroll = (ref: React.RefObject<HTMLDivElement>, onScrollUpdate: () => void) => {
     let isDown = false;
@@ -153,17 +179,17 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
   const tierDragHandlers = attachDragScroll(tierScrollRef, updateTierScroll);
 
   return (
-    <div className="bg-wabi/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2 sm:space-y-2.5 select-none">
+    <div className="bg-wabi/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2 select-none">
       {/* 1. All Spots / Category Horizontal Menu Bar */}
       <div className="relative group/cat">
         {/* Left Arrow Sliding Button */}
         {canScrollCatLeft && (
           <button
             onClick={() => slideCategories(-200)}
-            className="absolute -left-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-amber-100 hover:scale-105 transition-all"
+            className="absolute -left-1 top-[18px] -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
             title="Slide left"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-3.5 h-3.5" />
           </button>
         )}
 
@@ -171,19 +197,19 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {canScrollCatRight && (
           <button
             onClick={() => slideCategories(200)}
-            className="absolute -right-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-amber-100 hover:scale-105 transition-all"
+            className="absolute -right-1 top-[18px] -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
             title="Slide right"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3.5 h-3.5" />
           </button>
         )}
 
-        {/* Horizontal Scrolling Pill Strip */}
+        {/* Horizontal Scrolling Pill Strip (no browser scrollbar duplicate) */}
         <div
           ref={categoryScrollRef}
           onScroll={updateCatScroll}
           {...catDragHandlers}
-          className="sliding-bar flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1.5 scroll-smooth cursor-grab active:cursor-grabbing"
+          className="sliding-bar flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scroll-smooth cursor-grab active:cursor-grabbing"
         >
           {CATEGORIES.map((cat) => {
             const isActive = filters.category === cat.id;
@@ -193,7 +219,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
                 onClick={() => onChange({ category: cat.id })}
                 className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all duration-150 border-2 flex-shrink-0 ${
                   isActive
-                    ? 'bg-vermilion text-white border-sumi shadow-riso-sm translate-y-[-1px]'
+                    ? 'bg-sumi text-wabi border-sumi shadow-riso-sm translate-y-[-1px]'
                     : 'bg-wabi-100 text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi-200'
                 }`}
               >
@@ -204,20 +230,21 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           })}
         </div>
 
-        {/* Tactile Horizontal Sliding Progress Bar */}
-        <div className="w-full px-1 pt-1 flex items-center gap-1.5">
-          <div className="flex-1 h-1 bg-sumi/10 rounded-full overflow-hidden relative">
+        {/* Working Sliding Bar 1: Refined, Muted Neutral Track for Categories */}
+        <div 
+          onClick={handleCatTrackClick}
+          className="w-full pt-1.5 pb-0.5 cursor-pointer group"
+          title="Click to slide categories"
+        >
+          <div className="w-full h-1 sm:h-1.5 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
             <div
-              className="h-full bg-vermilion rounded-full transition-all duration-100 ease-out shadow-sm"
+              className="h-full bg-sumi/65 hover:bg-sumi/85 rounded-full transition-transform duration-100 ease-out"
               style={{
-                width: '30%',
-                transform: `translateX(${catScrollProgress * 233.3}%)`,
+                width: '32%',
+                transform: `translateX(${catScrollProgress * 212.5}%)`,
               }}
             />
           </div>
-          <span className="text-[9px] font-mono font-bold text-slate-500 uppercase tracking-widest hidden sm:inline">
-            SLIDE ↔
-          </span>
         </div>
       </div>
 
@@ -227,10 +254,10 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {canScrollTierLeft && (
           <button
             onClick={() => slideTiers(-160)}
-            className="absolute -left-1.5 top-1/2 -translate-y-1/2 z-20 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-amber-100 hover:scale-105 transition-all"
+            className="absolute -left-1 top-[16px] -translate-y-1/2 z-20 w-5 h-5 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
             title="Slide left"
           >
-            <ChevronLeft className="w-3.5 h-3.5" />
+            <ChevronLeft className="w-3 h-3" />
           </button>
         )}
 
@@ -238,19 +265,19 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {canScrollTierRight && (
           <button
             onClick={() => slideTiers(160)}
-            className="absolute -right-1.5 top-1/2 -translate-y-1/2 z-20 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-amber-100 hover:scale-105 transition-all"
+            className="absolute -right-1 top-[16px] -translate-y-1/2 z-20 w-5 h-5 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
             title="Slide right"
           >
-            <ChevronRight className="w-3.5 h-3.5" />
+            <ChevronRight className="w-3 h-3" />
           </button>
         )}
 
-        {/* Horizontal Scrolling Tiers & Radius Row */}
+        {/* Horizontal Scrolling Tiers & Radius Row (no browser scrollbar duplicate) */}
         <div
           ref={tierScrollRef}
           onScroll={updateTierScroll}
           {...tierDragHandlers}
-          className="sliding-bar flex items-center justify-between gap-2 overflow-x-auto pb-1.5 text-xs scroll-smooth cursor-grab active:cursor-grabbing"
+          className="sliding-bar flex items-center justify-between gap-2 overflow-x-auto pb-1 text-xs scroll-smooth cursor-grab active:cursor-grabbing"
         >
           {/* Tier Selector (Hidden vs Underrated vs Iconic) */}
           <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
@@ -296,11 +323,15 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           </div>
         </div>
 
-        {/* Tactile Horizontal Sliding Progress Bar for Tiers */}
-        <div className="w-full px-1 pt-1">
-          <div className="h-1 bg-sumi/10 rounded-full overflow-hidden relative">
+        {/* Working Sliding Bar 2: Refined, Muted Neutral Track for Tiers */}
+        <div 
+          onClick={handleTierTrackClick}
+          className="w-full pt-1.5 pb-0.5 cursor-pointer group"
+          title="Click to slide tiers"
+        >
+          <div className="w-full h-1 sm:h-1.5 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
             <div
-              className="h-full bg-sumi rounded-full transition-all duration-100 ease-out shadow-sm"
+              className="h-full bg-sumi/65 hover:bg-sumi/85 rounded-full transition-transform duration-100 ease-out"
               style={{
                 width: '40%',
                 transform: `translateX(${tierScrollProgress * 150}%)`,
