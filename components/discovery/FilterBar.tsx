@@ -233,12 +233,12 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {/* Working Sliding Bar 1: Refined, Muted Neutral Track for Categories */}
         <div 
           onClick={handleCatTrackClick}
-          className="w-full pt-1.5 pb-0.5 cursor-pointer group"
-          title="Click to slide categories"
+          className="w-full pt-1 pb-0.5 cursor-pointer group"
+          title="Click or drag to slide categories"
         >
-          <div className="w-full h-1 sm:h-1.5 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
+          <div className="w-full h-1 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
             <div
-              className="h-full bg-sumi/65 hover:bg-sumi/85 rounded-full transition-transform duration-100 ease-out"
+              className="h-full bg-sumi/45 hover:bg-sumi/70 rounded-full transition-transform duration-100 ease-out"
               style={{
                 width: '32%',
                 transform: `translateX(${catScrollProgress * 212.5}%)`,
@@ -326,12 +326,12 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {/* Working Sliding Bar 2: Refined, Muted Neutral Track for Tiers */}
         <div 
           onClick={handleTierTrackClick}
-          className="w-full pt-1.5 pb-0.5 cursor-pointer group"
-          title="Click to slide tiers"
+          className="w-full pt-1 pb-0.5 cursor-pointer group"
+          title="Click or drag to slide tiers"
         >
-          <div className="w-full h-1 sm:h-1.5 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
+          <div className="w-full h-1 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
             <div
-              className="h-full bg-sumi/65 hover:bg-sumi/85 rounded-full transition-transform duration-100 ease-out"
+              className="h-full bg-sumi/45 hover:bg-sumi/70 rounded-full transition-transform duration-100 ease-out"
               style={{
                 width: '40%',
                 transform: `translateX(${tierScrollProgress * 150}%)`,
