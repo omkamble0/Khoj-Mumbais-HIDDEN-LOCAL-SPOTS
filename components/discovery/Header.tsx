@@ -16,8 +16,6 @@ interface HeaderProps {
   savedCount: number;
   onOpenSaved: () => void;
   onOpenRoulette: () => void;
-  isBlinking?: boolean;
-  onToggleBlinking?: () => void;
 }
 
 export default function Header({
@@ -32,8 +30,6 @@ export default function Header({
   savedCount,
   onOpenSaved,
   onOpenRoulette,
-  isBlinking = false,
-  onToggleBlinking,
 }: HeaderProps) {
   const [localQuery, setLocalQuery] = useState(searchQuery);
   const [vibeInfo, setVibeInfo] = useState(() => getCurrentVibeWindow());
@@ -75,26 +71,11 @@ export default function Header({
             className="hidden md:flex items-center gap-1.5 cursor-pointer bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors text-[11px]"
             title="Click to roll Rasta Roulette for this vibe window"
           >
-            <span className={`w-1.5 h-1.5 rounded-full ${isBlinking ? 'bg-emerald-400 animate-ping' : 'bg-emerald-400'}`} />
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             <span className="text-slate-400 font-medium">RADAR:</span>
             <span className="text-amber-300 font-bold">{vibeInfo.window.icon} {vibeInfo.window.label.toUpperCase()}</span>
             <span className="text-slate-400">({vibeInfo.timeString})</span>
           </div>
-
-          {onToggleBlinking && (
-            <>
-              <span className="text-slate-500 hidden sm:inline">|</span>
-              <button
-                onClick={onToggleBlinking}
-                className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold transition-all ${
-                  isBlinking ? 'bg-emerald-600/30 text-emerald-300 hover:bg-emerald-600/50' : 'bg-slate-700/80 text-slate-300 hover:bg-slate-600'
-                }`}
-                title={isBlinking ? 'Click to stop blinking animations' : 'Click to enable blinking animations'}
-              >
-                {isBlinking ? '⚡ BLINK: ON' : 'STOP BLINK: ACTIVE'}
-              </button>
-            </>
-          )}
         </div>
         <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
           <button

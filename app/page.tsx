@@ -29,28 +29,7 @@ export default function HomePage() {
   const [viewMode, setViewMode] = useState<'map' | 'zine'>('map');
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
   const [isRouletteOpen, setIsRouletteOpen] = useState(false);
-  const [isBlinking, setIsBlinking] = useState(false);
   const [savedPlaceIds, setSavedPlaceIds] = useState<string[]>([]);
-
-  // Stop blinking preference persistence (defaults to false = peaceful / no blinking)
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem('khoj_blinking_enabled');
-      if (stored !== null) {
-        setIsBlinking(stored === 'true');
-      }
-    } catch {}
-  }, []);
-
-  const handleToggleBlinking = useCallback(() => {
-    setIsBlinking((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem('khoj_blinking_enabled', String(next));
-      } catch {}
-      return next;
-    });
-  }, []);
 
   const [filters, setFilters] = useState<FilterState>({
     category: 'all',
@@ -232,8 +211,6 @@ export default function HomePage() {
           setIsSavedDrawerOpen(true);
         }}
         onOpenRoulette={() => setIsRouletteOpen(true)}
-        isBlinking={isBlinking}
-        onToggleBlinking={handleToggleBlinking}
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
@@ -256,8 +233,6 @@ export default function HomePage() {
               selectedPlace={selectedPlace}
               onSelectPlace={handleSelectPlace}
               radiusKm={filters.radiusKm}
-              isBlinking={isBlinking}
-              onToggleBlinking={handleToggleBlinking}
             />
           </div>
         ) : (
@@ -268,7 +243,6 @@ export default function HomePage() {
               onSelectPlace={handleSelectFromZine}
               filters={filters}
               onFilterChange={handleFilterChange}
-              isBlinking={isBlinking}
             />
           </div>
         )}
@@ -282,7 +256,6 @@ export default function HomePage() {
           refreshFavorites();
         }}
         onOpenReport={(p) => setReportingPlace(p)}
-        isBlinking={isBlinking}
       />
 
       {/* 4. Saved Places Tray */}
@@ -318,7 +291,6 @@ export default function HomePage() {
           setViewMode('map');
         }}
         currentCategory={filters.category}
-        isBlinking={isBlinking}
       />
     </div>
   );

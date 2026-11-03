@@ -29,7 +29,6 @@ interface RastaRouletteModalProps {
   userLocation: { lat: number; lng: number } | null;
   onSelectPlace: (place: Place) => void;
   currentCategory?: PlaceCategory;
-  isBlinking?: boolean;
 }
 
 type VibeMoodId = 'any' | 'peaking' | 'drinks' | 'chai' | 'sunset' | 'silence';
@@ -41,7 +40,6 @@ export default function RastaRouletteModal({
   userLocation,
   onSelectPlace,
   currentCategory,
-  isBlinking = false,
 }: RastaRouletteModalProps) {
   // Modal state: 'idle' (setup/rethink) | 'spinning' | 'result'
   const [modalStage, setModalStage] = useState<'idle' | 'spinning' | 'result'>('idle');
@@ -283,7 +281,7 @@ export default function RastaRouletteModal({
         <div className="p-3 bg-wabi-100 border-b border-sumi/20 space-y-2 flex-shrink-0">
           <div className="flex items-center justify-between text-xs font-mono bg-wabi p-2 rounded-xl border border-sumi/20">
             <div className="flex items-center gap-1.5 min-w-0">
-              <span className={`w-2 h-2 rounded-full flex-shrink-0 ${isBlinking ? 'bg-emerald-500 animate-pulse' : 'bg-emerald-600'}`} />
+              <span className="w-2 h-2 rounded-full flex-shrink-0 bg-emerald-600" />
               <span className="font-bold text-sumi">MUMBAI RADAR:</span>
               <span className="text-vermilion font-bold truncate">{currentWindow.icon} {currentWindow.label}</span>
               <span className="text-slate-500 text-[11px] hidden sm:inline">({timeString})</span>
@@ -464,7 +462,7 @@ export default function RastaRouletteModal({
                     {/* Live Peak Badge */}
                     {checkIsPlacePeakingNow(winnerPlace, currentWindow).isPeaking && (
                       <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-[11px] font-mono font-bold shadow-md z-10">
-                        <span className={`w-1.5 h-1.5 rounded-full ${isBlinking ? 'bg-white animate-ping' : 'bg-white'}`} />
+                        <span className="w-1.5 h-1.5 rounded-full bg-white" />
                         <span>{currentWindow.icon} PEAK TIME RIGHT NOW</span>
                       </div>
                     )}

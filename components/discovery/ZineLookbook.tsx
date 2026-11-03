@@ -12,7 +12,6 @@ interface ZineLookbookProps {
   onSelectPlace: (place: Place) => void;
   filters: FilterState;
   onFilterChange: (updated: Partial<FilterState>) => void;
-  isBlinking?: boolean;
 }
 
 const FALLBACK_IMAGE =
@@ -25,7 +24,6 @@ export default function ZineLookbook({
   onSelectPlace,
   filters,
   onFilterChange,
-  isBlinking = false,
 }: ZineLookbookProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const { window: currentWindow } = getCurrentVibeWindow();
@@ -121,7 +119,7 @@ export default function ZineLookbook({
                   </span>
                   {checkIsPlacePeakingNow(place, currentWindow).isPeaking && (
                     <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase bg-emerald-600 text-white shadow-sm flex items-center gap-1 border border-emerald-400/50">
-                      <span className={`w-1.5 h-1.5 rounded-full ${isBlinking ? 'bg-white animate-ping' : 'bg-white'}`} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white" />
                       <span>{currentWindow.icon} PEAK NOW</span>
                     </span>
                   )}

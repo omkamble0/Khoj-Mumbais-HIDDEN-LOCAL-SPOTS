@@ -23,7 +23,6 @@ interface PlaceCardDrawerProps {
   place: Place | null;
   onClose: () => void;
   onOpenReport: (place: Place) => void;
-  isBlinking?: boolean;
 }
 
 const FALLBACK_IMAGE =
@@ -33,7 +32,6 @@ export default function PlaceCardDrawer({
   place,
   onClose,
   onOpenReport,
-  isBlinking = false,
 }: PlaceCardDrawerProps) {
   const [isFavorited, setIsFavorited] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -148,7 +146,7 @@ export default function PlaceCardDrawer({
             )}
             {peakInfo.isPeaking && (
               <span className="text-xs font-mono font-bold bg-emerald-600 text-white backdrop-blur-md border border-emerald-400 px-3 py-1 rounded-xl shadow-md flex items-center gap-1.5">
-                <span className={`w-1.5 h-1.5 rounded-full ${isBlinking ? 'bg-white animate-ping' : 'bg-white'}`} />
+                <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 <span>{currentVibeWindow.icon} PEAK TIME NOW</span>
               </span>
             )}
@@ -202,7 +200,7 @@ export default function PlaceCardDrawer({
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 font-mono text-[11px] font-bold text-emerald-700 uppercase">
-                  <span className={`w-1.5 h-1.5 rounded-full ${isBlinking ? 'bg-emerald-600 animate-ping' : 'bg-emerald-600'}`} />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                   <span>VIBE RADAR: PEAKING RIGHT NOW</span>
                 </div>
                 <p className="text-xs sm:text-sm font-semibold text-emerald-900 mt-0.5">
