@@ -32,6 +32,12 @@ const CATEGORY_COLORS: Record<string, { dot: string; border: string; bg: string 
   bazaars: { dot: '#ea580c', border: '#c2410c', bg: '#ffedd5' },    // Terracotta
 };
 
+// Strict Geographical Bounding Box for India (Southwest: 6.0°N, 68.0°E -> Northeast: 37.5°N, 97.5°E)
+const INDIA_BOUNDS: L.LatLngBoundsExpression = [
+  [6.0, 68.0],
+  [37.5, 97.5],
+];
+
 export default function DiscoveryMap({
   places,
   userLocation,
@@ -67,6 +73,10 @@ export default function DiscoveryMap({
       const map = L.map(mapContainerRef.current, {
         center: [initialLat, initialLng],
         zoom: 12,
+        minZoom: 5, // Prevents zooming out beyond India (stops downloading global world tiles)
+        maxZoom: 19,
+        maxBounds: INDIA_BOUNDS, // Confines map view strictly to India
+        maxBoundsViscosity: 1.0, // Hard elastic boundary — won't let users drag map into other continents
         zoomControl: false,
         preferCanvas: true,
         wheelPxPerZoomLevel: 100,
@@ -87,12 +97,17 @@ export default function DiscoveryMap({
       updateZoomClass();
       map.on('zoomend', updateZoomClass);
 
-      // Fast parallel OpenStreetMap tiles (100% Free, Zero API Keys, Zero Watermarks)
+      // Fast parallel OpenStreetMap tiles strictly bounded to India (Zero API Keys, Zero worldwide thrashing)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         subdomains: ['a', 'b', 'c'],
+        minZoom: 5,
         maxZoom: 19,
+        bounds: INDIA_BOUNDS, // Instructs browser to strictly ignore/drop tile requests outside India
+        keepBuffer: 3,
+        updateWhenIdle: true, // Prevents network lag during smooth trackpad zoom
+        updateWhenZooming: false,
       }).addTo(map);
 
       L.control.zoom({ position: 'bottomright' }).addTo(map);
