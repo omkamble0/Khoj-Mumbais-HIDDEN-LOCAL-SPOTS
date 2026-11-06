@@ -6,6 +6,7 @@ import Header from '@/components/discovery/Header';
 import FilterBar from '@/components/discovery/FilterBar';
 import PlaceCardDrawer from '@/components/discovery/PlaceCardDrawer';
 import ZineLookbook from '@/components/discovery/ZineLookbook';
+import TransitNavigatorView from '@/components/transit/TransitNavigatorView';
 import ReportModal from '@/components/discovery/ReportModal';
 import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
@@ -26,7 +27,7 @@ export default function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
-  const [viewMode, setViewMode] = useState<'map' | 'zine'>('map');
+  const [viewMode, setViewMode] = useState<'map' | 'zine' | 'transit'>('map');
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
   const [isRouletteOpen, setIsRouletteOpen] = useState(false);
   const [savedPlaceIds, setSavedPlaceIds] = useState<string[]>([]);
@@ -220,7 +221,7 @@ export default function HomePage() {
         onOpenRoulette={() => setIsRouletteOpen(true)}
       />
 
-      {/* 2. Interactive Workspace (Map vs Zine Lookbook) */}
+      {/* 2. Interactive Workspace (Map vs Zine Lookbook vs Transit Navigator) */}
       <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden' : 'flex-1'}`}>
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
@@ -242,7 +243,7 @@ export default function HomePage() {
               radiusKm={filters.radiusKm}
             />
           </div>
-        ) : (
+        ) : viewMode === 'zine' ? (
           <div className="w-full relative z-0">
             {/* Zine Lookbook View */}
             <ZineLookbook
@@ -250,6 +251,19 @@ export default function HomePage() {
               onSelectPlace={handleSelectFromZine}
               filters={filters}
               onFilterChange={handleFilterChange}
+            />
+          </div>
+        ) : (
+          <div className="w-full relative z-0">
+            {/* Mumbai Local Train & Metro Smart Directions View */}
+            <TransitNavigatorView
+              places={allPlaces}
+              initialSelectedPlace={selectedPlace}
+              onSelectPlace={(p) => setSelectedPlace(p)}
+              onViewOnMap={(p) => {
+                setSelectedPlace(p);
+                setViewMode('map');
+              }}
             />
           </div>
         )}
@@ -263,6 +277,10 @@ export default function HomePage() {
           refreshFavorites();
         }}
         onOpenReport={(p) => setReportingPlace(p)}
+        onOpenTransit={(p) => {
+          setSelectedPlace(p);
+          setViewMode('transit');
+        }}
       />
 
       {/* 4. Saved Places Tray */}

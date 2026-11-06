@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Place } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
 import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
+import { getSanctuaryTransitProfile } from '@/lib/transit';
 import {
   Navigation,
   ShieldCheck,
@@ -18,12 +19,15 @@ import {
   Share2,
   Check,
   Coins,
+  Train,
+  ArrowRight,
 } from 'lucide-react';
 
 interface PlaceCardDrawerProps {
   place: Place | null;
   onClose: () => void;
   onOpenReport: (place: Place) => void;
+  onOpenTransit?: (place: Place) => void;
 }
 
 const FALLBACK_IMAGE =
@@ -33,9 +37,15 @@ export default function PlaceCardDrawer({
   place,
   onClose,
   onOpenReport,
+  onOpenTransit,
 }: PlaceCardDrawerProps) {
   const [isFavorited, setIsFavorited] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  const transitProfile = useMemo(() => {
+    if (!place) return null;
+    return getSanctuaryTransitProfile(place.latitude, place.longitude);
+  }, [place]);
 
   useEffect(() => {
     if (!place) return;
@@ -324,10 +334,71 @@ export default function PlaceCardDrawer({
                 </div>
               </div>
             </div>
+
+            {/* Local Train & Metro Directions Row */}
+            {transitProfile && (
+              <div className="p-4 flex items-start gap-3.5 bg-amber-50/70 border-t border-sumi/10">
+                <div className="w-8 h-8 rounded-xl bg-amber-200 text-amber-900 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-400/40">
+                  <Train className="w-4 h-4 sm:w-5 sm:h-5 text-rose-700" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-600 block">
+                      Local Train & Metro Access
+                    </span>
+                    {onOpenTransit && (
+                      <button
+                        onClick={() => onOpenTransit(place)}
+                        className="text-[10px] font-mono font-bold text-vermilion hover:underline flex items-center gap-0.5"
+                      >
+                        <span>FULL GUIDE</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+                  <div className="mt-1 space-y-1 text-xs">
+                    {transitProfile.nearestRailway && (
+                      <div className="flex items-baseline justify-between gap-2 text-sumi">
+                        <span className="font-bold truncate">
+                          🚆 {transitProfile.nearestRailway.station.name} ({transitProfile.nearestRailway.station.lines.join('/')})
+                        </span>
+                        <span className="font-mono text-[11px] text-slate-600 flex-shrink-0">
+                          {transitProfile.nearestRailway.distanceMeters}m · {transitProfile.nearestRailway.walkMinutes}m walk
+                        </span>
+                      </div>
+                    )}
+                    {transitProfile.nearestMetro && (
+                      <div className="flex items-baseline justify-between gap-2 text-sumi">
+                        <span className="font-bold truncate">
+                          🚇 {transitProfile.nearestMetro.station.name}
+                        </span>
+                        <span className="font-mono text-[11px] text-slate-600 flex-shrink-0">
+                          {transitProfile.nearestMetro.distanceMeters}m · {transitProfile.nearestMetro.walkMinutes}m walk
+                        </span>
+                      </div>
+                    )}
+                    <p className="text-[11px] text-slate-600 font-sans pt-0.5 leading-relaxed">
+                      {transitProfile.recommendedConnection}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Action Row (Wander Here, Share, Report, & Google Maps above hashtags) */}
+          {/* Action Row (Wander Here, Local Transit, Share, Report, & Google Maps) */}
           <div className="pt-2 flex flex-col gap-2.5">
+            {onOpenTransit && (
+              <button
+                onClick={() => onOpenTransit(place)}
+                className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-sumi font-mono font-black py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider active:scale-[0.99]"
+              >
+                <Train className="w-4 h-4 text-rose-600" />
+                <span>OPEN LOCAL TRAIN & METRO ROUTE</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
+
             <div className="flex items-center gap-2 sm:gap-2.5">
               <a
                 href={googleMapsDirectionsUrl}
