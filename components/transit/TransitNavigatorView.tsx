@@ -40,16 +40,108 @@ interface TransitNavigatorViewProps {
   initialSelectedStation?: TransitStation | null;
 }
 
-const LINE_TABS: { id: TransitLineType | 'all'; label: string; badge: string; color: string }[] = [
-  { id: 'all', label: 'ALL LINES', badge: 'ALL', color: 'bg-sumi text-wabi' },
-  { id: 'western', label: 'WESTERN LINE', badge: 'WR', color: 'bg-rose-600 text-white' },
-  { id: 'central', label: 'CENTRAL MAIN', badge: 'CR', color: 'bg-amber-600 text-white' },
-  { id: 'harbour', label: 'HARBOUR LINE', badge: 'HR', color: 'bg-blue-600 text-white' },
-  { id: 'metro_1', label: 'METRO 1 (BLUE)', badge: 'M1', color: 'bg-sky-600 text-white' },
-  { id: 'metro_2a', label: 'METRO 2A (YELLOW)', badge: 'M2A', color: 'bg-amber-400 text-sumi font-black' },
-  { id: 'metro_7', label: 'METRO 7 (RED)', badge: 'M7', color: 'bg-red-600 text-white' },
-  { id: 'metro_3', label: 'AQUA METRO 3', badge: 'M3', color: 'bg-emerald-600 text-white' },
-  { id: 'metro_navi', label: 'NAVI MUMBAI METRO', badge: 'NMM', color: 'bg-orange-600 text-white' },
+interface LineTabConfig {
+  id: TransitLineType | 'all';
+  label: string;
+  badge: string;
+  activeBg: string;
+  inactiveBg: string;
+  badgeBg: string;
+  hex: string;
+  sliderAccent: string;
+}
+
+const LINE_TABS: LineTabConfig[] = [
+  {
+    id: 'all',
+    label: 'ALL LINES',
+    badge: 'ALL',
+    activeBg: 'bg-sumi text-wabi border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-white text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi',
+    badgeBg: 'bg-sumi text-wabi',
+    hex: '#141518',
+    sliderAccent: 'bg-sumi',
+  },
+  {
+    id: 'western',
+    label: 'WESTERN LINE',
+    badge: 'WR',
+    activeBg: 'bg-rose-700 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-rose-50 text-rose-950 border-rose-300 hover:border-rose-600 hover:bg-rose-100',
+    badgeBg: 'bg-rose-600 text-white',
+    hex: '#be123c',
+    sliderAccent: 'bg-rose-600',
+  },
+  {
+    id: 'central',
+    label: 'CENTRAL MAIN',
+    badge: 'CR',
+    activeBg: 'bg-amber-600 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-amber-50 text-amber-950 border-amber-300 hover:border-amber-600 hover:bg-amber-100',
+    badgeBg: 'bg-amber-600 text-white',
+    hex: '#d97706',
+    sliderAccent: 'bg-amber-600',
+  },
+  {
+    id: 'harbour',
+    label: 'HARBOUR LINE',
+    badge: 'HR',
+    activeBg: 'bg-blue-700 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-blue-50 text-blue-950 border-blue-300 hover:border-blue-600 hover:bg-blue-100',
+    badgeBg: 'bg-blue-600 text-white',
+    hex: '#2563eb',
+    sliderAccent: 'bg-blue-600',
+  },
+  {
+    id: 'metro_1',
+    label: 'METRO 1 (BLUE)',
+    badge: 'M1',
+    activeBg: 'bg-sky-600 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-sky-50 text-sky-950 border-sky-300 hover:border-sky-600 hover:bg-sky-100',
+    badgeBg: 'bg-sky-500 text-white',
+    hex: '#0284c7',
+    sliderAccent: 'bg-sky-500',
+  },
+  {
+    id: 'metro_2a',
+    label: 'METRO 2A (YELLOW)',
+    badge: 'M2A',
+    activeBg: 'bg-amber-400 text-sumi font-black border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-yellow-50 text-yellow-950 border-amber-400 hover:border-amber-600 hover:bg-yellow-100',
+    badgeBg: 'bg-amber-400 text-sumi font-black',
+    hex: '#ca8a04',
+    sliderAccent: 'bg-amber-400',
+  },
+  {
+    id: 'metro_7',
+    label: 'METRO 7 (RED)',
+    badge: 'M7',
+    activeBg: 'bg-red-600 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-red-50 text-red-950 border-red-300 hover:border-red-600 hover:bg-red-100',
+    badgeBg: 'bg-red-600 text-white',
+    hex: '#dc2626',
+    sliderAccent: 'bg-red-600',
+  },
+  {
+    id: 'metro_3',
+    label: 'AQUA METRO 3',
+    badge: 'M3',
+    activeBg: 'bg-teal-600 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-teal-50 text-teal-950 border-teal-300 hover:border-teal-600 hover:bg-teal-100',
+    badgeBg: 'bg-teal-500 text-white',
+    hex: '#0d9488',
+    sliderAccent: 'bg-teal-600',
+  },
+  {
+    id: 'metro_navi',
+    label: 'NAVI MUMBAI METRO',
+    badge: 'NMM',
+    activeBg: 'bg-orange-600 text-white border-sumi shadow-riso-sm',
+    inactiveBg: 'bg-orange-50 text-orange-950 border-orange-300 hover:border-orange-600 hover:bg-orange-100',
+    badgeBg: 'bg-orange-600 text-white',
+    hex: '#ea580c',
+    sliderAccent: 'bg-orange-600',
+  },
 ];
 
 interface TactileSliderBarProps {
@@ -707,13 +799,24 @@ export default function TransitNavigatorView({
                     key={tab.id}
                     data-line-id={tab.id}
                     onClick={() => handleSelectLine(tab.id)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 ${
                       isActive
-                        ? 'bg-sumi text-wabi border-sumi shadow-riso-sm -translate-y-0.5'
-                        : 'bg-white text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi'
+                        ? `${tab.activeBg} -translate-y-0.5`
+                        : `${tab.inactiveBg}`
                     }`}
                   >
-                    {tab.label}
+                    <span
+                      className="w-2.5 h-2.5 rounded-full flex-shrink-0 border border-black/20"
+                      style={{ backgroundColor: tab.hex }}
+                    />
+                    <span>{tab.label}</span>
+                    <span
+                      className={`text-[9px] px-1.5 py-0.2 rounded font-black tracking-wide ${
+                        isActive ? 'bg-black/25 text-white' : tab.badgeBg
+                      }`}
+                    >
+                      {tab.badge}
+                    </span>
                   </button>
                 );
               })}
@@ -723,7 +826,7 @@ export default function TransitNavigatorView({
             <TactileSliderBar
               containerRef={lineTabsContainerRef}
               variant="lines"
-              accentColor="bg-sumi"
+              accentColor={LINE_TABS.find((t) => t.id === selectedLine)?.sliderAccent || 'bg-sumi'}
               trackLabel="Transit Line Slider"
             />
           </div>
@@ -756,21 +859,37 @@ export default function TransitNavigatorView({
                   key={stn.id}
                   data-station-id={stn.id}
                   onClick={() => setSelectedStationId(stn.id)}
-                  className={`p-3 rounded-2xl border-2 text-left transition-all flex-shrink-0 min-w-[160px] sm:min-w-[190px] ${
+                  className={`p-3 rounded-2xl border-2 text-left transition-all flex-shrink-0 min-w-[170px] sm:min-w-[200px] ${
                     isSelected
                       ? 'bg-amber-400 border-sumi text-sumi shadow-riso font-bold -translate-y-1'
                       : 'bg-wabi border-sumi/30 hover:border-sumi hover:bg-white text-slate-800'
                   }`}
                 >
-                  <div className="text-[10px] font-mono text-slate-600 uppercase flex items-center justify-between">
-                    <span>{stn.zone}</span>
-                    {stn.fast_train_stop && <span className="text-rose-600 font-bold">⚡ FAST</span>}
+                  <div className="text-[10px] font-mono text-slate-600 uppercase flex items-center justify-between gap-1">
+                    <span className="truncate">{stn.zone}</span>
+                    {stn.fast_train_stop && <span className="text-rose-600 font-bold flex-shrink-0">⚡ FAST</span>}
                   </div>
                   <div className="text-sm sm:text-base font-bold font-sans mt-0.5 truncate">
                     {stn.name}
                   </div>
                   <div className="text-xs font-marathi font-medium text-slate-700 opacity-90 mt-0.5">
                     {stn.marathi_name}
+                  </div>
+                  {/* Line Badges with authentic colors */}
+                  <div className="flex flex-wrap items-center gap-1 mt-2 pt-1.5 border-t border-sumi/10">
+                    {stn.lines.map((l) => {
+                      const lConf = LINE_TABS.find((t) => t.id === l);
+                      if (!lConf) return null;
+                      return (
+                        <span
+                          key={l}
+                          className={`text-[8px] font-mono font-black px-1.5 py-0.5 rounded ${lConf.badgeBg}`}
+                          title={lConf.label}
+                        >
+                          {lConf.badge}
+                        </span>
+                      );
+                    })}
                   </div>
                 </button>
               );

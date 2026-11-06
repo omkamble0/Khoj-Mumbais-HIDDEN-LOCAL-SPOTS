@@ -59,7 +59,7 @@ export default function DiscoveryMap({
   selectedPlace,
   onSelectPlace,
   radiusKm,
-  showTransitOverlay = true,
+  showTransitOverlay = false,
   onToggleTransitOverlay,
   selectedTransitStation,
   onSelectTransitStation,
@@ -282,8 +282,8 @@ export default function DiscoveryMap({
         // High-contrast casing shadow line
         L.polyline(track.coordinates, {
           color: '#141518',
-          weight: 4,
-          opacity: 0.35,
+          weight: 4.5,
+          opacity: 0.4,
           lineCap: 'round',
           lineJoin: 'round',
           interactive: false,
@@ -292,9 +292,9 @@ export default function DiscoveryMap({
         // Core line with authentic railway corridor color
         L.polyline(track.coordinates, {
           color: track.color,
-          weight: 2.5,
-          opacity: 0.9,
-          dashArray: track.id.startsWith('metro') ? '5, 5' : undefined,
+          weight: 3,
+          opacity: 0.95,
+          dashArray: track.id.startsWith('metro') ? '6, 6' : undefined,
           lineCap: 'round',
           lineJoin: 'round',
           interactive: false,
@@ -333,22 +333,22 @@ export default function DiscoveryMap({
 
         const lineColor = isMultiLine
           ? '#0f172a'
-          : isWR
-          ? '#e11d48'
-          : isCR
-          ? '#d97706'
-          : isHR
-          ? '#2563eb'
           : isM1
-          ? '#0284c7'
+          ? '#0284c7' // Metro 1 Sky Blue
           : isM2A
-          ? '#ca8a04'
+          ? '#ca8a04' // Metro 2A Radiant Yellow
           : isM7
-          ? '#dc2626'
+          ? '#dc2626' // Metro 7 Red
           : isM3
-          ? '#059669'
+          ? '#0d9488' // Metro 3 Aqua Teal
           : isMNavi
-          ? '#ea580c'
+          ? '#ea580c' // Navi Mumbai Tangerine Orange
+          : isWR
+          ? '#be123c' // Western Crimson Maroon
+          : isCR
+          ? '#d97706' // Central Ochre Amber
+          : isHR
+          ? '#2563eb' // Harbour Royal Cobalt
           : '#141518';
 
         const lineBadge = isMultiLine

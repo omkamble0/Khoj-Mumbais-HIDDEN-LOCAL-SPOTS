@@ -1344,7 +1344,7 @@ export const TRANSIT_LINE_TRACKS: TransitLineTrack[] = [
     id: 'western',
     name: 'Western Railway',
     code: 'WR',
-    color: '#e11d48', // Crimson Red
+    color: '#be123c', // Western Crimson Maroon
     coordinates: [
       [18.9322, 72.8264], // Churchgate
       [18.9436, 72.8236], // Marine Lines
@@ -1471,7 +1471,7 @@ export const TRANSIT_LINE_TRACKS: TransitLineTrack[] = [
     id: 'metro_3',
     name: 'Metro Line 3 (Aqua Line: Aarey ⇄ BKC ⇄ Cuffe Parade)',
     code: 'M3',
-    color: '#059669', // Aqua Emerald
+    color: '#0d9488', // Aqua Teal
     coordinates: [
       [19.1394, 72.8785], // Aarey JVLR
       [19.1275, 72.8795], // SEEPZ

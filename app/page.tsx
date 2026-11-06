@@ -30,7 +30,7 @@ export default function HomePage() {
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
   const [viewMode, setViewMode] = useState<'map' | 'zine' | 'transit'>('map');
-  const [showTransitOverlay, setShowTransitOverlay] = useState(true);
+  const [showTransitOverlay, setShowTransitOverlay] = useState(false);
   const [selectedTransitStation, setSelectedTransitStation] = useState<TransitStation | null>(null);
   const [activeCommutePlan, setActiveCommutePlan] = useState<SmartCommutePlan | null>(null);
   const [isSmartCommuteModalOpen, setIsSmartCommuteModalOpen] = useState(false);
