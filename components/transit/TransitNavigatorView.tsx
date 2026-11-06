@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { Place } from '@/lib/types';
 import {
   TRANSIT_STATIONS,
@@ -26,6 +26,7 @@ import {
   MapPin,
   Coins,
   ChevronRight,
+  ChevronLeft,
   Sparkles,
   AlertTriangle,
 } from 'lucide-react';
@@ -50,6 +51,191 @@ const LINE_TABS: { id: TransitLineType | 'all'; label: string; badge: string; co
   { id: 'metro_3', label: 'AQUA METRO 3', badge: 'M3', color: 'bg-emerald-600 text-white' },
   { id: 'metro_navi', label: 'NAVI MUMBAI METRO', badge: 'NMM', color: 'bg-orange-600 text-white' },
 ];
+
+interface TactileSliderBarProps {
+  containerRef: React.RefObject<HTMLDivElement>;
+  variant?: 'lines' | 'stations';
+  accentColor?: string;
+  trackLabel?: string;
+  className?: string;
+}
+
+function TactileSliderBar({
+  containerRef,
+  variant = 'stations',
+  accentColor = 'bg-sumi',
+  trackLabel,
+  className = '',
+}: TactileSliderBarProps) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState({
+    scrollLeft: 0,
+    scrollWidth: 1,
+    clientWidth: 1,
+    canScroll: false,
+  });
+  const [isDragging, setIsDragging] = useState(false);
+
+  const updateProgress = useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const canScroll = el.scrollWidth > el.clientWidth + 2;
+    setScrollProgress({
+      scrollLeft: el.scrollLeft,
+      scrollWidth: el.scrollWidth,
+      clientWidth: el.clientWidth,
+      canScroll,
+    });
+  }, [containerRef]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    updateProgress();
+    el.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+
+    const observer = new MutationObserver(updateProgress);
+    observer.observe(el, { childList: true, subtree: true, attributes: true });
+
+    return () => {
+      el.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+      observer.disconnect();
+    };
+  }, [containerRef, updateProgress]);
+
+  // Click on track to jump
+  const handleTrackPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    const track = trackRef.current;
+    const container = containerRef.current;
+    if (!track || !container) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const clickX = e.clientX - trackRect.left;
+    const clickRatio = Math.max(0, Math.min(1, clickX / trackRect.width));
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    container.scrollTo({
+      left: clickRatio * maxScroll,
+      behavior: 'smooth',
+    });
+  };
+
+  // Drag thumb
+  const handleThumbPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const track = trackRef.current;
+    const container = containerRef.current;
+    if (!track || !container) return;
+
+    setIsDragging(true);
+    const startX = e.clientX;
+    const startScrollLeft = container.scrollLeft;
+    const trackRect = track.getBoundingClientRect();
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const rawRatio = (scrollProgress.clientWidth / scrollProgress.scrollWidth) * 100;
+    const currentThumbWidth = Math.max(12, Math.min(65, isNaN(rawRatio) ? 20 : rawRatio));
+    const usableTrackWidth = trackRect.width - (currentThumbWidth / 100) * trackRect.width;
+
+    const handlePointerMove = (moveEvent: PointerEvent) => {
+      if (usableTrackWidth <= 0 || maxScroll <= 0) return;
+      const deltaX = moveEvent.clientX - startX;
+      const scrollDelta = (deltaX / usableTrackWidth) * maxScroll;
+      container.scrollLeft = startScrollLeft + scrollDelta;
+    };
+
+    const handlePointerUp = () => {
+      setIsDragging(false);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+    };
+
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
+  };
+
+  const handleStep = (direction: 'left' | 'right') => {
+    const el = containerRef.current;
+    if (!el) return;
+    const stepAmount = variant === 'lines' ? 220 : 340;
+    el.scrollBy({
+      left: direction === 'left' ? -stepAmount : stepAmount,
+      behavior: 'smooth',
+    });
+  };
+
+  const maxScroll = Math.max(1, scrollProgress.scrollWidth - scrollProgress.clientWidth);
+  const scrollRatio = Math.max(0, Math.min(1, scrollProgress.scrollLeft / maxScroll));
+
+  const rawRatio = (scrollProgress.clientWidth / scrollProgress.scrollWidth) * 100;
+  const thumbWidthPercent = Math.max(12, Math.min(65, isNaN(rawRatio) ? 20 : rawRatio));
+  const thumbLeftPercent = scrollRatio * (100 - thumbWidthPercent);
+
+  if (!scrollProgress.canScroll) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`flex items-center gap-1.5 pt-1.5 select-none ${className}`}
+      aria-label={trackLabel || 'Horizontal sliding bar'}
+    >
+      {/* Left Glide Step Button */}
+      <button
+        type="button"
+        onClick={() => handleStep('left')}
+        disabled={scrollProgress.scrollLeft <= 4}
+        className="w-6 h-6 rounded-lg border-2 border-sumi bg-wabi hover:bg-white text-sumi flex items-center justify-center shadow-riso-sm disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 flex-shrink-0"
+        title="Scroll left"
+      >
+        <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
+      </button>
+
+      {/* Tactile Sliding Track */}
+      <div
+        ref={trackRef}
+        onPointerDown={handleTrackPointerDown}
+        className="relative flex-1 h-3.5 bg-sumi/10 hover:bg-sumi/15 rounded-full border-2 border-sumi cursor-pointer overflow-hidden transition-colors"
+        title="Click or drag to glide horizontally"
+      >
+        {/* Draggable Sliding Thumb */}
+        <div
+          onPointerDown={handleThumbPointerDown}
+          style={{
+            width: `${thumbWidthPercent}%`,
+            left: `${thumbLeftPercent}%`,
+          }}
+          className={`absolute top-0.5 bottom-0.5 rounded-full border border-sumi shadow-riso-sm transition-transform cursor-grab active:cursor-grabbing flex items-center justify-center ${
+            isDragging
+              ? 'bg-vermilion scale-y-110 shadow-riso'
+              : `${accentColor} hover:bg-vermilion text-wabi`
+          }`}
+        >
+          {/* Subtle tactile grip ridges inside the thumb */}
+          <div className="flex items-center justify-center gap-0.5 opacity-80 pointer-events-none">
+            <span className="w-0.5 h-1.5 bg-wabi/80 rounded-full" />
+            <span className="w-0.5 h-1.5 bg-wabi/80 rounded-full" />
+            <span className="w-0.5 h-1.5 bg-wabi/80 rounded-full" />
+          </div>
+        </div>
+      </div>
+
+      {/* Right Glide Step Button */}
+      <button
+        type="button"
+        onClick={() => handleStep('right')}
+        disabled={scrollProgress.scrollLeft >= maxScroll - 4}
+        className="w-6 h-6 rounded-lg border-2 border-sumi bg-wabi hover:bg-white text-sumi flex items-center justify-center shadow-riso-sm disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 flex-shrink-0"
+        title="Scroll right"
+      >
+        <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
+      </button>
+    </div>
+  );
+}
 
 export default function TransitNavigatorView({
   places,
@@ -83,6 +269,55 @@ export default function TransitNavigatorView({
       setSelectedSanctuaryId(initialSelectedPlace.id);
     }
   }, [initialSelectedPlace]);
+
+  const lineTabsContainerRef = useRef<HTMLDivElement>(null);
+  const stationsContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleHorizontalWheel = (
+    e: React.WheelEvent<HTMLDivElement>,
+    targetRef: React.RefObject<HTMLDivElement>
+  ) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && targetRef.current) {
+      if (targetRef.current.scrollWidth > targetRef.current.clientWidth) {
+        targetRef.current.scrollLeft += e.deltaY;
+      }
+    }
+  };
+
+  const handleSelectLine = (lineId: TransitLineType | 'all') => {
+    setSelectedLine(lineId);
+    if (stationsContainerRef.current) {
+      stationsContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+    if (lineId !== 'all') {
+      const stationsOnLine = TRANSIT_STATIONS.filter((stn) => stn.lines.includes(lineId));
+      if (stationsOnLine.length > 0 && !stationsOnLine.some((s) => s.id === selectedStationId)) {
+        setSelectedStationId(stationsOnLine[0].id);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (stationsContainerRef.current && selectedStationId) {
+      const activeEl = stationsContainerRef.current.querySelector(
+        `[data-station-id="${selectedStationId}"]`
+      ) as HTMLElement | null;
+      if (activeEl) {
+        activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [selectedStationId]);
+
+  useEffect(() => {
+    if (lineTabsContainerRef.current && selectedLine) {
+      const activeTab = lineTabsContainerRef.current.querySelector(
+        `[data-line-id="${selectedLine}"]`
+      ) as HTMLElement | null;
+      if (activeTab) {
+        activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [selectedLine]);
 
   // Live crowd rush hour advisory
   const crowdAdvisory = useMemo(() => getMumbaiTransitCrowdAdvisory(), []);
@@ -410,9 +645,10 @@ export default function TransitNavigatorView({
       {/* ─────────────────────────────────────────────────────────────
           3. STATION-FIRST DISCOVERY ("Hop Off Here & Explore")
           ───────────────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto space-y-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
+      <div className="max-w-7xl mx-auto space-y-6">
+        {/* Header & Line Switcher Section */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b-2 border-sumi/10 pb-4">
+          <div className="space-y-1">
             <h2 className="font-display font-normal text-2xl sm:text-3xl text-sumi">
               Station-to-Sanctuary <span className="text-vermilion italic font-normal">Hop-Off Guide</span>
             </h2>
@@ -421,54 +657,108 @@ export default function TransitNavigatorView({
             </p>
           </div>
 
-          {/* Line Switcher Tabs */}
-          <div className="flex items-center gap-1.5 overflow-x-auto sliding-bar py-1">
-            {LINE_TABS.map((tab) => {
-              const isActive = selectedLine === tab.id;
+          {/* Line Switcher with Dedicated Sliding Bar */}
+          <div className="w-full lg:max-w-xl space-y-1.5">
+            <div className="flex items-center justify-between text-[11px] font-mono text-slate-600 font-bold uppercase tracking-wider">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-vermilion" />
+                TRANSIT LINES ({LINE_TABS.length})
+              </span>
+              <span className="text-[10px] text-slate-500 font-normal">
+                Slide to browse lines →
+              </span>
+            </div>
+
+            {/* Line Switcher Tabs */}
+            <div
+              ref={lineTabsContainerRef}
+              onWheel={(e) => handleHorizontalWheel(e, lineTabsContainerRef)}
+              className="flex items-center gap-1.5 overflow-x-auto sliding-bar py-1 select-none scroll-smooth"
+            >
+              {LINE_TABS.map((tab) => {
+                const isActive = selectedLine === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    data-line-id={tab.id}
+                    onClick={() => handleSelectLine(tab.id)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 ${
+                      isActive
+                        ? 'bg-sumi text-wabi border-sumi shadow-riso-sm -translate-y-0.5'
+                        : 'bg-white text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Horizontal Sliding Bar for Lines */}
+            <TactileSliderBar
+              containerRef={lineTabsContainerRef}
+              variant="lines"
+              accentColor="bg-sumi"
+              trackLabel="Transit Line Slider"
+            />
+          </div>
+        </div>
+
+        {/* Station Cards Carousel with Dedicated Sliding Bar */}
+        <div className="space-y-2">
+          <div className="flex items-center justify-between text-[11px] font-mono text-slate-600 font-bold uppercase tracking-wider">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              <span>
+                {filteredStations.length} STATIONS ON {LINE_TABS.find((t) => t.id === selectedLine)?.label || 'NETWORK'}
+              </span>
+            </span>
+            <span className="text-[10px] text-slate-500 font-normal hidden sm:inline">
+              Slide or drag bar below to browse all stations →
+            </span>
+          </div>
+
+          {/* Station Horizontal Scroller Cards */}
+          <div
+            ref={stationsContainerRef}
+            onWheel={(e) => handleHorizontalWheel(e, stationsContainerRef)}
+            className="flex items-center gap-2 overflow-x-auto sliding-bar pb-2 pt-1 select-none scroll-smooth"
+          >
+            {filteredStations.map((stn) => {
+              const isSelected = selectedStationId === stn.id;
               return (
                 <button
-                  key={tab.id}
-                  onClick={() => setSelectedLine(tab.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 ${
-                    isActive
-                      ? 'bg-sumi text-wabi border-sumi shadow-riso-sm -translate-y-0.5'
-                      : 'bg-white text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi'
+                  key={stn.id}
+                  data-station-id={stn.id}
+                  onClick={() => setSelectedStationId(stn.id)}
+                  className={`p-3 rounded-2xl border-2 text-left transition-all flex-shrink-0 min-w-[160px] sm:min-w-[190px] ${
+                    isSelected
+                      ? 'bg-amber-400 border-sumi text-sumi shadow-riso font-bold -translate-y-1'
+                      : 'bg-wabi border-sumi/30 hover:border-sumi hover:bg-white text-slate-800'
                   }`}
                 >
-                  {tab.label}
+                  <div className="text-[10px] font-mono text-slate-600 uppercase flex items-center justify-between">
+                    <span>{stn.zone}</span>
+                    {stn.fast_train_stop && <span className="text-rose-600 font-bold">⚡ FAST</span>}
+                  </div>
+                  <div className="text-sm sm:text-base font-bold font-sans mt-0.5 truncate">
+                    {stn.name}
+                  </div>
+                  <div className="text-xs font-marathi font-medium text-slate-700 opacity-90 mt-0.5">
+                    {stn.marathi_name}
+                  </div>
                 </button>
               );
             })}
           </div>
-        </div>
 
-        {/* Station Horizontal Scroller Cards */}
-        <div className="flex items-center gap-2 overflow-x-auto sliding-bar pb-2 pt-1">
-          {filteredStations.map((stn) => {
-            const isSelected = selectedStationId === stn.id;
-            return (
-              <button
-                key={stn.id}
-                onClick={() => setSelectedStationId(stn.id)}
-                className={`p-3 rounded-2xl border-2 text-left transition-all flex-shrink-0 min-w-[160px] sm:min-w-[190px] ${
-                  isSelected
-                    ? 'bg-amber-400 border-sumi text-sumi shadow-riso font-bold -translate-y-1'
-                    : 'bg-wabi border-sumi/30 hover:border-sumi hover:bg-white text-slate-800'
-                }`}
-              >
-                <div className="text-[10px] font-mono text-slate-600 uppercase flex items-center justify-between">
-                  <span>{stn.zone}</span>
-                  {stn.fast_train_stop && <span className="text-rose-600 font-bold">⚡ FAST</span>}
-                </div>
-                <div className="text-sm sm:text-base font-bold font-sans mt-0.5 truncate">
-                  {stn.name}
-                </div>
-                <div className="text-xs font-marathi font-medium text-slate-700 opacity-90 mt-0.5">
-                  {stn.marathi_name}
-                </div>
-              </button>
-            );
-          })}
+          {/* Horizontal Sliding Bar for Stations */}
+          <TactileSliderBar
+            containerRef={stationsContainerRef}
+            variant="stations"
+            accentColor="bg-amber-400"
+            trackLabel="Stations Slider"
+          />
         </div>
 
         {/* Active Station Card & Reachable Sanctuaries List */}
