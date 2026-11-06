@@ -262,3 +262,33 @@ body {
     stroke-dashoffset: -500;
   }
 }
+
+/* Desi Matchbox Poster Texture Patterns */
+.wavy-stripes {
+  background: repeating-linear-gradient(45deg, rgba(20,21,24,0.06), rgba(20,21,24,0.06) 10px, transparent 10px, transparent 20px);
+}
+.retro-dots {
+  background-image: radial-gradient(#141518 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  opacity: 0.12;
+}
+.checkered-trim {
+  background-image: linear-gradient(45deg, #141518 25%, transparent 25%), linear-gradient(-45deg, #141518 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #141518 75%), linear-gradient(-45deg, transparent 75%, #141518 75%);
+  background-size: 12px 12px;
+  background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+}
+.sea-waves-pattern {
+  background: radial-gradient(circle at 50% 100%, rgba(255,255,255,0.2) 20%, transparent 22%),
+              radial-gradient(circle at 0% 100%, rgba(255,255,255,0.2) 20%, transparent 22%),
+              radial-gradient(circle at 100% 100%, rgba(255,255,255,0.2) 20%, transparent 22%);
+  background-size: 24px 14px;
+}
+.shadow-matchbox {
+  box-shadow: 4px 4px 0px #141518;
+}
+.shadow-matchbox-lg {
+  box-shadow: 6px 6px 0px #141518;
+}
+.text-shadow-3d {
+  text-shadow: 2px 2px 0px #141518;
+}

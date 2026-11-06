@@ -144,6 +144,143 @@ const LINE_TABS: LineTabConfig[] = [
   },
 ];
 
+interface DesiCardTheme {
+  type: 'bar' | 'pocket-cafe' | 'bougie-cafe' | 'beach' | 'heritage' | 'default';
+  cardBg: string;
+  innerBg: string;
+  motifClass: string;
+  stampIcon: string;
+  tagLabel: string;
+  accentBg: string;
+  sloganText: string;
+  punchline: string;
+  tagPillColor: string;
+  titleColor: string;
+  marathiSlogan?: string;
+  subBadgeText: string;
+}
+
+function getDesiCardTheme(place: Place): DesiCardTheme {
+  const cat = place.category;
+  const nameLower = (place.name || '').toLowerCase();
+  const descLower = (place.description || '').toLowerCase();
+  const cost = place.approx_cost || '';
+  const isBudget = place.budget_tier === 'pocket_friendly' || place.budget_tier === 'free' || cost.includes('Free') || cost.includes('100') || cost.includes('150') || cost.includes('200') || cost.includes('300') || cost.includes('400');
+  const isSplurge = place.budget_tier === 'splurge' || cost.includes('800') || cost.includes('1,') || cost.includes('1200') || cost.includes('1500');
+
+  // 1. Bar / Pub / Club / Nightspot -> Funky & Wavy
+  if (cat === 'bars' || nameLower.includes('bar') || nameLower.includes('pub') || nameLower.includes('lounge') || nameLower.includes('beer') || nameLower.includes('tavern')) {
+    return {
+      type: 'bar',
+      cardBg: 'bg-[#ff2a5f]',
+      innerBg: 'bg-[#e01a4f]',
+      motifClass: 'checkered-trim',
+      stampIcon: '🍸',
+      tagLabel: 'FUNKY KATTA & BEER',
+      accentBg: 'bg-[#ffe600] text-[#141518]',
+      sloganText: '⚡ LIVE CHATS • CHILLED PINTS • GOOD VIBES ⚡',
+      punchline: '"HIGHLY OBSESSED WITH ICE-COLD PINTS & ROARING CHATS"',
+      tagPillColor: 'bg-[#ffe600] text-[#141518]',
+      titleColor: 'text-white',
+      marathiSlogan: 'खिशाला परवडणारी बिअर आणि चखणा अड्डा',
+      subBadgeText: 'CHEAP PINTS • SPICY BITES',
+    };
+  }
+
+  // 2. Beach / Coastal Promontory / Sea Horizon -> Sunset Sea Waves
+  if (cat === 'waterfront' || cat === 'viewpoints' || nameLower.includes('beach') || nameLower.includes('chowpatty') || nameLower.includes('sea') || nameLower.includes('promenade') || nameLower.includes('bandstand') || nameLower.includes('marine') || nameLower.includes('coast') || descLower.includes('arabian sea') || descLower.includes('coastline') || descLower.includes('sunset')) {
+    return {
+      type: 'beach',
+      cardBg: 'bg-[#0077b6]',
+      innerBg: 'bg-[#023e8a]',
+      motifClass: 'sea-waves-pattern',
+      stampIcon: '🌅',
+      tagLabel: 'ARABIAN SEA SUNSET',
+      accentBg: 'bg-[#ffb703] text-[#141518]',
+      sloganText: '🌊 SALTY BREEZE & ART DECO HORIZON 🌊',
+      punchline: '"A PERSON WHO MEASURES TIME ONLY BY SUNSET WAVES"',
+      tagPillColor: 'bg-[#ffb703] text-[#141518]',
+      titleColor: 'text-[#90e0ef]',
+      marathiSlogan: 'अरबी समुद्राच्या लाटा आणि संध्याकाळचा वारा',
+      subBadgeText: 'SUNSET PEAK • OCEAN BREEZE',
+    };
+  }
+
+  // 3. Bougie / Specialty Roastery Cafe
+  if (cat === 'cafes' && (isSplurge || nameLower.includes('roastery') || nameLower.includes('specialty') || nameLower.includes('mockingbird') || nameLower.includes('subko') || nameLower.includes('coffee co'))) {
+    return {
+      type: 'bougie-cafe',
+      cardBg: 'bg-[#1d3557]',
+      innerBg: 'bg-[#14213d]',
+      motifClass: 'wavy-stripes',
+      stampIcon: '✨',
+      tagLabel: 'ARTISANAL ROASTERY • ₹₹₹',
+      accentBg: 'bg-[#a8dadc] text-[#141518]',
+      sloganText: '★ SINGLE ORIGIN • POUR-OVERS • AESTHETIC ★',
+      punchline: '"A SANCTUARY FOR THOSE WHO SIP SPECIALTY BREWS LIKE WINE"',
+      tagPillColor: 'bg-[#a8dadc] text-[#141518]',
+      titleColor: 'text-[#a8dadc]',
+      marathiSlogan: 'हस्तनिर्मित विशेष कॉफी आणि आरामदायी वातावरण',
+      subBadgeText: 'SPECIALTY POUR-OVER & SOURDOUGH',
+    };
+  }
+
+  // 4. Pocket-Friendly Cafe / Irani / Cutting Chai / Street Food
+  if (cat === 'cafes' || cat === 'bazaars' || nameLower.includes('chai') || nameLower.includes('irani') || nameLower.includes('sandwich') || nameLower.includes('milkshake') || isBudget) {
+    return {
+      type: 'pocket-cafe',
+      cardBg: 'bg-[#f48c06]',
+      innerBg: 'bg-[#e85d04]',
+      motifClass: 'retro-dots',
+      stampIcon: '☕',
+      tagLabel: 'POCKET-FRIENDLY KATTA',
+      accentBg: 'bg-[#ffd166] text-[#141518]',
+      sloganText: '★ CUTTING CHAI & FRESH BUN MASKA ★',
+      punchline: '"NOTHING BEATS DIPPING BUN MASKA INTO SWEET CUTTING CHAI"',
+      tagPillColor: 'bg-[#ffd166] text-[#141518]',
+      titleColor: 'text-[#ffd166]',
+      marathiSlogan: 'अस्सल मुंबई चहा कट्टा आणि नाश्ता',
+      subBadgeText: 'STUDENT WALLET HERO • ₹',
+    };
+  }
+
+  // 5. Ancient / Heritage / Spiritual / Nature Sanctuary
+  if (cat === 'spiritual' || cat === 'gardens' || cat === 'treks' || cat === 'heritage' || cat === 'books' || cat === 'forts' || nameLower.includes('tank') || nameLower.includes('temple') || nameLower.includes('khana') || nameLower.includes('caves') || nameLower.includes('fort') || nameLower.includes('hill')) {
+    return {
+      type: 'heritage',
+      cardBg: 'bg-[#2d6a4f]',
+      innerBg: 'bg-[#1b4332]',
+      motifClass: 'retro-dots',
+      stampIcon: '🪨',
+      tagLabel: 'ANCIENT BOMBAY REFUGE',
+      accentBg: 'bg-[#d8f3dc] text-[#141518]',
+      sloganText: '★ SHADED REFLECTION & TIMELESS SERENITY ★',
+      punchline: '"A SANCTUARY FOR THOSE LONGING FOR PEACE FROM CITY HORNS"',
+      tagPillColor: 'bg-[#d8f3dc] text-[#141518]',
+      titleColor: 'text-[#d8f3dc]',
+      marathiSlogan: 'शांतता, प्राचीन वारसा आणि निवांत जागा',
+      subBadgeText: 'TIMELESS HERITAGE • SILENT OASIS',
+    };
+  }
+
+  // 6. Default / Hidden Gem Sanctuary
+  return {
+    type: 'default',
+    cardBg: 'bg-[#b0413e]',
+    innerBg: 'bg-[#96302e]',
+    motifClass: 'retro-dots',
+    stampIcon: '📍',
+    tagLabel: 'KHOJ VERIFIED SECRET',
+    accentBg: 'bg-[#ffd166] text-[#141518]',
+    sloganText: '★ BOMBAY SUBURBAN SANCTUARY ★',
+    punchline: '"OFF THE BEATEN PATH • AUTHENTIC LOCALS ONLY"',
+    tagPillColor: 'bg-[#ffd166] text-[#141518]',
+    titleColor: 'text-[#ffd166]',
+    marathiSlogan: 'मुंबईतील लपलेली सुंदर जागा',
+    subBadgeText: 'VERIFIED LOCAL SANCTUARY',
+  };
+}
+
 interface TactileSliderBarProps {
   containerRef: React.RefObject<HTMLDivElement>;
   variant?: 'lines' | 'stations';
@@ -952,54 +1089,103 @@ export default function TransitNavigatorView({
               No spots mapped directly within 3.5 km of {activeStation.name}. Try picking Bandra, Charni Road, Churchgate, or Dadar!
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {sanctuariesAtStation.map((place) => (
-                <div
-                  key={place.id}
-                  className="bg-white rounded-2xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-1 transition-all p-4 flex flex-col justify-between group"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="font-bold text-vermilion uppercase text-[10px] bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
-                        {place.category}
-                      </span>
-                      <span className="font-black text-slate-600 text-[11px]">
-                        🚶 {place.walk_minutes} MINS ({place.distance_to_station}m)
-                      </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {sanctuariesAtStation.map((place: any) => {
+                const theme = getDesiCardTheme(place);
+                return (
+                  <div
+                    key={place.id}
+                    className={`${theme.cardBg} border-4 border-sumi rounded-3xl p-3 shadow-matchbox-lg relative flex flex-col justify-between overflow-hidden select-none`}
+                  >
+                    {/* Inner Poster Canvas */}
+                    <div className={`border-2 border-sumi rounded-2xl p-3.5 ${theme.innerBg} relative overflow-hidden flex flex-col justify-between h-full`}>
+                      
+                      {/* Motif Texture Pattern */}
+                      <div className={`absolute inset-0 ${theme.motifClass} opacity-30 pointer-events-none`} />
+
+                      {/* Top Arch Strip: Stamp + Walking Time */}
+                      <div className="relative z-10 flex items-center justify-between border-b-2 border-sumi pb-2 mb-2 mt-0.5">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <span className={`w-7 h-7 rounded-full border-2 border-sumi ${theme.accentBg.split(' ')[0]} flex items-center justify-center text-sm shadow-ticket flex-shrink-0`}>
+                            {theme.stampIcon}
+                          </span>
+                          <span className={`text-[10px] font-mono font-black uppercase tracking-widest ${theme.tagPillColor} px-2 py-0.5 rounded-full border border-sumi shadow-ticket truncate max-w-[155px]`}>
+                            {theme.tagLabel}
+                          </span>
+                        </div>
+                        <div className="text-[11px] font-mono font-bold text-white bg-sumi px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm flex-shrink-0">
+                          <span>🚶 {place.walk_minutes} MIN</span>
+                          <span className="text-amber-300 text-[10px]">({place.distance_to_station}m)</span>
+                        </div>
+                      </div>
+
+                      {/* Arched Subtitle Tag */}
+                      <div className="text-center relative z-10 my-0.5">
+                        <span className="text-[10px] sm:text-[11px] font-mono font-black tracking-widest text-white/95 uppercase text-shadow-3d truncate block">
+                          {theme.sloganText}
+                        </span>
+                      </div>
+
+                      {/* Center Marquee Box */}
+                      <div className="relative z-10 my-2">
+                        <div className="bg-sumi text-white border-2 border-sumi rounded-2xl p-3 text-center shadow-matchbox relative">
+                          {theme.marathiSlogan && (
+                            <div className="text-[10px] font-marathi font-bold text-amber-300 tracking-wide uppercase truncate">
+                              {theme.marathiSlogan}
+                            </div>
+                          )}
+                          <h4 className={`font-sans font-black text-xl sm:text-2xl ${theme.titleColor} tracking-tight uppercase leading-tight mt-1 line-clamp-2`}>
+                            {place.name}
+                          </h4>
+                          <div className={`inline-block ${theme.accentBg} font-mono text-[9px] font-black uppercase px-2 py-0.5 rounded-md border border-sumi mt-1.5 shadow-sm`}>
+                            {theme.subBadgeText}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-xs text-white/95 font-sans leading-snug my-2 relative z-10 font-medium px-1 line-clamp-2">
+                        {place.description}
+                      </p>
+
+                      {/* Attribute Pills */}
+                      <div className="flex flex-wrap items-center gap-1.5 my-2 relative z-10 font-mono text-[10px]">
+                        {place.approx_cost && (
+                          <span className="bg-white text-sumi font-bold px-2 py-0.5 rounded-md border border-sumi shadow-ticket">
+                            🪙 {place.approx_cost}
+                          </span>
+                        )}
+                        <span className="bg-sumi text-white font-bold px-2 py-0.5 rounded-md border border-white/20">
+                          ⚡ {place.spot_tier === 'hidden_gem' ? 'SECRET SANCTUARY' : place.spot_tier === 'underrated' ? 'UNDERRATED SPOT' : 'ICONIC HERITAGE'}
+                        </span>
+                      </div>
+
+                      {/* Bottom Matchbox Ticket Strip Footer */}
+                      <div className={`relative z-10 mt-2 ${theme.accentBg.split(' ')[0]} border-2 border-sumi rounded-xl p-2.5 text-sumi shadow-matchbox`}>
+                        <div className="text-[9px] font-mono font-black uppercase tracking-wider text-slate-900 text-center pb-1 border-b border-sumi/25 truncate">
+                          {theme.punchline}
+                        </div>
+                        <div className="flex items-center justify-between pt-1.5 text-xs font-mono font-bold">
+                          <button
+                            onClick={() => onSelectPlace(place)}
+                            className="hover:underline flex items-center gap-1 font-black text-sumi"
+                          >
+                            📖 FIELD NOTES
+                          </button>
+                          <button
+                            onClick={() => onViewOnMap(place, activeStation)}
+                            className="bg-sumi hover:bg-vermilion text-wabi px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 font-black shadow-sm"
+                          >
+                            <span>VIEW ROUTE</span>
+                            <span>➔</span>
+                          </button>
+                        </div>
+                      </div>
+
                     </div>
-
-                    <h4 className="font-bold text-lg text-sumi group-hover:text-vermilion transition-colors leading-snug">
-                      {place.name}
-                    </h4>
-
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                      {place.description}
-                    </p>
-
-                    {place.approx_cost && (
-                      <span className="inline-block text-[10px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 rounded">
-                        🪙 {place.approx_cost}
-                      </span>
-                    )}
                   </div>
-
-                  <div className="pt-3 mt-3 border-t border-sumi/10 flex items-center justify-between text-xs font-mono font-bold">
-                    <button
-                      onClick={() => onSelectPlace(place)}
-                      className="text-sumi hover:text-vermilion underline"
-                    >
-                      READ FIELD NOTES
-                    </button>
-                    <button
-                      onClick={() => onViewOnMap(place, activeStation)}
-                      className="flex items-center gap-1 text-vermilion hover:translate-x-0.5 transition-transform"
-                    >
-                      <span>VIEW ROUTE ON MAP</span>
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
