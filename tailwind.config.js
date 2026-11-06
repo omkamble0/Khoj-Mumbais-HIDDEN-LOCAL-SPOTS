@@ -47,8 +47,21 @@ module.exports = {
         },
       },
       fontFamily: {
+        marathi: [
+          '"Anek Devanagari"',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
+        devanagari: [
+          '"Anek Devanagari"',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
         display: [
           '"Ananda Namaste"',
+          '"Anek Devanagari"',
           '"Neptouch 3"',
           '"Neptouch"',
           '"Yatra One"',
@@ -57,6 +70,7 @@ module.exports = {
         ],
         ananda: [
           '"Ananda Namaste"',
+          '"Anek Devanagari"',
           '"Neptouch 3"',
           '"Neptouch"',
           '"Yatra One"',

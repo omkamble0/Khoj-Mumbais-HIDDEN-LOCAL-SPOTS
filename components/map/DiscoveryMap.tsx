@@ -760,7 +760,12 @@ export default function DiscoveryMap({
               <span className="font-bold text-sumi text-xs sm:text-sm">
                 🚆 {selectedTransitStation.name}
               </span>
-              <span className="text-slate-500 text-[11px] ml-1.5 hidden xs:inline">
+              {selectedTransitStation.marathi_name && (
+                <span className="font-marathi text-slate-700 font-medium text-xs ml-1 hidden xs:inline">
+                  ({selectedTransitStation.marathi_name})
+                </span>
+              )}
+              <span className="text-slate-500 text-[11px] ml-1.5 hidden sm:inline">
                 ({selectedTransitStation.lines.join('/')}) · {stationReachableCount} spots within 3.5km
               </span>
             </div>

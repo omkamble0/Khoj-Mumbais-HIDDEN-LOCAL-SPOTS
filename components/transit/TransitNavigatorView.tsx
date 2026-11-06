@@ -463,7 +463,7 @@ export default function TransitNavigatorView({
                 <div className="text-sm sm:text-base font-bold font-sans mt-0.5 truncate">
                   {stn.name}
                 </div>
-                <div className="text-[11px] font-mono opacity-80">
+                <div className="text-xs font-marathi font-medium text-slate-700 opacity-90 mt-0.5">
                   {stn.marathi_name}
                 </div>
               </button>
@@ -482,8 +482,13 @@ export default function TransitNavigatorView({
                   CURRENT STATION HUB
                 </span>
               </div>
-              <h3 className="font-sans font-black text-2xl sm:text-3xl text-sumi">
-                {activeStation.name} Railway Station ({activeStation.hindi_name})
+              <h3 className="font-sans font-black text-2xl sm:text-3xl text-sumi flex flex-wrap items-baseline gap-2">
+                <span>{activeStation.name}</span>
+                {activeStation.marathi_name && (
+                  <span className="font-marathi font-medium text-xl sm:text-2xl text-slate-600">
+                    ({activeStation.marathi_name})
+                  </span>
+                )}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 font-mono">
                 🚪 <strong>Exit Advice:</strong> {activeStation.exit_tips}

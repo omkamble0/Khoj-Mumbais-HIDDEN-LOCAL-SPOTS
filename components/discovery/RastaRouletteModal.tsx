@@ -246,7 +246,7 @@ export default function RastaRouletteModal({
                 <span className="font-ananda font-normal text-lg sm:text-xl tracking-wide text-white leading-none">
                   RASTA ROULETTE
                 </span>
-                <span className="font-ananda text-xs text-amber-300 font-normal">
+                <span className="font-marathi text-xs text-amber-300 font-medium">
                   रस्ता रूलेट
                 </span>
               </div>

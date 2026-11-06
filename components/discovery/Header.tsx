@@ -114,7 +114,7 @@ export default function Header({
                     <span className="font-ananda font-normal text-xl sm:text-2xl lg:text-3xl tracking-wide text-sumi leading-none">
                       KHOJ<span className="text-vermilion">.</span>
                     </span>
-                    <span className="font-ananda text-xs sm:text-sm lg:text-base text-slate-700 tracking-wide font-normal">
+                    <span className="font-marathi text-sm sm:text-base lg:text-lg text-slate-700 tracking-normal font-medium leading-none">
                       खोज
                     </span>
                     <span className="px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] lg:text-xs font-mono font-bold bg-sumi text-wabi uppercase shadow-sm">
