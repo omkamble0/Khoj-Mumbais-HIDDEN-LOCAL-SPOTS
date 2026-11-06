@@ -145,94 +145,212 @@ const LINE_TABS: LineTabConfig[] = [
 ];
 
 interface DesiCardTheme {
-  type: 'bhukkad' | 'filmi' | 'padhaku' | 'majnu' | 'nature';
+  type: 'bars' | 'cafes' | 'gardens' | 'treks' | 'waterfront' | 'viewpoints' | 'heritage' | 'forts' | 'walks' | 'spiritual' | 'culture' | 'books' | 'bazaars';
   posterBg: string;
+  accentColor: string;
   stampIcon: string;
   tagLabel: string;
   headerText: string;
   personaQuote: string;
   marathiTitle: string;
   subBadgeText: string;
-  accentPillBg: string;
 }
 
 function getDesiCardTheme(place: Place): DesiCardTheme {
   const cat = place.category;
   const nameLower = (place.name || '').toLowerCase();
-  const descLower = (place.description || '').toLowerCase();
-  const cost = place.approx_cost || '';
 
-  // 1. FILMI / BARS / PUBS / CLUBS / NIGHTSPOTS (Cinema Crimson Red)
-  if (cat === 'bars' || nameLower.includes('bar') || nameLower.includes('pub') || nameLower.includes('lounge') || nameLower.includes('beer') || nameLower.includes('tavern') || nameLower.includes('cinema') || nameLower.includes('theatre')) {
+  // 1. Food & Nightlife: Bars & Resto-Pubs (#9B1B30 Deep Crimson Red & #F4B41A Mustard Yellow)
+  if (cat === 'bars' || nameLower.includes('bar') || nameLower.includes('pub') || nameLower.includes('lounge') || nameLower.includes('beer') || nameLower.includes('tavern')) {
     return {
-      type: 'filmi',
-      posterBg: 'bg-[#cb3438]',
-      stampIcon: '🎬',
-      tagLabel: 'CINEMA & BEER',
+      type: 'bars',
+      posterBg: 'bg-[#9B1B30]',
+      accentColor: '#F4B41A',
+      stampIcon: '🍸',
+      tagLabel: 'ASLI ADDA & BEER',
       headerText: 'MADE IN MUMBAI',
       personaQuote: 'A PERSON HIGHLY OBSESSED WITH CHILLED PINTS & ROARING CHATS',
       marathiTitle: 'गुलजार मैफल • अस्सल अड्डा',
-      subBadgeText: 'CHILLED PINTS • SPICY BITES',
-      accentPillBg: 'bg-[#f2b93b] text-[#141518]',
+      subBadgeText: 'CHILLED PINTS • SPICY CHAKHNA',
     };
   }
 
-  // 2. MAJNU / WATERFRONT / BEACHES / SEA PROMENADES (Strawberry Magenta)
-  if (cat === 'waterfront' || cat === 'viewpoints' || nameLower.includes('beach') || nameLower.includes('chowpatty') || nameLower.includes('sea') || nameLower.includes('promenade') || nameLower.includes('bandstand') || nameLower.includes('marine') || nameLower.includes('coast') || nameLower.includes('talao') || descLower.includes('arabian sea') || descLower.includes('sunset')) {
+  // 2. Food & Nightlife: Cafés, Irani Chai & Bakeries (#C85A17 Cutting Chai Orange & #FDF5E6 Cream)
+  if (cat === 'cafes' || nameLower.includes('chai') || nameLower.includes('irani') || nameLower.includes('sandwich') || nameLower.includes('bakery') || nameLower.includes('coffee')) {
     return {
-      type: 'majnu',
-      posterBg: 'bg-[#d23a5d]',
-      stampIcon: '💘',
-      tagLabel: 'ARABIAN SEA',
+      type: 'cafes',
+      posterBg: 'bg-[#C85A17]',
+      accentColor: '#FDF5E6',
+      stampIcon: '☕',
+      tagLabel: 'CHAI & KATTA',
       headerText: 'MADE IN MUMBAI',
-      personaQuote: 'A PERSON WHO KEEPS FALLING IN LOVE WITH SUNSETS BY THE ARABIAN SEA',
-      marathiTitle: 'अरबी समुद्राची लाट • संध्याकाळचा वारा',
-      subBadgeText: 'SALTY BREEZE & WAVES',
-      accentPillBg: 'bg-[#ffb4c8] text-[#141518]',
+      personaQuote: 'A PERSON WHO CAN KEEP EATING BUN MASKA & DRINKING CHAI ALL DAY',
+      marathiTitle: 'भुकड कट्टा • चहा आणि बन मस्का',
+      subBadgeText: 'ASLI CHAI & CHAKHNA ADDA',
     };
   }
 
-  // 3. PADHAKU / BOOKS / HERITAGE ARCHITECTURE / COLONIAL WALKS (Vintage Peacock Teal)
-  if (cat === 'books' || cat === 'heritage' || cat === 'walks' || cat === 'culture' || nameLower.includes('khana') || nameLower.includes('library') || nameLower.includes('museum') || nameLower.includes('walk') || nameLower.includes('heritage') || nameLower.includes('david sassoon')) {
+  // 3. Nature & Outdoors: Gardens & Botanical Parks (#2E7D32 Betel Leaf Green & #FFF9C4 Pale Lemon)
+  if (cat === 'gardens' || nameLower.includes('garden') || nameLower.includes('park') || nameLower.includes('glade') || nameLower.includes('botanical')) {
     return {
-      type: 'padhaku',
-      posterBg: 'bg-[#217992]',
-      stampIcon: '📖',
-      tagLabel: 'HISTORIC REFUGE',
-      headerText: 'MADE IN MUMBAI',
-      personaQuote: 'A PERSON WHOSE FAVOURITE PAST TIME IS GETTING LOST IN BOOKS & OLD LANES',
-      marathiTitle: 'पुस्तकांचे जग • शांत वाचनालय',
-      subBadgeText: 'PAGES & QUIET CORNERS',
-      accentPillBg: 'bg-[#80ed99] text-[#141518]',
-    };
-  }
-
-  // 4. NATURE / BOTANICAL GLADES / CLIFFS / TREKS / FORTS (Forest Pine Green)
-  if (cat === 'gardens' || cat === 'treks' || cat === 'forts' || cat === 'spiritual' || nameLower.includes('caves') || nameLower.includes('hill') || nameLower.includes('glade') || nameLower.includes('garden') || nameLower.includes('park') || nameLower.includes('fort') || nameLower.includes('tank')) {
-    return {
-      type: 'nature',
-      posterBg: 'bg-[#246b44]',
+      type: 'gardens',
+      posterBg: 'bg-[#2E7D32]',
+      accentColor: '#FFF9C4',
       stampIcon: '🌿',
-      tagLabel: 'GREEN SANCTUARY',
+      tagLabel: 'BOTANICAL RETREAT',
       headerText: 'MADE IN MUMBAI',
       personaQuote: 'A PERSON WHO RUNS AWAY TO BREATHE UNDER OLD BANYAN TREES',
       marathiTitle: 'हिरवी शांतता • निसर्ग कट्टा',
-      subBadgeText: 'SECRET GREEN RETREAT',
-      accentPillBg: 'bg-[#a3e635] text-[#141518]',
+      subBadgeText: 'OLD BANYAN SHADE • BOTANICAL GLADES',
     };
   }
 
-  // 5. BHUKKAD / CAFES / IRANI CHAI / KATTA / STREET FOOD (Terracotta Orange)
+  // 4. Nature & Outdoors: Forest Treks & Nature Trails (#556B2F Olive Khaki & #8A3324 Burnt Sienna)
+  if (cat === 'treks' || nameLower.includes('trail') || nameLower.includes('forest') || nameLower.includes('trek') || nameLower.includes('hills')) {
+    return {
+      type: 'treks',
+      posterBg: 'bg-[#556B2F]',
+      accentColor: '#8A3324',
+      stampIcon: '🥾',
+      tagLabel: 'FOREST TRAIL',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO FINDS PEACE IN RAIN-SOAKED MUD & BASALT RIDGES',
+      marathiTitle: 'रानवाटा • निसर्ग भ्रमंती',
+      subBadgeText: 'MUD TRAILS & SGNP RIDGE',
+    };
+  }
+
+  // 5. Nature & Outdoors: Waterfront & Beaches (#008080 Vintage Teal & #F08080 Coral Pink)
+  if (cat === 'waterfront' || nameLower.includes('beach') || nameLower.includes('sea') || nameLower.includes('promenade') || nameLower.includes('shore') || nameLower.includes('tidepool') || nameLower.includes('talao')) {
+    return {
+      type: 'waterfront',
+      posterBg: 'bg-[#008080]',
+      accentColor: '#F08080',
+      stampIcon: '🌊',
+      tagLabel: 'ARABIAN SEA',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO MEASURES TIME ONLY BY SUNSET WAVES',
+      marathiTitle: 'अरबी समुद्राची लाट • संध्याकाळचा वारा',
+      subBadgeText: 'SALTY BREEZE & COASTAL TIDES',
+    };
+  }
+
+  // 6. Nature & Outdoors: Scenic Viewpoints & Basalt Cliffs (#A11950 Sunset Magenta & #DAA520 Goldenrod)
+  if (cat === 'viewpoints' || nameLower.includes('point') || nameLower.includes('cliff') || nameLower.includes('overlook') || nameLower.includes('view') || nameLower.includes('hill')) {
+    return {
+      type: 'viewpoints',
+      posterBg: 'bg-[#A11950]',
+      accentColor: '#DAA520',
+      stampIcon: '🌅',
+      tagLabel: 'CLIFF & HORIZON',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO KEEPS FALLING IN LOVE WITH SUNSETS OVER THE HORIZON',
+      marathiTitle: 'क्षितिज दर्शन • विहंगम दृश्य',
+      subBadgeText: 'DRAMATIC BASALT & SUNSET RAYS',
+    };
+  }
+
+  // 7. History & Heritage: Colonial Architecture & Historic Sites (#283593 Royal Indigo & #F0E6D2 Parchment)
+  if (cat === 'heritage' || nameLower.includes('cathedral') || nameLower.includes('museum') || nameLower.includes('stupa') || nameLower.includes('arcade')) {
+    return {
+      type: 'heritage',
+      posterBg: 'bg-[#283593]',
+      accentColor: '#F0E6D2',
+      stampIcon: '🏛️',
+      tagLabel: 'COLONIAL HERITAGE',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO GETS LOST IN 1800s BLUEPRINTS AND ARCHES',
+      marathiTitle: 'ऐतिहासिक वारसा • जुनी मुंबई',
+      subBadgeText: 'GOTHIC ARCHES & BLUEPRINT ESSENCE',
+    };
+  }
+
+  // 8. History & Heritage: Coastal Forts & Bastions (#8B4513 Rusted Iron & #708090 Slate Grey)
+  if (cat === 'forts' || nameLower.includes('fort') || nameLower.includes('bastion') || nameLower.includes('citadel') || nameLower.includes('killa')) {
+    return {
+      type: 'forts',
+      posterBg: 'bg-[#8B4513]',
+      accentColor: '#708090',
+      stampIcon: '⚔️',
+      tagLabel: 'COASTAL CITADEL',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO RUNS HANDS OVER OLD CANNONS & CRUMBLING WALLS',
+      marathiTitle: 'सागरी दुर्ग • शिवकालीन तटबंदी',
+      subBadgeText: 'WEATHERED STONE & SEA CANNONS',
+    };
+  }
+
+  // 9. History & Heritage: Heritage Walks & Old Village Trails (#CD5C5C Terracotta Brown & #EEDD82 Sand)
+  if (cat === 'walks' || nameLower.includes('walk') || nameLower.includes('village') || nameLower.includes('gaothan') || nameLower.includes('lane') || nameLower.includes('alley')) {
+    return {
+      type: 'walks',
+      posterBg: 'bg-[#CD5C5C]',
+      accentColor: '#EEDD82',
+      stampIcon: '🚶',
+      tagLabel: 'VILLAGE GAOTHAN',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO WALKS THROUGH GAOTHAN SHADOWS WITHOUT A WATCH',
+      marathiTitle: 'गावठाण रस्ता • शांत गल्ल्या',
+      subBadgeText: 'WINDING LANES & HERITAGE VILLAS',
+    };
+  }
+
+  // 10. History & Heritage: Spiritual Sanctuaries & Sacred Tanks (#FFB300 Marigold Yellow & #D84315 Deep Saffron)
+  if (cat === 'spiritual' || nameLower.includes('temple') || nameLower.includes('church') || nameLower.includes('dargah') || nameLower.includes('synagogue') || nameLower.includes('math') || nameLower.includes('tank')) {
+    return {
+      type: 'spiritual',
+      posterBg: 'bg-[#FFB300]',
+      accentColor: '#D84315',
+      stampIcon: '🪔',
+      tagLabel: 'SACRED SANCTUARY',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO SITS BY SACRED STEPS IN CONTEMPLATIVE SILENCE',
+      marathiTitle: 'पवित्र तीर्थ • आत्मिक शांतता',
+      subBadgeText: 'SACRED WATERS & INCENSE GLOW',
+    };
+  }
+
+  // 11. Culture & Commerce: Culture Spaces & Art Galleries (#E91E63 Rani Pink & #1A237E Deep Navy)
+  if (cat === 'culture' || nameLower.includes('theatre') || nameLower.includes('gallery') || nameLower.includes('art')) {
+    return {
+      type: 'culture',
+      posterBg: 'bg-[#E91E63]',
+      accentColor: '#1A237E',
+      stampIcon: '🎭',
+      tagLabel: 'ART & SUBCULTURE',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO LIVES FOR INDIE THEATRE & EXPERIMENTAL CANVAS',
+      marathiTitle: 'कला दालन • नाट्य कट्टा',
+      subBadgeText: 'POP-ART & UNDERGROUND VIBES',
+    };
+  }
+
+  // 12. Culture & Commerce: Heritage Bookstores & Libraries (#800020 Antique Burgundy & #FFD700 Gold)
+  if (cat === 'books' || nameLower.includes('library') || nameLower.includes('book') || nameLower.includes('khana') || nameLower.includes('reading')) {
+    return {
+      type: 'books',
+      posterBg: 'bg-[#800020]',
+      accentColor: '#FFD700',
+      stampIcon: '📖',
+      tagLabel: 'LITERARY REFUGE',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHOSE FAVOURITE PAST TIME IS GETTING LOST IN BOOKS & OLD LANES',
+      marathiTitle: 'पुस्तकांचे जग • शांत वाचनालय',
+      subBadgeText: 'OLD PAPER & LEATHER BINDINGS',
+    };
+  }
+
+  // 13. Culture & Commerce: Historic Bazaars & Flea Markets (#FFCC00 Rickshaw Yellow & #212121 Matte Black)
   return {
-    type: 'bhukkad',
-    posterBg: 'bg-[#d85f36]',
-    stampIcon: '☕',
-    tagLabel: 'CHAI & KATTA',
+    type: 'bazaars',
+    posterBg: 'bg-[#FFCC00]',
+    accentColor: '#212121',
+    stampIcon: '🛍️',
+    tagLabel: 'HISTORIC BAZAAR',
     headerText: 'MADE IN MUMBAI',
-    personaQuote: 'A PERSON WHO CAN KEEP EATING BUN MASKA & DRINKING CHAI ALL DAY',
-    marathiTitle: 'भुकड कट्टा • चहा आणि बन मस्का',
-    subBadgeText: 'ASLI CHAI & CHAKHNA ADDA',
-    accentPillBg: 'bg-[#f2b93b] text-[#141518]',
+    personaQuote: 'A PERSON WHO BARGAINS LIKE A POET IN WHISPERING ALLEYWAYS',
+    marathiTitle: 'खरेदी कट्टा • गजबजलेला बाजार',
+    subBadgeText: 'CHOR BAZAAR VIBES & FLEA FINDS',
   };
 }
 
@@ -1081,11 +1199,11 @@ export default function TransitNavigatorView({
 
                       {/* Center Iconic Graphic & Place Name (Archetype Specific) */}
                       <div className="relative z-10 my-2 px-2.5">
-                        {/* Filmi: Rising Sunburst + Arched Cinema Marquee */}
-                        {theme.type === 'filmi' && (
+                        {/* Bars: Rising Sunburst + Arched Cinema Marquee */}
+                        {theme.type === 'bars' && (
                           <div className="flex flex-col items-center">
                             <div className="w-28 h-6 overflow-hidden flex items-end justify-center -mb-1">
-                              <svg viewBox="0 0 100 40" className="w-full h-full fill-current text-[#f2b93b]">
+                              <svg viewBox="0 0 100 40" className="w-full h-full fill-current text-[#F4B41A]">
                                 <circle cx="50" cy="40" r="16" />
                                 <polygon points="50,40 46,6 54,6" />
                                 <polygon points="50,40 28,12 34,8" />
@@ -1094,104 +1212,164 @@ export default function TransitNavigatorView({
                                 <polygon points="50,40 82,19 88,24" />
                               </svg>
                             </div>
-                            <div className="w-full bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
-                              <div className="text-[11px] font-marathi font-bold text-[#f2b93b] tracking-wide">
+                            <div className="w-full bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                              <div className="text-[11px] font-marathi font-bold text-[#F4B41A] tracking-wide">
                                 {theme.marathiTitle}
                               </div>
-                              <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
                                 {place.name}
                               </h4>
-                              <div className="text-[9px] font-mono font-black uppercase text-[#f2b93b] mt-1 tracking-wider">
+                              <div className="text-[9px] font-mono font-black uppercase text-[#F4B41A] mt-1 tracking-wider">
                                 {theme.subBadgeText}
                               </div>
                             </div>
                           </div>
                         )}
 
-                        {/* Bhukkad: Classic Curved Barrel Marquee */}
-                        {theme.type === 'bhukkad' && (
-                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
-                            <div className="text-[11px] font-marathi font-bold text-[#f2b93b] tracking-wide">
+                        {/* Cafes & Irani Chai: Classic Curved Barrel Marquee */}
+                        {theme.type === 'cafes' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="text-[11px] font-marathi font-bold text-[#FDF5E6] tracking-wide">
                               {theme.marathiTitle}
                             </div>
-                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
                               {place.name}
                             </h4>
-                            <div className="text-[9px] font-mono font-black uppercase text-[#faf5eb]/90 mt-1 tracking-wider">
+                            <div className="text-[9px] font-mono font-black uppercase text-[#FDF5E6]/90 mt-1 tracking-wider">
                               {theme.subBadgeText}
                             </div>
                           </div>
                         )}
 
-                        {/* Padhaku: Ribbon with Double Accent Tracks */}
-                        {theme.type === 'padhaku' && (
-                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
-                            <div className="text-[11px] font-marathi font-bold text-[#80ed99] tracking-wide">
-                              {theme.marathiTitle}
-                            </div>
-                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
-                              {place.name}
-                            </h4>
-                            <div className="flex flex-col items-center gap-0.5 mt-1">
-                              <div className="w-24 h-[2px] bg-[#faf5eb]/80" />
-                              <div className="w-16 h-[2px] bg-[#80ed99]" />
-                            </div>
-                            <div className="text-[9px] font-mono font-black uppercase text-[#80ed99] mt-1 tracking-wider">
-                              {theme.subBadgeText}
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Majnu: Ocean Waves Flourish Crest */}
-                        {theme.type === 'majnu' && (
-                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
-                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#ffb4c8]">
+                        {/* Waterfront & Beaches: Ocean Waves Flourish Crest */}
+                        {theme.type === 'waterfront' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#F08080]">
                               <span>〰️</span>
                               <span className="text-sm">🌊</span>
                               <span>〰️</span>
                             </div>
-                            <div className="text-[11px] font-marathi font-bold text-[#ffb4c8] tracking-wide mt-0.5">
+                            <div className="text-[11px] font-marathi font-bold text-[#F08080] tracking-wide mt-0.5">
                               {theme.marathiTitle}
                             </div>
-                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
                               {place.name}
                             </h4>
-                            <div className="text-[9px] font-mono font-black uppercase text-[#ffb4c8] mt-1 tracking-wider">
+                            <div className="text-[9px] font-mono font-black uppercase text-[#F08080] mt-1 tracking-wider">
                               {theme.subBadgeText}
                             </div>
                           </div>
                         )}
 
-                        {/* Nature: Botanical Leaf Crest */}
-                        {theme.type === 'nature' && (
-                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
-                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#a3e635]">
-                              <span>🌿</span>
-                              <span className="text-sm">⛰️</span>
-                              <span>🌿</span>
+                        {/* Viewpoints & Cliffs: Dramatic Horizon Crest */}
+                        {theme.type === 'viewpoints' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#DAA520]">
+                              <span>✦</span>
+                              <span className="text-sm">🌅</span>
+                              <span>✦</span>
                             </div>
-                            <div className="text-[11px] font-marathi font-bold text-[#a3e635] tracking-wide mt-0.5">
+                            <div className="text-[11px] font-marathi font-bold text-[#DAA520] tracking-wide mt-0.5">
                               {theme.marathiTitle}
                             </div>
-                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
                               {place.name}
                             </h4>
-                            <div className="text-[9px] font-mono font-black uppercase text-[#a3e635] mt-1 tracking-wider">
+                            <div className="text-[9px] font-mono font-black uppercase text-[#DAA520] mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Gardens & Botanical Glades: Leaf Fronds Crest */}
+                        {theme.type === 'gardens' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#FFF9C4]">
+                              <span>🌿</span>
+                              <span className="text-sm">🍃</span>
+                              <span>🌿</span>
+                            </div>
+                            <div className="text-[11px] font-marathi font-bold text-[#FFF9C4] tracking-wide mt-0.5">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#FFF9C4] mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Forest Treks & Nature Trails: Woodland Trail Crest */}
+                        {theme.type === 'treks' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="flex items-center justify-center gap-1 text-xs text-[#FFF9C4]">
+                              <span>🌲</span>
+                              <span className="text-sm">🥾</span>
+                              <span>🌲</span>
+                            </div>
+                            <div className="text-[11px] font-marathi font-bold text-[#FFF9C4] tracking-wide mt-0.5">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#8A3324] mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Heritage Architecture, Walks, Books & Other Categories: Vintage Slab Ribbon */}
+                        {theme.type !== 'bars' && theme.type !== 'cafes' && theme.type !== 'waterfront' && theme.type !== 'viewpoints' && theme.type !== 'gardens' && theme.type !== 'treks' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#FAF5EB] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="text-[11px] font-marathi font-bold text-[#F4B41A] tracking-wide">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#FEFCF3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="flex flex-col items-center gap-0.5 mt-1">
+                              <div className="w-24 h-[2px] bg-[#FAF5EB]/80" />
+                              <div className="w-16 h-[2px] bg-[#F4B41A]" />
+                            </div>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#F4B41A] mt-1 tracking-wider">
                               {theme.subBadgeText}
                             </div>
                           </div>
                         )}
                       </div>
 
-                      {/* Practical Info Pill: Walking Time + Approx Cost */}
-                      <div className="relative z-10 px-3 py-1 flex items-center justify-between text-[11px] font-mono font-bold text-white">
-                        <span className="bg-[#141518] text-[#f2b93b] px-2 py-0.5 rounded border border-white/20">
+                      {/* Practical Info Pill: Walking Time + Desi Ticket Stamp */}
+                      <div className="relative z-10 px-3 py-1 flex items-center justify-between text-[11px] font-mono font-bold text-white flex-wrap gap-1">
+                        <span className="bg-[#141518] text-[#F4B41A] px-2 py-0.5 rounded border border-white/20">
                           🚶 {place.walk_minutes} MINS ({place.distance_to_station}m)
                         </span>
                         {place.approx_cost && (
-                          <span className="bg-white text-[#141518] px-2 py-0.5 rounded border border-[#141518] shadow-sm">
-                            🪙 {place.approx_cost}
-                          </span>
+                          (() => {
+                            const c = place.approx_cost;
+                            const cl = c.toLowerCase();
+                            if (cl.includes('bhaari') || cl.includes('mehenga') || c.includes('₹₹₹')) {
+                              return (
+                                <span className="bg-[#9B1B30] text-[#F4B41A] px-2.5 py-0.5 rounded border-2 border-[#F4B41A] font-mono text-[10px] font-black uppercase shadow-[2px_2px_0px_#141518]">
+                                  🎟️ {c}
+                                </span>
+                              );
+                            }
+                            if (cl.includes('paisa vasool') || c.includes('₹₹')) {
+                              return (
+                                <span className="bg-[#008080] text-white px-2.5 py-0.5 rounded border-2 border-white/60 font-mono text-[10px] font-black uppercase shadow-[2px_2px_0px_#141518]">
+                                  🎟️ {c}
+                                </span>
+                              );
+                            }
+                            return (
+                              <span className="bg-[#F4B41A] text-[#141518] border-2 border-[#141518] px-2.5 py-0.5 rounded font-mono text-[10px] font-black uppercase shadow-[2px_2px_0px_#141518]">
+                                🎟️ {cl.includes('free') ? 'Fukat (Free)' : c}
+                              </span>
+                            );
+                          })()
                         )}
                       </div>
 
