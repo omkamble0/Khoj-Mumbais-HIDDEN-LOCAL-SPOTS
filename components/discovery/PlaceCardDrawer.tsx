@@ -111,8 +111,8 @@ export default function PlaceCardDrawer({
   // Directions link uses exact verified GPS coordinates for 100% foolproof turn-by-turn navigation
   const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
   
-  // Landmark card link opens Google Places knowledge card with reviews, photos, and ratings
-  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${landmarkSearchQuery}`;
+  // Landmark card link opens Google Places knowledge card pinned strictly to verified coordinates
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}+(${landmarkSearchQuery})`;
 
   const { window: currentVibeWindow } = getCurrentVibeWindow();
   const peakInfo = checkIsPlacePeakingNow(place, currentVibeWindow);
