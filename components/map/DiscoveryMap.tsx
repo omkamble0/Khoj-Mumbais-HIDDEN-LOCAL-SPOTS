@@ -320,29 +320,55 @@ export default function DiscoveryMap({
         }
 
         const isSelected = selectedTransitStation?.id === station.id;
-        const isMetro = station.lines.some((l) => l.startsWith('metro'));
+        const isM1 = station.lines.includes('metro_1');
+        const isM2A = station.lines.includes('metro_2a');
+        const isM7 = station.lines.includes('metro_7');
+        const isM3 = station.lines.includes('metro_3');
+        const isMNavi = station.lines.includes('metro_navi');
+        const isMetro = isM1 || isM2A || isM7 || isM3 || isMNavi;
         const isWR = station.lines.includes('western');
         const isCR = station.lines.includes('central');
         const isHR = station.lines.includes('harbour');
+        const isMultiLine = station.lines.length > 1;
 
-        const lineColor = isWR
+        const lineColor = isMultiLine
+          ? '#0f172a'
+          : isWR
           ? '#e11d48'
           : isCR
           ? '#d97706'
           : isHR
           ? '#2563eb'
-          : isMetro
+          : isM1
+          ? '#0284c7'
+          : isM2A
+          ? '#ca8a04'
+          : isM7
+          ? '#dc2626'
+          : isM3
           ? '#059669'
+          : isMNavi
+          ? '#ea580c'
           : '#141518';
 
-        const lineBadge = isWR
+        const lineBadge = isMultiLine
+          ? 'HUB ⇄'
+          : isWR
           ? 'WR'
           : isCR
           ? 'CR'
           : isHR
           ? 'HR'
-          : isMetro
-          ? 'METRO'
+          : isM1
+          ? 'M1'
+          : isM2A
+          ? 'M2A'
+          : isM7
+          ? 'M7'
+          : isM3
+          ? 'M3'
+          : isMNavi
+          ? 'NMM'
           : 'TR';
 
         const stationHtml = `

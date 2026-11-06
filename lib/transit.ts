@@ -1,7 +1,7 @@
 import { calculateDistanceMeters } from './scoring';
 import { Place } from './types';
 
-export type TransitLineType = 'western' | 'central' | 'harbour' | 'metro_1' | 'metro_2a' | 'metro_7' | 'metro_3';
+export type TransitLineType = 'western' | 'central' | 'harbour' | 'metro_1' | 'metro_2a' | 'metro_7' | 'metro_3' | 'metro_navi';
 
 export interface TransitStation {
   id: string;
@@ -347,9 +347,11 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     auto_rickshaw_available: true,
   },
 
-  // Metro Line 1 (Blue Line: Versova ⇄ Ghatkopar)
+  // ─────────────────────────────────────────────────────────────
+  // 1. Metro Line 1 (Blue Line: Versova ⇄ Andheri ⇄ Ghatkopar)
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'metro-versova',
+    id: 'metro1-versova',
     name: 'Versova Metro',
     hindi_name: 'वर्सोवा मेट्रो',
     marathi_name: 'वर्सोवा मेट्रो',
@@ -357,23 +359,23 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     latitude: 19.1311,
     longitude: 72.8183,
     zone: 'Western Suburbs',
-    exit_tips: 'Terminal station. 10 min walk to Versova Beach, Koliwada village & coastal cafes.',
+    exit_tips: 'Terminal station. 10 min walk to Versova Beach, Koliwada village & coastal rock cafes.',
     auto_rickshaw_available: true,
   },
   {
-    id: 'metro-dn-nagar',
-    name: 'D.N. Nagar Metro (Line 1 & 2A Interchange)',
+    id: 'metro1-dn-nagar',
+    name: 'D.N. Nagar Metro (Line 1 & 2A Hub)',
     hindi_name: 'डी.एन. नगर मेट्रो',
     marathi_name: 'डी.एन. नगर मेट्रो',
     lines: ['metro_1', 'metro_2a'],
     latitude: 19.1306,
     longitude: 72.8322,
     zone: 'Western Suburbs',
-    exit_tips: 'Major interchange between Metro Line 1 and Line 2A (Yellow Line to Dahisar West).',
+    exit_tips: 'Major elevated interchange with Line 2A (Yellow Line to Dahisar West via Link Road).',
     auto_rickshaw_available: true,
   },
   {
-    id: 'metro-azad-nagar',
+    id: 'metro1-azad-nagar',
     name: 'Azad Nagar Metro',
     hindi_name: 'आज़ाद नगर मेट्रो',
     marathi_name: 'आझाद नगर मेट्रो',
@@ -385,54 +387,628 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     auto_rickshaw_available: true,
   },
   {
-    id: 'metro-andheri',
-    name: 'Andheri Metro',
+    id: 'metro1-andheri',
+    name: 'Andheri Metro (WR Interchange)',
     hindi_name: 'अंधेरी मेट्रो',
     marathi_name: 'अंधेरी मेट्रो',
     lines: ['metro_1', 'western'],
     latitude: 19.1197,
     longitude: 72.8464,
     zone: 'Western Suburbs',
-    exit_tips: 'Direct walkover to Andheri Western railway platform.',
+    exit_tips: 'Direct skywalk connection to Andheri Western railway suburban platforms.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-weh',
+    name: 'WEH / Gundavali Metro (Line 1 & 7 Hub)',
+    hindi_name: 'पश्चिम द्रुतगती महामार्ग मेट्रो',
+    marathi_name: 'पश्चिम द्रुतगती महामार्ग मेट्रो',
+    lines: ['metro_1', 'metro_7'],
+    latitude: 19.1172,
+    longitude: 72.8552,
+    zone: 'Western Suburbs',
+    exit_tips: 'Interchange skywalk directly connecting Line 1 with Line 7 Gundavali terminus.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-chakala',
+    name: 'Chakala (J.B. Nagar) Metro',
+    hindi_name: 'चकाला (जे.बी. नगर) मेट्रो',
+    marathi_name: 'चकाला (जे.बी. नगर) मेट्रो',
+    lines: ['metro_1'],
+    latitude: 19.1118,
+    longitude: 72.8655,
+    zone: 'Western Suburbs',
+    exit_tips: 'Heart of Andheri East commercial district, cafes, and business hubs.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-airport-road',
+    name: 'Airport Road Metro',
+    hindi_name: 'एयरपोर्ट रोड मेट्रो',
+    marathi_name: 'विमानतळ रोड मेट्रो',
+    lines: ['metro_1'],
+    latitude: 19.1105,
+    longitude: 72.8745,
+    zone: 'Western Suburbs',
+    exit_tips: 'Quick transit connection to international hotel row and Marol.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-marol-naka',
+    name: 'Marol Naka Metro (Line 1 & 3 Hub)',
+    hindi_name: 'मरोल नाका मेट्रो',
+    marathi_name: 'मरोळ नाका मेट्रो',
+    lines: ['metro_1', 'metro_3'],
+    latitude: 19.1085,
+    longitude: 72.8808,
+    zone: 'Western Suburbs',
+    exit_tips: 'Dual-level interchange between elevated Line 1 and underground Aqua Line 3.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-saki-naka',
+    name: 'Saki Naka Metro',
+    hindi_name: 'साकी नाका मेट्रो',
+    marathi_name: 'साकी नाका मेट्रो',
+    lines: ['metro_1'],
+    latitude: 19.1055,
+    longitude: 72.8875,
+    zone: 'Central Suburbs',
+    exit_tips: 'Bustling junction connecting Powai, Chandivali, and Asalpha.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-asalpha',
+    name: 'Asalpha Metro',
+    hindi_name: 'असलफा मेट्रो',
+    marathi_name: 'असाल्फा मेट्रो',
+    lines: ['metro_1'],
+    latitude: 19.0988,
+    longitude: 72.8965,
+    zone: 'Central Suburbs',
+    exit_tips: 'Known as Mumbai\'s colorful hillside village station with street art.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro1-jagruti-nagar',
+    name: 'Jagruti Nagar Metro',
+    hindi_name: 'जागृती नगर मेट्रो',
+    marathi_name: 'जागृती नगर मेट्रो',
+    lines: ['metro_1'],
+    latitude: 19.0925,
+    longitude: 72.9025,
+    zone: 'Central Suburbs',
+    exit_tips: 'Elevated view over eastern suburbs hillside; 5 min rickshaw to Pant Nagar.',
     auto_rickshaw_available: true,
   },
 
-  // Metro Line 3 (Aqua Underground Metro)
+  // ─────────────────────────────────────────────────────────────
+  // 2. Metro Line 2A (Yellow Line: Dahisar East ⇄ Link Road ⇄ Andheri West)
+  // ─────────────────────────────────────────────────────────────
   {
-    id: 'metro3-bkc',
-    name: 'BKC Metro (Line 3 Underground)',
-    hindi_name: 'बीकेसी मेट्रो',
-    marathi_name: 'बीकेसी मेट्रो',
-    lines: ['metro_3'],
-    latitude: 19.0665,
-    longitude: 72.8685,
+    id: 'metro2a-dahisar-east',
+    name: 'Dahisar East Metro (Line 2A & 7 Hub)',
+    hindi_name: 'दहिसर पूर्व मेट्रो',
+    marathi_name: 'दहिसर पूर्व मेट्रो',
+    lines: ['metro_2a', 'metro_7'],
+    latitude: 19.2565,
+    longitude: 72.8645,
     zone: 'Western Suburbs',
-    exit_tips: 'Underground air-conditioned terminal serving Bandra-Kurla Complex.',
+    exit_tips: 'Northern mega-interchange connecting Link Road (2A) with Western Express Highway (7).',
     auto_rickshaw_available: true,
   },
   {
+    id: 'metro2a-anand-nagar',
+    name: 'Anand Nagar Metro (Line 2A)',
+    hindi_name: 'आनंद नगर मेट्रो',
+    marathi_name: 'आनंद नगर मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2520,
+    longitude: 72.8552,
+    zone: 'Western Suburbs',
+    exit_tips: 'Northern Dahisar residential addas and street eateries.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-kandarpada',
+    name: 'Kandarpada Metro (Line 2A)',
+    hindi_name: 'कंदरपाड़ा मेट्रो',
+    marathi_name: 'कंदरपाडा मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2445,
+    longitude: 72.8505,
+    zone: 'Western Suburbs',
+    exit_tips: 'Access to Dahisar West creek, salt pans, and mangroves.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-mandapeshwar',
+    name: 'Mandapeshwar - I.C. Colony Metro',
+    hindi_name: 'मंडपेश्वर - आई.सी. कॉलोनी मेट्रो',
+    marathi_name: 'मंडपेश्वर - आय.सी. कॉलनी मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2365,
+    longitude: 72.8485,
+    zone: 'Western Suburbs',
+    exit_tips: 'Footsteps to 1500-year-old Mandapeshwar Rock Caves and IC Colony Goan bakeries.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-eksar',
+    name: 'Eksar Metro (Line 2A)',
+    hindi_name: 'एकसर मेट्रो',
+    marathi_name: 'एकसर मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2285,
+    longitude: 72.8465,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct connection to ancient 11th-century Eksar Hero Stones memorial.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-borivali-west',
+    name: 'Borivali West (Don Bosco) Metro',
+    hindi_name: 'बोरीवली पश्चिम मेट्रो',
+    marathi_name: 'बोरीवली पश्चिम मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2215,
+    longitude: 72.8445,
+    zone: 'Western Suburbs',
+    exit_tips: 'Central Borivali West Link Road hub near Don Bosco School.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-shimpoli',
+    name: 'Pahadi Eksar (Shimpoli) Metro',
+    hindi_name: 'पहाड़ी एकसर मेट्रो',
+    marathi_name: 'पहाडी एकसर मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2145,
+    longitude: 72.8425,
+    zone: 'Western Suburbs',
+    exit_tips: 'Shimpoli Road cafes, local craft addas, and peaceful residential quarters.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-kandivali-west',
+    name: 'Kandivali West (Mahavir Nagar) Metro',
+    hindi_name: 'कांदिवली पश्चिम मेट्रो',
+    marathi_name: 'कांदिवली पश्चिम मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.2065,
+    longitude: 72.8405,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct exit into famous Mahavir Nagar Khau Galli street food hub.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-dahanukarwadi',
+    name: 'Dahanukarwadi Metro (Line 2A)',
+    hindi_name: 'दहानुकरवाड़ी मेट्रो',
+    marathi_name: 'डहाणूकरवाडी मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1995,
+    longitude: 72.8385,
+    zone: 'Western Suburbs',
+    exit_tips: 'Instant 4 min walk to Uday Restaurant & Bar and MG Road.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-valnai-charkop',
+    name: 'Valnai (Charkop) Metro',
+    hindi_name: 'वलनई (चारकोप) मेट्रो',
+    marathi_name: 'वलनई (चारकोप) मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1925,
+    longitude: 72.8365,
+    zone: 'Western Suburbs',
+    exit_tips: 'Gateway to Charkop creek promenades and quiet western mangroves.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-malad-west',
+    name: 'Malad West Metro (Line 2A)',
+    hindi_name: 'मालाड पश्चिम मेट्रो',
+    marathi_name: 'मालाड पश्चिम मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1855,
+    longitude: 72.8352,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct connection to Liberty Garden, Mamletdar Wadi, Harish Bar & Orlem village.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-lower-malad',
+    name: 'Lower Malad Metro (Line 2A)',
+    hindi_name: 'लोअर मालाड मेट्रो',
+    marathi_name: 'लोअर मालाड मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1785,
+    longitude: 72.8345,
+    zone: 'Western Suburbs',
+    exit_tips: 'Serving Kanchpada, Inorbit Link Road malls and nightlife.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-bangur-nagar',
+    name: 'Bangur Nagar Metro (Line 2A)',
+    hindi_name: 'बांगुर नगर मेट्रो',
+    marathi_name: 'बांगूर नगर मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1705,
+    longitude: 72.8335,
+    zone: 'Western Suburbs',
+    exit_tips: 'Bangur Nagar commercial strip, local permit rooms, and bakeries.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-goregaon-west',
+    name: 'Goregaon West (Pahadi) Metro',
+    hindi_name: 'गोरेगांव पश्चिम मेट्रो',
+    marathi_name: 'गोरेगाव पश्चिम मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1625,
+    longitude: 72.8325,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct exit towards SV Road connector and Goregaon Sports Club.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-adarsh-nagar',
+    name: 'Adarsh Nagar Metro (Line 2A)',
+    hindi_name: 'आदर्श नगर मेट्रो',
+    marathi_name: 'आदर्श नगर मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1535,
+    longitude: 72.8315,
+    zone: 'Western Suburbs',
+    exit_tips: 'Access to Oshiwara creative studios, casting agencies, and hip cafes.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-oshiwara',
+    name: 'Oshiwara (Shastri Nagar) Metro',
+    hindi_name: 'ओशिवरा मेट्रो',
+    marathi_name: 'ओशिवरा मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1435,
+    longitude: 72.8312,
+    zone: 'Western Suburbs',
+    exit_tips: 'Steps from Lokhandwala Back Road, Mega Mall, and Woodside Inn.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro2a-andheri-west',
+    name: 'Andheri West (Veera Desai) Metro',
+    hindi_name: 'अंधेरी पश्चिम मेट्रो',
+    marathi_name: 'अंधेरी पश्चिम मेट्रो',
+    lines: ['metro_2a'],
+    latitude: 19.1235,
+    longitude: 72.8325,
+    zone: 'Western Suburbs',
+    exit_tips: 'Southern terminus of Line 2A at Veera Desai Industrial Area.',
+    auto_rickshaw_available: true,
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 3. Metro Line 7 (Red Line: Dahisar East ⇄ WEH ⇄ Gundavali / Andheri)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'metro7-ovaripada',
+    name: 'Ovaripada Metro (Line 7)',
+    hindi_name: 'ओवरीपाड़ा मेट्रो',
+    marathi_name: 'ओवरीपाडा मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.2485,
+    longitude: 72.8655,
+    zone: 'Western Suburbs',
+    exit_tips: 'Elevated highway station with panoramic view of Borivali hills.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-national-park',
+    name: 'National Park Metro (SGNP Gateway)',
+    hindi_name: 'राष्ट्रीय उद्यान मेट्रो',
+    marathi_name: 'राष्ट्रीय उद्यान मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.2315,
+    longitude: 72.8665,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct 300m walk to Sanjay Gandhi National Park main gate, cycling trails & Kanheri Caves shuttles.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-devipada',
+    name: 'Devipada Metro (Line 7)',
+    hindi_name: 'देवीपाड़ा मेट्रो',
+    marathi_name: 'देवीपाडा मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.2235,
+    longitude: 72.8648,
+    zone: 'Western Suburbs',
+    exit_tips: 'East exit towards Kulupwadi quiet residential hill pockets.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-magathane',
+    name: 'Magathane Metro (Line 7)',
+    hindi_name: 'मागाठाणे मेट्रो',
+    marathi_name: 'मागाठाणे मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.2155,
+    longitude: 72.8635,
+    zone: 'Western Suburbs',
+    exit_tips: 'Fast access to Borivali East bus terminus and Tata Power addas.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-poisar',
+    name: 'Poisar Metro (Line 7)',
+    hindi_name: 'पोईसर मेट्रो',
+    marathi_name: 'पोईसर मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.2085,
+    longitude: 72.8615,
+    zone: 'Western Suburbs',
+    exit_tips: 'Opposite Mahindra & Mahindra gate on Western Express Highway.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-akurli',
+    name: 'Akurli Metro (Kandivali East)',
+    hindi_name: 'आकुर्ली मेट्रो',
+    marathi_name: 'आकुर्ली मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1995,
+    longitude: 72.8595,
+    zone: 'Western Suburbs',
+    exit_tips: 'Central Kandivali East transit hub near Growel\'s 101 Mall.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-kurar',
+    name: 'Kurar Metro (Malad East)',
+    hindi_name: 'कुरार मेट्रो',
+    marathi_name: 'कुरार मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1865,
+    longitude: 72.8585,
+    zone: 'Western Suburbs',
+    exit_tips: 'Serving Kurar village hills and Malad East residential complexes.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-dindoshi',
+    name: 'Dindoshi Metro (Line 7)',
+    hindi_name: 'दिंडोशी मेट्रो',
+    marathi_name: 'दिंडोशी मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1755,
+    longitude: 72.8575,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct access to Oberoi Mall, Gokuldham, and Film City Road.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-aarey',
+    name: 'Aarey Metro (Goregaon East)',
+    hindi_name: 'आरे मेट्रो',
+    marathi_name: 'आरे मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1635,
+    longitude: 72.8565,
+    zone: 'Western Suburbs',
+    exit_tips: 'Gateway to Aarey Milk Colony forest roads, picnic lake & nursery lanes.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-mahanand',
+    name: 'Goregaon East (Mahanand) Metro',
+    hindi_name: 'महानंद डेयरी मेट्रो',
+    marathi_name: 'महानंद डेअरी मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1525,
+    longitude: 72.8555,
+    zone: 'Western Suburbs',
+    exit_tips: 'WEH commercial front near NESCO exhibition centre.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-jogeshwari-east',
+    name: 'Jogeshwari East (JVLR) Metro',
+    hindi_name: 'जोगेश्वरी पूर्व मेट्रो',
+    marathi_name: 'जोगेश्वरी पूर्व मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1385,
+    longitude: 72.8545,
+    zone: 'Western Suburbs',
+    exit_tips: 'Major junction of WEH and Jogeshwari-Vikhroli Link Road (JVLR).',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-mogra',
+    name: 'Mogra Metro (Line 7)',
+    hindi_name: 'मोगरा मेट्रो',
+    marathi_name: 'मोगरा मेट्रो',
+    lines: ['metro_7'],
+    latitude: 19.1285,
+    longitude: 72.8538,
+    zone: 'Western Suburbs',
+    exit_tips: 'Mogra village, Natwar Nagar, and quick cab access to SEEPZ.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro7-gundavali',
+    name: 'Gundavali Metro (Line 7 Terminus & Line 1 Hub)',
+    hindi_name: 'गुंदवली मेट्रो',
+    marathi_name: 'गुंदवली मेट्रो',
+    lines: ['metro_7', 'metro_1'],
+    latitude: 19.1172,
+    longitude: 72.8552,
+    zone: 'Western Suburbs',
+    exit_tips: 'Southern terminal of Line 7 with enclosed skywalk connecting Line 1 WEH station.',
+    auto_rickshaw_available: true,
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 4. Metro Line 3 (Aqua Line: Underground Colaba ⇄ BKC ⇄ Aarey)
+  // ─────────────────────────────────────────────────────────────
+  {
     id: 'metro3-aarey',
-    name: 'Aarey JVLR Metro (Line 3)',
+    name: 'Aarey JVLR Metro (Line 3 Gateway)',
     hindi_name: 'आरे जेवीएलआर मेट्रो',
     marathi_name: 'आरे जेव्हीएलआर मेट्रो',
     lines: ['metro_3'],
     latitude: 19.1394,
     longitude: 72.8785,
     zone: 'Western Suburbs',
-    exit_tips: 'At the gateway of Aarey Green forest trails and picnic spots.',
+    exit_tips: 'Northern terminus. Gateway to Aarey Green forest trails, lakes, and picnic spots.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-seepz',
+    name: 'SEEPZ Metro (Line 3 Underground)',
+    hindi_name: 'सीपज़ मेट्रो',
+    marathi_name: 'सीप्झ मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.1275,
+    longitude: 72.8795,
+    zone: 'Western Suburbs',
+    exit_tips: 'Serving SEEPZ special economic zone and MIDC IT corporate parks.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-midc',
+    name: 'MIDC Andheri Metro (Line 3)',
+    hindi_name: 'एमआईडीसी अंधेरी मेट्रो',
+    marathi_name: 'एमआयडीसी अंधेरी मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.1185,
+    longitude: 72.8805,
+    zone: 'Western Suburbs',
+    exit_tips: 'Industrial design studios, craft breweries, and corporate complexes.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-marol-naka',
+    name: 'Marol Naka Metro (Line 3 Underground Hub)',
+    hindi_name: 'मरोल नाका भूमिगत मेट्रो',
+    marathi_name: 'मरोळ नाका भूमिगत मेट्रो',
+    lines: ['metro_3', 'metro_1'],
+    latitude: 19.1085,
+    longitude: 72.8808,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct seamless subterranean escalator transfer to elevated Metro Line 1.',
     auto_rickshaw_available: true,
   },
   {
     id: 'metro3-airport-t2',
-    name: 'CSMI Airport T2 Metro (Line 3)',
+    name: 'CSMIA Airport Terminal 2 Metro',
     hindi_name: 'हवाई अड्डा टी२ मेट्रो',
     marathi_name: 'विमानतळ टी२ मेट्रो',
     lines: ['metro_3'],
     latitude: 19.0968,
     longitude: 72.8745,
     zone: 'Western Suburbs',
-    exit_tips: 'Direct subterranean connection to Terminal 2 Chhatrapati Shivaji Maharaj International Airport.',
+    exit_tips: 'Direct subterranean walkway into Terminal 2 International Departure & Arrival halls.',
     auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-sahar-road',
+    name: 'Sahar Road Metro (Line 3)',
+    hindi_name: 'सहार रोड मेट्रो',
+    marathi_name: 'सहार रोड मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0925,
+    longitude: 72.8615,
+    zone: 'Western Suburbs',
+    exit_tips: 'Underground connection serving Sahar village and airport luxury hotels.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-airport-t1',
+    name: 'CSMIA Airport Terminal 1 Metro',
+    hindi_name: 'हवाई अड्डा टी१ मेट्रो',
+    marathi_name: 'विमानतळ टी१ मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0885,
+    longitude: 72.8525,
+    zone: 'Western Suburbs',
+    exit_tips: 'Subterranean connection serving Domestic Terminal 1 gates at Santacruz.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-santacruz',
+    name: 'Santacruz Metro (Line 3 Underground)',
+    hindi_name: 'सांताक्रुज़ मेट्रो',
+    marathi_name: 'सांताक्रूझ मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0815,
+    longitude: 72.8465,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct connection to Western Express Highway and Kalina connector.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-vidyanagari',
+    name: 'Vidyanagari (University) Metro',
+    hindi_name: 'विद्यानगरी मेट्रो',
+    marathi_name: 'विद्यानगरी मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0725,
+    longitude: 72.8585,
+    zone: 'Western Suburbs',
+    exit_tips: 'Serving Mumbai University Kalina campus, research institutes & archives.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-bkc',
+    name: 'BKC Metro (Bandra-Kurla Complex)',
+    hindi_name: 'बीकेसी मेट्रो',
+    marathi_name: 'बीकेसी मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0665,
+    longitude: 72.8685,
+    zone: 'Western Suburbs',
+    exit_tips: 'Underground air-conditioned terminal serving the financial core of BKC and Jio World.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-dharavi',
+    name: 'Dharavi Metro (Line 3)',
+    hindi_name: 'धारावी मेट्रो',
+    marathi_name: 'धारावी मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0515,
+    longitude: 72.8565,
+    zone: 'Central Suburbs',
+    exit_tips: 'Serving Dharavi artisan pottery workshops and leather markets.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-dadar',
+    name: 'Dadar Metro (Line 3 Underground)',
+    hindi_name: 'दादर मेट्रो',
+    marathi_name: 'दादर मेट्रो',
+    lines: ['metro_3', 'western', 'central'],
+    latitude: 19.0195,
+    longitude: 72.8395,
+    zone: 'South Mumbai',
+    exit_tips: 'Subterranean connection to Dadar Western and Central railway platforms.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-siddhivinayak',
+    name: 'Siddhivinayak Metro (Line 3)',
+    hindi_name: 'सिद्धिविनायक मेट्रो',
+    marathi_name: 'सिद्धिविनायक मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0165,
+    longitude: 72.8315,
+    zone: 'South Mumbai',
+    exit_tips: 'Direct 2 min walk to the sacred 1801 Shree Siddhivinayak Temple & Shivaji Park.',
+    auto_rickshaw_available: false,
   },
   {
     id: 'metro3-worli',
@@ -440,10 +1016,118 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'वरली मेट्रो',
     marathi_name: 'वरळी मेट्रो',
     lines: ['metro_3'],
-    latitude: 19.016,
-    longitude: 72.818,
+    latitude: 19.0160,
+    longitude: 72.8180,
     zone: 'South Mumbai',
     exit_tips: 'Walking distance to Nehru Centre, Planetarium, and Worli Seaface.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-science-museum',
+    name: 'Science Museum / Mahalaxmi Metro',
+    hindi_name: 'साइंस म्यूज़ियम मेट्रो',
+    marathi_name: 'सायन्स म्युझियम मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.9895,
+    longitude: 72.8245,
+    zone: 'South Mumbai',
+    exit_tips: 'Near Nehru Science Centre, Mahalaxmi Racecourse, and Dhobi Ghat.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-mumbai-central',
+    name: 'Mumbai Central Metro (Line 3)',
+    hindi_name: 'मुंबई सेंट्रल मेट्रो',
+    marathi_name: 'मुंबई सेंट्रल मेट्रो',
+    lines: ['metro_3', 'western'],
+    latitude: 18.9715,
+    longitude: 72.8195,
+    zone: 'South Mumbai',
+    exit_tips: 'Underground connection to Western railway terminus and MSRTC central bus depot.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-grant-road',
+    name: 'Grant Road Metro (Line 3)',
+    hindi_name: 'ग्रांट रोड मेट्रो',
+    marathi_name: 'ग्रँट रोड मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.9635,
+    longitude: 72.8155,
+    zone: 'South Mumbai',
+    exit_tips: 'Gateway to Lamington Road vintage electronics market and vintage Irani cafes.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-girgaon',
+    name: 'Girgaon Metro (Line 3)',
+    hindi_name: 'गिरगांव मेट्रो',
+    marathi_name: 'गिरगाव मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.9555,
+    longitude: 72.8185,
+    zone: 'South Mumbai',
+    exit_tips: 'Footsteps to Girgaon Chowpatty beach, Khotachiwadi heritage village & Portuguese church.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-kalbadevi',
+    name: 'Kalbadevi Metro (Line 3)',
+    hindi_name: 'कालबादेवी मेट्रो',
+    marathi_name: 'काळबादेवी मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.9485,
+    longitude: 72.8265,
+    zone: 'South Mumbai',
+    exit_tips: 'Direct subterranean access into historic bazaars: Zaveri Bazaar & Mangaldas Market.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-csmt',
+    name: 'CSMT Metro (Line 3 Underground Hub)',
+    hindi_name: 'सीएसएमटी भूमिगत मेट्रो',
+    marathi_name: 'सीएसएमटी भूमिगत मेट्रो',
+    lines: ['metro_3', 'central', 'harbour'],
+    latitude: 18.9405,
+    longitude: 72.8355,
+    zone: 'South Mumbai',
+    exit_tips: 'Interchange directly opposite UNESCO World Heritage Victorian Terminus.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-hutatma-chowk',
+    name: 'Hutatma Chowk (Flora Fountain) Metro',
+    hindi_name: 'हुतात्मा चौक मेट्रो',
+    marathi_name: 'हुतात्मा चौक मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.9325,
+    longitude: 72.8315,
+    zone: 'South Mumbai',
+    exit_tips: 'Exit into Fort heritage district, Asiatic Library, and Kala Ghoda arts quarter.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-churchgate',
+    name: 'Churchgate Metro (Line 3 Underground)',
+    hindi_name: 'चर्चगेट भूमिगत मेट्रो',
+    marathi_name: 'चर्चगेट भूमिगत मेट्रो',
+    lines: ['metro_3', 'western'],
+    latitude: 18.9322,
+    longitude: 72.8264,
+    zone: 'South Mumbai',
+    exit_tips: 'Interchange directly with Western Railway Churchgate terminus and Oval Maidan.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-vidhan-bhavan',
+    name: 'Vidhan Bhavan (Nariman Point) Metro',
+    hindi_name: 'विधान भवन मेट्रो',
+    marathi_name: 'विधान भवन मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.9255,
+    longitude: 72.8225,
+    zone: 'South Mumbai',
+    exit_tips: 'Serving Maharashtra State Assembly, NCPA theaters, and Marine Drive southern promenade.',
     auto_rickshaw_available: false,
   },
   {
@@ -452,11 +1136,87 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'कफ परेड मेट्रो',
     marathi_name: 'कफ परेड मेट्रो',
     lines: ['metro_3'],
-    latitude: 18.915,
-    longitude: 72.818,
+    latitude: 18.9150,
+    longitude: 72.8180,
     zone: 'South Mumbai',
     exit_tips: 'South-most terminus. Gateway to Colaba, Afghan Church, and Sassoon Docks.',
     auto_rickshaw_available: false,
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 5. Navi Mumbai Metro Line 1 (Orange Line: Belapur ⇄ Kharghar ⇄ Pendhar)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'metronavi-cbd-belapur',
+    name: 'CBD Belapur Metro (NMM & Harbour Hub)',
+    hindi_name: 'सीबीडी बेलापूर मेट्रो',
+    marathi_name: 'सीबीडी बेलापूर मेट्रो',
+    lines: ['metro_navi', 'harbour'],
+    latitude: 19.0205,
+    longitude: 73.0402,
+    zone: 'Navi Mumbai',
+    exit_tips: 'Interchange hub directly connecting Harbour railway with Navi Mumbai Metro Line 1.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metronavi-science-park',
+    name: 'CIDCO Science Park Metro',
+    hindi_name: 'साइंस पार्क मेट्रो',
+    marathi_name: 'सायन्स पार्क मेट्रो',
+    lines: ['metro_navi'],
+    latitude: 19.0315,
+    longitude: 73.0485,
+    zone: 'Navi Mumbai',
+    exit_tips: 'Footsteps to CIDCO Science Park and Belapur waterfront promenade.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metronavi-utsav-chowk',
+    name: 'Utsav Chowk Metro (Kharghar)',
+    hindi_name: 'उत्सव चौक मेट्रो',
+    marathi_name: 'उत्सव चौक मेट्रो',
+    lines: ['metro_navi'],
+    latitude: 19.0385,
+    longitude: 73.0565,
+    zone: 'Navi Mumbai',
+    exit_tips: 'Famous Greco-Roman amphitheater landmark of Kharghar & street food hub.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metronavi-central-park',
+    name: 'Kharghar Central Park Metro',
+    hindi_name: 'सेंट्रल पार्क मेट्रो',
+    marathi_name: 'सेंट्रल पार्क मेट्रो',
+    lines: ['metro_navi'],
+    latitude: 19.0485,
+    longitude: 73.0715,
+    zone: 'Navi Mumbai',
+    exit_tips: 'Direct access to Kharghar Central Park lotus ponds, amphitheaters & Golf Course.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metronavi-pethpada',
+    name: 'Pethpada Metro (Pandavkada Gateway)',
+    hindi_name: 'पेठपाड़ा मेट्रो',
+    marathi_name: 'पेठपाडा मेट्रो',
+    lines: ['metro_navi'],
+    latitude: 19.0585,
+    longitude: 73.0785,
+    zone: 'Navi Mumbai',
+    exit_tips: 'Direct gateway station for hikes into Pandavkada Waterfall, foothills & stream trails.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metronavi-pendhar',
+    name: 'Pendhar Metro (Line 1 Terminus)',
+    hindi_name: 'पेंधर मेट्रो',
+    marathi_name: 'पेंधर मेट्रो',
+    lines: ['metro_navi'],
+    latitude: 19.0685,
+    longitude: 73.0885,
+    zone: 'Navi Mumbai',
+    exit_tips: 'Eastern terminus of Navi Mumbai Metro with views of Taloja river and hills.',
+    auto_rickshaw_available: true,
   },
 
   // Harbour Line & Navi Mumbai Connectors
@@ -641,29 +1401,116 @@ export const TRANSIT_LINE_TRACKS: TransitLineTrack[] = [
   },
   {
     id: 'metro_1',
-    name: 'Metro Line 1 (Versova-Ghatkopar)',
+    name: 'Metro Line 1 (Blue Line: Versova ⇄ Ghatkopar)',
     code: 'M1',
-    color: '#0891b2', // Cyan Blue
+    color: '#0284c7', // Sky Blue
     coordinates: [
       [19.1311, 72.8183], // Versova
       [19.1306, 72.8322], // DN Nagar
       [19.1287, 72.8364], // Azad Nagar
-      [19.1197, 72.8464], // Andheri
-      [19.0864, 72.9081], // Ghatkopar
+      [19.1197, 72.8464], // Andheri WR Interchange
+      [19.1172, 72.8552], // WEH / Gundavali Interchange
+      [19.1118, 72.8655], // Chakala (J.B. Nagar)
+      [19.1105, 72.8745], // Airport Road
+      [19.1085, 72.8808], // Marol Naka (Line 3 Hub)
+      [19.1055, 72.8875], // Saki Naka
+      [19.0988, 72.8965], // Asalpha
+      [19.0925, 72.9025], // Jagruti Nagar
+      [19.0864, 72.9081], // Ghatkopar CR Interchange
+    ],
+  },
+  {
+    id: 'metro_2a',
+    name: 'Metro Line 2A (Yellow Line: Dahisar East ⇄ Andheri West)',
+    code: 'M2A',
+    color: '#eab308', // Radiant Yellow
+    coordinates: [
+      [19.2565, 72.8645], // Dahisar East
+      [19.2520, 72.8552], // Anand Nagar
+      [19.2445, 72.8505], // Kandarpada
+      [19.2365, 72.8485], // Mandapeshwar / IC Colony
+      [19.2285, 72.8465], // Eksar
+      [19.2215, 72.8445], // Borivali West (Don Bosco)
+      [19.2145, 72.8425], // Pahadi Eksar (Shimpoli)
+      [19.2065, 72.8405], // Kandivali West (Mahavir Nagar)
+      [19.1995, 72.8385], // Dahanukarwadi
+      [19.1925, 72.8365], // Valnai (Charkop)
+      [19.1855, 72.8352], // Malad West
+      [19.1785, 72.8345], // Lower Malad
+      [19.1705, 72.8335], // Bangur Nagar
+      [19.1625, 72.8325], // Goregaon West
+      [19.1535, 72.8315], // Adarsh Nagar
+      [19.1435, 72.8312], // Oshiwara
+      [19.1306, 72.8322], // DN Nagar (Line 1 Interchange)
+      [19.1235, 72.8325], // Andheri West (Veera Desai)
+    ],
+  },
+  {
+    id: 'metro_7',
+    name: 'Metro Line 7 (Red Line: Dahisar East ⇄ Gundavali / WEH)',
+    code: 'M7',
+    color: '#dc2626', // Crimson Red
+    coordinates: [
+      [19.2565, 72.8645], // Dahisar East (Line 2A Hub)
+      [19.2485, 72.8655], // Ovaripada
+      [19.2315, 72.8665], // National Park (SGNP Gateway)
+      [19.2235, 72.8648], // Devipada
+      [19.2155, 72.8635], // Magathane
+      [19.2085, 72.8615], // Poisar
+      [19.1995, 72.8595], // Akurli (Kandivali East)
+      [19.1865, 72.8585], // Kurar (Malad East)
+      [19.1755, 72.8575], // Dindoshi
+      [19.1635, 72.8565], // Aarey (Goregaon East)
+      [19.1525, 72.8555], // Mahanand Dairy
+      [19.1385, 72.8545], // Jogeshwari East (JVLR)
+      [19.1285, 72.8538], // Mogra
+      [19.1172, 72.8552], // Gundavali / WEH Line 1 Hub
     ],
   },
   {
     id: 'metro_3',
-    name: 'Metro Line 3 (Aqua Line)',
+    name: 'Metro Line 3 (Aqua Line: Aarey ⇄ BKC ⇄ Cuffe Parade)',
     code: 'M3',
-    color: '#059669', // Emerald Green
+    color: '#059669', // Aqua Emerald
     coordinates: [
-      [18.9150, 72.8180], // Cuffe Parade
-      [18.9322, 72.8264], // Churchgate
-      [19.0160, 72.8180], // Worli
-      [19.0665, 72.8685], // BKC
-      [19.0968, 72.8745], // Airport T2
       [19.1394, 72.8785], // Aarey JVLR
+      [19.1275, 72.8795], // SEEPZ
+      [19.1185, 72.8805], // MIDC
+      [19.1085, 72.8808], // Marol Naka (Line 1 Hub)
+      [19.0968, 72.8745], // CSMIA Airport T2
+      [19.0925, 72.8615], // Sahar Road
+      [19.0885, 72.8525], // CSMIA Airport T1
+      [19.0815, 72.8465], // Santacruz Metro
+      [19.0725, 72.8585], // Vidyanagari (University)
+      [19.0665, 72.8685], // BKC
+      [19.0515, 72.8565], // Dharavi
+      [19.0195, 72.8395], // Dadar Underground
+      [19.0165, 72.8315], // Siddhivinayak (Prabhadevi)
+      [19.0160, 72.8180], // Worli
+      [18.9895, 72.8245], // Science Museum (Mahalaxmi)
+      [18.9715, 72.8195], // Mumbai Central
+      [18.9635, 72.8155], // Grant Road
+      [18.9555, 72.8185], // Girgaon
+      [18.9485, 72.8265], // Kalbadevi
+      [18.9405, 72.8355], // CSMT
+      [18.9325, 72.8315], // Hutatma Chowk (Flora Fountain)
+      [18.9322, 72.8264], // Churchgate
+      [18.9255, 72.8225], // Vidhan Bhavan
+      [18.9150, 72.8180], // Cuffe Parade
+    ],
+  },
+  {
+    id: 'metro_navi',
+    name: 'Navi Mumbai Metro Line 1 (Orange Line: Belapur ⇄ Kharghar ⇄ Pendhar)',
+    code: 'NMM',
+    color: '#ea580c', // Tangerine Orange
+    coordinates: [
+      [19.0205, 73.0402], // CBD Belapur (Harbour Interchange)
+      [19.0315, 73.0485], // CIDCO Science Park
+      [19.0385, 73.0565], // Utsav Chowk (Kharghar)
+      [19.0485, 73.0715], // Kharghar Central Park
+      [19.0585, 73.0785], // Pethpada (Pandavkada Gateway)
+      [19.0685, 73.0885], // Pendhar
     ],
   },
 ];

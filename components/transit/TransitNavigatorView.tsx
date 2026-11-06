@@ -44,8 +44,11 @@ const LINE_TABS: { id: TransitLineType | 'all'; label: string; badge: string; co
   { id: 'western', label: 'WESTERN LINE', badge: 'WR', color: 'bg-rose-600 text-white' },
   { id: 'central', label: 'CENTRAL MAIN', badge: 'CR', color: 'bg-amber-600 text-white' },
   { id: 'harbour', label: 'HARBOUR LINE', badge: 'HR', color: 'bg-blue-600 text-white' },
-  { id: 'metro_1', label: 'METRO LINE 1', badge: 'BLUE', color: 'bg-cyan-600 text-white' },
-  { id: 'metro_3', label: 'AQUA METRO 3', badge: 'UNDERGROUND', color: 'bg-emerald-600 text-white' },
+  { id: 'metro_1', label: 'METRO 1 (BLUE)', badge: 'M1', color: 'bg-sky-600 text-white' },
+  { id: 'metro_2a', label: 'METRO 2A (YELLOW)', badge: 'M2A', color: 'bg-amber-400 text-sumi font-black' },
+  { id: 'metro_7', label: 'METRO 7 (RED)', badge: 'M7', color: 'bg-red-600 text-white' },
+  { id: 'metro_3', label: 'AQUA METRO 3', badge: 'M3', color: 'bg-emerald-600 text-white' },
+  { id: 'metro_navi', label: 'NAVI MUMBAI METRO', badge: 'NMM', color: 'bg-orange-600 text-white' },
 ];
 
 export default function TransitNavigatorView({
