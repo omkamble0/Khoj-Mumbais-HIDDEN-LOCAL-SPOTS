@@ -825,3 +825,354 @@ export function getMumbaiTransitCrowdAdvisory() {
   };
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 🧠 SMART TRANSIT ROUTING ENGINE (MUMBAI COMMUTE BLUEPRINT)
+// ─────────────────────────────────────────────────────────────────────────────
+
+export interface SmartCommuteStep {
+  id: string;
+  type: 'first_mile' | 'train' | 'metro' | 'interchange' | 'last_mile' | 'walk_last_mile' | 'auto_last_mile';
+  title: string;
+  instruction: string;
+  detail: string;
+  durationMinutes: number;
+  distanceMeters?: number;
+  cost?: number;
+  badge?: string;
+  badgeColor?: string;
+}
+
+export interface SmartCommutePlan {
+  originStation: TransitStation;
+  destinationStation: TransitStation;
+  destinationPlace: Place;
+  totalDurationMinutes: number;
+  totalEstimatedCost: number;
+  trainTypeAdvice: {
+    canTakeFast: boolean;
+    label: string;
+    warning?: string;
+  };
+  crowdAdvisory: {
+    level: 'low' | 'moderate' | 'high';
+    headline: string;
+    description: string;
+    isReversePeak: boolean;
+  };
+  interchangeStation?: TransitStation;
+  steps: SmartCommuteStep[];
+}
+
+// Ordered station ID arrays for directional and stop count calculations
+const WR_STATIONS_ORDER = [
+  'stn-churchgate',
+  'stn-marine-lines',
+  'stn-charni-road',
+  'stn-grant-road',
+  'stn-mumbai-central',
+  'stn-mahalaxmi',
+  'stn-lower-parel',
+  'stn-dadar-wr',
+  'stn-bandra',
+  'stn-khar-road',
+  'stn-santacruz',
+  'stn-vile-parle',
+  'stn-andheri',
+  'stn-jogeshwari',
+  'stn-goregaon',
+  'stn-malad',
+  'stn-kandivali',
+  'stn-borivali',
+];
+
+const CR_STATIONS_ORDER = [
+  'stn-csmt',
+  'stn-byculla',
+  'stn-dadar-cr',
+  'stn-matunga-cr',
+  'stn-kurla',
+  'stn-ghatkopar',
+  'stn-bhandup',
+  'stn-mulund',
+  'stn-thane',
+  'stn-kalyan',
+];
+
+/**
+ * Calculates a foolproof, smart step-by-step transit route from any user location to any sanctuary.
+ */
+export function planSmartCommute(
+  originLat: number,
+  originLng: number,
+  destinationPlace: Place,
+  forcedOriginStationId?: string
+): SmartCommutePlan {
+  // 1. Resolve Origin Station (nearest to user or explicitly chosen)
+  let originStation: TransitStation = TRANSIT_STATIONS[0];
+  if (forcedOriginStationId) {
+    const found = TRANSIT_STATIONS.find((s) => s.id === forcedOriginStationId);
+    if (found) originStation = found;
+  } else {
+    let minDist = Infinity;
+    for (const stn of TRANSIT_STATIONS) {
+      const d = calculateDistanceMeters(originLat, originLng, stn.latitude, stn.longitude);
+      if (d < minDist) {
+        minDist = d;
+        originStation = stn;
+      }
+    }
+  }
+
+  // 2. Resolve Destination Station (nearest to sanctuary)
+  const destProfile = getSanctuaryTransitProfile(destinationPlace.latitude, destinationPlace.longitude);
+  const destinationStation = destProfile.nearestRailway.station;
+
+  // 3. First mile: From origin coordinates to originStation
+  const firstMileDist = calculateDistanceMeters(originLat, originLng, originStation.latitude, originStation.longitude);
+  const firstMileWalkMin = Math.round(firstMileDist / 80);
+  const firstMileAutoMin = Math.max(3, Math.round(firstMileDist / 300));
+  const firstMileAutoFare = originStation.auto_rickshaw_available
+    ? Math.max(23, Math.round(23 + Math.max(0, firstMileDist / 1000 - 1.5) * 15.33))
+    : 28; // Kaali-Peeli minimum in South Mumbai
+
+  const steps: SmartCommuteStep[] = [];
+  let totalCost = 0;
+  let totalDuration = 0;
+
+  // Step 1: First Mile
+  if (firstMileDist > 150) {
+    const isWalkable = firstMileDist <= 800;
+    steps.push({
+      id: 'step-first-mile',
+      type: 'first_mile',
+      title: isWalkable ? 'Walk to Station' : 'Hop in Meter Auto / Taxi',
+      instruction: isWalkable
+        ? `Walk ${Math.round(firstMileDist)}m (~${firstMileWalkMin} mins) to ${originStation.name} station`
+        : `Take ${originStation.auto_rickshaw_available ? 'meter auto' : 'kaali-peeli taxi'} (~${firstMileAutoMin} mins, ₹${firstMileAutoFare}) to ${originStation.name}`,
+      detail: `Enter via nearest skywalk or concourse at ${originStation.name}.`,
+      durationMinutes: isWalkable ? firstMileWalkMin : firstMileAutoMin,
+      distanceMeters: Math.round(firstMileDist),
+      cost: isWalkable ? 0 : firstMileAutoFare,
+      badge: isWalkable ? '🚶 WALK' : '🛺 FIRST MILE',
+      badgeColor: 'bg-amber-100 text-amber-900',
+    });
+    totalDuration += isWalkable ? firstMileWalkMin : firstMileAutoMin;
+    totalCost += isWalkable ? 0 : firstMileAutoFare;
+  }
+
+  // 4. Determine Train Segment Logic
+  let trainTypeAdvice = {
+    canTakeFast: false,
+    label: 'Slow Local ("S")',
+    warning: undefined as string | undefined,
+  };
+
+  const now = new Date();
+  const currentHour = now.getHours();
+  const currentDay = now.getDay(); // 0 is Sunday
+  const isSundayMegaBlock = currentDay === 0 && currentHour >= 11 && currentHour <= 16;
+
+  let crowdLevel: 'low' | 'moderate' | 'high' = 'moderate';
+  let crowdHeadline = 'Normal Suburban Flow';
+  let crowdDescription = 'Trains running on 3-4 minute frequency. Comfortable room in both slow and fast coaches.';
+  let isReversePeak = false;
+
+  // Case A: User is already at the destination station hub
+  if (originStation.id === destinationStation.id) {
+    trainTypeAdvice.label = 'Already at Destination Hub';
+  } else {
+    // Check line alignment
+    const isBothWR = originStation.lines.includes('western') && destinationStation.lines.includes('western');
+    const isBothCR = originStation.lines.includes('central') && destinationStation.lines.includes('central');
+
+    if (isBothWR) {
+      const origIdx = WR_STATIONS_ORDER.indexOf(originStation.id);
+      const destIdx = WR_STATIONS_ORDER.indexOf(destinationStation.id);
+      const diff = Math.abs(origIdx - destIdx);
+      const isSouthbound = destIdx < origIdx;
+      const directionLabel = isSouthbound ? 'Southbound (towards Churchgate)' : 'Northbound (towards Borivali / Virar)';
+
+      // Fast Train Intelligence
+      if (destinationStation.fast_train_stop && originStation.fast_train_stop && diff >= 4) {
+        trainTypeAdvice = {
+          canTakeFast: true,
+          label: '⚡ FAST Train ("F") Recommended',
+          warning: undefined,
+        };
+      } else if (!destinationStation.fast_train_stop) {
+        trainTypeAdvice = {
+          canTakeFast: false,
+          label: '⚠️ SLOW Local ("S") Mandatory',
+          warning: `${destinationStation.name} is a local stop. Fast trains ("F") skip this station! Only board trains marked "S" on the indicator.`,
+        };
+      }
+
+      // Directional Crowding Intelligence
+      const isMorningPeak = currentHour >= 8 && currentHour < 12;
+      const isEveningPeak = currentHour >= 17 && currentHour < 21;
+
+      if (isMorningPeak && isSouthbound) {
+        crowdLevel = 'high';
+        crowdHeadline = '⚠️ Morning Southbound Peak Crush';
+        crowdDescription = 'Trains towards Churchgate are heavily congested. Board First Class coach or take AC Local.';
+      } else if (isMorningPeak && !isSouthbound) {
+        crowdLevel = 'low';
+        isReversePeak = true;
+        crowdHeadline = '🟢 Reverse-Peak Advantage';
+        crowdDescription = 'Traveling against morning office rush. Coaches are breezy with open window seats!';
+      } else if (isEveningPeak && !isSouthbound) {
+        crowdLevel = 'high';
+        crowdHeadline = '⚠️ Evening Northbound Peak Crush';
+        crowdDescription = 'Intense crowding towards northern suburbs. Consider traveling after 9:15 PM or take AC Local.';
+      } else if (isEveningPeak && isSouthbound) {
+        crowdLevel = 'low';
+        isReversePeak = true;
+        crowdHeadline = '🟢 Reverse-Peak Advantage';
+        crowdDescription = 'Southbound trains are calm and pleasant in the evening.';
+      }
+
+      const trainTime = trainTypeAdvice.canTakeFast ? Math.round(diff * 1.6) : Math.round(diff * 2.4);
+
+      steps.push({
+        id: 'step-train-wr',
+        type: 'train',
+        title: `Board Western Line ${trainTypeAdvice.canTakeFast ? 'Fast' : 'Slow'} Train`,
+        instruction: `Board ${directionLabel} train at ${originStation.name} ➔ Ride ${diff} stops to ${destinationStation.name}`,
+        detail: trainTypeAdvice.warning
+          ? trainTypeAdvice.warning
+          : `Indicators show 'F' for Fast, 'S' for Slow. Ticket is ₹5 via UTS app. AC local tickets are ₹35.`,
+        durationMinutes: trainTime,
+        cost: 5,
+        badge: trainTypeAdvice.canTakeFast ? '⚡ FAST TRAIN' : '🐌 SLOW TRAIN',
+        badgeColor: trainTypeAdvice.canTakeFast ? 'bg-rose-600 text-white' : 'bg-amber-400 text-sumi',
+      });
+      totalDuration += trainTime;
+      totalCost += 5;
+    } else if (isBothCR) {
+      const origIdx = CR_STATIONS_ORDER.indexOf(originStation.id);
+      const destIdx = CR_STATIONS_ORDER.indexOf(destinationStation.id);
+      const diff = Math.abs(origIdx - destIdx);
+      const isSouthbound = destIdx < origIdx;
+      const directionLabel = isSouthbound ? 'Southbound (towards CSMT)' : 'Northbound (towards Kalyan / Thane)';
+
+      if (destinationStation.fast_train_stop && originStation.fast_train_stop && diff >= 3) {
+        trainTypeAdvice = {
+          canTakeFast: true,
+          label: '⚡ FAST Train ("F") Recommended',
+          warning: undefined,
+        };
+      } else if (!destinationStation.fast_train_stop) {
+        trainTypeAdvice = {
+          canTakeFast: false,
+          label: '⚠️ SLOW Local ("S") Mandatory',
+          warning: `${destinationStation.name} is a local stop. Fast trains skip this station! Board Slow local.`,
+        };
+      }
+
+      const trainTime = trainTypeAdvice.canTakeFast ? Math.round(diff * 1.8) : Math.round(diff * 2.5);
+
+      steps.push({
+        id: 'step-train-cr',
+        type: 'train',
+        title: `Board Central Line Train`,
+        instruction: `Board ${directionLabel} train at ${originStation.name} ➔ Ride ${diff} stops to ${destinationStation.name}`,
+        detail: trainTypeAdvice.warning || 'Use UTS mobile ticketing. Platform indicators display coach positions.',
+        durationMinutes: trainTime,
+        cost: 5,
+        badge: 'CR MAIN LINE',
+        badgeColor: 'bg-amber-600 text-white',
+      });
+      totalDuration += trainTime;
+      totalCost += 5;
+    } else {
+      // Cross-Line Interchange via Dadar Junction
+      const interchangeStation = TRANSIT_STATIONS.find((s) => s.id === 'stn-dadar-wr') || TRANSIT_STATIONS[7];
+
+      steps.push({
+        id: 'step-train-leg1',
+        type: 'train',
+        title: `Leg 1: Train to Dadar Junction`,
+        instruction: `Board local train to Dadar Junction from ${originStation.name}`,
+        detail: 'Dadar is the central railway interchange connecting Western & Central lines.',
+        durationMinutes: 12,
+        cost: 5,
+        badge: 'INTERCHANGE',
+        badgeColor: 'bg-cobalt text-white',
+      });
+
+      steps.push({
+        id: 'step-interchange',
+        type: 'interchange',
+        title: 'Switch Platforms via Foot Overbridge',
+        instruction: 'Cross overbridge between Western and Central railway platforms (~4 mins)',
+        detail: 'Follow overhead directional signs: Platforms 1-4 for Western, Platforms 5-8 for Central.',
+        durationMinutes: 5,
+        cost: 0,
+        badge: '🚶 TRANSFER',
+        badgeColor: 'bg-sumi text-wabi',
+      });
+
+      steps.push({
+        id: 'step-train-leg2',
+        type: 'train',
+        title: `Leg 2: Train to ${destinationStation.name}`,
+        instruction: `Board local train to ${destinationStation.name}`,
+        detail: `Ride to ${destinationStation.name}. Exit as per advice below.`,
+        durationMinutes: 15,
+        cost: 5,
+        badge: 'FINAL LEG',
+        badgeColor: 'bg-emerald-600 text-white',
+      });
+
+      totalDuration += 32;
+      totalCost += 10;
+    }
+  }
+
+  // Sunday Mega Block override
+  if (isSundayMegaBlock) {
+    crowdLevel = 'moderate';
+    crowdHeadline = '⚠️ Sunday Mega Block in Progress';
+    crowdDescription = 'Indian Railways maintenance block is active (11:00 AM - 4:00 PM). Trains may run 15-20 mins behind schedule.';
+  }
+
+  // Step Last: Last Mile from destinationStation to Sanctuary
+  const lastMileDist = destProfile.nearestRailway.distanceMeters;
+  const lastMileWalkMin = destProfile.nearestRailway.walkMinutes;
+  const lastMileAutoFare = destProfile.nearestRailway.estimatedFare || 28;
+  const isLastMileWalkable = lastMileDist <= 800;
+
+  steps.push({
+    id: 'step-last-mile',
+    type: isLastMileWalkable ? 'walk_last_mile' : 'auto_last_mile',
+    title: isLastMileWalkable ? 'Arrive on Foot' : 'Last Mile to Sanctuary',
+    instruction: isLastMileWalkable
+      ? `Walk ~${lastMileWalkMin} mins (${lastMileDist}m) from ${destinationStation.name} station`
+      : `Take ${destinationStation.auto_rickshaw_available ? 'meter auto' : 'kaali-peeli taxi'} (approx ₹${lastMileAutoFare}) to ${destinationPlace.name}`,
+    detail: `Station exit: ${destinationStation.exit_tips}`,
+    durationMinutes: isLastMileWalkable ? lastMileWalkMin : destProfile.nearestRailway.rickshawMinutes,
+    distanceMeters: lastMileDist,
+    cost: isLastMileWalkable ? 0 : lastMileAutoFare,
+    badge: isLastMileWalkable ? '🚶 WALK' : '🛺 LAST MILE',
+    badgeColor: 'bg-matcha-50 text-matcha-700',
+  });
+  totalDuration += isLastMileWalkable ? lastMileWalkMin : destProfile.nearestRailway.rickshawMinutes;
+  totalCost += isLastMileWalkable ? 0 : lastMileAutoFare;
+
+  return {
+    originStation,
+    destinationStation,
+    destinationPlace,
+    totalDurationMinutes: totalDuration,
+    totalEstimatedCost: totalCost,
+    trainTypeAdvice,
+    crowdAdvisory: {
+      level: crowdLevel,
+      headline: crowdHeadline,
+      description: crowdDescription,
+      isReversePeak,
+    },
+    steps,
+  };
+}
+

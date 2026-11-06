@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import React, { Component, ReactNode } from 'react';
 import { Place } from '@/lib/types';
-import { TransitStation } from '@/lib/transit';
+import { TransitStation, SmartCommutePlan } from '@/lib/transit';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 
 interface DynamicMapProps {
@@ -17,6 +17,9 @@ interface DynamicMapProps {
   selectedTransitStation?: TransitStation | null;
   onSelectTransitStation?: (station: TransitStation | null) => void;
   onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;
+  activeCommutePlan?: SmartCommutePlan | null;
+  onClearCommutePlan?: () => void;
+  onOpenSmartCommuteModal?: () => void;
 }
 
 // Error Boundary to prevent any client-side Leaflet exception from white-screening the page

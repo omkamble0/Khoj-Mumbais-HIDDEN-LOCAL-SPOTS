@@ -9,6 +9,8 @@ import {
   getSanctuariesNearStation,
   getSanctuaryTransitProfile,
   getMumbaiTransitCrowdAdvisory,
+  planSmartCommute,
+  SmartCommutePlan,
 } from '@/lib/transit';
 import {
   Train,
@@ -25,6 +27,7 @@ import {
   Coins,
   ChevronRight,
   Sparkles,
+  AlertTriangle,
 } from 'lucide-react';
 
 interface TransitNavigatorViewProps {
@@ -57,6 +60,7 @@ export default function TransitNavigatorView({
   const [selectedStationId, setSelectedStationId] = useState<string>(
     initialSelectedStation?.id || 'stn-bandra'
   );
+  const [tripOriginStationId, setTripOriginStationId] = useState<string>('stn-bandra');
   const [sanctuarySearchQuery, setSanctuarySearchQuery] = useState('');
   const [selectedSanctuaryId, setSelectedSanctuaryId] = useState<string | null>(
     initialSelectedPlace?.id || null
@@ -65,6 +69,7 @@ export default function TransitNavigatorView({
   useEffect(() => {
     if (initialSelectedStation) {
       setSelectedStationId(initialSelectedStation.id);
+      setTripOriginStationId(initialSelectedStation.id);
       const line = initialSelectedStation.lines[0];
       if (line) setSelectedLine(line);
     }
@@ -122,6 +127,13 @@ export default function TransitNavigatorView({
     if (!activeSanctuary) return null;
     return getSanctuaryTransitProfile(activeSanctuary.latitude, activeSanctuary.longitude);
   }, [activeSanctuary]);
+
+  // Smart Commute Plan for Selected Sanctuary
+  const smartTripPlan = useMemo(() => {
+    if (!activeSanctuary) return null;
+    const originStn = TRANSIT_STATIONS.find((s) => s.id === tripOriginStationId) || TRANSIT_STATIONS[0];
+    return planSmartCommute(originStn.latitude, originStn.longitude, activeSanctuary, originStn.id);
+  }, [activeSanctuary, tripOriginStationId]);
 
   return (
     <div className="w-full px-3 sm:px-6 md:px-10 py-6 sm:py-8 bg-washi font-sans min-h-screen space-y-8">
@@ -261,6 +273,71 @@ export default function TransitNavigatorView({
                   <span>VIEW ROUTE ON MAP ➔</span>
                 </button>
               </div>
+            </div>
+
+            {/* Smart Origin Boarding Picker & Route Calculator */}
+            <div className="bg-white/80 p-3.5 rounded-2xl border-2 border-sumi/20 space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-sumi flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>SELECT DEPARTURE STATION:</span>
+                  </span>
+                  <select
+                    value={tripOriginStationId}
+                    onChange={(e) => setTripOriginStationId(e.target.value)}
+                    className="bg-wabi border-2 border-sumi/40 font-bold text-sumi rounded-xl px-2.5 py-1 focus:outline-none cursor-pointer"
+                  >
+                    {TRANSIT_STATIONS.map((stn) => (
+                      <option key={stn.id} value={stn.id}>
+                        {stn.name} ({stn.lines.join('/')})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {smartTripPlan && (
+                  <div className="flex items-center gap-2 font-bold text-[11px]">
+                    <span className="px-2.5 py-1 rounded-xl bg-amber-400 text-sumi border border-sumi/20 shadow-sm">
+                      ⏱️ ~{smartTripPlan.totalDurationMinutes} mins total
+                    </span>
+                    <span className="px-2.5 py-1 rounded-xl bg-sumi text-wabi shadow-sm">
+                      🪙 ~₹{smartTripPlan.totalEstimatedCost}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Smart Boarding Warning Banner */}
+              {smartTripPlan?.trainTypeAdvice.warning && (
+                <div className="p-3 bg-amber-50 rounded-xl border border-amber-400/80 text-xs font-mono text-amber-900 flex items-start gap-2 leading-relaxed">
+                  <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <span><strong>IMPORTANT:</strong> {smartTripPlan.trainTypeAdvice.warning}</span>
+                </div>
+              )}
+
+              {/* Dynamic Step-by-Step Commute Plan */}
+              {smartTripPlan && (
+                <div className="space-y-2 pt-1">
+                  {smartTripPlan.steps.map((st, i) => (
+                    <div key={st.id} className="p-3 bg-white rounded-xl border border-sumi/20 flex items-start gap-2.5 text-xs font-mono shadow-sm">
+                      <span className="w-5 h-5 rounded-full bg-sumi text-wabi font-black text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        {i + 1}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-sumi text-xs sm:text-sm">{st.title}</span>
+                          <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded ${st.badgeColor || 'bg-sumi/10 text-slate-700'}`}>
+                            {st.badge}
+                          </span>
+                        </div>
+                        <p className="text-slate-800 text-xs font-sans mt-0.5 font-medium">{st.instruction}</p>
+                        <p className="text-[11px] text-slate-500 mt-0.5">{st.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Transit Blueprint Grid */}

@@ -10,9 +10,10 @@ import TransitNavigatorView from '@/components/transit/TransitNavigatorView';
 import ReportModal from '@/components/discovery/ReportModal';
 import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
+import SmartCommuteModal from '@/components/transit/SmartCommuteModal';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
-import { TransitStation } from '@/lib/transit';
+import { TransitStation, SmartCommutePlan } from '@/lib/transit';
 import initialPlacesData from '@/data/places_mumbai.json';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
@@ -31,6 +32,8 @@ export default function HomePage() {
   const [viewMode, setViewMode] = useState<'map' | 'zine' | 'transit'>('map');
   const [showTransitOverlay, setShowTransitOverlay] = useState(true);
   const [selectedTransitStation, setSelectedTransitStation] = useState<TransitStation | null>(null);
+  const [activeCommutePlan, setActiveCommutePlan] = useState<SmartCommutePlan | null>(null);
+  const [isSmartCommuteModalOpen, setIsSmartCommuteModalOpen] = useState(false);
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
   const [isRouletteOpen, setIsRouletteOpen] = useState(false);
   const [savedPlaceIds, setSavedPlaceIds] = useState<string[]>([]);
@@ -253,6 +256,9 @@ export default function HomePage() {
                 if (place) setSelectedPlace(place);
                 setViewMode('transit');
               }}
+              activeCommutePlan={activeCommutePlan}
+              onClearCommutePlan={() => setActiveCommutePlan(null)}
+              onOpenSmartCommuteModal={() => setIsSmartCommuteModalOpen(true)}
             />
           </div>
         ) : viewMode === 'zine' ? (
@@ -301,6 +307,10 @@ export default function HomePage() {
           setSelectedPlace(p);
           setViewMode('transit');
         }}
+        onOpenSmartCommute={(p) => {
+          setSelectedPlace(p);
+          setIsSmartCommuteModalOpen(true);
+        }}
       />
 
       {/* 4. Saved Places Tray */}
@@ -336,6 +346,23 @@ export default function HomePage() {
           setViewMode('map');
         }}
         currentCategory={filters.category}
+      />
+
+      {/* 7. Smart Commute Route Planning Modal */}
+      <SmartCommuteModal
+        isOpen={isSmartCommuteModalOpen}
+        onClose={() => setIsSmartCommuteModalOpen(false)}
+        destinationPlace={selectedPlace}
+        userLocation={userLocation}
+        allPlaces={allPlaces}
+        onSelectDestination={(p) => setSelectedPlace(p)}
+        onTraceOnMap={(plan) => {
+          setActiveCommutePlan(plan);
+          setSelectedPlace(plan.destinationPlace);
+          setSelectedTransitStation(plan.destinationStation);
+          setShowTransitOverlay(true);
+          setViewMode('map');
+        }}
       />
     </div>
   );

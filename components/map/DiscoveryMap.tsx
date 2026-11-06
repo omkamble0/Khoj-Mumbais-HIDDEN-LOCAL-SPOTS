@@ -10,8 +10,9 @@ import {
   TransitStation,
   getSanctuaryTransitProfile,
   getSanctuariesNearStation,
+  SmartCommutePlan,
 } from '@/lib/transit';
-import { Train, X, Compass, ExternalLink } from 'lucide-react';
+import { Train, X, Compass, ExternalLink, Zap } from 'lucide-react';
 
 interface DiscoveryMapProps {
   places: Place[];
@@ -24,6 +25,9 @@ interface DiscoveryMapProps {
   selectedTransitStation?: TransitStation | null;
   onSelectTransitStation?: (station: TransitStation | null) => void;
   onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;
+  activeCommutePlan?: SmartCommutePlan | null;
+  onClearCommutePlan?: () => void;
+  onOpenSmartCommuteModal?: () => void;
 }
 
 // Category Theme Accents
@@ -60,6 +64,9 @@ export default function DiscoveryMap({
   selectedTransitStation,
   onSelectTransitStation,
   onOpenTransitGuide,
+  activeCommutePlan,
+  onClearCommutePlan,
+  onOpenSmartCommuteModal,
 }: DiscoveryMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -363,13 +370,68 @@ export default function DiscoveryMap({
     }
   }, [internalTransitOverlay, selectedTransitStation]);
 
-  // 🚶 Dynamic Commute Connector: Links Selected Sanctuary Directly to Nearest Transit Station on Map
+  // 🧭 Multi-Leg Commuter Route Tracing (when activeCommutePlan is set) OR direct sanctuary-to-station link
   useEffect(() => {
     const map = mapInstanceRef.current;
     const routeLayer = routeConnectorLayerRef.current;
     if (!map || !routeLayer) return;
 
     routeLayer.clearLayers();
+
+    if (activeCommutePlan) {
+      try {
+        const origStn = activeCommutePlan.originStation;
+        const destStn = activeCommutePlan.destinationStation;
+        const destPlace = activeCommutePlan.destinationPlace;
+
+        // Leg 1: User Location to Origin Station
+        if (userLocation) {
+          L.polyline([[userLocation.lat, userLocation.lng], [origStn.latitude, origStn.longitude]], {
+            color: '#059669',
+            weight: 3.5,
+            dashArray: '6, 8',
+            opacity: 0.85,
+          }).addTo(routeLayer);
+        }
+
+        // Leg 2: Rail track between Origin & Destination Station
+        if (origStn.id !== destStn.id) {
+          L.polyline([[origStn.latitude, origStn.longitude], [destStn.latitude, destStn.longitude]], {
+            color: '#141518',
+            weight: 6,
+            opacity: 0.4,
+          }).addTo(routeLayer);
+
+          L.polyline([[origStn.latitude, origStn.longitude], [destStn.latitude, destStn.longitude]], {
+            color: '#ff3e18',
+            weight: 4,
+            opacity: 0.95,
+          }).addTo(routeLayer);
+        }
+
+        // Leg 3: Destination Station to Sanctuary
+        L.polyline([[destStn.latitude, destStn.longitude], [destPlace.latitude, destPlace.longitude]], {
+          color: '#ff3e18',
+          weight: 3.5,
+          dashArray: '5, 7',
+          className: 'commute-route-connector',
+          opacity: 0.9,
+        }).addTo(routeLayer);
+
+        // Fit map bounds to show complete trip
+        const bounds = L.latLngBounds([
+          [origStn.latitude, origStn.longitude],
+          [destPlace.latitude, destPlace.longitude],
+        ]);
+        if (userLocation) {
+          bounds.extend([userLocation.lat, userLocation.lng]);
+        }
+        map.fitBounds(bounds, { padding: [80, 80], maxZoom: 15 });
+        return;
+      } catch (err) {
+        console.warn('Error tracing smart commute plan:', err);
+      }
+    }
 
     if (!selectedPlace) return;
 
@@ -424,7 +486,7 @@ export default function DiscoveryMap({
     } catch (err) {
       console.warn('Error drawing transit connector route:', err);
     }
-  }, [selectedPlace]);
+  }, [selectedPlace, activeCommutePlan, userLocation]);
 
   // Rebuild Place Markers ONLY when the filtered places list ACTUALLY changes
   useEffect(() => {
@@ -564,6 +626,40 @@ export default function DiscoveryMap({
   return (
     <div className="relative w-full h-full min-h-[400px]">
       <div ref={mapContainerRef} className="w-full h-full min-h-[400px] z-0" style={{ minHeight: '100%' }} />
+
+      {/* Floating Active Commute Route Banner (Top-center) */}
+      {activeCommutePlan && (
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 bg-sumi text-wabi rounded-2xl border-2 border-sumi shadow-riso px-3.5 py-2 sm:px-4 sm:py-2.5 flex items-center gap-2.5 sm:gap-4 z-30 font-mono text-xs max-w-[95vw] animate-in fade-in slide-in-from-top-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+            <div className="truncate">
+              <span className="font-bold text-amber-300">
+                📍 {activeCommutePlan.originStation.name} ➔ 🚆 {activeCommutePlan.destinationStation.name} ➔ 🎯 {activeCommutePlan.destinationPlace.name}
+              </span>
+            </div>
+            <span className="hidden md:inline-block px-2 py-0.5 rounded bg-amber-400 text-sumi font-black text-[10px]">
+              ⏱️ ~{activeCommutePlan.totalDurationMinutes}m · 🪙 ~₹{activeCommutePlan.totalEstimatedCost}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              onClick={onOpenSmartCommuteModal}
+              className="px-3 py-1 bg-vermilion text-white font-bold rounded-xl hover:bg-rose-600 transition-colors text-[11px] flex items-center gap-1 shadow-sm"
+            >
+              <span>ITINERARY</span>
+              <ExternalLink className="w-3 h-3" />
+            </button>
+            <button
+              onClick={onClearCommutePlan}
+              className="p-1 hover:bg-white/10 rounded-lg text-slate-400 hover:text-white transition-colors"
+              title="Clear journey"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Floating Transit Layer Toggle Pill (Bottom-left above attribution) */}
       <div className="absolute bottom-6 left-4 z-20">

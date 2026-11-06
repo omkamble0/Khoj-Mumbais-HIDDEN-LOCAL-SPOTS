@@ -21,6 +21,7 @@ import {
   Coins,
   Train,
   ArrowRight,
+  Zap,
 } from 'lucide-react';
 
 interface PlaceCardDrawerProps {
@@ -28,6 +29,7 @@ interface PlaceCardDrawerProps {
   onClose: () => void;
   onOpenReport: (place: Place) => void;
   onOpenTransit?: (place: Place) => void;
+  onOpenSmartCommute?: (place: Place) => void;
 }
 
 const FALLBACK_IMAGE =
@@ -38,6 +40,7 @@ export default function PlaceCardDrawer({
   onClose,
   onOpenReport,
   onOpenTransit,
+  onOpenSmartCommute,
 }: PlaceCardDrawerProps) {
   const [isFavorited, setIsFavorited] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -388,6 +391,17 @@ export default function PlaceCardDrawer({
 
           {/* Action Row (Wander Here, Local Transit, Share, Report, & Google Maps) */}
           <div className="pt-2 flex flex-col gap-2.5">
+            {onOpenSmartCommute && (
+              <button
+                onClick={() => onOpenSmartCommute(place)}
+                className="w-full flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider"
+              >
+                <Zap className="w-4 h-4 text-amber-300" />
+                <span>PLAN FOOLPROOF COMMUTE (FAST/SLOW & CROWD RADAR)</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
+
             {onOpenTransit && (
               <button
                 onClick={() => onOpenTransit(place)}
