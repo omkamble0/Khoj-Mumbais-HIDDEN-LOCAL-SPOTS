@@ -272,11 +272,6 @@ body {
   background-size: 10px 10px;
   opacity: 0.12;
 }
-.checkered-trim {
-  background-image: linear-gradient(45deg, #141518 25%, transparent 25%), linear-gradient(-45deg, #141518 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #141518 75%), linear-gradient(-45deg, transparent 75%, #141518 75%);
-  background-size: 12px 12px;
-  background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
-}
 .sea-waves-pattern {
   background: radial-gradient(circle at 50% 100%, rgba(255,255,255,0.2) 20%, transparent 22%),
               radial-gradient(circle at 0% 100%, rgba(255,255,255,0.2) 20%, transparent 22%),

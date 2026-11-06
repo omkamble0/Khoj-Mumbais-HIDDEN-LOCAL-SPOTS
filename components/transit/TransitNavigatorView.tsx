@@ -168,13 +168,13 @@ function getDesiCardTheme(place: Place): DesiCardTheme {
   const isBudget = place.budget_tier === 'pocket_friendly' || place.budget_tier === 'free' || cost.includes('Free') || cost.includes('100') || cost.includes('150') || cost.includes('200') || cost.includes('300') || cost.includes('400');
   const isSplurge = place.budget_tier === 'splurge' || cost.includes('800') || cost.includes('1,') || cost.includes('1200') || cost.includes('1500');
 
-  // 1. Bar / Pub / Club / Nightspot -> Funky & Wavy
+  // 1. Bar / Pub / Club / Nightspot -> Funky & Lively
   if (cat === 'bars' || nameLower.includes('bar') || nameLower.includes('pub') || nameLower.includes('lounge') || nameLower.includes('beer') || nameLower.includes('tavern')) {
     return {
       type: 'bar',
       cardBg: 'bg-[#ff2a5f]',
       innerBg: 'bg-[#e01a4f]',
-      motifClass: 'checkered-trim',
+      motifClass: '',
       stampIcon: '🍸',
       tagLabel: 'FUNKY KATTA & BEER',
       accentBg: 'bg-[#ffe600] text-[#141518]',
