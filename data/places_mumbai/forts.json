@@ -29,7 +29,10 @@
       "historic-bastion"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-castella-de-aguada",
@@ -61,7 +64,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-fort-mangrove",
@@ -93,7 +99,10 @@
       "solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sion-hillock-fort",
@@ -125,7 +134,10 @@
       "central-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-vasai-fort-quiet-bastions",
@@ -157,7 +169,10 @@
       "photography"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-belapur-fort-hill",
@@ -189,7 +204,10 @@
       "solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-madh-fort-ruins",
@@ -221,7 +239,10 @@
       "madh-island"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_forts"
+    "source": "curated_forts",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-arnala-sea-fort",
@@ -253,7 +274,10 @@
       "solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_forts"
+    "source": "curated_forts",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-ghodbunder-fort-ruins",
@@ -285,7 +309,10 @@
       "thane"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_forts"
+    "source": "curated_forts",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-riwa-fort-kala-killa",
@@ -317,7 +344,10 @@
       "central-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mahim-fort-ruins",
@@ -347,7 +377,10 @@
       "stone-bastion",
       "sea-defense"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dongri-fort-bhayandar",
@@ -377,7 +410,10 @@
       "portuguese-ruin",
       "uttan-coast"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-revdanda-beach-fort-ruins",
@@ -409,7 +445,10 @@
       "alibaug-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-korlai-fort-and-lighthouse",
@@ -441,7 +480,10 @@
       "kundalika-river"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kelva-beach-fort-woods",
@@ -473,7 +515,10 @@
       "palghar-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-shirgaon-fort-ramparts",
@@ -505,7 +550,10 @@
       "palghar-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-dronagiri-fort-ruins",
@@ -537,7 +585,10 @@
       "dronagiri-ruins"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-khanderi-island-fort",
@@ -569,7 +620,10 @@
       "arabian-sea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-underi-island-fort",
@@ -601,7 +655,10 @@
       "offshore-ruin"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-durgadi-fort-kalyan",
@@ -633,7 +690,10 @@
       "historic-ramparts"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-padmadurg-kasa-sea-fort",
@@ -665,7 +725,10 @@
       "murud-coastline"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-bhiwandi-kamatghar-watchtower",
@@ -697,7 +760,10 @@
       "forgotten-bastion"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-gorai-utan-irmao-bastion",
@@ -729,6 +795,9 @@
       "coastal-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   }
 ]

@@ -123,11 +123,18 @@ export default function SavedPlacesDrawer({
                     {place.neighborhood ? `${place.neighborhood}, Mumbai` : place.city}
                   </p>
 
-                  {place.distance_meters !== undefined && (
-                    <span className="text-xs font-mono text-amber-700 font-bold inline-block">
-                      {formatDistance(place.distance_meters)} away
-                    </span>
-                  )}
+                  <div className="flex flex-wrap items-center gap-2">
+                    {place.distance_meters !== undefined && (
+                      <span className="text-xs font-mono text-amber-700 font-bold inline-block">
+                        {formatDistance(place.distance_meters)} away
+                      </span>
+                    )}
+                    {place.approx_cost && (
+                      <span className="text-[10px] font-mono text-amber-800 bg-amber-100/90 border border-amber-300 px-1.5 py-0.5 rounded font-bold">
+                        🪙 {place.approx_cost}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 {/* Remove button */}

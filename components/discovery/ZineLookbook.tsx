@@ -117,6 +117,12 @@ export default function ZineLookbook({
                     }`}>
                     {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
                   </span>
+                  {place.approx_cost && (
+                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-bold uppercase bg-amber-400 text-sumi backdrop-blur-md border border-amber-500/50 shadow-sm flex items-center gap-1">
+                      <span>🪙</span>
+                      <span>{place.approx_cost}</span>
+                    </span>
+                  )}
                   {checkIsPlacePeakingNow(place, currentWindow).isPeaking && (
                     <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase bg-emerald-600 text-white shadow-sm flex items-center gap-1 border border-emerald-400/50">
                       <span className="w-1.5 h-1.5 rounded-full bg-white" />

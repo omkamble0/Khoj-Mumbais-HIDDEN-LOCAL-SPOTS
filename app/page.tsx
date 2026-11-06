@@ -34,6 +34,7 @@ export default function HomePage() {
   const [filters, setFilters] = useState<FilterState>({
     category: 'all',
     spotTier: 'all',
+    budget: 'all',
     radiusKm: 120,
     maxCrowdLevel: 5,
     searchQuery: '',
@@ -129,6 +130,11 @@ export default function HomePage() {
           return false;
         }
 
+        // Budget / Pocket-friendly filter
+        if (filters.budget !== 'all' && place.budget_tier !== filters.budget) {
+          return false;
+        }
+
         // Crowd filter
         if (place.crowd_level > filters.maxCrowdLevel) {
           return false;
@@ -142,7 +148,8 @@ export default function HomePage() {
           const mNeighbor = place.neighborhood?.toLowerCase().includes(query);
           const mCat = place.category.toLowerCase().includes(query);
           const mTags = place.vibe_tags.some((t) => t.toLowerCase().includes(query));
-          if (!mName && !mShort && !mDesc && !mNeighbor && !mCat && !mTags) {
+          const mCost = place.approx_cost?.toLowerCase().includes(query);
+          if (!mName && !mShort && !mDesc && !mNeighbor && !mCat && !mTags && !mCost) {
             return false;
           }
         }

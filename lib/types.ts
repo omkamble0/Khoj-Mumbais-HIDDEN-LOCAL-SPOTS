@@ -15,6 +15,7 @@ export type PlaceCategory =
   | 'bars';
 
 export type SpotTier = 'all' | 'hidden_gem' | 'underrated' | 'iconic';
+export type BudgetTier = 'all' | 'free' | 'pocket_friendly' | 'moderate' | 'splurge';
 export type AccessType = 'public' | 'permissive' | 'commercial' | 'trail_required';
 export type SafetyLevel = 'low' | 'medium' | 'high';
 
@@ -26,6 +27,9 @@ export interface Place {
   category: PlaceCategory;
   subcategory: string;
   spot_tier: SpotTier; // 'iconic' | 'underrated' | 'hidden_gem'
+  budget_tier?: 'free' | 'pocket_friendly' | 'moderate' | 'splurge';
+  approx_cost?: string; // e.g. 'Free', '₹150–350 for two', '₹85 entry'
+  price_level?: number; // 0: Free, 1: ₹, 2: ₹₹, 3: ₹₹₹
   city: string;
   neighborhood?: string;
   latitude: number;
@@ -50,6 +54,7 @@ export interface Place {
 export interface FilterState {
   category: PlaceCategory;
   spotTier: SpotTier;
+  budget: BudgetTier;
   radiusKm: number;
   maxCrowdLevel: number;
   searchQuery: string;

@@ -29,7 +29,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-kyani-co",
@@ -61,7 +64,10 @@
       "nostalgia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-prithvi-cafe-juhu",
@@ -93,7 +99,10 @@
       "juhu"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-britannia-co",
@@ -125,7 +134,10 @@
       "nostalgia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-candies-bandra",
@@ -157,7 +169,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-yazdani-bakery",
@@ -189,7 +204,10 @@
       "vintage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-bambaiya-coffee-co",
@@ -221,7 +239,10 @@
       "bandra"
     ],
     "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Bandra_Worli_Sea_Link_at_night.jpg/1280px-Bandra_Worli_Sea_Link_at_night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "source": "curated_wikimedia"
+    "source": "curated_wikimedia",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-blue-tokai-mahalaxmi",
@@ -252,7 +273,10 @@
       "mahalaxmi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-mockingbird-cafe-churchgate",
@@ -283,7 +307,10 @@
       "cozy-lighting"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-kala-ghoda-cafe",
@@ -314,7 +341,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-b-merwan-grant-road",
@@ -346,7 +376,10 @@
       "grant-road"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-zen-cafe-lower-parel",
@@ -378,7 +411,10 @@
       "lower-parel"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-koinonia-chuim-village",
@@ -410,7 +446,10 @@
       "khar-west"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-jimmy-boy-parsi-cafe",
@@ -442,7 +481,10 @@
       "vintage-sepia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sassanian-boulangerie",
@@ -474,7 +516,10 @@
       "vintage-glass-jars"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-excelsior",
@@ -506,7 +551,10 @@
       "caramel-custard"
     ],
     "photo_url": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-ideal-corner-parsi",
@@ -538,7 +586,10 @@
       "nostalgic-dining"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-koolar-and-co-irani-cafe",
@@ -570,7 +621,10 @@
       "matunga-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-military-fort",
@@ -602,7 +656,10 @@
       "fort-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-good-luck-cafe-bandra",
@@ -634,7 +691,10 @@
       "bandra-institution"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-idli-house-filter-coffee-matunga",
@@ -666,7 +726,10 @@
       "budget-breakfast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-de-la-paix-opera-house",
@@ -698,7 +761,10 @@
       "budget-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-olympia-coffee-house-colaba",
@@ -730,7 +796,10 @@
       "wallet-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-manis-lunch-home-filter-kaapi",
@@ -762,7 +831,10 @@
       "honest-pricing"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-rama-nayaks-udipi-coffee-matunga",
@@ -794,7 +866,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-lucky-restaurant-chai-bandra",
@@ -826,7 +901,10 @@
       "bandra-crossroads"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-city-bakery-mawa-cake-worli",
@@ -858,7 +936,10 @@
       "budget-bakery-snack"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-grant-house-heritage-tea-fort",
@@ -890,7 +971,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-aaswad-upahar-chai-dadar",
@@ -922,7 +1006,10 @@
       "dadar-culture"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-dps-fast-food-matunga",
@@ -954,7 +1041,10 @@
       "student-hangout"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-anand-stall-mithibai-cafe",
@@ -986,7 +1076,10 @@
       "student-staple"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-raju-sandwich-hr-college",
@@ -1018,7 +1111,10 @@
       "budget-eats"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-irani-chaii-mahim",
@@ -1050,7 +1146,10 @@
       "student-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-prakash-shakahari-upahaar-dadar",
@@ -1082,7 +1181,10 @@
       "authentic-maharashtrian"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-gulshan-matunga",
@@ -1114,7 +1216,10 @@
       "student-nostalgia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-right-place-breach-candy",
@@ -1146,7 +1251,10 @@
       "budget-treats"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-bachelorrs-chowpatty-seaside",
@@ -1178,7 +1286,10 @@
       "chowpatty-classic"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-amar-juice-centre-vile-parle",
@@ -1210,7 +1321,10 @@
       "exam-relief"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-colony-dadar-hindu-colony",
@@ -1242,7 +1356,10 @@
       "budget-study-nook"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-gupta-sandwiches-podar-matunga",
@@ -1274,7 +1391,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-shivaji-park-juice-centre-dadar",
@@ -1306,7 +1426,10 @@
       "budget-refreshment"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-tea-post-powai-iit",
@@ -1338,7 +1461,10 @@
       "budget-tech-chats"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-new-shirin-byculla",
@@ -1370,7 +1496,10 @@
       "byculla-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-kalyan-bhel-chowpatty-student",
@@ -1402,7 +1531,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-siddhivinayak-juice-thane-college",
@@ -1434,7 +1566,10 @@
       "pocket-friendly-shake"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-khadakwasla-tapri-kharghar",
@@ -1466,7 +1601,10 @@
       "open-air-breezes"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-babu-vada-pav-sathaye-college",
@@ -1498,7 +1636,10 @@
       "legendary-snack"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-keventers-churchgate-vintage",
@@ -1530,7 +1671,10 @@
       "student-refreshment"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-prithvi-courtyard-student-annex",
@@ -1562,7 +1706,10 @@
       "creative-sanctuary"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-mama-kane-uphar-griha-dadar",
@@ -1594,7 +1741,10 @@
       "dadar-station"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-moti-halwai-lalbaug-market",
@@ -1626,7 +1776,10 @@
       "hyper-local"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-de-la-rose-matharpacady",
@@ -1658,7 +1811,10 @@
       "sweet-chai-20rs"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-shree-thaker-tea-fanaswadi",
@@ -1690,7 +1846,10 @@
       "textile-merchants"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-dattatray-refreshments-girgaon",
@@ -1722,7 +1881,10 @@
       "sweet-filter-tea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-tardeo-khau-galli-chai-stall",
@@ -1754,7 +1916,10 @@
       "street-tea-culture"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-asha-sweet-dal-pakwan-chembur",
@@ -1786,7 +1951,10 @@
       "budget-breakfast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-aram-milk-bar-cst",
@@ -1818,7 +1986,10 @@
       "cardamom-tea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-modern-kurla-village",
@@ -1850,7 +2021,10 @@
       "quiet-suburb"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-koolar-annex-matunga-circle",
@@ -1882,6 +2056,9 @@
       "kings-circle"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   }
 ]

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Place, PlaceCategory, SpotTier } from '@/lib/types';
+import { Place, PlaceCategory, SpotTier, BudgetTier } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 import { getAllPlaces } from '@/lib/places';
 
@@ -14,6 +14,7 @@ export async function GET(request: NextRequest) {
     const radiusKm = parseFloat(searchParams.get('radiusKm') || '40');
     const category = (searchParams.get('category') || 'all') as PlaceCategory;
     const spotTier = (searchParams.get('spotTier') || 'all') as SpotTier;
+    const budget = (searchParams.get('budget') || 'all') as BudgetTier;
     const maxCrowd = parseInt(searchParams.get('maxCrowd') || '5', 10);
     const query = (searchParams.get('q') || '').toLowerCase().trim();
 
@@ -46,6 +47,11 @@ export async function GET(request: NextRequest) {
 
       // Tier filter (hidden_gem, underrated, iconic)
       if (spotTier !== 'all' && place.spot_tier !== spotTier) {
+        return false;
+      }
+
+      // Budget filter (free, pocket_friendly, moderate, splurge)
+      if (budget !== 'all' && place.budget_tier !== budget) {
         return false;
       }
 

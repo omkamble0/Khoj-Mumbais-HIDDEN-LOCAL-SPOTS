@@ -29,7 +29,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mahim-nature-park",
@@ -61,7 +64,10 @@
       "mahim"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-horniman-circle",
@@ -93,7 +99,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-joseph-baptista-garden",
@@ -125,7 +134,10 @@
       "reading-spot"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-hanging-gardens-malabar",
@@ -157,7 +169,10 @@
       "malabar-hill"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_gardens"
+    "source": "curated_gardens",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bhakti-park-lawns",
@@ -189,7 +204,10 @@
       "reading-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_gardens"
+    "source": "curated_gardens",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-godrej-mangrove-park",
@@ -221,7 +239,10 @@
       "vikhroli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nirvana-park-powai",
@@ -251,7 +272,10 @@
       "powai",
       "bamboo-canopy"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-amarsons-garden-promenade",
@@ -281,7 +305,10 @@
       "ocean-lawns",
       "sunset-bench"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-diamond-garden-chembur",
@@ -311,7 +338,10 @@
       "circular-garden",
       "morning-jog"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-jewel-of-navi-mumbai-lake",
@@ -343,7 +373,10 @@
       "nerul-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-mbp-waterfall-gardens",
@@ -375,7 +408,10 @@
       "mahape-retreat"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-cooperage-bandstand-gardens",
@@ -407,7 +443,10 @@
       "quiet-promenade"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nehru-science-centre-park",
@@ -439,7 +478,10 @@
       "acoustic-mirrors"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-tata-garden-cliff-promenade",
@@ -471,7 +513,10 @@
       "frangipani-groves"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-rani-baug-botanical-tree-walk",
@@ -503,7 +548,10 @@
       "byculla-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dmonte-park-nature-sanctuary",
@@ -535,7 +583,10 @@
       "bandra-oasis"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-kharghar-central-park-lotus",
@@ -567,7 +618,10 @@
       "kharghar-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-teen-batti-coastal-garden",
@@ -599,7 +653,10 @@
       "coastal-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-joggers-park-mangrove-boardwalk",
@@ -631,7 +688,10 @@
       "bandra-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-priyadarshini-park-coastal-greens",
@@ -663,7 +723,10 @@
       "peaceful-stride"
     ],
     "photo_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-five-gardens-heritage-canopy",
@@ -695,7 +758,10 @@
       "morning-serenity"
     ],
     "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-pramod-mahajan-kala-park-lake",
@@ -727,7 +793,10 @@
       "reading-alcoves"
     ],
     "photo_url": "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-patwardhan-park-palm-gazebo",
@@ -759,7 +828,10 @@
       "quiet-jogging-track"
     ],
     "photo_url": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kaifi-azmi-park-poetry-trail",
@@ -791,7 +863,10 @@
       "deep-stillness"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-muktananda-park-banyan-canopy",
@@ -823,7 +898,10 @@
       "silent-yoga"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nana-nani-park-versova-casuarina",
@@ -855,7 +933,10 @@
       "sunset-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bhavans-nature-botanical-enclave",
@@ -887,7 +968,10 @@
       "andheri-hidden-gem"
     ],
     "photo_url": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mindspace-landscape-mound-garden",
@@ -919,7 +1003,10 @@
       "weekend-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-godrej-hillside-botanical-smarak",
@@ -951,7 +1038,10 @@
       "sunrise-vista"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-gaurav-valley-forest-park-mira-road",
@@ -983,7 +1073,10 @@
       "jungle-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kopri-lake-garden-deshpande-thane",
@@ -1015,7 +1108,10 @@
       "mirror-water"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-upvan-lake-sensory-garden-thane",
@@ -1047,7 +1143,10 @@
       "lakeside-vista"
     ],
     "photo_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-ovalekar-wadi-butterfly-garden-ghodbunder",
@@ -1079,7 +1178,10 @@
       "natural-wonder"
     ],
     "photo_url": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-wonders-park-floral-groves-nerul",
@@ -1111,7 +1213,10 @@
       "tranquil-promenade"
     ],
     "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-mango-garden-amrai-belapur",
@@ -1143,7 +1248,10 @@
       "chirping-koels"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-cidco-urban-haat-botanical-slopes",
@@ -1175,7 +1283,10 @@
       "quiet-amphitheater"
     ],
     "photo_url": "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-papdy-st-thomas-heritage-orchard",
@@ -1207,7 +1318,10 @@
       "sacred-quietude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kalyan-gandhari-riverfront-garden",
@@ -1239,7 +1353,10 @@
       "sunset-reflections"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-vangani-botanical-herbal-glades",
@@ -1271,6 +1388,9 @@
       "medicinal-flora"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   }
 ]

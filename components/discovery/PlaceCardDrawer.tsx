@@ -17,6 +17,7 @@ import {
   Sparkles,
   Share2,
   Check,
+  Coins,
 } from 'lucide-react';
 
 interface PlaceCardDrawerProps {
@@ -142,6 +143,12 @@ export default function PlaceCardDrawer({
             {place.distance_meters !== undefined && (
               <span className="text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-3 py-1 rounded-xl shadow-sm">
                 {formatDistance(place.distance_meters)}
+              </span>
+            )}
+            {place.approx_cost && (
+              <span className="text-xs font-mono font-bold bg-amber-400 text-sumi backdrop-blur-md border border-amber-500/50 px-2.5 py-1 rounded-xl shadow-sm flex items-center gap-1">
+                <span>🪙</span>
+                <span>{place.approx_cost}</span>
               </span>
             )}
             {peakInfo.isPeaking && (
@@ -289,6 +296,32 @@ export default function PlaceCardDrawer({
                   </span>{' '}
                   {place.safety_notes}
                 </p>
+              </div>
+            </div>
+
+            {/* Budget & Pocket Guide Row */}
+            <div className="p-4 flex items-start gap-3.5">
+              <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-300/40">
+                <Coins className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                  Budget & Pocket Guide
+                </span>
+                <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                  <span className="text-xs sm:text-sm font-bold text-sumi">
+                    {place.approx_cost || (place.budget_tier === 'free' ? 'Free Public Access' : 'Moderate')}
+                  </span>
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-sumi/10 uppercase text-slate-700">
+                    {place.budget_tier === 'free'
+                      ? '₹0 Free'
+                      : place.budget_tier === 'pocket_friendly'
+                      ? '₹ Pocket Friendly'
+                      : place.budget_tier === 'moderate'
+                      ? '₹₹ Moderate'
+                      : '₹₹₹ Splurge'}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

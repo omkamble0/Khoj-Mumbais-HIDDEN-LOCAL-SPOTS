@@ -29,7 +29,10 @@
       "free-entry"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "free",
+    "approx_cost": "Free Entry",
+    "price_level": 0
   },
   {
     "id": "mumbai-method-bandra",
@@ -61,7 +64,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-prithvi-theatre",
@@ -93,7 +99,10 @@
       "juhu"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-ngma-colaba",
@@ -125,7 +134,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-tarq-gallery-fort",
@@ -157,7 +169,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-artisans-centre-kala-ghoda",
@@ -189,7 +204,10 @@
       "intimate-space"
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-tao-art-gallery",
@@ -219,7 +237,10 @@
       "worli",
       "solitary-contemplation"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-space118-byculla",
@@ -249,7 +270,10 @@
       "artist-residency",
       "industrial-brick"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-project-88-art-gallery",
@@ -281,7 +305,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-chemould-prescott-road",
@@ -313,7 +340,10 @@
       "quiet-chambers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-ncpa-seaside-sunken-lawns",
@@ -345,7 +375,10 @@
       "ocean-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-jehangir-nicholson-art-foundation",
@@ -377,7 +410,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Entry",
+    "price_level": 0
   },
   {
     "id": "mmr-sasawane-karmarkar-sculpture-museum",
@@ -409,7 +445,10 @@
       "art-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹20–100 ticket",
+    "price_level": 1
   },
   {
     "id": "mumbai-ranwar-st-jude-bakery",
@@ -441,6 +480,9 @@
       "bandra-hamlet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   }
 ]

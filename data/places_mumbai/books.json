@@ -29,7 +29,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-david-sassoon-library",
@@ -61,7 +64,10 @@
       "sanctuary"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free Garden / ₹50 day-pass",
+    "price_level": 1
   },
   {
     "id": "mumbai-asiatic-library-steps",
@@ -93,7 +99,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Access",
+    "price_level": 0
   },
   {
     "id": "mumbai-title-waves-bandra",
@@ -124,7 +133,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-peoples-free-reading-room",
@@ -156,7 +168,10 @@
       "dhobi-talao"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Access",
+    "price_level": 0
   },
   {
     "id": "mumbai-wayword-and-wise",
@@ -186,7 +201,10 @@
       "quiet-browsing",
       "rare-books"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-trilogy-library-bandra",
@@ -216,7 +234,10 @@
       "reading-haven",
       "silent-study"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-granth-bookstore-juhu",
@@ -246,7 +267,10 @@
       "quiet-corners",
       "leather-armchairs"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-max-mueller-bhavan-library",
@@ -278,7 +302,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-alliance-francaise-library",
@@ -310,6 +337,9 @@
       "marine-lines"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   }
 ]

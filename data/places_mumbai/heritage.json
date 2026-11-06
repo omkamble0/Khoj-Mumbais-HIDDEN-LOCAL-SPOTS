@@ -29,7 +29,10 @@
       "girgaon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-sassoon-docks-art",
@@ -61,7 +64,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-cemetery-vaults",
@@ -93,7 +99,10 @@
       "sewri"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-portuguese-church-dadar",
@@ -125,7 +134,10 @@
       "dadar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-matharpacady-village",
@@ -157,7 +169,10 @@
       "mazgaon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-mani-bhavan-gamdevi",
@@ -189,7 +204,10 @@
       "gamdevi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-bhau-daji-lad-museum",
@@ -219,7 +237,10 @@
       "oldest-museum",
       "gilded-interiors"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-thomas-cathedral",
@@ -249,7 +270,10 @@
       "stained-glass",
       "zero-point"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-hasnabad-dargah-mazgaon",
@@ -279,7 +303,10 @@
       "mumbai-taj",
       "twilight-glow"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mmr-ambarnath-shiva-temple",
@@ -311,7 +338,10 @@
       "asi-monument"
     ],
     "photo_url": "https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mmr-bhiwandi-heritage-water-tanks",
@@ -343,7 +373,10 @@
       "heritage-hamlet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-khar-danda-koli-village",
@@ -375,7 +408,10 @@
       "authentic-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mmr-nallasopara-buddhist-stupa",
@@ -407,7 +443,10 @@
       "asi-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-coutinho-east-indian-enclave",
@@ -439,6 +478,9 @@
       "heritage-quiet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   }
 ]

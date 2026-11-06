@@ -473,9 +473,16 @@ export default function RastaRouletteModal({
                     <div>
                       <div className="flex items-center justify-between text-xs font-mono text-slate-500">
                         <span>📍 {winnerPlace.neighborhood ? `${winnerPlace.neighborhood}, ${winnerPlace.city}` : winnerPlace.city}</span>
-                        <span className="text-sumi font-bold font-mono">
-                          {Math.round(winnerPlace.hiddenness_score * 100)}% HIDDEN
-                        </span>
+                        <div className="flex items-center gap-2">
+                          {winnerPlace.approx_cost && (
+                            <span className="text-[10px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded">
+                              🪙 {winnerPlace.approx_cost}
+                            </span>
+                          )}
+                          <span className="text-sumi font-bold font-mono">
+                            {Math.round(winnerPlace.hiddenness_score * 100)}% HIDDEN
+                          </span>
+                        </div>
                       </div>
                       <h3 className="text-xl font-bold font-sans text-sumi mt-0.5">
                         {winnerPlace.name}
@@ -519,8 +526,13 @@ export default function RastaRouletteModal({
                           </div>
                         </div>
                         <div className="p-3 space-y-1">
-                          <div className="text-[10px] font-mono text-slate-500">
-                            📍 {duelPair[0].neighborhood || duelPair[0].city} · {Math.round(duelPair[0].hiddenness_score * 100)}% Hidden
+                          <div className="text-[10px] font-mono text-slate-500 flex items-center justify-between">
+                            <span>📍 {duelPair[0].neighborhood || duelPair[0].city} · {Math.round(duelPair[0].hiddenness_score * 100)}% Hidden</span>
+                            {duelPair[0].approx_cost && (
+                              <span className="text-[9px] font-mono font-bold bg-amber-100 text-amber-900 px-1 rounded">
+                                {duelPair[0].approx_cost}
+                              </span>
+                            )}
                           </div>
                           <h4 className="font-bold text-base text-sumi line-clamp-1">{duelPair[0].name}</h4>
                           <p className="text-[11px] text-slate-600 line-clamp-2">{duelPair[0].description}</p>
@@ -549,8 +561,13 @@ export default function RastaRouletteModal({
                           </div>
                         </div>
                         <div className="p-3 space-y-1">
-                          <div className="text-[10px] font-mono text-slate-500">
-                            📍 {duelPair[1].neighborhood || duelPair[1].city} · {Math.round(duelPair[1].hiddenness_score * 100)}% Hidden
+                          <div className="text-[10px] font-mono text-slate-500 flex items-center justify-between">
+                            <span>📍 {duelPair[1].neighborhood || duelPair[1].city} · {Math.round(duelPair[1].hiddenness_score * 100)}% Hidden</span>
+                            {duelPair[1].approx_cost && (
+                              <span className="text-[9px] font-mono font-bold bg-amber-100 text-amber-900 px-1 rounded">
+                                {duelPair[1].approx_cost}
+                              </span>
+                            )}
                           </div>
                           <h4 className="font-bold text-base text-sumi line-clamp-1">{duelPair[1].name}</h4>
                           <p className="text-[11px] text-slate-600 line-clamp-2">{duelPair[1].description}</p>

@@ -29,7 +29,10 @@
       "classic-martinis"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-gokul-dive-bar-colaba",
@@ -61,7 +64,10 @@
       "honest-spirit"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-leopold-secret-mezzanine-bar",
@@ -93,7 +99,10 @@
       "classic-rock"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-alps-restaurant-beer-bar",
@@ -125,7 +134,10 @@
       "colaba-alleyway"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sunlight-permit-room-kalbadevi",
@@ -157,7 +169,10 @@
       "vintage-jukebox"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-janata-lunch-home-bandra",
@@ -189,7 +204,10 @@
       "cold-lager"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-toto-garage-bandra",
@@ -221,7 +239,10 @@
       "neon-haze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-yacht-resto-bar-bandra",
@@ -253,7 +274,10 @@
       "retro-charm"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-the-den-khar-speakeasy",
@@ -285,7 +309,10 @@
       "bespoke-cocktails"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-soul-fry-bar-bandra",
@@ -319,7 +346,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-woodside-inn-colaba-heritage-bar",
@@ -351,7 +381,10 @@
       "warm-jazz"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-bayview-bar-marine-plaza",
@@ -383,7 +416,10 @@
       "quiet-martini"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-gables-resto-bar-colaba",
@@ -415,7 +451,10 @@
       "vintage-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-speakeasy-fort",
@@ -447,7 +486,10 @@
       "candlelit-nook"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-bayview-cafe-rooftop-beer-deck",
@@ -479,7 +521,10 @@
       "open-air-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-shanti-tavern-manori-creek",
@@ -511,7 +556,10 @@
       "rustic-tavern"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-the-house-speakeasy-versova",
@@ -543,7 +591,10 @@
       "craft-gin"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-ambience-retro-bar-vashi",
@@ -575,7 +626,10 @@
       "honest-pours"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-yeoor-hilltop-woods-resto-bar",
@@ -607,7 +661,10 @@
       "open-air-timber"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-sardar-permit-room-tardeo",
@@ -639,7 +696,10 @@
       "neighborhood-gem"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-mondegar-mondys-chaos",
@@ -671,7 +731,10 @@
       "iconic-buzz"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-the-ghetto-neon-graffiti-temple",
@@ -703,7 +766,10 @@
       "midnight-energy"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-colaba-social-warehouse-chaos",
@@ -735,7 +801,10 @@
       "weekend-madness"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-pravasi-permit-room-fort",
@@ -767,7 +836,10 @@
       "post-work-chaos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-universal-beer-hall",
@@ -799,7 +871,10 @@
       "boisterous-buzz"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-khar-social-underground-skatepark",
@@ -831,7 +906,10 @@
       "bassline-chaos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-doolally-taproom-bandra-pandemonium",
@@ -863,7 +941,10 @@
       "communal-benches"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-bandra-born-disco-rebellion",
@@ -895,7 +976,10 @@
       "house-party-vibe"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-pop-tates-versova-pitcher-frenzy",
@@ -927,7 +1011,10 @@
       "versova-hub"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-road-house-bluez-rock-karaoke",
@@ -961,7 +1048,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-kit-kat-permit-room-dhobi-talao",
@@ -993,7 +1083,10 @@
       "raw-energy"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-quarter-tardeo-dive",
@@ -1025,7 +1118,10 @@
       "boundary-explosions"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-woodside-andheri-trivia-mayhem",
@@ -1057,7 +1153,10 @@
       "intellectual-chaos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-tamasha-kamala-mills-party-frenzy",
@@ -1089,7 +1188,10 @@
       "corporate-escape"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-lord-of-the-drinks-kamala-mills",
@@ -1121,7 +1223,10 @@
       "bollywood-bass"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-gossip-permit-room-malad",
@@ -1153,7 +1258,10 @@
       "clattering-steins"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-tap-resto-bar-juhu-arcade",
@@ -1185,7 +1293,10 @@
       "dancefloor-eruption"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-bayview-metro-rapid-dive",
@@ -1217,7 +1328,10 @@
       "downtown-rush"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-pop-tates-thane-viviana-madness",
@@ -1249,7 +1363,10 @@
       "non-stop-cheering"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-vashi-social-neon-warehouse",
@@ -1281,7 +1398,10 @@
       "hip-hop-grooves"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-vihar-resto-bar-student-den",
@@ -1313,7 +1433,10 @@
       "pocket-money"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-new-york-restaurant-bar-marine-lines",
@@ -1345,7 +1468,10 @@
       "budget-beer"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sneha-coastal-budget-bar-mahim",
@@ -1377,7 +1503,10 @@
       "spicy-sukka"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-modern-lunch-home-dadar",
@@ -1409,7 +1538,10 @@
       "pocket-friendly-seafood"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-srikant-bar-matunga",
@@ -1441,7 +1573,10 @@
       "retro-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-harish-lunch-home-vile-parle",
@@ -1473,7 +1608,10 @@
       "cheap-pitchers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-national-restaurant-bandra",
@@ -1505,7 +1643,10 @@
       "unpretentious"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-amantran-restaurant-thane",
@@ -1537,7 +1678,10 @@
       "suburban-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-swagat-restaurant-kurla",
@@ -1569,7 +1713,10 @@
       "honest-prices"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-sankalp-resto-bar-vashi",
@@ -1601,7 +1748,10 @@
       "navi-mumbai-classic"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-gomantak-boarding-dadar",
@@ -1633,7 +1783,10 @@
       "dadar-chawl-roots"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-hazara-original-koliwada-bar",
@@ -1665,7 +1818,10 @@
       "budget-beer"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-hotel-gomantak-lalbaug-bar",
@@ -1697,7 +1853,10 @@
       "unvarnished-bombay"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-pancham-resto-bar-mazgaon",
@@ -1729,7 +1888,10 @@
       "port-city-soul"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-shri-krishna-boarding-prabhadevi",
@@ -1761,7 +1923,10 @@
       "budget-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-laxmi-lunch-home-goregaon",
@@ -1793,7 +1958,10 @@
       "honest-rates"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-kaka-resto-bar-chembur-camp",
@@ -1825,7 +1993,10 @@
       "budget-camaraderie"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-anand-bhuvan-vasai-koliwada-bar",
@@ -1857,7 +2028,10 @@
       "coastal-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-hotel-ratna-resto-bar-thane",
@@ -1889,7 +2063,10 @@
       "neighborhood-gem"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-sanman-coastal-bar-alibaug",
@@ -1921,7 +2098,10 @@
       "honest-coastal-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-old-street-cafe-bar-bandra",
@@ -1953,7 +2133,10 @@
       "bandra-students"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-pillar-khar",
@@ -1987,7 +2170,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-golden-bin-bar-juhu-koliwada",
@@ -2019,7 +2205,10 @@
       "gajudhar-bandh"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-happy-lunch-home-andheri-east",
@@ -2051,7 +2240,10 @@
       "no-frills-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-pillar-vile-parle",
@@ -2085,7 +2277,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-whats-your-plan-saki-naka",
@@ -2119,7 +2314,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-knotty-yard-powai",
@@ -2151,7 +2349,10 @@
       "student-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-samudra-bar-mumbai-central",
@@ -2183,7 +2384,10 @@
       "live-local-music"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-amoeba-sports-bar-kurla",
@@ -2215,7 +2419,10 @@
       "gaming-combos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-simmba-restobar-kurla",
@@ -2247,7 +2454,10 @@
       "local-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-grand-pride-bar-ghatkopar",
@@ -2279,7 +2489,10 @@
       "honest-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-choice-restaurant-bar-andheri",
@@ -2311,7 +2524,10 @@
       "crispy-chicken"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-sujata-restaurant-bar-santacruz",
@@ -2343,7 +2559,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-amrapali-bar-malad",
@@ -2375,7 +2594,10 @@
       "budget-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sunraj-restaurant-bar-borivali",
@@ -2407,7 +2629,10 @@
       "budget-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-oval-churchgate",
@@ -2440,7 +2665,10 @@
       "iconic-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-asiatic-restaurant-bar-churchgate",
@@ -2472,7 +2700,10 @@
       "dive-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-udaya-bar-ghatkopar",
@@ -2504,7 +2735,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-standard-restaurant-bar-dadar",
@@ -2536,7 +2770,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sandeep-bar-chembur-dharavi",
@@ -2568,7 +2805,10 @@
       "tandoori-kebabs"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sadguru-dining-bar-chembur",
@@ -2600,7 +2840,10 @@
       "local-favorite"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sunil-bar-kurla-east",
@@ -2632,7 +2875,10 @@
       "local-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-guruprasad-bar-sion",
@@ -2664,7 +2910,10 @@
       "budget-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-shree-krishna-bar-matunga-west",
@@ -2696,7 +2945,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-manpreet-bar-mahim",
@@ -2728,7 +2980,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-bottles-seven-bungalows",
@@ -2761,7 +3016,10 @@
       "budget-beer"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-pranam-bar-restaurant-vashi-mulund",
@@ -2793,7 +3051,10 @@
       "tandoori"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-deepa-bar-restaurant-bandra-west",
@@ -2825,7 +3086,10 @@
       "local-hideout"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-asiad-bar-restaurant-vile-parle-west",
@@ -2857,7 +3121,10 @@
       "student-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-universal-cafe-fort",
@@ -2889,7 +3156,10 @@
       "vintage-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-garden-jolly-bar-restaurant-kala-ghoda",
@@ -2921,7 +3191,10 @@
       "hidden-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-capitol-family-restaurant-bar-fort",
@@ -2953,7 +3226,10 @@
       "fast-pints"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-new-majestic-bar-restaurant-fort",
@@ -2985,7 +3261,10 @@
       "fast-service"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sher-e-punjab-bar-fort",
@@ -3017,7 +3296,10 @@
       "old-monk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-madira-bar-and-restaurant-parel-east",
@@ -3049,7 +3331,10 @@
       "budget-whiskey"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-sunil-restaurant-bar-lower-parel--lower-parel",
@@ -3081,7 +3366,10 @@
       "budget-drinks"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-pritam-restaurant-bar-tavern--dadar-west",
@@ -3113,7 +3401,10 @@
       "iconic-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-modern-bar-restaurant-dadar-east",
@@ -3145,7 +3436,10 @@
       "fast-turnover"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-lalit-bar-restaurant-sion",
@@ -3177,7 +3471,10 @@
       "friendly-staff"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-linkway-restaurant-bar-andheri-west",
@@ -3209,7 +3506,10 @@
       "budget-spirits"
     ],
     "photo_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sanjeevani-bar-andheri-east",
@@ -3241,7 +3541,10 @@
       "raw-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sheela-bar-restaurant-jogeshwari-west",
@@ -3273,7 +3576,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-saffron-express-bar-malad-west",
@@ -3307,7 +3613,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-guruprasad-bar-restaurant-santacruz--santacruz-east",
@@ -3339,7 +3648,10 @@
       "quick-pegs"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-harish-bar-restaurant-kurla-west",
@@ -3371,7 +3683,10 @@
       "local-joint"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-durga-prasad-bar-mulund-west",
@@ -3403,7 +3718,10 @@
       "attentive-service"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-royal-restaurant-bar-goregaon-west",
@@ -3435,7 +3753,10 @@
       "post-work-drinks"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-manmeet-bar-restaurant-goregaon-east",
@@ -3467,7 +3788,10 @@
       "transit-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-laxmi-pure-drinks-bar-jogeshwari-east",
@@ -3499,7 +3823,10 @@
       "bustling-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-alankar-restaurant-bar-malad-east",
@@ -3531,7 +3858,10 @@
       "local-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-status-restaurant-bar-goregaon-west",
@@ -3563,7 +3893,10 @@
       "air-conditioned-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-vaishali-bar-restaurant-jogeshwari-west",
@@ -3595,7 +3928,10 @@
       "unpretentious"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-golden-crown-bar-malad-west",
@@ -3627,7 +3963,10 @@
       "budget-liquor"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-samadhan-restaurant-bar-goregaon-east",
@@ -3659,7 +3998,10 @@
       "north-indian-mains"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-meghdoot-bar-restaurant-jogeshwari-east",
@@ -3691,7 +4033,10 @@
       "commuter-pint"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sagar-restaurant-bar-orlem--malad-west",
@@ -3723,7 +4068,10 @@
       "chilled-pitchers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-ashoka-bar-restaurant-goregaon-west",
@@ -3755,7 +4103,10 @@
       "retro-neighborhood-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-pushpa-bar-restaurant-jogeshwari-west",
@@ -3787,7 +4138,10 @@
       "low-markup-spirits"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-rupali-restaurant-bar-malad-east",
@@ -3819,7 +4173,10 @@
       "cheap-hard-liquor"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-city-tower-bar-restaurant-goregaon-west",
@@ -3851,7 +4208,10 @@
       "post-shop-drink"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-deepak-restaurant-bar-jogeshwari-east",
@@ -3883,7 +4243,10 @@
       "discounted-beers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-welcome-bar-restaurant-malad-west",
@@ -3915,7 +4278,10 @@
       "budget-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-the-local-karaoke-dive-kala-ghoda",
@@ -3949,7 +4315,10 @@
       "budget-pitchers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-merlins-karaoke-bar-santacruz-east",
@@ -3982,7 +4351,10 @@
       "retro-hits"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-glocal-junction-karaoke-andheri-west",
@@ -4015,7 +4387,10 @@
       "group-singalong"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-3-wise-monkeys-karaoke-khar-west",
@@ -4048,7 +4423,10 @@
       "beer-buckets"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mmr-tight-karaoke-bar-vashi",
@@ -4082,6 +4460,9 @@
       "suburban-karaoke"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   }
 ]

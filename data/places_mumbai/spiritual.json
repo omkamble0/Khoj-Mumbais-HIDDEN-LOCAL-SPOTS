@@ -29,7 +29,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-keneseth-eliyahoo-synagogue",
@@ -61,7 +64,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-global-vipassana-pagoda",
@@ -93,7 +99,10 @@
       "gorai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-babulnath-temple",
@@ -125,7 +134,10 @@
       "girgaon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-haji-ali-causeway",
@@ -157,7 +169,10 @@
       "worli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-afghan-church-colaba",
@@ -189,7 +204,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nipponzan-myohoji-temple",
@@ -221,7 +239,10 @@
       "worli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-magen-david-synagogue",
@@ -251,7 +272,10 @@
       "clock-tower",
       "jewish-heritage"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-walkeshwar-kashi-math",
@@ -281,7 +305,10 @@
       "stone-samadhi",
       "walkeshwar"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-john-baptist-ruins",
@@ -311,7 +338,10 @@
       "banyan-roots",
       "atmospheric"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-knesset-eliyahoo-synagogue",
@@ -343,7 +373,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-andrews-church-graveyard",
@@ -375,7 +408,10 @@
       "bandra-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-walkeshwar-jain-temple",
@@ -407,7 +443,10 @@
       "sacred-sanctum"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-bonaventure-church-seashore",
@@ -439,7 +478,10 @@
       "madh-island"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-badlapur-kondeshwar-waterfall-temple",
@@ -471,6 +513,9 @@
       "sacred-serenity"
     ],
     "photo_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   }
 ]

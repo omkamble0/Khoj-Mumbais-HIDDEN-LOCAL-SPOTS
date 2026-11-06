@@ -29,7 +29,10 @@
       "sgnp"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹85 park entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-yeoor-hills-trail",
@@ -61,7 +64,10 @@
       "thane"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-kharghar-hills-ridge",
@@ -93,7 +99,10 @@
       "navi-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-shilonda-trail-sgnp",
@@ -125,7 +134,10 @@
       "wildlife"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_treks"
+    "source": "curated_treks",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-pandavkada-waterfall-trail",
@@ -157,7 +169,10 @@
       "kharghar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_treks"
+    "source": "curated_treks",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-yeoor-bamboo-sanctuary",
@@ -189,7 +204,10 @@
       "thane"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-tungareshwar-stream-trail",
@@ -219,7 +237,10 @@
       "vasai-wilds",
       "sahyadri-canopy"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-gaimukh-creek-boardwalk",
@@ -249,7 +270,10 @@
       "birdwatching",
       "estuary-peace"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "thane-mama-bhanja-hilltop-trail",
@@ -281,7 +305,10 @@
       "forest-trek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-prabalmachi-plateau",
@@ -313,7 +340,10 @@
       "sahyadri-hike"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-karnala-bird-sanctuary-trail",
@@ -345,7 +375,10 @@
       "panvel-forest"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-tungareshwar-waterfall-trail",
@@ -377,7 +410,10 @@
       "monsoon-trek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-kanheri-upper-stream-trail",
@@ -409,7 +445,10 @@
       "basalt-cisterns"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹85 park entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-tulsi-lake-rainforest-ridge",
@@ -441,7 +480,10 @@
       "pristine-waters"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "thane-mumbra-devi-hilltop-shrine",
@@ -473,7 +515,10 @@
       "valley-panorama"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "thane-parsik-mountain-bamboo-grove",
@@ -505,6 +550,9 @@
       "shaded-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   }
 ]

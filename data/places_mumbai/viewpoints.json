@@ -29,7 +29,10 @@
       "andheri"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandra-reclamation-view",
@@ -61,7 +64,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kamla-nehru-sunset-point",
@@ -93,7 +99,10 @@
       "malabar-hill"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-parsik-hill-summit",
@@ -125,7 +134,10 @@
       "navi-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-jetty-flamingo-point",
@@ -157,7 +169,10 @@
       "sewri"
     ],
     "photo_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-khandeshwar-lake-promontory",
@@ -189,7 +204,10 @@
       "panvel"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-worli-koliwada-jetty",
@@ -219,7 +237,10 @@
       "ocean-spray",
       "unobstructed-skyline"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-uran-pirwadi-lookout",
@@ -249,7 +270,10 @@
       "untamed-cliffs",
       "secluded-lookout"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kashi-mira-rock-quarry-lake",
@@ -281,7 +305,10 @@
       "mira-road"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-chowk-point-matheran",
@@ -313,7 +340,10 @@
       "red-soil-trail"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-one-tree-hill-point-matheran",
@@ -345,7 +375,10 @@
       "matheran-cliff"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-uran-flamingo-mudflats",
@@ -377,7 +410,10 @@
       "uran-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kalyan-creek-birding-flats",
@@ -409,7 +445,10 @@
       "kalyan-creek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-bunder-mangrove-jetty",
@@ -441,7 +480,10 @@
       "mudflats-sanctuary"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-kharghar-hills-valley-drive",
@@ -473,7 +515,10 @@
       "kharghar-heights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-belapur-hilltop-reservoir",
@@ -505,7 +550,10 @@
       "belapur-quiet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandra-lands-end-amphitheatre",
@@ -537,7 +585,10 @@
       "bandra-promontory"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-malabar-point-sea-cliff",
@@ -569,7 +620,10 @@
       "golden-breakers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-kharghar-sunset-tableland",
@@ -601,7 +655,10 @@
       "kharghar-tableland"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-carter-road-rocky-sunset-amphitheatre",
@@ -633,7 +690,10 @@
       "bandra-seaface"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-gorai-hilltop-sunset-ridge",
@@ -665,7 +725,10 @@
       "mangrove-horizon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-dombivli-gharapuri-sunset-riverfront",
@@ -697,7 +760,10 @@
       "evening-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-parsik-hill-highest-peak",
@@ -729,7 +795,10 @@
       "parsik-peak"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-rambaug-point-silent-valley",
@@ -761,7 +830,10 @@
       "matheran-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-hart-point-ulhas-gorge",
@@ -793,7 +865,10 @@
       "serene-precipice"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-elephanta-cannon-hill",
@@ -825,6 +900,9 @@
       "island-silence"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹260 ferry + ₹40 entry",
+    "price_level": 1
   }
 ]

@@ -29,7 +29,10 @@
       "bazaar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-dadar-flower-market",
@@ -61,7 +64,10 @@
       "photography"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-colaba-causeway-art-alleys",
@@ -93,7 +99,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-crawford-market-arcades",
@@ -125,7 +134,10 @@
       "spices"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-mangaldas-market-cloth-halls",
@@ -157,7 +169,10 @@
       "kalbadevi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-lalbaug-mirchi-galli",
@@ -189,7 +204,10 @@
       "lalbaug"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-kumbharwada-potters-colony",
@@ -219,7 +237,10 @@
       "living-heritage",
       "earthen-pots"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-matunga-flower-spice-market",
@@ -249,7 +270,10 @@
       "fresh-filter-coffee",
       "sensory-bazaar"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-bandra-bazaar-road-antiques",
@@ -281,7 +305,10 @@
       "hidden-antiques"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-null-bazaar-copper-galli",
@@ -313,6 +340,9 @@
       "metal-craft"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   }
 ]

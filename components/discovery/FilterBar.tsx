@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { PlaceCategory, FilterState, SpotTier } from '@/lib/types';
+import { PlaceCategory, FilterState, SpotTier, BudgetTier } from '@/lib/types';
 import {
   Compass,
   Footprints,
@@ -17,6 +17,7 @@ import {
   Sparkles,
   ShoppingBag,
   Wine,
+  Coins,
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
@@ -49,6 +50,14 @@ const SPOT_TIERS: { id: SpotTier; label: string }[] = [
   { id: 'hidden_gem', label: '✦ Hidden' },
   { id: 'underrated', label: '● Underrated' },
   { id: 'iconic', label: '★ Iconic' },
+];
+
+const BUDGET_TIERS: { id: BudgetTier; label: string; desc: string }[] = [
+  { id: 'all', label: 'All Budgets', desc: 'All sanctuaries' },
+  { id: 'free', label: '₹0 Free Spots', desc: 'Promenades, parks, viewpoints & forts' },
+  { id: 'pocket_friendly', label: '₹ Pocket Friendly', desc: 'Chai tapris, Irani cafes, street buys & cheap pints' },
+  { id: 'moderate', label: '₹₹ ₹300–800', desc: 'Suburban diners, permit rooms & courtyard cafes' },
+  { id: 'splurge', label: '₹₹₹ Splurge (₹800+)', desc: 'Specialty roasteries, craft dens & lounges' },
 ];
 
 const RADII = [10, 25, 50, 120];
@@ -338,6 +347,33 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
               }}
             />
           </div>
+        </div>
+      </div>
+
+      {/* 3. Budget & Pocket-Friendly Strip */}
+      <div className="border-t border-sumi/15 pt-2 flex items-center justify-between gap-1.5 text-xs font-mono overflow-x-auto sliding-bar pb-0.5">
+        <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+          <span className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase flex items-center gap-1 mr-1">
+            <Coins className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
+            <span className="hidden xs:inline">BUDGET:</span>
+          </span>
+          {BUDGET_TIERS.map((tier) => {
+            const isActive = filters.budget === tier.id;
+            return (
+              <button
+                key={tier.id}
+                onClick={() => onChange({ budget: tier.id })}
+                className={`px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold whitespace-nowrap border transition-all flex-shrink-0 ${
+                  isActive
+                    ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
+                    : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
+                }`}
+                title={tier.desc}
+              >
+                {tier.label}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

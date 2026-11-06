@@ -29,7 +29,10 @@
       "bazaar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-dadar-flower-market",
@@ -61,7 +64,10 @@
       "photography"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-colaba-causeway-art-alleys",
@@ -93,7 +99,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-crawford-market-arcades",
@@ -125,7 +134,10 @@
       "spices"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-mangaldas-market-cloth-halls",
@@ -157,7 +169,10 @@
       "kalbadevi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_bazaars"
+    "source": "curated_bazaars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-lalbaug-mirchi-galli",
@@ -189,7 +204,10 @@
       "lalbaug"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-kitab-khana-fort",
@@ -221,7 +239,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-david-sassoon-library",
@@ -253,7 +274,10 @@
       "sanctuary"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free Garden / ₹50 day-pass",
+    "price_level": 1
   },
   {
     "id": "mumbai-asiatic-library-steps",
@@ -285,7 +309,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Access",
+    "price_level": 0
   },
   {
     "id": "mumbai-title-waves-bandra",
@@ -316,7 +343,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_books"
+    "source": "curated_books",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-peoples-free-reading-room",
@@ -348,7 +378,10 @@
       "dhobi-talao"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Access",
+    "price_level": 0
   },
   {
     "id": "mumbai-subko-bandra",
@@ -380,7 +413,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-kyani-co",
@@ -412,7 +448,10 @@
       "nostalgia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-prithvi-cafe-juhu",
@@ -444,7 +483,10 @@
       "juhu"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-britannia-co",
@@ -476,7 +518,10 @@
       "nostalgia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-candies-bandra",
@@ -508,7 +553,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-yazdani-bakery",
@@ -540,7 +588,10 @@
       "vintage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-bambaiya-coffee-co",
@@ -572,7 +623,10 @@
       "bandra"
     ],
     "photo_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Bandra_Worli_Sea_Link_at_night.jpg/1280px-Bandra_Worli_Sea_Link_at_night.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "source": "curated_wikimedia"
+    "source": "curated_wikimedia",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-blue-tokai-mahalaxmi",
@@ -603,7 +657,10 @@
       "mahalaxmi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-mockingbird-cafe-churchgate",
@@ -634,7 +691,10 @@
       "cozy-lighting"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-kala-ghoda-cafe",
@@ -665,7 +725,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_cafes"
+    "source": "curated_cafes",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-b-merwan-grant-road",
@@ -697,7 +760,10 @@
       "grant-road"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-zen-cafe-lower-parel",
@@ -729,7 +795,10 @@
       "lower-parel"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-koinonia-chuim-village",
@@ -761,7 +830,10 @@
       "khar-west"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹800–1,500 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-jehangir-art-gallery",
@@ -793,7 +865,10 @@
       "free-entry"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "free",
+    "approx_cost": "Free Entry",
+    "price_level": 0
   },
   {
     "id": "mumbai-method-bandra",
@@ -825,7 +900,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-prithvi-theatre",
@@ -857,7 +935,10 @@
       "juhu"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-ngma-colaba",
@@ -889,7 +970,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-tarq-gallery-fort",
@@ -921,7 +1005,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_culture"
+    "source": "curated_culture",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-artisans-centre-kala-ghoda",
@@ -953,7 +1040,10 @@
       "intimate-space"
     ],
     "photo_url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-worli-fishing-village-promontory",
@@ -985,7 +1075,10 @@
       "historic-bastion"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-castella-de-aguada",
@@ -1017,7 +1110,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-fort-mangrove",
@@ -1049,7 +1145,10 @@
       "solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sion-hillock-fort",
@@ -1081,7 +1180,10 @@
       "central-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-vasai-fort-quiet-bastions",
@@ -1113,7 +1215,10 @@
       "photography"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-belapur-fort-hill",
@@ -1145,7 +1250,10 @@
       "solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-madh-fort-ruins",
@@ -1177,7 +1285,10 @@
       "madh-island"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_forts"
+    "source": "curated_forts",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-arnala-sea-fort",
@@ -1209,7 +1320,10 @@
       "solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_forts"
+    "source": "curated_forts",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-ghodbunder-fort-ruins",
@@ -1241,7 +1355,10 @@
       "thane"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_forts"
+    "source": "curated_forts",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-riwa-fort-kala-killa",
@@ -1273,7 +1390,10 @@
       "central-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sagar-upvan-colaba",
@@ -1305,7 +1425,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mahim-nature-park",
@@ -1337,7 +1460,10 @@
       "mahim"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-horniman-circle",
@@ -1369,7 +1495,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-joseph-baptista-garden",
@@ -1401,7 +1530,10 @@
       "reading-spot"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-hanging-gardens-malabar",
@@ -1433,7 +1565,10 @@
       "malabar-hill"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_gardens"
+    "source": "curated_gardens",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bhakti-park-lawns",
@@ -1465,7 +1600,10 @@
       "reading-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_gardens"
+    "source": "curated_gardens",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-godrej-mangrove-park",
@@ -1497,7 +1635,10 @@
       "vikhroli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-khotachiwadi-village",
@@ -1529,7 +1670,10 @@
       "girgaon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-sassoon-docks-art",
@@ -1561,7 +1705,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-cemetery-vaults",
@@ -1593,7 +1740,10 @@
       "sewri"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-portuguese-church-dadar",
@@ -1625,7 +1775,10 @@
       "dadar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-matharpacady-village",
@@ -1657,7 +1810,10 @@
       "mazgaon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-mani-bhavan-gamdevi",
@@ -1689,7 +1845,10 @@
       "gamdevi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-mount-mary-basilica",
@@ -1721,7 +1880,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-keneseth-eliyahoo-synagogue",
@@ -1753,7 +1915,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-global-vipassana-pagoda",
@@ -1785,7 +1950,10 @@
       "gorai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-babulnath-temple",
@@ -1817,7 +1985,10 @@
       "girgaon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-haji-ali-causeway",
@@ -1849,7 +2020,10 @@
       "worli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-afghan-church-colaba",
@@ -1881,7 +2055,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_spiritual"
+    "source": "curated_spiritual",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nipponzan-myohoji-temple",
@@ -1913,7 +2090,10 @@
       "worli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe5787884?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kanheri-upper-plateau",
@@ -1945,7 +2125,10 @@
       "sgnp"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹85 park entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-yeoor-hills-trail",
@@ -1977,7 +2160,10 @@
       "thane"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-kharghar-hills-ridge",
@@ -2009,7 +2195,10 @@
       "navi-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-shilonda-trail-sgnp",
@@ -2041,7 +2230,10 @@
       "wildlife"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_treks"
+    "source": "curated_treks",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-pandavkada-waterfall-trail",
@@ -2073,7 +2265,10 @@
       "kharghar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_treks"
+    "source": "curated_treks",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-yeoor-bamboo-sanctuary",
@@ -2105,7 +2300,10 @@
       "thane"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-gilbert-hill",
@@ -2137,7 +2335,10 @@
       "andheri"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandra-reclamation-view",
@@ -2169,7 +2370,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kamla-nehru-sunset-point",
@@ -2201,7 +2405,10 @@
       "malabar-hill"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-parsik-hill-summit",
@@ -2233,7 +2440,10 @@
       "navi-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-jetty-flamingo-point",
@@ -2265,7 +2475,10 @@
       "sewri"
     ],
     "photo_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_viewpoints"
+    "source": "curated_viewpoints",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-khandeshwar-lake-promontory",
@@ -2297,7 +2510,10 @@
       "panvel"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-carter-road-mangrove-walk",
@@ -2329,7 +2545,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-five-gardens-walk",
@@ -2361,7 +2580,10 @@
       "green-circles"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-marine-drive-southern-walk",
@@ -2393,7 +2615,10 @@
       "night-walk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-ballard-estate-walk",
@@ -2425,7 +2650,10 @@
       "fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-ranwar-village-walk",
@@ -2457,7 +2685,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-worli-sea-face-walk",
@@ -2489,7 +2720,10 @@
       "worli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-colaba-woods-forest-walk",
@@ -2521,7 +2755,10 @@
       "cuffe-parade"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dadar-parsi-colony-walk",
@@ -2553,7 +2790,10 @@
       "dadar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_walks"
+    "source": "curated_walks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-gamdevi-laburnum-walk",
@@ -2585,7 +2825,10 @@
       "gamdevi"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-joggers-park-clifftop",
@@ -2617,7 +2860,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-banganga-tank",
@@ -2649,7 +2895,10 @@
       "malabar-hill"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_heritage"
+    "source": "curated_heritage",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-priyadarshini-park-rocky-shore",
@@ -2681,7 +2930,10 @@
       "nepean-sea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_parks"
+    "source": "curated_parks",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandstand-tidepools",
@@ -2713,7 +2965,10 @@
       "bandra"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-manori-fishing-beach",
@@ -2745,7 +3000,10 @@
       "peaceful"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_nature"
+    "source": "curated_nature",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-powai-lake-promontory",
@@ -2777,7 +3035,10 @@
       "powai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_waterfront"
+    "source": "curated_waterfront",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-aksa-casuarina-grove",
@@ -2809,7 +3070,10 @@
       "malad"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_waterfront"
+    "source": "curated_waterfront",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-erangal-beach-dunes",
@@ -2841,7 +3105,10 @@
       "madh"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-wayword-and-wise",
@@ -2871,7 +3138,10 @@
       "quiet-browsing",
       "rare-books"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-trilogy-library-bandra",
@@ -2901,7 +3171,10 @@
       "reading-haven",
       "silent-study"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-granth-bookstore-juhu",
@@ -2931,7 +3204,10 @@
       "quiet-corners",
       "leather-armchairs"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-bhau-daji-lad-museum",
@@ -2961,7 +3237,10 @@
       "oldest-museum",
       "gilded-interiors"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-thomas-cathedral",
@@ -2991,7 +3270,10 @@
       "stained-glass",
       "zero-point"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-hasnabad-dargah-mazgaon",
@@ -3021,7 +3303,10 @@
       "mumbai-taj",
       "twilight-glow"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-cavel-village-lanes",
@@ -3051,7 +3336,10 @@
       "hidden-hamlet",
       "sunday-stroll"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-oval-maidan-promenade",
@@ -3081,7 +3369,10 @@
       "clock-tower",
       "open-lawns"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-chimbai-koliwada-walk",
@@ -3111,7 +3402,10 @@
       "fishing-boats",
       "sea-spray"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nirvana-park-powai",
@@ -3141,7 +3435,10 @@
       "powai",
       "bamboo-canopy"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-amarsons-garden-promenade",
@@ -3171,7 +3468,10 @@
       "ocean-lawns",
       "sunset-bench"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-diamond-garden-chembur",
@@ -3201,7 +3501,10 @@
       "circular-garden",
       "morning-jog"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-worli-koliwada-jetty",
@@ -3231,7 +3534,10 @@
       "ocean-spray",
       "unobstructed-skyline"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-uran-pirwadi-lookout",
@@ -3261,7 +3567,10 @@
       "untamed-cliffs",
       "secluded-lookout"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-marve-beach-pine-grove",
@@ -3291,7 +3600,10 @@
       "marve-creek",
       "solitary-beach"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-gorai-creek-jetty",
@@ -3321,7 +3633,10 @@
       "gorai",
       "tidal-creek"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-magen-david-synagogue",
@@ -3351,7 +3666,10 @@
       "clock-tower",
       "jewish-heritage"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-walkeshwar-kashi-math",
@@ -3381,7 +3699,10 @@
       "stone-samadhi",
       "walkeshwar"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-john-baptist-ruins",
@@ -3411,7 +3732,10 @@
       "banyan-roots",
       "atmospheric"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-tungareshwar-stream-trail",
@@ -3441,7 +3765,10 @@
       "vasai-wilds",
       "sahyadri-canopy"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-gaimukh-creek-boardwalk",
@@ -3471,7 +3798,10 @@
       "birdwatching",
       "estuary-peace"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mumbai-mahim-fort-ruins",
@@ -3501,7 +3831,10 @@
       "stone-bastion",
       "sea-defense"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dongri-fort-bhayandar",
@@ -3531,7 +3864,10 @@
       "portuguese-ruin",
       "uttan-coast"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-tao-art-gallery",
@@ -3561,7 +3897,10 @@
       "worli",
       "solitary-contemplation"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-space118-byculla",
@@ -3591,7 +3930,10 @@
       "artist-residency",
       "industrial-brick"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-kumbharwada-potters-colony",
@@ -3621,7 +3963,10 @@
       "living-heritage",
       "earthen-pots"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-matunga-flower-spice-market",
@@ -3651,7 +3996,10 @@
       "fresh-filter-coffee",
       "sensory-bazaar"
     ],
-    "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80"
+    "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-knesset-eliyahoo-synagogue",
@@ -3683,7 +4031,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-project-88-art-gallery",
@@ -3715,7 +4066,10 @@
       "colaba"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-chemould-prescott-road",
@@ -3747,7 +4101,10 @@
       "quiet-chambers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-jimmy-boy-parsi-cafe",
@@ -3779,7 +4136,10 @@
       "vintage-sepia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-revdanda-beach-fort-ruins",
@@ -3811,7 +4171,10 @@
       "alibaug-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-korlai-fort-and-lighthouse",
@@ -3843,7 +4206,10 @@
       "kundalika-river"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-sagar-vihar-promenade",
@@ -3875,7 +4241,10 @@
       "navi-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-jewel-of-navi-mumbai-lake",
@@ -3907,7 +4276,10 @@
       "nerul-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "thane-talao-pali-masunda-lake",
@@ -3939,7 +4311,10 @@
       "evening-lights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "thane-upvan-lake-amphitheatre",
@@ -3971,7 +4346,10 @@
       "thane-serenity"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "thane-mama-bhanja-hilltop-trail",
@@ -4003,7 +4381,10 @@
       "forest-trek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-airoli-mangrove-boardwalk",
@@ -4035,7 +4416,10 @@
       "airoli"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mahim-beach-koliwada",
@@ -4067,7 +4451,10 @@
       "tidepool-walk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-ambarnath-shiva-temple",
@@ -4099,7 +4486,10 @@
       "asi-monument"
     ],
     "photo_url": "https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mmr-prabalmachi-plateau",
@@ -4131,7 +4521,10 @@
       "sahyadri-hike"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-karnala-bird-sanctuary-trail",
@@ -4163,7 +4556,10 @@
       "panvel-forest"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "thane-gaimukh-creek-waterfront",
@@ -4195,7 +4591,10 @@
       "sunset-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kelva-beach-fort-woods",
@@ -4227,7 +4626,10 @@
       "palghar-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-shirgaon-fort-ramparts",
@@ -4259,7 +4661,10 @@
       "palghar-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-tungareshwar-waterfall-trail",
@@ -4291,7 +4696,10 @@
       "monsoon-trek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-kashi-mira-rock-quarry-lake",
@@ -4323,7 +4731,10 @@
       "mira-road"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-chowk-point-matheran",
@@ -4355,7 +4766,10 @@
       "red-soil-trail"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-one-tree-hill-point-matheran",
@@ -4387,7 +4801,10 @@
       "matheran-cliff"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-charlotte-lake-forest-shore",
@@ -4419,7 +4836,10 @@
       "car-free-forest"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandra-talao-lotus-lake",
@@ -4451,7 +4871,10 @@
       "morning-walk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-uran-flamingo-mudflats",
@@ -4483,7 +4906,10 @@
       "uran-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-dronagiri-fort-ruins",
@@ -4515,7 +4941,10 @@
       "dronagiri-ruins"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-khanderi-island-fort",
@@ -4547,7 +4976,10 @@
       "arabian-sea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-underi-island-fort",
@@ -4579,7 +5011,10 @@
       "offshore-ruin"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-dahanu-bordi-chikoo-beach",
@@ -4611,7 +5046,10 @@
       "dahanu-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-goregaon-film-city-forest-lake",
@@ -4643,7 +5081,10 @@
       "goregaon-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-bhiwandi-heritage-water-tanks",
@@ -4675,7 +5116,10 @@
       "heritage-hamlet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mmr-chinchani-beach-casuarina",
@@ -4707,7 +5151,10 @@
       "palghar-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-mbp-waterfall-gardens",
@@ -4739,7 +5186,10 @@
       "mahape-retreat"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sassanian-boulangerie",
@@ -4771,7 +5221,10 @@
       "vintage-glass-jars"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-excelsior",
@@ -4803,7 +5256,10 @@
       "caramel-custard"
     ],
     "photo_url": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-ideal-corner-parsi",
@@ -4835,7 +5291,10 @@
       "nostalgic-dining"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-ncpa-seaside-sunken-lawns",
@@ -4867,7 +5326,10 @@
       "ocean-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-jehangir-nicholson-art-foundation",
@@ -4899,7 +5361,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Entry",
+    "price_level": 0
   },
   {
     "id": "mumbai-max-mueller-bhavan-library",
@@ -4931,7 +5396,10 @@
       "kala-ghoda"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-alliance-francaise-library",
@@ -4963,7 +5431,10 @@
       "marine-lines"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507842229452-772d2427a7c9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry (Books from ₹100)",
+    "price_level": 1
   },
   {
     "id": "mumbai-st-andrews-church-graveyard",
@@ -4995,7 +5466,10 @@
       "bandra-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-cooperage-bandstand-gardens",
@@ -5027,7 +5501,10 @@
       "quiet-promenade"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-durgadi-fort-kalyan",
@@ -5059,7 +5536,10 @@
       "historic-ramparts"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-padmadurg-kasa-sea-fort",
@@ -5091,7 +5571,10 @@
       "murud-coastline"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-morbe-dam-lake-shoreline",
@@ -5123,7 +5606,10 @@
       "panvel-hinterland"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-barvi-dam-forest-catchment",
@@ -5155,7 +5641,10 @@
       "unspoiled-nature"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-akshi-nagaon-casuarina-coast",
@@ -5187,7 +5676,10 @@
       "sunset-walk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kihim-bird-sanctuary-woods",
@@ -5219,7 +5711,10 @@
       "kihim-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-awas-beach-pine-groves",
@@ -5251,7 +5746,10 @@
       "silent-horizon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-sasawane-karmarkar-sculpture-museum",
@@ -5283,7 +5781,10 @@
       "art-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹20–100 ticket",
+    "price_level": 1
   },
   {
     "id": "mmr-kalyan-creek-birding-flats",
@@ -5315,7 +5816,10 @@
       "kalyan-creek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-manori-gorai-silent-ferry",
@@ -5347,7 +5851,10 @@
       "gorai-creek"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mahalaxmi-seaside-tidepools",
@@ -5379,7 +5886,10 @@
       "mahalaxmi-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandra-bazaar-road-antiques",
@@ -5411,7 +5921,10 @@
       "hidden-antiques"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-null-bazaar-copper-galli",
@@ -5443,7 +5956,10 @@
       "metal-craft"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "Free entry / Budget shopping",
+    "price_level": 1
   },
   {
     "id": "mumbai-chincholi-bunder-mangrove-creek",
@@ -5475,7 +5991,10 @@
       "quiet-sunset"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-khar-danda-koli-village",
@@ -5507,7 +6026,10 @@
       "authentic-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-vikhroli-mangrove-boardwalk",
@@ -5539,7 +6061,10 @@
       "vikhroli-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-sewri-bunder-mangrove-jetty",
@@ -5571,7 +6096,10 @@
       "mudflats-sanctuary"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kanheri-upper-stream-trail",
@@ -5603,7 +6131,10 @@
       "basalt-cisterns"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹85 park entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-ranwar-st-jude-bakery",
@@ -5635,7 +6166,10 @@
       "bandra-hamlet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹50–150 entry",
+    "price_level": 1
   },
   {
     "id": "mumbai-shivaji-park-reading-gazebo",
@@ -5667,7 +6201,10 @@
       "morning-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kala-ghoda-ropewalk-lane",
@@ -5699,7 +6236,10 @@
       "kala-ghoda-fort"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-koolar-and-co-irani-cafe",
@@ -5731,7 +6271,10 @@
       "matunga-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-military-fort",
@@ -5763,7 +6306,10 @@
       "fort-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-chuim-village-bylanes",
@@ -5795,7 +6341,10 @@
       "khar-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-pali-village-secret-stairways",
@@ -5827,7 +6376,10 @@
       "bandra-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nehru-science-centre-park",
@@ -5859,7 +6411,10 @@
       "acoustic-mirrors"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-tata-garden-cliff-promenade",
@@ -5891,7 +6446,10 @@
       "frangipani-groves"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-vihar-lake-forest-catchment",
@@ -5923,7 +6481,10 @@
       "unspoiled-waters"
     ],
     "photo_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-tulsi-lake-rainforest-ridge",
@@ -5955,7 +6516,10 @@
       "pristine-waters"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-uttan-virgin-beach-cliff",
@@ -5987,7 +6551,10 @@
       "uttan-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dadar-chowpatty-basalt-shore",
@@ -6019,7 +6586,10 @@
       "sunset-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "thane-mumbra-devi-hilltop-shrine",
@@ -6051,7 +6621,10 @@
       "valley-panorama"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-bhiwandi-kamatghar-watchtower",
@@ -6083,7 +6656,10 @@
       "forgotten-bastion"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-gorai-utan-irmao-bastion",
@@ -6115,7 +6691,10 @@
       "coastal-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-kharghar-hills-valley-drive",
@@ -6147,7 +6726,10 @@
       "kharghar-heights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-belapur-hilltop-reservoir",
@@ -6179,7 +6761,10 @@
       "belapur-quiet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-nallasopara-buddhist-stupa",
@@ -6211,7 +6796,10 @@
       "asi-heritage"
     ],
     "photo_url": "https://images.unsplash.com/photo-1590076215667-875d4ef2d7ee?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-walkeshwar-jain-temple",
@@ -6243,7 +6831,10 @@
       "sacred-sanctum"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kalyan-kala-talao-shenale",
@@ -6275,7 +6866,10 @@
       "island-gazebo"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bandra-lands-end-amphitheatre",
@@ -6307,7 +6901,10 @@
       "bandra-promontory"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-coutinho-east-indian-enclave",
@@ -6339,7 +6936,10 @@
       "heritage-quiet"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Public Heritage",
+    "price_level": 0
   },
   {
     "id": "mumbai-malabar-point-sea-cliff",
@@ -6371,7 +6971,10 @@
       "golden-breakers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-kharghar-sunset-tableland",
@@ -6403,7 +7006,10 @@
       "kharghar-tableland"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-carter-road-rocky-sunset-amphitheatre",
@@ -6435,7 +7041,10 @@
       "bandra-seaface"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dana-pani-beach-sunset-cove",
@@ -6467,7 +7076,10 @@
       "clean-sand"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-bassein-beach-portuguese-sunset",
@@ -6499,7 +7111,10 @@
       "peaceful-horizon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-marve-beach-ferry-headland",
@@ -6531,7 +7146,10 @@
       "coastal-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-gorai-hilltop-sunset-ridge",
@@ -6563,7 +7181,10 @@
       "mangrove-horizon"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-karanja-creek-sunset-pier",
@@ -6595,7 +7216,10 @@
       "southern-sunset"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-dombivli-gharapuri-sunset-riverfront",
@@ -6627,7 +7251,10 @@
       "evening-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-parsik-hill-highest-peak",
@@ -6659,7 +7286,10 @@
       "parsik-peak"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-rani-baug-botanical-tree-walk",
@@ -6691,7 +7321,10 @@
       "byculla-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-wadala-salt-pan-silent-walk",
@@ -6723,7 +7356,10 @@
       "eastern-fringe"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mazgaon-bunder-dockside-walk",
@@ -6755,7 +7391,10 @@
       "colonial-stone"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-hiranandani-powai-forest-ridge",
@@ -6787,7 +7426,10 @@
       "morning-jog"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-palm-beach-mangrove-walkway",
@@ -6819,7 +7461,10 @@
       "navi-mumbai-walk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-artist-village-belapur",
@@ -6851,7 +7496,10 @@
       "belapur-culture"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "thane-kopri-creek-mangrove-boardwalk",
@@ -6883,7 +7531,10 @@
       "thane-east-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kalyan-gandhari-riverfront-walk",
@@ -6915,7 +7566,10 @@
       "kalyan-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-alibaug-varsoli-casuarina-trail",
@@ -6947,7 +7601,10 @@
       "varsoli-beach"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-versova-mangrove-boardwalk-pier",
@@ -6979,7 +7636,10 @@
       "quiet-versova"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dmonte-park-nature-sanctuary",
@@ -7011,7 +7671,10 @@
       "bandra-oasis"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-rambaug-point-silent-valley",
@@ -7043,7 +7706,10 @@
       "matheran-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-hart-point-ulhas-gorge",
@@ -7075,7 +7741,10 @@
       "serene-precipice"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-elephanta-cannon-hill",
@@ -7107,7 +7776,10 @@
       "island-silence"
     ],
     "photo_url": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹260 ferry + ₹40 entry",
+    "price_level": 1
   },
   {
     "id": "mmr-nagaon-betel-nut-palm-groves",
@@ -7139,7 +7811,10 @@
       "alibaug-hinterland"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kashid-southern-rocky-headland",
@@ -7171,7 +7846,10 @@
       "kashid-coast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-korlai-rocky-beach-reef",
@@ -7203,7 +7881,10 @@
       "korlai-silence"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "navi-mumbai-kharghar-central-park-lotus",
@@ -7235,7 +7916,10 @@
       "kharghar-greenery"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "thane-parsik-mountain-bamboo-grove",
@@ -7267,7 +7951,10 @@
       "shaded-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free Trail",
+    "price_level": 0
   },
   {
     "id": "mmr-bhayandar-rai-village-saltpan",
@@ -7299,7 +7986,10 @@
       "bhayandar-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-st-bonaventure-church-seashore",
@@ -7331,7 +8021,10 @@
       "madh-island"
     ],
     "photo_url": "https://images.unsplash.com/photo-1548625361-195982888257?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-dahisar-river-forest-stream",
@@ -7363,7 +8056,10 @@
       "bubbling-water"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-colaba-backbay-reclamation-seawall",
@@ -7395,7 +8091,10 @@
       "ocean-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-cumballa-hill-sophia-steps",
@@ -7427,7 +8126,10 @@
       "quiet-ascent"
     ],
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-teen-batti-coastal-garden",
@@ -7459,7 +8161,10 @@
       "coastal-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-joggers-park-mangrove-boardwalk",
@@ -7491,7 +8196,10 @@
       "bandra-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-gorai-manori-cliff-pine-trail",
@@ -7523,7 +8231,10 @@
       "manori-wilds"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-badlapur-kondeshwar-waterfall-temple",
@@ -7555,7 +8266,10 @@
       "sacred-serenity"
     ],
     "photo_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kalyan-durgadi-creek-mangrove-walk",
@@ -7587,7 +8301,10 @@
       "kalyan-calm"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-alibaug-kihim-silent-coconut-trails",
@@ -7619,7 +8336,10 @@
       "peaceful-stride"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-priyadarshini-park-coastal-greens",
@@ -7651,7 +8371,10 @@
       "peaceful-stride"
     ],
     "photo_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-five-gardens-heritage-canopy",
@@ -7683,7 +8406,10 @@
       "morning-serenity"
     ],
     "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-pramod-mahajan-kala-park-lake",
@@ -7715,7 +8441,10 @@
       "reading-alcoves"
     ],
     "photo_url": "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-patwardhan-park-palm-gazebo",
@@ -7747,7 +8476,10 @@
       "quiet-jogging-track"
     ],
     "photo_url": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-kaifi-azmi-park-poetry-trail",
@@ -7779,7 +8511,10 @@
       "deep-stillness"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-muktananda-park-banyan-canopy",
@@ -7811,7 +8546,10 @@
       "silent-yoga"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-nana-nani-park-versova-casuarina",
@@ -7843,7 +8581,10 @@
       "sunset-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-bhavans-nature-botanical-enclave",
@@ -7875,7 +8616,10 @@
       "andheri-hidden-gem"
     ],
     "photo_url": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-mindspace-landscape-mound-garden",
@@ -7907,7 +8651,10 @@
       "weekend-peace"
     ],
     "photo_url": "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-godrej-hillside-botanical-smarak",
@@ -7939,7 +8686,10 @@
       "sunrise-vista"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-gaurav-valley-forest-park-mira-road",
@@ -7971,7 +8721,10 @@
       "jungle-breeze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kopri-lake-garden-deshpande-thane",
@@ -8003,7 +8756,10 @@
       "mirror-water"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-upvan-lake-sensory-garden-thane",
@@ -8035,7 +8791,10 @@
       "lakeside-vista"
     ],
     "photo_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-ovalekar-wadi-butterfly-garden-ghodbunder",
@@ -8067,7 +8826,10 @@
       "natural-wonder"
     ],
     "photo_url": "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-wonders-park-floral-groves-nerul",
@@ -8099,7 +8861,10 @@
       "tranquil-promenade"
     ],
     "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-mango-garden-amrai-belapur",
@@ -8131,7 +8896,10 @@
       "chirping-koels"
     ],
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-cidco-urban-haat-botanical-slopes",
@@ -8163,7 +8931,10 @@
       "quiet-amphitheater"
     ],
     "photo_url": "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-papdy-st-thomas-heritage-orchard",
@@ -8195,7 +8966,10 @@
       "sacred-quietude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-kalyan-gandhari-riverfront-garden",
@@ -8227,7 +9001,10 @@
       "sunset-reflections"
     ],
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mmr-vangani-botanical-herbal-glades",
@@ -8259,7 +9036,10 @@
       "medicinal-flora"
     ],
     "photo_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "free",
+    "approx_cost": "Free",
+    "price_level": 0
   },
   {
     "id": "mumbai-harbour-bar-taj-heritage",
@@ -8291,7 +9071,10 @@
       "classic-martinis"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-gokul-dive-bar-colaba",
@@ -8323,7 +9106,10 @@
       "honest-spirit"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-leopold-secret-mezzanine-bar",
@@ -8355,7 +9141,10 @@
       "classic-rock"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-alps-restaurant-beer-bar",
@@ -8387,7 +9176,10 @@
       "colaba-alleyway"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sunlight-permit-room-kalbadevi",
@@ -8419,7 +9211,10 @@
       "vintage-jukebox"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-janata-lunch-home-bandra",
@@ -8451,7 +9246,10 @@
       "cold-lager"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-toto-garage-bandra",
@@ -8483,7 +9281,10 @@
       "neon-haze"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-yacht-resto-bar-bandra",
@@ -8515,7 +9316,10 @@
       "retro-charm"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-the-den-khar-speakeasy",
@@ -8547,7 +9351,10 @@
       "bespoke-cocktails"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-soul-fry-bar-bandra",
@@ -8581,7 +9388,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-woodside-inn-colaba-heritage-bar",
@@ -8613,7 +9423,10 @@
       "warm-jazz"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-bayview-bar-marine-plaza",
@@ -8645,7 +9458,10 @@
       "quiet-martini"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-gables-resto-bar-colaba",
@@ -8677,7 +9493,10 @@
       "vintage-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-speakeasy-fort",
@@ -8709,7 +9528,10 @@
       "candlelit-nook"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-bayview-cafe-rooftop-beer-deck",
@@ -8741,7 +9563,10 @@
       "open-air-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-shanti-tavern-manori-creek",
@@ -8773,7 +9598,10 @@
       "rustic-tavern"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-the-house-speakeasy-versova",
@@ -8805,7 +9633,10 @@
       "craft-gin"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-ambience-retro-bar-vashi",
@@ -8837,7 +9668,10 @@
       "honest-pours"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-yeoor-hilltop-woods-resto-bar",
@@ -8869,7 +9703,10 @@
       "open-air-timber"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-sardar-permit-room-tardeo",
@@ -8901,7 +9738,10 @@
       "neighborhood-gem"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_underrated"
+    "source": "curated_underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-mondegar-mondys-chaos",
@@ -8933,7 +9773,10 @@
       "iconic-buzz"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-the-ghetto-neon-graffiti-temple",
@@ -8965,7 +9808,10 @@
       "midnight-energy"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-colaba-social-warehouse-chaos",
@@ -8997,7 +9843,10 @@
       "weekend-madness"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-pravasi-permit-room-fort",
@@ -9029,7 +9878,10 @@
       "post-work-chaos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-universal-beer-hall",
@@ -9061,7 +9913,10 @@
       "boisterous-buzz"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-khar-social-underground-skatepark",
@@ -9093,7 +9948,10 @@
       "bassline-chaos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-doolally-taproom-bandra-pandemonium",
@@ -9125,7 +9983,10 @@
       "communal-benches"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-bandra-born-disco-rebellion",
@@ -9157,7 +10018,10 @@
       "house-party-vibe"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-pop-tates-versova-pitcher-frenzy",
@@ -9189,7 +10053,10 @@
       "versova-hub"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-road-house-bluez-rock-karaoke",
@@ -9223,7 +10090,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-kit-kat-permit-room-dhobi-talao",
@@ -9255,7 +10125,10 @@
       "raw-energy"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-quarter-tardeo-dive",
@@ -9287,7 +10160,10 @@
       "boundary-explosions"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-woodside-andheri-trivia-mayhem",
@@ -9319,7 +10195,10 @@
       "intellectual-chaos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-tamasha-kamala-mills-party-frenzy",
@@ -9351,7 +10230,10 @@
       "corporate-escape"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-lord-of-the-drinks-kamala-mills",
@@ -9383,7 +10265,10 @@
       "bollywood-bass"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-gossip-permit-room-malad",
@@ -9415,7 +10300,10 @@
       "clattering-steins"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-tap-resto-bar-juhu-arcade",
@@ -9447,7 +10335,10 @@
       "dancefloor-eruption"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-bayview-metro-rapid-dive",
@@ -9479,7 +10370,10 @@
       "downtown-rush"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-pop-tates-thane-viviana-madness",
@@ -9511,7 +10405,10 @@
       "non-stop-cheering"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-vashi-social-neon-warehouse",
@@ -9543,7 +10440,10 @@
       "hip-hop-grooves"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_chaotic"
+    "source": "curated_chaotic",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-good-luck-cafe-bandra",
@@ -9575,7 +10475,10 @@
       "bandra-institution"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-idli-house-filter-coffee-matunga",
@@ -9607,7 +10510,10 @@
       "budget-breakfast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-de-la-paix-opera-house",
@@ -9639,7 +10545,10 @@
       "budget-solitude"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-olympia-coffee-house-colaba",
@@ -9671,7 +10580,10 @@
       "wallet-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-manis-lunch-home-filter-kaapi",
@@ -9703,7 +10615,10 @@
       "honest-pricing"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-rama-nayaks-udipi-coffee-matunga",
@@ -9735,7 +10650,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-lucky-restaurant-chai-bandra",
@@ -9767,7 +10685,10 @@
       "bandra-crossroads"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-city-bakery-mawa-cake-worli",
@@ -9799,7 +10720,10 @@
       "budget-bakery-snack"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-grant-house-heritage-tea-fort",
@@ -9831,7 +10755,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-aaswad-upahar-chai-dadar",
@@ -9863,7 +10790,10 @@
       "dadar-culture"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-vihar-resto-bar-student-den",
@@ -9895,7 +10825,10 @@
       "pocket-money"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-new-york-restaurant-bar-marine-lines",
@@ -9927,7 +10860,10 @@
       "budget-beer"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sneha-coastal-budget-bar-mahim",
@@ -9959,7 +10895,10 @@
       "spicy-sukka"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-modern-lunch-home-dadar",
@@ -9991,7 +10930,10 @@
       "pocket-friendly-seafood"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-srikant-bar-matunga",
@@ -10023,7 +10965,10 @@
       "retro-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-harish-lunch-home-vile-parle",
@@ -10055,7 +11000,10 @@
       "cheap-pitchers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-national-restaurant-bandra",
@@ -10087,7 +11035,10 @@
       "unpretentious"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-amantran-restaurant-thane",
@@ -10119,7 +11070,10 @@
       "suburban-haven"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-swagat-restaurant-kurla",
@@ -10151,7 +11105,10 @@
       "honest-prices"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-sankalp-resto-bar-vashi",
@@ -10183,7 +11140,10 @@
       "navi-mumbai-classic"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_friendly"
+    "source": "curated_budget_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-dps-fast-food-matunga",
@@ -10215,7 +11175,10 @@
       "student-hangout"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-anand-stall-mithibai-cafe",
@@ -10247,7 +11210,10 @@
       "student-staple"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-raju-sandwich-hr-college",
@@ -10279,7 +11245,10 @@
       "budget-eats"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-irani-chaii-mahim",
@@ -10311,7 +11280,10 @@
       "student-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-prakash-shakahari-upahaar-dadar",
@@ -10343,7 +11315,10 @@
       "authentic-maharashtrian"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-gulshan-matunga",
@@ -10375,7 +11350,10 @@
       "student-nostalgia"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-right-place-breach-candy",
@@ -10407,7 +11385,10 @@
       "budget-treats"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-bachelorrs-chowpatty-seaside",
@@ -10439,7 +11420,10 @@
       "chowpatty-classic"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-amar-juice-centre-vile-parle",
@@ -10471,7 +11455,10 @@
       "exam-relief"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-colony-dadar-hindu-colony",
@@ -10503,7 +11490,10 @@
       "budget-study-nook"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-gupta-sandwiches-podar-matunga",
@@ -10535,7 +11525,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-shivaji-park-juice-centre-dadar",
@@ -10567,7 +11560,10 @@
       "budget-refreshment"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-tea-post-powai-iit",
@@ -10599,7 +11595,10 @@
       "budget-tech-chats"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-new-shirin-byculla",
@@ -10631,7 +11630,10 @@
       "byculla-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-kalyan-bhel-chowpatty-student",
@@ -10663,7 +11665,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-siddhivinayak-juice-thane-college",
@@ -10695,7 +11700,10 @@
       "pocket-friendly-shake"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-khadakwasla-tapri-kharghar",
@@ -10727,7 +11735,10 @@
       "open-air-breezes"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-babu-vada-pav-sathaye-college",
@@ -10759,7 +11770,10 @@
       "legendary-snack"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-keventers-churchgate-vintage",
@@ -10791,7 +11805,10 @@
       "student-refreshment"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-prithvi-courtyard-student-annex",
@@ -10823,7 +11840,10 @@
       "creative-sanctuary"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_student_friendly"
+    "source": "curated_student_friendly",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-gomantak-boarding-dadar",
@@ -10855,7 +11875,10 @@
       "dadar-chawl-roots"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-hazara-original-koliwada-bar",
@@ -10887,7 +11910,10 @@
       "budget-beer"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-hotel-gomantak-lalbaug-bar",
@@ -10919,7 +11945,10 @@
       "unvarnished-bombay"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-pancham-resto-bar-mazgaon",
@@ -10951,7 +11980,10 @@
       "port-city-soul"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-shri-krishna-boarding-prabhadevi",
@@ -10983,7 +12015,10 @@
       "budget-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-laxmi-lunch-home-goregaon",
@@ -11015,7 +12050,10 @@
       "honest-rates"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-kaka-resto-bar-chembur-camp",
@@ -11047,7 +12085,10 @@
       "budget-camaraderie"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-anand-bhuvan-vasai-koliwada-bar",
@@ -11079,7 +12120,10 @@
       "coastal-tranquility"
     ],
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mmr-hotel-ratna-resto-bar-thane",
@@ -11111,7 +12155,10 @@
       "neighborhood-gem"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-sanman-coastal-bar-alibaug",
@@ -11143,7 +12190,10 @@
       "honest-coastal-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-mama-kane-uphar-griha-dadar",
@@ -11175,7 +12225,10 @@
       "dadar-station"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-moti-halwai-lalbaug-market",
@@ -11207,7 +12260,10 @@
       "hyper-local"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-de-la-rose-matharpacady",
@@ -11239,7 +12295,10 @@
       "sweet-chai-20rs"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-shree-thaker-tea-fanaswadi",
@@ -11271,7 +12330,10 @@
       "textile-merchants"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-dattatray-refreshments-girgaon",
@@ -11303,7 +12365,10 @@
       "sweet-filter-tea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-tardeo-khau-galli-chai-stall",
@@ -11335,7 +12400,10 @@
       "street-tea-culture"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-asha-sweet-dal-pakwan-chembur",
@@ -11367,7 +12435,10 @@
       "budget-breakfast"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-aram-milk-bar-cst",
@@ -11399,7 +12470,10 @@
       "cardamom-tea"
     ],
     "photo_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-cafe-modern-kurla-village",
@@ -11431,7 +12505,10 @@
       "quiet-suburb"
     ],
     "photo_url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "moderate",
+    "approx_cost": "₹450–800 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-koolar-annex-matunga-circle",
@@ -11463,7 +12540,10 @@
       "kings-circle"
     ],
     "photo_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_super_local"
+    "source": "curated_super_local",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–350 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-old-street-cafe-bar-bandra",
@@ -11495,7 +12575,10 @@
       "bandra-students"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-pillar-khar",
@@ -11529,7 +12612,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-golden-bin-bar-juhu-koliwada",
@@ -11561,7 +12647,10 @@
       "gajudhar-bandh"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-happy-lunch-home-andheri-east",
@@ -11593,7 +12682,10 @@
       "no-frills-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-quarter-pillar-vile-parle",
@@ -11627,7 +12719,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-whats-your-plan-saki-naka",
@@ -11661,7 +12756,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-knotty-yard-powai",
@@ -11693,7 +12791,10 @@
       "student-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-samudra-bar-mumbai-central",
@@ -11725,7 +12826,10 @@
       "live-local-music"
     ],
     "photo_url": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-amoeba-sports-bar-kurla",
@@ -11757,7 +12861,10 @@
       "gaming-combos"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-simmba-restobar-kurla",
@@ -11789,7 +12896,10 @@
       "local-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-grand-pride-bar-ghatkopar",
@@ -11821,7 +12931,10 @@
       "honest-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "user_curated"
+    "source": "user_curated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-choice-restaurant-bar-andheri",
@@ -11853,7 +12966,10 @@
       "crispy-chicken"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-sujata-restaurant-bar-santacruz",
@@ -11885,7 +13001,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-amrapali-bar-malad",
@@ -11917,7 +13036,10 @@
       "budget-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sunraj-restaurant-bar-borivali",
@@ -11949,7 +13071,10 @@
       "budget-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-cafe-oval-churchgate",
@@ -11982,7 +13107,10 @@
       "iconic-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-asiatic-restaurant-bar-churchgate",
@@ -12014,7 +13142,10 @@
       "dive-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-udaya-bar-ghatkopar",
@@ -12046,7 +13177,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-standard-restaurant-bar-dadar",
@@ -12078,7 +13212,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sandeep-bar-chembur-dharavi",
@@ -12110,7 +13247,10 @@
       "tandoori-kebabs"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-sadguru-dining-bar-chembur",
@@ -12142,7 +13282,10 @@
       "local-favorite"
     ],
     "photo_url": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sunil-bar-kurla-east",
@@ -12174,7 +13317,10 @@
       "local-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-guruprasad-bar-sion",
@@ -12206,7 +13352,10 @@
       "budget-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-shree-krishna-bar-matunga-west",
@@ -12238,7 +13387,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-manpreet-bar-mahim",
@@ -12270,7 +13422,10 @@
       "budget-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "moderate",
+    "approx_cost": "₹550–1,100 for two",
+    "price_level": 2
   },
   {
     "id": "mumbai-bottles-seven-bungalows",
@@ -12303,7 +13458,10 @@
       "budget-beer"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mmr-pranam-bar-restaurant-vashi-mulund",
@@ -12335,7 +13493,10 @@
       "tandoori"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-deepa-bar-restaurant-bandra-west",
@@ -12367,7 +13528,10 @@
       "local-hideout"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-asiad-bar-restaurant-vile-parle-west",
@@ -12399,7 +13563,10 @@
       "student-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-universal-cafe-fort",
@@ -12431,7 +13598,10 @@
       "vintage-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-garden-jolly-bar-restaurant-kala-ghoda",
@@ -12463,7 +13633,10 @@
       "hidden-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-capitol-family-restaurant-bar-fort",
@@ -12495,7 +13668,10 @@
       "fast-pints"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-new-majestic-bar-restaurant-fort",
@@ -12527,7 +13703,10 @@
       "fast-service"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sher-e-punjab-bar-fort",
@@ -12559,7 +13738,10 @@
       "old-monk"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-madira-bar-and-restaurant-parel-east",
@@ -12591,7 +13773,10 @@
       "budget-whiskey"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-sunil-restaurant-bar-lower-parel--lower-parel",
@@ -12623,7 +13808,10 @@
       "budget-drinks"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-pritam-restaurant-bar-tavern--dadar-west",
@@ -12655,7 +13843,10 @@
       "iconic-mumbai"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-modern-bar-restaurant-dadar-east",
@@ -12687,7 +13878,10 @@
       "fast-turnover"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-lalit-bar-restaurant-sion",
@@ -12719,7 +13913,10 @@
       "friendly-staff"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-linkway-restaurant-bar-andheri-west",
@@ -12751,7 +13948,10 @@
       "budget-spirits"
     ],
     "photo_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sanjeevani-bar-andheri-east",
@@ -12783,7 +13983,10 @@
       "raw-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sheela-bar-restaurant-jogeshwari-west",
@@ -12815,7 +14018,10 @@
       "pocket-friendly"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-saffron-express-bar-malad-west",
@@ -12849,7 +14055,10 @@
       "karaoke-nights"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-guruprasad-bar-restaurant-santacruz--santacruz-east",
@@ -12881,7 +14090,10 @@
       "quick-pegs"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-harish-bar-restaurant-kurla-west",
@@ -12913,7 +14125,10 @@
       "local-joint"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-durga-prasad-bar-mulund-west",
@@ -12945,7 +14160,10 @@
       "attentive-service"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-royal-restaurant-bar-goregaon-west",
@@ -12977,7 +14195,10 @@
       "post-work-drinks"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-manmeet-bar-restaurant-goregaon-east",
@@ -13009,7 +14230,10 @@
       "transit-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-laxmi-pure-drinks-bar-jogeshwari-east",
@@ -13041,7 +14265,10 @@
       "bustling-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-alankar-restaurant-bar-malad-east",
@@ -13073,7 +14300,10 @@
       "local-permit-room"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-status-restaurant-bar-goregaon-west",
@@ -13105,7 +14335,10 @@
       "air-conditioned-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-vaishali-bar-restaurant-jogeshwari-west",
@@ -13137,7 +14370,10 @@
       "unpretentious"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-golden-crown-bar-malad-west",
@@ -13169,7 +14405,10 @@
       "budget-liquor"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-samadhan-restaurant-bar-goregaon-east",
@@ -13201,7 +14440,10 @@
       "north-indian-mains"
     ],
     "photo_url": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-meghdoot-bar-restaurant-jogeshwari-east",
@@ -13233,7 +14475,10 @@
       "commuter-pint"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-sagar-restaurant-bar-orlem--malad-west",
@@ -13265,7 +14510,10 @@
       "chilled-pitchers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-ashoka-bar-restaurant-goregaon-west",
@@ -13297,7 +14545,10 @@
       "retro-neighborhood-bar"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-pushpa-bar-restaurant-jogeshwari-west",
@@ -13329,7 +14580,10 @@
       "low-markup-spirits"
     ],
     "photo_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-rupali-restaurant-bar-malad-east",
@@ -13361,7 +14615,10 @@
       "cheap-hard-liquor"
     ],
     "photo_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-city-tower-bar-restaurant-goregaon-west",
@@ -13393,7 +14650,10 @@
       "post-shop-drink"
     ],
     "photo_url": "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-deepak-restaurant-bar-jogeshwari-east",
@@ -13425,7 +14685,10 @@
       "discounted-beers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹400–750 for two",
+    "price_level": 1
   },
   {
     "id": "mumbai-welcome-bar-restaurant-malad-west",
@@ -13457,7 +14720,10 @@
       "budget-dive"
     ],
     "photo_url": "https://images.unsplash.com/photo-1508253578933-20b529302151?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_budget_bars"
+    "source": "curated_budget_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-the-local-karaoke-dive-kala-ghoda",
@@ -13491,7 +14757,10 @@
       "budget-pitchers"
     ],
     "photo_url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-merlins-karaoke-bar-santacruz-east",
@@ -13524,7 +14793,10 @@
       "retro-hits"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-glocal-junction-karaoke-andheri-west",
@@ -13557,7 +14829,10 @@
       "group-singalong"
     ],
     "photo_url": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mumbai-3-wise-monkeys-karaoke-khar-west",
@@ -13590,7 +14865,10 @@
       "beer-buckets"
     ],
     "photo_url": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   },
   {
     "id": "mmr-tight-karaoke-bar-vashi",
@@ -13624,6 +14902,9 @@
       "suburban-karaoke"
     ],
     "photo_url": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_karaoke_bars"
+    "source": "curated_karaoke_bars",
+    "budget_tier": "splurge",
+    "approx_cost": "₹900–1,800 for two",
+    "price_level": 3
   }
 ]
