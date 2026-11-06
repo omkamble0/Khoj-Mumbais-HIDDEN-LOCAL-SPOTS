@@ -692,7 +692,7 @@ export default function DiscoveryMap({
               </span>
             </div>
             <span className="hidden md:inline-block px-2 py-0.5 rounded bg-amber-400 text-sumi font-black text-[10px]">
-              ⏱️ ~{activeCommutePlan.totalDurationMinutes}m · 🪙 ~₹{activeCommutePlan.totalEstimatedCost}
+              ⏱️ ~{activeCommutePlan.totalDurationMinutes}m
             </span>
           </div>
 

@@ -675,7 +675,6 @@ export interface SanctuaryTransitProfile {
     distanceKm: number;
     walkMinutes: number;
     rickshawMinutes: number;
-    estimatedFare: number;
   };
   nearestMetro?: {
     station: TransitStation;
@@ -717,19 +716,14 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
   const railDistKm = Math.round((minRailDist / 1000) * 10) / 10;
   const walkMinutes = Math.round(minRailDist / 80); // ~4.8 km/h walking speed
   const rickshawMinutes = Math.max(4, Math.round(minRailDist / 300)); // ~18 km/h suburban traffic speed
-  
-  // Mumbai Auto Rickshaw Minimum Meter Fare = ₹23 for first 1.5km, then ₹15.33 per km
-  const estimatedFare = nearestRail.auto_rickshaw_available
-    ? Math.max(23, Math.round(23 + Math.max(0, railDistKm - 1.5) * 15.33))
-    : 0; // South Mumbai has Kaali Peeli taxis starting at ₹28
 
   let recommendedConnection = '';
   if (minRailDist <= 800) {
     recommendedConnection = `🚶 Quick ${walkMinutes} min walk from ${nearestRail.name} station. ${nearestRail.exit_tips}`;
   } else if (nearestRail.auto_rickshaw_available) {
-    recommendedConnection = `🛺 ${rickshawMinutes} min meter rickshaw (approx ₹${estimatedFare}) or shared auto from ${nearestRail.name}.`;
+    recommendedConnection = `🛺 ${rickshawMinutes} min meter rickshaw or shared auto from ${nearestRail.name}.`;
   } else {
-    recommendedConnection = `🚕 Short kaali-peeli taxi ride (min fare ₹28) or brisk walk from ${nearestRail.name}.`;
+    recommendedConnection = `🚕 Short kaali-peeli taxi ride or brisk walk from ${nearestRail.name}.`;
   }
 
   return {
@@ -739,7 +733,6 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
       distanceKm: railDistKm,
       walkMinutes,
       rickshawMinutes,
-      estimatedFare,
     },
     nearestMetro: nearestMetro
       ? {
@@ -837,7 +830,6 @@ export interface SmartCommuteStep {
   detail: string;
   durationMinutes: number;
   distanceMeters?: number;
-  cost?: number;
   badge?: string;
   badgeColor?: string;
 }
@@ -847,7 +839,6 @@ export interface SmartCommutePlan {
   destinationStation: TransitStation;
   destinationPlace: Place;
   totalDurationMinutes: number;
-  totalEstimatedCost: number;
   trainTypeAdvice: {
     canTakeFast: boolean;
     label: string;
@@ -931,12 +922,8 @@ export function planSmartCommute(
   const firstMileDist = calculateDistanceMeters(originLat, originLng, originStation.latitude, originStation.longitude);
   const firstMileWalkMin = Math.round(firstMileDist / 80);
   const firstMileAutoMin = Math.max(3, Math.round(firstMileDist / 300));
-  const firstMileAutoFare = originStation.auto_rickshaw_available
-    ? Math.max(23, Math.round(23 + Math.max(0, firstMileDist / 1000 - 1.5) * 15.33))
-    : 28; // Kaali-Peeli minimum in South Mumbai
 
   const steps: SmartCommuteStep[] = [];
-  let totalCost = 0;
   let totalDuration = 0;
 
   // Step 1: First Mile
@@ -948,16 +935,14 @@ export function planSmartCommute(
       title: isWalkable ? 'Walk to Station' : 'Hop in Meter Auto / Taxi',
       instruction: isWalkable
         ? `Walk ${Math.round(firstMileDist)}m (~${firstMileWalkMin} mins) to ${originStation.name} station`
-        : `Take ${originStation.auto_rickshaw_available ? 'meter auto' : 'kaali-peeli taxi'} (~${firstMileAutoMin} mins, ₹${firstMileAutoFare}) to ${originStation.name}`,
+        : `Take ${originStation.auto_rickshaw_available ? 'meter auto' : 'kaali-peeli taxi'} (~${firstMileAutoMin} mins) to ${originStation.name}`,
       detail: `Enter via nearest skywalk or concourse at ${originStation.name}.`,
       durationMinutes: isWalkable ? firstMileWalkMin : firstMileAutoMin,
       distanceMeters: Math.round(firstMileDist),
-      cost: isWalkable ? 0 : firstMileAutoFare,
       badge: isWalkable ? '🚶 WALK' : '🛺 FIRST MILE',
       badgeColor: 'bg-amber-100 text-amber-900',
     });
     totalDuration += isWalkable ? firstMileWalkMin : firstMileAutoMin;
-    totalCost += isWalkable ? 0 : firstMileAutoFare;
   }
 
   // 4. Determine Train Segment Logic
@@ -1040,14 +1025,12 @@ export function planSmartCommute(
         instruction: `Board ${directionLabel} train at ${originStation.name} ➔ Ride ${diff} stops to ${destinationStation.name}`,
         detail: trainTypeAdvice.warning
           ? trainTypeAdvice.warning
-          : `Indicators show 'F' for Fast, 'S' for Slow. Ticket is ₹5 via UTS app. AC local tickets are ₹35.`,
+          : `Indicators show 'F' for Fast, 'S' for Slow. UTS mobile paperless ticketing available.`,
         durationMinutes: trainTime,
-        cost: 5,
         badge: trainTypeAdvice.canTakeFast ? '⚡ FAST TRAIN' : '🐌 SLOW TRAIN',
         badgeColor: trainTypeAdvice.canTakeFast ? 'bg-rose-600 text-white' : 'bg-amber-400 text-sumi',
       });
       totalDuration += trainTime;
-      totalCost += 5;
     } else if (isBothCR) {
       const origIdx = CR_STATIONS_ORDER.indexOf(originStation.id);
       const destIdx = CR_STATIONS_ORDER.indexOf(destinationStation.id);
@@ -1078,12 +1061,10 @@ export function planSmartCommute(
         instruction: `Board ${directionLabel} train at ${originStation.name} ➔ Ride ${diff} stops to ${destinationStation.name}`,
         detail: trainTypeAdvice.warning || 'Use UTS mobile ticketing. Platform indicators display coach positions.',
         durationMinutes: trainTime,
-        cost: 5,
         badge: 'CR MAIN LINE',
         badgeColor: 'bg-amber-600 text-white',
       });
       totalDuration += trainTime;
-      totalCost += 5;
     } else {
       // Cross-Line Interchange via Dadar Junction
       const interchangeStation = TRANSIT_STATIONS.find((s) => s.id === 'stn-dadar-wr') || TRANSIT_STATIONS[7];
@@ -1095,7 +1076,6 @@ export function planSmartCommute(
         instruction: `Board local train to Dadar Junction from ${originStation.name}`,
         detail: 'Dadar is the central railway interchange connecting Western & Central lines.',
         durationMinutes: 12,
-        cost: 5,
         badge: 'INTERCHANGE',
         badgeColor: 'bg-cobalt text-white',
       });
@@ -1107,7 +1087,6 @@ export function planSmartCommute(
         instruction: 'Cross overbridge between Western and Central railway platforms (~4 mins)',
         detail: 'Follow overhead directional signs: Platforms 1-4 for Western, Platforms 5-8 for Central.',
         durationMinutes: 5,
-        cost: 0,
         badge: '🚶 TRANSFER',
         badgeColor: 'bg-sumi text-wabi',
       });
@@ -1119,13 +1098,11 @@ export function planSmartCommute(
         instruction: `Board local train to ${destinationStation.name}`,
         detail: `Ride to ${destinationStation.name}. Exit as per advice below.`,
         durationMinutes: 15,
-        cost: 5,
         badge: 'FINAL LEG',
         badgeColor: 'bg-emerald-600 text-white',
       });
 
       totalDuration += 32;
-      totalCost += 10;
     }
   }
 
@@ -1139,7 +1116,6 @@ export function planSmartCommute(
   // Step Last: Last Mile from destinationStation to Sanctuary
   const lastMileDist = destProfile.nearestRailway.distanceMeters;
   const lastMileWalkMin = destProfile.nearestRailway.walkMinutes;
-  const lastMileAutoFare = destProfile.nearestRailway.estimatedFare || 28;
   const isLastMileWalkable = lastMileDist <= 800;
 
   steps.push({
@@ -1148,23 +1124,20 @@ export function planSmartCommute(
     title: isLastMileWalkable ? 'Arrive on Foot' : 'Last Mile to Sanctuary',
     instruction: isLastMileWalkable
       ? `Walk ~${lastMileWalkMin} mins (${lastMileDist}m) from ${destinationStation.name} station`
-      : `Take ${destinationStation.auto_rickshaw_available ? 'meter auto' : 'kaali-peeli taxi'} (approx ₹${lastMileAutoFare}) to ${destinationPlace.name}`,
+      : `Take ${destinationStation.auto_rickshaw_available ? 'meter auto' : 'kaali-peeli taxi'} (~${destProfile.nearestRailway.rickshawMinutes} mins) to ${destinationPlace.name}`,
     detail: `Station exit: ${destinationStation.exit_tips}`,
     durationMinutes: isLastMileWalkable ? lastMileWalkMin : destProfile.nearestRailway.rickshawMinutes,
     distanceMeters: lastMileDist,
-    cost: isLastMileWalkable ? 0 : lastMileAutoFare,
     badge: isLastMileWalkable ? '🚶 WALK' : '🛺 LAST MILE',
     badgeColor: 'bg-matcha-50 text-matcha-700',
   });
   totalDuration += isLastMileWalkable ? lastMileWalkMin : destProfile.nearestRailway.rickshawMinutes;
-  totalCost += isLastMileWalkable ? 0 : lastMileAutoFare;
 
   return {
     originStation,
     destinationStation,
     destinationPlace,
     totalDurationMinutes: totalDuration,
-    totalEstimatedCost: totalCost,
     trainTypeAdvice,
     crowdAdvisory: {
       level: crowdLevel,

@@ -196,7 +196,7 @@ export default function TransitNavigatorView({
                 Sanctuary Transit Blueprint
               </h2>
               <p className="text-xs text-slate-600 font-mono">
-                Type any sanctuary name to get station exits, walking minutes & meter-rickshaw fares
+                Type any sanctuary name to get station exits, walking minutes & last-mile connections
               </p>
             </div>
           </div>
@@ -301,9 +301,6 @@ export default function TransitNavigatorView({
                     <span className="px-2.5 py-1 rounded-xl bg-amber-400 text-sumi border border-sumi/20 shadow-sm">
                       ⏱️ ~{smartTripPlan.totalDurationMinutes} mins total
                     </span>
-                    <span className="px-2.5 py-1 rounded-xl bg-sumi text-wabi shadow-sm">
-                      🪙 ~₹{smartTripPlan.totalEstimatedCost}
-                    </span>
                   </div>
                 )}
               </div>
@@ -385,18 +382,18 @@ export default function TransitNavigatorView({
                 )}
               </div>
 
-              {/* Box 3: Last-Mile Fare & Exit Route */}
+              {/* Box 3: Last-Mile Connection & Exit Route */}
               <div className="bg-white p-3.5 rounded-xl border border-sumi/30 shadow-sm space-y-1.5">
                 <div className="flex items-center justify-between text-slate-500 text-[11px] font-bold">
-                  <span>🪙 FIRST & LAST MILE</span>
+                  <span>🛺 LAST-MILE FEEDER</span>
                   <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded font-black">
-                    METER
+                    FEEDER
                   </span>
                 </div>
                 <div className="text-sumi font-bold text-sm">
-                  {activeSanctuaryTransitProfile.nearestRailway.estimatedFare > 0
-                    ? `Approx ₹${activeSanctuaryTransitProfile.nearestRailway.estimatedFare} meter auto`
-                    : 'Kaali-Peeli Taxi (Min fare ₹28)'}
+                  {activeSanctuaryTransitProfile.nearestRailway.station.auto_rickshaw_available
+                    ? 'Meter Auto / Rickshaw Stand'
+                    : 'Kaali-Peeli Taxi Stand or Bus'}
                 </div>
                 <p className="text-[11px] text-slate-600 pt-1 leading-snug">
                   {activeSanctuaryTransitProfile.recommendedConnection}
@@ -612,7 +609,7 @@ export default function TransitNavigatorView({
               <span>🛺 The Auto-Meter Rule</span>
             </div>
             <p className="text-slate-300 text-xs leading-relaxed">
-              North of Bandra and Sion, auto-rickshaws run strictly by electronic meter. Minimum fare is <strong>₹23</strong> for first 1.5 km. Always politely say <em>"Meter chalu kijiye"</em> before hopping in.
+              North of Bandra and Sion, auto-rickshaws run strictly by electronic meter. In South Mumbai (Churchgate to Dadar), take metered Kaali-Peeli black-and-yellow taxis. Always politely insist on meter before boarding.
             </p>
           </div>
         </div>

@@ -165,10 +165,6 @@ export default function SmartCommuteModal({
               <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-bold bg-white text-sumi border border-sumi/30 shadow-sm">
                 ⏱️ ~{plan.totalDurationMinutes} mins total
               </span>
-
-              <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-bold bg-amber-400 text-sumi border border-sumi/30 shadow-sm">
-                🪙 ~₹{plan.totalEstimatedCost} cost
-              </span>
             </div>
 
             {/* Train Type Chip */}
@@ -230,9 +226,6 @@ export default function SmartCommuteModal({
 
                   <div className="flex items-center gap-3 pt-1 text-[11px] font-mono text-slate-600">
                     <span>⏱️ {step.durationMinutes} mins</span>
-                    {step.cost !== undefined && step.cost > 0 && (
-                      <span>🪙 ₹{step.cost}</span>
-                    )}
                     {step.distanceMeters !== undefined && (
                       <span>📏 {step.distanceMeters}m</span>
                     )}
