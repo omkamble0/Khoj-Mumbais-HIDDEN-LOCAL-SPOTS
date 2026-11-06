@@ -1,9 +1,17 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import L from 'leaflet';
 import { Place } from '@/lib/types';
 import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
+import {
+  TRANSIT_STATIONS,
+  TRANSIT_LINE_TRACKS,
+  TransitStation,
+  getSanctuaryTransitProfile,
+  getSanctuariesNearStation,
+} from '@/lib/transit';
+import { Train, X, Compass, ExternalLink } from 'lucide-react';
 
 interface DiscoveryMapProps {
   places: Place[];
@@ -11,6 +19,11 @@ interface DiscoveryMapProps {
   selectedPlace: Place | null;
   onSelectPlace: (place: Place) => void;
   radiusKm: number;
+  showTransitOverlay?: boolean;
+  onToggleTransitOverlay?: (show: boolean) => void;
+  selectedTransitStation?: TransitStation | null;
+  onSelectTransitStation?: (station: TransitStation | null) => void;
+  onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;
 }
 
 // Category Theme Accents
@@ -42,10 +55,18 @@ export default function DiscoveryMap({
   selectedPlace,
   onSelectPlace,
   radiusKm,
+  showTransitOverlay = true,
+  onToggleTransitOverlay,
+  selectedTransitStation,
+  onSelectTransitStation,
+  onOpenTransitGuide,
 }: DiscoveryMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
   const markersLayerRef = useRef<L.LayerGroup | null>(null);
+  const transitLayerRef = useRef<L.LayerGroup | null>(null);
+  const routeConnectorLayerRef = useRef<L.LayerGroup | null>(null);
+  const stationBufferCircleRef = useRef<L.Circle | null>(null);
   const markerPoolRef = useRef<Map<string, L.Marker>>(new Map());
   const radiusCircleRef = useRef<L.Circle | null>(null);
   const userMarkerRef = useRef<L.Marker | null>(null);
@@ -55,6 +76,22 @@ export default function DiscoveryMap({
   onSelectPlaceRef.current = onSelectPlace;
   const selectedPlaceRef = useRef(selectedPlace);
   selectedPlaceRef.current = selectedPlace;
+  const onSelectTransitStationRef = useRef(onSelectTransitStation);
+  onSelectTransitStationRef.current = onSelectTransitStation;
+  const onOpenTransitGuideRef = useRef(onOpenTransitGuide);
+  onOpenTransitGuideRef.current = onOpenTransitGuide;
+
+  const [internalTransitOverlay, setInternalTransitOverlay] = useState(showTransitOverlay);
+
+  useEffect(() => {
+    setInternalTransitOverlay(showTransitOverlay);
+  }, [showTransitOverlay]);
+
+  const handleToggleTransit = () => {
+    const nextVal = !internalTransitOverlay;
+    setInternalTransitOverlay(nextVal);
+    onToggleTransitOverlay?.(nextVal);
+  };
 
   // Viewport Culling: only renders markers within map bounds (+25% cushion)
   const syncVisibleMarkers = () => {
@@ -98,16 +135,14 @@ export default function DiscoveryMap({
       const map = L.map(mapContainerRef.current, {
         center: [initialLat, initialLng],
         zoom: 12,
-        minZoom: 6, // Prevents zooming out to the entire globe (keeps map strictly within India)
+        minZoom: 6,
         maxZoom: 19,
         maxBounds: INDIA_BOUNDS,
-        maxBoundsViscosity: 0.1, // Smooth, frictionless drag without heavy physics calculation lag
+        maxBoundsViscosity: 0.1,
         zoomControl: false,
         preferCanvas: true,
       });
 
-      // Adaptive Zoom density check: at zoom < 14, markers collapse to sleek non-overlapping dots
-      // preventing massive label collisions in dense clusters like Bandra, Fort, and Lower Parel
       const updateZoomClass = () => {
         if (!mapContainerRef.current) return;
         if (map.getZoom() < 14) {
@@ -118,7 +153,6 @@ export default function DiscoveryMap({
       };
       updateZoomClass();
 
-      // Viewport culling event hooks
       map.on('moveend', () => {
         syncVisibleMarkersRef.current();
       });
@@ -127,7 +161,6 @@ export default function DiscoveryMap({
         syncVisibleMarkersRef.current();
       });
 
-      // Lightweight OpenStreetMap tiles (smooth native tile streaming without clipping stalls)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -138,7 +171,11 @@ export default function DiscoveryMap({
 
       L.control.zoom({ position: 'bottomright' }).addTo(map);
 
+      // Dedicated layers
+      transitLayerRef.current = L.layerGroup().addTo(map);
+      routeConnectorLayerRef.current = L.layerGroup().addTo(map);
       markersLayerRef.current = L.layerGroup().addTo(map);
+
       mapInstanceRef.current = map;
 
       setTimeout(() => {
@@ -209,13 +246,192 @@ export default function DiscoveryMap({
     }
   }, [userLocation, radiusKm]);
 
+  // 🚆 Render Mumbai Suburban Railway & Metro Network Overlay
+  useEffect(() => {
+    const map = mapInstanceRef.current;
+    const transitLayer = transitLayerRef.current;
+    if (!map || !transitLayer) return;
+
+    transitLayer.clearLayers();
+
+    if (!internalTransitOverlay) return;
+
+    try {
+      // 1. Draw Railway & Metro Tracks (Polylines)
+      TRANSIT_LINE_TRACKS.forEach((track) => {
+        // High-contrast casing shadow line
+        L.polyline(track.coordinates, {
+          color: '#141518',
+          weight: 4,
+          opacity: 0.35,
+          lineCap: 'round',
+          lineJoin: 'round',
+          interactive: false,
+        }).addTo(transitLayer);
+
+        // Core line with authentic railway corridor color
+        L.polyline(track.coordinates, {
+          color: track.color,
+          weight: 2.5,
+          opacity: 0.9,
+          dashArray: track.id.startsWith('metro') ? '5, 5' : undefined,
+          lineCap: 'round',
+          lineJoin: 'round',
+          interactive: false,
+        }).addTo(transitLayer);
+      });
+
+      // 2. Draw Station Badges & Interchanges
+      TRANSIT_STATIONS.forEach((station) => {
+        const isSelected = selectedTransitStation?.id === station.id;
+        const isMetro = station.lines.some((l) => l.startsWith('metro'));
+        const isWR = station.lines.includes('western');
+        const isCR = station.lines.includes('central');
+        const isHR = station.lines.includes('harbour');
+
+        const lineColor = isWR
+          ? '#e11d48'
+          : isCR
+          ? '#d97706'
+          : isHR
+          ? '#2563eb'
+          : isMetro
+          ? '#059669'
+          : '#141518';
+
+        const lineBadge = isWR
+          ? 'WR'
+          : isCR
+          ? 'CR'
+          : isHR
+          ? 'HR'
+          : isMetro
+          ? 'METRO'
+          : 'TR';
+
+        const stationHtml = `
+          <div class="transit-station-pin flex flex-col items-center select-none cursor-pointer group" data-station-id="${station.id}">
+            <div class="station-pill ${isSelected ? 'station-selected' : ''} px-2 py-0.5 rounded-lg border-2 border-sumi flex items-center gap-1 bg-white text-sumi hover:bg-amber-100 hover:border-vermilion transition-all font-mono whitespace-nowrap shadow-sm">
+              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color: ${lineColor};"></span>
+              <span class="text-[10px] font-bold text-sumi">${station.name}</span>
+              <span class="text-[8px] font-black px-1 rounded text-white" style="background-color: ${lineColor};">${lineBadge}</span>
+              ${station.fast_train_stop ? '<span class="text-[8px] text-rose-600 font-black">⚡</span>' : ''}
+            </div>
+            <div class="w-1.5 h-1.5 rounded-full bg-sumi -mt-0.5"></div>
+          </div>
+        `;
+
+        const stationIcon = L.divIcon({
+          className: 'transit-station-div',
+          html: stationHtml,
+          iconSize: [0, 0],
+          iconAnchor: [0, 0],
+        });
+
+        const marker = L.marker([station.latitude, station.longitude], {
+          icon: stationIcon,
+          zIndexOffset: isSelected ? 400 : 200,
+        });
+
+        marker.on('click', () => {
+          onSelectTransitStationRef.current?.(station);
+          map.panTo([station.latitude, station.longitude], { animate: true, duration: 0.5 });
+        });
+
+        transitLayer.addLayer(marker);
+      });
+
+      // 3. Draw Station Reachable Buffer Circle (when a station is selected)
+      if (selectedTransitStation) {
+        if (stationBufferCircleRef.current) {
+          transitLayer.removeLayer(stationBufferCircleRef.current);
+        }
+        stationBufferCircleRef.current = L.circle(
+          [selectedTransitStation.latitude, selectedTransitStation.longitude],
+          {
+            radius: 3500, // 3.5 km hop-off radius
+            color: '#ff3e18',
+            fillColor: '#f59e0b',
+            fillOpacity: 0.07,
+            weight: 2,
+            dashArray: '6, 8',
+          }
+        ).addTo(transitLayer);
+      }
+    } catch (err) {
+      console.warn('Error rendering transit overlay:', err);
+    }
+  }, [internalTransitOverlay, selectedTransitStation]);
+
+  // 🚶 Dynamic Commute Connector: Links Selected Sanctuary Directly to Nearest Transit Station on Map
+  useEffect(() => {
+    const map = mapInstanceRef.current;
+    const routeLayer = routeConnectorLayerRef.current;
+    if (!map || !routeLayer) return;
+
+    routeLayer.clearLayers();
+
+    if (!selectedPlace) return;
+
+    try {
+      const transitProfile = getSanctuaryTransitProfile(selectedPlace.latitude, selectedPlace.longitude);
+      const stn = transitProfile.nearestRailway.station;
+
+      // Dashed commuter connector line
+      const lineCoords: [number, number][] = [
+        [selectedPlace.latitude, selectedPlace.longitude],
+        [stn.latitude, stn.longitude],
+      ];
+
+      L.polyline(lineCoords, {
+        color: '#ff3e18',
+        weight: 3,
+        dashArray: '6, 8',
+        className: 'commute-route-connector',
+        opacity: 0.9,
+      }).addTo(routeLayer);
+
+      // Midpoint interactive commute badge
+      const midLat = (selectedPlace.latitude + stn.latitude) / 2;
+      const midLng = (selectedPlace.longitude + stn.longitude) / 2;
+
+      const badgeHtml = `
+        <div class="commute-mid-badge flex items-center gap-1.5 px-3 py-1 bg-sumi text-wabi border-2 border-sumi rounded-xl shadow-riso text-[10px] font-mono font-bold whitespace-nowrap cursor-pointer hover:bg-vermilion hover:scale-105 transition-all select-none -translate-x-1/2 -translate-y-1/2">
+          <span class="text-amber-300">🚶 ${transitProfile.nearestRailway.walkMinutes} MINS (${transitProfile.nearestRailway.distanceMeters}m)</span>
+          <span class="text-slate-400">·</span>
+          <span>🚆 ${stn.name}</span>
+          <span class="text-vermilion bg-white/20 px-1 py-0.2 rounded text-[9px]">➔</span>
+        </div>
+      `;
+
+      const badgeIcon = L.divIcon({
+        className: 'commute-badge-div',
+        html: badgeHtml,
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
+      });
+
+      const badgeMarker = L.marker([midLat, midLng], {
+        icon: badgeIcon,
+        zIndexOffset: 800,
+      });
+
+      badgeMarker.on('click', () => {
+        onOpenTransitGuideRef.current?.(stn, selectedPlace);
+      });
+
+      routeLayer.addLayer(badgeMarker);
+    } catch (err) {
+      console.warn('Error drawing transit connector route:', err);
+    }
+  }, [selectedPlace]);
+
   // Rebuild Place Markers ONLY when the filtered places list ACTUALLY changes
   useEffect(() => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
     if (!map || !layer) return;
 
-    // Check if place IDs actually changed - prevents redundant rebuilds
     const newIds = places.map((p) => p.id).join(',');
     if (newIds === currentPlaceIdsRef.current && layer.getLayers().length > 0) {
       return;
@@ -232,10 +448,8 @@ export default function DiscoveryMap({
         const theme = CATEGORY_COLORS[place.category] || { dot: '#ff3e18', border: '#e52c07', bg: '#fff1ee' };
         const isPeaking = checkIsPlacePeakingNow(place, currentWindow).isPeaking;
         
-        // Display real name (short_name or name)
         const displayName = place.short_name || place.name.split(' ')[0] + ' ' + (place.name.split(' ')[1] || '');
 
-        // Tier icon badge
         const tierBadge =
           place.spot_tier === 'iconic'
             ? '★'
@@ -245,9 +459,7 @@ export default function DiscoveryMap({
 
         const markerHtml = `
           <div id="pin-${place.id}" class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full pointer-events-auto select-none" data-place-id="${place.id}">
-            <!-- Animated Pop-up Assembly -->
             <div class="origin-bottom flex flex-col items-center group-hover:-translate-y-1 group-hover:scale-105 transition-transform duration-100 ease-out">
-              <!-- Tactile Pill with Real Place Name -->
               <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion transition-colors duration-100">
                 <span class="w-2.5 h-2.5 rounded-full flex-shrink-0 relative flex items-center justify-center" style="background-color: ${theme.dot};">
                   ${isPeaking ? `<span class="absolute w-3.5 h-3.5 rounded-full border border-emerald-500 bg-emerald-500/25"></span>` : ''}
@@ -257,11 +469,9 @@ export default function DiscoveryMap({
                 ${isPeaking ? `<span class="pin-tier text-[10px] text-emerald-600 font-bold" title="Peaking Now">⚡</span>` : ''}
               </div>
 
-              <!-- Tail pointer arrow -->
               <div class="pin-tail ${isSelected ? 'tail-selected' : ''} w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white transition-colors duration-100"></div>
             </div>
 
-            <!-- Contact Target Dot on exact coordinates -->
             <div class="w-1.5 h-1.5 rounded-full bg-sumi -mt-0.5"></div>
           </div>
         `;
@@ -295,7 +505,6 @@ export default function DiscoveryMap({
       });
 
       markerPoolRef.current = newPool;
-      // Perform spatial viewport culling: only inject visible markers into DOM
       syncVisibleMarkers();
     } catch (err) {
       console.warn('Error updating markers:', err);
@@ -332,7 +541,7 @@ export default function DiscoveryMap({
     prevSelectedIdRef.current = currentId;
   }, [selectedPlace]);
 
-  // Single smooth panTo without conflict
+  // Pan smoothly when selectedPlace changes
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map || !selectedPlace) return;
@@ -346,9 +555,66 @@ export default function DiscoveryMap({
     }
   }, [selectedPlace]);
 
+  // Reachable count for currently selected transit station
+  const stationReachableCount = useMemo(() => {
+    if (!selectedTransitStation) return 0;
+    return getSanctuariesNearStation(selectedTransitStation, places, 3500).length;
+  }, [selectedTransitStation, places]);
+
   return (
     <div className="relative w-full h-full min-h-[400px]">
       <div ref={mapContainerRef} className="w-full h-full min-h-[400px] z-0" style={{ minHeight: '100%' }} />
+
+      {/* Floating Transit Layer Toggle Pill (Bottom-left above attribution) */}
+      <div className="absolute bottom-6 left-4 z-20">
+        <button
+          onClick={handleToggleTransit}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${
+            internalTransitOverlay
+              ? 'bg-amber-400 text-sumi hover:bg-amber-300'
+              : 'bg-wabi/90 backdrop-blur-md text-slate-600 hover:bg-white hover:text-sumi'
+          }`}
+          title="Toggle Mumbai Local Train & Metro station overlay on map"
+        >
+          <Train className="w-3.5 h-3.5 text-rose-600" />
+          <span>TRANSIT: {internalTransitOverlay ? 'ON' : 'OFF'}</span>
+        </button>
+      </div>
+
+      {/* Floating Station Hub HUD (Appears when a railway or metro station is selected) */}
+      {selectedTransitStation && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso px-3.5 py-2 sm:px-4 sm:py-2.5 flex items-center gap-2 sm:gap-3 z-30 font-mono text-xs max-w-[95vw] animate-in fade-in slide-in-from-bottom-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="w-2.5 h-2.5 rounded-full bg-vermilion animate-pulse flex-shrink-0" />
+            <div className="truncate">
+              <span className="font-bold text-sumi text-xs sm:text-sm">
+                🚆 {selectedTransitStation.name}
+              </span>
+              <span className="text-slate-500 text-[11px] ml-1.5 hidden xs:inline">
+                ({selectedTransitStation.lines.join('/')}) · {stationReachableCount} spots within 3.5km
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <button
+              onClick={() => onOpenTransitGuide?.(selectedTransitStation)}
+              className="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-sumi text-wabi hover:bg-vermilion rounded-xl font-bold text-[10px] sm:text-xs transition-colors flex items-center gap-1 shadow-riso-sm"
+              title="Open full transit blueprint for this station"
+            >
+              <span>GUIDE</span>
+              <ExternalLink className="w-3 h-3 text-amber-300" />
+            </button>
+            <button
+              onClick={() => onSelectTransitStation?.(null)}
+              className="p-1 sm:p-1.5 hover:bg-sumi/10 rounded-lg text-slate-500 hover:text-sumi font-bold transition-colors"
+              title="Deselect station"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

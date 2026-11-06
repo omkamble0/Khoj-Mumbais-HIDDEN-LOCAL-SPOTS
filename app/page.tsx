@@ -12,6 +12,7 @@ import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
+import { TransitStation } from '@/lib/transit';
 import initialPlacesData from '@/data/places_mumbai.json';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
@@ -28,6 +29,8 @@ export default function HomePage() {
   const [reportingPlace, setReportingPlace] = useState<Place | null>(null);
   const [isLocating, setIsLocating] = useState(false);
   const [viewMode, setViewMode] = useState<'map' | 'zine' | 'transit'>('map');
+  const [showTransitOverlay, setShowTransitOverlay] = useState(true);
+  const [selectedTransitStation, setSelectedTransitStation] = useState<TransitStation | null>(null);
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
   const [isRouletteOpen, setIsRouletteOpen] = useState(false);
   const [savedPlaceIds, setSavedPlaceIds] = useState<string[]>([]);
@@ -241,6 +244,15 @@ export default function HomePage() {
               selectedPlace={selectedPlace}
               onSelectPlace={handleSelectPlace}
               radiusKm={filters.radiusKm}
+              showTransitOverlay={showTransitOverlay}
+              onToggleTransitOverlay={(v) => setShowTransitOverlay(v)}
+              selectedTransitStation={selectedTransitStation}
+              onSelectTransitStation={(stn) => setSelectedTransitStation(stn)}
+              onOpenTransitGuide={(stn, place) => {
+                if (stn) setSelectedTransitStation(stn);
+                if (place) setSelectedPlace(place);
+                setViewMode('transit');
+              }}
             />
           </div>
         ) : viewMode === 'zine' ? (
@@ -259,9 +271,17 @@ export default function HomePage() {
             <TransitNavigatorView
               places={allPlaces}
               initialSelectedPlace={selectedPlace}
+              initialSelectedStation={selectedTransitStation}
               onSelectPlace={(p) => setSelectedPlace(p)}
-              onViewOnMap={(p) => {
+              onViewOnMap={(p, stn) => {
                 setSelectedPlace(p);
+                if (stn) setSelectedTransitStation(stn);
+                setShowTransitOverlay(true);
+                setViewMode('map');
+              }}
+              onExploreStationOnMap={(stn) => {
+                setSelectedTransitStation(stn);
+                setShowTransitOverlay(true);
                 setViewMode('map');
               }}
             />

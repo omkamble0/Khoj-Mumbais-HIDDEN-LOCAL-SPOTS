@@ -30,8 +30,10 @@ import {
 interface TransitNavigatorViewProps {
   places: Place[];
   onSelectPlace: (place: Place) => void;
-  onViewOnMap: (place: Place) => void;
+  onViewOnMap: (place: Place, station?: TransitStation) => void;
+  onExploreStationOnMap?: (station: TransitStation) => void;
   initialSelectedPlace?: Place | null;
+  initialSelectedStation?: TransitStation | null;
 }
 
 const LINE_TABS: { id: TransitLineType | 'all'; label: string; badge: string; color: string }[] = [
@@ -47,14 +49,26 @@ export default function TransitNavigatorView({
   places,
   onSelectPlace,
   onViewOnMap,
+  onExploreStationOnMap,
   initialSelectedPlace,
+  initialSelectedStation,
 }: TransitNavigatorViewProps) {
   const [selectedLine, setSelectedLine] = useState<TransitLineType | 'all'>('western');
-  const [selectedStationId, setSelectedStationId] = useState<string>('stn-bandra');
+  const [selectedStationId, setSelectedStationId] = useState<string>(
+    initialSelectedStation?.id || 'stn-bandra'
+  );
   const [sanctuarySearchQuery, setSanctuarySearchQuery] = useState('');
   const [selectedSanctuaryId, setSelectedSanctuaryId] = useState<string | null>(
     initialSelectedPlace?.id || null
   );
+
+  useEffect(() => {
+    if (initialSelectedStation) {
+      setSelectedStationId(initialSelectedStation.id);
+      const line = initialSelectedStation.lines[0];
+      if (line) setSelectedLine(line);
+    }
+  }, [initialSelectedStation]);
 
   useEffect(() => {
     if (initialSelectedPlace) {
@@ -241,10 +255,10 @@ export default function TransitNavigatorView({
                   VIEW DETAILS
                 </button>
                 <button
-                  onClick={() => onViewOnMap(activeSanctuary)}
-                  className="px-3.5 py-1.5 rounded-xl bg-sumi hover:bg-vermilion text-white text-xs font-mono font-bold shadow-sm"
+                  onClick={() => onViewOnMap(activeSanctuary, activeSanctuaryTransitProfile.nearestRailway.station)}
+                  className="px-3.5 py-1.5 rounded-xl bg-sumi hover:bg-vermilion text-white text-xs font-mono font-bold shadow-sm flex items-center gap-1.5"
                 >
-                  OPEN ON MAP ➔
+                  <span>VIEW ROUTE ON MAP ➔</span>
                 </button>
               </div>
             </div>
@@ -399,8 +413,18 @@ export default function TransitNavigatorView({
               </p>
             </div>
 
-            <div className="flex items-center gap-2 font-mono text-xs">
-              <span className="px-3 py-1.5 rounded-xl bg-wabi-200 border border-sumi/30 font-bold text-sumi">
+            <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
+              {onExploreStationOnMap && (
+                <button
+                  onClick={() => onExploreStationOnMap(activeStation)}
+                  className="flex items-center gap-1.5 px-3.5 py-2 bg-sumi hover:bg-vermilion text-wabi rounded-xl text-xs font-mono font-bold shadow-riso-sm hover:shadow-riso hover:-translate-y-0.5 transition-all"
+                  title="View this station and surrounding sanctuaries on interactive map"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-amber-300" />
+                  <span>EXPLORE ON MAP ➔</span>
+                </button>
+              )}
+              <span className="px-3 py-2 rounded-xl bg-wabi-200 border border-sumi/30 font-bold text-sumi">
                 {sanctuariesAtStation.length} SANCTUARIES NEARBY
               </span>
             </div>
@@ -451,10 +475,10 @@ export default function TransitNavigatorView({
                       READ FIELD NOTES
                     </button>
                     <button
-                      onClick={() => onViewOnMap(place)}
+                      onClick={() => onViewOnMap(place, activeStation)}
                       className="flex items-center gap-1 text-vermilion hover:translate-x-0.5 transition-transform"
                     >
-                      <span>VIEW ON MAP</span>
+                      <span>VIEW ROUTE ON MAP</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

@@ -422,6 +422,250 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     exit_tips: 'At the gateway of Aarey Green forest trails and picnic spots.',
     auto_rickshaw_available: true,
   },
+  {
+    id: 'metro3-airport-t2',
+    name: 'CSMI Airport T2 Metro (Line 3)',
+    hindi_name: 'हवाई अड्डा टी२ मेट्रो',
+    marathi_name: 'विमानतळ टी२ मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.0968,
+    longitude: 72.8745,
+    zone: 'Western Suburbs',
+    exit_tips: 'Direct subterranean connection to Terminal 2 Chhatrapati Shivaji Maharaj International Airport.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'metro3-worli',
+    name: 'Worli Metro (Line 3)',
+    hindi_name: 'वरली मेट्रो',
+    marathi_name: 'वरळी मेट्रो',
+    lines: ['metro_3'],
+    latitude: 19.016,
+    longitude: 72.818,
+    zone: 'South Mumbai',
+    exit_tips: 'Walking distance to Nehru Centre, Planetarium, and Worli Seaface.',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'metro3-cuffe-parade',
+    name: 'Cuffe Parade Metro (Line 3 Terminus)',
+    hindi_name: 'कफ परेड मेट्रो',
+    marathi_name: 'कफ परेड मेट्रो',
+    lines: ['metro_3'],
+    latitude: 18.915,
+    longitude: 72.818,
+    zone: 'South Mumbai',
+    exit_tips: 'South-most terminus. Gateway to Colaba, Afghan Church, and Sassoon Docks.',
+    auto_rickshaw_available: false,
+  },
+
+  // Harbour Line & Navi Mumbai Connectors
+  {
+    id: 'stn-wadala-road',
+    name: 'Wadala Road',
+    hindi_name: 'वडाला रोड',
+    marathi_name: 'वडाळा रोड',
+    lines: ['harbour'],
+    latitude: 19.0163,
+    longitude: 72.8593,
+    zone: 'South Mumbai',
+    fast_train_stop: true,
+    exit_tips: 'Major Harbour junction splitting toward Panvel (Navi Mumbai) and Andheri (WR interchange).',
+    auto_rickshaw_available: false,
+  },
+  {
+    id: 'stn-chembur',
+    name: 'Chembur',
+    hindi_name: 'चेंबूर',
+    marathi_name: 'चेंबर',
+    lines: ['harbour'],
+    latitude: 19.0624,
+    longitude: 72.8997,
+    zone: 'Central Suburbs',
+    fast_train_stop: false,
+    exit_tips: 'East exit towards Diamond Garden and Sindhi Camp food heritage.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'stn-vashi',
+    name: 'Vashi',
+    hindi_name: 'वाशी',
+    marathi_name: 'वाशी',
+    lines: ['harbour'],
+    latitude: 19.0645,
+    longitude: 72.9984,
+    zone: 'Navi Mumbai',
+    fast_train_stop: true,
+    exit_tips: 'First station across the Thane Creek bridge entering Navi Mumbai. Station complex has shopping mall & IT park.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'stn-cbd-belapur',
+    name: 'CBD Belapur',
+    hindi_name: 'सीबीडी बेलापूर',
+    marathi_name: 'सीबीडी बेलापूर',
+    lines: ['harbour'],
+    latitude: 19.0205,
+    longitude: 73.0402,
+    zone: 'Navi Mumbai',
+    fast_train_stop: true,
+    exit_tips: 'Gateway to Parsik Hill waterfalls, Artists Village, and Kharghar hills.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'stn-panvel',
+    name: 'Panvel',
+    hindi_name: 'पनवेल',
+    marathi_name: 'पनवेल',
+    lines: ['harbour'],
+    latitude: 18.9894,
+    longitude: 73.1215,
+    zone: 'Navi Mumbai',
+    fast_train_stop: true,
+    exit_tips: 'Terminal station of Harbour line. Hub for Karnala Bird Sanctuary and Western Ghats forts.',
+    auto_rickshaw_available: true,
+  },
+
+  // Central Railway Suburbs & Beyond
+  {
+    id: 'stn-bhandup',
+    name: 'Bhandup',
+    hindi_name: 'भांडुप',
+    marathi_name: 'भांडुप',
+    lines: ['central'],
+    latitude: 19.1437,
+    longitude: 72.9366,
+    zone: 'Central Suburbs',
+    fast_train_stop: false,
+    exit_tips: 'Access to Bhandup Pumping Station flamingo sanctuary & coastal wetland walks.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'stn-mulund',
+    name: 'Mulund',
+    hindi_name: 'मुलुंड',
+    marathi_name: 'मुलुंड',
+    lines: ['central'],
+    latitude: 19.1726,
+    longitude: 72.9564,
+    zone: 'Central Suburbs',
+    fast_train_stop: true,
+    exit_tips: 'Quiet tree-lined residential suburb. Starting point for Yogi Hills trails.',
+    auto_rickshaw_available: true,
+  },
+  {
+    id: 'stn-kalyan',
+    name: 'Kalyan Junction',
+    hindi_name: 'कल्याण जंक्शन',
+    marathi_name: 'कल्याण जंक्शन',
+    lines: ['central'],
+    latitude: 19.2372,
+    longitude: 73.1308,
+    zone: 'Thane / Beyond',
+    fast_train_stop: true,
+    exit_tips: 'Historic major terminus connecting Kasara/Nashik and Karjat/Pune mountain routes.',
+    auto_rickshaw_available: true,
+  },
+];
+
+/**
+ * Ordered station tracks for rendering Mumbai's iconic suburban rail spine lines on Leaflet
+ */
+export interface TransitLineTrack {
+  id: TransitLineType;
+  name: string;
+  code: string;
+  color: string;
+  coordinates: [number, number][];
+}
+
+export const TRANSIT_LINE_TRACKS: TransitLineTrack[] = [
+  {
+    id: 'western',
+    name: 'Western Railway',
+    code: 'WR',
+    color: '#e11d48', // Crimson Red
+    coordinates: [
+      [18.9322, 72.8264], // Churchgate
+      [18.9436, 72.8236], // Marine Lines
+      [18.9519, 72.8189], // Charni Road
+      [18.9632, 72.8158], // Grant Road
+      [18.9696, 72.8193], // Mumbai Central
+      [18.9828, 72.8242], // Mahalaxmi
+      [18.9953, 72.8306], // Lower Parel
+      [19.0178, 72.8426], // Dadar WR
+      [19.0553, 72.8402], // Bandra
+      [19.0697, 72.8394], // Khar Road
+      [19.0817, 72.8413], // Santacruz
+      [19.0988, 72.8439], // Vile Parle
+      [19.1197, 72.8464], // Andheri
+      [19.1353, 72.8492], // Jogeshwari
+      [19.1554, 72.8492], // Goregaon
+      [19.1868, 72.8488], // Malad
+      [19.2045, 72.8519], // Kandivali
+      [19.2291, 72.8569], // Borivali
+    ],
+  },
+  {
+    id: 'central',
+    name: 'Central Railway Main',
+    code: 'CR',
+    color: '#d97706', // Ochre / Amber
+    coordinates: [
+      [18.9401, 72.8358], // CSMT
+      [18.9768, 72.8331], // Byculla
+      [19.0185, 72.8436], // Dadar CR
+      [19.0272, 72.8558], // Matunga CR
+      [19.0657, 72.8794], // Kurla
+      [19.0864, 72.9081], // Ghatkopar
+      [19.1437, 72.9366], // Bhandup
+      [19.1726, 72.9564], // Mulund
+      [19.1860, 72.9754], // Thane
+      [19.2372, 73.1308], // Kalyan
+    ],
+  },
+  {
+    id: 'harbour',
+    name: 'Harbour Line',
+    code: 'HR',
+    color: '#2563eb', // Royal Cobalt Blue
+    coordinates: [
+      [18.9401, 72.8358], // CSMT
+      [19.0163, 72.8593], // Wadala Road
+      [19.0657, 72.8794], // Kurla
+      [19.0624, 72.8997], // Chembur
+      [19.0645, 72.9984], // Vashi
+      [19.0205, 73.0402], // CBD Belapur
+      [18.9894, 73.1215], // Panvel
+    ],
+  },
+  {
+    id: 'metro_1',
+    name: 'Metro Line 1 (Versova-Ghatkopar)',
+    code: 'M1',
+    color: '#0891b2', // Cyan Blue
+    coordinates: [
+      [19.1311, 72.8183], // Versova
+      [19.1306, 72.8322], // DN Nagar
+      [19.1287, 72.8364], // Azad Nagar
+      [19.1197, 72.8464], // Andheri
+      [19.0864, 72.9081], // Ghatkopar
+    ],
+  },
+  {
+    id: 'metro_3',
+    name: 'Metro Line 3 (Aqua Line)',
+    code: 'M3',
+    color: '#059669', // Emerald Green
+    coordinates: [
+      [18.9150, 72.8180], // Cuffe Parade
+      [18.9322, 72.8264], // Churchgate
+      [19.0160, 72.8180], // Worli
+      [19.0665, 72.8685], // BKC
+      [19.0968, 72.8745], // Airport T2
+      [19.1394, 72.8785], // Aarey JVLR
+    ],
+  },
 ];
 
 export interface SanctuaryTransitProfile {
@@ -580,3 +824,4 @@ export function getMumbaiTransitCrowdAdvisory() {
     travelAdvice: 'Use UTS mobile app for instant paperless QR ticketing.',
   };
 }
+
