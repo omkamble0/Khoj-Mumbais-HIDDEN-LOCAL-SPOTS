@@ -20,6 +20,11 @@ import {
   Coins,
   ChevronLeft,
   ChevronRight,
+  SlidersHorizontal,
+  ChevronDown,
+  ChevronUp,
+  RotateCcw,
+  X,
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -54,7 +59,7 @@ const SPOT_TIERS: { id: SpotTier; label: string }[] = [
 
 const BUDGET_TIERS: { id: BudgetTier; label: string; desc: string }[] = [
   { id: 'all', label: 'All Budgets', desc: 'All sanctuaries' },
-  { id: 'free', label: '₹0 Free Spots', desc: 'Promenades, parks, viewpoints & forts' },
+  { id: 'free', label: '₹0 Free', desc: 'Promenades, parks, viewpoints & forts' },
   { id: 'pocket_friendly', label: '₹ Pocket Friendly', desc: 'Chai tapris, Irani cafes, street buys & cheap pints' },
   { id: 'moderate', label: '₹₹ ₹300–800', desc: 'Suburban diners, permit rooms & courtyard cafes' },
   { id: 'splurge', label: '₹₹₹ Splurge (₹800+)', desc: 'Specialty roasteries, craft dens & lounges' },
@@ -64,14 +69,12 @@ const RADII = [10, 25, 50, 120];
 
 export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
   const categoryScrollRef = useRef<HTMLDivElement>(null);
-  const tierScrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const [catScrollProgress, setCatScrollProgress] = useState(0);
-  const [tierScrollProgress, setTierScrollProgress] = useState(0);
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [canScrollCatLeft, setCanScrollCatLeft] = useState(false);
   const [canScrollCatRight, setCanScrollCatRight] = useState(true);
-  const [canScrollTierLeft, setCanScrollTierLeft] = useState(false);
-  const [canScrollTierRight, setCanScrollTierRight] = useState(true);
 
   // Monitor Category horizontal scroll position
   const updateCatScroll = useCallback(() => {
@@ -79,42 +82,36 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
     const { scrollLeft, scrollWidth, clientWidth } = categoryScrollRef.current;
     const maxScroll = scrollWidth - clientWidth;
     if (maxScroll > 0) {
-      setCatScrollProgress(Math.min(1, Math.max(0, scrollLeft / maxScroll)));
       setCanScrollCatLeft(scrollLeft > 4);
       setCanScrollCatRight(scrollLeft < maxScroll - 4);
     } else {
-      setCatScrollProgress(0);
       setCanScrollCatLeft(false);
       setCanScrollCatRight(false);
     }
   }, []);
 
-  // Monitor Tier horizontal scroll position
-  const updateTierScroll = useCallback(() => {
-    if (!tierScrollRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = tierScrollRef.current;
-    const maxScroll = scrollWidth - clientWidth;
-    if (maxScroll > 0) {
-      setTierScrollProgress(Math.min(1, Math.max(0, scrollLeft / maxScroll)));
-      setCanScrollTierLeft(scrollLeft > 4);
-      setCanScrollTierRight(scrollLeft < maxScroll - 4);
-    } else {
-      setTierScrollProgress(0);
-      setCanScrollTierLeft(false);
-      setCanScrollTierRight(false);
-    }
-  }, []);
-
   useEffect(() => {
     updateCatScroll();
-    updateTierScroll();
     window.addEventListener('resize', updateCatScroll);
-    window.addEventListener('resize', updateTierScroll);
     return () => {
       window.removeEventListener('resize', updateCatScroll);
-      window.removeEventListener('resize', updateTierScroll);
     };
-  }, [updateCatScroll, updateTierScroll]);
+  }, [updateCatScroll]);
+
+  // Click outside to close drawer
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsFilterDrawerOpen(false);
+      }
+    };
+    if (isFilterDrawerOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isFilterDrawerOpen]);
 
   const slideCategories = (offset: number) => {
     if (categoryScrollRef.current) {
@@ -122,37 +119,12 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
     }
   };
 
-  const slideTiers = (offset: number) => {
-    if (tierScrollRef.current) {
-      tierScrollRef.current.scrollBy({ left: offset, behavior: 'smooth' });
-    }
-  };
+  const activeFilterCount =
+    (filters.spotTier !== 'all' ? 1 : 0) +
+    (filters.budget !== 'all' ? 1 : 0) +
+    (filters.radiusKm !== 120 ? 1 : 0);
 
-  // Click on the category sliding bar track to navigate
-  const handleCatTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    if (categoryScrollRef.current) {
-      const { scrollWidth, clientWidth } = categoryScrollRef.current;
-      categoryScrollRef.current.scrollTo({
-        left: ratio * (scrollWidth - clientWidth),
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  // Click on the tier sliding bar track to navigate
-  const handleTierTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    if (tierScrollRef.current) {
-      const { scrollWidth, clientWidth } = tierScrollRef.current;
-      tierScrollRef.current.scrollTo({
-        left: ratio * (scrollWidth - clientWidth),
-        behavior: 'smooth',
-      });
-    }
-  };
+  const currentCategoryObj = CATEGORIES.find((c) => c.id === filters.category) || CATEGORIES[0];
 
   // Drag-to-slide mouse interaction
   const attachDragScroll = (ref: React.RefObject<HTMLDivElement>, onScrollUpdate: () => void) => {
@@ -185,197 +157,203 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
   };
 
   const catDragHandlers = attachDragScroll(categoryScrollRef, updateCatScroll);
-  const tierDragHandlers = attachDragScroll(tierScrollRef, updateTierScroll);
 
   return (
-    <div className="bg-wabi/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-2 select-none">
-      {/* 1. All Spots / Category Horizontal Menu Bar */}
-      <div className="relative group/cat">
-        {/* Left Arrow Sliding Button */}
-        {canScrollCatLeft && (
-          <button
-            onClick={() => slideCategories(-200)}
-            className="absolute -left-1 top-[18px] -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
-            title="Slide left"
-          >
-            <ChevronLeft className="w-3.5 h-3.5" />
-          </button>
-        )}
-
-        {/* Right Arrow Sliding Button */}
-        {canScrollCatRight && (
-          <button
-            onClick={() => slideCategories(200)}
-            className="absolute -right-1 top-[18px] -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
-            title="Slide right"
-          >
-            <ChevronRight className="w-3.5 h-3.5" />
-          </button>
-        )}
-
-        {/* Horizontal Scrolling Pill Strip (no browser scrollbar duplicate) */}
-        <div
-          ref={categoryScrollRef}
-          onScroll={updateCatScroll}
-          {...catDragHandlers}
-          className="sliding-bar flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scroll-smooth cursor-grab active:cursor-grabbing"
+    <div ref={containerRef} className="relative font-sans select-none max-w-full">
+      {/* 1. Minimized Mode: Takes zero space on the map */}
+      {isMinimized ? (
+        <button
+          onClick={() => setIsMinimized(false)}
+          className="flex items-center gap-2 px-3 py-2 bg-wabi/95 backdrop-blur-md rounded-2xl border-2 border-sumi shadow-riso hover:bg-white text-sumi text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95"
+          title="Expand filter bar"
         >
-          {CATEGORIES.map((cat) => {
-            const isActive = filters.category === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => onChange({ category: cat.id })}
-                className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all duration-150 border-2 flex-shrink-0 ${
-                  isActive
-                    ? 'bg-sumi text-wabi border-sumi shadow-riso-sm translate-y-[-1px]'
-                    : 'bg-wabi-100 text-sumi border-sumi/30 hover:border-sumi hover:bg-wabi-200'
-                }`}
-              >
-                {cat.icon}
-                <span className="tracking-wide">{cat.label}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Working Sliding Bar 1: Refined, Muted Neutral Track for Categories */}
-        <div 
-          onClick={handleCatTrackClick}
-          className="w-full pt-1 pb-0.5 cursor-pointer group"
-          title="Click or drag to slide categories"
-        >
-          <div className="w-full h-1 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
-            <div
-              className="h-full bg-sumi/45 hover:bg-sumi/70 rounded-full transition-transform duration-100 ease-out"
-              style={{
-                width: '32%',
-                transform: `translateX(${catScrollProgress * 212.5}%)`,
-              }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* 2. All Tiers & Radius Horizontal Menu Bar */}
-      <div className="relative border-t border-sumi/15 pt-2">
-        {/* Left Arrow Sliding Button for Tiers */}
-        {canScrollTierLeft && (
-          <button
-            onClick={() => slideTiers(-160)}
-            className="absolute -left-1 top-[16px] -translate-y-1/2 z-20 w-5 h-5 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
-            title="Slide left"
-          >
-            <ChevronLeft className="w-3 h-3" />
-          </button>
-        )}
-
-        {/* Right Arrow Sliding Button for Tiers */}
-        {canScrollTierRight && (
-          <button
-            onClick={() => slideTiers(160)}
-            className="absolute -right-1 top-[16px] -translate-y-1/2 z-20 w-5 h-5 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-wabi-200 hover:scale-105 transition-all"
-            title="Slide right"
-          >
-            <ChevronRight className="w-3 h-3" />
-          </button>
-        )}
-
-        {/* Horizontal Scrolling Tiers & Radius Row (no browser scrollbar duplicate) */}
-        <div
-          ref={tierScrollRef}
-          onScroll={updateTierScroll}
-          {...tierDragHandlers}
-          className="sliding-bar flex items-center justify-between gap-2 overflow-x-auto pb-1 text-xs scroll-smooth cursor-grab active:cursor-grabbing"
-        >
-          {/* Tier Selector (Hidden vs Underrated vs Iconic) */}
-          <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
-            {SPOT_TIERS.map((tier) => (
-              <button
-                key={tier.id}
-                onClick={() => onChange({ spotTier: tier.id })}
-                className={`px-2 sm:px-3 py-1 rounded-lg text-[11px] sm:text-xs font-mono font-bold whitespace-nowrap border transition-colors flex-shrink-0 ${
-                  filters.spotTier === tier.id
-                    ? 'bg-sumi text-wabi border-sumi shadow-sm'
-                    : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
-                }`}
-              >
-                {tier.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Radius Filter & Total Count */}
-          <div className="flex items-center gap-2 sm:gap-2.5 font-mono flex-shrink-0 ml-auto">
-            <div className="flex items-center gap-1 sm:gap-1.5">
-              <span className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase hidden xs:inline">
-                RADIUS:
-              </span>
-              {RADII.map((r) => (
+          <span className="w-2 h-2 rounded-full bg-vermilion" />
+          <span className="uppercase">{currentCategoryObj.label}</span>
+          <span className="text-slate-400">·</span>
+          <span className="text-amber-700 font-black">{totalFound} SPOTS</span>
+          {activeFilterCount > 0 && (
+            <span className="px-1.5 py-0.5 rounded-full bg-amber-400 text-sumi text-[10px] font-black">
+              {activeFilterCount} Active
+            </span>
+          )}
+          <SlidersHorizontal className="w-3.5 h-3.5 ml-1 text-slate-700" />
+        </button>
+      ) : (
+        /* 2. Compact Active Bar: Ultra-slim single row with expandable filter popover */
+        <div className="bg-wabi/95 backdrop-blur-md p-1.5 sm:p-2 rounded-2xl border-2 border-sumi shadow-riso font-sans space-y-1.5">
+          {/* Main Horizontal Row (~36px height) */}
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Scrollable Categories Strip */}
+            <div className="relative flex-1 min-w-0 flex items-center">
+              {canScrollCatLeft && (
                 <button
-                  key={r}
-                  onClick={() => onChange({ radiusKm: r })}
-                  className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md font-mono text-[11px] sm:text-xs font-bold border transition-colors flex-shrink-0 ${
-                    filters.radiusKm === r
-                      ? 'bg-vermilion text-white border-sumi shadow-sm'
-                      : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
-                  }`}
+                  onClick={() => slideCategories(-150)}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-5 h-5 rounded-full bg-wabi border border-sumi shadow-sm flex items-center justify-center text-sumi hover:bg-wabi-200"
+                  title="Scroll left"
                 >
-                  {r >= 120 ? 'All' : `${r}km`}
+                  <ChevronLeft className="w-3 h-3" />
                 </button>
-              ))}
+              )}
+
+              <div
+                ref={categoryScrollRef}
+                onScroll={updateCatScroll}
+                {...catDragHandlers}
+                className="sliding-bar flex items-center gap-1 sm:gap-1.5 overflow-x-auto scroll-smooth py-0.5 px-0.5 cursor-grab active:cursor-grabbing"
+              >
+                {CATEGORIES.map((cat) => {
+                  const isActive = filters.category === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => onChange({ category: cat.id })}
+                      className={`flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold whitespace-nowrap transition-all border flex-shrink-0 ${
+                        isActive
+                          ? 'bg-sumi text-wabi border-sumi shadow-sm'
+                          : 'bg-wabi-100 text-sumi border-sumi/25 hover:border-sumi hover:bg-wabi-200'
+                      }`}
+                    >
+                      {cat.icon}
+                      <span className="tracking-wide">{cat.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {canScrollCatRight && (
+                <button
+                  onClick={() => slideCategories(150)}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-5 h-5 rounded-full bg-wabi border border-sumi shadow-sm flex items-center justify-center text-sumi hover:bg-wabi-200"
+                  title="Scroll right"
+                >
+                  <ChevronRight className="w-3 h-3" />
+                </button>
+              )}
             </div>
 
-            <span className="font-mono text-[10px] sm:text-xs font-black bg-wabi-200 text-sumi border border-sumi/40 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm whitespace-nowrap">
-              {totalFound} SPOTS
-            </span>
-          </div>
-        </div>
+            {/* Quick Filters Toggle Button */}
+            <button
+              onClick={() => setIsFilterDrawerOpen((prev) => !prev)}
+              className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 active:scale-95 ${
+                isFilterDrawerOpen || activeFilterCount > 0
+                  ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
+                  : 'bg-wabi-100 text-sumi border-sumi/30 hover:bg-white hover:border-sumi'
+              }`}
+              title="Filter by Budget, Tier & Distance"
+            >
+              <SlidersHorizontal className="w-3.5 h-3.5" />
+              <span className="hidden xs:inline">FILTERS</span>
+              {activeFilterCount > 0 && (
+                <span className="w-4 h-4 rounded-full bg-sumi text-wabi text-[10px] flex items-center justify-center font-mono font-bold">
+                  {activeFilterCount}
+                </span>
+              )}
+              <ChevronDown
+                className={`w-3 h-3 transition-transform ${isFilterDrawerOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
 
-        {/* Working Sliding Bar 2: Refined, Muted Neutral Track for Tiers */}
-        <div 
-          onClick={handleTierTrackClick}
-          className="w-full pt-1 pb-0.5 cursor-pointer group"
-          title="Click or drag to slide tiers"
-        >
-          <div className="w-full h-1 bg-sumi/10 rounded-full overflow-hidden relative transition-colors group-hover:bg-sumi/15">
-            <div
-              className="h-full bg-sumi/45 hover:bg-sumi/70 rounded-full transition-transform duration-100 ease-out"
-              style={{
-                width: '40%',
-                transform: `translateX(${tierScrollProgress * 150}%)`,
+            {/* Spot Counter Pill */}
+            <div className="hidden md:flex items-center px-2 py-1 rounded-xl bg-wabi-200 border border-sumi/30 text-[10px] font-mono font-bold text-sumi whitespace-nowrap flex-shrink-0">
+              ● {totalFound}
+            </div>
+
+            {/* Minimize to Pill Button */}
+            <button
+              onClick={() => {
+                setIsMinimized(true);
+                setIsFilterDrawerOpen(false);
               }}
-            />
+              className="p-1 rounded-xl text-slate-500 hover:text-sumi hover:bg-wabi-200 transition-colors flex-shrink-0"
+              title="Minimize filter bar to see full map"
+            >
+              <ChevronUp className="w-3.5 h-3.5" />
+            </button>
           </div>
-        </div>
-      </div>
 
-      {/* 3. Budget & Pocket-Friendly Strip */}
-      <div className="border-t border-sumi/15 pt-2 flex items-center justify-between gap-1.5 text-xs font-mono overflow-x-auto sliding-bar pb-0.5">
-        <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
-          <span className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase flex items-center gap-1 mr-1">
-            <Coins className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
-            <span className="hidden xs:inline">BUDGET:</span>
-          </span>
-          {BUDGET_TIERS.map((tier) => {
-            const isActive = filters.budget === tier.id;
-            return (
-              <button
-                key={tier.id}
-                onClick={() => onChange({ budget: tier.id })}
-                className={`px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold whitespace-nowrap border transition-all flex-shrink-0 ${
-                  isActive
-                    ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
-                    : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
-                }`}
-                title={tier.desc}
-              >
-                {tier.label}
-              </button>
-            );
-          })}
+          {/* 3. Expandable Dropdown Tray (Only opens when user clicks FILTERS) */}
+          {isFilterDrawerOpen && (
+            <div className="pt-2 border-t border-sumi/20 space-y-2 animate-in fade-in duration-100">
+              {/* Row A: Budget / Price Filter */}
+              <div className="flex items-center gap-1.5 text-xs font-mono overflow-x-auto sliding-bar pb-0.5">
+                <span className="text-[10px] font-bold text-slate-600 uppercase flex items-center gap-1 mr-1 flex-shrink-0">
+                  <Coins className="w-3 h-3 text-amber-600" />
+                  <span>BUDGET:</span>
+                </span>
+                {BUDGET_TIERS.map((tier) => {
+                  const isActive = filters.budget === tier.id;
+                  return (
+                    <button
+                      key={tier.id}
+                      onClick={() => onChange({ budget: tier.id })}
+                      className={`px-2 py-0.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-mono font-bold whitespace-nowrap border transition-all flex-shrink-0 ${
+                        isActive
+                          ? 'bg-amber-400 text-sumi border-sumi shadow-sm font-black'
+                          : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
+                      }`}
+                      title={tier.desc}
+                    >
+                      {tier.label}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Row B: Tier & Distance Radius */}
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-xs font-mono pt-1.5 border-t border-sumi/10">
+                {/* Tiers */}
+                <div className="flex items-center gap-1 flex-shrink-0">
+                  <span className="text-[10px] font-bold text-slate-600 uppercase mr-1">TIER:</span>
+                  {SPOT_TIERS.map((tier) => (
+                    <button
+                      key={tier.id}
+                      onClick={() => onChange({ spotTier: tier.id })}
+                      className={`px-2 py-0.5 rounded-lg text-[10px] font-mono font-bold whitespace-nowrap border transition-colors flex-shrink-0 ${
+                        filters.spotTier === tier.id
+                          ? 'bg-sumi text-wabi border-sumi shadow-sm'
+                          : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
+                      }`}
+                    >
+                      {tier.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Radius Filter & Reset All */}
+                <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
+                  <div className="flex items-center gap-1">
+                    <span className="text-[10px] font-bold text-slate-600 uppercase">RADIUS:</span>
+                    {RADII.map((r) => (
+                      <button
+                        key={r}
+                        onClick={() => onChange({ radiusKm: r })}
+                        className={`px-1.5 py-0.5 rounded font-mono text-[10px] font-bold border transition-colors flex-shrink-0 ${
+                          filters.radiusKm === r
+                            ? 'bg-vermilion text-white border-sumi shadow-sm'
+                            : 'bg-wabi-100 text-slate-700 border-sumi/20 hover:border-sumi hover:bg-wabi-200'
+                        }`}
+                      >
+                        {r >= 120 ? 'All' : `${r}km`}
+                      </button>
+                    ))}
+                  </div>
+
+                  {activeFilterCount > 0 && (
+                    <button
+                      onClick={() => onChange({ budget: 'all', spotTier: 'all', radiusKm: 120 })}
+                      className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-bold text-vermilion hover:bg-vermilion/10 border border-vermilion/30 transition-colors"
+                      title="Reset all filters to default"
+                    >
+                      <RotateCcw className="w-2.5 h-2.5" />
+                      <span>RESET</span>
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }
