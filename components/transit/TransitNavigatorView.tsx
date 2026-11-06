@@ -145,19 +145,15 @@ const LINE_TABS: LineTabConfig[] = [
 ];
 
 interface DesiCardTheme {
-  type: 'bar' | 'pocket-cafe' | 'bougie-cafe' | 'beach' | 'heritage' | 'default';
-  cardBg: string;
-  innerBg: string;
-  motifClass: string;
+  type: 'bhukkad' | 'filmi' | 'padhaku' | 'majnu' | 'nature';
+  posterBg: string;
   stampIcon: string;
   tagLabel: string;
-  accentBg: string;
-  sloganText: string;
-  punchline: string;
-  tagPillColor: string;
-  titleColor: string;
-  marathiSlogan?: string;
+  headerText: string;
+  personaQuote: string;
+  marathiTitle: string;
   subBadgeText: string;
+  accentPillBg: string;
 }
 
 function getDesiCardTheme(place: Place): DesiCardTheme {
@@ -165,119 +161,78 @@ function getDesiCardTheme(place: Place): DesiCardTheme {
   const nameLower = (place.name || '').toLowerCase();
   const descLower = (place.description || '').toLowerCase();
   const cost = place.approx_cost || '';
-  const isBudget = place.budget_tier === 'pocket_friendly' || place.budget_tier === 'free' || cost.includes('Free') || cost.includes('100') || cost.includes('150') || cost.includes('200') || cost.includes('300') || cost.includes('400');
-  const isSplurge = place.budget_tier === 'splurge' || cost.includes('800') || cost.includes('1,') || cost.includes('1200') || cost.includes('1500');
 
-  // 1. Bar / Pub / Club / Nightspot -> Funky & Lively
-  if (cat === 'bars' || nameLower.includes('bar') || nameLower.includes('pub') || nameLower.includes('lounge') || nameLower.includes('beer') || nameLower.includes('tavern')) {
+  // 1. FILMI / BARS / PUBS / CLUBS / NIGHTSPOTS (Cinema Crimson Red)
+  if (cat === 'bars' || nameLower.includes('bar') || nameLower.includes('pub') || nameLower.includes('lounge') || nameLower.includes('beer') || nameLower.includes('tavern') || nameLower.includes('cinema') || nameLower.includes('theatre')) {
     return {
-      type: 'bar',
-      cardBg: 'bg-[#ff2a5f]',
-      innerBg: 'bg-[#e01a4f]',
-      motifClass: '',
-      stampIcon: '🍸',
-      tagLabel: 'FUNKY KATTA & BEER',
-      accentBg: 'bg-[#ffe600] text-[#141518]',
-      sloganText: '⚡ LIVE CHATS • CHILLED PINTS • GOOD VIBES ⚡',
-      punchline: '"HIGHLY OBSESSED WITH ICE-COLD PINTS & ROARING CHATS"',
-      tagPillColor: 'bg-[#ffe600] text-[#141518]',
-      titleColor: 'text-white',
-      marathiSlogan: 'खिशाला परवडणारी बिअर आणि चखणा अड्डा',
-      subBadgeText: 'CHEAP PINTS • SPICY BITES',
+      type: 'filmi',
+      posterBg: 'bg-[#cb3438]',
+      stampIcon: '🎬',
+      tagLabel: 'CINEMA & BEER',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON HIGHLY OBSESSED WITH CHILLED PINTS & ROARING CHATS',
+      marathiTitle: 'गुलजार मैफल • अस्सल अड्डा',
+      subBadgeText: 'CHILLED PINTS • SPICY BITES',
+      accentPillBg: 'bg-[#f2b93b] text-[#141518]',
     };
   }
 
-  // 2. Beach / Coastal Promontory / Sea Horizon -> Sunset Sea Waves
-  if (cat === 'waterfront' || cat === 'viewpoints' || nameLower.includes('beach') || nameLower.includes('chowpatty') || nameLower.includes('sea') || nameLower.includes('promenade') || nameLower.includes('bandstand') || nameLower.includes('marine') || nameLower.includes('coast') || descLower.includes('arabian sea') || descLower.includes('coastline') || descLower.includes('sunset')) {
+  // 2. MAJNU / WATERFRONT / BEACHES / SEA PROMENADES (Strawberry Magenta)
+  if (cat === 'waterfront' || cat === 'viewpoints' || nameLower.includes('beach') || nameLower.includes('chowpatty') || nameLower.includes('sea') || nameLower.includes('promenade') || nameLower.includes('bandstand') || nameLower.includes('marine') || nameLower.includes('coast') || nameLower.includes('talao') || descLower.includes('arabian sea') || descLower.includes('sunset')) {
     return {
-      type: 'beach',
-      cardBg: 'bg-[#0077b6]',
-      innerBg: 'bg-[#023e8a]',
-      motifClass: 'sea-waves-pattern',
-      stampIcon: '🌅',
-      tagLabel: 'ARABIAN SEA SUNSET',
-      accentBg: 'bg-[#ffb703] text-[#141518]',
-      sloganText: '🌊 SALTY BREEZE & ART DECO HORIZON 🌊',
-      punchline: '"A PERSON WHO MEASURES TIME ONLY BY SUNSET WAVES"',
-      tagPillColor: 'bg-[#ffb703] text-[#141518]',
-      titleColor: 'text-[#90e0ef]',
-      marathiSlogan: 'अरबी समुद्राच्या लाटा आणि संध्याकाळचा वारा',
-      subBadgeText: 'SUNSET PEAK • OCEAN BREEZE',
+      type: 'majnu',
+      posterBg: 'bg-[#d23a5d]',
+      stampIcon: '💘',
+      tagLabel: 'ARABIAN SEA',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO KEEPS FALLING IN LOVE WITH SUNSETS BY THE ARABIAN SEA',
+      marathiTitle: 'अरबी समुद्राची लाट • संध्याकाळचा वारा',
+      subBadgeText: 'SALTY BREEZE & WAVES',
+      accentPillBg: 'bg-[#ffb4c8] text-[#141518]',
     };
   }
 
-  // 3. Bougie / Specialty Roastery Cafe
-  if (cat === 'cafes' && (isSplurge || nameLower.includes('roastery') || nameLower.includes('specialty') || nameLower.includes('mockingbird') || nameLower.includes('subko') || nameLower.includes('coffee co'))) {
+  // 3. PADHAKU / BOOKS / HERITAGE ARCHITECTURE / COLONIAL WALKS (Vintage Peacock Teal)
+  if (cat === 'books' || cat === 'heritage' || cat === 'walks' || cat === 'culture' || nameLower.includes('khana') || nameLower.includes('library') || nameLower.includes('museum') || nameLower.includes('walk') || nameLower.includes('heritage') || nameLower.includes('david sassoon')) {
     return {
-      type: 'bougie-cafe',
-      cardBg: 'bg-[#1d3557]',
-      innerBg: 'bg-[#14213d]',
-      motifClass: 'wavy-stripes',
-      stampIcon: '✨',
-      tagLabel: 'ARTISANAL ROASTERY • ₹₹₹',
-      accentBg: 'bg-[#a8dadc] text-[#141518]',
-      sloganText: '★ SINGLE ORIGIN • POUR-OVERS • AESTHETIC ★',
-      punchline: '"A SANCTUARY FOR THOSE WHO SIP SPECIALTY BREWS LIKE WINE"',
-      tagPillColor: 'bg-[#a8dadc] text-[#141518]',
-      titleColor: 'text-[#a8dadc]',
-      marathiSlogan: 'हस्तनिर्मित विशेष कॉफी आणि आरामदायी वातावरण',
-      subBadgeText: 'SPECIALTY POUR-OVER & SOURDOUGH',
+      type: 'padhaku',
+      posterBg: 'bg-[#217992]',
+      stampIcon: '📖',
+      tagLabel: 'HISTORIC REFUGE',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHOSE FAVOURITE PAST TIME IS GETTING LOST IN BOOKS & OLD LANES',
+      marathiTitle: 'पुस्तकांचे जग • शांत वाचनालय',
+      subBadgeText: 'PAGES & QUIET CORNERS',
+      accentPillBg: 'bg-[#80ed99] text-[#141518]',
     };
   }
 
-  // 4. Pocket-Friendly Cafe / Irani / Cutting Chai / Street Food
-  if (cat === 'cafes' || cat === 'bazaars' || nameLower.includes('chai') || nameLower.includes('irani') || nameLower.includes('sandwich') || nameLower.includes('milkshake') || isBudget) {
+  // 4. NATURE / BOTANICAL GLADES / CLIFFS / TREKS / FORTS (Forest Pine Green)
+  if (cat === 'gardens' || cat === 'treks' || cat === 'forts' || cat === 'spiritual' || nameLower.includes('caves') || nameLower.includes('hill') || nameLower.includes('glade') || nameLower.includes('garden') || nameLower.includes('park') || nameLower.includes('fort') || nameLower.includes('tank')) {
     return {
-      type: 'pocket-cafe',
-      cardBg: 'bg-[#f48c06]',
-      innerBg: 'bg-[#e85d04]',
-      motifClass: 'retro-dots',
-      stampIcon: '☕',
-      tagLabel: 'POCKET-FRIENDLY KATTA',
-      accentBg: 'bg-[#ffd166] text-[#141518]',
-      sloganText: '★ CUTTING CHAI & FRESH BUN MASKA ★',
-      punchline: '"NOTHING BEATS DIPPING BUN MASKA INTO SWEET CUTTING CHAI"',
-      tagPillColor: 'bg-[#ffd166] text-[#141518]',
-      titleColor: 'text-[#ffd166]',
-      marathiSlogan: 'अस्सल मुंबई चहा कट्टा आणि नाश्ता',
-      subBadgeText: 'STUDENT WALLET HERO • ₹',
+      type: 'nature',
+      posterBg: 'bg-[#246b44]',
+      stampIcon: '🌿',
+      tagLabel: 'GREEN SANCTUARY',
+      headerText: 'MADE IN MUMBAI',
+      personaQuote: 'A PERSON WHO RUNS AWAY TO BREATHE UNDER OLD BANYAN TREES',
+      marathiTitle: 'हिरवी शांतता • निसर्ग कट्टा',
+      subBadgeText: 'SECRET GREEN RETREAT',
+      accentPillBg: 'bg-[#a3e635] text-[#141518]',
     };
   }
 
-  // 5. Ancient / Heritage / Spiritual / Nature Sanctuary
-  if (cat === 'spiritual' || cat === 'gardens' || cat === 'treks' || cat === 'heritage' || cat === 'books' || cat === 'forts' || nameLower.includes('tank') || nameLower.includes('temple') || nameLower.includes('khana') || nameLower.includes('caves') || nameLower.includes('fort') || nameLower.includes('hill')) {
-    return {
-      type: 'heritage',
-      cardBg: 'bg-[#2d6a4f]',
-      innerBg: 'bg-[#1b4332]',
-      motifClass: 'retro-dots',
-      stampIcon: '🪨',
-      tagLabel: 'ANCIENT BOMBAY REFUGE',
-      accentBg: 'bg-[#d8f3dc] text-[#141518]',
-      sloganText: '★ SHADED REFLECTION & TIMELESS SERENITY ★',
-      punchline: '"A SANCTUARY FOR THOSE LONGING FOR PEACE FROM CITY HORNS"',
-      tagPillColor: 'bg-[#d8f3dc] text-[#141518]',
-      titleColor: 'text-[#d8f3dc]',
-      marathiSlogan: 'शांतता, प्राचीन वारसा आणि निवांत जागा',
-      subBadgeText: 'TIMELESS HERITAGE • SILENT OASIS',
-    };
-  }
-
-  // 6. Default / Hidden Gem Sanctuary
+  // 5. BHUKKAD / CAFES / IRANI CHAI / KATTA / STREET FOOD (Terracotta Orange)
   return {
-    type: 'default',
-    cardBg: 'bg-[#b0413e]',
-    innerBg: 'bg-[#96302e]',
-    motifClass: 'retro-dots',
-    stampIcon: '📍',
-    tagLabel: 'KHOJ VERIFIED SECRET',
-    accentBg: 'bg-[#ffd166] text-[#141518]',
-    sloganText: '★ BOMBAY SUBURBAN SANCTUARY ★',
-    punchline: '"OFF THE BEATEN PATH • AUTHENTIC LOCALS ONLY"',
-    tagPillColor: 'bg-[#ffd166] text-[#141518]',
-    titleColor: 'text-[#ffd166]',
-    marathiSlogan: 'मुंबईतील लपलेली सुंदर जागा',
-    subBadgeText: 'VERIFIED LOCAL SANCTUARY',
+    type: 'bhukkad',
+    posterBg: 'bg-[#d85f36]',
+    stampIcon: '☕',
+    tagLabel: 'CHAI & KATTA',
+    headerText: 'MADE IN MUMBAI',
+    personaQuote: 'A PERSON WHO CAN KEEP EATING BUN MASKA & DRINKING CHAI ALL DAY',
+    marathiTitle: 'भुकड कट्टा • चहा आणि बन मस्का',
+    subBadgeText: 'ASLI CHAI & CHAKHNA ADDA',
+    accentPillBg: 'bg-[#f2b93b] text-[#141518]',
   };
 }
 
@@ -1089,92 +1044,177 @@ export default function TransitNavigatorView({
               No spots mapped directly within 3.5 km of {activeStation.name}. Try picking Bandra, Charni Road, Churchgate, or Dadar!
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sanctuariesAtStation.map((place: any) => {
                 const theme = getDesiCardTheme(place);
                 return (
                   <div
                     key={place.id}
-                    className={`${theme.cardBg} border-4 border-sumi rounded-3xl p-3 shadow-matchbox-lg relative flex flex-col justify-between overflow-hidden select-none`}
+                    className="bg-[#faf5eb] border-[3px] border-[#141518] rounded-2xl p-2.5 sm:p-3 shadow-matchbox hover:-translate-y-1 transition-transform relative select-none flex flex-col justify-between"
                   >
-                    {/* Inner Poster Canvas */}
-                    <div className={`border-2 border-sumi rounded-2xl p-3.5 ${theme.innerBg} relative overflow-hidden flex flex-col justify-between h-full`}>
+                    {/* Inner Colored Poster Canvas */}
+                    <div className={`${theme.posterBg} border-2 border-[#141518] rounded-xl overflow-hidden flex flex-col justify-between h-full relative`}>
                       
-                      {/* Motif Texture Pattern */}
-                      <div className={`absolute inset-0 ${theme.motifClass} opacity-30 pointer-events-none`} />
-
-                      {/* Top Arch Strip: Stamp + Walking Time */}
-                      <div className="relative z-10 flex items-center justify-between border-b-2 border-sumi pb-2 mb-2 mt-0.5">
-                        <div className="flex items-center gap-1.5 min-w-0">
-                          <span className={`w-7 h-7 rounded-full border-2 border-sumi ${theme.accentBg.split(' ')[0]} flex items-center justify-center text-sm shadow-ticket flex-shrink-0`}>
+                      {/* Top Header: Circular Stamp (Left) + MADE IN MUMBAI + Circular Stamp (Right) */}
+                      <div className="relative z-10 px-3 pt-2.5 pb-1.5 flex items-center justify-between border-b border-[#141518]/25 bg-black/10">
+                        {/* Left Stamp */}
+                        <div className="w-7 h-7 rounded-full border border-[#141518] flex items-center justify-center bg-[#faf5eb] shadow-sm flex-shrink-0">
+                          <div className="w-5.5 h-5.5 rounded-full border border-[#141518]/40 flex items-center justify-center text-xs">
                             {theme.stampIcon}
-                          </span>
-                          <span className={`text-[10px] font-mono font-black uppercase tracking-widest ${theme.tagPillColor} px-2 py-0.5 rounded-full border border-sumi shadow-ticket truncate max-w-[155px]`}>
-                            {theme.tagLabel}
+                          </div>
+                        </div>
+
+                        {/* Top Arched Header Tag */}
+                        <div className="text-center flex-1 px-1">
+                          <span className="inline-block text-[10px] font-mono font-black tracking-[0.22em] text-[#141518] uppercase bg-[#faf5eb] px-2.5 py-0.5 rounded-full border border-[#141518] shadow-sm">
+                            {theme.headerText}
                           </span>
                         </div>
-                        <div className="text-[11px] font-mono font-bold text-white bg-sumi px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm flex-shrink-0">
-                          <span>🚶 {place.walk_minutes} MIN</span>
-                          <span className="text-amber-300 text-[10px]">({place.distance_to_station}m)</span>
-                        </div>
-                      </div>
 
-                      {/* Arched Subtitle Tag */}
-                      <div className="text-center relative z-10 my-0.5">
-                        <span className="text-[10px] sm:text-[11px] font-mono font-black tracking-widest text-white/95 uppercase text-shadow-3d truncate block">
-                          {theme.sloganText}
-                        </span>
-                      </div>
-
-                      {/* Center Marquee Box */}
-                      <div className="relative z-10 my-2">
-                        <div className="bg-sumi text-white border-2 border-sumi rounded-2xl p-3 text-center shadow-matchbox relative">
-                          {theme.marathiSlogan && (
-                            <div className="text-[10px] font-marathi font-bold text-amber-300 tracking-wide uppercase truncate">
-                              {theme.marathiSlogan}
-                            </div>
-                          )}
-                          <h4 className={`font-sans font-black text-xl sm:text-2xl ${theme.titleColor} tracking-tight uppercase leading-tight mt-1 line-clamp-2`}>
-                            {place.name}
-                          </h4>
-                          <div className={`inline-block ${theme.accentBg} font-mono text-[9px] font-black uppercase px-2 py-0.5 rounded-md border border-sumi mt-1.5 shadow-sm`}>
-                            {theme.subBadgeText}
+                        {/* Right Stamp */}
+                        <div className="w-7 h-7 rounded-full border border-[#141518] flex items-center justify-center bg-[#faf5eb] shadow-sm flex-shrink-0">
+                          <div className="w-5.5 h-5.5 rounded-full border border-[#141518]/40 flex items-center justify-center text-xs">
+                            {theme.stampIcon}
                           </div>
                         </div>
                       </div>
 
-                      {/* Description */}
-                      <p className="text-xs text-white/95 font-sans leading-snug my-2 relative z-10 font-medium px-1 line-clamp-2">
-                        {place.description}
-                      </p>
+                      {/* Center Iconic Graphic & Place Name (Archetype Specific) */}
+                      <div className="relative z-10 my-2 px-2.5">
+                        {/* Filmi: Rising Sunburst + Arched Cinema Marquee */}
+                        {theme.type === 'filmi' && (
+                          <div className="flex flex-col items-center">
+                            <div className="w-28 h-6 overflow-hidden flex items-end justify-center -mb-1">
+                              <svg viewBox="0 0 100 40" className="w-full h-full fill-current text-[#f2b93b]">
+                                <circle cx="50" cy="40" r="16" />
+                                <polygon points="50,40 46,6 54,6" />
+                                <polygon points="50,40 28,12 34,8" />
+                                <polygon points="50,40 66,8 72,12" />
+                                <polygon points="50,40 12,24 18,19" />
+                                <polygon points="50,40 82,19 88,24" />
+                              </svg>
+                            </div>
+                            <div className="w-full bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                              <div className="text-[11px] font-marathi font-bold text-[#f2b93b] tracking-wide">
+                                {theme.marathiTitle}
+                              </div>
+                              <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                                {place.name}
+                              </h4>
+                              <div className="text-[9px] font-mono font-black uppercase text-[#f2b93b] mt-1 tracking-wider">
+                                {theme.subBadgeText}
+                              </div>
+                            </div>
+                          </div>
+                        )}
 
-                      {/* Attribute Pills */}
-                      <div className="flex flex-wrap items-center gap-1.5 my-2 relative z-10 font-mono text-[10px]">
+                        {/* Bhukkad: Classic Curved Barrel Marquee */}
+                        {theme.type === 'bhukkad' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="text-[11px] font-marathi font-bold text-[#f2b93b] tracking-wide">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#faf5eb]/90 mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Padhaku: Ribbon with Double Accent Tracks */}
+                        {theme.type === 'padhaku' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="text-[11px] font-marathi font-bold text-[#80ed99] tracking-wide">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="flex flex-col items-center gap-0.5 mt-1">
+                              <div className="w-24 h-[2px] bg-[#faf5eb]/80" />
+                              <div className="w-16 h-[2px] bg-[#80ed99]" />
+                            </div>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#80ed99] mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Majnu: Ocean Waves Flourish Crest */}
+                        {theme.type === 'majnu' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#ffb4c8]">
+                              <span>〰️</span>
+                              <span className="text-sm">🌊</span>
+                              <span>〰️</span>
+                            </div>
+                            <div className="text-[11px] font-marathi font-bold text-[#ffb4c8] tracking-wide mt-0.5">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#ffb4c8] mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Nature: Botanical Leaf Crest */}
+                        {theme.type === 'nature' && (
+                          <div className="bg-[#141518] text-white border-2 border-[#faf5eb] rounded-xl px-3 py-2.5 text-center shadow-[3px_3px_0px_rgba(0,0,0,0.35)]">
+                            <div className="flex items-center justify-center gap-1.5 text-xs text-[#a3e635]">
+                              <span>🌿</span>
+                              <span className="text-sm">⛰️</span>
+                              <span>🌿</span>
+                            </div>
+                            <div className="text-[11px] font-marathi font-bold text-[#a3e635] tracking-wide mt-0.5">
+                              {theme.marathiTitle}
+                            </div>
+                            <h4 className="font-sans font-black text-xl sm:text-2xl text-[#fefcf3] uppercase tracking-tight leading-tight mt-0.5 line-clamp-2">
+                              {place.name}
+                            </h4>
+                            <div className="text-[9px] font-mono font-black uppercase text-[#a3e635] mt-1 tracking-wider">
+                              {theme.subBadgeText}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Practical Info Pill: Walking Time + Approx Cost */}
+                      <div className="relative z-10 px-3 py-1 flex items-center justify-between text-[11px] font-mono font-bold text-white">
+                        <span className="bg-[#141518] text-[#f2b93b] px-2 py-0.5 rounded border border-white/20">
+                          🚶 {place.walk_minutes} MINS ({place.distance_to_station}m)
+                        </span>
                         {place.approx_cost && (
-                          <span className="bg-white text-sumi font-bold px-2 py-0.5 rounded-md border border-sumi shadow-ticket">
+                          <span className="bg-white text-[#141518] px-2 py-0.5 rounded border border-[#141518] shadow-sm">
                             🪙 {place.approx_cost}
                           </span>
                         )}
-                        <span className="bg-sumi text-white font-bold px-2 py-0.5 rounded-md border border-white/20">
-                          ⚡ {place.spot_tier === 'hidden_gem' ? 'SECRET SANCTUARY' : place.spot_tier === 'underrated' ? 'UNDERRATED SPOT' : 'ICONIC HERITAGE'}
-                        </span>
                       </div>
 
-                      {/* Bottom Matchbox Ticket Strip Footer */}
-                      <div className={`relative z-10 mt-2 ${theme.accentBg.split(' ')[0]} border-2 border-sumi rounded-xl p-2.5 text-sumi shadow-matchbox`}>
-                        <div className="text-[9px] font-mono font-black uppercase tracking-wider text-slate-900 text-center pb-1 border-b border-sumi/25 truncate">
-                          {theme.punchline}
+                      {/* Evocative Description Snippet */}
+                      <p className="relative z-10 px-3 py-1.5 text-xs text-white/95 font-sans line-clamp-2 leading-relaxed font-medium">
+                        {place.description}
+                      </p>
+
+                      {/* Signature Bright Golden-Yellow Persona Footer Strip */}
+                      <div className="relative z-10 bg-[#f2b93b] border-t-2 border-[#141518] p-2.5 text-[#141518]">
+                        <div className="text-[10px] font-mono font-black uppercase tracking-wider text-center text-[#141518] leading-tight pb-1.5 border-b border-[#141518]/30">
+                          &ldquo;{theme.personaQuote}&rdquo;
                         </div>
-                        <div className="flex items-center justify-between pt-1.5 text-xs font-mono font-bold">
+                        <div className="flex items-center justify-between pt-2 text-xs font-mono font-black">
                           <button
                             onClick={() => onSelectPlace(place)}
-                            className="hover:underline flex items-center gap-1 font-black text-sumi"
+                            className="hover:underline flex items-center gap-1 text-[#141518]"
                           >
                             📖 FIELD NOTES
                           </button>
                           <button
                             onClick={() => onViewOnMap(place, activeStation)}
-                            className="bg-sumi hover:bg-vermilion text-wabi px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 font-black shadow-sm"
+                            className="bg-[#141518] hover:bg-[#ff3e18] text-white px-3 py-1 rounded-lg transition-colors flex items-center gap-1 shadow-sm"
                           >
                             <span>VIEW ROUTE</span>
                             <span>➔</span>
