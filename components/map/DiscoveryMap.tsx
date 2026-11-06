@@ -468,7 +468,7 @@ export default function DiscoveryMap({
       const transitProfile = getSanctuaryTransitProfile(selectedPlace.latitude, selectedPlace.longitude);
       const stn = transitProfile.nearestRailway.station;
 
-      // Dashed commuter connector line
+      // Dashed commuter connector line between destination and nearest station
       const lineCoords: [number, number][] = [
         [selectedPlace.latitude, selectedPlace.longitude],
         [stn.latitude, stn.longitude],
@@ -481,37 +481,6 @@ export default function DiscoveryMap({
         className: 'commute-route-connector',
         opacity: 0.9,
       }).addTo(routeLayer);
-
-      // Midpoint interactive commute badge
-      const midLat = (selectedPlace.latitude + stn.latitude) / 2;
-      const midLng = (selectedPlace.longitude + stn.longitude) / 2;
-
-      const badgeHtml = `
-        <div class="commute-mid-badge flex items-center gap-1.5 px-3 py-1 bg-sumi text-wabi border-2 border-sumi rounded-xl shadow-riso text-[10px] font-mono font-bold whitespace-nowrap cursor-pointer hover:bg-vermilion hover:scale-105 transition-all select-none -translate-x-1/2 -translate-y-1/2">
-          <span class="text-amber-300">🚶 ${transitProfile.nearestRailway.walkMinutes} MINS (${transitProfile.nearestRailway.distanceMeters}m)</span>
-          <span class="text-slate-400">·</span>
-          <span>🚆 ${stn.name}</span>
-          <span class="text-vermilion bg-white/20 px-1 py-0.2 rounded text-[9px]">➔</span>
-        </div>
-      `;
-
-      const badgeIcon = L.divIcon({
-        className: 'commute-badge-div',
-        html: badgeHtml,
-        iconSize: [0, 0],
-        iconAnchor: [0, 0],
-      });
-
-      const badgeMarker = L.marker([midLat, midLng], {
-        icon: badgeIcon,
-        zIndexOffset: 800,
-      });
-
-      badgeMarker.on('click', () => {
-        onOpenTransitGuideRef.current?.(stn, selectedPlace);
-      });
-
-      routeLayer.addLayer(badgeMarker);
     } catch (err) {
       console.warn('Error drawing transit connector route:', err);
     }
