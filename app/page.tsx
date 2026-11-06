@@ -231,14 +231,16 @@ export default function HomePage() {
       <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden' : 'flex-1'}`}>
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
-            {/* Docked Map Filter Island */}
-            <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-6 sm:right-auto sm:max-w-2xl z-20 pointer-events-auto">
-              <FilterBar
-                filters={filters}
-                onChange={handleFilterChange}
-                totalFound={filteredPlaces.length}
-              />
-            </div>
+            {/* Docked Map Filter Island (Visible when browsing all spots; tucks away when a destination is selected) */}
+            {!selectedPlace && (
+              <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-6 sm:right-auto sm:max-w-2xl z-20 pointer-events-auto animate-in fade-in duration-200">
+                <FilterBar
+                  filters={filters}
+                  onChange={handleFilterChange}
+                  totalFound={filteredPlaces.length}
+                />
+              </div>
+            )}
 
             {/* Map Canvas */}
             <DynamicMap

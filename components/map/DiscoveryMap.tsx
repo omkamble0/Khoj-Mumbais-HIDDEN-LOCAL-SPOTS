@@ -100,7 +100,7 @@ export default function DiscoveryMap({
     onToggleTransitOverlay?.(nextVal);
   };
 
-  // Viewport Culling: only renders markers within map bounds (+25% cushion)
+  // Viewport Culling & Isolated Destination Mode
   const syncVisibleMarkers = () => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
@@ -111,8 +111,21 @@ export default function DiscoveryMap({
     const currentSelectedId = selectedPlaceRef.current?.id;
 
     pool.forEach((marker, placeId) => {
+      // 🎯 ISOLATED DESTINATION MODE:
+      // When a sanctuary destination is selected, HIDE ALL OTHER SPOTS from the map!
+      // Only keep the selected destination marker visible until deselected.
+      if (currentSelectedId) {
+        if (placeId === currentSelectedId) {
+          if (!layer.hasLayer(marker)) layer.addLayer(marker);
+        } else {
+          if (layer.hasLayer(marker)) layer.removeLayer(marker);
+        }
+        return;
+      }
+
+      // Normal mode: viewport spatial culling
       const latLng = marker.getLatLng();
-      const isVisible = bounds.contains(latLng) || placeId === currentSelectedId;
+      const isVisible = bounds.contains(latLng);
       const isAttached = layer.hasLayer(marker);
 
       if (isVisible && !isAttached) {
@@ -289,7 +302,23 @@ export default function DiscoveryMap({
       });
 
       // 2. Draw Station Badges & Interchanges
+      // In Focused Destination Mode, only show connected nearest stations to prevent visual clutter
+      const relevantStationIds = selectedPlace
+        ? (() => {
+            const prof = getSanctuaryTransitProfile(selectedPlace.latitude, selectedPlace.longitude);
+            const ids = new Set<string>([prof.nearestRailway.station.id]);
+            if (prof.nearestMetro) ids.add(prof.nearestMetro.station.id);
+            if (selectedTransitStation) ids.add(selectedTransitStation.id);
+            return ids;
+          })()
+        : null;
+
       TRANSIT_STATIONS.forEach((station) => {
+        // If a destination is selected, hide unrelated stations
+        if (relevantStationIds && !relevantStationIds.has(station.id)) {
+          return;
+        }
+
         const isSelected = selectedTransitStation?.id === station.id;
         const isMetro = station.lines.some((l) => l.startsWith('metro'));
         const isWR = station.lines.includes('western');
@@ -368,7 +397,7 @@ export default function DiscoveryMap({
     } catch (err) {
       console.warn('Error rendering transit overlay:', err);
     }
-  }, [internalTransitOverlay, selectedTransitStation]);
+  }, [internalTransitOverlay, selectedTransitStation, selectedPlace]);
 
   // 🧭 Multi-Leg Commuter Route Tracing (when activeCommutePlan is set) OR direct sanctuary-to-station link
   useEffect(() => {
@@ -578,7 +607,9 @@ export default function DiscoveryMap({
     const prevId = prevSelectedIdRef.current;
     const currentId = selectedPlace?.id || null;
     selectedPlaceRef.current = selectedPlace;
-    if (prevId === currentId) return;
+
+    // Immediately trigger syncVisibleMarkers to isolate or restore all sanctuary pins
+    syncVisibleMarkersRef.current();
 
     if (prevId) {
       const prevEl = document.getElementById(`pin-${prevId}`);
@@ -603,17 +634,40 @@ export default function DiscoveryMap({
     prevSelectedIdRef.current = currentId;
   }, [selectedPlace]);
 
-  // Pan smoothly when selectedPlace changes
+  // Smoothly center & fit bounds when selectedPlace changes
   useEffect(() => {
     const map = mapInstanceRef.current;
-    if (!map || !selectedPlace) return;
+    if (!map) return;
+
+    if (!selectedPlace) {
+      map.invalidateSize();
+      syncVisibleMarkersRef.current();
+      return;
+    }
+
     try {
+      const transitProfile = getSanctuaryTransitProfile(selectedPlace.latitude, selectedPlace.longitude);
+      const stn = transitProfile.nearestRailway.station;
+
+      // Fit bounds to show BOTH the destination sanctuary AND its nearest transit station
+      const bounds = L.latLngBounds([
+        [selectedPlace.latitude, selectedPlace.longitude],
+        [stn.latitude, stn.longitude],
+      ]);
+
+      const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+
+      map.fitBounds(bounds, {
+        paddingTopLeft: [70, 70],
+        paddingBottomRight: isDesktop ? [480, 70] : [70, 260],
+        maxZoom: 16,
+        animate: true,
+      });
+    } catch (err) {
       map.panTo([selectedPlace.latitude, selectedPlace.longitude], {
         animate: true,
         duration: 0.5,
       });
-    } catch (err) {
-      console.warn('Error panning map:', err);
     }
   }, [selectedPlace]);
 
@@ -656,6 +710,31 @@ export default function DiscoveryMap({
               title="Clear journey"
             >
               <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Isolated Destination Focus Badge */}
+      {selectedPlace && (
+        <div className="absolute top-4 left-4 z-20 animate-in fade-in slide-in-from-top-2">
+          <div className="flex items-center gap-2.5 bg-sumi/95 text-wabi backdrop-blur-md px-3.5 py-2 rounded-2xl border-2 border-sumi shadow-riso font-mono text-xs max-w-[90vw]">
+            <span className="w-2.5 h-2.5 rounded-full bg-vermilion animate-pulse flex-shrink-0" />
+            <div className="truncate">
+              <span className="text-slate-400 text-[10px] uppercase font-bold block">
+                FOCUSED DESTINATION
+              </span>
+              <span className="font-bold text-amber-300 text-xs sm:text-sm truncate block">
+                {selectedPlace.name}
+              </span>
+            </div>
+            <button
+              onClick={() => onSelectPlace(null as any)}
+              className="ml-1 px-2.5 py-1 rounded-xl bg-wabi/10 hover:bg-vermilion hover:text-white text-slate-300 border border-white/20 transition-all font-bold text-[11px] flex items-center gap-1 flex-shrink-0"
+              title="Show all Mumbai sanctuaries"
+            >
+              <span>SHOW ALL PLACES</span>
+              <X className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
