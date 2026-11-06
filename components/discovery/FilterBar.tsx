@@ -24,6 +24,7 @@ import {
   RotateCcw,
   X,
   Check,
+  AlertCircle,
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -99,17 +100,27 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
     return () => window.removeEventListener('resize', checkScroll);
   }, [checkScroll]);
 
-  // Click outside to dismiss filter modal
+  // Click outside to dismiss filter modal & Escape key support
   useEffect(() => {
     const handleOutside = (e: MouseEvent) => {
       if (filterIslandRef.current && !filterIslandRef.current.contains(e.target as Node)) {
         setIsModalOpen(false);
       }
     };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+
     if (isModalOpen) {
       document.addEventListener('mousedown', handleOutside);
+      document.addEventListener('keydown', handleKeyDown);
     }
-    return () => document.removeEventListener('mousedown', handleOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [isModalOpen]);
 
   const slide = (offset: number) => {
@@ -143,14 +154,14 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-mono font-bold tracking-wide transition-all border-2 flex-shrink-0 active:scale-95 ${
             isModalOpen || activeSecondaryCount > 0
               ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
-              : 'bg-white text-sumi border-sumi/40 hover:border-sumi hover:bg-wabi-100'
+              : 'bg-white text-sumi border-sumi/40 hover:border-sumi hover:bg-wabi-100 hover:-translate-y-0.5'
           }`}
           title="Open Budget, Tier & Distance filters"
         >
           <SlidersHorizontal className="w-3.5 h-3.5 text-sumi" />
           <span className="hidden sm:inline">FILTERS</span>
           {activeSecondaryCount > 0 ? (
-            <span className="px-1.5 py-0.2 rounded-full bg-sumi text-wabi text-[10px] font-mono font-black">
+            <span className="px-1.5 py-0.2 rounded-full bg-sumi text-wabi text-[10px] font-mono font-black animate-pulse">
               {activeSecondaryCount}
             </span>
           ) : (
@@ -161,13 +172,18 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {/* Vertical divider */}
         <div className="h-5 w-px bg-sumi/20 flex-shrink-0" />
 
-        {/* B. Category Carousel Track with Gradient Fades */}
-        <div className="relative flex-1 min-w-0 flex items-center">
+        {/* B. Category Carousel Track with Subtle Gradient Fades */}
+        <div className="relative flex-1 min-w-0 flex items-center overflow-hidden">
+          {/* Subtle Left Fade */}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-wabi/90 to-transparent pointer-events-none z-10" />
+          )}
+
           {/* Left Arrow Button */}
           {canScrollLeft && (
             <button
               onClick={() => slide(-180)}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-white transition-all hover:scale-105"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-white transition-all hover:scale-105 active:scale-95"
               title="Scroll left"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
@@ -189,7 +205,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all border flex-shrink-0 active:scale-95 ${
                     isActive
                       ? 'bg-sumi text-wabi border-sumi shadow-riso-sm font-black -translate-y-[1px]'
-                      : 'bg-white/80 text-sumi border-sumi/25 hover:border-sumi hover:bg-white'
+                      : 'bg-white/90 text-sumi border-sumi/25 hover:border-sumi hover:bg-white hover:-translate-y-0.5'
                   }`}
                 >
                   <span className={isActive ? 'text-vermilion' : 'text-slate-600'}>{cat.icon}</span>
@@ -199,11 +215,16 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
             })}
           </div>
 
+          {/* Subtle Right Fade */}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-wabi/90 to-transparent pointer-events-none z-10" />
+          )}
+
           {/* Right Arrow Button */}
           {canScrollRight && (
             <button
               onClick={() => slide(180)}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-white transition-all hover:scale-105"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-wabi border border-sumi shadow-riso-sm flex items-center justify-center text-sumi hover:bg-white transition-all hover:scale-105 active:scale-95"
               title="Scroll right"
             >
               <ChevronRight className="w-3.5 h-3.5" />
@@ -214,7 +235,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {/* Vertical divider */}
         <div className="h-5 w-px bg-sumi/20 flex-shrink-0 hidden md:block" />
 
-        {/* C. Live Sanctuary Counter */}
+        {/* C. Live Sanctuary Counter Pill */}
         <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-wabi-200 border border-sumi/30 text-[11px] font-mono font-bold text-sumi whitespace-nowrap flex-shrink-0">
           <span className="w-1.5 h-1.5 rounded-full bg-vermilion animate-pulse" />
           <span>{totalFound} SPOTS</span>
@@ -225,17 +246,17 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           2. ACTIVE FILTER QUICK CHIPS (Only appears when filters are on)
           ───────────────────────────────────────────────────────────── */}
       {activeSecondaryCount > 0 && (
-        <div className="mt-1.5 flex items-center gap-1.5 overflow-x-auto sliding-bar py-0.5 px-1">
+        <div className="mt-1.5 flex items-center gap-1.5 overflow-x-auto sliding-bar py-0.5 px-1 animate-in fade-in duration-100">
           <span className="text-[10px] font-mono font-bold uppercase text-slate-600 flex-shrink-0">
             Active Filters:
           </span>
 
           {filters.budget !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-100 border border-amber-400 text-amber-900 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-amber-100 border border-amber-400 text-amber-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm transition-transform hover:scale-[1.02]">
               <span>{activeBudgetObj?.icon} {activeBudgetObj?.label}</span>
               <button
                 onClick={() => onChange({ budget: 'all' })}
-                className="hover:text-vermilion ml-0.5"
+                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
                 title="Remove budget filter"
               >
                 <X className="w-3 h-3" />
@@ -244,11 +265,11 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           )}
 
           {filters.spotTier !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-indigo-50 border border-indigo-300 text-indigo-900 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-indigo-50 border border-indigo-300 text-indigo-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm transition-transform hover:scale-[1.02]">
               <span>{activeTierObj?.label}</span>
               <button
                 onClick={() => onChange({ spotTier: 'all' })}
-                className="hover:text-vermilion ml-0.5"
+                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
                 title="Remove tier filter"
               >
                 <X className="w-3 h-3" />
@@ -257,11 +278,11 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           )}
 
           {filters.radiusKm !== 120 && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-rose-50 border border-rose-300 text-rose-900 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-rose-50 border border-rose-300 text-rose-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm transition-transform hover:scale-[1.02]">
               <span>Within {filters.radiusKm}km</span>
               <button
                 onClick={() => onChange({ radiusKm: 120 })}
-                className="hover:text-vermilion ml-0.5"
+                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
                 title="Reset radius"
               >
                 <X className="w-3 h-3" />
@@ -271,7 +292,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
 
           <button
             onClick={handleResetFilters}
-            className="text-[10px] font-mono font-bold text-vermilion hover:underline ml-1 flex-shrink-0"
+            className="text-[10px] font-mono font-bold text-vermilion hover:underline ml-1 flex-shrink-0 uppercase"
           >
             Clear All
           </button>
@@ -282,12 +303,12 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           3. CURATOR'S FILTER STUDIO (Pop-down Modal / Floating Card)
           ───────────────────────────────────────────────────────────── */}
       {isModalOpen && (
-        <div className="absolute top-full left-0 mt-2 w-full sm:max-w-xl bg-wabi rounded-3xl border-2 border-sumi shadow-riso p-4 sm:p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-150 space-y-4">
+        <div className="absolute top-full left-0 mt-2 w-full sm:max-w-xl bg-wabi rounded-3xl border-2 border-sumi shadow-riso shadow-2xl shadow-sumi/15 p-4 sm:p-5 z-50 animate-in fade-in slide-in-from-top-2 duration-150 space-y-4 max-h-[calc(100vh-140px)] overflow-y-auto no-scrollbar">
           {/* Header Row */}
           <div className="flex items-center justify-between pb-3 border-b-2 border-sumi/15">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-sumi text-wabi flex items-center justify-center">
-                <SlidersHorizontal className="w-3.5 h-3.5" />
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-sumi text-wabi flex items-center justify-center shadow-sm">
+                <SlidersHorizontal className="w-4 h-4" />
               </div>
               <div>
                 <h3 className="font-mono font-black text-xs sm:text-sm text-sumi uppercase tracking-wider">
@@ -303,7 +324,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
               {activeSecondaryCount > 0 && (
                 <button
                   onClick={handleResetFilters}
-                  className="flex items-center gap-1 text-[11px] font-mono font-bold text-vermilion hover:bg-vermilion/10 px-2 py-1 rounded-lg border border-vermilion/30 transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-mono font-bold text-vermilion hover:bg-vermilion/10 px-2.5 py-1 rounded-xl border border-vermilion/30 transition-colors"
                 >
                   <RotateCcw className="w-3 h-3" />
                   <span>RESET</span>
@@ -311,7 +332,8 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
               )}
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="p-1 rounded-lg text-slate-500 hover:text-sumi hover:bg-wabi-200 transition-colors"
+                className="p-1.5 rounded-xl text-slate-500 hover:text-sumi hover:bg-wabi-200 transition-colors"
+                title="Close (Esc)"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -330,7 +352,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
               </span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {BUDGET_TIERS.map((tier) => {
                 const isActive = filters.budget === tier.id;
                 return (
@@ -339,13 +361,13 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
                     onClick={() => onChange({ budget: tier.id })}
                     className={`p-2.5 rounded-xl border text-left transition-all relative ${
                       isActive
-                        ? 'bg-amber-400 border-sumi text-sumi shadow-riso-sm font-bold'
-                        : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800'
+                        ? 'bg-amber-400 border-sumi text-sumi shadow-riso-sm font-bold scale-[1.01]'
+                        : 'bg-white hover:bg-wabi-100 hover:border-sumi/50 border-sumi/25 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-bold">{tier.icon} {tier.label}</span>
-                      {isActive && <Check className="w-3 h-3 text-sumi" />}
+                      {isActive && <Check className="w-3.5 h-3.5 text-sumi stroke-[3]" />}
                     </div>
                     <div className="text-[10px] text-slate-600 font-mono mt-0.5 line-clamp-1">
                       {tier.desc}
@@ -368,7 +390,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
               </span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 font-mono">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono">
               {SPOT_TIERS.map((tier) => {
                 const isActive = filters.spotTier === tier.id;
                 return (
@@ -377,8 +399,8 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
                     onClick={() => onChange({ spotTier: tier.id })}
                     className={`py-2 px-2.5 rounded-xl border text-center transition-all ${
                       isActive
-                        ? 'bg-sumi text-wabi border-sumi shadow-sm font-bold'
-                        : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800 text-xs'
+                        ? 'bg-sumi text-wabi border-sumi shadow-sm font-bold scale-[1.01]'
+                        : 'bg-white hover:bg-wabi-100 hover:border-sumi/50 border-sumi/25 text-slate-800 text-xs'
                     }`}
                   >
                     <div className="text-xs font-bold truncate">{tier.label}</div>
@@ -400,7 +422,7 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
               </span>
             </div>
 
-            <div className="grid grid-cols-4 gap-1.5 font-mono">
+            <div className="grid grid-cols-4 gap-2 font-mono">
               {RADII.map((r) => {
                 const isActive = filters.radiusKm === r.km;
                 return (
@@ -409,8 +431,8 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
                     onClick={() => onChange({ radiusKm: r.km })}
                     className={`py-2 rounded-xl border text-center font-bold text-xs transition-all ${
                       isActive
-                        ? 'bg-vermilion text-white border-sumi shadow-sm'
-                        : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800'
+                        ? 'bg-vermilion text-white border-sumi shadow-sm scale-[1.01]'
+                        : 'bg-white hover:bg-wabi-100 hover:border-sumi/50 border-sumi/25 text-slate-800'
                     }`}
                   >
                     {r.label}
@@ -423,15 +445,34 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
           {/* Footer Submit CTA */}
           <div className="pt-2 border-t-2 border-sumi/15 flex items-center justify-between gap-3">
             <div className="text-xs font-mono text-slate-600">
-              <span className="font-black text-sumi text-sm">{totalFound}</span> SANCTUARIES MATCHED
+              {totalFound === 0 ? (
+                <span className="text-rose-600 font-bold flex items-center gap-1">
+                  <AlertCircle className="w-3.5 h-3.5" />
+                  <span>0 MATCHES FOUND</span>
+                </span>
+              ) : (
+                <>
+                  <span className="font-black text-sumi text-sm">{totalFound}</span> SANCTUARIES MATCHED
+                </>
+              )}
             </div>
 
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="px-5 py-2.5 rounded-xl bg-sumi hover:bg-vermilion text-wabi text-xs font-mono font-bold tracking-wider transition-all shadow-riso hover:shadow-riso-sm active:scale-95"
-            >
-              EXPLORE RESULTS ➔
-            </button>
+            <div className="flex items-center gap-2">
+              {totalFound === 0 && (
+                <button
+                  onClick={handleResetFilters}
+                  className="px-3 py-2 rounded-xl border border-sumi/40 bg-wabi-200 text-sumi text-xs font-mono font-bold hover:bg-wabi-300"
+                >
+                  RESET
+                </button>
+              )}
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-5 py-2.5 rounded-xl bg-sumi hover:bg-vermilion text-wabi text-xs font-mono font-bold tracking-wider transition-all shadow-riso hover:shadow-riso-sm active:scale-95"
+              >
+                EXPLORE RESULTS ➔
+              </button>
+            </div>
           </div>
         </div>
       )}
