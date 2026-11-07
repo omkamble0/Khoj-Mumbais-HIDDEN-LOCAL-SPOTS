@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Compass, LocateFixed, Search, Map, LayoutGrid, Heart, Dices, Train } from 'lucide-react';
-import { getCurrentVibeWindow } from '@/lib/vibeRadar';
 
 interface HeaderProps {
   currentCity: string;
@@ -32,15 +31,6 @@ export default function Header({
   onOpenRoulette,
 }: HeaderProps) {
   const [localQuery, setLocalQuery] = useState(searchQuery);
-  const [vibeInfo, setVibeInfo] = useState(() => getCurrentVibeWindow());
-
-  // Periodically update live vibe window
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVibeInfo(getCurrentVibeWindow());
-    }, 60000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     setLocalQuery(searchQuery);
@@ -54,43 +44,9 @@ export default function Header({
     }, 120);
     return () => clearTimeout(timer);
   }, [localQuery, searchQuery, onSearchChange]);
+
   return (
     <header className="relative w-full border-b-2 border-sumi shadow-sm font-sans flex-shrink-0 bg-wabi">
-      {/* Top Telemetry Strip */}
-      <div className="bg-sumi text-wabi-100 px-3 sm:px-4 py-1.5 flex items-center justify-between text-xs font-mono tracking-wider overflow-hidden">
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="w-2 h-2 rounded-full bg-vermilion animate-pulse flex-shrink-0"></span>
-          <span className="font-bold text-vermilion text-xs sm:text-sm flex-shrink-0">KHOJ</span>
-          <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-slate-300 font-medium truncate text-[11px] sm:text-xs">MUMBAI</span>
-          
-          {/* Live Vibe Radar Telemetry Indicator */}
-          <span className="text-slate-500 hidden md:inline">|</span>
-          <div 
-            onClick={onOpenRoulette}
-            className="hidden md:flex items-center gap-1.5 cursor-pointer bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-full transition-colors text-[11px]"
-            title="Click to roll Rasta Roulette for this vibe window"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="text-slate-400 font-medium">:</span>
-            <span className="text-amber-300 font-bold">{vibeInfo.window.icon} {vibeInfo.window.label.toUpperCase()}</span>
-            <span className="text-slate-400">({vibeInfo.timeString})</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
-          <button
-            onClick={onOpenRoulette}
-            className="flex items-center gap-1 text-vermilion hover:text-white font-bold text-[11px] sm:text-xs bg-vermilion/20 hover:bg-vermilion px-2 py-0.5 rounded transition-all"
-            title="Roll Rasta Roulette"
-          >
-            <Dices className="w-3.5 h-3.5" />
-            <span className="hidden xs:inline">ROULETTE</span>
-          </button>
-          <span className="text-slate-500 hidden sm:inline">|</span>
-          <span className="text-amber-400 font-bold text-[11px] sm:text-xs">● {totalSpots} SANCTUARIES</span>
-        </div>
-      </div>
-
       {/* Main Navigation Bar with Mumbai Art & Culture Collage Banner Background */}
       <div 
         className="relative w-full bg-cover bg-center overflow-hidden border-b-2 border-sumi shadow-sm min-h-[80px] sm:min-h-[88px] flex items-center"
