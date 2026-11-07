@@ -809,54 +809,55 @@ export default function DiscoveryMap({
       <div className="absolute bottom-6 left-4 z-20 flex flex-col items-start gap-2">
         {/* Transit Mode & Line Filter Tray (Expands when Transit is ON) */}
         {internalTransitOverlay && (
-          <div className="bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso p-2.5 font-mono text-xs max-w-[95vw] sm:max-w-md animate-in fade-in slide-in-from-bottom-2 space-y-2">
-            <div className="flex items-center justify-between gap-2 pb-1.5 border-b border-sumi/15">
-              <div className="flex items-center gap-1.5 font-bold text-sumi text-[11px] uppercase tracking-wider">
-                <Train className="w-3.5 h-3.5 text-rose-600" />
+          <div className="bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso p-3 sm:p-3.5 font-sans max-w-[95vw] sm:max-w-lg animate-in fade-in slide-in-from-bottom-2 space-y-2.5">
+            {/* Header and Transit Mode Buttons */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b-2 border-sumi/15">
+              <div className="flex items-center gap-2 font-mono font-black text-xs sm:text-sm text-sumi uppercase tracking-wider">
+                <Train className="w-4 h-4 text-rose-600 flex-shrink-0" />
                 <span>TRAVELLING OPTIONS</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1.5 flex-wrap">
                 <button
                   type="button"
                   onClick={() => setTransitFilterMode('all')}
-                  className={`px-2 py-0.5 rounded-lg text-[10px] font-bold border transition-all ${
+                  className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all ${
                     transitFilterMode === 'all'
-                      ? 'bg-sumi text-wabi border-sumi shadow-xs'
-                      : 'bg-white text-slate-700 border-sumi/30 hover:bg-wabi-100'
+                      ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
+                      : 'bg-white text-slate-800 border-sumi/30 hover:bg-wabi-100 hover:border-sumi'
                   }`}
                   title="Show all Mumbai railway and metro lines"
                 >
-                  ALL ({TRANSIT_LINE_TRACKS.length})
+                  ALL LINES
                 </button>
                 <button
                   type="button"
                   onClick={() => setTransitFilterMode('local')}
-                  className={`px-2 py-0.5 rounded-lg text-[10px] font-bold border transition-all ${
+                  className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all ${
                     transitFilterMode === 'local'
-                      ? 'bg-rose-700 text-white border-sumi shadow-xs'
-                      : 'bg-white text-slate-700 border-sumi/30 hover:bg-rose-50'
+                      ? 'bg-rose-700 text-white border-sumi shadow-riso-sm'
+                      : 'bg-white text-slate-800 border-sumi/30 hover:bg-rose-50 hover:border-rose-500'
                   }`}
                   title="Show only Suburban Railway Locals (Western, Central, Harbour)"
                 >
-                  🚆 LOCALS (3)
+                  🚆 LOCALS
                 </button>
                 <button
                   type="button"
                   onClick={() => setTransitFilterMode('metro')}
-                  className={`px-2 py-0.5 rounded-lg text-[10px] font-bold border transition-all ${
+                  className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all ${
                     transitFilterMode === 'metro'
-                      ? 'bg-teal-700 text-white border-sumi shadow-xs'
-                      : 'bg-white text-slate-700 border-sumi/30 hover:bg-teal-50'
+                      ? 'bg-teal-700 text-white border-sumi shadow-riso-sm'
+                      : 'bg-white text-slate-800 border-sumi/30 hover:bg-teal-50 hover:border-teal-500'
                   }`}
                   title="Show only Metro lines (M1, M2A, M7, M3, NMM)"
                 >
-                  🚇 METROS (5)
+                  🚇 METROS
                 </button>
               </div>
             </div>
 
-            {/* Individual Line Filter Chips */}
-            <div className="flex items-center gap-1 overflow-x-auto sliding-bar py-0.5 select-none">
+            {/* Individual Line Filter Chips with legible typography and generous click targets */}
+            <div className="flex items-center gap-1.5 overflow-x-auto sliding-bar py-1 select-none">
               {TRANSIT_FILTER_CHIPS.map((chip) => {
                 const isActive = transitFilterMode === chip.id;
                 return (
@@ -864,21 +865,47 @@ export default function DiscoveryMap({
                     key={chip.id}
                     type="button"
                     onClick={() => setTransitFilterMode(isActive ? 'all' : chip.id)}
-                    className={`flex items-center gap-1 px-2 py-1 rounded-xl text-[10px] font-mono font-bold whitespace-nowrap border transition-all flex-shrink-0 ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 active:scale-95 ${
                       isActive
                         ? 'bg-sumi text-wabi border-sumi font-black -translate-y-0.5 shadow-riso-sm'
-                        : 'bg-white text-slate-800 border-sumi/25 hover:border-sumi hover:bg-wabi-100'
+                        : 'bg-white text-slate-900 border-sumi/30 hover:border-sumi hover:bg-wabi-100'
                     }`}
                     title={`Filter by ${chip.name} (${chip.code})`}
                   >
                     <span
-                      className="w-2 h-2 rounded-full border border-black/20 flex-shrink-0"
+                      className="w-2.5 h-2.5 rounded-full border border-black/30 flex-shrink-0 shadow-xs"
                       style={{ backgroundColor: chip.color }}
                     />
-                    <span>{chip.code}</span>
+                    <span className="font-black tracking-wide">{chip.code}</span>
+                    <span className={`text-[11px] font-sans font-medium hidden sm:inline ${isActive ? 'text-wabi/90' : 'text-slate-600'}`}>
+                      {chip.name.split(' ')[0]}
+                    </span>
                   </button>
                 );
               })}
+            </div>
+
+            {/* Active route helper info line */}
+            <div className="text-[11px] font-mono text-slate-600 font-medium flex items-center justify-between pt-1 border-t border-sumi/10">
+              <span className="truncate">
+                {transitFilterMode === 'all' && 'Showing All 8 Suburban & Metro Lines on Map'}
+                {transitFilterMode === 'local' && 'Showing 3 Suburban Lines: WR, CR & Harbour'}
+                {transitFilterMode === 'metro' && 'Showing 5 Metro Corridors: Lines 1, 2A, 7, 3 & Navi Mumbai'}
+                {typeof transitFilterMode === 'string' && transitFilterMode !== 'all' && transitFilterMode !== 'local' && transitFilterMode !== 'metro' && (
+                  <>
+                    Showing <strong className="text-sumi">{TRANSIT_FILTER_CHIPS.find(c => c.id === transitFilterMode)?.name}</strong> line & stations
+                  </>
+                )}
+              </span>
+              {transitFilterMode !== 'all' && (
+                <button
+                  type="button"
+                  onClick={() => setTransitFilterMode('all')}
+                  className="text-vermilion hover:underline font-bold text-[10px] uppercase ml-2 flex-shrink-0"
+                >
+                  Reset to All
+                </button>
+              )}
             </div>
           </div>
         )}
