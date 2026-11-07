@@ -12,7 +12,7 @@ import {
   getSanctuariesNearStation,
   SmartCommutePlan,
 } from '@/lib/transit';
-import { Train, X, Compass, ExternalLink, Zap } from 'lucide-react';
+import { Train, X, Compass, ExternalLink, Zap, MapPin } from 'lucide-react';
 
 interface DiscoveryMapProps {
   places: Place[];
@@ -22,6 +22,8 @@ interface DiscoveryMapProps {
   radiusKm: number;
   showTransitOverlay?: boolean;
   onToggleTransitOverlay?: (show: boolean) => void;
+  showPlacesOverlay?: boolean;
+  onTogglePlacesOverlay?: (show: boolean) => void;
   selectedTransitStation?: TransitStation | null;
   onSelectTransitStation?: (station: TransitStation | null) => void;
   onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;
@@ -61,6 +63,8 @@ export default function DiscoveryMap({
   radiusKm,
   showTransitOverlay = false,
   onToggleTransitOverlay,
+  showPlacesOverlay = true,
+  onTogglePlacesOverlay,
   selectedTransitStation,
   onSelectTransitStation,
   onOpenTransitGuide,
@@ -89,10 +93,15 @@ export default function DiscoveryMap({
   onOpenTransitGuideRef.current = onOpenTransitGuide;
 
   const [internalTransitOverlay, setInternalTransitOverlay] = useState(showTransitOverlay);
+  const [internalPlacesOverlay, setInternalPlacesOverlay] = useState(showPlacesOverlay);
 
   useEffect(() => {
     setInternalTransitOverlay(showTransitOverlay);
   }, [showTransitOverlay]);
+
+  useEffect(() => {
+    setInternalPlacesOverlay(showPlacesOverlay);
+  }, [showPlacesOverlay]);
 
   const handleToggleTransit = () => {
     const nextVal = !internalTransitOverlay;
@@ -100,11 +109,23 @@ export default function DiscoveryMap({
     onToggleTransitOverlay?.(nextVal);
   };
 
+  const handleTogglePlaces = () => {
+    const nextVal = !internalPlacesOverlay;
+    setInternalPlacesOverlay(nextVal);
+    onTogglePlacesOverlay?.(nextVal);
+  };
+
   // Viewport Culling & Isolated Destination Mode
   const syncVisibleMarkers = () => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
     if (!map || !layer) return;
+
+    // When places layer is toggled OFF, clear all place markers
+    if (!internalPlacesOverlay) {
+      layer.clearLayers();
+      return;
+    }
 
     const bounds = map.getBounds().pad(0.25);
     const pool = markerPoolRef.current;
@@ -138,6 +159,11 @@ export default function DiscoveryMap({
 
   const syncVisibleMarkersRef = useRef(syncVisibleMarkers);
   syncVisibleMarkersRef.current = syncVisibleMarkers;
+
+  // Re-sync markers when places overlay toggle state changes
+  useEffect(() => {
+    syncVisibleMarkersRef.current();
+  }, [internalPlacesOverlay]);
 
   // Initialize Map safely & bind adaptive zoom + viewport culling
   useEffect(() => {
@@ -735,8 +761,21 @@ export default function DiscoveryMap({
         </div>
       )}
 
-      {/* Floating Transit Layer Toggle Pill (Bottom-left above attribution) */}
-      <div className="absolute bottom-6 left-4 z-20">
+      {/* Floating Places & Transit Layer Toggle Pills (Bottom-left above attribution) */}
+      <div className="absolute bottom-6 left-4 z-20 flex items-center gap-2">
+        <button
+          onClick={handleTogglePlaces}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${
+            internalPlacesOverlay
+              ? 'bg-emerald-400 text-sumi hover:bg-emerald-300'
+              : 'bg-wabi/90 backdrop-blur-md text-slate-600 hover:bg-white hover:text-sumi'
+          }`}
+          title="Toggle hidden sanctuary pins on the map"
+        >
+          <MapPin className="w-3.5 h-3.5 text-sumi" />
+          <span>SPOTS: {internalPlacesOverlay ? 'ON' : 'OFF'}</span>
+        </button>
+
         <button
           onClick={handleToggleTransit}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${

@@ -31,6 +31,8 @@ interface FilterBarProps {
   filters: FilterState;
   onChange: (updated: Partial<FilterState>) => void;
   totalFound: number;
+  showPlacesOverlay?: boolean;
+  onTogglePlacesOverlay?: () => void;
 }
 
 const CATEGORIES: { id: PlaceCategory; label: string; icon: React.ReactNode }[] = [
@@ -72,7 +74,13 @@ const RADII = [
   { km: 120, label: 'All MMR' },
 ];
 
-export default function FilterBar({ filters, onChange, totalFound }: FilterBarProps) {
+export default function FilterBar({
+  filters,
+  onChange,
+  totalFound,
+  showPlacesOverlay = true,
+  onTogglePlacesOverlay,
+}: FilterBarProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const filterIslandRef = useRef<HTMLDivElement>(null);
 
@@ -235,11 +243,46 @@ export default function FilterBar({ filters, onChange, totalFound }: FilterBarPr
         {/* Vertical divider */}
         <div className="h-5 w-px bg-sumi/20 flex-shrink-0 hidden md:block" />
 
-        {/* C. Live Sanctuary Counter Pill */}
-        <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-wabi-200 border border-sumi/30 text-[11px] font-mono font-bold text-sumi whitespace-nowrap flex-shrink-0">
-          <span className="w-1.5 h-1.5 rounded-full bg-vermilion animate-pulse" />
-          <span>{totalFound} SPOTS</span>
-        </div>
+        {/* C. Live Sanctuary Counter Pill / Interactive ON-OFF Spot Toggle */}
+        <button
+          type="button"
+          onClick={onTogglePlacesOverlay}
+          disabled={!onTogglePlacesOverlay}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 font-mono text-[11px] font-bold whitespace-nowrap flex-shrink-0 transition-all select-none shadow-riso-sm active:scale-95 ${
+            onTogglePlacesOverlay ? 'cursor-pointer hover:shadow-riso hover:-translate-y-0.5' : 'cursor-default'
+          } ${
+            showPlacesOverlay
+              ? 'bg-wabi border-sumi text-sumi hover:bg-white hover:border-vermilion'
+              : 'bg-slate-200/90 border-slate-400 text-slate-500 hover:bg-slate-200'
+          }`}
+          title={
+            onTogglePlacesOverlay
+              ? showPlacesOverlay
+                ? 'Spots Layer: ON (Click to toggle OFF and hide spots from map)'
+                : 'Spots Layer: OFF (Click to toggle ON and display spots on map)'
+              : `${totalFound} spots in database`
+          }
+        >
+          <span
+            className={`w-2 h-2 rounded-full transition-colors ${
+              showPlacesOverlay ? 'bg-vermilion animate-pulse' : 'bg-slate-400'
+            }`}
+          />
+          <span className={showPlacesOverlay ? '' : 'line-through opacity-75'}>
+            {totalFound} SPOTS
+          </span>
+          {onTogglePlacesOverlay && (
+            <span
+              className={`text-[9px] px-1.5 py-0.2 rounded font-black tracking-wide transition-all ${
+                showPlacesOverlay
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'bg-slate-400 text-white'
+              }`}
+            >
+              {showPlacesOverlay ? 'ON' : 'OFF'}
+            </span>
+          )}
+        </button>
       </div>
 
       {/* ─────────────────────────────────────────────────────────────

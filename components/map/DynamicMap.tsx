@@ -14,6 +14,8 @@ interface DynamicMapProps {
   radiusKm: number;
   showTransitOverlay?: boolean;
   onToggleTransitOverlay?: (show: boolean) => void;
+  showPlacesOverlay?: boolean;
+  onTogglePlacesOverlay?: (show: boolean) => void;
   selectedTransitStation?: TransitStation | null;
   onSelectTransitStation?: (station: TransitStation | null) => void;
   onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;

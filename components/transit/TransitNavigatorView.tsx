@@ -437,7 +437,7 @@ function TactileSliderBar({
 
     // Font loading check
     if (typeof document !== 'undefined' && 'fonts' in document) {
-      document.fonts.ready.then(updateProgress).catch(() => {});
+      document.fonts.ready.then(updateProgress).catch(() => { });
     }
 
     // Staggered timeouts to guarantee layout settlement
@@ -555,13 +555,12 @@ function TactileSliderBar({
             width: `${thumbWidthPercent}%`,
             left: `${thumbLeftPercent}%`,
           }}
-          className={`absolute top-0.5 bottom-0.5 rounded-full border border-sumi shadow-riso-sm transition-transform cursor-grab active:cursor-grabbing flex items-center justify-center ${
-            isDragging
+          className={`absolute top-0.5 bottom-0.5 rounded-full border border-sumi shadow-riso-sm transition-transform cursor-grab active:cursor-grabbing flex items-center justify-center ${isDragging
               ? 'bg-vermilion scale-y-110 shadow-riso'
               : !canScroll
-              ? 'bg-sumi/40 pointer-events-none'
-              : `${accentColor} hover:bg-vermilion text-wabi`
-          }`}
+                ? 'bg-sumi/40 pointer-events-none'
+                : `${accentColor} hover:bg-vermilion text-wabi`
+            }`}
         >
           {/* Subtle tactile grip ridges inside the thumb */}
           {canScroll && (
@@ -1073,11 +1072,10 @@ export default function TransitNavigatorView({
                     key={tab.id}
                     data-line-id={tab.id}
                     onClick={() => handleSelectLine(tab.id)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 ${
-                      isActive
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 ${isActive
                         ? `${tab.activeBg} -translate-y-0.5`
                         : `${tab.inactiveBg}`
-                    }`}
+                      }`}
                   >
                     <span
                       className="w-2.5 h-2.5 rounded-full flex-shrink-0 border border-black/20"
@@ -1085,9 +1083,8 @@ export default function TransitNavigatorView({
                     />
                     <span>{tab.label}</span>
                     <span
-                      className={`text-[9px] px-1.5 py-0.2 rounded font-black tracking-wide ${
-                        isActive ? 'bg-black/25 text-white' : tab.badgeBg
-                      }`}
+                      className={`text-[9px] px-1.5 py-0.2 rounded font-black tracking-wide ${isActive ? 'bg-black/25 text-white' : tab.badgeBg
+                        }`}
                     >
                       {tab.badge}
                     </span>
@@ -1133,11 +1130,10 @@ export default function TransitNavigatorView({
                   key={stn.id}
                   data-station-id={stn.id}
                   onClick={() => setSelectedStationId(stn.id)}
-                  className={`p-3 rounded-2xl border-2 text-left transition-all flex-shrink-0 min-w-[170px] sm:min-w-[200px] ${
-                    isSelected
+                  className={`p-3 rounded-2xl border-2 text-left transition-all flex-shrink-0 min-w-[170px] sm:min-w-[200px] ${isSelected
                       ? 'bg-amber-400 border-sumi text-sumi shadow-riso font-bold -translate-y-1'
                       : 'bg-wabi border-sumi/30 hover:border-sumi hover:bg-white text-slate-800'
-                  }`}
+                    }`}
                 >
                   <div className="text-[10px] font-mono text-slate-600 uppercase flex items-center justify-between gap-1">
                     <span className="truncate">{stn.zone}</span>
@@ -1279,19 +1275,17 @@ export default function TransitNavigatorView({
               <button
                 type="button"
                 onClick={() => setStationCategoryFilter('all')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 transition-all ${
-                  stationCategoryFilter === 'all'
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 transition-all ${stationCategoryFilter === 'all'
                     ? 'bg-sumi text-white border-sumi shadow-riso-sm -translate-y-0.5'
                     : 'bg-wabi hover:bg-white text-slate-700 border-sumi/30'
-                }`}
+                  }`}
               >
                 <span>✨ All Spots</span>
                 <span
-                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
-                    stationCategoryFilter === 'all'
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${stationCategoryFilter === 'all'
                       ? 'bg-amber-400 text-sumi'
                       : 'bg-sumi/10 text-slate-700'
-                  }`}
+                    }`}
                 >
                   {sanctuariesAtStation.length}
                 </span>
@@ -1307,21 +1301,19 @@ export default function TransitNavigatorView({
                     key={cat.id}
                     type="button"
                     onClick={() => setStationCategoryFilter(isActive ? 'all' : cat.id)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 transition-all ${
-                      isActive
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 transition-all ${isActive
                         ? `${cat.badgeActiveBg} shadow-riso-sm -translate-y-0.5`
                         : `${cat.badgeBg} hover:opacity-90`
-                    }`}
+                      }`}
                   >
                     <span>
                       {cat.icon} {cat.label}
                     </span>
                     <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
-                        isActive
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${isActive
                           ? 'bg-white/25 text-white'
                           : 'bg-black/10 text-slate-800'
-                      }`}
+                        }`}
                     >
                       {count}
                     </span>
@@ -1362,7 +1354,7 @@ export default function TransitNavigatorView({
                   >
                     {/* Inner Colored Poster Canvas */}
                     <div className={`${theme.posterBg} border-2 border-[#141518] rounded-xl overflow-hidden flex flex-col justify-between h-full relative`}>
-                      
+
                       {/* Top Header: Circular Stamp (Left) + MADE IN MUMBAI + Circular Stamp (Right) */}
                       <div className="relative z-10 px-3 pt-2.5 pb-1.5 flex items-center justify-between border-b border-[#141518]/25 bg-black/10">
                         {/* Left Stamp */}

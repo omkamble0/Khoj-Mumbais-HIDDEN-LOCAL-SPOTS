@@ -31,6 +31,7 @@ export default function HomePage() {
   const [isLocating, setIsLocating] = useState(false);
   const [viewMode, setViewMode] = useState<'map' | 'zine' | 'transit'>('map');
   const [showTransitOverlay, setShowTransitOverlay] = useState(false);
+  const [showPlacesOverlay, setShowPlacesOverlay] = useState(true);
   const [selectedTransitStation, setSelectedTransitStation] = useState<TransitStation | null>(null);
   const [activeCommutePlan, setActiveCommutePlan] = useState<SmartCommutePlan | null>(null);
   const [isSmartCommuteModalOpen, setIsSmartCommuteModalOpen] = useState(false);
@@ -238,6 +239,8 @@ export default function HomePage() {
                   filters={filters}
                   onChange={handleFilterChange}
                   totalFound={filteredPlaces.length}
+                  showPlacesOverlay={showPlacesOverlay}
+                  onTogglePlacesOverlay={() => setShowPlacesOverlay((prev) => !prev)}
                 />
               </div>
             )}
@@ -251,6 +254,8 @@ export default function HomePage() {
               radiusKm={filters.radiusKm}
               showTransitOverlay={showTransitOverlay}
               onToggleTransitOverlay={(v) => setShowTransitOverlay(v)}
+              showPlacesOverlay={showPlacesOverlay}
+              onTogglePlacesOverlay={(v) => setShowPlacesOverlay(v)}
               selectedTransitStation={selectedTransitStation}
               onSelectTransitStation={(stn) => setSelectedTransitStation(stn)}
               onOpenTransitGuide={(stn, place) => {
