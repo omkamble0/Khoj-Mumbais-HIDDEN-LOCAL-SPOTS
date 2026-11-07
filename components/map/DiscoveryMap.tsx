@@ -842,6 +842,23 @@ export default function DiscoveryMap({
           <Train className="w-3.5 h-3.5 text-rose-600" />
           <span>TRANSIT: {internalTransitOverlay ? 'ON' : 'OFF'}</span>
         </button>
+
+        {internalTransitOverlay && transitFilterMode !== 'all' && (
+          <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border-2 border-sumi bg-sumi text-wabi shadow-riso-sm font-mono text-[11px] font-bold animate-in fade-in">
+            <span
+              className="w-2 h-2 rounded-full border border-white/50 flex-shrink-0"
+              style={{
+                backgroundColor:
+                  TRANSIT_FILTER_CHIPS.find((c) => c.id === transitFilterMode)?.color || '#ea580c',
+              }}
+            />
+            <span>
+              {transitFilterMode === 'local' && '🚆 Locals'}
+              {transitFilterMode === 'metro' && '🚇 Metros'}
+              {TRANSIT_FILTER_CHIPS.find((c) => c.id === transitFilterMode)?.code}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Floating Station Hub HUD (Appears when a railway or metro station is selected) */}

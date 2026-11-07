@@ -1,0 +1,716 @@
+[
+  {
+    "name": "Harbour Bar at The Taj (1933)",
+    "location": "Colaba",
+    "vibe": "Vintage cigars and Ambani-level bills — proper posh sea-view sipping.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Colaba Social",
+    "location": "Colaba",
+    "vibe": "Massive LIITs and industrial-chic chaos — high-energy pre-game central.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Gokul Bar",
+    "location": "Colaba",
+    "vibe": "Rum in steel glasses and college nostalgia — the ultimate SoBo survival dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Alps Restaurant",
+    "location": "Colaba",
+    "vibe": "Sizzling meats and old-school rock — cozy vintage comfort.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Woodside Inn",
+    "location": "Colaba",
+    "vibe": "Polished wood and craft IPAs — sophisticated heritage drinking.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Café Mondegar",
+    "location": "Colaba Causeway",
+    "vibe": "Mario Miranda murals and retro jukebox beats — classic daytime beer scenes.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Gables",
+    "location": "Colaba Causeway",
+    "vibe": "Quiet corners and cheap booze — the Causeway's hidden escape.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Leopold Cafe",
+    "location": "Colaba Causeway",
+    "vibe": "Towering pitchers and bullet holes — global backpacker history.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Bayview Cafe",
+    "location": "Apollo Bunder",
+    "vibe": "Breezy sunsets and cold pints — uninterrupted Gateway chills.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "The Ghetto",
+    "location": "Breach Candy",
+    "vibe": "Blacklights, pool tables, and neon graffiti — fultoo classic Bombay grunge.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Quarter & Co.",
+    "location": "Fort / Kala Ghoda",
+    "vibe": "Jazz vinyls and bespoke cocktails — hidden Kala Ghoda sophistication.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Pravasi Bar",
+    "location": "Fort",
+    "vibe": "Loud stockbrokers and rapid-fire pegs — post-market Fort madness.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Café Universal",
+    "location": "Fort",
+    "vibe": "High ceilings and sizzling platters — boisterous 1921 beer hall energy.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Capitol Family Restaurant",
+    "location": "Fort",
+    "vibe": "Quiet corners and old-school service — classic Fort unwinding.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "New Majestic Bar",
+    "location": "Fort",
+    "vibe": "Heritage charm and cheap rum — a slice of old Bombay.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sher-E-Punjab Bar",
+    "location": "Fort",
+    "vibe": "Tandoori starters and robust pegs — hearty Punjabi hospitality.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Universal Cafe",
+    "location": "Fort",
+    "vibe": "Casual daytime beers — laid-back Fort office breaks.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Hazara Original Koliwada",
+    "location": "GTB Nagar",
+    "vibe": "Legendary fried fish and spicy green chutney — epic Sion Koliwada binges.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "The Local",
+    "location": "Kala Ghoda / Fort",
+    "vibe": "Password entry and grungy aesthetics — SoBo's underground secret.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Garden Jolly Bar",
+    "location": "Kala Ghoda",
+    "vibe": "Tucked-away tables and artistic debates — cheap Kala Ghoda solace.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Vihar Resto-Bar",
+    "location": "Churchgate",
+    "vibe": "Bunked lectures and shared pitchers — loud Churchgate college banter.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Asiatic Restaurant & Bar",
+    "location": "Churchgate",
+    "vibe": "Fast-paced platform rush and quick pegs — tired commuter's solace.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Cafe Oval",
+    "location": "Churchgate",
+    "vibe": "Heritage views and quiet daytime drinking — cheap Churchgate chills.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sunlight Restaurant",
+    "location": "Kalbadevi",
+    "vibe": "Iconic jukebox and loud old-timers — legendary Kalbadevi tight scenes.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Kit Kat Restaurant",
+    "location": "Dhobi Talao",
+    "vibe": "Fast-moving quarters and street energy — pure Dhobi Talao chaos.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "New York Restaurant",
+    "location": "Marine Lines",
+    "vibe": "Cold draughts and nostalgic conversations — old-school Marine Lines charm.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Bayview Metro",
+    "location": "Marine Lines",
+    "vibe": "Quick post-office pints — fast-track drinking before the train.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "The Bayview Nautical Lounge",
+    "location": "Marine Drive",
+    "vibe": "Ship-themed decor and expensive scotch — Queen's Necklace luxury.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Sardar Refreshment",
+    "location": "Tardeo",
+    "vibe": "Old Bombay feels and cheap quarters — hardcore Tardeo loyalty.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Quarter & Quarter",
+    "location": "Tardeo",
+    "vibe": "Screaming fans and cheap booze — chaotic match-day energy.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Bandra Born",
+    "location": "Bandra West",
+    "vibe": "Eclectic plates and high-end hipster aesthetics — bougie Bandra energy.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "National Restaurant",
+    "location": "Bandra West",
+    "vibe": "Bandra's worst-kept secret — cheap drinks and tight-squeeze chills.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Old Street Cafe & Bar",
+    "location": "Bandra West",
+    "vibe": "Acoustic sets and craft pints — cozy Bandra conversations.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Yacht Resto-Bar",
+    "location": "Bandra West",
+    "vibe": "Cramped tables and loud loyalists — the ultimate Hill Road budget binge.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Soul Fry",
+    "location": "Bandra West",
+    "vibe": "Goan susegad and legendary Monday karaoke — coastal spice and everything nice.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Janata Lunch Home",
+    "location": "Bandra West",
+    "vibe": "Packed tables and iconic seafood — the undisputed king of Bandra dive bars.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Toto's Garage",
+    "location": "Bandra West",
+    "vibe": "Neon VW beetle and classic rock anthems — shoulder-to-shoulder nostalgia.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Doolally Taproom",
+    "location": "Bandra West",
+    "vibe": "Craft brews, board games, and golden retrievers — peak Bandra hipster vibes.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Deepa Bar",
+    "location": "Bandra West",
+    "vibe": "Standard quarter-system chillin' — zero-pretension Bandra drinking.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "The Den",
+    "location": "Khar West",
+    "vibe": "Subterranean beats and crafted cocktails — intimate Khar hipster vibes.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Quarter Pillar",
+    "location": "Khar West",
+    "vibe": "Bustling crossroads and standard drinks — massive local popularity.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Khar Social",
+    "location": "Khar West",
+    "vibe": "Skate ramps, indie gigs, and creative hustlers — raw industrial energy.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "3 Wise Monkeys",
+    "location": "Khar West",
+    "vibe": "Live music and heavy appetizers — roaring Khar weekend madness.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Sunraj Restaurant & Bar",
+    "location": "Khar West",
+    "vibe": "The anti-fancy Khar dive — when you just want cheap Old Monk and Coke.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Tap Resto-Bar",
+    "location": "Juhu",
+    "vibe": "Live match screenings and commercial Bollywood beats — Juhu party energy.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Golden Bin Bar",
+    "location": "Juhu Koliwada",
+    "vibe": "Fresh sea breeze and cheap rums — hidden Koliwada gem.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Happy Lunch Home",
+    "location": "Andheri East",
+    "vibe": "Post-shift corporate venting and greasy chakna — cheap Andheri quarters.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Choice Restaurant & Bar",
+    "location": "Andheri East",
+    "vibe": "No-nonsense budget rounds and deep conversations — pure Andheri dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Road House Bluez",
+    "location": "Andheri West",
+    "vibe": "Monster pitchers and zero-judgement singing — karaoke pandemonium.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Glocal Junction",
+    "location": "Andheri West",
+    "vibe": "High-energy commercial beats and corporate parties — oversized cocktail central.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Linkway Restaurant",
+    "location": "Andheri West",
+    "vibe": "Old-school comfort drinking — Andheri nostalgia on tap.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Woodside Inn",
+    "location": "Oshiwara",
+    "vibe": "Craft beer flights and screaming trivia nerds — upscale Andheri pub culture.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Bottles",
+    "location": "Seven Bungalows",
+    "vibe": "Cheap beer and Bollywood dreams — the ultimate struggle-actor adda.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Pop Tate's",
+    "location": "Versova",
+    "vibe": "Oversized pitchers and retro pop-culture — media crowd frenzy.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "The House",
+    "location": "Versova",
+    "vibe": "Fairy lights and bohemian writers — artsy Versova speakeasy vibes.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Quarter Pillar",
+    "location": "Vile Parle East",
+    "vibe": "Cheap drinks amidst a dry neighborhood — the Vile Parle oasis.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Harish Lunch Home",
+    "location": "Vile Parle West",
+    "vibe": "Cheap seafood and noisy student drinking — Mithibai college legends.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Asiad Bar & Restaurant",
+    "location": "Vile Parle West",
+    "vibe": "Dark rooms and serious quarter-system regulars — classic Parle dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Guruprasad Bar",
+    "location": "Santacruz East",
+    "vibe": "Cheap quarters and peanut masala — Santacruz East local staple.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Merlin's Karaoke Bar",
+    "location": "Santacruz East",
+    "vibe": "90s hotel-bar aesthetics and enthusiastic karaoke — pure nostalgia.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Sujata Restaurant & Bar",
+    "location": "Santacruz West",
+    "vibe": "Loyal regulars and unpretentious tight scenes — classic Santacruz dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Lord of the Drinks",
+    "location": "Lower Parel",
+    "vibe": "Corporate credit cards and peak Kamala Mills flashiness — massive scale energy.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Tamasha",
+    "location": "Lower Parel",
+    "vibe": "Deafening commercial house and manic weekends — Lower Parel high-decibel arena.",
+    "cost": "₹₹₹ Bhaari Pockets"
+  },
+  {
+    "name": "Sunil Restaurant & Bar",
+    "location": "Lower Parel",
+    "vibe": "The working-class hero dive — surviving in the shadow of glass towers.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Modern Bar & Restaurant",
+    "location": "Dadar East",
+    "vibe": "Maharashtrian seafood and raw neighborhood vibes — Dadar quarter-system.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Standard Restaurant & Bar",
+    "location": "Dadar East",
+    "vibe": "Spicy chakna and the daily commuter's pitstop — no-frills Dadar drinking.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Gomantak Boarding House",
+    "location": "Dadar West",
+    "vibe": "Fiery fish thalis and Sol Kadhi chasers — authentic Dadar coastal comfort.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Modern Lunch Home",
+    "location": "Dadar West",
+    "vibe": "Fresh Koli catches and hardcore local chatter — cheap Dadar quarters.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Pritam Restaurant & Bar",
+    "location": "Dadar West",
+    "vibe": "Legendary Punjabi food and old-timer loyalty — vintage Dadar charm.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Sneha Coastal Restaurant",
+    "location": "Mahim West",
+    "vibe": "Insane beef fry and chilled Kingfishers — cult-favorite Mahim budget scenes.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Manpreet Bar & Restaurant",
+    "location": "Mahim West",
+    "vibe": "Standard quarters and neighborhood peace — quiet Mahim corner.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Srikant Bar",
+    "location": "Matunga East",
+    "vibe": "Spicy coastal bites and hardcore locals — rare Matunga drinking hole.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Shree Krishna Bar",
+    "location": "Matunga West",
+    "vibe": "Solid chakna and deep neighborhood roots — no-frills Matunga West dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Pancham Resto-Bar",
+    "location": "Mazgaon",
+    "vibe": "Dockworker heritage and raw Mazgaon energy — serious budget drinking.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Madira Bar and Restaurant",
+    "location": "Parel East",
+    "vibe": "Old mill-land ghost vibes and cheap rum — hardcore Parel local scene.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Shri Krishna Coastal Boarding",
+    "location": "Prabhadevi",
+    "vibe": "Spicy coastal curries and office spillover — classic Prabhadevi comfort.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Samudra Bar",
+    "location": "Mumbai Central",
+    "vibe": "Station hustle and weary travelers — quick, strong Mumbai Central pegs.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Guruprasad Bar",
+    "location": "Sion / Chembur Border",
+    "vibe": "Heavy highway traffic noise and cheap transit drinks — borderline dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Lalit Bar & Restaurant",
+    "location": "Sion",
+    "vibe": "College crowd spillover and cheap bills — standard Sion permit room.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sandeep Bar",
+    "location": "Chembur / BKC",
+    "vibe": "BKC spillover crowd and decent chakna — stress-relief pints.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Kaka Resto-Bar",
+    "location": "Chembur Camp",
+    "vibe": "Heavy Sindhi/Punjabi bites and cheap booze — Chembur local loyalty.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sadguru Dining Bar",
+    "location": "Chembur Naka",
+    "vibe": "Heavy seafood and fultoo local vibes — hardcore Naka drinking.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Alankar Restaurant",
+    "location": "Malad East",
+    "vibe": "Loud chatter and station adjacency — the classic Malad commuter pitstop.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Gossip",
+    "location": "Malad West",
+    "vibe": "Packed tables and loud suburban energy — legendary coastal bar-bites.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Amrapali Bar",
+    "location": "Malad West",
+    "vibe": "Cheap booze and comfort drinking — dependable Malad dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Golden Crown Bar",
+    "location": "Malad West",
+    "vibe": "Classic dark-lit permit room — for serious, no-nonsense drinkers.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Harish Bar",
+    "location": "Malad West",
+    "vibe": "Heavy Chinese chakna and weekend rushes — neighborhood favorite.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sagar Restaurant",
+    "location": "Orlem, Malad West",
+    "vibe": "Orlem Catholic community vibes and cheap beer — strong local loyalty.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Uday Restaurant & Bar",
+    "location": "Kandivali West",
+    "vibe": "Spicy chana and ultimate local chill — Kandivali's comfort quarter-bar.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Manmeet Bar",
+    "location": "Goregaon East",
+    "vibe": "Crispy masala papad and daily grind relief — Goregaon suburban unwind.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Samadhan Restaurant",
+    "location": "Goregaon East",
+    "vibe": "Loud Marathi banter and strong quarter action — classic local dive.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Laxmi Lunch Home",
+    "location": "Goregaon West",
+    "vibe": "Spicy Surmai fry and chilled pints — serious Goregaon coastal cravings.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Ashoka Bar",
+    "location": "Goregaon West",
+    "vibe": "Loyal regulars and absolute zero-pretension drinking — dimly lit comfort.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Royal Restaurant",
+    "location": "Goregaon West",
+    "vibe": "Quick service and cheap bills — standard Goregaon neighborhood adda.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Status Restaurant",
+    "location": "Goregaon West",
+    "vibe": "Safe, dependable, family-friendly adjacent — cold beer on tap.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Meghdoot Bar",
+    "location": "Jogeshwari East",
+    "vibe": "Highway adjacent and rough-around-the-edges — serious local drinking.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sheela Bar",
+    "location": "Jogeshwari West",
+    "vibe": "Classic Jogeshwari permit room and dark aesthetics — fultoo tight scenes.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Vaishali Bar",
+    "location": "Jogeshwari West",
+    "vibe": "Quick quarters and heavy peanut chakna — no-nonsense local bar.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sunil Bar",
+    "location": "Kurla East",
+    "vibe": "Rapid drinking and hardcore local vibes — heavy station-road energy.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Simmba Restobar",
+    "location": "Kurla West",
+    "vibe": "Bollywood flair and loud music — flashy CST road party scenes.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Swagat Restaurant",
+    "location": "Kurla West",
+    "vibe": "Spicy curries and dark-room drinking — classic Kurla quarter system.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Amoeba Sports Bar",
+    "location": "Kurla West",
+    "vibe": "Tower beers and loud weekend chaos — Phoenix Mall bowling energy.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Hotel Sagar",
+    "location": "Kurla West",
+    "vibe": "Unpretentious, quick-service drinking — for the Kurla local.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Pavilion Restaurant",
+    "location": "Ghatkopar East",
+    "vibe": "Discrete drinks and local comfort — rare Ghatkopar watering hole.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Grand Pride Bar",
+    "location": "Ghatkopar West",
+    "vibe": "Endless free chakna and heavy pours — peak Ghatkopar budget joy.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Knotty Yard",
+    "location": "Powai",
+    "vibe": "Budget towers and post-startup-pitch drinking — Hiranandani IT crowd.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "What's Your Plan",
+    "location": "Saki Naka",
+    "vibe": "Neon lights and loud corporate venting — Saki Naka traffic escape.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Hotel Ratna",
+    "location": "Thane West",
+    "vibe": "Fultoo local crowd and deep Thane roots — the ultimate Khopat quarter-bar.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Pop Tate's",
+    "location": "Thane West",
+    "vibe": "Sizzler smoke and giant pitchers — loud Thane birthday party scenes.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Amantran Restaurant",
+    "location": "Thane West",
+    "vibe": "Cold beer and family-adjacent drinking — classic Thane seafood spot.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Vashi Social",
+    "location": "Vashi",
+    "vibe": "Massive LIITs and loud weekend energy — Navi Mumbai's cool-kid warehouse.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Ambience Bar",
+    "location": "Vashi",
+    "vibe": "Dim lights and nostalgic Navi Mumbai drinking — old-school Vashi staple.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sankalp Resto-Bar",
+    "location": "Vashi",
+    "vibe": "Sector 17 spillover and standard quarters — budget Vashi scenes.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Tight",
+    "location": "Vashi",
+    "vibe": "Dark ambiance and cheap drinks — the ultimate Vashi college-bunk spot.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Pranam Bar",
+    "location": "Mulund / Vashi Link",
+    "vibe": "Long drives and cheap drinks by the toll — Mulund highway pitstop vibes.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Sanman Restaurant",
+    "location": "Alibaug Town",
+    "vibe": "Fresh catch, chilled beer, and weekend getaway calm — Alibaug coastal chill.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Shanti Coastal Creek Deck",
+    "location": "Manori Creek",
+    "vibe": "Ferry-ride escapes, creek views, and hammock vibes — Manori cold beers.",
+    "cost": "₹₹ Paisa Vasool"
+  },
+  {
+    "name": "Anand Bhuvan",
+    "location": "Vasai Gaothan",
+    "vibe": "Fresh toddy vibes and coastal chill — Vasai village slow-life.",
+    "cost": "₹ Pocket Friendly"
+  },
+  {
+    "name": "Yeoor Forest-Edge Lounge",
+    "location": "Yeoor Hills",
+    "vibe": "Forest breeze, dhaba vibes, and open-air drinking — Thane's hilltop escape.",
+    "cost": "₹₹ Paisa Vasool"
+  }
+]
