@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { Place } from '@/lib/types';
+import { Place, PlaceCategory } from '@/lib/types';
 import {
   TRANSIT_STATIONS,
   TransitStation,
@@ -142,6 +142,30 @@ const LINE_TABS: LineTabConfig[] = [
     hex: '#ea580c',
     sliderAccent: 'bg-orange-600',
   },
+];
+
+interface StationCategoryItem {
+  id: PlaceCategory;
+  label: string;
+  icon: string;
+  badgeBg: string;
+  badgeActiveBg: string;
+}
+
+const STATION_CATEGORY_CONFIG: StationCategoryItem[] = [
+  { id: 'bars', label: 'Bars & Taverns', icon: '🍸', badgeBg: 'bg-[#9B1B30]/10 text-[#9B1B30] border-[#9B1B30]/30', badgeActiveBg: 'bg-[#9B1B30] text-[#F4B41A] border-[#141518]' },
+  { id: 'cafes', label: 'Cafés & Chai', icon: '☕', badgeBg: 'bg-[#C85A17]/10 text-[#C85A17] border-[#C85A17]/30', badgeActiveBg: 'bg-[#C85A17] text-white border-[#141518]' },
+  { id: 'waterfront', label: 'Waterfront & Beaches', icon: '🌊', badgeBg: 'bg-[#008080]/10 text-[#008080] border-[#008080]/30', badgeActiveBg: 'bg-[#008080] text-white border-[#141518]' },
+  { id: 'gardens', label: 'Gardens & Parks', icon: '🌿', badgeBg: 'bg-[#2E7D32]/10 text-[#2E7D32] border-[#2E7D32]/30', badgeActiveBg: 'bg-[#2E7D32] text-white border-[#141518]' },
+  { id: 'viewpoints', label: 'Cliffs & Views', icon: '🌅', badgeBg: 'bg-[#A11950]/10 text-[#A11950] border-[#A11950]/30', badgeActiveBg: 'bg-[#A11950] text-[#DAA520] border-[#141518]' },
+  { id: 'heritage', label: 'Colonial Heritage', icon: '🏛️', badgeBg: 'bg-[#283593]/10 text-[#283593] border-[#283593]/30', badgeActiveBg: 'bg-[#283593] text-white border-[#141518]' },
+  { id: 'walks', label: 'Village Walks', icon: '🚶', badgeBg: 'bg-[#CD5C5C]/10 text-[#CD5C5C] border-[#CD5C5C]/30', badgeActiveBg: 'bg-[#CD5C5C] text-white border-[#141518]' },
+  { id: 'books', label: 'Books & Libraries', icon: '📖', badgeBg: 'bg-[#800020]/10 text-[#800020] border-[#800020]/30', badgeActiveBg: 'bg-[#800020] text-[#FFD700] border-[#141518]' },
+  { id: 'treks', label: 'Forest Treks', icon: '🥾', badgeBg: 'bg-[#556B2F]/10 text-[#556B2F] border-[#556B2F]/30', badgeActiveBg: 'bg-[#556B2F] text-white border-[#141518]' },
+  { id: 'forts', label: 'Coastal Forts', icon: '⚔️', badgeBg: 'bg-[#8B4513]/10 text-[#8B4513] border-[#8B4513]/30', badgeActiveBg: 'bg-[#8B4513] text-white border-[#141518]' },
+  { id: 'spiritual', label: 'Spiritual Tanks', icon: '🪔', badgeBg: 'bg-[#FFB300]/15 text-[#D84315] border-[#FFB300]/40', badgeActiveBg: 'bg-[#FFB300] text-[#141518] border-[#141518]' },
+  { id: 'culture', label: 'Art & Theatre', icon: '🎭', badgeBg: 'bg-[#E91E63]/10 text-[#E91E63] border-[#E91E63]/30', badgeActiveBg: 'bg-[#E91E63] text-white border-[#141518]' },
+  { id: 'bazaars', label: 'Historic Bazaars', icon: '🛍️', badgeBg: 'bg-[#FFCC00]/15 text-[#141518] border-[#FFCC00]/40', badgeActiveBg: 'bg-[#FFCC00] text-[#141518] border-[#141518]' },
 ];
 
 interface DesiCardTheme {
@@ -669,6 +693,46 @@ export default function TransitNavigatorView({
     return getSanctuariesNearStation(activeStation, places, 3500);
   }, [activeStation, places]);
 
+  const [stationCategoryFilter, setStationCategoryFilter] = useState<PlaceCategory | 'all'>('all');
+  const [stationSortBy, setStationSortBy] = useState<'distance' | 'budget_asc' | 'budget_desc' | 'name'>('distance');
+  const categoryScrollRef = useRef<HTMLDivElement>(null);
+
+  // Categories available at this specific station
+  const availableCategoriesAtStation = useMemo(() => {
+    const counts: Record<string, number> = {};
+    sanctuariesAtStation.forEach((p) => {
+      counts[p.category] = (counts[p.category] || 0) + 1;
+    });
+    return counts;
+  }, [sanctuariesAtStation]);
+
+  // Reset category filter if not available at newly selected station
+  useEffect(() => {
+    if (stationCategoryFilter !== 'all' && !availableCategoriesAtStation[stationCategoryFilter]) {
+      setStationCategoryFilter('all');
+    }
+  }, [selectedStationId, availableCategoriesAtStation, stationCategoryFilter]);
+
+  // Filtered & Sorted Sanctuaries for Active Station
+  const displayedSanctuaries = useMemo(() => {
+    let list = [...sanctuariesAtStation];
+    if (stationCategoryFilter !== 'all') {
+      list = list.filter((p) => p.category === stationCategoryFilter);
+    }
+
+    if (stationSortBy === 'distance') {
+      list.sort((a, b) => (a.distance_to_station || 0) - (b.distance_to_station || 0));
+    } else if (stationSortBy === 'budget_asc') {
+      list.sort((a, b) => (a.price_level || 1) - (b.price_level || 1));
+    } else if (stationSortBy === 'budget_desc') {
+      list.sort((a, b) => (b.price_level || 1) - (a.price_level || 1));
+    } else if (stationSortBy === 'name') {
+      list.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return list;
+  }, [sanctuariesAtStation, stationCategoryFilter, stationSortBy]);
+
   // Search results for Sanctuary Direct Route Finder
   const sanctuarySearchResults = useMemo(() => {
     if (!sanctuarySearchQuery.trim()) return [];
@@ -1156,14 +1220,123 @@ export default function TransitNavigatorView({
             </div>
           </div>
 
+          {/* ─────────────────────────────────────────────────────────────
+              CATEGORY FILTER & SORTING SECTION (Station-to-Sanctuary)
+              ───────────────────────────────────────────────────────────── */}
+          <div className="bg-white/80 border-2 border-sumi/15 rounded-2xl p-3.5 sm:p-4 space-y-3 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-sumi/10">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-vermilion" />
+                <span className="text-xs font-mono font-black uppercase tracking-wider text-sumi">
+                  SORT & FILTER BY CATEGORY
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sumi/10 text-slate-700 font-bold">
+                  {displayedSanctuaries.length} of {sanctuariesAtStation.length} SPOTS
+                </span>
+              </div>
+
+              {/* Sort by Dropdown / Selector */}
+              <div className="flex items-center gap-2 text-xs font-mono">
+                <span className="text-slate-500 font-bold hidden sm:inline">SORT ORDER:</span>
+                <select
+                  value={stationSortBy}
+                  onChange={(e) => setStationSortBy(e.target.value as any)}
+                  className="bg-wabi border-2 border-sumi/30 text-sumi font-bold rounded-xl px-2.5 py-1 text-xs focus:outline-none focus:border-sumi cursor-pointer shadow-sm"
+                  aria-label="Sort sanctuaries by"
+                >
+                  <option value="distance">🚶 Distance: Nearest First</option>
+                  <option value="budget_asc">🪙 Budget: Pocket Friendly First</option>
+                  <option value="budget_desc">🪙 Budget: Splurge First</option>
+                  <option value="name">🔤 Alphabetical (A to Z)</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Category Filter Horizontal Scroller */}
+            <div
+              ref={categoryScrollRef}
+              onWheel={(e) => handleHorizontalWheel(e, categoryScrollRef)}
+              className="flex items-center gap-2 overflow-x-auto sliding-bar pb-1.5 pt-0.5 select-none scroll-smooth"
+            >
+              {/* "All" button */}
+              <button
+                type="button"
+                onClick={() => setStationCategoryFilter('all')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 transition-all ${
+                  stationCategoryFilter === 'all'
+                    ? 'bg-sumi text-white border-sumi shadow-riso-sm -translate-y-0.5'
+                    : 'bg-wabi hover:bg-white text-slate-700 border-sumi/30'
+                }`}
+              >
+                <span>✨ All Spots</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
+                    stationCategoryFilter === 'all'
+                      ? 'bg-amber-400 text-sumi'
+                      : 'bg-sumi/10 text-slate-700'
+                  }`}
+                >
+                  {sanctuariesAtStation.length}
+                </span>
+              </button>
+
+              {/* Dynamic Category Buttons */}
+              {STATION_CATEGORY_CONFIG.map((cat) => {
+                const count = availableCategoriesAtStation[cat.id] || 0;
+                if (count === 0) return null; // Only show categories with spots at this station
+                const isActive = stationCategoryFilter === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => setStationCategoryFilter(isActive ? 'all' : cat.id)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 transition-all ${
+                      isActive
+                        ? `${cat.badgeActiveBg} shadow-riso-sm -translate-y-0.5`
+                        : `${cat.badgeBg} hover:opacity-90`
+                    }`}
+                  >
+                    <span>
+                      {cat.icon} {cat.label}
+                    </span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-black ${
+                        isActive
+                          ? 'bg-white/25 text-white'
+                          : 'bg-black/10 text-slate-800'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Tactile Slider Bar for Categories */}
+            <TactileSliderBar
+              containerRef={categoryScrollRef}
+              variant="lines"
+              accentColor="bg-sumi"
+              trackLabel="Category Filter Slider"
+            />
+          </div>
+
           {/* Sanctuaries List Grid */}
-          {sanctuariesAtStation.length === 0 ? (
-            <div className="p-8 text-center text-slate-500 font-mono text-xs">
-              No spots mapped directly within 3.5 km of {activeStation.name}. Try picking Bandra, Charni Road, Churchgate, or Dadar!
+          {displayedSanctuaries.length === 0 ? (
+            <div className="p-8 text-center text-slate-500 font-mono text-xs bg-white/60 rounded-2xl border border-sumi/20">
+              <p>No spots found under this category within 3.5 km of {activeStation.name}.</p>
+              <button
+                type="button"
+                onClick={() => setStationCategoryFilter('all')}
+                className="inline-block mt-3 px-3 py-1.5 rounded-xl bg-sumi text-white font-mono font-bold text-xs hover:bg-vermilion transition-colors"
+              >
+                Reset Filter (Show All {sanctuariesAtStation.length} Spots)
+              </button>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {sanctuariesAtStation.map((place: any) => {
+              {displayedSanctuaries.map((place: any) => {
                 const theme = getDesiCardTheme(place);
                 return (
                   <div
