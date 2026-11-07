@@ -13,7 +13,7 @@ import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
 import SmartCommuteModal from '@/components/transit/SmartCommuteModal';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
-import { TransitStation, SmartCommutePlan } from '@/lib/transit';
+import { TransitStation, SmartCommutePlan, getSanctuaryTransitProfile } from '@/lib/transit';
 import initialPlacesData from '@/data/places_mumbai.json';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
@@ -46,6 +46,7 @@ export default function HomePage() {
     radiusKm: 120,
     maxCrowdLevel: 5,
     searchQuery: '',
+    transitAccess: 'all',
   });
 
   // Load master places dataset & saved favorites once on mount
@@ -141,6 +142,20 @@ export default function HomePage() {
         // Budget / Pocket-friendly filter
         if (filters.budget !== 'all' && place.budget_tier !== filters.budget) {
           return false;
+        }
+
+        // Transit proximity / Travelling options filter
+        if (filters.transitAccess && filters.transitAccess !== 'all') {
+          const profile = getSanctuaryTransitProfile(place.latitude, place.longitude);
+          if (filters.transitAccess === 'near_metro') {
+            if (!profile.nearestMetro || profile.nearestMetro.distanceMeters > 1000) return false;
+          } else if (filters.transitAccess === 'near_railway') {
+            if (profile.nearestRailway.distanceMeters > 1000) return false;
+          } else if (filters.transitAccess === 'walkable_transit') {
+            const railDist = profile.nearestRailway.distanceMeters;
+            const metroDist = profile.nearestMetro ? profile.nearestMetro.distanceMeters : Infinity;
+            if (Math.min(railDist, metroDist) > 800) return false;
+          }
         }
 
         // Crowd filter

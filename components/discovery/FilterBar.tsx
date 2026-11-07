@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { PlaceCategory, FilterState, SpotTier, BudgetTier } from '@/lib/types';
+import { PlaceCategory, FilterState, SpotTier, BudgetTier, TransitAccessFilter } from '@/lib/types';
 import {
   Compass,
   Footprints,
@@ -25,6 +25,7 @@ import {
   X,
   Check,
   AlertCircle,
+  Train,
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -74,6 +75,13 @@ const RADII = [
   { km: 120, label: 'All MMR' },
 ];
 
+const TRANSIT_ACCESS_OPTIONS: { id: TransitAccessFilter; label: string; badge: string; desc: string; icon: string }[] = [
+  { id: 'all', label: 'All Locations', badge: 'ANY', desc: 'Any transit distance', icon: '🧭' },
+  { id: 'near_metro', label: 'Near Metro (<1km)', badge: 'METRO', desc: 'Under 10-12 min walk to Metro', icon: '🚇' },
+  { id: 'near_railway', label: 'Near Local Train (<1km)', badge: 'LOCAL', desc: 'Under 10-12 min walk to Railway', icon: '🚆' },
+  { id: 'walkable_transit', label: 'Quick Walk (<800m)', badge: '<800m', desc: 'Under 8 min brisk walk to transit', icon: '🚶' },
+];
+
 export default function FilterBar({
   filters,
   onChange,
@@ -92,7 +100,8 @@ export default function FilterBar({
   const activeSecondaryCount =
     (filters.spotTier !== 'all' ? 1 : 0) +
     (filters.budget !== 'all' ? 1 : 0) +
-    (filters.radiusKm !== 120 ? 1 : 0);
+    (filters.radiusKm !== 120 ? 1 : 0) +
+    (filters.transitAccess && filters.transitAccess !== 'all' ? 1 : 0);
 
   // Monitor scroll position for edge fade indicators & arrows
   const checkScroll = useCallback(() => {
@@ -143,12 +152,14 @@ export default function FilterBar({
       spotTier: 'all',
       budget: 'all',
       radiusKm: 120,
+      transitAccess: 'all',
     });
   };
 
-  // Find active tier & budget labels for quick display
+  // Find active tier, budget & transit labels for quick display
   const activeTierObj = SPOT_TIERS.find((t) => t.id === filters.spotTier);
   const activeBudgetObj = BUDGET_TIERS.find((b) => b.id === filters.budget);
+  const activeTransitObj = TRANSIT_ACCESS_OPTIONS.find((t) => t.id === filters.transitAccess);
 
   return (
     <div ref={filterIslandRef} className="relative font-sans select-none w-full max-w-full">
@@ -333,6 +344,19 @@ export default function FilterBar({
             </span>
           )}
 
+          {filters.transitAccess && filters.transitAccess !== 'all' && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-teal-50 border border-teal-300 text-teal-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm transition-transform hover:scale-[1.02]">
+              <span>{activeTransitObj?.icon} {activeTransitObj?.label}</span>
+              <button
+                onClick={() => onChange({ transitAccess: 'all' })}
+                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
+                title="Remove transit filter"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+
           <button
             onClick={handleResetFilters}
             className="text-[10px] font-mono font-bold text-vermilion hover:underline ml-1 flex-shrink-0 uppercase"
@@ -479,6 +503,44 @@ export default function FilterBar({
                     }`}
                   >
                     {r.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section 4: Transit & Travelling Proximity */}
+          <div className="space-y-2 pt-1 border-t border-sumi/15">
+            <div className="flex items-center justify-between text-xs font-mono">
+              <span className="font-bold text-sumi flex items-center gap-1.5">
+                <Train className="w-3.5 h-3.5 text-teal-600" />
+                <span>4. TRANSIT & TRAVELLING PROXIMITY</span>
+              </span>
+              <span className="text-[10px] text-slate-500 uppercase">
+                {activeTransitObj?.desc || 'Filter by commute'}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {TRANSIT_ACCESS_OPTIONS.map((opt) => {
+                const isActive = (filters.transitAccess || 'all') === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    onClick={() => onChange({ transitAccess: opt.id })}
+                    className={`p-2 rounded-xl border text-left transition-all ${
+                      isActive
+                        ? 'bg-teal-600 text-white border-sumi shadow-sm font-bold scale-[1.01]'
+                        : 'bg-white hover:bg-teal-50 hover:border-sumi/50 border-sumi/25 text-slate-800'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-bold truncate">{opt.icon} {opt.badge}</span>
+                      {isActive && <Check className="w-3 h-3 text-white stroke-[3]" />}
+                    </div>
+                    <div className={`text-[10px] font-mono mt-0.5 line-clamp-1 ${isActive ? 'text-teal-100' : 'text-slate-500'}`}>
+                      {opt.label}
+                    </div>
                   </button>
                 );
               })}

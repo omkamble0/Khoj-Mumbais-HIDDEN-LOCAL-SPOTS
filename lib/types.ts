@@ -51,6 +51,8 @@ export interface Place {
   composite_score?: number;
 }
 
+export type TransitAccessFilter = 'all' | 'near_metro' | 'near_railway' | 'walkable_transit';
+
 export interface FilterState {
   category: PlaceCategory;
   spotTier: SpotTier;
@@ -58,6 +60,7 @@ export interface FilterState {
   radiusKm: number;
   maxCrowdLevel: number;
   searchQuery: string;
+  transitAccess?: TransitAccessFilter;
 }
 
 export interface PlaceReportPayload {
