@@ -94,7 +94,7 @@ const LINE_TABS: LineTabConfig[] = [
   },
   {
     id: 'metro_1',
-    label: 'METRO 1 (BLUE)',
+    label: 'METRO 1 (BLUE - 12 STNS)',
     badge: 'M1',
     activeBg: 'bg-sky-600 text-white border-sumi shadow-riso-sm',
     inactiveBg: 'bg-sky-50 text-sky-950 border-sky-300 hover:border-sky-600 hover:bg-sky-100',
@@ -104,7 +104,7 @@ const LINE_TABS: LineTabConfig[] = [
   },
   {
     id: 'metro_2a',
-    label: 'METRO 2A (YELLOW)',
+    label: 'METRO 2A (YELLOW - 17 STNS)',
     badge: 'M2A',
     activeBg: 'bg-amber-400 text-sumi font-black border-sumi shadow-riso-sm',
     inactiveBg: 'bg-yellow-50 text-yellow-950 border-amber-400 hover:border-amber-600 hover:bg-yellow-100',
@@ -114,7 +114,7 @@ const LINE_TABS: LineTabConfig[] = [
   },
   {
     id: 'metro_7',
-    label: 'METRO 7 (RED)',
+    label: 'METRO 7 (RED - 14 STNS)',
     badge: 'M7',
     activeBg: 'bg-red-600 text-white border-sumi shadow-riso-sm',
     inactiveBg: 'bg-red-50 text-red-950 border-red-300 hover:border-red-600 hover:bg-red-100',
@@ -124,7 +124,7 @@ const LINE_TABS: LineTabConfig[] = [
   },
   {
     id: 'metro_3',
-    label: 'AQUA METRO 3',
+    label: 'AQUA METRO 3 (27 STNS)',
     badge: 'M3',
     activeBg: 'bg-teal-600 text-white border-sumi shadow-riso-sm',
     inactiveBg: 'bg-teal-50 text-teal-950 border-teal-300 hover:border-teal-600 hover:bg-teal-100',
@@ -134,7 +134,7 @@ const LINE_TABS: LineTabConfig[] = [
   },
   {
     id: 'metro_navi',
-    label: 'NAVI MUMBAI METRO',
+    label: 'NAVI MUMBAI METRO (11 STNS)',
     badge: 'NMM',
     activeBg: 'bg-orange-600 text-white border-sumi shadow-riso-sm',
     inactiveBg: 'bg-orange-50 text-orange-950 border-orange-300 hover:border-orange-600 hover:bg-orange-100',
@@ -1141,7 +1141,14 @@ export default function TransitNavigatorView({
                 >
                   <div className="text-[10px] font-mono text-slate-600 uppercase flex items-center justify-between gap-1">
                     <span className="truncate">{stn.zone}</span>
-                    {stn.fast_train_stop && <span className="text-rose-600 font-bold flex-shrink-0">⚡ FAST</span>}
+                    <div className="flex items-center gap-1 flex-shrink-0">
+                      {stn.operational_status === 'under_construction' && (
+                        <span className="text-[8px] font-bold px-1 py-0.2 rounded bg-amber-200 text-amber-900 border border-amber-400">
+                          PHASE 2 (2025)
+                        </span>
+                      )}
+                      {stn.fast_train_stop && <span className="text-rose-600 font-bold flex-shrink-0">⚡ FAST</span>}
+                    </div>
                   </div>
                   <div className="text-sm sm:text-base font-bold font-sans mt-0.5 truncate">
                     {stn.name}
@@ -1189,6 +1196,16 @@ export default function TransitNavigatorView({
                 <span className="text-xs font-mono font-bold text-vermilion uppercase tracking-wider">
                   CURRENT STATION HUB
                 </span>
+                {activeStation.operational_status === 'under_construction' && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-200 text-amber-950 border border-amber-400">
+                    🚧 PHASE 2 (COMMISSIONING 2025)
+                  </span>
+                )}
+                {activeStation.operational_status === 'operational' && activeStation.lines.includes('metro_3') && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-teal-100 text-teal-900 border border-teal-300">
+                    🚇 AQUA LINE PHASE 1 (OPEN)
+                  </span>
+                )}
               </div>
               <h3 className="font-sans font-black text-2xl sm:text-3xl text-sumi flex flex-wrap items-baseline gap-2">
                 <span>{activeStation.name}</span>
