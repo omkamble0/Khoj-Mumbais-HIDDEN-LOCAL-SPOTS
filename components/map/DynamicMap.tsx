@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import React, { Component, ReactNode } from 'react';
-import { Place } from '@/lib/types';
+import { Place, TransitFilterMode } from '@/lib/types';
 import { TransitStation, SmartCommutePlan } from '@/lib/transit';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 
@@ -16,6 +16,7 @@ interface DynamicMapProps {
   onToggleTransitOverlay?: (show: boolean) => void;
   showPlacesOverlay?: boolean;
   onTogglePlacesOverlay?: (show: boolean) => void;
+  transitFilterMode?: TransitFilterMode;
   selectedTransitStation?: TransitStation | null;
   onSelectTransitStation?: (station: TransitStation | null) => void;
   onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;

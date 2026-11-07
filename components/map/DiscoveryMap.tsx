@@ -16,9 +16,9 @@ import {
 import { Train, X, Compass, ExternalLink, Zap, MapPin } from 'lucide-react';
 import TactileSliderBar from '@/components/transit/TactileSliderBar';
 
-type TransitFilterMode = 'all' | 'local' | 'metro' | TransitLineType;
+export type TransitFilterMode = 'all' | 'local' | 'metro' | TransitLineType;
 
-interface TransitLineFilterChip {
+export interface TransitLineFilterChip {
   id: TransitLineType;
   code: string;
   name: string;
@@ -27,7 +27,7 @@ interface TransitLineFilterChip {
   isMetro: boolean;
 }
 
-const TRANSIT_FILTER_CHIPS: TransitLineFilterChip[] = [
+export const TRANSIT_FILTER_CHIPS: TransitLineFilterChip[] = [
   { id: 'western', code: 'WR', name: 'Western Railway', color: '#be123c', sliderAccent: 'bg-rose-700', isMetro: false },
   { id: 'central', code: 'CR', name: 'Central Main', color: '#d97706', sliderAccent: 'bg-amber-600', isMetro: false },
   { id: 'harbour', code: 'HR', name: 'Harbour Line', color: '#2563eb', sliderAccent: 'bg-blue-600', isMetro: false },
@@ -48,6 +48,7 @@ interface DiscoveryMapProps {
   onToggleTransitOverlay?: (show: boolean) => void;
   showPlacesOverlay?: boolean;
   onTogglePlacesOverlay?: (show: boolean) => void;
+  transitFilterMode?: TransitFilterMode;
   selectedTransitStation?: TransitStation | null;
   onSelectTransitStation?: (station: TransitStation | null) => void;
   onOpenTransitGuide?: (station?: TransitStation, place?: Place) => void;
@@ -89,6 +90,7 @@ export default function DiscoveryMap({
   onToggleTransitOverlay,
   showPlacesOverlay = true,
   onTogglePlacesOverlay,
+  transitFilterMode: externalTransitFilterMode = 'all',
   selectedTransitStation,
   onSelectTransitStation,
   onOpenTransitGuide,
@@ -115,11 +117,10 @@ export default function DiscoveryMap({
   onSelectTransitStationRef.current = onSelectTransitStation;
   const onOpenTransitGuideRef = useRef(onOpenTransitGuide);
   onOpenTransitGuideRef.current = onOpenTransitGuide;
-  const transitChipsContainerRef = useRef<HTMLDivElement>(null);
 
   const [internalTransitOverlay, setInternalTransitOverlay] = useState(showTransitOverlay);
   const [internalPlacesOverlay, setInternalPlacesOverlay] = useState(showPlacesOverlay);
-  const [transitFilterMode, setTransitFilterMode] = useState<TransitFilterMode>('all');
+  const [internalTransitFilterMode, setInternalTransitFilterMode] = useState<TransitFilterMode>(externalTransitFilterMode);
 
   useEffect(() => {
     setInternalTransitOverlay(showTransitOverlay);
@@ -128,6 +129,12 @@ export default function DiscoveryMap({
   useEffect(() => {
     setInternalPlacesOverlay(showPlacesOverlay);
   }, [showPlacesOverlay]);
+
+  useEffect(() => {
+    setInternalTransitFilterMode(externalTransitFilterMode);
+  }, [externalTransitFilterMode]);
+
+  const transitFilterMode = internalTransitFilterMode;
 
   const handleToggleTransit = () => {
     const nextVal = !internalTransitOverlay;
@@ -808,158 +815,33 @@ export default function DiscoveryMap({
         </div>
       )}
 
-      {/* Floating Places & Transit Layer Toggle Pills (Bottom-left above attribution) */}
-      <div className="absolute bottom-6 left-4 z-20 flex flex-col items-start gap-2">
-        {/* Transit Mode & Line Filter Tray (Expands when Transit is ON) */}
-        {internalTransitOverlay && (
-          <div className="bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso p-3 sm:p-3.5 font-sans max-w-[95vw] sm:max-w-lg animate-in fade-in slide-in-from-bottom-2 space-y-2.5">
-            {/* Header and Transit Mode Buttons */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b-2 border-sumi/15">
-              <div className="flex items-center gap-2 font-mono font-black text-xs sm:text-sm text-sumi uppercase tracking-wider">
-                <Train className="w-4 h-4 text-rose-600 flex-shrink-0" />
-                <span>TRAVELLING OPTIONS</span>
-              </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <button
-                  type="button"
-                  onClick={() => setTransitFilterMode('all')}
-                  className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all ${
-                    transitFilterMode === 'all'
-                      ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
-                      : 'bg-white text-slate-800 border-sumi/30 hover:bg-wabi-100 hover:border-sumi'
-                  }`}
-                  title="Show all Mumbai railway and metro lines"
-                >
-                  ALL LINES
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTransitFilterMode('local')}
-                  className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all ${
-                    transitFilterMode === 'local'
-                      ? 'bg-rose-700 text-white border-sumi shadow-riso-sm'
-                      : 'bg-white text-slate-800 border-sumi/30 hover:bg-rose-50 hover:border-rose-500'
-                  }`}
-                  title="Show only Suburban Railway Locals (Western, Central, Harbour)"
-                >
-                  🚆 LOCALS
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTransitFilterMode('metro')}
-                  className={`px-3 py-1 rounded-xl text-xs font-mono font-bold border-2 transition-all ${
-                    transitFilterMode === 'metro'
-                      ? 'bg-teal-700 text-white border-sumi shadow-riso-sm'
-                      : 'bg-white text-slate-800 border-sumi/30 hover:bg-teal-50 hover:border-teal-500'
-                  }`}
-                  title="Show only Metro lines (M1, M2A, M7, M3, NMM)"
-                >
-                  🚇 METROS
-                </button>
-              </div>
-            </div>
+      {/* Floating Places & Transit Layer Pure ON/OFF Toggle Buttons (Bottom-left, zero clutter) */}
+      <div className="absolute bottom-6 left-4 z-20 flex items-center gap-2">
+        <button
+          onClick={handleTogglePlaces}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${
+            internalPlacesOverlay
+              ? 'bg-emerald-400 text-sumi hover:bg-emerald-300'
+              : 'bg-wabi/90 backdrop-blur-md text-slate-600 hover:bg-white hover:text-sumi'
+          }`}
+          title="Toggle hidden sanctuary pins on the map"
+        >
+          <MapPin className="w-3.5 h-3.5 text-sumi" />
+          <span>SPOTS: {internalPlacesOverlay ? 'ON' : 'OFF'}</span>
+        </button>
 
-            {/* Individual Line Filter Chips with legible typography and generous click targets */}
-            <div
-              ref={transitChipsContainerRef}
-              onWheel={(e) => {
-                if (e.deltaY !== 0 && transitChipsContainerRef.current) {
-                  transitChipsContainerRef.current.scrollLeft += e.deltaY;
-                }
-              }}
-              className="flex items-center gap-1.5 overflow-x-auto sliding-bar py-1 select-none"
-            >
-              {TRANSIT_FILTER_CHIPS.map((chip) => {
-                const isActive = transitFilterMode === chip.id;
-                return (
-                  <button
-                    key={chip.id}
-                    type="button"
-                    onClick={() => setTransitFilterMode(isActive ? 'all' : chip.id)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 active:scale-95 ${
-                      isActive
-                        ? 'bg-sumi text-wabi border-sumi font-black -translate-y-0.5 shadow-riso-sm'
-                        : 'bg-white text-slate-900 border-sumi/30 hover:border-sumi hover:bg-wabi-100'
-                    }`}
-                    title={`Filter by ${chip.name} (${chip.code})`}
-                  >
-                    <span
-                      className="w-2.5 h-2.5 rounded-full border border-black/30 flex-shrink-0 shadow-xs"
-                      style={{ backgroundColor: chip.color }}
-                    />
-                    <span className="font-black tracking-wide">{chip.code}</span>
-                    <span className={`text-[11px] font-sans font-medium hidden sm:inline ${isActive ? 'text-wabi/90' : 'text-slate-600'}`}>
-                      {chip.name.split(' ')[0]}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Horizontal Sliding Bar below Western Railway and line chips */}
-            <TactileSliderBar
-              containerRef={transitChipsContainerRef}
-              variant="lines"
-              accentColor={
-                TRANSIT_FILTER_CHIPS.find(c => c.id === transitFilterMode)?.sliderAccent || 'bg-sumi'
-              }
-              trackLabel="Railway and Metro Line Slider"
-              className="mt-0.5 mb-1"
-            />
-
-            {/* Active route helper info line */}
-            <div className="text-[11px] font-mono text-slate-600 font-medium flex items-center justify-between pt-1 border-t border-sumi/10">
-              <span className="truncate">
-                {transitFilterMode === 'all' && 'Showing All 8 Suburban & Metro Lines on Map'}
-                {transitFilterMode === 'local' && 'Showing 3 Suburban Lines: WR, CR & Harbour'}
-                {transitFilterMode === 'metro' && 'Showing 5 Metro Corridors: Lines 1, 2A, 7, 3 & Navi Mumbai'}
-                {typeof transitFilterMode === 'string' && transitFilterMode !== 'all' && transitFilterMode !== 'local' && transitFilterMode !== 'metro' && (
-                  <>
-                    Showing <strong className="text-sumi">{TRANSIT_FILTER_CHIPS.find(c => c.id === transitFilterMode)?.name}</strong> line & stations
-                  </>
-                )}
-              </span>
-              {transitFilterMode !== 'all' && (
-                <button
-                  type="button"
-                  onClick={() => setTransitFilterMode('all')}
-                  className="text-vermilion hover:underline font-bold text-[10px] uppercase ml-2 flex-shrink-0"
-                >
-                  Reset to All
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Action Toggle Pills Row */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleTogglePlaces}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${
-              internalPlacesOverlay
-                ? 'bg-emerald-400 text-sumi hover:bg-emerald-300'
-                : 'bg-wabi/90 backdrop-blur-md text-slate-600 hover:bg-white hover:text-sumi'
-            }`}
-            title="Toggle hidden sanctuary pins on the map"
-          >
-            <MapPin className="w-3.5 h-3.5 text-sumi" />
-            <span>SPOTS: {internalPlacesOverlay ? 'ON' : 'OFF'}</span>
-          </button>
-
-          <button
-            onClick={handleToggleTransit}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${
-              internalTransitOverlay
-                ? 'bg-amber-400 text-sumi hover:bg-amber-300'
-                : 'bg-wabi/90 backdrop-blur-md text-slate-600 hover:bg-white hover:text-sumi'
-            }`}
-            title="Toggle Mumbai Local Train & Metro station overlay on map"
-          >
-            <Train className="w-3.5 h-3.5 text-rose-600" />
-            <span>TRANSIT: {internalTransitOverlay ? 'ON' : 'OFF'}</span>
-          </button>
-        </div>
+        <button
+          onClick={handleToggleTransit}
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${
+            internalTransitOverlay
+              ? 'bg-amber-400 text-sumi hover:bg-amber-300'
+              : 'bg-wabi/90 backdrop-blur-md text-slate-600 hover:bg-white hover:text-sumi'
+          }`}
+          title="Toggle Mumbai Local Train & Metro station overlay on map"
+        >
+          <Train className="w-3.5 h-3.5 text-rose-600" />
+          <span>TRANSIT: {internalTransitOverlay ? 'ON' : 'OFF'}</span>
+        </button>
       </div>
 
       {/* Floating Station Hub HUD (Appears when a railway or metro station is selected) */}

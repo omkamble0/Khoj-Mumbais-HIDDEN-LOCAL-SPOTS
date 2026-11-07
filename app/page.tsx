@@ -13,7 +13,12 @@ import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
 import SmartCommuteModal from '@/components/transit/SmartCommuteModal';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
-import { TransitStation, SmartCommutePlan, getSanctuaryTransitProfile } from '@/lib/transit';
+import {
+  TransitStation,
+  TRANSIT_STATIONS,
+  SmartCommutePlan,
+  getSanctuaryTransitProfile,
+} from '@/lib/transit';
 import initialPlacesData from '@/data/places_mumbai.json';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
@@ -47,6 +52,7 @@ export default function HomePage() {
     maxCrowdLevel: 5,
     searchQuery: '',
     transitAccess: 'all',
+    transitLine: 'all',
   });
 
   // Load master places dataset & saved favorites once on mount
@@ -158,6 +164,31 @@ export default function HomePage() {
           }
         }
 
+        // Specific Transit Line / Corridor filtering
+        if (filters.transitLine && filters.transitLine !== 'all') {
+          const profile = getSanctuaryTransitProfile(place.latitude, place.longitude);
+          if (filters.transitLine === 'local') {
+            const isLocalClosest =
+              !profile.nearestMetro ||
+              profile.nearestRailway.distanceMeters <= profile.nearestMetro.distanceMeters;
+            if (!isLocalClosest && profile.nearestRailway.distanceMeters > 2000) return false;
+          } else if (filters.transitLine === 'metro') {
+            if (!profile.nearestMetro || profile.nearestMetro.distanceMeters > 2500) return false;
+          } else {
+            const targetLine = filters.transitLine;
+            const matchesRailway = profile.nearestRailway.station.lines.includes(targetLine);
+            const matchesMetro = profile.nearestMetro?.station.lines.includes(targetLine);
+            if (!matchesRailway && !matchesMetro) {
+              const nearLine = TRANSIT_STATIONS.some(
+                (stn) =>
+                  stn.lines.includes(targetLine) &&
+                  calculateDistanceMeters(place.latitude, place.longitude, stn.latitude, stn.longitude) <= 2500
+              );
+              if (!nearLine) return false;
+            }
+          }
+        }
+
         // Crowd filter
         if (place.crowd_level > filters.maxCrowdLevel) {
           return false;
@@ -256,6 +287,8 @@ export default function HomePage() {
                   totalFound={filteredPlaces.length}
                   showPlacesOverlay={showPlacesOverlay}
                   onTogglePlacesOverlay={() => setShowPlacesOverlay((prev) => !prev)}
+                  showTransitOverlay={showTransitOverlay}
+                  onToggleTransitOverlay={(v) => setShowTransitOverlay(v)}
                 />
               </div>
             )}
@@ -271,6 +304,7 @@ export default function HomePage() {
               onToggleTransitOverlay={(v) => setShowTransitOverlay(v)}
               showPlacesOverlay={showPlacesOverlay}
               onTogglePlacesOverlay={(v) => setShowPlacesOverlay(v)}
+              transitFilterMode={filters.transitLine || 'all'}
               selectedTransitStation={selectedTransitStation}
               onSelectTransitStation={(stn) => setSelectedTransitStation(stn)}
               onOpenTransitGuide={(stn, place) => {

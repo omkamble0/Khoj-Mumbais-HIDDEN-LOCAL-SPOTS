@@ -52,6 +52,18 @@ export interface Place {
 }
 
 export type TransitAccessFilter = 'all' | 'near_metro' | 'near_railway' | 'walkable_transit';
+export type TransitFilterMode =
+  | 'all'
+  | 'local'
+  | 'metro'
+  | 'western'
+  | 'central'
+  | 'harbour'
+  | 'metro_1'
+  | 'metro_2a'
+  | 'metro_7'
+  | 'metro_3'
+  | 'metro_navi';
 
 export interface FilterState {
   category: PlaceCategory;
@@ -61,6 +73,7 @@ export interface FilterState {
   maxCrowdLevel: number;
   searchQuery: string;
   transitAccess?: TransitAccessFilter;
+  transitLine?: TransitFilterMode;
 }
 
 export interface PlaceReportPayload {
