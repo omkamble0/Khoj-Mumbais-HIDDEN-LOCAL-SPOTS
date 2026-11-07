@@ -14,6 +14,7 @@ import {
   SmartCommutePlan,
 } from '@/lib/transit';
 import { Train, X, Compass, ExternalLink, Zap, MapPin } from 'lucide-react';
+import TactileSliderBar from '@/components/transit/TactileSliderBar';
 
 type TransitFilterMode = 'all' | 'local' | 'metro' | TransitLineType;
 
@@ -22,18 +23,19 @@ interface TransitLineFilterChip {
   code: string;
   name: string;
   color: string;
+  sliderAccent: string;
   isMetro: boolean;
 }
 
 const TRANSIT_FILTER_CHIPS: TransitLineFilterChip[] = [
-  { id: 'western', code: 'WR', name: 'Western Railway', color: '#be123c', isMetro: false },
-  { id: 'central', code: 'CR', name: 'Central Main', color: '#d97706', isMetro: false },
-  { id: 'harbour', code: 'HR', name: 'Harbour Line', color: '#2563eb', isMetro: false },
-  { id: 'metro_1', code: 'M1', name: 'Metro 1 Blue', color: '#0284c7', isMetro: true },
-  { id: 'metro_2a', code: 'M2A', name: 'Metro 2A Yellow', color: '#ca8a04', isMetro: true },
-  { id: 'metro_7', code: 'M7', name: 'Metro 7 Red', color: '#dc2626', isMetro: true },
-  { id: 'metro_3', code: 'M3', name: 'Aqua Line 3', color: '#0d9488', isMetro: true },
-  { id: 'metro_navi', code: 'NMM', name: 'Navi Mumbai', color: '#ea580c', isMetro: true },
+  { id: 'western', code: 'WR', name: 'Western Railway', color: '#be123c', sliderAccent: 'bg-rose-700', isMetro: false },
+  { id: 'central', code: 'CR', name: 'Central Main', color: '#d97706', sliderAccent: 'bg-amber-600', isMetro: false },
+  { id: 'harbour', code: 'HR', name: 'Harbour Line', color: '#2563eb', sliderAccent: 'bg-blue-600', isMetro: false },
+  { id: 'metro_1', code: 'M1', name: 'Metro 1 Blue', color: '#0284c7', sliderAccent: 'bg-sky-600', isMetro: true },
+  { id: 'metro_2a', code: 'M2A', name: 'Metro 2A Yellow', color: '#ca8a04', sliderAccent: 'bg-yellow-600', isMetro: true },
+  { id: 'metro_7', code: 'M7', name: 'Metro 7 Red', color: '#dc2626', sliderAccent: 'bg-red-600', isMetro: true },
+  { id: 'metro_3', code: 'M3', name: 'Aqua Line 3', color: '#0d9488', sliderAccent: 'bg-teal-600', isMetro: true },
+  { id: 'metro_navi', code: 'NMM', name: 'Navi Mumbai', color: '#ea580c', sliderAccent: 'bg-orange-600', isMetro: true },
 ];
 
 interface DiscoveryMapProps {
@@ -113,6 +115,7 @@ export default function DiscoveryMap({
   onSelectTransitStationRef.current = onSelectTransitStation;
   const onOpenTransitGuideRef = useRef(onOpenTransitGuide);
   onOpenTransitGuideRef.current = onOpenTransitGuide;
+  const transitChipsContainerRef = useRef<HTMLDivElement>(null);
 
   const [internalTransitOverlay, setInternalTransitOverlay] = useState(showTransitOverlay);
   const [internalPlacesOverlay, setInternalPlacesOverlay] = useState(showPlacesOverlay);
@@ -857,7 +860,15 @@ export default function DiscoveryMap({
             </div>
 
             {/* Individual Line Filter Chips with legible typography and generous click targets */}
-            <div className="flex items-center gap-1.5 overflow-x-auto sliding-bar py-1 select-none">
+            <div
+              ref={transitChipsContainerRef}
+              onWheel={(e) => {
+                if (e.deltaY !== 0 && transitChipsContainerRef.current) {
+                  transitChipsContainerRef.current.scrollLeft += e.deltaY;
+                }
+              }}
+              className="flex items-center gap-1.5 overflow-x-auto sliding-bar py-1 select-none"
+            >
               {TRANSIT_FILTER_CHIPS.map((chip) => {
                 const isActive = transitFilterMode === chip.id;
                 return (
@@ -884,6 +895,17 @@ export default function DiscoveryMap({
                 );
               })}
             </div>
+
+            {/* Horizontal Sliding Bar below Western Railway and line chips */}
+            <TactileSliderBar
+              containerRef={transitChipsContainerRef}
+              variant="lines"
+              accentColor={
+                TRANSIT_FILTER_CHIPS.find(c => c.id === transitFilterMode)?.sliderAccent || 'bg-sumi'
+              }
+              trackLabel="Railway and Metro Line Slider"
+              className="mt-0.5 mb-1"
+            />
 
             {/* Active route helper info line */}
             <div className="text-[11px] font-mono text-slate-600 font-medium flex items-center justify-between pt-1 border-t border-sumi/10">
