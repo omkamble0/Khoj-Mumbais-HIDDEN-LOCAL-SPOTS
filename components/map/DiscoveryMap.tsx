@@ -874,9 +874,9 @@ export default function DiscoveryMap({
         )}
       </div>
 
-      {/* Floating Station Hub HUD (Appears when a railway or metro station is selected) */}
-      {selectedTransitStation && (
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso px-3.5 py-2 sm:px-4 sm:py-2.5 flex items-center gap-2 sm:gap-3 z-30 font-mono text-xs max-w-[95vw] animate-in fade-in slide-in-from-bottom-2">
+      {/* Floating Station Hub HUD (Appears only when browsing stations without an open sanctuary drawer) */}
+      {!selectedPlace && selectedTransitStation && (
+        <div className="absolute bottom-20 left-4 right-4 sm:bottom-6 sm:left-1/2 sm:-translate-x-1/2 sm:w-auto bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso px-3.5 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between sm:justify-start gap-2 sm:gap-3 z-30 font-mono text-xs max-w-[95vw] animate-in fade-in slide-in-from-bottom-2">
           <div className="flex items-center gap-2 min-w-0">
             <span className="w-2.5 h-2.5 rounded-full bg-vermilion animate-pulse flex-shrink-0" />
             <div className="truncate">
