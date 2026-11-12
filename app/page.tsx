@@ -19,6 +19,7 @@ import {
   SmartCommutePlan,
   getSanctuaryTransitProfile,
 } from '@/lib/transit';
+import { getPlacesFromCache, savePlacesToCache } from '@/lib/cache/placesCache';
 import initialPlacesData from '@/data/places_mumbai.json';
 
 // Default center: Mumbai (Bandra / Dadar central coordinates)
@@ -59,11 +60,20 @@ export default function HomePage() {
   useEffect(() => {
     async function loadInitialPlaces() {
       try {
+        // Tier 1: Instant 0ms load from browser IndexedDB cache
+        const cached = await getPlacesFromCache();
+        if (cached && cached.length >= initialPlacesData.length) {
+          setAllPlaces(cached);
+        }
+
+        // Tier 2: Background network revalidation
         const res = await fetch('/api/places/nearby?radiusKm=500');
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data.places) && data.places.length >= initialPlacesData.length) {
             setAllPlaces(data.places);
+            // Persist to local IndexedDB for future instant loads
+            savePlacesToCache(data.places);
           }
         }
       } catch (e) {

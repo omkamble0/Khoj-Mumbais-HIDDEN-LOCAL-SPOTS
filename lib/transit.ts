@@ -1744,10 +1744,17 @@ export interface SanctuaryTransitProfile {
   recommendedConnection: string;
 }
 
+const transitProfileCache = new Map<string, SanctuaryTransitProfile>();
+
 /**
  * Calculates nearest suburban railway station & metro for any given coordinate.
+ * Memoized with an in-memory spatial cache to avoid repeated O(N) loops.
  */
 export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryTransitProfile {
+  const cacheKey = `${lat.toFixed(4)},${lng.toFixed(4)}`;
+  const cached = transitProfileCache.get(cacheKey);
+  if (cached) return cached;
+
   let nearestRail: TransitStation = TRANSIT_STATIONS[0];
   let minRailDist = Infinity;
 
@@ -1784,7 +1791,7 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
     recommendedConnection = `🚕 Short kaali-peeli taxi ride or brisk walk from ${nearestRail.name}.`;
   }
 
-  return {
+  const profile: SanctuaryTransitProfile = {
     nearestRailway: {
       station: nearestRail,
       distanceMeters: Math.round(minRailDist),
@@ -1802,6 +1809,9 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
       : undefined,
     recommendedConnection,
   };
+
+  transitProfileCache.set(cacheKey, profile);
+  return profile;
 }
 
 /**

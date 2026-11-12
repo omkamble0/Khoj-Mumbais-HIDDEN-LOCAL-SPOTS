@@ -148,7 +148,9 @@ export default function DiscoveryMap({
     onTogglePlacesOverlay?.(nextVal);
   };
 
-  // Viewport Culling & Isolated Destination Mode
+  const rafIdRef = useRef<number | null>(null);
+
+  // Viewport Culling & Isolated Destination Mode (Batched via requestAnimationFrame)
   const syncVisibleMarkers = () => {
     const map = mapInstanceRef.current;
     const layer = markersLayerRef.current;
@@ -190,8 +192,19 @@ export default function DiscoveryMap({
     });
   };
 
-  const syncVisibleMarkersRef = useRef(syncVisibleMarkers);
-  syncVisibleMarkersRef.current = syncVisibleMarkers;
+  const scheduleSyncVisibleMarkers = () => {
+    if (typeof window === 'undefined') return;
+    if (rafIdRef.current !== null) {
+      cancelAnimationFrame(rafIdRef.current);
+    }
+    rafIdRef.current = requestAnimationFrame(() => {
+      syncVisibleMarkers();
+      rafIdRef.current = null;
+    });
+  };
+
+  const syncVisibleMarkersRef = useRef(scheduleSyncVisibleMarkers);
+  syncVisibleMarkersRef.current = scheduleSyncVisibleMarkers;
 
   // Re-sync markers when places overlay toggle state changes
   useEffect(() => {
