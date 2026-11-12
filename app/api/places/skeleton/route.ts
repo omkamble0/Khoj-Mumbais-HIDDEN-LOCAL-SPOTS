@@ -47,3 +47,4 @@ export async function GET() {
     return NextResponse.json({ error: 'Failed to generate skeleton payload' }, { status: 500 });
   }
 }
+

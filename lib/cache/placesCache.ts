@@ -103,3 +103,4 @@ export async function savePlacesToCache(places: Place[], version = '1.0'): Promi
     console.warn('IndexedDB write fallback:', err);
   }
 }
+

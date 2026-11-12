@@ -1742,6 +1742,7 @@ export interface SanctuaryTransitProfile {
     walkMinutes: number;
   };
   recommendedConnection: string;
+  accessibleLines: TransitLineType[];
 }
 
 const transitProfileCache = new Map<string, SanctuaryTransitProfile>();
@@ -1761,8 +1762,14 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
   let nearestMetro: TransitStation | undefined = undefined;
   let minMetroDist = Infinity;
 
+  const accessibleLinesSet = new Set<TransitLineType>();
+
   for (const stn of TRANSIT_STATIONS) {
     const dist = calculateDistanceMeters(lat, lng, stn.latitude, stn.longitude);
+
+    if (dist <= 2500) {
+      stn.lines.forEach((l) => accessibleLinesSet.add(l));
+    }
 
     const hasMetro = stn.lines.some((l) => l.startsWith('metro'));
     const hasSuburban = stn.lines.some((l) => l === 'western' || l === 'central' || l === 'harbour');
@@ -1808,6 +1815,7 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
         }
       : undefined,
     recommendedConnection,
+    accessibleLines: Array.from(accessibleLinesSet),
   };
 
   transitProfileCache.set(cacheKey, profile);

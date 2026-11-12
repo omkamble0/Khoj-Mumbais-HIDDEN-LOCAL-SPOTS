@@ -186,16 +186,7 @@ export default function HomePage() {
             if (!profile.nearestMetro || profile.nearestMetro.distanceMeters > 2500) return false;
           } else {
             const targetLine = filters.transitLine;
-            const matchesRailway = profile.nearestRailway.station.lines.includes(targetLine);
-            const matchesMetro = profile.nearestMetro?.station.lines.includes(targetLine);
-            if (!matchesRailway && !matchesMetro) {
-              const nearLine = TRANSIT_STATIONS.some(
-                (stn) =>
-                  stn.lines.includes(targetLine) &&
-                  calculateDistanceMeters(place.latitude, place.longitude, stn.latitude, stn.longitude) <= 2500
-              );
-              if (!nearLine) return false;
-            }
+            if (!profile.accessibleLines.includes(targetLine)) return false;
           }
         }
 

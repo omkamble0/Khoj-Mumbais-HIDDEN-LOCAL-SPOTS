@@ -14,6 +14,38 @@ interface ZineLookbookProps {
   onFilterChange: (updated: Partial<FilterState>) => void;
 }
 
+const CATEGORY_STYLES: Record<string, { bg: string; text: string; border: string }> = {
+  bars: { bg: '#9B1B30', text: '#F4B41A', border: '#141518' },
+  cafes: { bg: '#C85A17', text: '#FDF5E6', border: '#141518' },
+  gardens: { bg: '#2E7D32', text: '#FFF9C4', border: '#141518' },
+  treks: { bg: '#556B2F', text: '#FDF5E6', border: '#141518' },
+  waterfront: { bg: '#008080', text: '#F08080', border: '#141518' },
+  viewpoints: { bg: '#A11950', text: '#DAA520', border: '#141518' },
+  heritage: { bg: '#283593', text: '#F0E6D2', border: '#141518' },
+  forts: { bg: '#8B4513', text: '#F0E6D2', border: '#141518' },
+  walks: { bg: '#CD5C5C', text: '#EEDD82', border: '#141518' },
+  spiritual: { bg: '#D84315', text: '#FFB300', border: '#141518' },
+  culture: { bg: '#E91E63', text: '#FFFFFF', border: '#141518' },
+  books: { bg: '#800020', text: '#FFD700', border: '#141518' },
+  bazaars: { bg: '#212121', text: '#FFCC00', border: '#141518' },
+};
+
+function getBudgetStamp(tier?: string, cost?: string) {
+  if (tier === 'free' || cost?.includes('₹0') || cost?.toLowerCase().includes('free')) {
+    return { label: '₹ FUKAT', bg: 'bg-emerald-500 text-white border-emerald-600' };
+  }
+  if (tier === 'pocket_friendly' || cost?.includes('Pocket')) {
+    return { label: '₹ KADAK', bg: 'bg-amber-400 text-sumi border-amber-600' };
+  }
+  if (tier === 'moderate' || cost?.includes('Vasool')) {
+    return { label: '₹₹ VASOOL', bg: 'bg-orange-500 text-white border-orange-600' };
+  }
+  if (tier === 'splurge' || cost?.includes('Bhaari') || cost?.includes('Mehenga')) {
+    return { label: '₹₹₹ BHAARI', bg: 'bg-rose-700 text-white border-rose-800' };
+  }
+  return { label: '₹ DESI', bg: 'bg-wabi text-sumi border-sumi/40' };
+}
+
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80';
 
@@ -105,28 +137,43 @@ export default function ZineLookbook({
                 <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
 
                 {/* Floating Category, Tier Tag & Peak Radar on Top Left */}
-                <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-1.5 z-10 max-w-[80%]">
-                  <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
+                <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-1.5 z-10 max-w-[85%]">
+                  {/* Authentic Category Badge */}
+                  <span
+                    style={{
+                      backgroundColor: CATEGORY_STYLES[place.category]?.bg || '#141518',
+                      color: CATEGORY_STYLES[place.category]?.text || '#FDFBF7',
+                      borderColor: '#141518',
+                    }}
+                    className="px-3 py-1 rounded-xl text-xs font-mono font-black uppercase tracking-wider backdrop-blur-md border-2 shadow-riso-sm"
+                  >
                     {place.category.replace('_', ' ')}
                   </span>
-                  <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${place.spot_tier === 'iconic'
-                    ? 'bg-amber-400 text-sumi border-amber-500/40'
+
+                  {/* Spot Tier Stamp */}
+                  <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border-2 border-sumi shadow-riso-sm ${place.spot_tier === 'iconic'
+                    ? 'bg-amber-400 text-sumi'
                     : place.spot_tier === 'underrated'
-                      ? 'bg-cobalt text-white border-blue-400/40'
-                      : 'bg-vermilion text-white border-rose-400/40'
+                      ? 'bg-cobalt text-white'
+                      : 'bg-vermilion text-white'
                     }`}>
                     {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
                   </span>
-                  {place.approx_cost && (
-                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-bold uppercase bg-amber-400 text-sumi backdrop-blur-md border border-amber-500/50 shadow-sm flex items-center gap-1">
-                      <span>🪙</span>
-                      <span>{place.approx_cost}</span>
-                    </span>
-                  )}
+
+                  {/* Desi Bill / Ticket Stamp */}
+                  {(() => {
+                    const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
+                    return (
+                      <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border-2 shadow-riso-sm flex items-center gap-1 ${stamp.bg}`}>
+                        <span>{stamp.label}</span>
+                      </span>
+                    );
+                  })()}
+
                   {checkIsPlacePeakingNow(place, currentWindow).isPeaking && (
-                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase bg-emerald-600 text-white shadow-sm flex items-center gap-1 border border-emerald-400/50">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                      <span>{currentWindow.icon} PEAK NOW</span>
+                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase bg-emerald-600 text-white shadow-riso-sm flex items-center gap-1 border-2 border-sumi">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      <span>{currentWindow.icon} PEAK</span>
                     </span>
                   )}
                 </div>
