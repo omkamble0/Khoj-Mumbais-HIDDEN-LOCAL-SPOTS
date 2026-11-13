@@ -39,11 +39,40 @@ import urllib.error
 # ─────────────────────────────────────────────────────────────
 
 DEFAULT_OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+OVERPASS_MIRRORS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter"
+]
 USER_AGENT = "KhojMumbaiBot/1.0 (https://github.com/omkamble0/khoj-; Open Data Ingestion)"
 REQUEST_TIMEOUT_SECONDS = 30
 
 # Mumbai Metropolitan Region (MMR) Bounding Box: (min_lat, min_lon, max_lat, max_lon)
 DEFAULT_BBOX = (18.8900, 72.7500, 19.3500, 73.1500)
+
+MMR_ZONES = [
+    {
+        "id": "zone1",
+        "name": "Zone 1: South & Central Mumbai",
+        "bbox": (18.8900, 72.8000, 19.0800, 72.9200)
+    },
+    {
+        "id": "zone2",
+        "name": "Zone 2: Western Suburbs (Bandra to Dahisar)",
+        "bbox": (19.0400, 72.7800, 19.2800, 72.8900)
+    },
+    {
+        "id": "zone3",
+        "name": "Zone 3: Eastern Suburbs, Thane & Navi Mumbai",
+        "bbox": (18.9800, 72.9000, 19.2600, 73.1200)
+    },
+    {
+        "id": "zone4",
+        "name": "Zone 4: Northern MMR (Mira-Bhayandar, Vasai, Kalyan)",
+        "bbox": (19.2200, 72.7800, 19.4200, 73.2000)
+    }
+]
 
 SUPPORTED_BRANDS = {
     "mcdonalds": {
@@ -202,54 +231,70 @@ def match_brand(tags, allowed_brands):
 
 def build_overpass_query(bbox, brands):
     """
-    Constructs a polite, single-batch Overpass QL query for Mumbai MMR.
-    Uses 'out center;' to compute centers for polygons/ways.
+    Constructs a polite, fast indexed Overpass QL query for Mumbai MMR.
+    Filters by brand/name keywords server-side so Overpass resolves in seconds
+    instead of transferring tens of thousands of generic restaurants.
+    Uses 'out center tags;' to compute centers for polygons/ways.
     """
     min_lat, min_lon, max_lat, max_lon = bbox
     bbox_str = f"{min_lat},{min_lon},{max_lat},{max_lon}"
     
-    # Overpass QL union query
+    # Build regex pattern for targeted brand filtering
+    keyword_patterns = []
+    for b in brands:
+        if b == "mcdonalds":
+            keyword_patterns.append("McDonald|McD")
+        elif b == "burger_king":
+            keyword_patterns.append("Burger King|BK")
+        elif b == "kfc":
+            keyword_patterns.append("KFC|Kentucky Fried")
+        elif b == "subway":
+            keyword_patterns.append("Subway")
+        elif b == "dominos":
+            keyword_patterns.append("Domino")
+            
+    regex = "|".join(keyword_patterns) if keyword_patterns else "McDonald|Burger King|KFC|Subway|Domino"
+    
+    # Overpass QL indexed query
     query = f"""
     [out:json][timeout:{REQUEST_TIMEOUT_SECONDS}];
     (
-      node["amenity"="fast_food"]({bbox_str});
-      way["amenity"="fast_food"]({bbox_str});
-      node["shop"="fast_food"]({bbox_str});
-      way["shop"="fast_food"]({bbox_str});
-      node["amenity"="restaurant"]({bbox_str});
-      way["amenity"="restaurant"]({bbox_str});
+      node["name"~"{regex}",i]({bbox_str});
+      way["name"~"{regex}",i]({bbox_str});
+      node["brand"~"{regex}",i]({bbox_str});
+      way["brand"~"{regex}",i]({bbox_str});
     );
     out center tags;
     """
     return query.strip()
 
 def fetch_overpass_data(overpass_url, query):
-    """Executes the Overpass QL query and returns parsed JSON response."""
-    encoded_data = urllib.parse.urlencode({"data": query}).encode("utf-8")
-    req = urllib.request.Request(
-        overpass_url,
-        data=encoded_data,
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-    )
-    
-    try:
-        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as response:
-            if response.status != 200:
-                raise RuntimeError(f"Overpass server returned HTTP {response.status}")
-            raw_body = response.read().decode("utf-8")
-            return json.loads(raw_body)
-    except urllib.error.HTTPError as e:
-        if e.code == 429:
-            raise RuntimeError("Overpass rate limit reached (HTTP 429). Please wait 60s or specify an alternate mirror.")
-        if e.code == 504:
-            raise RuntimeError("Overpass query timed out (HTTP 504). Please narrow the bounding box.")
-        raise RuntimeError(f"Overpass HTTP Error {e.code}: {e.reason}")
-    except urllib.error.URLError as e:
-        raise RuntimeError(f"Failed to connect to Overpass API at {overpass_url}: {e.reason}")
+    """Executes the Overpass QL query and returns parsed JSON response with multi-mirror failover."""
+    mirrors_to_try = [overpass_url] + [m for m in OVERPASS_MIRRORS if m != overpass_url]
+    last_error = None
+
+    for mirror in mirrors_to_try:
+        encoded_data = urllib.parse.urlencode({"data": query}).encode("utf-8")
+        req = urllib.request.Request(
+            mirror,
+            data=encoded_data,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        )
+        
+        try:
+            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+                if response.status == 200:
+                    raw_body = response.read().decode("utf-8")
+                    return json.loads(raw_body)
+        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, Exception) as e:
+            last_error = e
+            continue
+
+    raise RuntimeError(f"All Overpass mirrors failed or timed out. Last error: {last_error}")
 
 # ─────────────────────────────────────────────────────────────
 # CANDIDATE NORMALIZATION & DEDUPLICATION
@@ -547,3 +592,4 @@ if __name__ == "__main__":
     
     parsed_args = parser.parse_args()
     run_ingestion(parsed_args)
+

@@ -17,6 +17,15 @@ interface HeaderProps {
   onOpenRoulette: () => void;
 }
 
+const FAST_FOOD_QUICK_CHIPS = [
+  { label: '🍔 McD', query: 'mcd', title: "McDonald's Outlets & Drive-Thrus" },
+  { label: '👑 Burger King', query: 'burger king', title: "Burger King Outlets" },
+  { label: '🍗 KFC', query: 'kfc', title: "KFC Outlets" },
+  { label: '🥪 Subway', query: 'subway', title: "Subway Outlets" },
+  { label: "🍕 Domino's", query: 'dominos', title: "Domino's Pizza Outlets" },
+  { label: '🏬 Malls', query: 'mall', title: "Shopping Malls & Food Courts" },
+];
+
 export default function Header({
   currentCity,
   onLocateMe,
@@ -154,18 +163,51 @@ export default function Header({
                   type="text"
                   value={localQuery}
                   onChange={(e) => setLocalQuery(e.target.value)}
-                  placeholder="Search ruins, cliffs, serene tanks, parks..."
+                  placeholder="Search McD, BK, KFC, Subway, Domino's, malls, forts..."
                   className="w-full pl-10 pr-9 py-2 sm:py-2.5 text-xs sm:text-sm font-sans font-medium bg-wabi/95 hover:bg-white focus:bg-white backdrop-blur-md rounded-2xl border-2 border-sumi focus:outline-none shadow-riso focus:shadow-riso-red text-sumi placeholder-slate-500 transition-all"
                 />
                 {localQuery && (
                   <button
-                    onClick={() => setLocalQuery('')}
+                    onClick={() => {
+                      setLocalQuery('');
+                      onSearchChange('');
+                    }}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-sumi font-mono text-xs font-bold p-0.5"
                     title="Clear search"
                   >
                     ✕
                   </button>
                 )}
+              </div>
+
+              {/* Fast Food & Mall Quick Filter Brand Chips */}
+              <div className="flex items-center gap-1.5 mt-1.5 overflow-x-auto no-scrollbar py-0.5">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 whitespace-nowrap pl-1">
+                  Chains:
+                </span>
+                {FAST_FOOD_QUICK_CHIPS.map((chip) => {
+                  const isActive = localQuery.toLowerCase() === chip.query.toLowerCase();
+                  return (
+                    <button
+                      key={chip.query}
+                      type="button"
+                      onClick={() => {
+                        const next = isActive ? '' : chip.query;
+                        setLocalQuery(next);
+                        onSearchChange(next);
+                      }}
+                      className={`px-2 py-0.5 rounded-lg border text-[11px] font-mono font-bold tracking-tight whitespace-nowrap transition-all shadow-2xs flex items-center gap-1 active:scale-95 ${
+                        isActive
+                          ? 'bg-amber-400 text-sumi border-sumi font-black scale-105 shadow-riso-sm'
+                          : 'bg-white/95 hover:bg-white text-slate-700 hover:text-sumi border-sumi/40 hover:border-sumi'
+                      }`}
+                      title={chip.title}
+                    >
+                      <span>{chip.label}</span>
+                      {isActive && <span className="text-[9px] font-black text-rose-700">✕</span>}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
