@@ -2694,52 +2694,6 @@
     ]
   },
   {
-    "id": "kfc-goregaon-bangur-nagar",
-    "slug": "kfc-goregaon-bangur-nagar-link-road",
-    "name": "KFC (Bangur Nagar / Goregaon West)",
-    "short_name": "KFC Bangur Nagar",
-    "category": "cafes",
-    "subcategory": "KFC Fast Food Outlet",
-    "spot_tier": "underrated",
-    "budget_tier": "pocket_friendly",
-    "approx_cost": "₹120–₹350 combos",
-    "price_level": 1,
-    "city": "Mumbai",
-    "neighborhood": "Goregaon West / Link Road",
-    "latitude": 19.1672,
-    "longitude": 72.8362,
-    "access_type": "public",
-    "safety_level": "high",
-    "safety_notes": "Main New Link Road corridor near Bangur Nagar Metro station.",
-    "hiddenness_score": 0.22,
-    "vibe_score": 0.88,
-    "safety_score": 0.96,
-    "accessibility_score": 0.97,
-    "crowd_level": 3,
-    "best_time_to_visit": "Dinner 7:00 PM – 11:00 PM",
-    "description": "High-street KFC near Bangur Nagar Metro station on New Link Road. Fast counter takeaways and crispy chicken buckets.",
-    "vibe_tags": [
-      "fast-food",
-      "kfc",
-      "fried-chicken",
-      "goregaon",
-      "goregaon-west",
-      "link-road",
-      "pocket-friendly"
-    ],
-    "photo_url": "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?w=1000&auto=format&fit=crop&q=80",
-    "source": "curated_fastfood_network",
-    "verification_status": "verified",
-    "outlets": [
-      {
-        "brand": "kfc",
-        "name": "KFC Bangur Nagar",
-        "floor": "Ground Floor",
-        "timing": "11:00 AM – 12:00 AM"
-      }
-    ]
-  },
-  {
     "id": "kfc-dombivli-east-station",
     "slug": "kfc-dombivli-east-station",
     "name": "KFC (Dombivli East / Manpada Road)",
