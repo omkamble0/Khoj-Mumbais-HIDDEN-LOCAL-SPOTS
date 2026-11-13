@@ -12,31 +12,15 @@ import {
   getSanctuaryTransitProfile,
   getSanctuariesNearStation,
   SmartCommutePlan,
+  TransitLineFilterChip,
+  TRANSIT_FILTER_CHIPS,
 } from '@/lib/transit';
 import { Train, X, Compass, ExternalLink, Zap, MapPin } from 'lucide-react';
 import TactileSliderBar from '@/components/transit/TactileSliderBar';
 
 export type TransitFilterMode = 'all' | 'local' | 'metro' | TransitLineType;
-
-export interface TransitLineFilterChip {
-  id: TransitLineType;
-  code: string;
-  name: string;
-  color: string;
-  sliderAccent: string;
-  isMetro: boolean;
-}
-
-export const TRANSIT_FILTER_CHIPS: TransitLineFilterChip[] = [
-  { id: 'western', code: 'WR', name: 'Western Railway', color: '#be123c', sliderAccent: 'bg-rose-700', isMetro: false },
-  { id: 'central', code: 'CR', name: 'Central Main', color: '#d97706', sliderAccent: 'bg-amber-600', isMetro: false },
-  { id: 'harbour', code: 'HR', name: 'Harbour Line', color: '#2563eb', sliderAccent: 'bg-blue-600', isMetro: false },
-  { id: 'metro_1', code: 'M1', name: 'Metro 1 Blue', color: '#0284c7', sliderAccent: 'bg-sky-600', isMetro: true },
-  { id: 'metro_2a', code: 'M2A', name: 'Metro 2A Yellow', color: '#ca8a04', sliderAccent: 'bg-yellow-600', isMetro: true },
-  { id: 'metro_7', code: 'M7', name: 'Metro 7 Red', color: '#dc2626', sliderAccent: 'bg-red-600', isMetro: true },
-  { id: 'metro_3', code: 'M3', name: 'Aqua Line 3', color: '#0d9488', sliderAccent: 'bg-teal-600', isMetro: true },
-  { id: 'metro_navi', code: 'NMM', name: 'Navi Mumbai', color: '#ea580c', sliderAccent: 'bg-orange-600', isMetro: true },
-];
+export type { TransitLineFilterChip };
+export { TRANSIT_FILTER_CHIPS };
 
 interface DiscoveryMapProps {
   places: Place[];

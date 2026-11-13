@@ -35,7 +35,7 @@ import {
   Train,
   Zap,
 } from 'lucide-react';
-import { TRANSIT_FILTER_CHIPS } from '@/components/map/DiscoveryMap';
+import { TRANSIT_FILTER_CHIPS } from '@/lib/transit';
 import TactileSliderBar from '@/components/transit/TactileSliderBar';
 
 interface FilterBarProps {
