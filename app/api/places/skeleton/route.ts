@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getAllPlaces } from '@/lib/places';
+import { getPlacesFromDb } from '@/lib/supabase';
 
 export const dynamic = 'force-static';
 export const revalidate = 3600; // Cache on edge CDN for 1 hour
@@ -10,7 +10,7 @@ export const revalidate = 3600; // Cache on edge CDN for 1 hour
  */
 export async function GET() {
   try {
-    const places = getAllPlaces();
+    const places = await getPlacesFromDb();
     
     // Extract only lightweight attributes needed for map markers and filters
     const skeleton = places.map((p) => ({

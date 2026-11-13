@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Place, PlaceCategory, SpotTier, BudgetTier } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
-import { getAllPlaces } from '@/lib/places';
+import { getPlacesFromDb } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     const maxCrowd = parseInt(searchParams.get('maxCrowd') || '5', 10);
     const query = (searchParams.get('q') || '').toLowerCase().trim();
 
-    const places: Place[] = getAllPlaces();
+    const places: Place[] = await getPlacesFromDb();
     if (places.length === 0) {
       return NextResponse.json({ error: 'No places found' }, { status: 404 });
     }

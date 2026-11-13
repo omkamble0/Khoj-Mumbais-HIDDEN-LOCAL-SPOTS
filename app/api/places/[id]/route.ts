@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPlaceById } from '@/lib/places';
+import { getPlaceByIdFromDb } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,7 +9,7 @@ export async function GET(
 ) {
   try {
     const { id } = params;
-    const place = getPlaceById(id);
+    const place = await getPlaceByIdFromDb(id);
     if (!place) {
       return NextResponse.json({ error: 'Place not found' }, { status: 404 });
     }
