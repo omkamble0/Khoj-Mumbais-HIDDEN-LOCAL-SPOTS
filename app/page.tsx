@@ -25,6 +25,32 @@ import initialPlacesData from '@/data/places_mumbai.json';
 // Default center: Mumbai (Bandra / Dadar central coordinates)
 const DEFAULT_MUMBAI_CENTER = { lat: 19.0418, lng: 72.8398 };
 
+// Brand and chain search aliases (e.g. typing 'mcd' surfaces all McDonald's outlets & malls)
+const BRAND_SEARCH_ALIASES: Record<string, string[]> = {
+  mcd: ['mcd', 'mcdonald', 'mcdonalds', "mcdonald's", 'mcspicy', 'big mac', 'mcflurry'],
+  mcdonald: ['mcd', 'mcdonald', 'mcdonalds', "mcdonald's"],
+  mcdonalds: ['mcd', 'mcdonald', 'mcdonalds', "mcdonald's"],
+  "mcdonald's": ['mcd', 'mcdonald', 'mcdonalds', "mcdonald's"],
+  bk: ['bk', 'burger king', 'burgerking', 'whopper'],
+  burgerking: ['bk', 'burger king', 'burgerking', 'whopper'],
+  'burger king': ['bk', 'burger king', 'burgerking', 'whopper'],
+  whopper: ['bk', 'burger king', 'burgerking', 'whopper'],
+  kfc: ['kfc', 'kentucky', 'fried chicken', 'zinger', 'hot & crispy'],
+  zinger: ['kfc', 'zinger'],
+  subway: ['subway', 'subs', 'cookies'],
+  sub: ['subway', 'subs'],
+  subs: ['subway', 'subs'],
+  dominos: ['domino', 'dominos', "domino's", 'pizza', 'garlic bread', 'cheese burst'],
+  "domino's": ['domino', 'dominos', "domino's", 'pizza'],
+  pizza: ['domino', 'dominos', "domino's", 'pizza', 'pizza hut'],
+  starbucks: ['starbucks', 'coffee', 'frappe'],
+  taco: ['taco', 'taco bell', 'burrito'],
+  'taco bell': ['taco', 'taco bell', 'burrito'],
+  mall: ['mall', 'malls', 'food court'],
+  malls: ['mall', 'malls', 'food court'],
+  'food court': ['food court', 'mall', 'malls'],
+};
+
 export default function HomePage() {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(
     DEFAULT_MUMBAI_CENTER
@@ -195,7 +221,7 @@ export default function HomePage() {
           return false;
         }
 
-        // Instant text query search
+        // Instant text & brand query search (supports 'mcd', 'bk', 'kfc', 'subway', 'dominos', 'mall')
         if (query) {
           const mName = place.name.toLowerCase().includes(query);
           const mShort = place.short_name?.toLowerCase().includes(query);
@@ -204,7 +230,19 @@ export default function HomePage() {
           const mCat = place.category.toLowerCase().includes(query);
           const mTags = place.vibe_tags.some((t) => t.toLowerCase().includes(query));
           const mCost = place.approx_cost?.toLowerCase().includes(query);
-          if (!mName && !mShort && !mDesc && !mNeighbor && !mCat && !mTags && !mCost) {
+
+          // Fast Food Brand matching across nested mall outlets
+          const targetBrands = BRAND_SEARCH_ALIASES[query] || [query];
+          const mOutlet = place.outlets?.some((o) => {
+            const b = o.brand.toLowerCase();
+            const n = o.name.toLowerCase();
+            return targetBrands.some((tb) => b.includes(tb) || n.includes(tb) || tb.includes(b));
+          });
+
+          // Mall hub keyword matching
+          const mMall = (query === 'mall' || query === 'malls') && place.hub_type === 'mall';
+
+          if (!mName && !mShort && !mDesc && !mNeighbor && !mCat && !mTags && !mCost && !mOutlet && !mMall) {
             return false;
           }
         }
