@@ -369,9 +369,8 @@ export default function FilterBar({
   const categoryActiveCount = filters.category !== 'all' ? 1 : 0;
   const radiusActiveCount = filters.radiusKm !== 120 ? 1 : 0;
 
-  // Active filter count (excluding default 'all' category)
-  const activeSecondaryCount =
-    transitActiveCount + budgetActiveCount + radiusActiveCount + (filters.category !== 'all' ? 1 : 0);
+  // Active secondary filters configured via the Filter Studio (transit, budget, tier, radius)
+  const activeSecondaryCount = transitActiveCount + budgetActiveCount + radiusActiveCount;
 
   // Monitor scroll position for edge fade indicators & arrows
   const checkScroll = useCallback(() => {
@@ -577,101 +576,141 @@ export default function FilterBar({
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          2. ACTIVE FILTER QUICK CHIPS (Visible whenever filters are on)
+          2. ACTIVE FILTER TRAY (Contained tactile paper bar)
           ───────────────────────────────────────────────────────────── */}
       {activeSecondaryCount > 0 && (
-        <div className="mt-1.5 flex items-center gap-1.5 overflow-x-auto sliding-bar py-0.5 px-1 animate-in fade-in duration-100">
-          <span className="text-[10px] font-mono font-bold uppercase text-slate-600 flex-shrink-0">
-            Active:
-          </span>
+        <div className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 bg-wabi/95 backdrop-blur-md border-2 border-sumi rounded-2xl shadow-riso-sm animate-in fade-in slide-in-from-top-1 duration-150 max-w-full overflow-x-auto sliding-bar select-none">
+          {/* Active status indicator */}
+          <div className="flex items-center gap-1.5 text-[10px] font-mono font-black uppercase text-sumi flex-shrink-0 pr-2 border-r border-sumi/20">
+            <span className="w-2 h-2 rounded-full bg-vermilion animate-pulse" />
+            <span>ACTIVE ({activeSecondaryCount})</span>
+          </div>
 
-          {filters.category !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-sumi text-wabi text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
-              <span>{CATEGORIES.find((c) => c.id === filters.category)?.label}</span>
-              <button
-                onClick={() => onChange({ category: 'all' })}
-                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
-                title="Remove category filter"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            </span>
-          )}
-
-          {filters.transitLine && filters.transitLine !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-teal-800 text-white text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
-              <span>
-                {filters.transitLine === 'local' && '🚆 Local Trains'}
-                {filters.transitLine === 'metro' && '🚇 Metro Lines'}
-                {activeLineObj && `${activeLineObj.code} ${activeLineObj.name}`}
+          {/* Active Chips Strip */}
+          <div className="flex items-center gap-1.5 flex-nowrap">
+            {/* If a category is also filtered while secondary filters are active, show it */}
+            {filters.category !== 'all' && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white border-2 border-sumi text-sumi text-xs font-mono font-bold flex-shrink-0 shadow-2xs">
+                <span>{CATEGORIES.find((c) => c.id === filters.category)?.label}</span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ category: 'all' })}
+                  className="w-4 h-4 rounded-full bg-sumi/10 hover:bg-vermilion hover:text-white text-sumi flex items-center justify-center transition-colors ml-0.5"
+                  title="Remove category filter"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
               </span>
-              <button
-                onClick={() => onChange({ transitLine: 'all' })}
-                className="hover:text-amber-300 hover:scale-110 transition-transform ml-0.5"
-                title="Remove transit line filter"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            </span>
-          )}
+            )}
 
-          {filters.transitAccess && filters.transitAccess !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-teal-50 border border-teal-300 text-teal-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
-              <span>{activeTransitObj?.icon} {activeTransitObj?.label}</span>
-              <button
-                onClick={() => onChange({ transitAccess: 'all' })}
-                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
-                title="Remove transit proximity filter"
+            {/* Transit Line / Network Corridor */}
+            {filters.transitLine && filters.transitLine !== 'all' && (
+              <span
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 shadow-2xs transition-all ${
+                  filters.transitLine === 'metro'
+                    ? 'bg-sky-100 border-sky-600/70 text-sky-950'
+                    : filters.transitLine === 'local'
+                    ? 'bg-amber-100 border-amber-600/70 text-amber-950'
+                    : 'bg-white text-sumi border-sumi/60'
+                }`}
+                style={activeLineObj ? { borderColor: activeLineObj.color } : undefined}
               >
-                <X className="w-3 h-3" />
-              </button>
-            </span>
-          )}
+                {activeLineObj?.color ? (
+                  <span
+                    className="w-2.5 h-2.5 rounded-full border border-black/30 flex-shrink-0 shadow-xs"
+                    style={{ backgroundColor: activeLineObj.color }}
+                  />
+                ) : filters.transitLine === 'metro' ? (
+                  <span className="w-2 h-2 rounded-full bg-sky-600 flex-shrink-0" />
+                ) : (
+                  <span className="w-2 h-2 rounded-full bg-amber-600 flex-shrink-0" />
+                )}
+                <span>
+                  {filters.transitLine === 'local' && '🚆 Local Trains'}
+                  {filters.transitLine === 'metro' && '🚇 Metro Corridors'}
+                  {activeLineObj && `${activeLineObj.code} • ${activeLineObj.name}`}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ transitLine: 'all' })}
+                  className="w-4 h-4 rounded-full bg-sumi/10 hover:bg-vermilion hover:text-white text-sumi flex items-center justify-center transition-colors ml-0.5"
+                  title="Remove transit corridor filter"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </span>
+            )}
 
-          {filters.budget !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-amber-100 border border-amber-400 text-amber-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
-              <span>{activeBudgetObj?.icon} {activeBudgetObj?.label}</span>
-              <button
-                onClick={() => onChange({ budget: 'all' })}
-                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
-                title="Remove budget filter"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            </span>
-          )}
+            {/* Transit Access Proximity */}
+            {filters.transitAccess && filters.transitAccess !== 'all' && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-teal-100 border-2 border-teal-600/70 text-teal-950 text-xs font-mono font-bold flex-shrink-0 shadow-2xs">
+                <span>{activeTransitObj?.icon} {activeTransitObj?.label}</span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ transitAccess: 'all' })}
+                  className="w-4 h-4 rounded-full bg-teal-200 hover:bg-vermilion hover:text-white text-teal-900 flex items-center justify-center transition-colors ml-0.5"
+                  title="Remove walking distance filter"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </span>
+            )}
 
-          {filters.spotTier !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-indigo-50 border border-indigo-300 text-indigo-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
-              <span>{activeTierObj?.label}</span>
-              <button
-                onClick={() => onChange({ spotTier: 'all' })}
-                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
-                title="Remove tier filter"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            </span>
-          )}
+            {/* Budget Tier */}
+            {filters.budget !== 'all' && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-emerald-100 border-2 border-emerald-600/70 text-emerald-950 text-xs font-mono font-bold flex-shrink-0 shadow-2xs">
+                <span>{activeBudgetObj?.icon} {activeBudgetObj?.label}</span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ budget: 'all' })}
+                  className="w-4 h-4 rounded-full bg-emerald-200 hover:bg-vermilion hover:text-white text-emerald-900 flex items-center justify-center transition-colors ml-0.5"
+                  title="Remove budget filter"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </span>
+            )}
 
-          {filters.radiusKm !== 120 && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-rose-50 border border-rose-300 text-rose-950 text-[11px] font-mono font-bold flex-shrink-0 shadow-sm">
-              <span>Within {filters.radiusKm}km</span>
-              <button
-                onClick={() => onChange({ radiusKm: 120 })}
-                className="hover:text-vermilion hover:scale-110 transition-transform ml-0.5"
-                title="Reset radius"
-              >
-                <X className="w-3 h-3" />
-              </button>
-            </span>
-          )}
+            {/* Spot Tier / Curation Level */}
+            {filters.spotTier !== 'all' && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-100 border-2 border-purple-600/70 text-purple-950 text-xs font-mono font-bold flex-shrink-0 shadow-2xs">
+                <span>{activeTierObj?.label}</span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ spotTier: 'all' })}
+                  className="w-4 h-4 rounded-full bg-purple-200 hover:bg-vermilion hover:text-white text-purple-900 flex items-center justify-center transition-colors ml-0.5"
+                  title="Remove tier filter"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </span>
+            )}
 
+            {/* Distance Radius */}
+            {filters.radiusKm !== 120 && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-rose-100 border-2 border-rose-600/70 text-rose-950 text-xs font-mono font-bold flex-shrink-0 shadow-2xs">
+                <span>📍 Within {filters.radiusKm}km</span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ radiusKm: 120 })}
+                  className="w-4 h-4 rounded-full bg-rose-200 hover:bg-vermilion hover:text-white text-rose-900 flex items-center justify-center transition-colors ml-0.5"
+                  title="Reset distance radius"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </span>
+            )}
+          </div>
+
+          {/* Reset All Tactile Pill Button */}
           <button
+            type="button"
             onClick={handleResetFilters}
-            className="text-[10px] font-mono font-bold text-vermilion hover:underline ml-1 flex-shrink-0 uppercase"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-xl border-2 border-vermilion/50 bg-white hover:bg-vermilion hover:text-white text-vermilion text-[10px] font-mono font-black transition-all shadow-2xs active:scale-95 ml-auto sm:ml-1 flex-shrink-0"
+            title="Reset all filters"
           >
-            Clear All
+            <RotateCcw className="w-3 h-3" />
+            <span>RESET</span>
           </button>
         </div>
       )}
@@ -857,8 +896,8 @@ export default function FilterBar({
                         onClick={() => onChange({ transitLine: 'metro' })}
                         className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${
                           filters.transitLine === 'metro'
-                            ? 'bg-teal-700 text-white border-sumi shadow-riso-sm'
-                            : 'bg-white text-slate-800 border-sumi/30 hover:bg-teal-50'
+                            ? 'bg-sky-600 text-white border-sumi shadow-riso-sm'
+                            : 'bg-white text-slate-800 border-sumi/30 hover:bg-sky-50'
                         }`}
                       >
                         🚇 METROS
