@@ -1,0 +1,103 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API",
+  "elements": [
+    {
+      "type": "node",
+      "id": 101,
+      "lat": 19.0683,
+      "lon": 72.8228,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "name": "McDonald's",
+        "addr:street": "Carter Road",
+        "addr:suburb": "Bandra West",
+        "drive_thru": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 102,
+      "lat": 19.0621,
+      "lon": 72.8335,
+      "tags": {
+        "amenity": "fast_food",
+        "name": "Burger King",
+        "addr:suburb": "Bandra West"
+      }
+    },
+    {
+      "type": "way",
+      "id": 201,
+      "center": {
+        "lat": 19.0601,
+        "lon": 72.8339
+      },
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "KFC",
+        "name": "Kentucky Fried Chicken",
+        "addr:street": "Waterfield Road",
+        "addr:suburb": "Bandra West"
+      }
+    },
+    {
+      "type": "node",
+      "id": 103,
+      "lat": 19.0628,
+      "lon": 72.8285,
+      "tags": {
+        "amenity": "fast_food",
+        "name": "Subway",
+        "addr:street": "Pali Naka",
+        "addr:suburb": "Bandra West"
+      }
+    },
+    {
+      "type": "node",
+      "id": 104,
+      "lat": 19.0982,
+      "lon": 72.8268,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "Domino's Pizza",
+        "name": "Dominos",
+        "addr:suburb": "Juhu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 105,
+      "lat": 19.06831,
+      "lon": 72.82281,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "name": "McDonald's Dual Mapped Node"
+      }
+    },
+    {
+      "type": "node",
+      "id": 106,
+      "lat": 19.0683,
+      "lon": 72.8228,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "disused": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 107,
+      "lat": 28.6139,
+      "lon": 77.2090,
+      "tags": {
+        "amenity": "fast_food",
+        "brand": "McDonald's",
+        "name": "McDonald's Delhi (Out of bounds)"
+      }
+    }
+  ]
+}

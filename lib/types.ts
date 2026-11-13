@@ -77,6 +77,14 @@ export interface Place {
   more_outlets_url?: string;
   entertainment?: string[];
   amenities?: HubAmenities;
+
+  // Provenance & Ingestion Metadata (e.g. OpenStreetMap candidates)
+  osm_id?: number | string;
+  osm_type?: 'node' | 'way' | 'relation';
+  source_url?: string;
+  imported_at?: string;
+  verification_status?: 'verified' | 'candidate_unverified' | 'curated';
+  possible_duplicate_of?: string;
 }
 
 export type TransitAccessFilter = 'all' | 'near_metro' | 'near_railway' | 'walkable_transit';

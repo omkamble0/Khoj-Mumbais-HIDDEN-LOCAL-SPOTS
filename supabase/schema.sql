@@ -93,4 +93,13 @@ ALTER TABLE places ADD COLUMN IF NOT EXISTS more_outlets_url TEXT;
 ALTER TABLE places ADD COLUMN IF NOT EXISTS entertainment TEXT[];
 ALTER TABLE places ADD COLUMN IF NOT EXISTS amenities JSONB;
 
+-- 7. Provenance & OpenStreetMap Ingestion Columns
+ALTER TABLE places ADD COLUMN IF NOT EXISTS osm_id TEXT;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS osm_type TEXT;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS source_url TEXT;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS imported_at TIMESTAMPTZ;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS verification_status TEXT DEFAULT 'curated';
+ALTER TABLE places ADD COLUMN IF NOT EXISTS possible_duplicate_of TEXT;
+
+
 

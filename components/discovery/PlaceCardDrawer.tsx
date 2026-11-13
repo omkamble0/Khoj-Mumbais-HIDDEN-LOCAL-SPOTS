@@ -224,6 +224,32 @@ export default function PlaceCardDrawer({
             </div>
           </div>
 
+          {/* Unverified OpenStreetMap Candidate Banner */}
+          {place.verification_status === 'candidate_unverified' && (
+            <div className="bg-amber-50 border-2 border-amber-400 rounded-2xl p-3 flex items-start gap-2.5 text-amber-950 shadow-2xs font-mono text-xs animate-in fade-in duration-100">
+              <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <span className="font-bold uppercase tracking-wider block text-[10px] text-amber-900">
+                  OpenStreetMap Candidate (Unverified)
+                </span>
+                <p className="text-[11px] text-slate-700 mt-0.5 leading-relaxed">
+                  Imported via community open data. Exact opening hours and menu are candidate facts not yet independently verified.
+                </p>
+                {place.source_url && (
+                  <a
+                    href={place.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-900 underline mt-1.5 hover:text-black"
+                  >
+                    <span>Inspect OSM Entity</span>
+                    <ArrowUpRight className="w-2.5 h-2.5" />
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Live Vibe Radar Active Window Callout */}
           {peakInfo.isPeaking && (
             <div className="bg-emerald-50 border-2 border-emerald-500/50 rounded-2xl p-3.5 flex items-center gap-3 text-emerald-950 shadow-riso-sm">
@@ -578,6 +604,21 @@ export default function PlaceCardDrawer({
             >
               Verify official landmark card & reviews on Google Maps ↗
             </a>
+
+            {place.source === 'openstreetmap' && (
+              <p className="text-center text-[10px] font-mono text-slate-400 pt-1">
+                Data ©{' '}
+                <a
+                  href="https://www.openstreetmap.org/copyright"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-sumi"
+                >
+                  OpenStreetMap
+                </a>{' '}
+                contributors under ODbL license.
+              </p>
+            )}
           </div>
 
           {/* Vibe Tags Strip (At the very end of the card) */}
