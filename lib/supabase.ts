@@ -23,7 +23,8 @@ export async function getPlacesFromDb(): Promise<Place[]> {
 
       if (res.ok) {
         const data = await res.json();
-        if (Array.isArray(data) && data.length > 0) {
+        const localPlaces = getAllPlaces();
+        if (Array.isArray(data) && data.length >= localPlaces.length) {
           return data as Place[];
         }
       } else {

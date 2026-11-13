@@ -2779,5 +2779,1246 @@
       "late_night": true,
       "parking": false
     }
+  },
+  {
+    "id": "hub-jio-world-drive-bkc",
+    "slug": "jio-world-drive-bkc-hub",
+    "name": "Jio World Drive (BKC)",
+    "short_name": "Jio World Drive",
+    "category": "cafes",
+    "subcategory": "BKC Open-Air Lifestyle Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹150–₹500 combos & cafes / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Bandra East / BKC",
+    "latitude": 19.0648,
+    "longitude": 72.8682,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Premier commercial district security, pedestrian boardwalk, and open pet-friendly courtyards.",
+    "hiddenness_score": 0.25,
+    "vibe_score": 0.97,
+    "safety_score": 0.99,
+    "accessibility_score": 0.96,
+    "crowd_level": 3,
+    "best_time_to_visit": "Late afternoon 4:00 PM – 9:00 PM (Breezy open plaza)",
+    "description": "Mumbai's premier contemporary open-air lifestyle mall in the Bandra Kurla Complex. Houses outdoor dining pavilions, rooftop drive-in cinema, and flagship fast food outlets.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "burger-king",
+      "subway",
+      "bkc",
+      "open-air",
+      "ac-haven",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Courtyard",
+        "timing": "10:00 AM – 11:30 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 1 Concourse",
+        "timing": "10:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:30 PM"
+      },
+      {
+        "brand": "starbucks",
+        "name": "Starbucks Reserve",
+        "floor": "Ground Piazza",
+        "timing": "8:00 AM – 12:00 AM"
+      }
+    ]
+  },
+  {
+    "id": "hub-atria-mall-worli",
+    "slug": "atria-mall-worli",
+    "name": "Atria The Millennium Mall",
+    "short_name": "Atria Mall",
+    "category": "cafes",
+    "subcategory": "South Mumbai Luxury Mall & Food Court",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹120–₹350 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Worli / Dr. Annie Besant Road",
+    "latitude": 18.9895,
+    "longitude": 72.8182,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Well-guarded luxury shopping complex near Nehru Planetarium and Worli Sea Face.",
+    "hiddenness_score": 0.4,
+    "vibe_score": 0.88,
+    "safety_score": 0.98,
+    "accessibility_score": 0.94,
+    "crowd_level": 2,
+    "best_time_to_visit": "Afternoon 2:00 PM – 6:00 PM (Quiet, cool AC bunker)",
+    "description": "South Mumbai's prominent shopping destination in Worli. Features a multi-screen INOX 4DX cinema, tranquil food court, gaming arena, and sea breeze access.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "subway",
+      "kfc",
+      "worli",
+      "ac-haven",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 3 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-cr2-mall-nariman-point",
+    "slug": "cr2-mall-nariman-point",
+    "name": "CR2 Mall (Nariman Point)",
+    "short_name": "CR2 Mall",
+    "category": "cafes",
+    "subcategory": "South Mumbai Corporate Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Nariman Point / Marine Drive",
+    "latitude": 18.9282,
+    "longitude": 72.8236,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Premier commercial precinct right off Marine Drive promenade.",
+    "hiddenness_score": 0.3,
+    "vibe_score": 0.89,
+    "safety_score": 0.98,
+    "accessibility_score": 0.96,
+    "crowd_level": 3,
+    "best_time_to_visit": "Lunch 12:30 PM – 3:00 PM or Post-office evening",
+    "description": "High-footfall South Mumbai commercial hub facing Bajaj Bhavan. Features INOX multiplex, multi-tier food court, and prime collegiate & corporate dining.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "subway",
+      "dominos",
+      "nariman-point",
+      "marine-drive",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "10:30 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 2 Food Court",
+        "timing": "9:30 AM – 10:30 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-sobo-central-tardeo",
+    "slug": "sobo-central-tardeo",
+    "name": "Sobo Central (Tardeo)",
+    "short_name": "Sobo Central",
+    "category": "cafes",
+    "subcategory": "Heritage South Mumbai Retail & Food Hub",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Tardeo / Haji Ali",
+    "latitude": 18.9712,
+    "longitude": 72.8142,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Main road frontage near Haji Ali dargah circle.",
+    "hiddenness_score": 0.35,
+    "vibe_score": 0.85,
+    "safety_score": 0.96,
+    "accessibility_score": 0.95,
+    "crowd_level": 3,
+    "best_time_to_visit": "Evening 4:00 PM – 8:00 PM",
+    "description": "One of Mumbai's historic first shopping centers located at Tardeo circle. Popular retail hub with budget fast-food options and clothing stores.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "subway",
+      "tardeo",
+      "haji-ali",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Ground Floor",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 1",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-hub-mall-goregaon",
+    "slug": "hub-mall-goregaon-weh",
+    "name": "The Hub Mall (Goregaon East)",
+    "short_name": "The Hub Mall",
+    "category": "cafes",
+    "subcategory": "Western Express Highway Mall & Food Court",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Goregaon East / Western Express Highway",
+    "latitude": 19.1558,
+    "longitude": 72.8552,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Direct highway ramp access with security checks at all gates.",
+    "hiddenness_score": 0.3,
+    "vibe_score": 0.87,
+    "safety_score": 0.96,
+    "accessibility_score": 0.97,
+    "crowd_level": 3,
+    "best_time_to_visit": "Evening 5:00 PM – 10:00 PM",
+    "description": "Landmark highway mall along the Western Express Highway in Goregaon East. Famous for its Movie Time multiplex, gaming zone, and busy fast food court.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "burger-king",
+      "subway",
+      "goregaon",
+      "weh",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:30 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 1",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-raghuleela-mega-mall-kandivali",
+    "slug": "raghuleela-mega-mall-kandivali",
+    "name": "Raghuleela Mega Mall (Kandivali West)",
+    "short_name": "Raghuleela Kandivali",
+    "category": "cafes",
+    "subcategory": "Kandivali Suburban Mega Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Kandivali West / Poisar",
+    "latitude": 19.2078,
+    "longitude": 72.8365,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Adjacent to Kandivali railway station with heavy pedestrian footfall.",
+    "hiddenness_score": 0.22,
+    "vibe_score": 0.88,
+    "safety_score": 0.95,
+    "accessibility_score": 0.98,
+    "crowd_level": 4,
+    "best_time_to_visit": "Afternoon 3:00 PM – 7:30 PM",
+    "description": "Massive four-storey commercial and retail powerhouse next to Kandivali railway station. Features a grand atrium, INOX cinema, sprawling gaming zone, and complete food court.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "dominos",
+      "subway",
+      "kandivali",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 3 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-thakur-mall-dahisar",
+    "slug": "thakur-mall-dahisar-east",
+    "name": "Thakur Mall (Dahisar East / WEH)",
+    "short_name": "Thakur Mall",
+    "category": "cafes",
+    "subcategory": "Northern Gateway Highway Mall & Food Court",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Dahisar East / Western Express Highway",
+    "latitude": 19.2552,
+    "longitude": 72.8645,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Well-guarded shopping complex near Dahisar check-naka.",
+    "hiddenness_score": 0.32,
+    "vibe_score": 0.86,
+    "safety_score": 0.95,
+    "accessibility_score": 0.95,
+    "crowd_level": 3,
+    "best_time_to_visit": "Evening 4:30 PM – 9:00 PM",
+    "description": "Mumbai's northernmost highway mall near the Dahisar check post. Popular with Dahisar and Mira Road residents for INOX movies, bowling, and quick fast-food bites.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "burger-king",
+      "dahisar",
+      "weh",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-r-mall-mulund",
+    "slug": "r-mall-mulund-west",
+    "name": "R-Mall (Mulund West / LBS Marg)",
+    "short_name": "R-Mall Mulund",
+    "category": "cafes",
+    "subcategory": "Eastern Suburbs Landmark Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mumbai",
+    "neighborhood": "Mulund West / LBS Marg",
+    "latitude": 19.1762,
+    "longitude": 72.9515,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Main LBS arterial corridor with dedicated basement parking and security.",
+    "hiddenness_score": 0.25,
+    "vibe_score": 0.89,
+    "safety_score": 0.96,
+    "accessibility_score": 0.96,
+    "crowd_level": 4,
+    "best_time_to_visit": "Afternoon & Evening 3:00 PM – 8:30 PM",
+    "description": "Pioneering Eastern Suburbs shopping mall on LBS Marg. Features a 4-screen PVR multiplex, high-ceiling atrium, and full food court serving Mulund and Thane families.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "burger-king",
+      "kfc",
+      "subway",
+      "mulund",
+      "lbs-marg",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 3 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-the-walk-hiranandani-thane",
+    "slug": "the-walk-hiranandani-estate-thane",
+    "name": "The Walk (Hiranandani Estate, Thane)",
+    "short_name": "The Walk Thane",
+    "category": "cafes",
+    "subcategory": "European Open-Air High Street & Food Promenade",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹120–₹350 combos / Free entry",
+    "price_level": 1,
+    "city": "Thane",
+    "neighborhood": "Thane West / Hiranandani Estate",
+    "latitude": 19.2525,
+    "longitude": 72.9782,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Pedestrian-only neo-classical cobblestone boulevard with 24x7 estate security.",
+    "hiddenness_score": 0.22,
+    "vibe_score": 0.95,
+    "safety_score": 0.99,
+    "accessibility_score": 0.94,
+    "crowd_level": 3,
+    "best_time_to_visit": "Evening 5:30 PM – 10:00 PM (Breezy boulevard stroll)",
+    "description": "Thane's most picturesque open-air high street shopping promenade. Features cobblestone walkways, water fountains, and outdoor patios for all major fast-food brands.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "burger-king",
+      "kfc",
+      "subway",
+      "dominos",
+      "thane",
+      "open-air",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Ground Boulevard",
+        "timing": "10:00 AM – 12:00 AM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Ground Boulevard",
+        "timing": "10:30 AM – 11:30 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Ground Boulevard",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Ground Boulevard",
+        "timing": "10:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Ground Boulevard",
+        "timing": "11:00 AM – 11:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-r-mall-thane-ghodbunder",
+    "slug": "r-mall-thane-ghodbunder",
+    "name": "R-Mall (Thane West / Ghodbunder Road)",
+    "short_name": "R-Mall Thane",
+    "category": "cafes",
+    "subcategory": "Ghodbunder Road Shopping Mall & Food Court",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Thane",
+    "neighborhood": "Thane West / Manpada",
+    "latitude": 19.2315,
+    "longitude": 72.9752,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Prominent Ghodbunder Road junction with ample parking.",
+    "hiddenness_score": 0.28,
+    "vibe_score": 0.87,
+    "safety_score": 0.96,
+    "accessibility_score": 0.95,
+    "crowd_level": 3,
+    "best_time_to_visit": "Afternoon 2:30 PM – 7:00 PM",
+    "description": "Key shopping and entertainment mall on Ghodbunder Road. Features INOX multiplex, family entertainment center, and a bustling multi-brand food court.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "subway",
+      "thane",
+      "ghodbunder",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 2 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-cine-wonder-mall-thane",
+    "slug": "cine-wonder-mall-thane-kapurbawdi",
+    "name": "Cine Wonder Mall (Kapurbawdi, Thane)",
+    "short_name": "Cine Wonder Mall",
+    "category": "cafes",
+    "subcategory": "Kapurbawdi Entertainment Mall & Food Court",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Thane",
+    "neighborhood": "Thane West / Kapurbawdi",
+    "latitude": 19.2185,
+    "longitude": 72.9845,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Busy junction near Majiwada bridge.",
+    "hiddenness_score": 0.35,
+    "vibe_score": 0.85,
+    "safety_score": 0.95,
+    "accessibility_score": 0.96,
+    "crowd_level": 3,
+    "best_time_to_visit": "Movie times 4:00 PM – 9:00 PM",
+    "description": "Kapurbawdi junction favorite for movie-goers and local college students, featuring CinemaStar and quick fast food counters.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "dominos",
+      "thane",
+      "kapurbawdi",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Ground Floor",
+        "timing": "10:30 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 1",
+        "timing": "11:00 AM – 11:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-little-world-mall-kharghar",
+    "slug": "little-world-mall-kharghar",
+    "name": "Little World Mall (Kharghar)",
+    "short_name": "Little World Mall",
+    "category": "cafes",
+    "subcategory": "Navi Mumbai Highway Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Navi Mumbai",
+    "neighborhood": "Kharghar / Sector 2",
+    "latitude": 19.0345,
+    "longitude": 73.0642,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Facing Sion-Panvel Highway right by Kharghar railway station.",
+    "hiddenness_score": 0.22,
+    "vibe_score": 0.88,
+    "safety_score": 0.96,
+    "accessibility_score": 0.98,
+    "crowd_level": 4,
+    "best_time_to_visit": "Afternoon 2:00 PM – 7:30 PM",
+    "description": "Kharghar's premier retail and youth entertainment hub right across from the railway station. Features Carnival Cinemas, game zones, and a complete fast-food court.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "subway",
+      "burger-king",
+      "kharghar",
+      "navi-mumbai",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 2 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-glomax-mall-kharghar",
+    "slug": "glomax-mall-kharghar",
+    "name": "Glomax Mall (Kharghar / Sector 19)",
+    "short_name": "Glomax Mall",
+    "category": "cafes",
+    "subcategory": "Kharghar Central Park Youth Mall",
+    "spot_tier": "underrated",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Navi Mumbai",
+    "neighborhood": "Kharghar / Sector 19",
+    "latitude": 19.0482,
+    "longitude": 73.0695,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Close to Central Park and ISKCON Kharghar with quiet surroundings.",
+    "hiddenness_score": 0.35,
+    "vibe_score": 0.86,
+    "safety_score": 0.97,
+    "accessibility_score": 0.94,
+    "crowd_level": 2,
+    "best_time_to_visit": "Evening 4:00 PM – 8:00 PM",
+    "description": "Quiet modern shopping center in Kharghar near Central Park. Features Cinepolis screens and casual fast-food dining for local students.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "dominos",
+      "kharghar",
+      "navi-mumbai",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 1 Food Court",
+        "timing": "11:00 AM – 10:30 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 1 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-raghuleela-mall-vashi",
+    "slug": "raghuleela-mall-vashi-station",
+    "name": "Raghuleela Mall (Vashi Station)",
+    "short_name": "Raghuleela Vashi",
+    "category": "cafes",
+    "subcategory": "Vashi Transit Hub Mega Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Navi Mumbai",
+    "neighborhood": "Vashi / Sector 30A",
+    "latitude": 19.0662,
+    "longitude": 72.9972,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Direct skywalk connection to Vashi railway station.",
+    "hiddenness_score": 0.2,
+    "vibe_score": 0.89,
+    "safety_score": 0.96,
+    "accessibility_score": 0.99,
+    "crowd_level": 4,
+    "best_time_to_visit": "Afternoon 1:00 PM – 6:30 PM",
+    "description": "Massive four-level entertainment and shopping hub right outside Vashi railway station. Packed with collegiate crowds, gaming centers, INOX cinema, and multi-cuisine food court.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "burger-king",
+      "subway",
+      "vashi",
+      "navi-mumbai",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 3 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-orion-mall-panvel",
+    "slug": "orion-mall-panvel",
+    "name": "Orion Mall (Panvel)",
+    "short_name": "Orion Mall",
+    "category": "cafes",
+    "subcategory": "Panvel Mega Mall & Entertainment Hub",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Navi Mumbai",
+    "neighborhood": "Panvel / Old Mumbai-Pune Highway",
+    "latitude": 18.9912,
+    "longitude": 73.1185,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Central Panvel arterial road with dedicated parking and security.",
+    "hiddenness_score": 0.22,
+    "vibe_score": 0.9,
+    "safety_score": 0.96,
+    "accessibility_score": 0.96,
+    "crowd_level": 4,
+    "best_time_to_visit": "Afternoon & Evening 3:00 PM – 8:30 PM",
+    "description": "The largest shopping destination in Panvel and Raigad district. Features a 5-screen PVR multiplex, grand food court, bowling alley, and premier retail outlets.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "burger-king",
+      "dominos",
+      "subway",
+      "panvel",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 3 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-metro-junction-mall-kalyan",
+    "slug": "metro-junction-mall-kalyan",
+    "name": "Metro Junction Mall (Kalyan)",
+    "short_name": "Metro Junction Mall",
+    "category": "cafes",
+    "subcategory": "Central MMR Mega Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Kalyan",
+    "neighborhood": "Kalyan East / Netivali",
+    "latitude": 19.2255,
+    "longitude": 73.1362,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Kalyan-Shilphata arterial road with wide open grounds and multi-level parking.",
+    "hiddenness_score": 0.2,
+    "vibe_score": 0.91,
+    "safety_score": 0.96,
+    "accessibility_score": 0.95,
+    "crowd_level": 4,
+    "best_time_to_visit": "Evening 4:00 PM – 9:00 PM",
+    "description": "The crown jewel of Central suburban MMR across Kalyan and Dombivli. Spanning over 550,000 sq ft, housing INOX multiplex, amusement zones, and complete fast food chains.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "burger-king",
+      "dominos",
+      "subway",
+      "kalyan",
+      "dombivli",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 2 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-xperia-mall-palava-dombivli",
+    "slug": "xperia-mall-palava-dombivli",
+    "name": "Xperia Mall (Palava City, Dombivli)",
+    "short_name": "Xperia Mall Palava",
+    "category": "cafes",
+    "subcategory": "Kalyan-Shilphata Smart City Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Dombivli",
+    "neighborhood": "Dombivli East / Palava",
+    "latitude": 19.1825,
+    "longitude": 73.1115,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Gated smart city complex with full pedestrian infrastructure and high security.",
+    "hiddenness_score": 0.25,
+    "vibe_score": 0.92,
+    "safety_score": 0.98,
+    "accessibility_score": 0.93,
+    "crowd_level": 3,
+    "best_time_to_visit": "Afternoon & Evening 3:00 PM – 8:30 PM",
+    "description": "Ultra-modern regional mega mall in Palava City along Kalyan-Shilphata road. Features PVR screens, Timezone gaming center, outdoor amphitheater, and a high-energy food court.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "burger-king",
+      "kfc",
+      "dominos",
+      "subway",
+      "palava",
+      "dombivli",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 3 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 3 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-maxus-mall-bhayandar",
+    "slug": "maxus-mall-bhayandar-west",
+    "name": "Maxus Mall (Bhayandar West)",
+    "short_name": "Maxus Mall Bhayandar",
+    "category": "cafes",
+    "subcategory": "Mira-Bhayandar Flagship Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Mira-Bhayandar",
+    "neighborhood": "Bhayandar West / 150 Feet Road",
+    "latitude": 19.3012,
+    "longitude": 72.8445,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Main 150-feet arterial road with dedicated parking and security guards.",
+    "hiddenness_score": 0.22,
+    "vibe_score": 0.88,
+    "safety_score": 0.95,
+    "accessibility_score": 0.96,
+    "crowd_level": 4,
+    "best_time_to_visit": "Evening 4:00 PM – 9:00 PM",
+    "description": "The landmark entertainment center of the Mira-Bhayandar twin township. Houses Maxus Cinemas, department stores, children's play zones, and busy fast food outlets.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "burger-king",
+      "dominos",
+      "subway",
+      "bhayandar",
+      "mira-road",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "burger_king",
+        "name": "Burger King",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 2 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      },
+      {
+        "brand": "subway",
+        "name": "Subway",
+        "floor": "Level 2 Food Court",
+        "timing": "10:30 AM – 10:30 PM"
+      }
+    ]
+  },
+  {
+    "id": "hub-dattani-square-mall-vasai",
+    "slug": "dattani-square-mall-vasai",
+    "name": "Dattani Square Mall (Vasai West)",
+    "short_name": "Dattani Square Vasai",
+    "category": "cafes",
+    "subcategory": "Vasai-Virar Regional Mall & Food Court",
+    "spot_tier": "iconic",
+    "budget_tier": "pocket_friendly",
+    "approx_cost": "₹99–₹299 combos / Free entry",
+    "price_level": 1,
+    "city": "Vasai-Virar",
+    "neighborhood": "Vasai West / Babhola",
+    "latitude": 19.3785,
+    "longitude": 72.8242,
+    "access_type": "public",
+    "safety_level": "high",
+    "safety_notes": "Main Babhola Naka highway link with active security checks.",
+    "hiddenness_score": 0.25,
+    "vibe_score": 0.88,
+    "safety_score": 0.95,
+    "accessibility_score": 0.95,
+    "crowd_level": 3,
+    "best_time_to_visit": "Afternoon & Evening 3:00 PM – 8:00 PM",
+    "description": "The premier shopping and movie hub for the Vasai-Virar municipal region. Houses Carnival Cinemas, retail stores, and popular fast food chains.",
+    "vibe_tags": [
+      "malls",
+      "fast-food",
+      "mcd",
+      "mcdonalds",
+      "kfc",
+      "dominos",
+      "subway",
+      "vasai",
+      "food-court"
+    ],
+    "photo_url": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?w=1000&auto=format&fit=crop&q=80",
+    "source": "curated_youth_hubs",
+    "hub_type": "mall",
+    "verification_status": "verified",
+    "outlets": [
+      {
+        "brand": "mcdonalds",
+        "name": "McDonald's",
+        "floor": "Level 1 Food Court",
+        "timing": "11:00 AM – 10:30 PM"
+      },
+      {
+        "brand": "kfc",
+        "name": "KFC",
+        "floor": "Level 1 Food Court",
+        "timing": "11:00 AM – 10:30 PM"
+      },
+      {
+        "brand": "dominos",
+        "name": "Domino's Pizza",
+        "floor": "Level 1 Food Court",
+        "timing": "11:00 AM – 11:00 PM"
+      }
+    ]
   }
 ]

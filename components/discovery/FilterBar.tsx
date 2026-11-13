@@ -220,62 +220,62 @@ const DESI_BUDGET_TIERS: {
   accentText: string;
   stampBorder: string;
 }[] = [
-  {
-    id: 'all',
-    label: 'All Budgets',
-    stampText: '₹ ANY',
-    slang: 'All Pockets',
-    desc: 'All spending ranges',
-    icon: '🪙',
-    accentBg: 'bg-wabi',
-    accentText: 'text-sumi',
-    stampBorder: 'border-sumi/40',
-  },
-  {
-    id: 'free',
-    label: '₹0 Fukat (Free)',
-    stampText: '₹ FUKAT',
-    slang: 'Kadak Budget',
-    desc: 'Public seafaces, parks, viewpoints & ruins',
-    icon: '🌿',
-    accentBg: 'bg-emerald-500 text-white',
-    accentText: 'text-emerald-800',
-    stampBorder: 'border-emerald-600',
-  },
-  {
-    id: 'pocket_friendly',
-    label: '₹ Pocket Friendly',
-    stampText: '₹ KADAK',
-    slang: 'Under ₹300',
-    desc: 'Chai tapris, Irani cafes, cheap pints',
-    icon: '☕',
-    accentBg: 'bg-amber-400 text-sumi',
-    accentText: 'text-amber-900',
-    stampBorder: 'border-amber-600',
-  },
-  {
-    id: 'moderate',
-    label: '₹₹ Paisa Vasool',
-    stampText: '₹₹ VASOOL',
-    slang: '₹300–800',
-    desc: 'Suburban diners, casual resto-bars, courtyard cafes',
-    icon: '🍽️',
-    accentBg: 'bg-orange-500 text-white',
-    accentText: 'text-orange-950',
-    stampBorder: 'border-orange-600',
-  },
-  {
-    id: 'splurge',
-    label: '₹₹₹ Bhaari Pockets',
-    stampText: '₹₹₹ BHAARI',
-    slang: '₹800+ Splurge',
-    desc: 'Sea-facing lounges, craft roasteries & bespoke bars',
-    icon: '✨',
-    accentBg: 'bg-rose-700 text-white',
-    accentText: 'text-rose-950',
-    stampBorder: 'border-rose-700',
-  },
-];
+    {
+      id: 'all',
+      label: 'All Budgets',
+      stampText: '₹ ANY',
+      slang: 'All Pockets',
+      desc: 'All spending ranges',
+      icon: '🪙',
+      accentBg: 'bg-wabi',
+      accentText: 'text-sumi',
+      stampBorder: 'border-sumi/40',
+    },
+    {
+      id: 'free',
+      label: '₹0 Fukat (Free)',
+      stampText: '₹ FUKAT',
+      slang: 'Kadak Budget',
+      desc: 'Public seafaces, parks, viewpoints & ruins',
+      icon: '🌿',
+      accentBg: 'bg-emerald-500 text-white',
+      accentText: 'text-emerald-800',
+      stampBorder: 'border-emerald-600',
+    },
+    {
+      id: 'pocket_friendly',
+      label: '₹ Pocket Friendly',
+      stampText: '₹ KADAK',
+      slang: 'Under ₹300',
+      desc: 'Chai tapris, Irani cafes, cheap pints',
+      icon: '☕',
+      accentBg: 'bg-amber-400 text-sumi',
+      accentText: 'text-amber-900',
+      stampBorder: 'border-amber-600',
+    },
+    {
+      id: 'moderate',
+      label: '₹₹ Paisa Vasool',
+      stampText: '₹₹ VASOOL',
+      slang: '₹300–800',
+      desc: 'Suburban diners, casual resto-bars, courtyard cafes',
+      icon: '🍽️',
+      accentBg: 'bg-orange-500 text-white',
+      accentText: 'text-orange-950',
+      stampBorder: 'border-orange-600',
+    },
+    {
+      id: 'splurge',
+      label: '₹₹₹ Bhaari Pockets',
+      stampText: '₹₹₹ BHAARI',
+      slang: '₹800+ Splurge',
+      desc: 'Sea-facing lounges, craft roasteries & bespoke bars',
+      icon: '✨',
+      accentBg: 'bg-rose-700 text-white',
+      accentText: 'text-rose-950',
+      stampBorder: 'border-rose-700',
+    },
+  ];
 
 const RADII = [
   { km: 10, label: '10 km', desc: 'Walking, cycling & neighbourhood bubble' },
@@ -302,14 +302,14 @@ interface QuickPreset {
 const QUICK_PRESETS: QuickPreset[] = [
   {
     id: 'fast_food_addas',
-    label: 'Late-Night Fast-Food Addas',
+    label: ' Fast-Food Addas',
     icon: '🍔',
     badge: 'MCD • BK • KFC • DOMINOS',
     filters: { category: 'cafes', searchQuery: 'fast-food', budget: 'pocket_friendly' },
   },
   {
     id: 'mall_food_courts',
-    label: 'Mega Mall AC & Food Courts',
+    label: ' Malls & Food Courts',
     icon: '🏬',
     badge: 'MALL HUBS',
     filters: { category: 'cafes', searchQuery: 'mall' },
@@ -466,11 +466,10 @@ export default function FilterBar({
         {/* A. Dedicated Filter Studio Button */}
         <button
           onClick={() => setIsModalOpen((prev) => !prev)}
-          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-mono font-bold tracking-wide transition-all border-2 flex-shrink-0 active:scale-95 ${
-            isModalOpen || activeSecondaryCount > 0
-              ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
-              : 'bg-white text-sumi border-sumi/40 hover:border-sumi hover:bg-wabi-100 hover:-translate-y-0.5'
-          }`}
+          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-mono font-bold tracking-wide transition-all border-2 flex-shrink-0 active:scale-95 ${isModalOpen || activeSecondaryCount > 0
+            ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
+            : 'bg-white text-sumi border-sumi/40 hover:border-sumi hover:bg-wabi-100 hover:-translate-y-0.5'
+            }`}
           title="Open complete filters (Transit corridors, Budget, Curation & Distance)"
         >
           <SlidersHorizontal className="w-3.5 h-3.5 text-sumi" />
@@ -518,19 +517,18 @@ export default function FilterBar({
                   style={
                     isActive
                       ? {
-                          backgroundColor: cat.primary,
-                          borderColor: '#141518',
-                          color: cat.secondary,
-                        }
+                        backgroundColor: cat.primary,
+                        borderColor: '#141518',
+                        color: cat.secondary,
+                      }
                       : {
-                          borderColor: 'rgba(20, 21, 24, 0.25)',
-                        }
+                        borderColor: 'rgba(20, 21, 24, 0.25)',
+                      }
                   }
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all border-2 flex-shrink-0 active:scale-95 ${
-                    isActive
-                      ? 'shadow-riso-sm font-black -translate-y-[1px]'
-                      : 'bg-white/90 text-sumi hover:border-sumi hover:bg-white hover:-translate-y-0.5'
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap transition-all border-2 flex-shrink-0 active:scale-95 ${isActive
+                    ? 'shadow-riso-sm font-black -translate-y-[1px]'
+                    : 'bg-white/90 text-sumi hover:border-sumi hover:bg-white hover:-translate-y-0.5'
+                    }`}
                   title={`${cat.label} • ${cat.vibe}`}
                 >
                   <span style={{ color: isActive ? cat.secondary : cat.primary }}>{cat.icon}</span>
@@ -563,13 +561,11 @@ export default function FilterBar({
           type="button"
           onClick={onTogglePlacesOverlay}
           disabled={!onTogglePlacesOverlay}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 font-mono text-[11px] font-bold whitespace-nowrap flex-shrink-0 transition-all select-none shadow-riso-sm active:scale-95 ${
-            onTogglePlacesOverlay ? 'cursor-pointer hover:shadow-riso hover:-translate-y-0.5' : 'cursor-default'
-          } ${
-            showPlacesOverlay
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 font-mono text-[11px] font-bold whitespace-nowrap flex-shrink-0 transition-all select-none shadow-riso-sm active:scale-95 ${onTogglePlacesOverlay ? 'cursor-pointer hover:shadow-riso hover:-translate-y-0.5' : 'cursor-default'
+            } ${showPlacesOverlay
               ? 'bg-wabi border-sumi text-sumi hover:bg-white hover:border-vermilion'
               : 'bg-slate-200/90 border-slate-400 text-slate-500 hover:bg-slate-200'
-          }`}
+            }`}
           title={
             onTogglePlacesOverlay
               ? showPlacesOverlay
@@ -579,20 +575,18 @@ export default function FilterBar({
           }
         >
           <span
-            className={`w-2 h-2 rounded-full transition-colors ${
-              showPlacesOverlay ? 'bg-vermilion animate-pulse' : 'bg-slate-400'
-            }`}
+            className={`w-2 h-2 rounded-full transition-colors ${showPlacesOverlay ? 'bg-vermilion animate-pulse' : 'bg-slate-400'
+              }`}
           />
           <span className={showPlacesOverlay ? '' : 'line-through opacity-75'}>
             {totalFound} SPOTS
           </span>
           {onTogglePlacesOverlay && (
             <span
-              className={`text-[9px] px-1.5 py-0.2 rounded font-black tracking-wide transition-all ${
-                showPlacesOverlay
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'bg-slate-400 text-white'
-              }`}
+              className={`text-[9px] px-1.5 py-0.2 rounded font-black tracking-wide transition-all ${showPlacesOverlay
+                ? 'bg-emerald-600 text-white shadow-xs'
+                : 'bg-slate-400 text-white'
+                }`}
             >
               {showPlacesOverlay ? 'ON' : 'OFF'}
             </span>
@@ -631,13 +625,12 @@ export default function FilterBar({
             {/* Transit Line / Network Corridor */}
             {filters.transitLine && filters.transitLine !== 'all' && (
               <span
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 shadow-2xs transition-all ${
-                  filters.transitLine === 'metro'
-                    ? 'bg-sky-100 border-sky-600/70 text-sky-950'
-                    : filters.transitLine === 'local'
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl border-2 text-xs font-mono font-bold flex-shrink-0 shadow-2xs transition-all ${filters.transitLine === 'metro'
+                  ? 'bg-sky-100 border-sky-600/70 text-sky-950'
+                  : filters.transitLine === 'local'
                     ? 'bg-amber-100 border-amber-600/70 text-amber-950'
                     : 'bg-white text-sumi border-sumi/60'
-                }`}
+                  }`}
                 style={activeLineObj ? { borderColor: activeLineObj.color } : undefined}
               >
                 {activeLineObj?.color ? (
@@ -822,21 +815,19 @@ export default function FilterBar({
                           onChange(preset.filters);
                         }
                       }}
-                      className={`px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold whitespace-nowrap flex-shrink-0 transition-all active:scale-95 shadow-xs flex items-center gap-1.5 ${
-                        isActive
-                          ? 'bg-amber-400 text-sumi border-sumi font-black shadow-riso-sm scale-[1.02]'
-                          : 'bg-white hover:bg-amber-50 hover:border-sumi text-slate-800 border-sumi/30'
-                      }`}
+                      className={`px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold whitespace-nowrap flex-shrink-0 transition-all active:scale-95 shadow-xs flex items-center gap-1.5 ${isActive
+                        ? 'bg-amber-400 text-sumi border-sumi font-black shadow-riso-sm scale-[1.02]'
+                        : 'bg-white hover:bg-amber-50 hover:border-sumi text-slate-800 border-sumi/30'
+                        }`}
                       title={`${preset.label} (${preset.badge})`}
                     >
                       <span className="text-sm">{preset.icon}</span>
                       <span>{preset.label}</span>
                       <span
-                        className={`text-[8px] px-1 py-0.2 rounded font-black uppercase ${
-                          isActive
-                            ? 'bg-sumi text-wabi'
-                            : 'bg-slate-100 text-slate-600 border border-slate-300'
-                        }`}
+                        className={`text-[8px] px-1 py-0.2 rounded font-black uppercase ${isActive
+                          ? 'bg-sumi text-wabi'
+                          : 'bg-slate-100 text-slate-600 border border-slate-300'
+                          }`}
                       >
                         {preset.badge}
                       </span>
@@ -861,11 +852,10 @@ export default function FilterBar({
               <button
                 type="button"
                 onClick={() => setActiveTab('transit')}
-                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${
-                  activeTab === 'transit'
-                    ? 'bg-sumi text-wabi shadow-sm font-black'
-                    : 'text-slate-700 hover:bg-white/60'
-                }`}
+                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${activeTab === 'transit'
+                  ? 'bg-sumi text-wabi shadow-sm font-black'
+                  : 'text-slate-700 hover:bg-white/60'
+                  }`}
               >
                 <span>🚆 TRANSIT</span>
                 {transitActiveCount > 0 && (
@@ -878,11 +868,10 @@ export default function FilterBar({
               <button
                 type="button"
                 onClick={() => setActiveTab('budget')}
-                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${
-                  activeTab === 'budget'
-                    ? 'bg-sumi text-wabi shadow-sm font-black'
-                    : 'text-slate-700 hover:bg-white/60'
-                }`}
+                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${activeTab === 'budget'
+                  ? 'bg-sumi text-wabi shadow-sm font-black'
+                  : 'text-slate-700 hover:bg-white/60'
+                  }`}
               >
                 <span>🪙 BUDGET</span>
                 {budgetActiveCount > 0 && (
@@ -895,11 +884,10 @@ export default function FilterBar({
               <button
                 type="button"
                 onClick={() => setActiveTab('category')}
-                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${
-                  activeTab === 'category'
-                    ? 'bg-sumi text-wabi shadow-sm font-black'
-                    : 'text-slate-700 hover:bg-white/60'
-                }`}
+                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${activeTab === 'category'
+                  ? 'bg-sumi text-wabi shadow-sm font-black'
+                  : 'text-slate-700 hover:bg-white/60'
+                  }`}
               >
                 <span>🎯 SPOTS</span>
                 {categoryActiveCount > 0 && (
@@ -912,11 +900,10 @@ export default function FilterBar({
               <button
                 type="button"
                 onClick={() => setActiveTab('radius')}
-                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${
-                  activeTab === 'radius'
-                    ? 'bg-sumi text-wabi shadow-sm font-black'
-                    : 'text-slate-700 hover:bg-white/60'
-                }`}
+                className={`py-1.5 px-1 rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] ${activeTab === 'radius'
+                  ? 'bg-sumi text-wabi shadow-sm font-black'
+                  : 'text-slate-700 hover:bg-white/60'
+                  }`}
               >
                 <span>🧭 RADIUS</span>
                 {radiusActiveCount > 0 && (
@@ -948,33 +935,30 @@ export default function FilterBar({
                       <button
                         type="button"
                         onClick={() => onChange({ transitLine: 'all' })}
-                        className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${
-                          !filters.transitLine || filters.transitLine === 'all'
-                            ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
-                            : 'bg-white text-slate-800 border-sumi/30 hover:bg-wabi-100'
-                        }`}
+                        className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${!filters.transitLine || filters.transitLine === 'all'
+                          ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
+                          : 'bg-white text-slate-800 border-sumi/30 hover:bg-wabi-100'
+                          }`}
                       >
                         ALL LINES
                       </button>
                       <button
                         type="button"
                         onClick={() => onChange({ transitLine: 'local' })}
-                        className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${
-                          filters.transitLine === 'local'
-                            ? 'bg-rose-700 text-white border-sumi shadow-riso-sm'
-                            : 'bg-white text-slate-800 border-sumi/30 hover:bg-rose-50'
-                        }`}
+                        className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${filters.transitLine === 'local'
+                          ? 'bg-rose-700 text-white border-sumi shadow-riso-sm'
+                          : 'bg-white text-slate-800 border-sumi/30 hover:bg-rose-50'
+                          }`}
                       >
                         🚆 LOCALS
                       </button>
                       <button
                         type="button"
                         onClick={() => onChange({ transitLine: 'metro' })}
-                        className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${
-                          filters.transitLine === 'metro'
-                            ? 'bg-sky-600 text-white border-sumi shadow-riso-sm'
-                            : 'bg-white text-slate-800 border-sumi/30 hover:bg-sky-50'
-                        }`}
+                        className={`py-1.5 px-2 rounded-xl border-2 font-bold transition-all text-center ${filters.transitLine === 'metro'
+                          ? 'bg-sky-600 text-white border-sumi shadow-riso-sm'
+                          : 'bg-white text-slate-800 border-sumi/30 hover:bg-sky-50'
+                          }`}
                       >
                         🚇 METROS
                       </button>
@@ -1006,11 +990,10 @@ export default function FilterBar({
                             key={chip.id}
                             type="button"
                             onClick={() => onChange({ transitLine: isActive ? 'all' : chip.id })}
-                            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 active:scale-95 ${
-                              isActive
-                                ? 'bg-sumi text-wabi border-sumi font-black -translate-y-0.5 shadow-riso-sm'
-                                : 'bg-white text-slate-900 border-sumi/30 hover:border-sumi hover:bg-wabi-100'
-                            }`}
+                            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-mono font-bold whitespace-nowrap border-2 transition-all flex-shrink-0 active:scale-95 ${isActive
+                              ? 'bg-sumi text-wabi border-sumi font-black -translate-y-0.5 shadow-riso-sm'
+                              : 'bg-white text-slate-900 border-sumi/30 hover:border-sumi hover:bg-wabi-100'
+                              }`}
                             title={`Filter by ${chip.name} (${chip.code})`}
                           >
                             <span
@@ -1054,11 +1037,10 @@ export default function FilterBar({
                             key={opt.id}
                             type="button"
                             onClick={() => onChange({ transitAccess: opt.id })}
-                            className={`py-1.5 px-2 rounded-xl border text-center transition-all truncate font-bold ${
-                              isActive
-                                ? 'bg-teal-700 text-white border-sumi shadow-xs'
-                                : 'bg-white text-slate-700 border-sumi/25 hover:bg-teal-50'
-                            }`}
+                            className={`py-1.5 px-2 rounded-xl border text-center transition-all truncate font-bold ${isActive
+                              ? 'bg-teal-700 text-white border-sumi shadow-xs'
+                              : 'bg-white text-slate-700 border-sumi/25 hover:bg-teal-50'
+                              }`}
                           >
                             {opt.icon} {opt.badge}
                           </button>
@@ -1077,11 +1059,10 @@ export default function FilterBar({
                       <button
                         type="button"
                         onClick={() => onToggleTransitOverlay(!showTransitOverlay)}
-                        className={`px-3 py-1 rounded-xl border-2 text-xs font-bold font-mono transition-all active:scale-95 ${
-                          showTransitOverlay
-                            ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm'
-                            : 'bg-slate-200 text-slate-600 border-slate-300 hover:bg-slate-300'
-                        }`}
+                        className={`px-3 py-1 rounded-xl border-2 text-xs font-bold font-mono transition-all active:scale-95 ${showTransitOverlay
+                          ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm'
+                          : 'bg-slate-200 text-slate-600 border-slate-300 hover:bg-slate-300'
+                          }`}
                       >
                         {showTransitOverlay ? 'ON (VISIBLE)' : 'OFF (HIDDEN)'}
                       </button>
@@ -1110,11 +1091,10 @@ export default function FilterBar({
                           <button
                             key={tier.id}
                             onClick={() => onChange({ budget: tier.id })}
-                            className={`p-2 rounded-xl border-2 text-left transition-all ${
-                              isActive
-                                ? `${tier.accentBg} border-sumi shadow-riso-sm font-bold scale-[1.01]`
-                                : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800'
-                            }`}
+                            className={`p-2 rounded-xl border-2 text-left transition-all ${isActive
+                              ? `${tier.accentBg} border-sumi shadow-riso-sm font-bold scale-[1.01]`
+                              : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800'
+                              }`}
                           >
                             <div className="flex items-center justify-between text-xs">
                               <span className="font-bold flex items-center gap-1">
@@ -1126,11 +1106,10 @@ export default function FilterBar({
                             <div className="flex items-center justify-between text-[10px] font-mono mt-1">
                               <span className="opacity-90">{tier.slang}</span>
                               <span
-                                className={`px-1 rounded border text-[9px] font-black ${
-                                  isActive
-                                    ? 'bg-white/20 border-white/40'
-                                    : `${tier.stampBorder} ${tier.accentText}`
-                                }`}
+                                className={`px-1 rounded border text-[9px] font-black ${isActive
+                                  ? 'bg-white/20 border-white/40'
+                                  : `${tier.stampBorder} ${tier.accentText}`
+                                  }`}
                               >
                                 {tier.stampText}
                               </span>
@@ -1156,11 +1135,10 @@ export default function FilterBar({
                           <button
                             key={tier.id}
                             onClick={() => onChange({ spotTier: tier.id })}
-                            className={`py-1.5 px-2 rounded-xl border-2 text-center transition-all ${
-                              isActive
-                                ? 'bg-sumi text-wabi border-sumi shadow-sm font-bold scale-[1.01]'
-                                : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800 text-xs'
-                            }`}
+                            className={`py-1.5 px-2 rounded-xl border-2 text-center transition-all ${isActive
+                              ? 'bg-sumi text-wabi border-sumi shadow-sm font-bold scale-[1.01]'
+                              : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800 text-xs'
+                              }`}
                           >
                             <div className="text-xs font-bold truncate">{tier.label}</div>
                           </button>
@@ -1194,17 +1172,16 @@ export default function FilterBar({
                           style={
                             isActive
                               ? {
-                                  backgroundColor: cat.primary,
-                                  borderColor: '#141518',
-                                  color: cat.secondary,
-                                }
+                                backgroundColor: cat.primary,
+                                borderColor: '#141518',
+                                color: cat.secondary,
+                              }
                               : undefined
                           }
-                          className={`flex items-center gap-2 p-2 rounded-xl border-2 text-left transition-all ${
-                            isActive
-                              ? 'shadow-riso-sm font-black scale-[1.01]'
-                              : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800 text-xs font-medium'
-                          }`}
+                          className={`flex items-center gap-2 p-2 rounded-xl border-2 text-left transition-all ${isActive
+                            ? 'shadow-riso-sm font-black scale-[1.01]'
+                            : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800 text-xs font-medium'
+                            }`}
                         >
                           <span style={{ color: isActive ? cat.secondary : cat.primary }}>{cat.icon}</span>
                           <div className="truncate">
@@ -1236,11 +1213,10 @@ export default function FilterBar({
                         <button
                           key={r.km}
                           onClick={() => onChange({ radiusKm: r.km })}
-                          className={`p-2.5 rounded-xl border-2 text-left transition-all ${
-                            isActive
-                              ? 'bg-vermilion text-white border-sumi shadow-riso-sm font-bold scale-[1.01]'
-                              : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800'
-                          }`}
+                          className={`p-2.5 rounded-xl border-2 text-left transition-all ${isActive
+                            ? 'bg-vermilion text-white border-sumi shadow-riso-sm font-bold scale-[1.01]'
+                            : 'bg-white hover:bg-wabi-100 border-sumi/25 text-slate-800'
+                            }`}
                         >
                           <div className="text-sm font-black">{r.label}</div>
                           <div className={`text-[10px] mt-0.5 line-clamp-1 ${isActive ? 'text-white/80' : 'text-slate-500'}`}>
