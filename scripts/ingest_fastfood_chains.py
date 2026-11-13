@@ -32,6 +32,7 @@ import os
 import re
 import sys
 import urllib.request
+import urllib.parse
 import urllib.error
 
 # ─────────────────────────────────────────────────────────────
@@ -535,8 +536,12 @@ def run_ingestion(args):
             except Exception:
                 pass
                 
-            # Filter out prior OSM candidate imports, keep all curated spots intact
-            non_osm_places = [p for p in existing_places if not str(p.get("id", "")).startswith("osm-")]
+            # Filter out prior OSM candidate imports and old heuristic fastfood entries, keeping all other curated spots intact
+            non_osm_places = [
+                p for p in existing_places 
+                if not str(p.get("id", "")).startswith("osm-") 
+                and p.get("source") != "curated_fastfood_network"
+            ]
             synced_master = non_osm_places + final_candidates
             
             with open(master_path, "w", encoding="utf-8") as f:
