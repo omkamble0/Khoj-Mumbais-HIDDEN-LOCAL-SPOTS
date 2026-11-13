@@ -84,4 +84,13 @@ AS $$
     geom::geography,
     ST_SetSRID(ST_MakePoint(user_lng, user_lat), 4326)::geography
   ) ASC;
-$$;
+-- 6. Youth Malls & Fast Food Hub Columns
+ALTER TABLE places ADD COLUMN IF NOT EXISTS hub_type TEXT;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS outlets JSONB;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS total_outlets_count INTEGER;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS more_outlets_text TEXT;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS more_outlets_url TEXT;
+ALTER TABLE places ADD COLUMN IF NOT EXISTS entertainment TEXT[];
+ALTER TABLE places ADD COLUMN IF NOT EXISTS amenities JSONB;
+
+

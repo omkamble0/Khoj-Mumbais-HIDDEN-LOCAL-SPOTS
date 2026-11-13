@@ -629,6 +629,10 @@ export default function DiscoveryMap({
         
         const displayName = place.short_name || place.name.split(' ')[0] + ' ' + (place.name.split(' ')[1] || '');
 
+        const isMallHub = place.hub_type === 'mall';
+        const isDriveThru = place.hub_type === 'standalone_drive_thru';
+        const customBadgeIcon = isMallHub ? '🏬' : isDriveThru ? '🍔' : null;
+
         const tierBadge =
           place.spot_tier === 'iconic'
             ? '★'
@@ -639,19 +643,23 @@ export default function DiscoveryMap({
         const markerHtml = `
           <div id="pin-${place.id}" class="custom-pin cursor-pointer flex flex-col items-center group -translate-x-1/2 -translate-y-full pointer-events-auto select-none" data-place-id="${place.id}">
             <div class="origin-bottom flex flex-col items-center group-hover:-translate-y-1 group-hover:scale-105 transition-transform duration-100 ease-out">
-              <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-2.5 py-1 rounded-xl border-2 border-sumi flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap bg-wabi text-sumi group-hover:bg-white group-hover:border-vermilion transition-colors duration-100">
-                <span class="w-2.5 h-2.5 rounded-full flex-shrink-0 relative flex items-center justify-center" style="background-color: ${theme.dot};">
-                  ${isPeaking ? `<span class="absolute w-3.5 h-3.5 rounded-full border border-emerald-500 bg-emerald-500/25"></span>` : ''}
-                </span>
+              <div class="pin-pill ${isSelected ? 'pin-selected' : ''} px-2.5 py-1 rounded-xl border-2 ${isMallHub ? 'border-indigo-800 bg-indigo-50/95 font-black text-indigo-950' : 'border-sumi bg-wabi text-sumi'} flex items-center gap-1.5 shadow-riso-sm font-sans whitespace-nowrap group-hover:bg-white group-hover:border-vermilion transition-colors duration-100">
+                ${
+                  customBadgeIcon
+                    ? `<span class="text-[13px] flex-shrink-0 leading-none drop-shadow-xs" title="${isMallHub ? 'Mall & Food Court Hub' : 'Fast Food Drive-Thru'}">${customBadgeIcon}</span>`
+                    : `<span class="w-2.5 h-2.5 rounded-full flex-shrink-0 relative flex items-center justify-center" style="background-color: ${theme.dot};">
+                        ${isPeaking ? `<span class="absolute w-3.5 h-3.5 rounded-full border border-emerald-500 bg-emerald-500/25"></span>` : ''}
+                      </span>`
+                }
                 <span class="pin-label text-xs font-bold tracking-normal">${displayName}</span>
                 <span class="pin-tier text-xs font-mono font-bold opacity-80">${tierBadge}</span>
                 ${isPeaking ? `<span class="pin-tier text-[10px] text-emerald-600 font-bold" title="Peaking Now">⚡</span>` : ''}
               </div>
 
-              <div class="pin-tail ${isSelected ? 'tail-selected' : ''} w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm border-sumi bg-wabi group-hover:border-vermilion group-hover:bg-white transition-colors duration-100"></div>
+              <div class="pin-tail ${isSelected ? 'tail-selected' : ''} w-2 h-2 rotate-45 -mt-1 border-r-2 border-b-2 shadow-sm ${isMallHub ? 'border-indigo-800 bg-indigo-50' : 'border-sumi bg-wabi'} group-hover:border-vermilion group-hover:bg-white transition-colors duration-100"></div>
             </div>
 
-            <div class="w-1.5 h-1.5 rounded-full bg-sumi -mt-0.5"></div>
+            <div class="w-1.5 h-1.5 rounded-full ${isMallHub ? 'bg-indigo-900' : 'bg-sumi'} -mt-0.5"></div>
           </div>
         `;
 

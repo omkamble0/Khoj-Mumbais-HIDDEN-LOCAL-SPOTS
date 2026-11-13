@@ -19,6 +19,25 @@ export type BudgetTier = 'all' | 'free' | 'pocket_friendly' | 'moderate' | 'splu
 export type AccessType = 'public' | 'permissive' | 'commercial' | 'trail_required';
 export type SafetyLevel = 'low' | 'medium' | 'high';
 
+export interface ChainOutlet {
+  brand: string;        // 'mcdonalds' | 'kfc' | 'burger_king' | 'taco_bell' | 'subway' | 'dominos' | 'starbucks' | 'pizza_hut' | 'tim_hortons' | 'haldirams' | etc.
+  name: string;         // e.g. "McDonald's"
+  floor: string;        // e.g. "Level 3 Food Court"
+  has_drive_thru?: boolean;
+  is_late_night?: boolean;
+  timing?: string;      // e.g. "11:00 AM – 11:30 PM"
+}
+
+export interface HubAmenities {
+  heavy_ac?: boolean;
+  plug_points?: boolean;
+  free_wifi?: boolean;
+  clean_washrooms?: boolean;
+  late_night?: boolean;
+  parking?: boolean;
+  metro_connected?: boolean;
+}
+
 export interface Place {
   id: string;
   slug: string;
@@ -49,6 +68,15 @@ export interface Place {
   source: string;
   distance_meters?: number;
   composite_score?: number;
+
+  // Youth Hubs, Malls & Fast Food Chains
+  hub_type?: 'mall' | 'food_hub' | 'standalone_drive_thru';
+  outlets?: ChainOutlet[];
+  total_outlets_count?: number;
+  more_outlets_text?: string;
+  more_outlets_url?: string;
+  entertainment?: string[];
+  amenities?: HubAmenities;
 }
 
 export type TransitAccessFilter = 'all' | 'near_metro' | 'near_railway' | 'walkable_transit';

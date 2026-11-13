@@ -35,6 +35,18 @@ interface PlaceCardDrawerProps {
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80';
 
+function getBrandEmoji(brand: string): string {
+  const b = brand.toLowerCase();
+  if (b.includes('mcdonald')) return '🍔';
+  if (b.includes('kfc')) return '🍗';
+  if (b.includes('burger')) return '👑';
+  if (b.includes('taco')) return '🌮';
+  if (b.includes('subway')) return '🥪';
+  if (b.includes('pizza') || b.includes('domino')) return '🍕';
+  if (b.includes('starbucks') || b.includes('coffee') || b.includes('hortons')) return '☕';
+  return '🍽️';
+}
+
 export default function PlaceCardDrawer({
   place,
   onClose,
@@ -276,6 +288,122 @@ export default function PlaceCardDrawer({
           <p className="text-slate-800 text-sm sm:text-base leading-relaxed font-sans pt-0.5">
             {place.description}
           </p>
+
+          {/* Custom-Crafted Mall & Fast Food Outlets Card */}
+          {place.outlets && place.outlets.length > 0 && (
+            <div className="bg-wabi rounded-2xl border-2 border-sumi shadow-riso-sm p-4 space-y-3 animate-in fade-in duration-150">
+              {/* Header */}
+              <div className="flex items-center justify-between pb-2 border-b-2 border-sumi/15">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">
+                    {place.hub_type === 'mall' ? '🏬' : '🍔'}
+                  </span>
+                  <div>
+                    <h3 className="font-mono font-black text-xs sm:text-sm text-sumi uppercase tracking-wide">
+                      {place.hub_type === 'mall' ? 'FOOD COURT & POPULAR CHAINS' : 'FAST FOOD & DRIVE-THRU'}
+                    </h3>
+                    <span className="text-[10px] font-mono text-slate-500">
+                      {place.total_outlets_count ? `${place.outlets.length} of ${place.total_outlets_count} food outlets featured` : 'Verified fast food counters'}
+                    </span>
+                  </div>
+                </div>
+
+                {place.hub_type === 'mall' && (
+                  <span className="text-[10px] font-mono font-black px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-900 border border-indigo-300 shadow-2xs">
+                    MALL HUB
+                  </span>
+                )}
+              </div>
+
+              {/* 5-7 Curated Outlets Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {place.outlets.map((outlet, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl bg-white border border-sumi/25 shadow-2xs hover:border-sumi transition-colors"
+                  >
+                    <span className="text-xl flex-shrink-0 mt-0.5 select-none">
+                      {getBrandEmoji(outlet.brand)}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-baseline justify-between gap-1">
+                        <span className="font-bold text-xs sm:text-sm text-sumi truncate">{outlet.name}</span>
+                        {outlet.has_drive_thru && (
+                          <span className="text-[9px] font-mono font-black text-rose-700 bg-rose-50 px-1 rounded border border-rose-300 flex-shrink-0">
+                            DRIVE-THRU
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-600 block truncate font-medium">
+                        {outlet.floor}
+                      </span>
+                      {outlet.timing && (
+                        <span className="text-[10px] font-mono text-slate-400 block truncate">
+                          {outlet.timing}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* "And Many More..." Interactive Link */}
+              <a
+                href={
+                  place.more_outlets_url ||
+                  `https://www.google.com/maps/search/food+restaurants+in+${encodeURIComponent(place.name)}+${encodeURIComponent(place.neighborhood || 'Mumbai')}`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-amber-50 hover:bg-amber-100 border-2 border-sumi text-sumi text-xs font-mono font-bold transition-all shadow-2xs hover:shadow-riso-sm hover:-translate-y-0.5 active:scale-98 text-center"
+              >
+                <span>
+                  {place.more_outlets_text ||
+                    `+ ${Math.max(10, (place.total_outlets_count || 30) - place.outlets.length)} more food outlets & cafes on Maps`}
+                </span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-sumi flex-shrink-0" />
+              </a>
+
+              {/* Youth Amenities & Entertainment Badges */}
+              {(place.amenities || (place.entertainment && place.entertainment.length > 0)) && (
+                <div className="flex flex-wrap items-center gap-1.5 pt-1 border-t border-sumi/10">
+                  {place.amenities?.heavy_ac && (
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-lg bg-sky-50 text-sky-900 border border-sky-300 flex items-center gap-1">
+                      <span>❄️</span>
+                      <span>Heavy AC Chill</span>
+                    </span>
+                  )}
+                  {place.amenities?.plug_points && (
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-300 flex items-center gap-1">
+                      <span>⚡</span>
+                      <span>Plug Points</span>
+                    </span>
+                  )}
+                  {place.amenities?.free_wifi && (
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-300 flex items-center gap-1">
+                      <span>📶</span>
+                      <span>Free Wi-Fi</span>
+                    </span>
+                  )}
+                  {place.amenities?.late_night && (
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-lg bg-rose-50 text-rose-900 border border-rose-300 flex items-center gap-1">
+                      <span>🌙</span>
+                      <span>Late Night</span>
+                    </span>
+                  )}
+                  {place.entertainment?.map((ent, i) => (
+                    <span
+                      key={i}
+                      className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-lg bg-purple-50 text-purple-900 border border-purple-300 flex items-center gap-1"
+                    >
+                      <span>🎮</span>
+                      <span>{ent}</span>
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Integrated Field Notes (Best Time + Access & Safety) */}
           <div className="bg-wabi-100/70 border border-sumi/20 rounded-2xl overflow-hidden shadow-riso-sm divide-y divide-sumi/15">

@@ -69,6 +69,13 @@ const rows = places.map((p) => ({
   budget_tier: p.budget_tier || 'pocket_friendly',
   approx_cost: p.approx_cost || null,
   price_level: p.price_level ?? 1,
+  hub_type: p.hub_type || null,
+  outlets: p.outlets || null,
+  total_outlets_count: p.total_outlets_count || null,
+  more_outlets_text: p.more_outlets_text || null,
+  more_outlets_url: p.more_outlets_url || null,
+  entertainment: p.entertainment || null,
+  amenities: p.amenities || null,
 }));
 
 async function uploadInBatches() {
@@ -106,3 +113,4 @@ uploadInBatches().catch((err) => {
   console.error('\n❌ Migration failed:', err);
   process.exit(1);
 });
+
