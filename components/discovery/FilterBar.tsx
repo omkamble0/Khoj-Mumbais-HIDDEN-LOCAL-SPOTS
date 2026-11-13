@@ -301,6 +301,20 @@ interface QuickPreset {
 
 const QUICK_PRESETS: QuickPreset[] = [
   {
+    id: 'fast_food_addas',
+    label: 'Late-Night Fast-Food Addas',
+    icon: '🍔',
+    badge: 'MCD • BK • KFC • DOMINOS',
+    filters: { category: 'cafes', searchQuery: 'fast-food', budget: 'pocket_friendly' },
+  },
+  {
+    id: 'mall_food_courts',
+    label: 'Mega Mall AC & Food Courts',
+    icon: '🏬',
+    badge: 'MALL HUBS',
+    filters: { category: 'cafes', searchQuery: 'mall' },
+  },
+  {
     id: 'sobo_dive_crawl',
     label: 'SoBo Dive Crawl',
     icon: '🍺',
@@ -351,6 +365,7 @@ export default function FilterBar({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const filterIslandRef = useRef<HTMLDivElement>(null);
   const studioChipsRef = useRef<HTMLDivElement>(null);
+  const presetContainerRef = useRef<HTMLDivElement>(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<StudioTab>('transit');
@@ -423,8 +438,18 @@ export default function FilterBar({
       radiusKm: 120,
       transitAccess: 'all',
       transitLine: 'all',
+      searchQuery: '',
     });
   };
+
+  const isPresetActive = useCallback(
+    (preset: QuickPreset) => {
+      return Object.entries(preset.filters).every(([k, v]) => {
+        return (filters as any)[k] === v;
+      });
+    },
+    [filters]
+  );
 
   // Find active tier, budget, transit & line labels for quick display
   const activeTierObj = SPOT_TIERS.find((t) => t.id === filters.spotTier);
@@ -763,21 +788,72 @@ export default function FilterBar({
               </div>
             </div>
 
-            {/* Quick Curator Presets (One-click Bombay vibes) */}
-            <div className="flex items-center gap-1.5 overflow-x-auto sliding-bar pb-1 pt-0.5 select-none">
-              <span className="text-[10px] font-mono font-black text-sumi uppercase flex-shrink-0 flex items-center gap-1">
-                <Zap className="w-3 h-3 text-amber-500 fill-amber-500" />
-                PRESETS:
-              </span>
-              {QUICK_PRESETS.map((preset) => (
-                <button
-                  key={preset.id}
-                  onClick={() => onChange(preset.filters)}
-                  className="px-2.5 py-1 rounded-xl border border-sumi/30 bg-white hover:bg-amber-100 hover:border-sumi text-slate-800 text-[10px] font-mono font-bold whitespace-nowrap flex-shrink-0 transition-all active:scale-95 shadow-xs"
-                >
-                  <span>{preset.icon} {preset.label}</span>
-                </button>
-              ))}
+            {/* Quick Curator Presets (One-click Bombay vibes) with Dedicated Horizontal Tactile Scroll Bar */}
+            <div className="space-y-1.5 select-none bg-sumi/5 p-2 rounded-2xl border border-sumi/15">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono font-black text-sumi uppercase flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                  <span>CURATOR PRESETS:</span>
+                </span>
+                <span className="text-[9px] font-mono text-slate-500">
+                  Glide horizontally to pick a vibe
+                </span>
+              </div>
+
+              <div
+                ref={presetContainerRef}
+                onWheel={(e) => {
+                  if (e.deltaY !== 0 && presetContainerRef.current) {
+                    presetContainerRef.current.scrollLeft += e.deltaY;
+                  }
+                }}
+                className="flex items-center gap-2 overflow-x-auto sliding-bar py-1 px-0.5 select-none scroll-smooth"
+              >
+                {QUICK_PRESETS.map((preset) => {
+                  const isActive = isPresetActive(preset);
+                  return (
+                    <button
+                      key={preset.id}
+                      type="button"
+                      onClick={() => {
+                        if (isActive) {
+                          handleResetFilters();
+                        } else {
+                          onChange(preset.filters);
+                        }
+                      }}
+                      className={`px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold whitespace-nowrap flex-shrink-0 transition-all active:scale-95 shadow-xs flex items-center gap-1.5 ${
+                        isActive
+                          ? 'bg-amber-400 text-sumi border-sumi font-black shadow-riso-sm scale-[1.02]'
+                          : 'bg-white hover:bg-amber-50 hover:border-sumi text-slate-800 border-sumi/30'
+                      }`}
+                      title={`${preset.label} (${preset.badge})`}
+                    >
+                      <span className="text-sm">{preset.icon}</span>
+                      <span>{preset.label}</span>
+                      <span
+                        className={`text-[8px] px-1 py-0.2 rounded font-black uppercase ${
+                          isActive
+                            ? 'bg-sumi text-wabi'
+                            : 'bg-slate-100 text-slate-600 border border-slate-300'
+                        }`}
+                      >
+                        {preset.badge}
+                      </span>
+                      {isActive && <span className="text-[10px] text-rose-700 font-black">✕</span>}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Tactile Horizontal Scrollbar for Presets */}
+              <TactileSliderBar
+                containerRef={presetContainerRef}
+                variant="stations"
+                accentColor="bg-amber-500"
+                trackLabel="GLIDE PRESETS"
+                className="pt-0.5"
+              />
             </div>
 
             {/* Smart Segmented Switcher (Compact 4-tab bar) */}
