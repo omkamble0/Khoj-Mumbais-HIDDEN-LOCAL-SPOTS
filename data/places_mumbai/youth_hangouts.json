@@ -203,7 +203,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-infiniti-mall-malad",
@@ -300,7 +301,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-inorbit-mall-malad",
@@ -396,7 +398,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-r-city-mall-ghatkopar",
@@ -493,7 +496,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-oberoi-mall-goregaon",
@@ -583,7 +587,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-nexus-seawoods-grand-central",
@@ -1009,7 +1014,8 @@
       "plug_points": true,
       "clean_washrooms": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-inorbit-mall-vashi",
@@ -1024,8 +1030,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Vashi / Sector 30A",
-    "latitude": 19.0658,
-    "longitude": 72.9984,
+    "latitude": 19.065435,
+    "longitude": 73.001248,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Right opposite Vashi railway station, very safe.",
@@ -1095,7 +1101,9 @@
       "plug_points": true,
       "clean_washrooms": true,
       "parking": true
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "Inorbit Mall, Vashi-Sanpada Link Road, Sanpada, Navi Mumbai, Thane Subdistrict, Thane, Maharashtra, 400705, India"
   },
   {
     "id": "hub-mcd-carter-road-bandra",
@@ -1353,8 +1361,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Andheri West / Lokhandwala",
-    "latitude": 19.1432,
-    "longitude": 72.8256,
+    "latitude": 19.14113,
+    "longitude": 72.825474,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -1398,7 +1406,9 @@
       "clean_washrooms": true,
       "late_night": true,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "McDonald's, Purshottam Tondan Marg, Lokhandwala Complex, Oshiwara, K/W Ward, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400053, India"
   },
   {
     "id": "hub-mcd-chembur-diamond-garden",
@@ -1533,8 +1543,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Ghatkopar East / Vallabh Baug Lane",
-    "latitude": 19.0792,
-    "longitude": 72.9082,
+    "latitude": 19.086907,
+    "longitude": 72.908907,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -1578,7 +1588,9 @@
       "clean_washrooms": true,
       "late_night": false,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "McDonald's, Station Road, Kapol Wadi, Ghatkopar West, N Ward, Mumbai Zone 6, Mumbai, Mumbai Suburban District, Maharashtra, 400086, India"
   },
   {
     "id": "hub-mcd-thane-station-west",
@@ -1653,8 +1665,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Vashi / Sector 17 Commercial Hub",
-    "latitude": 19.0734,
-    "longitude": 72.9997,
+    "latitude": 19.072136,
+    "longitude": 72.998742,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -1698,7 +1710,9 @@
       "clean_washrooms": true,
       "late_night": false,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "McDonald's, Sector 17 Road, Vashi, Navi Mumbai, Thane Subdistrict, Thane, Maharashtra, 400703, India"
   },
   {
     "id": "hub-bk-linking-road-bandra",
@@ -1713,8 +1727,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Bandra West / Linking Road",
-    "latitude": 19.0621,
-    "longitude": 72.8335,
+    "latitude": 19.063535,
+    "longitude": 72.835008,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -1759,7 +1773,9 @@
       "clean_washrooms": true,
       "late_night": true,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "Burger King, Linking Road, Linking Road Shopping area, Khar, Bandra West, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "hub-bk-churchgate-station",
@@ -2541,7 +2557,8 @@
       "clean_washrooms": true,
       "late_night": true,
       "parking": false
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-dominos-juhu-beach",
@@ -2922,8 +2939,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Nariman Point / Marine Drive",
-    "latitude": 18.9282,
-    "longitude": 72.8236,
+    "latitude": 18.926768,
+    "longitude": 72.822587,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Premier commercial precinct right off Marine Drive promenade.",
@@ -2968,7 +2985,9 @@
         "floor": "Level 2 Food Court",
         "timing": "11:00 AM – 11:00 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "CR2 Mall, Barrister Rajni Patel Marg, Nariman Point, Colaba, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400021, India"
   },
   {
     "id": "hub-sobo-central-tardeo",
@@ -2983,8 +3002,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Tardeo / Haji Ali",
-    "latitude": 18.9712,
-    "longitude": 72.8142,
+    "latitude": 18.975839,
+    "longitude": 72.812094,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Main road frontage near Haji Ali dargah circle.",
@@ -3022,7 +3041,9 @@
         "floor": "Level 1",
         "timing": "10:30 AM – 10:30 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "Brand Factory, SoBo Central, Pandit Madan Mohan Malviya Marg, Haji Ali, Tulsi Wadi, D Ward, Mumbai Zone 1, Mumbai, Mumbai City District, Maharashtra, 400034, India"
   },
   {
     "id": "hub-hub-mall-goregaon",
@@ -3233,8 +3254,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Mulund West / LBS Marg",
-    "latitude": 19.1762,
-    "longitude": 72.9515,
+    "latitude": 19.183975,
+    "longitude": 72.951593,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Main LBS arterial corridor with dedicated basement parking and security.",
@@ -3286,7 +3307,9 @@
         "floor": "Level 3 Food Court",
         "timing": "10:30 AM – 10:30 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "R Mall, Lal Bahadur Shastri Marg, Vaishali Nagar, Mulund West, T Ward, Mumbai Zone 6, Mumbai, Mumbai Suburban District, Maharashtra, 400080, India"
   },
   {
     "id": "hub-the-walk-hiranandani-thane",
@@ -3681,8 +3704,8 @@
     "price_level": 1,
     "city": "Navi Mumbai",
     "neighborhood": "Panvel / Old Mumbai-Pune Highway",
-    "latitude": 18.9912,
-    "longitude": 73.1185,
+    "latitude": 18.993402,
+    "longitude": 73.115687,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Central Panvel arterial road with dedicated parking and security.",
@@ -3740,7 +3763,9 @@
         "floor": "Level 3 Food Court",
         "timing": "10:30 AM – 10:30 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "Orion Mall, New Panvel, Navi Mumbai, Panvel Subdistrict, Raigad, Maharashtra, 410206, India"
   },
   {
     "id": "hub-metro-junction-mall-kalyan",

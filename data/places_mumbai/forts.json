@@ -389,8 +389,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mahim Koliwada",
-    "latitude": 19.0402,
-    "longitude": 72.8385,
+    "latitude": 19.042011,
+    "longitude": 72.838127,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Centuries-old stone battlements. Visit during daylight hours with sturdy footwear.",
@@ -410,7 +410,9 @@
     "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "osm_verified": true,
+    "osm_name": "माहीम किल्ला, HMA Faqir Street, Kapad Bazar, Mahim, G/N Ward, Mumbai Zone 2, Mumbai City District, Maharashtra, 400016, India"
   },
   {
     "id": "mumbai-dongri-fort-bhayandar",

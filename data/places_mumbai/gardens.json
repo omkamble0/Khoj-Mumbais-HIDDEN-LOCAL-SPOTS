@@ -383,8 +383,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Nerul Sector 26 / 28",
-    "latitude": 19.0305,
-    "longitude": 73.0135,
+    "latitude": 19.026011,
+    "longitude": 73.010167,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-maintained municipal running track and family botanical garden.",
@@ -406,7 +406,9 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "osm_verified": true,
+    "osm_name": "Jewel of Navi Mumbai, Nerul West, Navi Mumbai, Thane Subdistrict, Thane, Maharashtra, 400007, India"
   },
   {
     "id": "navi-mumbai-mbp-waterfall-gardens",

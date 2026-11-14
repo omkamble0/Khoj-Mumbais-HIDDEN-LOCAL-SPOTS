@@ -3960,8 +3960,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Byculla West",
-    "latitude": 18.9712,
-    "longitude": 72.8335,
+    "latitude": 18.96695,
+    "longitude": 72.832078,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Identity verification at gate for security. Respectful quiet conduct requested.",
@@ -3981,7 +3981,9 @@
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "osm_verified": true,
+    "osm_name": "Magen David Synagogue, Sir Jamshetji Jeejeebhoy Road, Nagpada, E Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400008, India"
   },
   {
     "id": "mumbai-walkeshwar-kashi-math",
@@ -4125,8 +4127,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mahim Koliwada",
-    "latitude": 19.0402,
-    "longitude": 72.8385,
+    "latitude": 19.042011,
+    "longitude": 72.838127,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Centuries-old stone battlements. Visit during daylight hours with sturdy footwear.",
@@ -4146,7 +4148,9 @@
     "photo_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "osm_verified": true,
+    "osm_name": "माहीम किल्ला, HMA Faqir Street, Kapad Bazar, Mahim, G/N Ward, Mumbai Zone 2, Mumbai City District, Maharashtra, 400016, India"
   },
   {
     "id": "mumbai-dongri-fort-bhayandar",
@@ -4191,8 +4195,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Worli",
-    "latitude": 18.9952,
-    "longitude": 72.8182,
+    "latitude": 18.987658,
+    "longitude": 72.814068,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Air-conditioned contemporary art gallery. Free public admission.",
@@ -4212,7 +4216,9 @@
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Tao Art Gallery, Dr Annie Besant Road, Mariammar Nagar, Mahalakshmi, G/S Ward, Mumbai Zone 2, Mumbai City District, Maharashtra, 400018, India"
   },
   {
     "id": "mumbai-space118-byculla",
@@ -4393,8 +4399,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort / Queens Mansion",
-    "latitude": 18.9372,
-    "longitude": 72.8335,
+    "latitude": 18.935378,
+    "longitude": 72.832187,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Third-floor gallery inside Queens Mansion. Free entry with tranquil atmosphere.",
@@ -4416,7 +4422,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Chemould Prescott Road, G Talwarkar Marg, Bora Bazaar, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400038, India"
   },
   {
     "id": "mumbai-jimmy-boy-parsi-cafe",
@@ -4451,7 +4459,8 @@
     "source": "curated_underrated",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "osm_verified": true
   },
   {
     "id": "mmr-revdanda-beach-fort-ruins",
@@ -4568,8 +4577,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Nerul Sector 26 / 28",
-    "latitude": 19.0305,
-    "longitude": 73.0135,
+    "latitude": 19.026011,
+    "longitude": 73.010167,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-maintained municipal running track and family botanical garden.",
@@ -4591,7 +4600,9 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "osm_verified": true,
+    "osm_name": "Jewel of Navi Mumbai, Nerul West, Navi Mumbai, Thane Subdistrict, Thane, Maharashtra, 400007, India"
   },
   {
     "id": "thane-talao-pali-masunda-lake",
@@ -5548,8 +5559,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort / CST",
-    "latitude": 18.9395,
-    "longitude": 72.8348,
+    "latitude": 18.937539,
+    "longitude": 72.833646,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Calm heritage dining room opposite New Excelsior cinema.",
@@ -5571,7 +5582,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Cafe Excelsior, 192, Amit Keshav Nayak Marg, Bori Bunder, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400038, India"
   },
   {
     "id": "mumbai-ideal-corner-parsi",
@@ -5606,7 +5619,8 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true
   },
   {
     "id": "mumbai-ncpa-seaside-sunken-lawns",
@@ -6563,8 +6577,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Matunga / King's Circle",
-    "latitude": 19.0285,
-    "longitude": 72.8558,
+    "latitude": 19.026065,
+    "longitude": 72.855038,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Iconic heritage cafe with red-checkered tablecloths and vintage charm.",
@@ -6586,7 +6600,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Koolar & Co, Hormusji Adenwala Road, Matunga East, F/N Ward, Mumbai Zone 2, Mumbai City District, Maharashtra, 400019, India"
   },
   {
     "id": "mumbai-cafe-military-fort",
@@ -6598,8 +6614,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort / Ali Chamber",
-    "latitude": 18.9312,
-    "longitude": 72.8338,
+    "latitude": 18.930752,
+    "longitude": 72.83206,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Well-lit heritage dining hall. Cash and UPI accepted.",
@@ -6621,7 +6637,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Cafe Military, Mupanna P Shetty Marg, Kala Ghoda, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400023, India"
   },
   {
     "id": "mumbai-chuim-village-bylanes",
@@ -12867,8 +12885,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West / Hill Road",
-    "latitude": 19.0538,
-    "longitude": 72.8272,
+    "latitude": 19.054613,
+    "longitude": 72.825817,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Opposite St. Andrew's Church. Bustling student energy, safe and secure.",
@@ -12890,7 +12908,9 @@
     "source": "user_curated",
     "budget_tier": "moderate",
     "approx_cost": "₹₹ Paisa Vasool",
-    "price_level": 2
+    "price_level": 2,
+    "osm_verified": true,
+    "osm_name": "Old Street Cafe & Bar, Hill Road, Chimbai Village, Khar, H/W Ward, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "mumbai-quarter-pillar-khar",
@@ -13820,8 +13840,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0596,
-    "longitude": 72.8398,
+    "latitude": 19.055322,
+    "longitude": 72.836463,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Standard commercial street frontage along Swami Vivekananda Road.",
@@ -13843,7 +13863,9 @@
     "source": "curated_budget_bars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹ Pocket Friendly",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Deepa Bar and Restaurant, Jarimari Road, Bandra Reclamation, Khar, H/W Ward, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "mumbai-asiad-bar-restaurant-vile-parle-west",
@@ -13890,8 +13912,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9388,
-    "longitude": 72.8365,
+    "latitude": 18.936089,
+    "longitude": 72.837647,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Standard commercial street frontage along 265.",
@@ -13913,7 +13935,9 @@
     "source": "curated_budget_bars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹ Pocket Friendly",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Cafe Universal, 299, Shahid Bhagat Singh Road, Kala Ghoda, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400039, India"
   },
   {
     "id": "mumbai-garden-jolly-bar-restaurant-kala-ghoda",
@@ -15176,7 +15200,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-infiniti-mall-malad",
@@ -15273,7 +15298,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-inorbit-mall-malad",
@@ -15369,7 +15395,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-r-city-mall-ghatkopar",
@@ -15466,7 +15493,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-oberoi-mall-goregaon",
@@ -15556,7 +15584,8 @@
       "clean_washrooms": true,
       "metro_connected": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-nexus-seawoods-grand-central",
@@ -15982,7 +16011,8 @@
       "plug_points": true,
       "clean_washrooms": true,
       "parking": true
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-inorbit-mall-vashi",
@@ -15997,8 +16027,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Vashi / Sector 30A",
-    "latitude": 19.0658,
-    "longitude": 72.9984,
+    "latitude": 19.065435,
+    "longitude": 73.001248,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Right opposite Vashi railway station, very safe.",
@@ -16068,7 +16098,9 @@
       "plug_points": true,
       "clean_washrooms": true,
       "parking": true
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "Inorbit Mall, Vashi-Sanpada Link Road, Sanpada, Navi Mumbai, Thane Subdistrict, Thane, Maharashtra, 400705, India"
   },
   {
     "id": "hub-mcd-carter-road-bandra",
@@ -16326,8 +16358,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Andheri West / Lokhandwala",
-    "latitude": 19.1432,
-    "longitude": 72.8256,
+    "latitude": 19.14113,
+    "longitude": 72.825474,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -16371,7 +16403,9 @@
       "clean_washrooms": true,
       "late_night": true,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "McDonald's, Purshottam Tondan Marg, Lokhandwala Complex, Oshiwara, K/W Ward, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400053, India"
   },
   {
     "id": "hub-mcd-chembur-diamond-garden",
@@ -16506,8 +16540,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Ghatkopar East / Vallabh Baug Lane",
-    "latitude": 19.0792,
-    "longitude": 72.9082,
+    "latitude": 19.086907,
+    "longitude": 72.908907,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -16551,7 +16585,9 @@
       "clean_washrooms": true,
       "late_night": false,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "McDonald's, Station Road, Kapol Wadi, Ghatkopar West, N Ward, Mumbai Zone 6, Mumbai, Mumbai Suburban District, Maharashtra, 400086, India"
   },
   {
     "id": "hub-mcd-thane-station-west",
@@ -16626,8 +16662,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Vashi / Sector 17 Commercial Hub",
-    "latitude": 19.0734,
-    "longitude": 72.9997,
+    "latitude": 19.072136,
+    "longitude": 72.998742,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -16671,7 +16707,9 @@
       "clean_washrooms": true,
       "late_night": false,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "McDonald's, Sector 17 Road, Vashi, Navi Mumbai, Thane Subdistrict, Thane, Maharashtra, 400703, India"
   },
   {
     "id": "hub-bk-linking-road-bandra",
@@ -16686,8 +16724,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Bandra West / Linking Road",
-    "latitude": 19.0621,
-    "longitude": 72.8335,
+    "latitude": 19.063535,
+    "longitude": 72.835008,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit commercial strip, active public footfall.",
@@ -16732,7 +16770,9 @@
       "clean_washrooms": true,
       "late_night": true,
       "parking": false
-    }
+    },
+    "osm_verified": true,
+    "osm_name": "Burger King, Linking Road, Linking Road Shopping area, Khar, Bandra West, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "hub-bk-churchgate-station",
@@ -17514,7 +17554,8 @@
       "clean_washrooms": true,
       "late_night": true,
       "parking": false
-    }
+    },
+    "osm_verified": true
   },
   {
     "id": "hub-dominos-juhu-beach",
@@ -17895,8 +17936,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Nariman Point / Marine Drive",
-    "latitude": 18.9282,
-    "longitude": 72.8236,
+    "latitude": 18.926768,
+    "longitude": 72.822587,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Premier commercial precinct right off Marine Drive promenade.",
@@ -17941,7 +17982,9 @@
         "floor": "Level 2 Food Court",
         "timing": "11:00 AM – 11:00 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "CR2 Mall, Barrister Rajni Patel Marg, Nariman Point, Colaba, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400021, India"
   },
   {
     "id": "hub-sobo-central-tardeo",
@@ -17956,8 +17999,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Tardeo / Haji Ali",
-    "latitude": 18.9712,
-    "longitude": 72.8142,
+    "latitude": 18.975839,
+    "longitude": 72.812094,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Main road frontage near Haji Ali dargah circle.",
@@ -17995,7 +18038,9 @@
         "floor": "Level 1",
         "timing": "10:30 AM – 10:30 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "Brand Factory, SoBo Central, Pandit Madan Mohan Malviya Marg, Haji Ali, Tulsi Wadi, D Ward, Mumbai Zone 1, Mumbai, Mumbai City District, Maharashtra, 400034, India"
   },
   {
     "id": "hub-hub-mall-goregaon",
@@ -18206,8 +18251,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Mulund West / LBS Marg",
-    "latitude": 19.1762,
-    "longitude": 72.9515,
+    "latitude": 19.183975,
+    "longitude": 72.951593,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Main LBS arterial corridor with dedicated basement parking and security.",
@@ -18259,7 +18304,9 @@
         "floor": "Level 3 Food Court",
         "timing": "10:30 AM – 10:30 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "R Mall, Lal Bahadur Shastri Marg, Vaishali Nagar, Mulund West, T Ward, Mumbai Zone 6, Mumbai, Mumbai Suburban District, Maharashtra, 400080, India"
   },
   {
     "id": "hub-the-walk-hiranandani-thane",
@@ -18654,8 +18701,8 @@
     "price_level": 1,
     "city": "Navi Mumbai",
     "neighborhood": "Panvel / Old Mumbai-Pune Highway",
-    "latitude": 18.9912,
-    "longitude": 73.1185,
+    "latitude": 18.993402,
+    "longitude": 73.115687,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Central Panvel arterial road with dedicated parking and security.",
@@ -18713,7 +18760,9 @@
         "floor": "Level 3 Food Court",
         "timing": "10:30 AM – 10:30 PM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "Orion Mall, New Panvel, Navi Mumbai, Panvel Subdistrict, Raigad, Maharashtra, 410206, India"
   },
   {
     "id": "hub-metro-junction-mall-kalyan",
@@ -19841,8 +19890,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Colaba Causeway / South Mumbai",
-    "latitude": 18.9221,
-    "longitude": 72.8315,
+    "latitude": 18.923615,
+    "longitude": 72.831994,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit high street corner outlet with heavy pedestrian footfall and security.",
@@ -19873,7 +19922,9 @@
         "floor": "Ground & 1st Floor",
         "timing": "8:00 AM – 1:00 AM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "McDonald's, Nanabhai Moos Marg (Upper Colaba Road), Apollo Bandar, Koli Nagar, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400039, India"
   },
   {
     "id": "mcd-churchgate-station",
@@ -20025,8 +20076,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Bandra West / Linking Road",
-    "latitude": 19.0622,
-    "longitude": 72.8341,
+    "latitude": 19.065807,
+    "longitude": 72.83443,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Bustling retail strip with security and valet parking.",
@@ -20057,7 +20108,9 @@
         "floor": "Ground Floor",
         "timing": "7:00 AM – 2:00 AM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "McDonald's, Linking Road, Linking Road Shopping area, Khar, Bandra West, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "mcd-juhu-tara-road",
@@ -20530,8 +20583,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Bandra West / Linking Road",
-    "latitude": 19.0632,
-    "longitude": 72.8348,
+    "latitude": 19.065521,
+    "longitude": 72.834151,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Central Linking Road junction with dedicated security.",
@@ -20561,7 +20614,9 @@
         "floor": "Ground & 1st Floor",
         "timing": "11:00 AM – 1:00 AM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "KFC, Linking Road, Linking Road Shopping area, Khar, Bandra West, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "kfc-fort-cst-area",

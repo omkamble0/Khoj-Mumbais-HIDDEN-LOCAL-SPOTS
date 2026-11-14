@@ -2113,8 +2113,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West / Hill Road",
-    "latitude": 19.0538,
-    "longitude": 72.8272,
+    "latitude": 19.054613,
+    "longitude": 72.825817,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Opposite St. Andrew's Church. Bustling student energy, safe and secure.",
@@ -2136,7 +2136,9 @@
     "source": "user_curated",
     "budget_tier": "moderate",
     "approx_cost": "₹₹ Paisa Vasool",
-    "price_level": 2
+    "price_level": 2,
+    "osm_verified": true,
+    "osm_name": "Old Street Cafe & Bar, Hill Road, Chimbai Village, Khar, H/W Ward, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "mumbai-quarter-pillar-khar",
@@ -3066,8 +3068,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0596,
-    "longitude": 72.8398,
+    "latitude": 19.055322,
+    "longitude": 72.836463,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Standard commercial street frontage along Swami Vivekananda Road.",
@@ -3089,7 +3091,9 @@
     "source": "curated_budget_bars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹ Pocket Friendly",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Deepa Bar and Restaurant, Jarimari Road, Bandra Reclamation, Khar, H/W Ward, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "mumbai-asiad-bar-restaurant-vile-parle-west",
@@ -3136,8 +3140,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9388,
-    "longitude": 72.8365,
+    "latitude": 18.936089,
+    "longitude": 72.837647,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Standard commercial street frontage along 265.",
@@ -3159,7 +3163,9 @@
     "source": "curated_budget_bars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹ Pocket Friendly",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Cafe Universal, 299, Shahid Bhagat Singh Road, Kala Ghoda, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400039, India"
   },
   {
     "id": "mumbai-garden-jolly-bar-restaurant-kala-ghoda",

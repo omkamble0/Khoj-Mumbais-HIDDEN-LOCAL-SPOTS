@@ -520,7 +520,8 @@
     "source": "curated_underrated",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "osm_verified": true
   },
   {
     "id": "mumbai-sassanian-boulangerie",
@@ -567,8 +568,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort / CST",
-    "latitude": 18.9395,
-    "longitude": 72.8348,
+    "latitude": 18.937539,
+    "longitude": 72.833646,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Calm heritage dining room opposite New Excelsior cinema.",
@@ -590,7 +591,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Cafe Excelsior, 192, Amit Keshav Nayak Marg, Bori Bunder, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400038, India"
   },
   {
     "id": "mumbai-ideal-corner-parsi",
@@ -625,7 +628,8 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true
   },
   {
     "id": "mumbai-koolar-and-co-irani-cafe",
@@ -637,8 +641,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Matunga / King's Circle",
-    "latitude": 19.0285,
-    "longitude": 72.8558,
+    "latitude": 19.026065,
+    "longitude": 72.855038,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Iconic heritage cafe with red-checkered tablecloths and vintage charm.",
@@ -660,7 +664,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Koolar & Co, Hormusji Adenwala Road, Matunga East, F/N Ward, Mumbai Zone 2, Mumbai City District, Maharashtra, 400019, India"
   },
   {
     "id": "mumbai-cafe-military-fort",
@@ -672,8 +678,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort / Ali Chamber",
-    "latitude": 18.9312,
-    "longitude": 72.8338,
+    "latitude": 18.930752,
+    "longitude": 72.83206,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Well-lit heritage dining hall. Cash and UPI accepted.",
@@ -695,7 +701,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Cafe Military, Mupanna P Shetty Marg, Kala Ghoda, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400023, India"
   },
   {
     "id": "mumbai-good-luck-cafe-bandra",

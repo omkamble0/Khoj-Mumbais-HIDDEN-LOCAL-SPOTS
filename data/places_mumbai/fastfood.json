@@ -12,8 +12,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Colaba Causeway / South Mumbai",
-    "latitude": 18.9221,
-    "longitude": 72.8315,
+    "latitude": 18.923615,
+    "longitude": 72.831994,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-lit high street corner outlet with heavy pedestrian footfall and security.",
@@ -44,7 +44,9 @@
         "floor": "Ground & 1st Floor",
         "timing": "8:00 AM – 1:00 AM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "McDonald's, Nanabhai Moos Marg (Upper Colaba Road), Apollo Bandar, Koli Nagar, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400039, India"
   },
   {
     "id": "mcd-churchgate-station",
@@ -196,8 +198,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Bandra West / Linking Road",
-    "latitude": 19.0622,
-    "longitude": 72.8341,
+    "latitude": 19.065807,
+    "longitude": 72.83443,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Bustling retail strip with security and valet parking.",
@@ -228,7 +230,9 @@
         "floor": "Ground Floor",
         "timing": "7:00 AM – 2:00 AM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "McDonald's, Linking Road, Linking Road Shopping area, Khar, Bandra West, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "mcd-juhu-tara-road",
@@ -701,8 +705,8 @@
     "price_level": 1,
     "city": "Mumbai",
     "neighborhood": "Bandra West / Linking Road",
-    "latitude": 19.0632,
-    "longitude": 72.8348,
+    "latitude": 19.065521,
+    "longitude": 72.834151,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Central Linking Road junction with dedicated security.",
@@ -732,7 +736,9 @@
         "floor": "Ground & 1st Floor",
         "timing": "11:00 AM – 1:00 AM"
       }
-    ]
+    ],
+    "osm_verified": true,
+    "osm_name": "KFC, Linking Road, Linking Road Shopping area, Khar, Bandra West, Mumbai Zone 3, Mumbai, Mumbai Suburban District, Maharashtra, 400050, India"
   },
   {
     "id": "kfc-fort-cst-area",

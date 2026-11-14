@@ -275,8 +275,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Byculla West",
-    "latitude": 18.9712,
-    "longitude": 72.8335,
+    "latitude": 18.96695,
+    "longitude": 72.832078,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Identity verification at gate for security. Respectful quiet conduct requested.",
@@ -296,7 +296,9 @@
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "osm_verified": true,
+    "osm_name": "Magen David Synagogue, Sir Jamshetji Jeejeebhoy Road, Nagpada, E Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400008, India"
   },
   {
     "id": "mumbai-walkeshwar-kashi-math",

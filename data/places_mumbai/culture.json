@@ -237,8 +237,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Worli",
-    "latitude": 18.9952,
-    "longitude": 72.8182,
+    "latitude": 18.987658,
+    "longitude": 72.814068,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Air-conditioned contemporary art gallery. Free public admission.",
@@ -258,7 +258,9 @@
     "photo_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Tao Art Gallery, Dr Annie Besant Road, Mariammar Nagar, Mahalakshmi, G/S Ward, Mumbai Zone 2, Mumbai City District, Maharashtra, 400018, India"
   },
   {
     "id": "mumbai-space118-byculla",
@@ -338,8 +340,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Fort / Queens Mansion",
-    "latitude": 18.9372,
-    "longitude": 72.8335,
+    "latitude": 18.935378,
+    "longitude": 72.832187,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Third-floor gallery inside Queens Mansion. Free entry with tranquil atmosphere.",
@@ -361,7 +363,9 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "osm_verified": true,
+    "osm_name": "Chemould Prescott Road, G Talwarkar Marg, Bora Bazaar, Fort, A Ward, Mumbai Zone 1, Mumbai City District, Maharashtra, 400038, India"
   },
   {
     "id": "mumbai-ncpa-seaside-sunken-lawns",
