@@ -413,6 +413,76 @@ export const FAST_FOOD_CHAINS: FastFoodChain[] = [
     activeText: 'text-white',
     stats: '31 Shopping Centers',
   },
+  {
+    id: 'taco_bell',
+    name: 'Taco Bell',
+    badge: 'TACO BELL',
+    tagline: 'Crunchy Tacos, Burritos & Cheesy Quesadillas',
+    icon: '🌮',
+    query: 'taco bell',
+    brandColor: '#702082',
+    brandBg: 'bg-purple-50',
+    brandBorder: 'border-purple-400',
+    activeBg: 'bg-purple-800',
+    activeText: 'text-white',
+    stats: '6+ Outlets & Malls',
+  },
+  {
+    id: 'pizza_hut',
+    name: 'Pizza Hut',
+    badge: 'PIZZA HUT',
+    tagline: 'Deep Dish Pan Pizzas & Stuffed Crusts',
+    icon: '🍕',
+    query: 'pizza hut',
+    brandColor: '#EE3124',
+    brandBg: 'bg-red-50',
+    brandBorder: 'border-red-400',
+    activeBg: 'bg-red-700',
+    activeText: 'text-white',
+    stats: '8+ Outlets & Malls',
+  },
+  {
+    id: 'tibbs_frankie',
+    name: 'Tibbs Frankie',
+    badge: 'TIBBS FRANKIE',
+    tagline: 'Mumbai Original 1969 Spiced Rolls & Wraps',
+    icon: '🌯',
+    query: 'tibbs',
+    brandColor: '#D97706',
+    brandBg: 'bg-amber-50',
+    brandBorder: 'border-amber-400',
+    activeBg: 'bg-amber-600',
+    activeText: 'text-white',
+    stats: '15+ Street Addas',
+  },
+  {
+    id: 'jumboking',
+    name: 'Jumbo King',
+    badge: 'JUMBO KING',
+    tagline: 'Grab & Go Mumbai Burgers & Fries',
+    icon: '👑',
+    query: 'jumbo king',
+    brandColor: '#F59E0B',
+    brandBg: 'bg-yellow-50',
+    brandBorder: 'border-yellow-400',
+    activeBg: 'bg-yellow-500',
+    activeText: 'text-sumi',
+    stats: 'Station Network',
+  },
+  {
+    id: 'starbucks',
+    name: 'Starbucks',
+    badge: 'STARBUCKS',
+    tagline: 'Specialty Coffee, Frappes & Hangout Lounges',
+    icon: '☕',
+    query: 'starbucks',
+    brandColor: '#006241',
+    brandBg: 'bg-emerald-50',
+    brandBorder: 'border-emerald-400',
+    activeBg: 'bg-emerald-800',
+    activeText: 'text-white',
+    stats: 'Flagship Lounges',
+  },
 ];
 
 const QUICK_PRESETS: QuickPreset[] = [
@@ -855,7 +925,12 @@ export default function FilterBar({
                   {filters.searchQuery.toLowerCase() === 'dominos' && "🍕 Domino's"}
                   {filters.searchQuery.toLowerCase() === 'mall' && "🏬 Malls & Food Courts"}
                   {filters.searchQuery.toLowerCase() === 'fast-food' && "⚡ Fast-Food & Food Courts"}
-                  {!['mcd', 'burger king', 'kfc', 'subway', 'dominos', 'mall', 'fast-food'].includes(filters.searchQuery.toLowerCase()) && `🔍 "${filters.searchQuery}"`}
+                  {filters.searchQuery.toLowerCase() === 'taco bell' && "🌮 Taco Bell"}
+                  {filters.searchQuery.toLowerCase() === 'pizza hut' && "🍕 Pizza Hut"}
+                  {filters.searchQuery.toLowerCase() === 'tibbs' && "🌯 Tibbs Frankie"}
+                  {filters.searchQuery.toLowerCase() === 'jumbo king' && "👑 Jumbo King"}
+                  {filters.searchQuery.toLowerCase() === 'starbucks' && "☕ Starbucks"}
+                  {!['mcd', 'burger king', 'kfc', 'subway', 'dominos', 'mall', 'fast-food', 'taco bell', 'pizza hut', 'tibbs', 'jumbo king', 'starbucks'].includes(filters.searchQuery.toLowerCase()) && `🔍 "${filters.searchQuery}"`}
                 </span>
                 <button
                   type="button"

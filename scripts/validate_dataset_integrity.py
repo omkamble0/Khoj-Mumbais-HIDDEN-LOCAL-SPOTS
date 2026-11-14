@@ -65,8 +65,10 @@ if len(malls) < 25:
 # 6. Check fastfood flagships
 ff_master = [p for p in master if p.get('source') == 'curated_fastfood_network']
 print(f"Verified fastfood flagships in master: {len(ff_master)}")
-if len(ff_master) != 26:
-    errors.append(f"Expected exactly 26 verified flagships, found {len(ff_master)}")
+if len(ff_master) != len(ff):
+    errors.append(f"Fastfood mismatch: fastfood.json has {len(ff)} but master has {len(ff_master)}")
+elif len(ff_master) < 26:
+    errors.append(f"Expected at least 26 verified flagships, found {len(ff_master)}")
 
 print("-" * 60)
 if errors:
