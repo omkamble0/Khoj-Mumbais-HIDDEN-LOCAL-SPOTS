@@ -537,8 +537,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'दहिसर पूर्व',
     marathi_name: 'दहिसर पूर्व',
     lines: ['metro_2a', 'metro_7'],
-    latitude: 19.2565,
-    longitude: 72.8645,
+    latitude: 19.2517,
+    longitude: 72.8673,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Northern mega-interchange linking Link Road (Line 2A) with Western Express Highway (Line 7).',
@@ -546,15 +546,15 @@ export const TRANSIT_STATIONS: TransitStation[] = [
   },
   {
     id: 'metro2a-upper-dahisar',
-    name: 'Upper Dahisar (formerly Anand Nagar)',
-    hindi_name: 'अपर दहिसर',
-    marathi_name: 'अप्पर दहिसर',
+    name: 'Anand Nagar (formerly Upper Dahisar)',
+    hindi_name: 'आनंद नगर (अपर दहिसर)',
+    marathi_name: 'आनंद नगर (अप्पर दहिसर)',
     lines: ['metro_2a'],
-    latitude: 19.2520,
-    longitude: 72.8552,
+    latitude: 19.2572,
+    longitude: 72.8651,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Western Dahisar residential addas, local snacks, and Dahisar river checkdam.',
+    exit_tips: 'Western Dahisar residential addas, local snacks, and Anand Nagar market.',
     auto_rickshaw_available: true,
   },
   {
@@ -563,8 +563,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'कंदरपाड़ा',
     marathi_name: 'कंदरपाडा',
     lines: ['metro_2a'],
-    latitude: 19.2445,
-    longitude: 72.8505,
+    latitude: 19.2566,
+    longitude: 72.8507,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Access to Dahisar creek mangroves, coastal salt flats, and cycling lanes.',
@@ -576,11 +576,11 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'मंडपेश्वर - आई.सी. कॉलोनी',
     marathi_name: 'मंडपेश्वर - आय.सी. कॉलनी',
     lines: ['metro_2a'],
-    latitude: 19.2365,
-    longitude: 72.8485,
+    latitude: 19.2496,
+    longitude: 72.8458,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Footsteps to 1500-year-old rock-cut Mandapeshwar Caves, IC Colony Goan bakeries & cafes.',
+    exit_tips: 'Direct 2-min walk to 1500-year-old rock-cut Mandapeshwar Caves, IC Colony Goan bakeries & cafes.',
     auto_rickshaw_available: true,
   },
   {
@@ -589,8 +589,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'एकसर',
     marathi_name: 'एकसर',
     lines: ['metro_2a'],
-    latitude: 19.2285,
-    longitude: 72.8465,
+    latitude: 19.2404,
+    longitude: 72.8435,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Direct access to ancient 11th-century Shilahara naval battle hero stones (Eksar Hero Stones).',
@@ -602,8 +602,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'बोरीवली पश्चिम',
     marathi_name: 'बोरीवली पश्चिम',
     lines: ['metro_2a'],
-    latitude: 19.2215,
-    longitude: 72.8445,
+    latitude: 19.2314,
+    longitude: 72.8409,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Heart of Borivali West Link Road near Don Bosco School, Moksh Plaza, and street shopping.',
@@ -615,8 +615,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'पहाड़ी एकसर',
     marathi_name: 'पहाडी एकसर',
     lines: ['metro_2a'],
-    latitude: 19.2145,
-    longitude: 72.8425,
+    latitude: 19.2228,
+    longitude: 72.8409,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Shimpoli Road artisanal coffee addas, food corners, and tranquil residential lanes.',
@@ -628,8 +628,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'कांदिवली पश्चिम',
     marathi_name: 'कांदिवली पश्चिम',
     lines: ['metro_2a'],
-    latitude: 19.2065,
-    longitude: 72.8405,
+    latitude: 19.2141,
+    longitude: 72.8374,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Direct exit into famous Mahavir Nagar Khau Galli street food paradise and Shankar Mandir.',
@@ -641,8 +641,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'दहानुकरवाड़ी',
     marathi_name: 'डहाणूकरवाडी',
     lines: ['metro_2a'],
-    latitude: 19.1995,
-    longitude: 72.8385,
+    latitude: 19.2062,
+    longitude: 72.8348,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: '3 min walk to Uday Resto-Bar, MG Road market, and Charkop industrial sector.',
@@ -650,15 +650,15 @@ export const TRANSIT_STATIONS: TransitStation[] = [
   },
   {
     id: 'metro2a-valnai',
-    name: 'Valnai - Mehanagar (formerly Charkop)',
-    hindi_name: 'वलनई - मेहनागर',
-    marathi_name: 'वलनई - मेहनागर',
+    name: 'Valnai - Meeth Chowky (formerly Charkop)',
+    hindi_name: 'वलनई - मीठ चौकी',
+    marathi_name: 'वलनई - मीठ चौकी',
     lines: ['metro_2a'],
-    latitude: 19.1925,
-    longitude: 72.8365,
+    latitude: 19.1968,
+    longitude: 72.8338,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Gateway to Charkop creek promenades, mangrove nature trails, and sunset viewpoints.',
+    exit_tips: 'Mithchowki junction, gateway to Charkop creek promenades, mangrove trails, and Link Road retail.',
     auto_rickshaw_available: true,
   },
   {
@@ -667,11 +667,11 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'मालाड पश्चिम',
     marathi_name: 'मालाड पश्चिम',
     lines: ['metro_2a'],
-    latitude: 19.1855,
-    longitude: 72.8352,
+    latitude: 19.1853,
+    longitude: 72.8358,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Direct connection to Liberty Garden, Mamletdar Wadi, Harish Bar & Orlem village.',
+    exit_tips: 'Direct connection to Liberty Garden, Infiniti Mall Malad, Mamletdar Wadi & Orlem village.',
     auto_rickshaw_available: true,
   },
   {
@@ -680,24 +680,24 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'लोअर मालाड',
     marathi_name: 'लोअर मालाड',
     lines: ['metro_2a'],
-    latitude: 19.1785,
-    longitude: 72.8345,
+    latitude: 19.17295,
+    longitude: 72.83645,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Serving Inorbit Mall, Mindspace IT & corporate hub, and Link Road nightlife.',
+    exit_tips: 'Directly serving Inorbit Mall (literally 1 min walk below station), Mindspace IT hub, and Link Road addas.',
     auto_rickshaw_available: true,
   },
   {
     id: 'metro2a-pahadi-goregaon',
-    name: 'Pahadi Goregaon (formerly Bangur Nagar)',
-    hindi_name: 'पहाड़ी गोरेगांव',
-    marathi_name: 'पहाडी गोरेगाव',
+    name: 'Bangur Nagar (Pahadi Goregaon)',
+    hindi_name: 'बांगुर नगर (पहाड़ी गोरेगांव)',
+    marathi_name: 'बांगुर नगर (पहाडी गोरेगाव)',
     lines: ['metro_2a'],
-    latitude: 19.1705,
-    longitude: 72.8335,
+    latitude: 19.16247,
+    longitude: 72.83487,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Bangur Nagar commercial avenue, vintage cafes, and Link Road resto-pubs.',
+    exit_tips: 'Serving Bangur Nagar commercial avenue, Link Road resto-pubs, and Oshiwara bridge (1.1 km south of Inorbit Mall).',
     auto_rickshaw_available: true,
   },
   {
@@ -706,8 +706,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'गोरेगांव पश्चिम',
     marathi_name: 'गोरेगाव पश्चिम',
     lines: ['metro_2a'],
-    latitude: 19.1625,
-    longitude: 72.8325,
+    latitude: 19.1530,
+    longitude: 72.8357,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Direct exit towards SV Road connector, Goregaon Sports Club, and food plazas.',
@@ -719,8 +719,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'ओशिवरा',
     marathi_name: 'ओशिवरा',
     lines: ['metro_2a'],
-    latitude: 19.1535,
-    longitude: 72.8315,
+    latitude: 19.1460,
+    longitude: 72.8340,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Oshiwara creative media district, boutique studios, production houses & hip coffee shops.',
@@ -732,11 +732,11 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'लोअर ओशिवरा',
     marathi_name: 'लोअर ओशिवरा',
     lines: ['metro_2a'],
-    latitude: 19.1435,
-    longitude: 72.8312,
+    latitude: 19.1407,
+    longitude: 72.8317,
     zone: 'Western Suburbs',
     operational_status: 'operational',
-    exit_tips: 'Steps from Lokhandwala Back Road promenade, Mega Mall, and vibrant street life.',
+    exit_tips: 'Steps from Lokhandwala Back Road promenade, Infiniti Mall Andheri, Mega Mall, and street life.',
     auto_rickshaw_available: true,
   },
   {
@@ -745,8 +745,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'अंधेरी पश्चिम',
     marathi_name: 'अंधेरी पश्चिम',
     lines: ['metro_2a', 'metro_1'],
-    latitude: 19.1306,
-    longitude: 72.8322,
+    latitude: 19.1291,
+    longitude: 72.8314,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Southern terminal of Line 2A with direct elevated concourse transfer to Metro Line 1 at D.N. Nagar.',
@@ -762,8 +762,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'दहिसर पूर्व',
     marathi_name: 'दहिसर पूर्व',
     lines: ['metro_7', 'metro_2a'],
-    latitude: 19.2565,
-    longitude: 72.8645,
+    latitude: 19.2517,
+    longitude: 72.8673,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Northern transit hub with crossover tracks connecting Line 7 to Line 2A.',
@@ -775,8 +775,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'ओवरीपाड़ा',
     marathi_name: 'ओवरीपाडा',
     lines: ['metro_7'],
-    latitude: 19.2485,
-    longitude: 72.8655,
+    latitude: 19.2435,
+    longitude: 72.8642,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Elevated highway station with panoramic views of Borivali green hills.',
@@ -788,8 +788,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'राष्ट्रीय उद्यान',
     marathi_name: 'राष्ट्रीय उद्यान',
     lines: ['metro_7'],
-    latitude: 19.2315,
-    longitude: 72.8665,
+    latitude: 19.2347,
+    longitude: 72.8631,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Direct 300m gateway to Sanjay Gandhi National Park (SGNP) main entrance, cycling trails & Kanheri Caves shuttles.',
@@ -801,8 +801,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'देवीपाड़ा',
     marathi_name: 'देवीपाडा',
     lines: ['metro_7'],
-    latitude: 19.2235,
-    longitude: 72.8648,
+    latitude: 19.2243,
+    longitude: 72.8642,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Fast access to Kulupwadi quiet residential hill pockets and Borivali East greenery.',
@@ -814,8 +814,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'मागाठाणे',
     marathi_name: 'मागाठाणे',
     lines: ['metro_7'],
-    latitude: 19.2155,
-    longitude: 72.8635,
+    latitude: 19.2172,
+    longitude: 72.8667,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Fast connection to Magathane bus depot, Tata Power, and East-West Borivali flyover.',
@@ -827,8 +827,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'पोईसर',
     marathi_name: 'पोईसर',
     lines: ['metro_7'],
-    latitude: 19.2085,
-    longitude: 72.8615,
+    latitude: 19.2039,
+    longitude: 72.8634,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Situated outside Mahindra & Mahindra gate on Western Express Highway.',
@@ -840,8 +840,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'आकुर्ली',
     marathi_name: 'आकुर्ली',
     lines: ['metro_7'],
-    latitude: 19.1995,
-    longitude: 72.8595,
+    latitude: 19.1983,
+    longitude: 72.8607,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Central Kandivali East transit station near Growel\'s 101 Mall and Akurli Road food addas.',
@@ -853,8 +853,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'कुरार',
     marathi_name: 'कुरार',
     lines: ['metro_7'],
-    latitude: 19.1865,
-    longitude: 72.8585,
+    latitude: 19.1873,
+    longitude: 72.8584,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Serving Kurar village hills, Appa Pada, and Malad East residential complexes.',
@@ -862,12 +862,12 @@ export const TRANSIT_STATIONS: TransitStation[] = [
   },
   {
     id: 'metro7-dindoshi',
-    name: 'Dindoshi',
+    name: 'Dindoshi (Oberoi Mall Gateway)',
     hindi_name: 'दिंडोशी',
     marathi_name: 'दिंडोशी',
     lines: ['metro_7'],
-    latitude: 19.1755,
-    longitude: 72.8575,
+    latitude: 19.1798,
+    longitude: 72.8582,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Direct access to Oberoi Mall, Gokuldham sanctuary roads, and Film City Road.',
@@ -879,8 +879,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'आरे',
     marathi_name: 'आरे',
     lines: ['metro_7'],
-    latitude: 19.1635,
-    longitude: 72.8565,
+    latitude: 19.1694,
+    longitude: 72.8587,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Gateway to Aarey Milk Colony forest roads, Chhota Kashmir lake, picnic spots & plant nurseries.',
@@ -892,8 +892,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'गोरेगांव पूर्व',
     marathi_name: 'गोरेगाव पूर्व',
     lines: ['metro_7'],
-    latitude: 19.1525,
-    longitude: 72.8555,
+    latitude: 19.1524,
+    longitude: 72.8564,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Major WEH commercial station opposite NESCO Bombay Exhibition Centre and Western Heights.',
@@ -905,8 +905,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'जोगेश्वरी पूर्व',
     marathi_name: 'जोगेश्वरी पूर्व',
     lines: ['metro_7'],
-    latitude: 19.1385,
-    longitude: 72.8545,
+    latitude: 19.1430,
+    longitude: 72.8551,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Major junction of Western Express Highway and Jogeshwari-Vikhroli Link Road (JVLR).',
@@ -918,8 +918,8 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'मोगरा',
     marathi_name: 'मोगरा',
     lines: ['metro_7'],
-    latitude: 19.1285,
-    longitude: 72.8538,
+    latitude: 19.1289,
+    longitude: 72.8554,
     zone: 'Western Suburbs',
     operational_status: 'operational',
     exit_tips: 'Mogra village, Natwar Nagar, and quick cab access to SEEPZ and MIDC.',
@@ -931,7 +931,7 @@ export const TRANSIT_STATIONS: TransitStation[] = [
     hindi_name: 'गुंदवली',
     marathi_name: 'गुंदवली',
     lines: ['metro_7', 'metro_1'],
-    latitude: 19.1172,
+    latitude: 19.1150,
     longitude: 72.8552,
     zone: 'Western Suburbs',
     operational_status: 'operational',
@@ -1650,23 +1650,23 @@ export const TRANSIT_LINE_TRACKS: TransitLineTrack[] = [
     code: 'M2A',
     color: '#eab308', // Radiant Yellow
     coordinates: [
-      [19.2565, 72.8645], // Dahisar East (Line 7 Hub)
-      [19.2520, 72.8552], // Upper Dahisar
-      [19.2445, 72.8505], // Kandarpada
-      [19.2365, 72.8485], // Mandapeshwar / IC Colony
-      [19.2285, 72.8465], // Eksar
-      [19.2215, 72.8445], // Borivali West
-      [19.2145, 72.8425], // Pahadi Eksar
-      [19.2065, 72.8405], // Kandivali West
-      [19.1995, 72.8385], // Dahanukarwadi
-      [19.1925, 72.8365], // Valnai - Mehanagar
-      [19.1855, 72.8352], // Malad West
-      [19.1785, 72.8345], // Lower Malad
-      [19.1705, 72.8335], // Pahadi Goregaon
-      [19.1625, 72.8325], // Goregaon West
-      [19.1535, 72.8315], // Oshiwara
-      [19.1435, 72.8312], // Lower Oshiwara
-      [19.1306, 72.8322], // Andheri West (D.N. Nagar Line 1 Interchange)
+      [19.2517, 72.8673], // Dahisar East (Line 7 Hub)
+      [19.2572, 72.8651], // Anand Nagar (formerly Upper Dahisar)
+      [19.2566, 72.8507], // Kandarpada
+      [19.2496, 72.8458], // Mandapeshwar / IC Colony
+      [19.2404, 72.8435], // Eksar
+      [19.2314, 72.8409], // Borivali West
+      [19.2228, 72.8409], // Pahadi Eksar (Shimpoli)
+      [19.2141, 72.8374], // Kandivali West
+      [19.2062, 72.8348], // Dahanukarwadi
+      [19.1968, 72.8338], // Valnai - Meeth Chowky
+      [19.1853, 72.8358], // Malad West
+      [19.17295, 72.83645], // Lower Malad (Inorbit Mall)
+      [19.16247, 72.83487], // Bangur Nagar (Pahadi Goregaon)
+      [19.1530, 72.8357], // Goregaon West
+      [19.1460, 72.8340], // Oshiwara
+      [19.1407, 72.8317], // Lower Oshiwara
+      [19.1291, 72.8314], // Andheri West (D.N. Nagar Line 1 Interchange)
     ],
   },
   {
@@ -1675,20 +1675,20 @@ export const TRANSIT_LINE_TRACKS: TransitLineTrack[] = [
     code: 'M7',
     color: '#dc2626', // Crimson Red
     coordinates: [
-      [19.2565, 72.8645], // Dahisar East (Line 2A Hub)
-      [19.2485, 72.8655], // Ovaripada
-      [19.2315, 72.8665], // Rashtriya Udyan (SGNP Gateway)
-      [19.2235, 72.8648], // Devipada
-      [19.2155, 72.8635], // Magathane
-      [19.2085, 72.8615], // Poisar
-      [19.1995, 72.8595], // Akurli (Kandivali East)
-      [19.1865, 72.8585], // Kurar (Malad East)
-      [19.1755, 72.8575], // Dindoshi
-      [19.1635, 72.8565], // Aarey (Goregaon East)
-      [19.1525, 72.8555], // Goregaon East (formerly Mahanand)
-      [19.1385, 72.8545], // Jogeshwari East (JVLR)
-      [19.1285, 72.8538], // Mogra
-      [19.1172, 72.8552], // Gundavali / WEH Line 1 Hub
+      [19.2517, 72.8673], // Dahisar East (Line 2A Hub)
+      [19.2435, 72.8642], // Ovaripada
+      [19.2347, 72.8631], // Rashtriya Udyan (SGNP Gateway)
+      [19.2243, 72.8642], // Devipada
+      [19.2172, 72.8667], // Magathane
+      [19.2039, 72.8634], // Poisar
+      [19.1983, 72.8607], // Akurli (Kandivali East)
+      [19.1873, 72.8584], // Kurar (Malad East)
+      [19.1798, 72.8582], // Dindoshi (Oberoi Mall)
+      [19.1694, 72.8587], // Aarey (Goregaon East)
+      [19.1524, 72.8564], // Goregaon East (formerly Mahanand)
+      [19.1430, 72.8551], // Jogeshwari East (JVLR)
+      [19.1289, 72.8554], // Mogra
+      [19.1150, 72.8552], // Gundavali / WEH Line 1 Hub
     ],
   },
   {
