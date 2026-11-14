@@ -301,18 +301,46 @@ interface QuickPreset {
 
 const QUICK_PRESETS: QuickPreset[] = [
   {
-    id: 'fast_food_addas',
-    label: ' Fast-Food Addas',
+    id: 'mcd_joints',
+    label: "McD Midnight Addas",
     icon: '🍔',
-    badge: 'MCD • BK • KFC • DOMINOS',
-    filters: { category: 'cafes', searchQuery: 'fast-food', budget: 'pocket_friendly' },
+    badge: "MCDONALD'S",
+    filters: { searchQuery: 'mcd' },
+  },
+  {
+    id: 'bk_joints',
+    label: 'Whopper HQ',
+    icon: '👑',
+    badge: 'BURGER KING',
+    filters: { searchQuery: 'burger king' },
+  },
+  {
+    id: 'kfc_joints',
+    label: 'Hot & Crispy Joints',
+    icon: '🍗',
+    badge: 'KFC',
+    filters: { searchQuery: 'kfc' },
+  },
+  {
+    id: 'subway_joints',
+    label: 'Sub & Wrap Stops',
+    icon: '🥪',
+    badge: 'SUBWAY',
+    filters: { searchQuery: 'subway' },
+  },
+  {
+    id: 'dominos_joints',
+    label: 'Cheesy Slice Spots',
+    icon: '🍕',
+    badge: "DOMINO'S",
+    filters: { searchQuery: 'dominos' },
   },
   {
     id: 'mall_food_courts',
-    label: ' Malls & Food Courts',
+    label: 'AC Malls & Food Courts',
     icon: '🏬',
-    badge: 'MALL HUBS',
-    filters: { category: 'cafes', searchQuery: 'mall' },
+    badge: 'MEGA MALLS',
+    filters: { searchQuery: 'mall' },
   },
   {
     id: 'sobo_dive_crawl',
