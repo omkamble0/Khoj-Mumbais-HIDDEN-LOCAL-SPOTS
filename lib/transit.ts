@@ -689,9 +689,9 @@ export const TRANSIT_STATIONS: TransitStation[] = [
   },
   {
     id: 'metro2a-pahadi-goregaon',
-    name: 'Bangur Nagar (Pahadi Goregaon)',
-    hindi_name: 'बांगुर नगर (पहाड़ी गोरेगांव)',
-    marathi_name: 'बांगुर नगर (पहाडी गोरेगाव)',
+    name: 'Bangur Nagar',
+    hindi_name: 'बांगुर नगर',
+    marathi_name: 'बांगुर नगर',
     lines: ['metro_2a'],
     latitude: 19.16247,
     longitude: 72.83487,
@@ -1828,11 +1828,11 @@ export function getSanctuaryTransitProfile(lat: number, lng: number): SanctuaryT
     },
     nearestMetro: nearestMetro
       ? {
-          station: nearestMetro,
-          distanceMeters: Math.round(minMetroDist),
-          distanceKm: Math.round((minMetroDist / 1000) * 10) / 10,
-          walkMinutes: Math.round(minMetroDist / 80),
-        }
+        station: nearestMetro,
+        distanceMeters: Math.round(minMetroDist),
+        distanceKm: Math.round((minMetroDist / 1000) * 10) / 10,
+        walkMinutes: Math.round(minMetroDist / 80),
+      }
       : undefined,
     recommendedConnection,
     accessibleLines: Array.from(accessibleLinesSet),

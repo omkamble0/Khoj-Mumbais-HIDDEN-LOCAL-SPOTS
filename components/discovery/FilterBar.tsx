@@ -299,49 +299,123 @@ interface QuickPreset {
   filters: Partial<FilterState>;
 }
 
-const QUICK_PRESETS: QuickPreset[] = [
+export interface FastFoodChain {
+  id: string;
+  name: string;
+  badge: string;
+  tagline: string;
+  icon: string;
+  query: string;
+  brandColor: string;
+  brandBg: string;
+  brandBorder: string;
+  activeBg: string;
+  activeText: string;
+  stats: string;
+}
+
+export const FAST_FOOD_CHAINS: FastFoodChain[] = [
   {
-    id: 'mcd_joints',
-    label: "McD Midnight Addas",
-    icon: '🍔',
+    id: 'all_fastfood',
+    name: 'All Fast-Food & Food Courts',
+    badge: 'ALL BRANDS',
+    tagline: 'All quick bites, burgers & food court hubs',
+    icon: '⚡',
+    query: 'fast-food',
+    brandColor: '#E11D48',
+    brandBg: 'bg-rose-50',
+    brandBorder: 'border-rose-400',
+    activeBg: 'bg-rose-600',
+    activeText: 'text-white',
+    stats: '60+ Outlets & Malls',
+  },
+  {
+    id: 'mcd',
+    name: "McDonald's",
     badge: "MCDONALD'S",
-    filters: { searchQuery: 'mcd' },
+    tagline: 'McSpicy, Midnight Addas & Fries',
+    icon: '🍔',
+    query: 'mcd',
+    brandColor: '#FFC72C',
+    brandBg: 'bg-amber-50',
+    brandBorder: 'border-amber-400',
+    activeBg: 'bg-amber-400',
+    activeText: 'text-sumi',
+    stats: '10 Outlets • 25 Malls',
   },
   {
-    id: 'bk_joints',
-    label: 'Whopper HQ',
-    icon: '👑',
+    id: 'burger_king',
+    name: 'Burger King',
     badge: 'BURGER KING',
-    filters: { searchQuery: 'burger king' },
+    tagline: 'Flame-Grilled Whoppers & Crisp Crunch',
+    icon: '👑',
+    query: 'burger king',
+    brandColor: '#D62300',
+    brandBg: 'bg-orange-50',
+    brandBorder: 'border-orange-400',
+    activeBg: 'bg-orange-600',
+    activeText: 'text-white',
+    stats: '5 Outlets • 20 Malls',
   },
   {
-    id: 'kfc_joints',
-    label: 'Hot & Crispy Joints',
-    icon: '🍗',
+    id: 'kfc',
+    name: 'KFC',
     badge: 'KFC',
-    filters: { searchQuery: 'kfc' },
+    tagline: 'Hot & Crispy, Zinger & Chicken Buckets',
+    icon: '🍗',
+    query: 'kfc',
+    brandColor: '#E4002B',
+    brandBg: 'bg-red-50',
+    brandBorder: 'border-red-400',
+    activeBg: 'bg-red-600',
+    activeText: 'text-white',
+    stats: '5 Outlets • 20 Malls',
   },
   {
-    id: 'subway_joints',
-    label: 'Sub & Wrap Stops',
-    icon: '🥪',
+    id: 'subway',
+    name: 'Subway',
     badge: 'SUBWAY',
-    filters: { searchQuery: 'subway' },
+    tagline: 'Fresh 6-Inch Subs, Wraps & Cookies',
+    icon: '🥪',
+    query: 'subway',
+    brandColor: '#008C15',
+    brandBg: 'bg-emerald-50',
+    brandBorder: 'border-emerald-400',
+    activeBg: 'bg-emerald-600',
+    activeText: 'text-white',
+    stats: '4 Outlets • 18 Malls',
   },
   {
-    id: 'dominos_joints',
-    label: 'Cheesy Slice Spots',
-    icon: '🍕',
+    id: 'dominos',
+    name: "Domino's Pizza",
     badge: "DOMINO'S",
-    filters: { searchQuery: 'dominos' },
+    tagline: 'Cheese Burst, Garlic Bread & Hot Slices',
+    icon: '🍕',
+    query: 'dominos',
+    brandColor: '#006491',
+    brandBg: 'bg-blue-50',
+    brandBorder: 'border-blue-400',
+    activeBg: 'bg-blue-600',
+    activeText: 'text-white',
+    stats: '4 Outlets • 15 Malls',
   },
   {
-    id: 'mall_food_courts',
-    label: 'AC Malls & Food Courts',
+    id: 'malls_foodcourt',
+    name: 'Mega Malls & Food Courts',
+    badge: 'AC FOOD COURTS',
+    tagline: 'Multi-Brand AC Food Courts & Cinema Hubs',
     icon: '🏬',
-    badge: 'MEGA MALLS',
-    filters: { searchQuery: 'mall' },
+    query: 'mall',
+    brandColor: '#7C3AED',
+    brandBg: 'bg-purple-50',
+    brandBorder: 'border-purple-400',
+    activeBg: 'bg-purple-700',
+    activeText: 'text-white',
+    stats: '31 Shopping Centers',
   },
+];
+
+const QUICK_PRESETS: QuickPreset[] = [
   {
     id: 'sobo_dive_crawl',
     label: 'SoBo Dive Crawl',
@@ -377,6 +451,27 @@ const QUICK_PRESETS: QuickPreset[] = [
     badge: 'ZERO COMMERCE',
     filters: { spotTier: 'hidden_gem' },
   },
+  {
+    id: 'sunset_seafaces',
+    label: 'Sunset Seafaces',
+    icon: '🌅',
+    badge: 'SEA PROMENADES',
+    filters: { category: 'waterfront' },
+  },
+  {
+    id: 'green_lungs',
+    label: 'Green Lung Escapes',
+    icon: '🌳',
+    badge: 'FOREST & LAKES',
+    filters: { category: 'gardens' },
+  },
+  {
+    id: 'heritage_walk',
+    label: 'Heritage & Forts',
+    icon: '🏛️',
+    badge: 'OLD BOMBAY',
+    filters: { category: 'forts' },
+  },
 ];
 
 type StudioTab = 'transit' | 'budget' | 'category' | 'radius';
@@ -394,6 +489,7 @@ export default function FilterBar({
   const filterIslandRef = useRef<HTMLDivElement>(null);
   const studioChipsRef = useRef<HTMLDivElement>(null);
   const presetContainerRef = useRef<HTMLDivElement>(null);
+  const fastfoodContainerRef = useRef<HTMLDivElement>(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<StudioTab>('transit');
@@ -411,9 +507,10 @@ export default function FilterBar({
 
   const categoryActiveCount = filters.category !== 'all' ? 1 : 0;
   const radiusActiveCount = filters.radiusKm !== 120 ? 1 : 0;
+  const queryActiveCount = filters.searchQuery ? 1 : 0;
 
-  // Active secondary filters configured via the Filter Studio (transit, budget, tier, radius)
-  const activeSecondaryCount = transitActiveCount + budgetActiveCount + radiusActiveCount;
+  // Active secondary filters configured via the Filter Studio (transit, budget, tier, radius, brand/query)
+  const activeSecondaryCount = transitActiveCount + budgetActiveCount + radiusActiveCount + queryActiveCount;
 
   // Monitor scroll position for edge fade indicators & arrows
   const checkScroll = useCallback(() => {
@@ -746,6 +843,30 @@ export default function FilterBar({
                 </button>
               </span>
             )}
+
+            {/* Active Fast-Food Chain / Search Query */}
+            {filters.searchQuery && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-amber-100 border-2 border-amber-600/70 text-amber-950 text-xs font-mono font-bold flex-shrink-0 shadow-2xs">
+                <span>
+                  {filters.searchQuery.toLowerCase() === 'mcd' && "🍔 McDonald's"}
+                  {filters.searchQuery.toLowerCase() === 'burger king' && "👑 Burger King"}
+                  {filters.searchQuery.toLowerCase() === 'kfc' && "🍗 KFC"}
+                  {filters.searchQuery.toLowerCase() === 'subway' && "🥪 Subway"}
+                  {filters.searchQuery.toLowerCase() === 'dominos' && "🍕 Domino's"}
+                  {filters.searchQuery.toLowerCase() === 'mall' && "🏬 Malls & Food Courts"}
+                  {filters.searchQuery.toLowerCase() === 'fast-food' && "⚡ Fast-Food & Food Courts"}
+                  {!['mcd', 'burger king', 'kfc', 'subway', 'dominos', 'mall', 'fast-food'].includes(filters.searchQuery.toLowerCase()) && `🔍 "${filters.searchQuery}"`}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => onChange({ searchQuery: '' })}
+                  className="w-4 h-4 rounded-full bg-amber-200 hover:bg-vermilion hover:text-white text-amber-900 flex items-center justify-center transition-colors ml-0.5"
+                  title="Clear brand search"
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </span>
+            )}
           </div>
 
           {/* Reset All Tactile Pill Button */}
@@ -871,6 +992,82 @@ export default function FilterBar({
                 variant="stations"
                 accentColor="bg-amber-500"
                 trackLabel="GLIDE PRESETS"
+                className="pt-0.5"
+              />
+            </div>
+
+            {/* Dedicated Fast-Food Chains & Food Courts Section */}
+            <div className="space-y-1.5 select-none bg-amber-500/5 p-2 rounded-2xl border border-amber-600/25">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono font-black text-sumi uppercase flex items-center gap-1.5">
+                  <span className="text-sm">🍔</span>
+                  <span>FAST-FOOD CHAINS & FOOD COURTS:</span>
+                </span>
+                <span className="text-[9px] font-mono text-slate-500">
+                  Select brand for standalone & mall outlets
+                </span>
+              </div>
+
+              <div
+                ref={fastfoodContainerRef}
+                onWheel={(e) => {
+                  if (e.deltaY !== 0 && fastfoodContainerRef.current) {
+                    fastfoodContainerRef.current.scrollLeft += e.deltaY;
+                  }
+                }}
+                className="flex items-center gap-2 overflow-x-auto sliding-bar py-1 px-0.5 select-none scroll-smooth"
+              >
+                {FAST_FOOD_CHAINS.map((chain) => {
+                  const isActive = (filters.searchQuery || '').toLowerCase() === chain.query.toLowerCase();
+                  return (
+                    <button
+                      key={chain.id}
+                      type="button"
+                      onClick={() => {
+                        if (isActive) {
+                          onChange({ searchQuery: '' });
+                        } else {
+                          onChange({ searchQuery: chain.query });
+                        }
+                      }}
+                      className={`px-3 py-1.5 rounded-xl border-2 text-xs font-mono font-bold whitespace-nowrap flex-shrink-0 transition-all active:scale-95 shadow-xs flex items-center gap-2 ${isActive
+                        ? `${chain.activeBg} ${chain.activeText} border-sumi font-black shadow-riso-sm scale-[1.02]`
+                        : `${chain.brandBg} hover:border-sumi text-slate-800 ${chain.brandBorder}`
+                        }`}
+                      title={`${chain.name} - ${chain.tagline} (${chain.stats})`}
+                    >
+                      <span className="text-sm">{chain.icon}</span>
+                      <div className="flex flex-col text-left">
+                        <span className="leading-tight font-black">{chain.name}</span>
+                        <span
+                          className={`text-[8px] font-mono leading-none mt-0.5 ${isActive ? 'opacity-90 font-bold' : 'text-slate-500'
+                            }`}
+                        >
+                          {chain.stats}
+                        </span>
+                      </div>
+                      {isActive ? (
+                        <span className="w-3.5 h-3.5 rounded-full bg-sumi/20 flex items-center justify-center text-[9px] font-black ml-0.5">
+                          ✕
+                        </span>
+                      ) : (
+                        <span
+                          className="text-[8px] px-1 py-0.2 rounded font-black uppercase bg-white/80 text-slate-600 border border-slate-300 ml-0.5"
+                        >
+                          {chain.badge}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Tactile Horizontal Scrollbar for Fast Food */}
+              <TactileSliderBar
+                containerRef={fastfoodContainerRef}
+                variant="lines"
+                accentColor="bg-amber-600"
+                trackLabel="GLIDE FAST-FOOD CHAINS"
                 className="pt-0.5"
               />
             </div>

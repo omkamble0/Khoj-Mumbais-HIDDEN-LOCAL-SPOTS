@@ -49,6 +49,8 @@ const BRAND_SEARCH_ALIASES: Record<string, string[]> = {
   mall: ['mall', 'malls', 'food court'],
   malls: ['mall', 'malls', 'food court'],
   'food court': ['food court', 'mall', 'malls'],
+  'fast-food': ['fast-food', 'fast food', 'food court', 'food-court', 'burger', 'pizza', 'kfc', 'mcd', 'subway'],
+  'fast food': ['fast-food', 'fast food', 'food court', 'food-court', 'burger', 'pizza', 'kfc', 'mcd', 'subway'],
 };
 
 export default function HomePage() {
