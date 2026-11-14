@@ -9,8 +9,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Borivali East (SGNP)",
-    "latitude": 19.2061,
-    "longitude": 72.9066,
+    "latitude": 19.20786,
+    "longitude": 72.904807,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Inside Sanjay Gandhi National Park. Entry ticket required at gate. Stick to marked stone trails.",
@@ -32,7 +32,10 @@
     "source": "curated_nature",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹85 park entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJbdF34ea55zsRX7kiabN6Z_U",
+    "gmaps_address": "Mumbai, Maharashtra 400066, India"
   },
   {
     "id": "mumbai-yeoor-hills-trail",
@@ -44,8 +47,8 @@
     "spot_tier": "underrated",
     "city": "Thane",
     "neighborhood": "Upvan, Thane West",
-    "latitude": 19.2274,
-    "longitude": 72.9463,
+    "latitude": 19.224419,
+    "longitude": 72.949515,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Quiet woodland trails. Avoid venturing off-trail alone after dark.",
@@ -67,7 +70,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBQrl3Qe75zsR01MXjIGr0yg",
+    "gmaps_address": "6WFX+QR6, Yeoor Hls Rd, Yeoor, Upvan, Thane West, Thane, Maharashtra 400606, India"
   },
   {
     "id": "mumbai-kharghar-hills-ridge",
@@ -79,8 +85,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Sector 5, Kharghar",
-    "latitude": 19.0437,
-    "longitude": 73.0673,
+    "latitude": 19.023047,
+    "longitude": 73.048107,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Moderate uphill incline. Wear shoes with good grip during rains.",
@@ -102,7 +108,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZ9-tFHrD5zsRwRGlIr5l1Zc",
+    "gmaps_address": "Kharghar Hills, Sector 3A, CBD Belapur, Panvel, Maharashtra 400614, India"
   },
   {
     "id": "mumbai-shilonda-trail-sgnp",
@@ -114,8 +123,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sanjay Gandhi National Park, Borivali",
-    "latitude": 19.2235,
-    "longitude": 72.9152,
+    "latitude": 19.227511,
+    "longitude": 72.881723,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Requires forest department nature information center registration. Guide recommended.",
@@ -137,7 +146,10 @@
     "source": "curated_treks",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJlYJEjLOw5zsRAwbz1s5XQN4",
+    "gmaps_address": "6VHJ+2M5, National Park Flyover, Rajendra Nagar Society, Borivali, Mumbai, Maharashtra 400066, India"
   },
   {
     "id": "mumbai-pandavkada-waterfall-trail",
@@ -149,8 +161,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Kharghar",
-    "latitude": 19.0562,
-    "longitude": 73.0784,
+    "latitude": 19.032996,
+    "longitude": 73.05372,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Rocky trail. Obey local police barricades during heavy flash-flood rainfall.",
@@ -172,7 +184,10 @@
     "source": "curated_treks",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ1cKKzrrD5zsRq-E68XJev1I",
+    "gmaps_address": "23M3+5F, Forest Area, Kharghar, Panvel, Maharashtra 410210, India"
   },
   {
     "id": "mumbai-yeoor-bamboo-sanctuary",
@@ -184,8 +199,8 @@
     "spot_tier": "hidden_gem",
     "city": "Thane",
     "neighborhood": "Upvan Buffer Zone, Thane West",
-    "latitude": 19.2312,
-    "longitude": 72.9415,
+    "latitude": 19.224419,
+    "longitude": 72.949515,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Gentle gradient trail. Wear trail shoes; pristine natural stream crossings.",
@@ -207,7 +222,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBQrl3Qe75zsR01MXjIGr0yg",
+    "gmaps_address": "6WFX+QR6, Yeoor Hls Rd, Yeoor, Upvan, Thane West, Thane, Maharashtra 400606, India"
   },
   {
     "id": "mumbai-tungareshwar-stream-trail",

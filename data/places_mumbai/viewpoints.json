@@ -32,7 +32,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJcxbdo9DJ5zsRiTqYo7MrDMk",
+    "gmaps_address": "Gilbert hill, Sagar City, Andheri West, Mumbai, Maharashtra 400058, India"
   },
   {
     "id": "mumbai-bandra-reclamation-view",
@@ -44,8 +47,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0494,
-    "longitude": 72.8277,
+    "latitude": 19.047446,
+    "longitude": 72.827063,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Spacious pedestrian promenade with seating. Police patrol present.",
@@ -67,7 +70,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ElFCYW5kcmEgUmVjbGFtYXRpb24gUmQsIE1vdW50IE1hcnksIEJhbmRyYSBXZXN0LCBNdW1iYWksIE1haGFyYXNodHJhIDQwMDA1MCwgSW5kaWEiLiosChQKEgm7Ly6QR8nnOxE-ypzeYKMVIRIUChIJwe1EZjDG5zsRaYxkjY_tpF0",
+    "gmaps_address": "Bandra Reclamation Rd, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-kamla-nehru-sunset-point",
@@ -79,8 +85,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Malabar Hill",
-    "latitude": 18.9567,
-    "longitude": 72.8055,
+    "latitude": 18.955025,
+    "longitude": 72.804973,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-maintained civic park. Viewing gallery overlooking Marine Drive.",
@@ -102,7 +108,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJvaysoFTP5zsRrfA8pHD55vo",
+    "gmaps_address": "XR43+2X5, Dadi Sheth Wadi, Malabar Hill, Mumbai, Maharashtra 400006, India"
   },
   {
     "id": "mumbai-parsik-hill-summit",
@@ -114,8 +123,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "CBD Belapur",
-    "latitude": 19.0298,
-    "longitude": 73.0336,
+    "latitude": 19.026125,
+    "longitude": 73.032057,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Gentle winding road up the ridge. Safe scenic viewpoints.",
@@ -137,7 +146,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJrwkh3LbD5zsRvSILh9S_2zA",
+    "gmaps_address": "Parsik Hill, Sector 30, CBD Belapur, Navi Mumbai, Maharashtra 400614, India"
   },
   {
     "id": "mumbai-sewri-jetty-flamingo-point",
@@ -149,8 +161,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sewri East",
-    "latitude": 18.9972,
-    "longitude": 72.8624,
+    "latitude": 18.998362,
+    "longitude": 72.861094,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Open mudflat jetty. Best visited during low tide between November and May.",
@@ -172,7 +184,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJfWHYQwbP5zsRbOy0YOqalbk",
+    "gmaps_address": "8, Comed Rambhau Dev Ji Patil Rd, Gandhi Nagar, Sewri, Mumbai, Maharashtra 400015, India"
   },
   {
     "id": "mumbai-khandeshwar-lake-promontory",
@@ -184,8 +199,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Panvel / Khanda Colony",
-    "latitude": 18.9984,
-    "longitude": 73.1092,
+    "latitude": 19.011031,
+    "longitude": 73.108961,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Paved lakeside stone promenade. Benches facing mountain ridges.",
@@ -207,7 +222,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJxx-YtTXo5zsRv72QYum2B90",
+    "gmaps_address": "Khandeshwar Lake, Park Sight Society, Sector - 2, Greater Khanda, Panvel, Maharashtra 410206, India"
   },
   {
     "id": "mumbai-worli-koliwada-jetty",
@@ -240,7 +258,10 @@
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJQT40HgDP5zsRIJykIcDer4U",
+    "gmaps_address": "2RG8+F54, Koliwada, Worli, Mumbai, Maharashtra 400030, India"
   },
   {
     "id": "mumbai-uran-pirwadi-lookout",
@@ -252,8 +273,8 @@
     "spot_tier": "hidden_gem",
     "city": "Navi Mumbai",
     "neighborhood": "Uran Coast",
-    "latitude": 18.8825,
-    "longitude": 72.9152,
+    "latitude": 18.857032,
+    "longitude": 72.923614,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Isolated rocky coastline. Daylight visits recommended with local guide or companion.",
@@ -273,7 +294,10 @@
     "photo_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJQVj8nxja5zsRLAMlD0ylzhQ",
+    "gmaps_address": "VW4F+RC9, Pirwad Rd, Pirwadi, Nagaon, Uran, Nagaon, Maharashtra 400702, India"
   },
   {
     "id": "mmr-kashi-mira-rock-quarry-lake",

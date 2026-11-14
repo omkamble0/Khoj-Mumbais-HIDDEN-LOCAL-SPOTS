@@ -32,7 +32,10 @@
     "source": "curated_culture",
     "budget_tier": "free",
     "approx_cost": "Free Entry",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJCTBgusPR5zsR9jlWzqv4C3Y",
+    "gmaps_address": "161B, Mahatma Gandhi Road, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-method-bandra",
@@ -44,8 +47,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Chapel Road, Bandra West",
-    "latitude": 19.0524,
-    "longitude": 72.8288,
+    "latitude": 19.050561,
+    "longitude": 72.826789,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Intimate independent art venue. Free walk-in exhibitions.",
@@ -67,7 +70,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ7xUEwQvJ5zsRZPFR0avlCDU",
+    "gmaps_address": "Shop No.5, Pearl Haven, Chapel Rd, St Sebastian Colony, W, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-prithvi-theatre",
@@ -102,7 +108,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJo49oV-rJ5zsRsvalI8ESNnw",
+    "gmaps_address": "20, Juhu Rd, Janki Kutir, Juhu, Mumbai, Maharashtra 400049, India"
   },
   {
     "id": "mumbai-ngma-colaba",
@@ -137,7 +146,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBZWe1sPR5zsRzh5wXAiDNwM",
+    "gmaps_address": "Jahangir Public Hall, Sir Cowasji, Mahatma Gandhi Road, Mantralaya, Fort, Mumbai, Maharashtra 400032, India"
   },
   {
     "id": "mumbai-tarq-gallery-fort",
@@ -149,8 +161,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9304,
-    "longitude": 72.8348,
+    "latitude": 18.935939,
+    "longitude": 72.833013,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Intimate contemporary gallery. Free public admission.",
@@ -172,7 +184,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJD9zqNcHR5zsRvS9r7KwV0hg",
+    "gmaps_address": "Ground Floor, KK (Navsari) Chambers, 39, AK Nayak Marg, Azad Maidan, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-artisans-centre-kala-ghoda",
@@ -207,7 +222,10 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ3ZDGpsPR5zsRgEFVHlX7kyA",
+    "gmaps_address": "52 - 56, Dr, Forbes St, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-tao-art-gallery",

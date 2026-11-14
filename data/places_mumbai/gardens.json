@@ -9,8 +9,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Colaba",
-    "latitude": 18.9056,
-    "longitude": 72.8124,
+    "latitude": 18.911364,
+    "longitude": 72.823281,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-guarded port trust botanical garden. Nominal entry fee (~₹5). Closes at 8 PM.",
@@ -32,7 +32,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZauy45bR5zsRsJBnfCz_RNI",
+    "gmaps_address": "Azad Nagar, Cuffe Parade, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-mahim-nature-park",
@@ -44,8 +47,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Dharavi / Mahim East",
-    "latitude": 19.0527,
-    "longitude": 72.8596,
+    "latitude": 19.052258,
+    "longitude": 72.862764,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Official biodiversity park. Modest ₹10 entry ticket. Closed on Sundays.",
@@ -67,7 +70,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJMQw-GtvI5zsRwERQp-CzzbQ",
+    "gmaps_address": "Sion Bandra Link Road, opp. Bus Depot, Mahim Nature Park, Dharavi, Mumbai, Maharashtra 400017, India"
   },
   {
     "id": "mumbai-horniman-circle",
@@ -79,8 +85,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9318,
-    "longitude": 72.8361,
+    "latitude": 18.932403,
+    "longitude": 72.83459,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Public garden and civic precinct. Well-lit at night.",
@@ -102,7 +108,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJC0DiS9vR5zsRE5JCqe3Y_Ac",
+    "gmaps_address": "Horniman Circle, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-joseph-baptista-garden",
@@ -114,8 +123,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mazgaon",
-    "latitude": 18.9692,
-    "longitude": 72.8427,
+    "latitude": 18.966444,
+    "longitude": 72.842459,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Peaceful hilltop garden atop Bhandarwada water reservoir. Clean restrooms.",
@@ -137,7 +146,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJsxZ41DfO5zsRSYhTqIRoBrw",
+    "gmaps_address": "400010, Dockyard, Ekta Nagar, Mazgaon, Mumbai, Maharashtra 400010, India"
   },
   {
     "id": "mumbai-hanging-gardens-malabar",
@@ -172,7 +184,10 @@
     "source": "curated_gardens",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJn3Q-5QnO5zsRmouUzzMGp5Q",
+    "gmaps_address": "Ridge Rd, Simla Nagar, Malabar Hill, Mumbai, Maharashtra 400006, India"
   },
   {
     "id": "mumbai-bhakti-park-lawns",
@@ -184,8 +199,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Wadala East",
-    "latitude": 19.0264,
-    "longitude": 72.8778,
+    "latitude": 19.027991,
+    "longitude": 72.880975,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Tranquil landscaped gardens along monorail route. Safe and peaceful.",
@@ -207,7 +222,10 @@
     "source": "curated_gardens",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJEWuUqkjP5zsRRlIyMHnJFps",
+    "gmaps_address": "Wadala East, Bhakti Park, Mumbai, Maharashtra 400037, India"
   },
   {
     "id": "mumbai-godrej-mangrove-park",
@@ -219,8 +237,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Vikhroli East",
-    "latitude": 19.0982,
-    "longitude": 72.9348,
+    "latitude": 19.095394,
+    "longitude": 72.92302,
     "access_type": "permissive",
     "safety_level": "high",
     "safety_notes": "Protected private reserve. Elevated wooden boardwalk and birdwatching hide.",
@@ -242,7 +260,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJNZure7jH5zsRrn1TJOG0sus",
+    "gmaps_address": "Pirojshanagar, Vikhroli East, Mumbai, Maharashtra 400079, India"
   },
   {
     "id": "mumbai-nirvana-park-powai",
@@ -254,8 +275,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Hiranandani, Powai",
-    "latitude": 19.1172,
-    "longitude": 72.9094,
+    "latitude": 19.122436,
+    "longitude": 72.911856,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Fenced manicured civic park. Well-maintained walkways and security guards.",
@@ -275,7 +296,10 @@
     "photo_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ44tO5-_H5zsRXmO2BHACyoE",
+    "gmaps_address": "G.M. Nirvana Park, M.C, Central Ave, Hiranandani Gardens, Panchkutir Ganesh Nagar, Powai, Mumbai, Maharashtra 400076, India"
   },
   {
     "id": "mumbai-amarsons-garden-promenade",
@@ -287,8 +311,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Breach Candy",
-    "latitude": 18.9688,
-    "longitude": 72.8038,
+    "latitude": 18.96962,
+    "longitude": 72.802248,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-guarded seaside public garden with dedicated walking track.",
@@ -308,7 +332,10 @@
     "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJP5pbxdjN5zsRgH7awruUryk",
+    "gmaps_address": "76, Bhulabhai Desai Rd, Breach Candy, Cumballa Hill, Mumbai, Maharashtra 400026, India"
   },
   {
     "id": "mumbai-diamond-garden-chembur",
@@ -320,8 +347,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Chembur Central",
-    "latitude": 19.0558,
-    "longitude": 72.8988,
+    "latitude": 19.05181,
+    "longitude": 72.901832,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Gated public park with gentle jogging track.",
@@ -341,7 +368,10 @@
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJwVJLJwPG5zsRx_VaYzos6Qw",
+    "gmaps_address": "Basant Garden, Chembur, Mumbai, Maharashtra 400071, India"
   },
   {
     "id": "navi-mumbai-jewel-of-navi-mumbai-lake",

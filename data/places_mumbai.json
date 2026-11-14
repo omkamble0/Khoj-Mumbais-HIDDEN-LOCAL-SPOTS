@@ -9,8 +9,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Mutton Street, Kumbharwada",
-    "latitude": 18.9602,
-    "longitude": 72.8291,
+    "latitude": 18.959035,
+    "longitude": 72.829928,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Busy alleyways. Keep phones/wallets secured. Closed on Fridays.",
@@ -32,7 +32,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJr6Jh-R7P5zsRZWFXrjNFc-4",
+    "gmaps_address": "206, Mutton St, Ajmer, Kumbharwada, Mumbai, Maharashtra 400003, India"
   },
   {
     "id": "mumbai-dadar-flower-market",
@@ -67,7 +70,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ8X9h-j3P5zsR77sUKDDc-lU",
+    "gmaps_address": "2R8R+XJX, Tilak Brg, Lokmanya Tilak Colony, Dadar, Mumbai, Maharashtra 400028, India"
   },
   {
     "id": "mumbai-colaba-causeway-art-alleys",
@@ -79,8 +85,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Colaba",
-    "latitude": 18.9217,
-    "longitude": 72.8318,
+    "latitude": 18.920717,
+    "longitude": 72.830649,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Pedestrian shopping arcade. Safe and well-lit into late evenings.",
@@ -102,7 +108,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJn079zr_R5zsR3Ghy0UQ2dCM",
+    "gmaps_address": "Adenwala Rd, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-crawford-market-arcades",
@@ -137,7 +146,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJuSs1tibO5zsRd7UYv0MBo4c",
+    "gmaps_address": "Crawford Market, Lokmanya Tilak Rd, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-mangaldas-market-cloth-halls",
@@ -172,7 +184,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJr7KRXiHO5zsRo4ChHkK1wAk",
+    "gmaps_address": "Mangaldas Market, 103/A2, Sheikh Memon St, Lohar Chawl, Kalbadevi, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-lalbaug-mirchi-galli",
@@ -184,8 +199,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Lalbaug, Parel",
-    "latitude": 18.9912,
-    "longitude": 72.8365,
+    "latitude": 18.990611,
+    "longitude": 72.838038,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Pungent spice aromas in the air. Wear comfortable walking shoes.",
@@ -207,7 +222,10 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJCd4ILjDP5zsRF0GxKixLyYI",
+    "gmaps_address": "Masala gully, 1/2, Dinshaw Petit Rd, opp. Narayan Udyog Bhavan, Shree Ganesh Nagar, Lal Baug, Parel, Mumbai, Maharashtra 400012, India"
   },
   {
     "id": "mumbai-kitab-khana-fort",
@@ -242,7 +260,10 @@
     "source": "curated_books",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVVVltNzR5zsRcUGbr8YTw8s",
+    "gmaps_address": "Somaiya Bhavan, 45/47, Mahatma Gandhi Road, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-david-sassoon-library",
@@ -277,7 +298,10 @@
     "source": "curated_books",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free Garden / ₹50 day-pass",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJH1q0mNnR5zsRobU5vgJwQLU",
+    "gmaps_address": "152, Mahatma Gandhi Road, Off David Sassoon, Library Marg, opposite Jehangir Art Gallery, Kala Ghoda, Fort, Mumbai, Maharashtra 400032, India"
   },
   {
     "id": "mumbai-asiatic-library-steps",
@@ -312,7 +336,10 @@
     "source": "curated_books",
     "budget_tier": "free",
     "approx_cost": "Free Public Access",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ34AWLdvR5zsR-dMSwVoB5Cw",
+    "gmaps_address": "Town Hall, Shahid Bhagat Singh Rd, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-title-waves-bandra",
@@ -324,8 +351,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0624,
-    "longitude": 72.8327,
+    "latitude": 19.060967,
+    "longitude": 72.832318,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Spacious book haven with in-house cafe. Free browsing.",
@@ -346,7 +373,10 @@
     "source": "curated_books",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJrwYgNBTJ5zsR0o3P9sBG0QE",
+    "gmaps_address": "St Paul Media Complex, Rd Number 24, opp. Duruelo Convent School, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-peoples-free-reading-room",
@@ -381,7 +411,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Public Access",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJqUaGGSDO5zsRiCNGxb7FIN8",
+    "gmaps_address": "Jagannath Shankar Seth Rd, opp. Metro Inox Cinemas, Dhobi Talao, Sonapur, Marine Lines, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-subko-bandra",
@@ -416,7 +449,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJQ_5UeoXJ5zsR__eCJdbHoiQ",
+    "gmaps_address": "Ground Floor, Mary Lodge, 21A, Chapel Rd, next to Saba Heritage building, Ranwar, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-kyani-co",
@@ -428,8 +464,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Marine Lines",
-    "latitude": 18.9436,
-    "longitude": 72.8267,
+    "latitude": 18.944073,
+    "longitude": 72.828747,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Iconic vintage café. Cash and UPI accepted. Quick turnaround.",
@@ -451,7 +487,10 @@
     "source": "curated_cafes",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJKQZB3mzO5zsRPQXFAff0kh8",
+    "gmaps_address": "Jer Mahal Building, 657, Jagannath Shankar Seth Rd, opp. Metro Inox Theatre, Marine Lines East, Dhobi Talao, Estate, Marine Lines, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-prithvi-cafe-juhu",
@@ -486,7 +525,10 @@
     "source": "curated_cafes",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJo49oV-rJ5zsRvNAzcQLkwO8",
+    "gmaps_address": "Apartment, Alongside, Prithvi Theatre, 20, Juhu Rd, Janki Kutir, Juhu, Mumbai, Maharashtra 400049, India"
   },
   {
     "id": "mumbai-britannia-co",
@@ -521,7 +563,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJSaimqk3O5zsR2pSEZSCzbcs",
+    "gmaps_address": "Wakefield House, 11 16, SS Ram Gulam Marg, opp. New Indian Customs House, Ballard Estate, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-candies-bandra",
@@ -533,8 +578,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Pali Hill, Bandra West",
-    "latitude": 19.0641,
-    "longitude": 72.8296,
+    "latitude": 19.060955,
+    "longitude": 72.826915,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Expansive multi-level villa with leafy terraces, mosaics, and quiet alcoves.",
@@ -556,7 +601,10 @@
     "source": "curated_cafes",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJi1NRO2vJ5zsR_sA0_utO260",
+    "gmaps_address": "5AA, Pali Hill, next to Learners Academy School, Bandra (W, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-yazdani-bakery",
@@ -568,8 +616,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9312,
-    "longitude": 72.834,
+    "latitude": 18.933201,
+    "longitude": 72.833629,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Historic wood-oven bakery lane. Cash & UPI. Fresh crusty brun maska daily.",
@@ -591,7 +639,10 @@
     "source": "curated_cafes",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJT5ECn9zR5zsRsz6VlRO2V7s",
+    "gmaps_address": "11A, Cawasji Patel St, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-bambaiya-coffee-co",
@@ -603,8 +654,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Chimbai, Bandra West",
-    "latitude": 19.05444,
-    "longitude": 72.84056,
+    "latitude": 19.06323,
+    "longitude": 72.834758,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Walk-in coffee takeaway. Friendly fishing neighborhood.",
@@ -626,7 +677,10 @@
     "source": "curated_wikimedia",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ92SOsRbJ5zsRayZvsCJ7GkE",
+    "gmaps_address": "Neelkamal Building, 248, Waterfield Road, opposite National College, Khar, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-blue-tokai-mahalaxmi",
@@ -638,8 +692,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Mahalaxmi / Shakti Mills",
-    "latitude": 18.9882,
-    "longitude": 72.8248,
+    "latitude": 19.120694,
+    "longitude": 72.863851,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Inside quiet converted mill compound. Ample seating and quiet corners.",
@@ -660,7 +714,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJAfeHIwDJ5zsRsbWcnDublOQ",
+    "gmaps_address": "Shop No 8, G8 Duplex, PN 6/7, Mahal Industrial Estate, Old, Mahakali Caves Rd, Gundavali, Andheri E, Mumbai, Maharashtra 400093, India"
   },
   {
     "id": "mumbai-mockingbird-cafe-churchgate",
@@ -672,8 +729,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Churchgate",
-    "latitude": 18.9312,
-    "longitude": 72.8262,
+    "latitude": 18.933501,
+    "longitude": 72.826275,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Cozy literary dining room near Churchgate station. Books available to read.",
@@ -694,7 +751,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJxY2uoefR5zsRXJcn_xo_D0c",
+    "gmaps_address": "80, Veer Nariman Rd, Churchgate, Mumbai, Maharashtra 400020, India"
   },
   {
     "id": "mumbai-kala-ghoda-cafe",
@@ -728,7 +788,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJuSeZCsPR5zsRI0vnqPEX-JM",
+    "gmaps_address": "10, Rope Walk Ln, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-b-merwan-grant-road",
@@ -763,7 +826,10 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJSTyBHgDP5zsRk5kpPJi4xS8",
+    "gmaps_address": "next to Mallam Terrace, near B.MERWAN HOTEL, Pannalal Terrace, Grant Road East, Bharat Nagar, Grant Road, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-zen-cafe-lower-parel",
@@ -775,8 +841,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Raghuvanshi Mills, Lower Parel",
-    "latitude": 18.9958,
-    "longitude": 72.8276,
+    "latitude": 19.001255,
+    "longitude": 72.829368,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Tucked inside design studio in Raghuvanshi Mills. Deep quiet atmosphere.",
@@ -798,7 +864,10 @@
     "source": "curated_underrated",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ353HnMnP5zsRS9zx27n6yEg",
+    "gmaps_address": "Todi Mill Compound, Senapati Bapat Marg, opposite Ideal Industrial Estate, Railway Colony, Lower Parel, Mumbai, Maharashtra 400013, India"
   },
   {
     "id": "mumbai-koinonia-chuim-village",
@@ -868,7 +937,10 @@
     "source": "curated_culture",
     "budget_tier": "free",
     "approx_cost": "Free Entry",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJCTBgusPR5zsR9jlWzqv4C3Y",
+    "gmaps_address": "161B, Mahatma Gandhi Road, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-method-bandra",
@@ -880,8 +952,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Chapel Road, Bandra West",
-    "latitude": 19.0524,
-    "longitude": 72.8288,
+    "latitude": 19.050561,
+    "longitude": 72.826789,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Intimate independent art venue. Free walk-in exhibitions.",
@@ -903,7 +975,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ7xUEwQvJ5zsRZPFR0avlCDU",
+    "gmaps_address": "Shop No.5, Pearl Haven, Chapel Rd, St Sebastian Colony, W, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-prithvi-theatre",
@@ -938,7 +1013,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJo49oV-rJ5zsRsvalI8ESNnw",
+    "gmaps_address": "20, Juhu Rd, Janki Kutir, Juhu, Mumbai, Maharashtra 400049, India"
   },
   {
     "id": "mumbai-ngma-colaba",
@@ -973,7 +1051,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBZWe1sPR5zsRzh5wXAiDNwM",
+    "gmaps_address": "Jahangir Public Hall, Sir Cowasji, Mahatma Gandhi Road, Mantralaya, Fort, Mumbai, Maharashtra 400032, India"
   },
   {
     "id": "mumbai-tarq-gallery-fort",
@@ -985,8 +1066,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9304,
-    "longitude": 72.8348,
+    "latitude": 18.935939,
+    "longitude": 72.833013,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Intimate contemporary gallery. Free public admission.",
@@ -1008,7 +1089,10 @@
     "source": "curated_culture",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJD9zqNcHR5zsRvS9r7KwV0hg",
+    "gmaps_address": "Ground Floor, KK (Navsari) Chambers, 39, AK Nayak Marg, Azad Maidan, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-artisans-centre-kala-ghoda",
@@ -1043,7 +1127,10 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹50–150 entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ3ZDGpsPR5zsRgEFVHlX7kyA",
+    "gmaps_address": "52 - 56, Dr, Forbes St, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-worli-fishing-village-promontory",
@@ -1055,7 +1142,7 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Worli Koliwada",
-    "latitude": 19.0252,
+    "latitude": 19.023712,
     "longitude": 72.8168,
     "access_type": "public",
     "safety_level": "high",
@@ -1078,7 +1165,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJcQEoO7DO5zsRILbfakTZbVI",
+    "gmaps_address": "Worli village, 2RF8+FPM, near worli, Worli Tip, fort, Mumbai, Maharashtra 400030, India"
   },
   {
     "id": "mumbai-castella-de-aguada",
@@ -1113,7 +1203,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJqb2PpU_J5zsRi8rDl8vwfqE",
+    "gmaps_address": "Lands End Garden, Bandra Fort Trail, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-sewri-fort-mangrove",
@@ -1148,7 +1241,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJeTBiTgTP5zsRoiRhDO_DFtU",
+    "gmaps_address": "Sewree Fort, MPT, Sewri, Mumbai, Maharashtra 400015, India"
   },
   {
     "id": "mumbai-sion-hillock-fort",
@@ -1160,8 +1256,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sion East",
-    "latitude": 19.0463,
-    "longitude": 72.8637,
+    "latitude": 19.046592,
+    "longitude": 72.867682,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Maintained by ASI with garden pathways. Gates close at sundown.",
@@ -1183,7 +1279,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJd5966M7I5zsRS6DZHR5GLmY",
+    "gmaps_address": "2VW8+4V9, East, Road No. 1, Sion East, Sion, Mumbai, Maharashtra 400022, India"
   },
   {
     "id": "mumbai-vasai-fort-quiet-bastions",
@@ -1218,7 +1317,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ5RryEQ2u5zsRKD3FQlxsjRc",
+    "gmaps_address": "Killa Rd, Police Colony, Naigaon West, Naigaon, Vasai-Virar, Maharashtra 401201, India"
   },
   {
     "id": "mumbai-belapur-fort-hill",
@@ -1230,8 +1332,8 @@
     "spot_tier": "hidden_gem",
     "city": "Navi Mumbai",
     "neighborhood": "CBD Belapur",
-    "latitude": 19.0189,
-    "longitude": 73.0381,
+    "latitude": 19.004862,
+    "longitude": 73.028337,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Gentle uphill trail. Lighted nearby but daytime visits recommended.",
@@ -1253,7 +1355,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ_RZzdAjD5zsR2UJfCR5-YmI",
+    "gmaps_address": "115, Uran Rd, Sector 32, Seawoods, Navi Mumbai, Maharashtra 400614, India"
   },
   {
     "id": "mumbai-madh-fort-ruins",
@@ -1265,8 +1370,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Madh Island",
-    "latitude": 19.1308,
-    "longitude": 72.7981,
+    "latitude": 19.148491,
+    "longitude": 72.789161,
     "access_type": "permissive",
     "safety_level": "medium",
     "safety_notes": "Secluded fishing coast. Best viewed from beach perimeter; rocky shores.",
@@ -1288,7 +1393,10 @@
     "source": "curated_forts",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJFQzEN8-15zsRXeJBEkLSHb0",
+    "gmaps_address": "Malad, Mumbai, Maharashtra 400061, India"
   },
   {
     "id": "mumbai-arnala-sea-fort",
@@ -1300,8 +1408,8 @@
     "spot_tier": "hidden_gem",
     "city": "Palghar / Virar",
     "neighborhood": "Arnala Island",
-    "latitude": 19.4678,
-    "longitude": 72.7336,
+    "latitude": 19.465946,
+    "longitude": 72.732252,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Reached by short passenger ferry from Arnala beach. Wear walking footwear.",
@@ -1323,7 +1431,10 @@
     "source": "curated_forts",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJq6qqPr6q5zsRQ6h9OynSwGk",
+    "gmaps_address": "Arnala, Maharashtra 401302, India"
   },
   {
     "id": "mumbai-ghodbunder-fort-ruins",
@@ -1358,7 +1469,10 @@
     "source": "curated_forts",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJbXylnw2w5zsR0M4OYytwC6k",
+    "gmaps_address": "Ghodbander Village, Ghodbunder, Mira Bhayandar, Maharashtra 401107, India"
   },
   {
     "id": "mumbai-riwa-fort-kala-killa",
@@ -1370,8 +1484,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Dharavi / Mahim Creek",
-    "latitude": 19.0494,
-    "longitude": 72.8582,
+    "latitude": 19.046742,
+    "longitude": 72.864414,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Maintained by ASI inside municipal garden. Visit during daylight hours.",
@@ -1393,7 +1507,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJj0R6etrI5zsRBVOUQqmFmyk",
+    "gmaps_address": "1, Budhiram Seth Chawl, Sion Railway Colony, Kala Qila, Dharavi, Mumbai, Maharashtra 400022, India"
   },
   {
     "id": "mumbai-sagar-upvan-colaba",
@@ -1405,8 +1522,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Colaba",
-    "latitude": 18.9056,
-    "longitude": 72.8124,
+    "latitude": 18.911364,
+    "longitude": 72.823281,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-guarded port trust botanical garden. Nominal entry fee (~₹5). Closes at 8 PM.",
@@ -1428,7 +1545,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZauy45bR5zsRsJBnfCz_RNI",
+    "gmaps_address": "Azad Nagar, Cuffe Parade, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-mahim-nature-park",
@@ -1440,8 +1560,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Dharavi / Mahim East",
-    "latitude": 19.0527,
-    "longitude": 72.8596,
+    "latitude": 19.052258,
+    "longitude": 72.862764,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Official biodiversity park. Modest ₹10 entry ticket. Closed on Sundays.",
@@ -1463,7 +1583,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJMQw-GtvI5zsRwERQp-CzzbQ",
+    "gmaps_address": "Sion Bandra Link Road, opp. Bus Depot, Mahim Nature Park, Dharavi, Mumbai, Maharashtra 400017, India"
   },
   {
     "id": "mumbai-horniman-circle",
@@ -1475,8 +1598,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9318,
-    "longitude": 72.8361,
+    "latitude": 18.932403,
+    "longitude": 72.83459,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Public garden and civic precinct. Well-lit at night.",
@@ -1498,7 +1621,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJC0DiS9vR5zsRE5JCqe3Y_Ac",
+    "gmaps_address": "Horniman Circle, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-joseph-baptista-garden",
@@ -1510,8 +1636,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mazgaon",
-    "latitude": 18.9692,
-    "longitude": 72.8427,
+    "latitude": 18.966444,
+    "longitude": 72.842459,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Peaceful hilltop garden atop Bhandarwada water reservoir. Clean restrooms.",
@@ -1533,7 +1659,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJsxZ41DfO5zsRSYhTqIRoBrw",
+    "gmaps_address": "400010, Dockyard, Ekta Nagar, Mazgaon, Mumbai, Maharashtra 400010, India"
   },
   {
     "id": "mumbai-hanging-gardens-malabar",
@@ -1568,7 +1697,10 @@
     "source": "curated_gardens",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJn3Q-5QnO5zsRmouUzzMGp5Q",
+    "gmaps_address": "Ridge Rd, Simla Nagar, Malabar Hill, Mumbai, Maharashtra 400006, India"
   },
   {
     "id": "mumbai-bhakti-park-lawns",
@@ -1580,8 +1712,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Wadala East",
-    "latitude": 19.0264,
-    "longitude": 72.8778,
+    "latitude": 19.027991,
+    "longitude": 72.880975,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Tranquil landscaped gardens along monorail route. Safe and peaceful.",
@@ -1603,7 +1735,10 @@
     "source": "curated_gardens",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJEWuUqkjP5zsRRlIyMHnJFps",
+    "gmaps_address": "Wadala East, Bhakti Park, Mumbai, Maharashtra 400037, India"
   },
   {
     "id": "mumbai-godrej-mangrove-park",
@@ -1615,8 +1750,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Vikhroli East",
-    "latitude": 19.0982,
-    "longitude": 72.9348,
+    "latitude": 19.095394,
+    "longitude": 72.92302,
     "access_type": "permissive",
     "safety_level": "high",
     "safety_notes": "Protected private reserve. Elevated wooden boardwalk and birdwatching hide.",
@@ -1638,7 +1773,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJNZure7jH5zsRrn1TJOG0sus",
+    "gmaps_address": "Pirojshanagar, Vikhroli East, Mumbai, Maharashtra 400079, India"
   },
   {
     "id": "mumbai-khotachiwadi-village",
@@ -1650,8 +1788,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Girgaon",
-    "latitude": 18.9536,
-    "longitude": 72.8197,
+    "latitude": 18.95564,
+    "longitude": 72.820307,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Residential heritage neighbourhood. Respect residents' privacy and keep voices low.",
@@ -1673,7 +1811,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ00ka3RDO5zsR2KuwjM9mj0E",
+    "gmaps_address": "Khotachiwadi, Girgaon, Mumbai, Maharashtra 400004, India"
   },
   {
     "id": "mumbai-sassoon-docks-art",
@@ -1708,7 +1849,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJCWkEg5bR5zsRpPydldURcBk",
+    "gmaps_address": "Azad Nagar, Colaba, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-sewri-cemetery-vaults",
@@ -1720,8 +1864,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sewri West",
-    "latitude": 18.9954,
-    "longitude": 72.8532,
+    "latitude": 19.000434,
+    "longitude": 72.851632,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Sacred memorial grounds. Speak quietly. Respect grave markers.",
@@ -1743,7 +1887,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJGYrSVx3P5zsR5Q63yY5avEY",
+    "gmaps_address": "Sakharam Lanjekar Marg, Sewri West, Shivaji Nagar, Sewri, Mumbai, Maharashtra 400015, India"
   },
   {
     "id": "mumbai-portuguese-church-dadar",
@@ -1755,8 +1902,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Dadar West",
-    "latitude": 19.0221,
-    "longitude": 72.8368,
+    "latitude": 19.018624,
+    "longitude": 72.836241,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Active church and civic architecture monument. Quiet respectful visits.",
@@ -1778,7 +1925,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJD8Jr8bnP5zsRuObbx1AdEUU",
+    "gmaps_address": "Our Lady of Salvation Church, Portuguese Church, Gokhale Rd, Omkar Society, West, Dadar, Mumbai, Maharashtra 400028, India"
   },
   {
     "id": "mumbai-matharpacady-village",
@@ -1790,8 +1940,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mazgaon",
-    "latitude": 18.9712,
-    "longitude": 72.8445,
+    "latitude": 18.971246,
+    "longitude": 72.842143,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Residential heritage precinct with narrow lanes. Speak softly and respect residents.",
@@ -1813,7 +1963,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBaEB3UjO5zsRmooM0i1X6Fc",
+    "gmaps_address": "Matharpacady Village Well, Dockyard, Thakkar Estate, Byculla, Mumbai, Maharashtra 400010"
   },
   {
     "id": "mumbai-mani-bhavan-gamdevi",
@@ -1848,7 +2001,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVVURaQzO5zsR_Tn4kfd1scA",
+    "gmaps_address": "Mani Bhavan, 19, Laburnum Rd, Babulnath, Gamdevi, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-mount-mary-basilica",
@@ -1883,7 +2039,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJdZ1gmkDJ5zsR-ntV50Ucp9A",
+    "gmaps_address": "2RWC+PM4, Mount Mary Rd, near Shanti Avedna Sadan, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-keneseth-eliyahoo-synagogue",
@@ -1918,7 +2077,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJaQj5g8PR5zsRP6q-EkQeCUU",
+    "gmaps_address": "55, Dr. V.B. Gandhi Marg, Fort, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-global-vipassana-pagoda",
@@ -1953,7 +2115,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJx2cgIlix5zsRupjgduNr6Ew",
+    "gmaps_address": "Gorai - Borivali Rd, West, Borivali, Mumbai, Maharashtra 400091, India"
   },
   {
     "id": "mumbai-babulnath-temple",
@@ -1965,8 +2130,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Girgaon Chowpatty",
-    "latitude": 18.9568,
-    "longitude": 72.8105,
+    "latitude": 18.958776,
+    "longitude": 72.808517,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Stone stairs ascend the hillock (elevator available for elders). Peaceful mornings.",
@@ -1988,7 +2153,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJS1S8ZgnO5zsRnXeeJ5QC7wQ",
+    "gmaps_address": "16, Babulnath Rd, Babulnath, Khareghat Colony, Malabar Hill, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-haji-ali-causeway",
@@ -2000,8 +2168,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Worli Bay / Mahalaxmi",
-    "latitude": 18.9828,
-    "longitude": 72.8089,
+    "latitude": 18.980587,
+    "longitude": 72.813354,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Only accessible during low tide. Pathway submerged during extreme high tide.",
@@ -2023,7 +2191,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJiSdyySXP5zsRnebHDaW6cQ8",
+    "gmaps_address": "XRJ7+68Q, Lala Lajpatrai Marg, Haji Ali Government Colony, Mahalakshmi, Mumbai, Maharashtra 400018, India"
   },
   {
     "id": "mumbai-afghan-church-colaba",
@@ -2035,8 +2206,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Navy Nagar, Colaba",
-    "latitude": 18.8994,
-    "longitude": 72.8142,
+    "latitude": 18.906491,
+    "longitude": 72.816388,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Quiet military cantonment area. Open for peaceful visits.",
@@ -2058,7 +2229,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJRVR9ciHP5zsR7MD-vrMueo4",
+    "gmaps_address": "St. John The Evangelist Church (Afghan Church Duxbury Lane, WR38+VP5, Colaba Causeway, Navy Nagar, Colaba, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-nipponzan-myohoji-temple",
@@ -2070,8 +2244,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Worli Naka",
-    "latitude": 18.9982,
-    "longitude": 72.8184,
+    "latitude": 19.000747,
+    "longitude": 72.815778,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Shoeless entrance. Quiet chanting rituals morning and evening.",
@@ -2093,7 +2267,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVwcxKonO5zsRzdI4HDBgTJs",
+    "gmaps_address": "Dr Annie Besant Rd, opp. Poddar Hospital, B Wing, Siddharth Nagar, Worli, Mumbai, Maharashtra 400018, India"
   },
   {
     "id": "mumbai-kanheri-upper-plateau",
@@ -2105,8 +2282,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Borivali East (SGNP)",
-    "latitude": 19.2061,
-    "longitude": 72.9066,
+    "latitude": 19.20786,
+    "longitude": 72.904807,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Inside Sanjay Gandhi National Park. Entry ticket required at gate. Stick to marked stone trails.",
@@ -2128,7 +2305,10 @@
     "source": "curated_nature",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹85 park entry",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJbdF34ea55zsRX7kiabN6Z_U",
+    "gmaps_address": "Mumbai, Maharashtra 400066, India"
   },
   {
     "id": "mumbai-yeoor-hills-trail",
@@ -2140,8 +2320,8 @@
     "spot_tier": "underrated",
     "city": "Thane",
     "neighborhood": "Upvan, Thane West",
-    "latitude": 19.2274,
-    "longitude": 72.9463,
+    "latitude": 19.224419,
+    "longitude": 72.949515,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Quiet woodland trails. Avoid venturing off-trail alone after dark.",
@@ -2163,7 +2343,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBQrl3Qe75zsR01MXjIGr0yg",
+    "gmaps_address": "6WFX+QR6, Yeoor Hls Rd, Yeoor, Upvan, Thane West, Thane, Maharashtra 400606, India"
   },
   {
     "id": "mumbai-kharghar-hills-ridge",
@@ -2175,8 +2358,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Sector 5, Kharghar",
-    "latitude": 19.0437,
-    "longitude": 73.0673,
+    "latitude": 19.023047,
+    "longitude": 73.048107,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Moderate uphill incline. Wear shoes with good grip during rains.",
@@ -2198,7 +2381,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZ9-tFHrD5zsRwRGlIr5l1Zc",
+    "gmaps_address": "Kharghar Hills, Sector 3A, CBD Belapur, Panvel, Maharashtra 400614, India"
   },
   {
     "id": "mumbai-shilonda-trail-sgnp",
@@ -2210,8 +2396,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sanjay Gandhi National Park, Borivali",
-    "latitude": 19.2235,
-    "longitude": 72.9152,
+    "latitude": 19.227511,
+    "longitude": 72.881723,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Requires forest department nature information center registration. Guide recommended.",
@@ -2233,7 +2419,10 @@
     "source": "curated_treks",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJlYJEjLOw5zsRAwbz1s5XQN4",
+    "gmaps_address": "6VHJ+2M5, National Park Flyover, Rajendra Nagar Society, Borivali, Mumbai, Maharashtra 400066, India"
   },
   {
     "id": "mumbai-pandavkada-waterfall-trail",
@@ -2245,8 +2434,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Kharghar",
-    "latitude": 19.0562,
-    "longitude": 73.0784,
+    "latitude": 19.032996,
+    "longitude": 73.05372,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Rocky trail. Obey local police barricades during heavy flash-flood rainfall.",
@@ -2268,7 +2457,10 @@
     "source": "curated_treks",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ1cKKzrrD5zsRq-E68XJev1I",
+    "gmaps_address": "23M3+5F, Forest Area, Kharghar, Panvel, Maharashtra 410210, India"
   },
   {
     "id": "mumbai-yeoor-bamboo-sanctuary",
@@ -2280,8 +2472,8 @@
     "spot_tier": "hidden_gem",
     "city": "Thane",
     "neighborhood": "Upvan Buffer Zone, Thane West",
-    "latitude": 19.2312,
-    "longitude": 72.9415,
+    "latitude": 19.224419,
+    "longitude": 72.949515,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Gentle gradient trail. Wear trail shoes; pristine natural stream crossings.",
@@ -2303,7 +2495,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Trail",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBQrl3Qe75zsR01MXjIGr0yg",
+    "gmaps_address": "6WFX+QR6, Yeoor Hls Rd, Yeoor, Upvan, Thane West, Thane, Maharashtra 400606, India"
   },
   {
     "id": "mumbai-gilbert-hill",
@@ -2338,7 +2533,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJcxbdo9DJ5zsRiTqYo7MrDMk",
+    "gmaps_address": "Gilbert hill, Sagar City, Andheri West, Mumbai, Maharashtra 400058, India"
   },
   {
     "id": "mumbai-bandra-reclamation-view",
@@ -2350,8 +2548,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0494,
-    "longitude": 72.8277,
+    "latitude": 19.047446,
+    "longitude": 72.827063,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Spacious pedestrian promenade with seating. Police patrol present.",
@@ -2373,7 +2571,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ElFCYW5kcmEgUmVjbGFtYXRpb24gUmQsIE1vdW50IE1hcnksIEJhbmRyYSBXZXN0LCBNdW1iYWksIE1haGFyYXNodHJhIDQwMDA1MCwgSW5kaWEiLiosChQKEgm7Ly6QR8nnOxE-ypzeYKMVIRIUChIJwe1EZjDG5zsRaYxkjY_tpF0",
+    "gmaps_address": "Bandra Reclamation Rd, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-kamla-nehru-sunset-point",
@@ -2385,8 +2586,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Malabar Hill",
-    "latitude": 18.9567,
-    "longitude": 72.8055,
+    "latitude": 18.955025,
+    "longitude": 72.804973,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-maintained civic park. Viewing gallery overlooking Marine Drive.",
@@ -2408,7 +2609,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJvaysoFTP5zsRrfA8pHD55vo",
+    "gmaps_address": "XR43+2X5, Dadi Sheth Wadi, Malabar Hill, Mumbai, Maharashtra 400006, India"
   },
   {
     "id": "mumbai-parsik-hill-summit",
@@ -2420,8 +2624,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "CBD Belapur",
-    "latitude": 19.0298,
-    "longitude": 73.0336,
+    "latitude": 19.026125,
+    "longitude": 73.032057,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Gentle winding road up the ridge. Safe scenic viewpoints.",
@@ -2443,7 +2647,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJrwkh3LbD5zsRvSILh9S_2zA",
+    "gmaps_address": "Parsik Hill, Sector 30, CBD Belapur, Navi Mumbai, Maharashtra 400614, India"
   },
   {
     "id": "mumbai-sewri-jetty-flamingo-point",
@@ -2455,8 +2662,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sewri East",
-    "latitude": 18.9972,
-    "longitude": 72.8624,
+    "latitude": 18.998362,
+    "longitude": 72.861094,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Open mudflat jetty. Best visited during low tide between November and May.",
@@ -2478,7 +2685,10 @@
     "source": "curated_viewpoints",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJfWHYQwbP5zsRbOy0YOqalbk",
+    "gmaps_address": "8, Comed Rambhau Dev Ji Patil Rd, Gandhi Nagar, Sewri, Mumbai, Maharashtra 400015, India"
   },
   {
     "id": "mumbai-khandeshwar-lake-promontory",
@@ -2490,8 +2700,8 @@
     "spot_tier": "underrated",
     "city": "Navi Mumbai",
     "neighborhood": "Panvel / Khanda Colony",
-    "latitude": 18.9984,
-    "longitude": 73.1092,
+    "latitude": 19.011031,
+    "longitude": 73.108961,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Paved lakeside stone promenade. Benches facing mountain ridges.",
@@ -2513,7 +2723,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJxx-YtTXo5zsRv72QYum2B90",
+    "gmaps_address": "Khandeshwar Lake, Park Sight Society, Sector - 2, Greater Khanda, Panvel, Maharashtra 410206, India"
   },
   {
     "id": "mumbai-carter-road-mangrove-walk",
@@ -2525,8 +2738,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0645,
-    "longitude": 72.8252,
+    "latitude": 19.063084,
+    "longitude": 72.822645,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Lit coastal walking track. Best during high tide mornings.",
@@ -2548,7 +2761,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "EkZTYW5nZWV0IFNhbXJhdCBOYXVzaGFkIEFsaSBSZCwgQmFuZHJhIFdlc3QsIE11bWJhaSwgTWFoYXJhc2h0cmEsIEluZGlhIi4qLAoUChIJqwGa0m3J5zsRgJ4asdM_eJUSFAoSCXvS-CPhyOc7EXhqI5q0lnlD",
+    "gmaps_address": "Sangeet Samrat Naushad Ali Rd, Bandra West, Mumbai, Maharashtra, India"
   },
   {
     "id": "mumbai-five-gardens-walk",
@@ -2560,8 +2776,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Matunga",
-    "latitude": 19.0197,
-    "longitude": 72.8538,
+    "latitude": 19.023138,
+    "longitude": 72.852544,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Peaceful leafy residential area with wide pedestrian paths.",
@@ -2583,7 +2799,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ-2pNhtjP5zsRZVh2mEidMK0",
+    "gmaps_address": "Jame Jamshed Rd, Agrawal Nagar, Matunga East, Mumbai, Maharashtra 400019, India"
   },
   {
     "id": "mumbai-marine-drive-southern-walk",
@@ -2595,8 +2814,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Nariman Point",
-    "latitude": 18.9248,
-    "longitude": 72.8205,
+    "latitude": 18.925703,
+    "longitude": 72.818636,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-guarded public promenade. Ample seating benches.",
@@ -2618,7 +2837,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ229EGhTR5zsRjB3OGFb4ybo",
+    "gmaps_address": "Nariman Point, Mumbai, Maharashtra, India"
   },
   {
     "id": "mumbai-ballard-estate-walk",
@@ -2653,7 +2875,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJN75KdtrR5zsRdajmLCwLTdE",
+    "gmaps_address": "Ballard Estate, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-ranwar-village-walk",
@@ -2665,8 +2890,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0528,
-    "longitude": 72.8295,
+    "latitude": 19.053502,
+    "longitude": 72.827268,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Pedestrian village alleyways. Respect residents' private verandas.",
@@ -2688,7 +2913,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJdZ1gmkDJ5zsRawlkRqg7MN8",
+    "gmaps_address": "Ranwar Village Square, Ranwar, Bandra West, Mumbai, Maharashtra 400050"
   },
   {
     "id": "mumbai-worli-sea-face-walk",
@@ -2700,8 +2928,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Worli",
-    "latitude": 19.0142,
-    "longitude": 72.8135,
+    "latitude": 19.009143,
+    "longitude": 72.815728,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Wide lighted coastal path with ample seating benches. Safe late into the night.",
@@ -2723,7 +2951,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJv2zjHpjO5zsRDf0aPt35_uw",
+    "gmaps_address": "Worli Sea Face, Worli, Mumbai, Maharashtra 400030, India"
   },
   {
     "id": "mumbai-colaba-woods-forest-walk",
@@ -2735,8 +2966,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Cuffe Parade, Colaba",
-    "latitude": 18.9114,
-    "longitude": 72.8182,
+    "latitude": 18.913121,
+    "longitude": 72.82011,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Maintained green belt with gravel tracks. Nominal civic garden rules.",
@@ -2758,7 +2989,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZRcr15PR5zsRSvh3q6p2P8Y",
+    "gmaps_address": "T.L, Sadhu Vaswani Marg, Police Station, Ganesh Murti Nagar, Cuffe Parade, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-dadar-parsi-colony-walk",
@@ -2793,7 +3027,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ_5fIqCDP5zsRuC3VsERIVW0",
+    "gmaps_address": "Parsee Colony, Dadar, Mumbai, Maharashtra, India"
   },
   {
     "id": "mumbai-gamdevi-laburnum-walk",
@@ -2805,8 +3042,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Gamdevi / Grant Road",
-    "latitude": 18.9612,
-    "longitude": 72.8124,
+    "latitude": 18.958974,
+    "longitude": 72.81259,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Tranquil residential avenue with wide pedestrian footpaths. Zero honking.",
@@ -2828,7 +3065,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "EkRHYW1kZXZpIFJkICYgTGFidXJudW0gUmQsIEdhbWRldmksIE11bWJhaSwgTWFoYXJhc2h0cmEgNDAwMDA3LCBJbmRpYSJmImQKFAoSCQG5MDAMzuc7EW-vLcCoYeJaEhQKEgkBuTAwDM7nOxFvry3AqGHiWhoUChIJz8XmRgzO5zsRMSJPutOPApYaFAoSCQvmWW4Mzuc7ESm7GIFNqk4oIgoN8OhMCxXHUWYr",
+    "gmaps_address": "Gamdevi Rd & Laburnum Rd, Gamdevi, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-joggers-park-clifftop",
@@ -2840,8 +3080,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Carter Road, Bandra West",
-    "latitude": 19.0618,
-    "longitude": 72.8244,
+    "latitude": 19.059534,
+    "longitude": 72.821403,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Maintained coastal park with dual clay and paved running tracks.",
@@ -2863,7 +3103,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVTekgmnJ5zsRzFvr0Vq5H_w",
+    "gmaps_address": "Sangeet Samrat Naushad Ali Rd, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-banganga-tank",
@@ -2898,7 +3141,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZ8gTGfrN5zsR0KBy74Kv6D8",
+    "gmaps_address": "Banganga Tank, Teen Batti, Malabar Hill, Mumbai, Maharashtra 400006"
   },
   {
     "id": "mumbai-priyadarshini-park-rocky-shore",
@@ -2910,8 +3156,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Nepean Sea Road",
-    "latitude": 18.9614,
-    "longitude": 72.8021,
+    "latitude": 18.957067,
+    "longitude": 72.798905,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-maintained civic park with clay tracks. Ocean rocks can be slippery at high tide.",
@@ -2933,7 +3179,10 @@
     "source": "curated_parks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJw3rpD-HN5zsRGYkrTonj-Rk",
+    "gmaps_address": "Nepean Sea Rd, Malabar Hill, Mumbai, Maharashtra 400006, India"
   },
   {
     "id": "mumbai-bandstand-tidepools",
@@ -2945,8 +3194,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0435,
-    "longitude": 72.8192,
+    "latitude": 19.049571,
+    "longitude": 72.82073,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Rocky shore below the promenade. Only explore during low tide; rocks are mossy.",
@@ -2968,7 +3217,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJnVPmO5TJ5zsR4WJp_7W_awo",
+    "gmaps_address": "Ranwar, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-manori-fishing-beach",
@@ -2980,8 +3232,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Manori / Gorai",
-    "latitude": 19.2086,
-    "longitude": 72.7842,
+    "latitude": 19.209872,
+    "longitude": 72.78081,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Reached by scenic 5-minute passenger ferry from Marve Beach. Avoid swimming in deep currents.",
@@ -3003,7 +3255,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJqz10Mwu05zsRtlQGBA3qhM0",
+    "gmaps_address": "Manori Beach, Mumbai, Maharashtra 400095, India"
   },
   {
     "id": "mumbai-powai-lake-promontory",
@@ -3038,7 +3293,10 @@
     "source": "curated_waterfront",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJK9I5-PvH5zsRZSoBRFQ6ck8",
+    "gmaps_address": "4WG3+WW5, Lake, IIT Area, Powai, Mumbai, Maharashtra 400076, India"
   },
   {
     "id": "mumbai-aksa-casuarina-grove",
@@ -3050,8 +3308,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Malad West / Aksa",
-    "latitude": 19.1764,
-    "longitude": 72.7952,
+    "latitude": 19.172901,
+    "longitude": 72.794309,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Secluded pine forest behind the beach. Avoid swimming in deep sea currents.",
@@ -3073,7 +3331,10 @@
     "source": "curated_waterfront",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJM9wIeQC15zsRGRAyYNKap7U",
+    "gmaps_address": "22, Axa Bch Rd, Dharvali, Aksa Gaon, Malad West, Mumbai, Maharashtra 400095, India"
   },
   {
     "id": "mumbai-erangal-beach-dunes",
@@ -3085,8 +3346,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Erangal, Madh Island",
-    "latitude": 19.1482,
-    "longitude": 72.7938,
+    "latitude": 19.161252,
+    "longitude": 72.783994,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Uncommercialized village beach. Respect fishing outriggers.",
@@ -3108,7 +3369,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJu-39c8m15zsRTGU9vIP9NgM",
+    "gmaps_address": "5Q6M+GH5, Erangal Gaon, Madh, Mumbai, Maharashtra 400061, India"
   },
   {
     "id": "mumbai-wayword-and-wise",
@@ -3120,8 +3384,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Ballard Estate, Fort",
-    "latitude": 18.9348,
-    "longitude": 72.8402,
+    "latitude": 18.937609,
+    "longitude": 72.836755,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Peaceful indoor sanctuary. Well-lit cobblestone heritage district.",
@@ -3141,7 +3405,10 @@
     "photo_url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVX5nir7R5zsRZZaP2sPLBAQ",
+    "gmaps_address": "Strategic House, 44, Mint Rd, Borabazar Precinct, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-trilogy-library-bandra",
@@ -3153,8 +3420,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0622,
-    "longitude": 72.8285,
+    "latitude": 19.05806,
+    "longitude": 72.822311,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Tranquil reading lounge. Respectful silence expected.",
@@ -3174,7 +3441,10 @@
     "photo_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJg-khxYvO5zsR8CqisIHBX6A",
+    "gmaps_address": "1 Carter Road, Chimbai, behind BMC Pump House, near Joggers Park, Koliwada, W, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-granth-bookstore-juhu",
@@ -3186,8 +3456,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Juhu",
-    "latitude": 19.1028,
-    "longitude": 72.8265,
+    "latitude": 19.087196,
+    "longitude": 72.827207,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Quiet two-story bookstore in residential Juhu lane.",
@@ -3207,7 +3477,10 @@
     "photo_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJpaKJ2LnJ5zsRWKXbf5qsQlM",
+    "gmaps_address": "H M House, Plot No 30/A, Juhu Tara Rd, near Maneckji Cooper School, Chandrabai Nagar, Santacruz (West), Mumbai, Maharashtra 400049, India"
   },
   {
     "id": "mumbai-bhau-daji-lad-museum",
@@ -3240,7 +3513,10 @@
     "photo_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJr3COQlvO5zsRBS4MFGze73k",
+    "gmaps_address": "91 A, Rani Baug, Veer Mata Jijbai Bhonsle Udyan, 91 A, Dr Babasaheb Ambedkar Rd, Byculla East, Byculla, Mumbai, Maharashtra 400027, India"
   },
   {
     "id": "mumbai-st-thomas-cathedral",
@@ -3273,7 +3549,10 @@
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJU5P-qdzR5zsR6SylFFDnNbc",
+    "gmaps_address": "3, Veer Nariman Rd, near Bombay House, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-hasnabad-dargah-mazgaon",
@@ -3285,8 +3564,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mazgaon",
-    "latitude": 18.9667,
-    "longitude": 72.8423,
+    "latitude": 18.97335,
+    "longitude": 72.839394,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Sacred site. Shoes removed before marble terrace. Peaceful contemplation.",
@@ -3306,7 +3585,10 @@
     "photo_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJbRE58UXO5zsRB8NJVTycoVY",
+    "gmaps_address": "Hasnabad Dargah, Anjeerwadi Road, Byculla East, Mazgaon, Mumbai, Maharashtra 400010, India"
   },
   {
     "id": "mumbai-cavel-village-lanes",
@@ -3339,7 +3621,10 @@
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJk9iYphjO5zsRsbx1iDBl3r4",
+    "gmaps_address": "Dr Viegas St, Marine Lines East, Chira Bazaar, Kalbadevi, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-oval-maidan-promenade",
@@ -3372,7 +3657,10 @@
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJv3kUlsLR5zsRe6h9mMDeAmM",
+    "gmaps_address": "140, महर्षी कर्वे, रोड, Mantralaya, Churchgate, Mumbai, Maharashtra 400032, India"
   },
   {
     "id": "mumbai-chimbai-koliwada-walk",
@@ -3384,8 +3672,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0565,
-    "longitude": 72.8242,
+    "latitude": 19.056565,
+    "longitude": 72.821855,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Active fishermen village. Wear comfortable walking shoes on stone ramps.",
@@ -3405,7 +3693,10 @@
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJtQ3kA9fJ5zsRYuA11WJkidk",
+    "gmaps_address": "3R5F+279, 61, Chimbai Village, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-nirvana-park-powai",
@@ -3417,8 +3708,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Hiranandani, Powai",
-    "latitude": 19.1172,
-    "longitude": 72.9094,
+    "latitude": 19.122436,
+    "longitude": 72.911856,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Fenced manicured civic park. Well-maintained walkways and security guards.",
@@ -3438,7 +3729,10 @@
     "photo_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ44tO5-_H5zsRXmO2BHACyoE",
+    "gmaps_address": "G.M. Nirvana Park, M.C, Central Ave, Hiranandani Gardens, Panchkutir Ganesh Nagar, Powai, Mumbai, Maharashtra 400076, India"
   },
   {
     "id": "mumbai-amarsons-garden-promenade",
@@ -3450,8 +3744,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Breach Candy",
-    "latitude": 18.9688,
-    "longitude": 72.8038,
+    "latitude": 18.96962,
+    "longitude": 72.802248,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-guarded seaside public garden with dedicated walking track.",
@@ -3471,7 +3765,10 @@
     "photo_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJP5pbxdjN5zsRgH7awruUryk",
+    "gmaps_address": "76, Bhulabhai Desai Rd, Breach Candy, Cumballa Hill, Mumbai, Maharashtra 400026, India"
   },
   {
     "id": "mumbai-diamond-garden-chembur",
@@ -3483,8 +3780,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Chembur Central",
-    "latitude": 19.0558,
-    "longitude": 72.8988,
+    "latitude": 19.05181,
+    "longitude": 72.901832,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Gated public park with gentle jogging track.",
@@ -3504,7 +3801,10 @@
     "photo_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJwVJLJwPG5zsRx_VaYzos6Qw",
+    "gmaps_address": "Basant Garden, Chembur, Mumbai, Maharashtra 400071, India"
   },
   {
     "id": "mumbai-worli-koliwada-jetty",
@@ -3537,7 +3837,10 @@
     "photo_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJQT40HgDP5zsRIJykIcDer4U",
+    "gmaps_address": "2RG8+F54, Koliwada, Worli, Mumbai, Maharashtra 400030, India"
   },
   {
     "id": "mumbai-uran-pirwadi-lookout",
@@ -3549,8 +3852,8 @@
     "spot_tier": "hidden_gem",
     "city": "Navi Mumbai",
     "neighborhood": "Uran Coast",
-    "latitude": 18.8825,
-    "longitude": 72.9152,
+    "latitude": 18.857032,
+    "longitude": 72.923614,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Isolated rocky coastline. Daylight visits recommended with local guide or companion.",
@@ -3570,7 +3873,10 @@
     "photo_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJQVj8nxja5zsRLAMlD0ylzhQ",
+    "gmaps_address": "VW4F+RC9, Pirwad Rd, Pirwadi, Nagaon, Uran, Nagaon, Maharashtra 400702, India"
   },
   {
     "id": "mumbai-marve-beach-pine-grove",
@@ -3582,8 +3888,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Malad West / Marve",
-    "latitude": 19.1952,
-    "longitude": 72.7985,
+    "latitude": 19.195631,
+    "longitude": 72.820356,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Do not swim (swift tidal estuary currents). Stick to pine tree shade and sand dunes.",
@@ -3603,7 +3909,10 @@
     "photo_url": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ7eN3lL225zsRkuf7VF5QmGs",
+    "gmaps_address": "26, Marve Rd, Malad, Rathodi, Malad West, Mumbai, Maharashtra 400095, India"
   },
   {
     "id": "mumbai-gorai-creek-jetty",
@@ -3615,8 +3924,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Borivali West / Gorai",
-    "latitude": 19.2312,
-    "longitude": 72.8088,
+    "latitude": 19.233376,
+    "longitude": 72.823994,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Official public ferry jetty. Guard rails installed along wooden gangway.",
@@ -3636,7 +3945,10 @@
     "photo_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ1Vs1yXmx5zsRO5ybIjYqOIY",
+    "gmaps_address": "6RMF+9H5, Gorai Khadi Road, Essel world Amusement Park, Borivali West, Mumbai, Maharashtra 400091, India"
   },
   {
     "id": "mumbai-magen-david-synagogue",

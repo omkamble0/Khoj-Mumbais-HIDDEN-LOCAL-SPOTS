@@ -32,7 +32,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJQ_5UeoXJ5zsR__eCJdbHoiQ",
+    "gmaps_address": "Ground Floor, Mary Lodge, 21A, Chapel Rd, next to Saba Heritage building, Ranwar, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-kyani-co",
@@ -44,8 +47,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Marine Lines",
-    "latitude": 18.9436,
-    "longitude": 72.8267,
+    "latitude": 18.944073,
+    "longitude": 72.828747,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Iconic vintage café. Cash and UPI accepted. Quick turnaround.",
@@ -67,7 +70,10 @@
     "source": "curated_cafes",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJKQZB3mzO5zsRPQXFAff0kh8",
+    "gmaps_address": "Jer Mahal Building, 657, Jagannath Shankar Seth Rd, opp. Metro Inox Theatre, Marine Lines East, Dhobi Talao, Estate, Marine Lines, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-prithvi-cafe-juhu",
@@ -102,7 +108,10 @@
     "source": "curated_cafes",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJo49oV-rJ5zsRvNAzcQLkwO8",
+    "gmaps_address": "Apartment, Alongside, Prithvi Theatre, 20, Juhu Rd, Janki Kutir, Juhu, Mumbai, Maharashtra 400049, India"
   },
   {
     "id": "mumbai-britannia-co",
@@ -137,7 +146,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJSaimqk3O5zsR2pSEZSCzbcs",
+    "gmaps_address": "Wakefield House, 11 16, SS Ram Gulam Marg, opp. New Indian Customs House, Ballard Estate, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-candies-bandra",
@@ -149,8 +161,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Pali Hill, Bandra West",
-    "latitude": 19.0641,
-    "longitude": 72.8296,
+    "latitude": 19.060955,
+    "longitude": 72.826915,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Expansive multi-level villa with leafy terraces, mosaics, and quiet alcoves.",
@@ -172,7 +184,10 @@
     "source": "curated_cafes",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJi1NRO2vJ5zsR_sA0_utO260",
+    "gmaps_address": "5AA, Pali Hill, next to Learners Academy School, Bandra (W, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-yazdani-bakery",
@@ -184,8 +199,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Fort",
-    "latitude": 18.9312,
-    "longitude": 72.834,
+    "latitude": 18.933201,
+    "longitude": 72.833629,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Historic wood-oven bakery lane. Cash & UPI. Fresh crusty brun maska daily.",
@@ -207,7 +222,10 @@
     "source": "curated_cafes",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJT5ECn9zR5zsRsz6VlRO2V7s",
+    "gmaps_address": "11A, Cawasji Patel St, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-bambaiya-coffee-co",
@@ -219,8 +237,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Chimbai, Bandra West",
-    "latitude": 19.05444,
-    "longitude": 72.84056,
+    "latitude": 19.06323,
+    "longitude": 72.834758,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Walk-in coffee takeaway. Friendly fishing neighborhood.",
@@ -242,7 +260,10 @@
     "source": "curated_wikimedia",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ92SOsRbJ5zsRayZvsCJ7GkE",
+    "gmaps_address": "Neelkamal Building, 248, Waterfield Road, opposite National College, Khar, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-blue-tokai-mahalaxmi",
@@ -254,8 +275,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Mahalaxmi / Shakti Mills",
-    "latitude": 18.9882,
-    "longitude": 72.8248,
+    "latitude": 19.120694,
+    "longitude": 72.863851,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Inside quiet converted mill compound. Ample seating and quiet corners.",
@@ -276,7 +297,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJAfeHIwDJ5zsRsbWcnDublOQ",
+    "gmaps_address": "Shop No 8, G8 Duplex, PN 6/7, Mahal Industrial Estate, Old, Mahakali Caves Rd, Gundavali, Andheri E, Mumbai, Maharashtra 400093, India"
   },
   {
     "id": "mumbai-mockingbird-cafe-churchgate",
@@ -288,8 +312,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Churchgate",
-    "latitude": 18.9312,
-    "longitude": 72.8262,
+    "latitude": 18.933501,
+    "longitude": 72.826275,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Cozy literary dining room near Churchgate station. Books available to read.",
@@ -310,7 +334,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJxY2uoefR5zsRXJcn_xo_D0c",
+    "gmaps_address": "80, Veer Nariman Rd, Churchgate, Mumbai, Maharashtra 400020, India"
   },
   {
     "id": "mumbai-kala-ghoda-cafe",
@@ -344,7 +371,10 @@
     "source": "curated_cafes",
     "budget_tier": "splurge",
     "approx_cost": "₹800–1,500 for two",
-    "price_level": 3
+    "price_level": 3,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJuSeZCsPR5zsRI0vnqPEX-JM",
+    "gmaps_address": "10, Rope Walk Ln, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-b-merwan-grant-road",
@@ -379,7 +409,10 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "₹150–350 for two",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJSTyBHgDP5zsRk5kpPJi4xS8",
+    "gmaps_address": "next to Mallam Terrace, near B.MERWAN HOTEL, Pannalal Terrace, Grant Road East, Bharat Nagar, Grant Road, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-zen-cafe-lower-parel",
@@ -391,8 +424,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Raghuvanshi Mills, Lower Parel",
-    "latitude": 18.9958,
-    "longitude": 72.8276,
+    "latitude": 19.001255,
+    "longitude": 72.829368,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Tucked inside design studio in Raghuvanshi Mills. Deep quiet atmosphere.",
@@ -414,7 +447,10 @@
     "source": "curated_underrated",
     "budget_tier": "moderate",
     "approx_cost": "₹450–800 for two",
-    "price_level": 2
+    "price_level": 2,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ353HnMnP5zsRS9zx27n6yEg",
+    "gmaps_address": "Todi Mill Compound, Senapati Bapat Marg, opposite Ideal Industrial Estate, Railway Colony, Lower Parel, Mumbai, Maharashtra 400013, India"
   },
   {
     "id": "mumbai-koinonia-chuim-village",

@@ -32,7 +32,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJdZ1gmkDJ5zsR-ntV50Ucp9A",
+    "gmaps_address": "2RWC+PM4, Mount Mary Rd, near Shanti Avedna Sadan, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-keneseth-eliyahoo-synagogue",
@@ -67,7 +70,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJaQj5g8PR5zsRP6q-EkQeCUU",
+    "gmaps_address": "55, Dr. V.B. Gandhi Marg, Fort, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-global-vipassana-pagoda",
@@ -102,7 +108,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJx2cgIlix5zsRupjgduNr6Ew",
+    "gmaps_address": "Gorai - Borivali Rd, West, Borivali, Mumbai, Maharashtra 400091, India"
   },
   {
     "id": "mumbai-babulnath-temple",
@@ -114,8 +123,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Girgaon Chowpatty",
-    "latitude": 18.9568,
-    "longitude": 72.8105,
+    "latitude": 18.958776,
+    "longitude": 72.808517,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Stone stairs ascend the hillock (elevator available for elders). Peaceful mornings.",
@@ -137,7 +146,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJS1S8ZgnO5zsRnXeeJ5QC7wQ",
+    "gmaps_address": "16, Babulnath Rd, Babulnath, Khareghat Colony, Malabar Hill, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-haji-ali-causeway",
@@ -149,8 +161,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Worli Bay / Mahalaxmi",
-    "latitude": 18.9828,
-    "longitude": 72.8089,
+    "latitude": 18.980587,
+    "longitude": 72.813354,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Only accessible during low tide. Pathway submerged during extreme high tide.",
@@ -172,7 +184,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJiSdyySXP5zsRnebHDaW6cQ8",
+    "gmaps_address": "XRJ7+68Q, Lala Lajpatrai Marg, Haji Ali Government Colony, Mahalakshmi, Mumbai, Maharashtra 400018, India"
   },
   {
     "id": "mumbai-afghan-church-colaba",
@@ -184,8 +199,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Navy Nagar, Colaba",
-    "latitude": 18.8994,
-    "longitude": 72.8142,
+    "latitude": 18.906491,
+    "longitude": 72.816388,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Quiet military cantonment area. Open for peaceful visits.",
@@ -207,7 +222,10 @@
     "source": "curated_spiritual",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJRVR9ciHP5zsR7MD-vrMueo4",
+    "gmaps_address": "St. John The Evangelist Church (Afghan Church Duxbury Lane, WR38+VP5, Colaba Causeway, Navy Nagar, Colaba, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-nipponzan-myohoji-temple",
@@ -219,8 +237,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Worli Naka",
-    "latitude": 18.9982,
-    "longitude": 72.8184,
+    "latitude": 19.000747,
+    "longitude": 72.815778,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Shoeless entrance. Quiet chanting rituals morning and evening.",
@@ -242,7 +260,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVwcxKonO5zsRzdI4HDBgTJs",
+    "gmaps_address": "Dr Annie Besant Rd, opp. Poddar Hospital, B Wing, Siddharth Nagar, Worli, Mumbai, Maharashtra 400018, India"
   },
   {
     "id": "mumbai-magen-david-synagogue",

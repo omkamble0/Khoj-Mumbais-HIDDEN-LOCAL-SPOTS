@@ -9,8 +9,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Mutton Street, Kumbharwada",
-    "latitude": 18.9602,
-    "longitude": 72.8291,
+    "latitude": 18.959035,
+    "longitude": 72.829928,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Busy alleyways. Keep phones/wallets secured. Closed on Fridays.",
@@ -32,7 +32,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJr6Jh-R7P5zsRZWFXrjNFc-4",
+    "gmaps_address": "206, Mutton St, Ajmer, Kumbharwada, Mumbai, Maharashtra 400003, India"
   },
   {
     "id": "mumbai-dadar-flower-market",
@@ -67,7 +70,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ8X9h-j3P5zsR77sUKDDc-lU",
+    "gmaps_address": "2R8R+XJX, Tilak Brg, Lokmanya Tilak Colony, Dadar, Mumbai, Maharashtra 400028, India"
   },
   {
     "id": "mumbai-colaba-causeway-art-alleys",
@@ -79,8 +85,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Colaba",
-    "latitude": 18.9217,
-    "longitude": 72.8318,
+    "latitude": 18.920717,
+    "longitude": 72.830649,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Pedestrian shopping arcade. Safe and well-lit into late evenings.",
@@ -102,7 +108,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJn079zr_R5zsR3Ghy0UQ2dCM",
+    "gmaps_address": "Adenwala Rd, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-crawford-market-arcades",
@@ -137,7 +146,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJuSs1tibO5zsRd7UYv0MBo4c",
+    "gmaps_address": "Crawford Market, Lokmanya Tilak Rd, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-mangaldas-market-cloth-halls",
@@ -172,7 +184,10 @@
     "source": "curated_bazaars",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJr7KRXiHO5zsRo4ChHkK1wAk",
+    "gmaps_address": "Mangaldas Market, 103/A2, Sheikh Memon St, Lohar Chawl, Kalbadevi, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-lalbaug-mirchi-galli",
@@ -184,8 +199,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Lalbaug, Parel",
-    "latitude": 18.9912,
-    "longitude": 72.8365,
+    "latitude": 18.990611,
+    "longitude": 72.838038,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Pungent spice aromas in the air. Wear comfortable walking shoes.",
@@ -207,7 +222,10 @@
     "source": "curated_underrated",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry / Budget shopping",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJCd4ILjDP5zsRF0GxKixLyYI",
+    "gmaps_address": "Masala gully, 1/2, Dinshaw Petit Rd, opp. Narayan Udyog Bhavan, Shree Ganesh Nagar, Lal Baug, Parel, Mumbai, Maharashtra 400012, India"
   },
   {
     "id": "mumbai-kumbharwada-potters-colony",

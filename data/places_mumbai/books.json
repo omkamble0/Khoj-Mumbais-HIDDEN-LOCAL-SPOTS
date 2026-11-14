@@ -32,7 +32,10 @@
     "source": "curated_books",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVVVltNzR5zsRcUGbr8YTw8s",
+    "gmaps_address": "Somaiya Bhavan, 45/47, Mahatma Gandhi Road, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-david-sassoon-library",
@@ -67,7 +70,10 @@
     "source": "curated_books",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free Garden / ₹50 day-pass",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJH1q0mNnR5zsRobU5vgJwQLU",
+    "gmaps_address": "152, Mahatma Gandhi Road, Off David Sassoon, Library Marg, opposite Jehangir Art Gallery, Kala Ghoda, Fort, Mumbai, Maharashtra 400032, India"
   },
   {
     "id": "mumbai-asiatic-library-steps",
@@ -102,7 +108,10 @@
     "source": "curated_books",
     "budget_tier": "free",
     "approx_cost": "Free Public Access",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ34AWLdvR5zsR-dMSwVoB5Cw",
+    "gmaps_address": "Town Hall, Shahid Bhagat Singh Rd, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-title-waves-bandra",
@@ -114,8 +123,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0624,
-    "longitude": 72.8327,
+    "latitude": 19.060967,
+    "longitude": 72.832318,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Spacious book haven with in-house cafe. Free browsing.",
@@ -136,7 +145,10 @@
     "source": "curated_books",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJrwYgNBTJ5zsR0o3P9sBG0QE",
+    "gmaps_address": "St Paul Media Complex, Rd Number 24, opp. Duruelo Convent School, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-peoples-free-reading-room",
@@ -171,7 +183,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Public Access",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJqUaGGSDO5zsRiCNGxb7FIN8",
+    "gmaps_address": "Jagannath Shankar Seth Rd, opp. Metro Inox Cinemas, Dhobi Talao, Sonapur, Marine Lines, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-wayword-and-wise",
@@ -183,8 +198,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Ballard Estate, Fort",
-    "latitude": 18.9348,
-    "longitude": 72.8402,
+    "latitude": 18.937609,
+    "longitude": 72.836755,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Peaceful indoor sanctuary. Well-lit cobblestone heritage district.",
@@ -204,7 +219,10 @@
     "photo_url": "https://images.unsplash.com/photo-1507842229451-7f01be8610ce?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVX5nir7R5zsRZZaP2sPLBAQ",
+    "gmaps_address": "Strategic House, 44, Mint Rd, Borabazar Precinct, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-trilogy-library-bandra",
@@ -216,8 +234,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0622,
-    "longitude": 72.8285,
+    "latitude": 19.05806,
+    "longitude": 72.822311,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Tranquil reading lounge. Respectful silence expected.",
@@ -237,7 +255,10 @@
     "photo_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJg-khxYvO5zsR8CqisIHBX6A",
+    "gmaps_address": "1 Carter Road, Chimbai, behind BMC Pump House, near Joggers Park, Koliwada, W, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-granth-bookstore-juhu",
@@ -249,8 +270,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Juhu",
-    "latitude": 19.1028,
-    "longitude": 72.8265,
+    "latitude": 19.087196,
+    "longitude": 72.827207,
     "access_type": "commercial",
     "safety_level": "high",
     "safety_notes": "Quiet two-story bookstore in residential Juhu lane.",
@@ -270,7 +291,10 @@
     "photo_url": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "pocket_friendly",
     "approx_cost": "Free entry (Books from ₹100)",
-    "price_level": 1
+    "price_level": 1,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJpaKJ2LnJ5zsRWKXbf5qsQlM",
+    "gmaps_address": "H M House, Plot No 30/A, Juhu Tara Rd, near Maneckji Cooper School, Chandrabai Nagar, Santacruz (West), Mumbai, Maharashtra 400049, India"
   },
   {
     "id": "mumbai-max-mueller-bhavan-library",

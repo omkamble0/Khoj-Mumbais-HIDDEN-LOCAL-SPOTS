@@ -9,8 +9,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Girgaon",
-    "latitude": 18.9536,
-    "longitude": 72.8197,
+    "latitude": 18.95564,
+    "longitude": 72.820307,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Residential heritage neighbourhood. Respect residents' privacy and keep voices low.",
@@ -32,7 +32,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ00ka3RDO5zsR2KuwjM9mj0E",
+    "gmaps_address": "Khotachiwadi, Girgaon, Mumbai, Maharashtra 400004, India"
   },
   {
     "id": "mumbai-sassoon-docks-art",
@@ -67,7 +70,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJCWkEg5bR5zsRpPydldURcBk",
+    "gmaps_address": "Azad Nagar, Colaba, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-sewri-cemetery-vaults",
@@ -79,8 +85,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sewri West",
-    "latitude": 18.9954,
-    "longitude": 72.8532,
+    "latitude": 19.000434,
+    "longitude": 72.851632,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Sacred memorial grounds. Speak quietly. Respect grave markers.",
@@ -102,7 +108,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJGYrSVx3P5zsR5Q63yY5avEY",
+    "gmaps_address": "Sakharam Lanjekar Marg, Sewri West, Shivaji Nagar, Sewri, Mumbai, Maharashtra 400015, India"
   },
   {
     "id": "mumbai-portuguese-church-dadar",
@@ -114,8 +123,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Dadar West",
-    "latitude": 19.0221,
-    "longitude": 72.8368,
+    "latitude": 19.018624,
+    "longitude": 72.836241,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Active church and civic architecture monument. Quiet respectful visits.",
@@ -137,7 +146,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJD8Jr8bnP5zsRuObbx1AdEUU",
+    "gmaps_address": "Our Lady of Salvation Church, Portuguese Church, Gokhale Rd, Omkar Society, West, Dadar, Mumbai, Maharashtra 400028, India"
   },
   {
     "id": "mumbai-matharpacady-village",
@@ -149,8 +161,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mazgaon",
-    "latitude": 18.9712,
-    "longitude": 72.8445,
+    "latitude": 18.971246,
+    "longitude": 72.842143,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Residential heritage precinct with narrow lanes. Speak softly and respect residents.",
@@ -172,7 +184,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJBaEB3UjO5zsRmooM0i1X6Fc",
+    "gmaps_address": "Matharpacady Village Well, Dockyard, Thakkar Estate, Byculla, Mumbai, Maharashtra 400010"
   },
   {
     "id": "mumbai-mani-bhavan-gamdevi",
@@ -207,7 +222,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVVURaQzO5zsR_Tn4kfd1scA",
+    "gmaps_address": "Mani Bhavan, 19, Laburnum Rd, Babulnath, Gamdevi, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-bhau-daji-lad-museum",
@@ -240,7 +258,10 @@
     "photo_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJr3COQlvO5zsRBS4MFGze73k",
+    "gmaps_address": "91 A, Rani Baug, Veer Mata Jijbai Bhonsle Udyan, 91 A, Dr Babasaheb Ambedkar Rd, Byculla East, Byculla, Mumbai, Maharashtra 400027, India"
   },
   {
     "id": "mumbai-st-thomas-cathedral",
@@ -273,7 +294,10 @@
     "photo_url": "https://images.unsplash.com/photo-1548625361-195fe57876a8?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJU5P-qdzR5zsR6SylFFDnNbc",
+    "gmaps_address": "3, Veer Nariman Rd, near Bombay House, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-hasnabad-dargah-mazgaon",
@@ -285,8 +309,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Mazgaon",
-    "latitude": 18.9667,
-    "longitude": 72.8423,
+    "latitude": 18.97335,
+    "longitude": 72.839394,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Sacred site. Shoes removed before marble terrace. Peaceful contemplation.",
@@ -306,7 +330,10 @@
     "photo_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free Public Heritage",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJbRE58UXO5zsRB8NJVTycoVY",
+    "gmaps_address": "Hasnabad Dargah, Anjeerwadi Road, Byculla East, Mazgaon, Mumbai, Maharashtra 400010, India"
   },
   {
     "id": "mmr-ambarnath-shiva-temple",

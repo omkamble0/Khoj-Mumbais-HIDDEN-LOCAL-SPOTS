@@ -1,0 +1,820 @@
+{
+  "Chor Bazaar Mutton Street, Kumbharwada Mumbai India": {
+    "id": "ChIJr6Jh-R7P5zsRZWFXrjNFc-4",
+    "name": "Chor Bazaar",
+    "address": "206, Mutton St, Ajmer, Kumbharwada, Mumbai, Maharashtra 400003, India",
+    "latitude": 18.9590354,
+    "longitude": 72.8299277,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Dadar Flower Market Dadar West Mumbai India": {
+    "id": "ChIJ8X9h-j3P5zsR77sUKDDc-lU",
+    "name": "Flower Market Dadar",
+    "address": "2R8R+XJX, Tilak Brg, Lokmanya Tilak Colony, Dadar, Mumbai, Maharashtra 400028, India",
+    "latitude": 19.0174154,
+    "longitude": 72.8415806,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Colaba Causeway Arcades Colaba Mumbai India": {
+    "id": "ChIJn079zr_R5zsR3Ghy0UQ2dCM",
+    "name": "Colaba Market",
+    "address": "Adenwala Rd, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.920717,
+    "longitude": 72.830649,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Crawford Market Dhobi Talao / Fort Mumbai India": {
+    "id": "ChIJuSs1tibO5zsRd7UYv0MBo4c",
+    "name": "Crawford Market",
+    "address": "Crawford Market, Lokmanya Tilak Rd, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.947614599999998,
+    "longitude": 72.8342861
+  },
+  "Mangaldas Market Kalbadevi / Marine Lines Mumbai India": {
+    "id": "ChIJr7KRXiHO5zsRo4ChHkK1wAk",
+    "name": "Mangaldas Market",
+    "address": "Mangaldas Market, 103/A2, Sheikh Memon St, Lohar Chawl, Kalbadevi, Mumbai, Maharashtra 400002, India",
+    "latitude": 18.9483235,
+    "longitude": 72.8325856
+  },
+  "Lalbaug Mirchi Galli Lalbaug, Parel Mumbai India": {
+    "id": "ChIJCd4ILjDP5zsRF0GxKixLyYI",
+    "name": "Lalbaug Masalawale | Best Masala In Lalbaug| Best Customised Masala In Mumbai",
+    "address": "Masala gully, 1/2, Dinshaw Petit Rd, opp. Narayan Udyog Bhavan, Shree Ganesh Nagar, Lal Baug, Parel, Mumbai, Maharashtra 400012, India",
+    "latitude": 18.990611299999998,
+    "longitude": 72.8380378,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Kitab Khana Flora Fountain, Fort Mumbai India": {
+    "id": "ChIJVVVltNzR5zsRcUGbr8YTw8s",
+    "name": "Kitab Khana",
+    "address": "Somaiya Bhavan, 45/47, Mahatma Gandhi Road, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9319758,
+    "longitude": 72.83186280000001,
+    "businessStatus": "OPERATIONAL"
+  },
+  "David Sassoon Library Kala Ghoda, Fort Mumbai India": {
+    "id": "ChIJH1q0mNnR5zsRobU5vgJwQLU",
+    "name": "David Sassoon Library and Reading Room",
+    "address": "152, Mahatma Gandhi Road, Off David Sassoon, Library Marg, opposite Jehangir Art Gallery, Kala Ghoda, Fort, Mumbai, Maharashtra 400032, India",
+    "latitude": 18.9277144,
+    "longitude": 72.83109139999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Asiatic Society Library Fort Mumbai India": {
+    "id": "ChIJ34AWLdvR5zsR-dMSwVoB5Cw",
+    "name": "The Asiatic Society, Mumbai",
+    "address": "Town Hall, Shahid Bhagat Singh Rd, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.931848600000002,
+    "longitude": 72.8357996,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Title Waves Bandra West Mumbai India": {
+    "id": "ChIJrwYgNBTJ5zsR0o3P9sBG0QE",
+    "name": "Title Waves",
+    "address": "St Paul Media Complex, Rd Number 24, opp. Duruelo Convent School, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0609666,
+    "longitude": 72.83231810000001,
+    "businessStatus": "OPERATIONAL"
+  },
+  "People's Free Reading Room Dhobi Talao / Marine Lines Mumbai India": {
+    "id": "ChIJqUaGGSDO5zsRiCNGxb7FIN8",
+    "name": "The People's Free Reading",
+    "address": "Jagannath Shankar Seth Rd, opp. Metro Inox Cinemas, Dhobi Talao, Sonapur, Marine Lines, Mumbai, Maharashtra 400002, India",
+    "latitude": 18.9436779,
+    "longitude": 72.8286206,
+    "businessStatus": "CLOSED_TEMPORARILY"
+  },
+  "Subko Coffee Roasters Chapel Road, Bandra West Mumbai India": {
+    "id": "ChIJQ_5UeoXJ5zsR__eCJdbHoiQ",
+    "name": "Mary Lodge by Subko",
+    "address": "Ground Floor, Mary Lodge, 21A, Chapel Rd, next to Saba Heritage building, Ranwar, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0531629,
+    "longitude": 72.83001999999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Kyani & Co. Marine Lines Mumbai India": {
+    "id": "ChIJKQZB3mzO5zsRPQXFAff0kh8",
+    "name": "Kyani & CO.",
+    "address": "Jer Mahal Building, 657, Jagannath Shankar Seth Rd, opp. Metro Inox Theatre, Marine Lines East, Dhobi Talao, Estate, Marine Lines, Mumbai, Maharashtra 400002, India",
+    "latitude": 18.9440726,
+    "longitude": 72.8287473,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Prithvi Café Juhu Mumbai India": {
+    "id": "ChIJo49oV-rJ5zsRvNAzcQLkwO8",
+    "name": "Prithvi Cafe",
+    "address": "Apartment, Alongside, Prithvi Theatre, 20, Juhu Rd, Janki Kutir, Juhu, Mumbai, Maharashtra 400049, India",
+    "latitude": 19.1063236,
+    "longitude": 72.8256785,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Britannia & Co. Ballard Estate, Fort Mumbai India": {
+    "id": "ChIJSaimqk3O5zsR2pSEZSCzbcs",
+    "name": "Britannia & Company",
+    "address": "Wakefield House, 11 16, SS Ram Gulam Marg, opp. New Indian Customs House, Ballard Estate, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9345684,
+    "longitude": 72.8402979,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Candies Pali Hill, Bandra West Mumbai India": {
+    "id": "ChIJi1NRO2vJ5zsR_sA0_utO260",
+    "name": "Candies",
+    "address": "5AA, Pali Hill, next to Learners Academy School, Bandra (W, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0609551,
+    "longitude": 72.8269148,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Yazdani Bakery Fort Mumbai India": {
+    "id": "ChIJT5ECn9zR5zsRsz6VlRO2V7s",
+    "name": "Yazdani Restaurant & Bakery",
+    "address": "11A, Cawasji Patel St, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.933201099999998,
+    "longitude": 72.8336293,
+    "businessStatus": "CLOSED_TEMPORARILY"
+  },
+  "Bambaiya Coffee Co. Chimbai, Bandra West Mumbai India": {
+    "id": "ChIJ92SOsRbJ5zsRayZvsCJ7GkE",
+    "name": "Bombay Coffee House",
+    "address": "Neelkamal Building, 248, Waterfield Road, opposite National College, Khar, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0632296,
+    "longitude": 72.83475849999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Blue Tokai Coffee Laxmi Mills Mahalaxmi / Shakti Mills Mumbai India": {
+    "id": "ChIJAfeHIwDJ5zsRsbWcnDublOQ",
+    "name": "Blue Tokai Coffee Roasters",
+    "address": "Shop No 8, G8 Duplex, PN 6/7, Mahal Industrial Estate, Old, Mahakali Caves Rd, Gundavali, Andheri E, Mumbai, Maharashtra 400093, India",
+    "latitude": 19.120694399999998,
+    "longitude": 72.8638512,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Mockingbird Cafe Bar Churchgate Mumbai India": {
+    "id": "ChIJxY2uoefR5zsRXJcn_xo_D0c",
+    "name": "Mockingbird Cafe Bar",
+    "address": "80, Veer Nariman Rd, Churchgate, Mumbai, Maharashtra 400020, India",
+    "latitude": 18.9335015,
+    "longitude": 72.82627500000001,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Kala Ghoda Cafe Kala Ghoda, Fort Mumbai India": {
+    "id": "ChIJuSeZCsPR5zsRI0vnqPEX-JM",
+    "name": "Kala Ghoda Cafe",
+    "address": "10, Rope Walk Ln, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9284954,
+    "longitude": 72.8322067,
+    "businessStatus": "OPERATIONAL"
+  },
+  "B. Merwan & Co. Grant Road East Mumbai India": {
+    "id": "ChIJSTyBHgDP5zsRk5kpPJi4xS8",
+    "name": "B. Merwan & Co.",
+    "address": "next to Mallam Terrace, near B.MERWAN HOTEL, Pannalal Terrace, Grant Road East, Bharat Nagar, Grant Road, Mumbai, Maharashtra 400007, India",
+    "latitude": 18.9625458,
+    "longitude": 72.81611749999999,
+    "businessStatus": "CLOSED_PERMANENTLY"
+  },
+  "Zen Café Raghuvanshi Mills, Lower Parel Mumbai India": {
+    "id": "ChIJ353HnMnP5zsRS9zx27n6yEg",
+    "name": "Zane's Cafe & Bar",
+    "address": "Todi Mill Compound, Senapati Bapat Marg, opposite Ideal Industrial Estate, Railway Colony, Lower Parel, Mumbai, Maharashtra 400013, India",
+    "latitude": 19.0012553,
+    "longitude": 72.8293676,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Koinonia Coffee Roasters Chuim Village, Khar West Mumbai India": {
+    "notFound": true
+  },
+  "Jehangir Art Gallery Kala Ghoda, Fort Mumbai India": {
+    "id": "ChIJCTBgusPR5zsR9jlWzqv4C3Y",
+    "name": "Jehangir Art Gallery",
+    "address": "161B, Mahatma Gandhi Road, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9273983,
+    "longitude": 72.83168560000001,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Method Bandra Chapel Road, Bandra West Mumbai India": {
+    "id": "ChIJ7xUEwQvJ5zsRZPFR0avlCDU",
+    "name": "Haiku (fka Method Bandra)",
+    "address": "Shop No.5, Pearl Haven, Chapel Rd, St Sebastian Colony, W, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0505612,
+    "longitude": 72.8267888,
+    "businessStatus": "CLOSED_PERMANENTLY"
+  },
+  "Prithvi Theatre Juhu Mumbai India": {
+    "id": "ChIJo49oV-rJ5zsRsvalI8ESNnw",
+    "name": "Prithvi Theatre",
+    "address": "20, Juhu Rd, Janki Kutir, Juhu, Mumbai, Maharashtra 400049, India",
+    "latitude": 19.1059201,
+    "longitude": 72.8257181,
+    "businessStatus": "OPERATIONAL"
+  },
+  "National Gallery of Modern Art Colaba / Fort Mumbai India": {
+    "id": "ChIJBZWe1sPR5zsRzh5wXAiDNwM",
+    "name": "National Gallery of Modern Art",
+    "address": "Jahangir Public Hall, Sir Cowasji, Mahatma Gandhi Road, Mantralaya, Fort, Mumbai, Maharashtra 400032, India",
+    "latitude": 18.9257724,
+    "longitude": 72.83144659999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "TARQ Gallery Fort Mumbai India": {
+    "id": "ChIJD9zqNcHR5zsRvS9r7KwV0hg",
+    "name": "TARQ",
+    "address": "Ground Floor, KK (Navsari) Chambers, 39, AK Nayak Marg, Azad Maidan, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9359395,
+    "longitude": 72.8330127,
+    "businessStatus": "OPERATIONAL"
+  },
+  "ARTISANS' Gallery Kala Ghoda, Fort Mumbai India": {
+    "id": "ChIJ3ZDGpsPR5zsRgEFVHlX7kyA",
+    "name": "ARTISANS’ CENTRE",
+    "address": "52 - 56, Dr, Forbes St, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.928292,
+    "longitude": 72.8325088,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Worli Fort Worli Koliwada Mumbai India": {
+    "id": "ChIJcQEoO7DO5zsRILbfakTZbVI",
+    "name": "Worli Fort",
+    "address": "Worli village, 2RF8+FPM, near worli, Worli Tip, fort, Mumbai, Maharashtra 400030, India",
+    "latitude": 19.0237125,
+    "longitude": 72.8168,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Bandra Fort Land's End, Bandra West Mumbai India": {
+    "id": "ChIJqb2PpU_J5zsRi8rDl8vwfqE",
+    "name": "Lands End Garden",
+    "address": "Lands End Garden, Bandra Fort Trail, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0428463,
+    "longitude": 72.8185506,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Sewri Fort Sewri East Mumbai India": {
+    "id": "ChIJeTBiTgTP5zsRoiRhDO_DFtU",
+    "name": "Sewree Fort",
+    "address": "Sewree Fort, MPT, Sewri, Mumbai, Maharashtra 400015, India",
+    "latitude": 18.999151200000004,
+    "longitude": 72.8600635
+  },
+  "Sion Fort Sion East Mumbai India": {
+    "id": "ChIJd5966M7I5zsRS6DZHR5GLmY",
+    "name": "Sion Hillock Fort",
+    "address": "2VW8+4V9, East, Road No. 1, Sion East, Sion, Mumbai, Maharashtra 400022, India",
+    "latitude": 19.0465923,
+    "longitude": 72.8676819,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Vasai Fort Vasai West Mumbai India": {
+    "id": "ChIJ5RryEQ2u5zsRKD3FQlxsjRc",
+    "name": "Vasai Fort",
+    "address": "Killa Rd, Police Colony, Naigaon West, Naigaon, Vasai-Virar, Maharashtra 401201, India",
+    "latitude": 19.330556599999998,
+    "longitude": 72.8155747,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Belapur Fort CBD Belapur Mumbai India": {
+    "id": "ChIJ_RZzdAjD5zsR2UJfCR5-YmI",
+    "name": "Belapur Fort",
+    "address": "115, Uran Rd, Sector 32, Seawoods, Navi Mumbai, Maharashtra 400614, India",
+    "latitude": 19.0048618,
+    "longitude": 73.0283372,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Madh Fort Madh Island Mumbai India": {
+    "id": "ChIJFQzEN8-15zsRXeJBEkLSHb0",
+    "name": "Madh Island",
+    "address": "Malad, Mumbai, Maharashtra 400061, India",
+    "latitude": 19.1484913,
+    "longitude": 72.7891606,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Arnala Fort Arnala Island Mumbai India": {
+    "id": "ChIJq6qqPr6q5zsRQ6h9OynSwGk",
+    "name": "Arnala Fort",
+    "address": "Arnala, Maharashtra 401302, India",
+    "latitude": 19.4659461,
+    "longitude": 72.7322521,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Ghodbunder Fort Mira-Bhayandar / Ghodbunder Mumbai India": {
+    "id": "ChIJbXylnw2w5zsR0M4OYytwC6k",
+    "name": "Ghodbunder Fort",
+    "address": "Ghodbander Village, Ghodbunder, Mira Bhayandar, Maharashtra 401107, India",
+    "latitude": 19.2961054,
+    "longitude": 72.8883326,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Riwa Fort Kala Killa Dharavi / Mahim Creek Mumbai India": {
+    "id": "ChIJj0R6etrI5zsRBVOUQqmFmyk",
+    "name": "Riwa Fort",
+    "address": "1, Budhiram Seth Chawl, Sion Railway Colony, Kala Qila, Dharavi, Mumbai, Maharashtra 400022, India",
+    "latitude": 19.0467416,
+    "longitude": 72.8644137,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Sagar Upvan Colaba Mumbai India": {
+    "id": "ChIJZauy45bR5zsRsJBnfCz_RNI",
+    "name": "Sagar Upvan Garden",
+    "address": "Azad Nagar, Cuffe Parade, Mumbai, Maharashtra 400005, India",
+    "latitude": 18.9113643,
+    "longitude": 72.823281,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Maharashtra Nature Park Dharavi / Mahim East Mumbai India": {
+    "id": "ChIJMQw-GtvI5zsRwERQp-CzzbQ",
+    "name": "Maharashtra Nature Park",
+    "address": "Sion Bandra Link Road, opp. Bus Depot, Mahim Nature Park, Dharavi, Mumbai, Maharashtra 400017, India",
+    "latitude": 19.0522583,
+    "longitude": 72.86276409999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Horniman Circle Fort Mumbai India": {
+    "id": "ChIJC0DiS9vR5zsRE5JCqe3Y_Ac",
+    "name": "Horniman Circle",
+    "address": "Horniman Circle, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9324029,
+    "longitude": 72.8345896
+  },
+  "Joseph Baptista Garden Mazgaon Mumbai India": {
+    "id": "ChIJsxZ41DfO5zsRSYhTqIRoBrw",
+    "name": "Joseph Baptista Garden",
+    "address": "400010, Dockyard, Ekta Nagar, Mazgaon, Mumbai, Maharashtra 400010, India",
+    "latitude": 18.9664437,
+    "longitude": 72.8424591,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Hanging Gardens Malabar Hill Mumbai India": {
+    "id": "ChIJn3Q-5QnO5zsRmouUzzMGp5Q",
+    "name": "Hanging Garden",
+    "address": "Ridge Rd, Simla Nagar, Malabar Hill, Mumbai, Maharashtra 400006, India",
+    "latitude": 18.9565598,
+    "longitude": 72.80498659999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Bhakti Park Gardens Wadala East Mumbai India": {
+    "id": "ChIJEWuUqkjP5zsRRlIyMHnJFps",
+    "name": "Bhakti Park Udyan",
+    "address": "Wadala East, Bhakti Park, Mumbai, Maharashtra 400037, India",
+    "latitude": 19.0279906,
+    "longitude": 72.8809753,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Soonabai Godrej Marine Ecology Park Vikhroli East Mumbai India": {
+    "id": "ChIJNZure7jH5zsRrn1TJOG0sus",
+    "name": "Godrej & Boyce Manufacturing Company Limited",
+    "address": "Pirojshanagar, Vikhroli East, Mumbai, Maharashtra 400079, India",
+    "latitude": 19.0953935,
+    "longitude": 72.9230196,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Khotachiwadi Girgaon Mumbai India": {
+    "id": "ChIJ00ka3RDO5zsR2KuwjM9mj0E",
+    "name": "Khotachiwadi",
+    "address": "Khotachiwadi, Girgaon, Mumbai, Maharashtra 400004, India",
+    "latitude": 18.955640499999998,
+    "longitude": 72.820307
+  },
+  "Sassoon Docks Colaba Mumbai India": {
+    "id": "ChIJCWkEg5bR5zsRpPydldURcBk",
+    "name": "Sassoon Dock",
+    "address": "Azad Nagar, Colaba, Mumbai, Maharashtra 400005, India",
+    "latitude": 18.9144435,
+    "longitude": 72.8245019,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Sewri Christian Cemetery Sewri West Mumbai India": {
+    "id": "ChIJGYrSVx3P5zsR5Q63yY5avEY",
+    "name": "Sewri Cemetery",
+    "address": "Sakharam Lanjekar Marg, Sewri West, Shivaji Nagar, Sewri, Mumbai, Maharashtra 400015, India",
+    "latitude": 19.0004343,
+    "longitude": 72.85163159999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Portuguese Church Salvation Dadar West Mumbai India": {
+    "id": "ChIJD8Jr8bnP5zsRuObbx1AdEUU",
+    "name": "Our Lady of Salvation Church (Portuguese Church)",
+    "address": "Our Lady of Salvation Church, Portuguese Church, Gokhale Rd, Omkar Society, West, Dadar, Mumbai, Maharashtra 400028, India",
+    "latitude": 19.018623899999998,
+    "longitude": 72.8362406,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Matharpacady Village Mazgaon Mumbai India": {
+    "id": "ChIJBaEB3UjO5zsRmooM0i1X6Fc",
+    "name": "Matharpacady Village Well",
+    "address": "Matharpacady Village Well, Dockyard, Thakkar Estate, Byculla, Mumbai, Maharashtra 400010",
+    "latitude": 18.9712459,
+    "longitude": 72.84214349999999
+  },
+  "Mani Bhavan Laburnum Road, Gamdevi Mumbai India": {
+    "id": "ChIJVVURaQzO5zsR_Tn4kfd1scA",
+    "name": "Mani Bhavan Gandhi Sangrahalaya",
+    "address": "Mani Bhavan, 19, Laburnum Rd, Babulnath, Gamdevi, Mumbai, Maharashtra 400007, India",
+    "latitude": 18.959845299999998,
+    "longitude": 72.8115152,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Mount Mary Basilica Mount Mary, Bandra West Mumbai India": {
+    "id": "ChIJdZ1gmkDJ5zsR-ntV50Ucp9A",
+    "name": "Basilica of Our Lady of the Mount (Bandra, Mumbai)",
+    "address": "2RWC+PM4, Mount Mary Rd, near Shanti Avedna Sadan, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0465581,
+    "longitude": 72.8224747,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Keneseth Eliyahoo Synagogue Kala Ghoda, Fort Mumbai India": {
+    "id": "ChIJaQj5g8PR5zsRP6q-EkQeCUU",
+    "name": "Keneseth Eliyahoo Synagogue",
+    "address": "55, Dr. V.B. Gandhi Marg, Fort, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9281033,
+    "longitude": 72.8325519,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Global Vipassana Pagoda Gorai Creek Mumbai India": {
+    "id": "ChIJx2cgIlix5zsRupjgduNr6Ew",
+    "name": "Global Vipassana Pagoda",
+    "address": "Gorai - Borivali Rd, West, Borivali, Mumbai, Maharashtra 400091, India",
+    "latitude": 19.228203399999998,
+    "longitude": 72.8058891,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Babulnath Temple Girgaon Chowpatty Mumbai India": {
+    "id": "ChIJS1S8ZgnO5zsRnXeeJ5QC7wQ",
+    "name": "Shree Babulnath Mandir, Mumbai",
+    "address": "16, Babulnath Rd, Babulnath, Khareghat Colony, Malabar Hill, Mumbai, Maharashtra 400007, India",
+    "latitude": 18.958776,
+    "longitude": 72.80851679999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Haji Ali Sea Causeway Worli Bay / Mahalaxmi Mumbai India": {
+    "id": "ChIJiSdyySXP5zsRnebHDaW6cQ8",
+    "name": "Haji Ali Sea Face",
+    "address": "XRJ7+68Q, Lala Lajpatrai Marg, Haji Ali Government Colony, Mahalakshmi, Mumbai, Maharashtra 400018, India",
+    "latitude": 18.9805875,
+    "longitude": 72.8133539,
+    "businessStatus": "CLOSED_PERMANENTLY"
+  },
+  "Afghan Church Navy Nagar, Colaba Mumbai India": {
+    "id": "ChIJRVR9ciHP5zsR7MD-vrMueo4",
+    "name": "Afghan Church Colaba",
+    "address": "St. John The Evangelist Church (Afghan Church Duxbury Lane, WR38+VP5, Colaba Causeway, Navy Nagar, Colaba, Mumbai, Maharashtra 400005, India",
+    "latitude": 18.906491,
+    "longitude": 72.816388,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Nipponzan Myohoji Temple Worli Naka Mumbai India": {
+    "id": "ChIJVwcxKonO5zsRzdI4HDBgTJs",
+    "name": "Nipponzan Myohoji Buddhist Temple",
+    "address": "Dr Annie Besant Rd, opp. Poddar Hospital, B Wing, Siddharth Nagar, Worli, Mumbai, Maharashtra 400018, India",
+    "latitude": 19.0007467,
+    "longitude": 72.8157785,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Kanheri Caves Borivali East (SGNP) Mumbai India": {
+    "id": "ChIJbdF34ea55zsRX7kiabN6Z_U",
+    "name": "Kanheri Caves",
+    "address": "Mumbai, Maharashtra 400066, India",
+    "latitude": 19.207860399999998,
+    "longitude": 72.9048071,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Yeoor Hills Upvan, Thane West Mumbai India": {
+    "id": "ChIJBQrl3Qe75zsR01MXjIGr0yg",
+    "name": "Yeoor Hills",
+    "address": "6WFX+QR6, Yeoor Hls Rd, Yeoor, Upvan, Thane West, Thane, Maharashtra 400606, India",
+    "latitude": 19.224419299999997,
+    "longitude": 72.9495151,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Kharghar Hills Sector 5, Kharghar Mumbai India": {
+    "id": "ChIJZ9-tFHrD5zsRwRGlIr5l1Zc",
+    "name": "Kharghar Hills",
+    "address": "Kharghar Hills, Sector 3A, CBD Belapur, Panvel, Maharashtra 400614, India",
+    "latitude": 19.0230469,
+    "longitude": 73.0481071,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Shilonda Nature Trail Sanjay Gandhi National Park, Borivali Mumbai India": {
+    "id": "ChIJlYJEjLOw5zsRAwbz1s5XQN4",
+    "name": "Shilonda Trail",
+    "address": "6VHJ+2M5, National Park Flyover, Rajendra Nagar Society, Borivali, Mumbai, Maharashtra 400066, India",
+    "latitude": 19.2275109,
+    "longitude": 72.88172349999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Pandavkada Foothills Kharghar Mumbai India": {
+    "id": "ChIJ1cKKzrrD5zsRq-E68XJev1I",
+    "name": "Pandavkada Waterfalls",
+    "address": "23M3+5F, Forest Area, Kharghar, Panvel, Maharashtra 410210, India",
+    "latitude": 19.0329959,
+    "longitude": 73.05372,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Yeoor Bamboo Trail Upvan Buffer Zone, Thane West Mumbai India": {
+    "id": "ChIJBQrl3Qe75zsR01MXjIGr0yg",
+    "name": "Yeoor Hills",
+    "address": "6WFX+QR6, Yeoor Hls Rd, Yeoor, Upvan, Thane West, Thane, Maharashtra 400606, India",
+    "latitude": 19.224419299999997,
+    "longitude": 72.9495151,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Gilbert Hill Andheri West Mumbai India": {
+    "id": "ChIJcxbdo9DJ5zsRiTqYo7MrDMk",
+    "name": "Gilbert hill",
+    "address": "Gilbert hill, Sagar City, Andheri West, Mumbai, Maharashtra 400058, India",
+    "latitude": 19.1205717,
+    "longitude": 72.8401933
+  },
+  "Bandra Reclamation Promenade Bandra West Mumbai India": {
+    "id": "ElFCYW5kcmEgUmVjbGFtYXRpb24gUmQsIE1vdW50IE1hcnksIEJhbmRyYSBXZXN0LCBNdW1iYWksIE1haGFyYXNodHJhIDQwMDA1MCwgSW5kaWEiLiosChQKEgm7Ly6QR8nnOxE-ypzeYKMVIRIUChIJwe1EZjDG5zsRaYxkjY_tpF0",
+    "name": "Bandra Reclamation Road",
+    "address": "Bandra Reclamation Rd, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0474458,
+    "longitude": 72.8270635
+  },
+  "Kamala Nehru Park Viewpoint Malabar Hill Mumbai India": {
+    "id": "ChIJvaysoFTP5zsRrfA8pHD55vo",
+    "name": "Kamala Nehru Park",
+    "address": "XR43+2X5, Dadi Sheth Wadi, Malabar Hill, Mumbai, Maharashtra 400006, India",
+    "latitude": 18.9550248,
+    "longitude": 72.8049726,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Parsik Hill CBD Belapur Mumbai India": {
+    "id": "ChIJrwkh3LbD5zsRvSILh9S_2zA",
+    "name": "Parsik Hill",
+    "address": "Parsik Hill, Sector 30, CBD Belapur, Navi Mumbai, Maharashtra 400614, India",
+    "latitude": 19.0261246,
+    "longitude": 73.0320569
+  },
+  "Sewri Jetty Mudflats Sewri East Mumbai India": {
+    "id": "ChIJfWHYQwbP5zsRbOy0YOqalbk",
+    "name": "Sewree Mud-flats",
+    "address": "8, Comed Rambhau Dev Ji Patil Rd, Gandhi Nagar, Sewri, Mumbai, Maharashtra 400015, India",
+    "latitude": 18.9983619,
+    "longitude": 72.8610937,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Khandeshwar Lake Lookout Panvel / Khanda Colony Mumbai India": {
+    "id": "ChIJxx-YtTXo5zsRv72QYum2B90",
+    "name": "Khandeshwar Lake",
+    "address": "Khandeshwar Lake, Park Sight Society, Sector - 2, Greater Khanda, Panvel, Maharashtra 410206, India",
+    "latitude": 19.0110311,
+    "longitude": 73.1089614
+  },
+  "Carter Road Promenade Bandra West Mumbai India": {
+    "id": "EkZTYW5nZWV0IFNhbXJhdCBOYXVzaGFkIEFsaSBSZCwgQmFuZHJhIFdlc3QsIE11bWJhaSwgTWFoYXJhc2h0cmEsIEluZGlhIi4qLAoUChIJqwGa0m3J5zsRgJ4asdM_eJUSFAoSCXvS-CPhyOc7EXhqI5q0lnlD",
+    "name": "Sangeet Samrat Naushad Ali Road",
+    "address": "Sangeet Samrat Naushad Ali Rd, Bandra West, Mumbai, Maharashtra, India",
+    "latitude": 19.0630837,
+    "longitude": 72.8226454
+  },
+  "Five Gardens Matunga Mumbai India": {
+    "id": "ChIJ-2pNhtjP5zsRZVh2mEidMK0",
+    "name": "Godrej Five Gardens, Matunga, Mumbai",
+    "address": "Jame Jamshed Rd, Agrawal Nagar, Matunga East, Mumbai, Maharashtra 400019, India",
+    "latitude": 19.0231377,
+    "longitude": 72.8525437,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Nariman Point Promenade Nariman Point Mumbai India": {
+    "id": "ChIJ229EGhTR5zsRjB3OGFb4ybo",
+    "name": "Nariman Point, Mumbai",
+    "address": "Nariman Point, Mumbai, Maharashtra, India",
+    "latitude": 18.9257027,
+    "longitude": 72.8186357,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Ballard Estate Fort Mumbai India": {
+    "id": "ChIJN75KdtrR5zsRdajmLCwLTdE",
+    "name": "Ballard Estate",
+    "address": "Ballard Estate, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9362296,
+    "longitude": 72.8393669
+  },
+  "Ranwar Village Bandra West Mumbai India": {
+    "id": "ChIJdZ1gmkDJ5zsRawlkRqg7MN8",
+    "name": "Ranwar Village Square",
+    "address": "Ranwar Village Square, Ranwar, Bandra West, Mumbai, Maharashtra 400050",
+    "latitude": 19.053501900000004,
+    "longitude": 72.8272684
+  },
+  "Worli Sea Face Worli Mumbai India": {
+    "id": "ChIJv2zjHpjO5zsRDf0aPt35_uw",
+    "name": "Worli Sea Face",
+    "address": "Worli Sea Face, Worli, Mumbai, Maharashtra 400030, India",
+    "latitude": 19.0091432,
+    "longitude": 72.8157283
+  },
+  "Colaba Woods Cuffe Parade, Colaba Mumbai India": {
+    "id": "ChIJZRcr15PR5zsRSvh3q6p2P8Y",
+    "name": "Colaba Woods Garden",
+    "address": "T.L, Sadhu Vaswani Marg, Police Station, Ganesh Murti Nagar, Cuffe Parade, Mumbai, Maharashtra 400005, India",
+    "latitude": 18.9131213,
+    "longitude": 72.82011039999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Dadar Parsi Colony Dadar East / Matunga Mumbai India": {
+    "id": "ChIJ_5fIqCDP5zsRuC3VsERIVW0",
+    "name": "Parsee Colony",
+    "address": "Parsee Colony, Dadar, Mumbai, Maharashtra, India",
+    "latitude": 19.0187266,
+    "longitude": 72.8522864
+  },
+  "Laburnum Road & Gamdevi Gamdevi / Grant Road Mumbai India": {
+    "id": "EkRHYW1kZXZpIFJkICYgTGFidXJudW0gUmQsIEdhbWRldmksIE11bWJhaSwgTWFoYXJhc2h0cmEgNDAwMDA3LCBJbmRpYSJmImQKFAoSCQG5MDAMzuc7EW-vLcCoYeJaEhQKEgkBuTAwDM7nOxFvry3AqGHiWhoUChIJz8XmRgzO5zsRMSJPutOPApYaFAoSCQvmWW4Mzuc7ESm7GIFNqk4oIgoN8OhMCxXHUWYr",
+    "name": "Gamdevi Road & Laburnum Road",
+    "address": "Gamdevi Rd & Laburnum Rd, Gamdevi, Mumbai, Maharashtra 400007, India",
+    "latitude": 18.9589744,
+    "longitude": 72.8125895
+  },
+  "Jogger's Park Clifftop Walk Carter Road, Bandra West Mumbai India": {
+    "id": "ChIJVTekgmnJ5zsRzFvr0Vq5H_w",
+    "name": "Jogger's Park",
+    "address": "Sangeet Samrat Naushad Ali Rd, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.059534,
+    "longitude": 72.8214028,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Banganga Tank Walkeshwar, Malabar Hill Mumbai India": {
+    "id": "ChIJZ8gTGfrN5zsR0KBy74Kv6D8",
+    "name": "Banganga Tank",
+    "address": "Banganga Tank, Teen Batti, Malabar Hill, Mumbai, Maharashtra 400006",
+    "latitude": 18.9454723,
+    "longitude": 72.79364319999999
+  },
+  "Priyadarshini Park Nepean Sea Road Mumbai India": {
+    "id": "ChIJw3rpD-HN5zsRGYkrTonj-Rk",
+    "name": "Priyadarshini Park",
+    "address": "Nepean Sea Rd, Malabar Hill, Mumbai, Maharashtra 400006, India",
+    "latitude": 18.957066599999997,
+    "longitude": 72.7989051,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Bandstand Tidepools Bandra West Mumbai India": {
+    "id": "ChIJnVPmO5TJ5zsR4WJp_7W_awo",
+    "name": "The Bandstand Promenade",
+    "address": "Ranwar, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.0495707,
+    "longitude": 72.8207302,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Manori Beach Manori / Gorai Mumbai India": {
+    "id": "ChIJqz10Mwu05zsRtlQGBA3qhM0",
+    "name": "Manori Beach",
+    "address": "Manori Beach, Mumbai, Maharashtra 400095, India",
+    "latitude": 19.2098721,
+    "longitude": 72.78081019999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Powai Lake Promontory Powai Mumbai India": {
+    "id": "ChIJK9I5-PvH5zsRZSoBRFQ6ck8",
+    "name": "Powai Lake",
+    "address": "4WG3+WW5, Lake, IIT Area, Powai, Mumbai, Maharashtra 400076, India",
+    "latitude": 19.1272655,
+    "longitude": 72.9048498,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Aksa Beach Grove Malad West / Aksa Mumbai India": {
+    "id": "ChIJM9wIeQC15zsRGRAyYNKap7U",
+    "name": "Aksa",
+    "address": "22, Axa Bch Rd, Dharvali, Aksa Gaon, Malad West, Mumbai, Maharashtra 400095, India",
+    "latitude": 19.1729005,
+    "longitude": 72.7943086,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Erangal Beach Dunes Erangal, Madh Island Mumbai India": {
+    "id": "ChIJu-39c8m15zsRTGU9vIP9NgM",
+    "name": "Erangal Beach",
+    "address": "5Q6M+GH5, Erangal Gaon, Madh, Mumbai, Maharashtra 400061, India",
+    "latitude": 19.1612521,
+    "longitude": 72.7839943,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Wayword & Wise Ballard Estate, Fort Mumbai India": {
+    "id": "ChIJVX5nir7R5zsRZZaP2sPLBAQ",
+    "name": "Wayword and Wise",
+    "address": "Strategic House, 44, Mint Rd, Borabazar Precinct, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.937608900000004,
+    "longitude": 72.8367553,
+    "businessStatus": "CLOSED_PERMANENTLY"
+  },
+  "Trilogy Curated Library Bandra West Mumbai India": {
+    "id": "ChIJg-khxYvO5zsR8CqisIHBX6A",
+    "name": "Trilogy Curated Bookshop and Library",
+    "address": "1 Carter Road, Chimbai, behind BMC Pump House, near Joggers Park, Koliwada, W, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.058059699999998,
+    "longitude": 72.8223114,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Granth Book Store Juhu Mumbai India": {
+    "id": "ChIJpaKJ2LnJ5zsRWKXbf5qsQlM",
+    "name": "Granth Book Store",
+    "address": "H M House, Plot No 30/A, Juhu Tara Rd, near Maneckji Cooper School, Chandrabai Nagar, Santacruz (West), Mumbai, Maharashtra 400049, India",
+    "latitude": 19.0871963,
+    "longitude": 72.8272068,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Dr. Bhau Daji Lad Museum Byculla East Mumbai India": {
+    "id": "ChIJr3COQlvO5zsRBS4MFGze73k",
+    "name": "Dr. Bhau Daji Lad Museum",
+    "address": "91 A, Rani Baug, Veer Mata Jijbai Bhonsle Udyan, 91 A, Dr Babasaheb Ambedkar Rd, Byculla East, Byculla, Mumbai, Maharashtra 400027, India",
+    "latitude": 18.978988899999997,
+    "longitude": 72.8348153,
+    "businessStatus": "CLOSED_PERMANENTLY"
+  },
+  "St. Thomas Cathedral Horniman Circle, Fort Mumbai India": {
+    "id": "ChIJU5P-qdzR5zsR6SylFFDnNbc",
+    "name": "St. Thomas’ Cathedral ( C.N.I ), Mumbai",
+    "address": "3, Veer Nariman Rd, near Bombay House, Kala Ghoda, Fort, Mumbai, Maharashtra 400001, India",
+    "latitude": 18.9319003,
+    "longitude": 72.8336849,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Hasnabad Dargah Mumbai's Taj Mazgaon Mumbai India": {
+    "id": "ChIJbRE58UXO5zsRB8NJVTycoVY",
+    "name": "Hasnabad Dargah",
+    "address": "Hasnabad Dargah, Anjeerwadi Road, Byculla East, Mazgaon, Mumbai, Maharashtra 400010, India",
+    "latitude": 18.9733505,
+    "longitude": 72.8393936,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Cavel Heritage Hamlet Kalbadevi / Chira Bazaar Mumbai India": {
+    "id": "ChIJk9iYphjO5zsRsbx1iDBl3r4",
+    "name": "Church of Our Lady of Health",
+    "address": "Dr Viegas St, Marine Lines East, Chira Bazaar, Kalbadevi, Mumbai, Maharashtra 400002, India",
+    "latitude": 18.949106099999998,
+    "longitude": 72.82771199999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Oval Maidan Palm Walk Churchgate / Fort Mumbai India": {
+    "id": "ChIJv3kUlsLR5zsRe6h9mMDeAmM",
+    "name": "Oval Maidan",
+    "address": "140, महर्षी कर्वे, रोड, Mantralaya, Churchgate, Mumbai, Maharashtra 400032, India",
+    "latitude": 18.9296227,
+    "longitude": 72.8288877,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Chimbai Coastal Alleyways Bandra West Mumbai India": {
+    "id": "ChIJtQ3kA9fJ5zsRYuA11WJkidk",
+    "name": "Chimbai Jetty",
+    "address": "3R5F+279, 61, Chimbai Village, Bandra West, Mumbai, Maharashtra 400050, India",
+    "latitude": 19.056565199999998,
+    "longitude": 72.82185539999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Nirvana Park Hiranandani, Powai Mumbai India": {
+    "id": "ChIJ44tO5-_H5zsRXmO2BHACyoE",
+    "name": "BMC Chatrapati shivaji Maharaj udyan Nirvana Park",
+    "address": "G.M. Nirvana Park, M.C, Central Ave, Hiranandani Gardens, Panchkutir Ganesh Nagar, Powai, Mumbai, Maharashtra 400076, India",
+    "latitude": 19.1224357,
+    "longitude": 72.9118562,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Amarsons Coastal Garden Breach Candy Mumbai India": {
+    "id": "ChIJP5pbxdjN5zsRgH7awruUryk",
+    "name": "Amarsons Garden",
+    "address": "76, Bhulabhai Desai Rd, Breach Candy, Cumballa Hill, Mumbai, Maharashtra 400026, India",
+    "latitude": 18.969620199999998,
+    "longitude": 72.80224849999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Diamond Garden NG Acharya Udyan Chembur Central Mumbai India": {
+    "id": "ChIJwVJLJwPG5zsRx_VaYzos6Qw",
+    "name": "Deshbhakt N. G. Acharya Udyan-Diamond Garden Chembur",
+    "address": "Basant Garden, Chembur, Mumbai, Maharashtra 400071, India",
+    "latitude": 19.05181,
+    "longitude": 72.901832,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Worli Koliwada Jetty Worli Koliwada Mumbai India": {
+    "id": "ChIJQT40HgDP5zsRIJykIcDer4U",
+    "name": "Worli Koliwada jetty",
+    "address": "2RG8+F54, Koliwada, Worli, Mumbai, Maharashtra 400030, India",
+    "latitude": 19.0261477,
+    "longitude": 72.8154452,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Pirwadi Coastal Lookout Uran Coast Mumbai India": {
+    "id": "ChIJQVj8nxja5zsRLAMlD0ylzhQ",
+    "name": "Pirwadi Beach",
+    "address": "VW4F+RC9, Pirwad Rd, Pirwadi, Nagaon, Uran, Nagaon, Maharashtra 400702, India",
+    "latitude": 18.8570317,
+    "longitude": 72.92361369999999,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Marve Casuarina Grove Malad West / Marve Mumbai India": {
+    "id": "ChIJ7eN3lL225zsRkuf7VF5QmGs",
+    "name": "Marve View Building",
+    "address": "26, Marve Rd, Malad, Rathodi, Malad West, Mumbai, Maharashtra 400095, India",
+    "latitude": 19.1956311,
+    "longitude": 72.8203559,
+    "businessStatus": "OPERATIONAL"
+  },
+  "Gorai Creek Mangrove Pier Borivali West / Gorai Mumbai India": {
+    "id": "ChIJ1Vs1yXmx5zsRO5ybIjYqOIY",
+    "name": "Gorai jetty",
+    "address": "6RMF+9H5, Gorai Khadi Road, Essel world Amusement Park, Borivali West, Mumbai, Maharashtra 400091, India",
+    "latitude": 19.233376,
+    "longitude": 72.823994,
+    "businessStatus": "OPERATIONAL"
+  }
+}

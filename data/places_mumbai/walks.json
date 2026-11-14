@@ -9,8 +9,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0645,
-    "longitude": 72.8252,
+    "latitude": 19.063084,
+    "longitude": 72.822645,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Lit coastal walking track. Best during high tide mornings.",
@@ -32,7 +32,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "EkZTYW5nZWV0IFNhbXJhdCBOYXVzaGFkIEFsaSBSZCwgQmFuZHJhIFdlc3QsIE11bWJhaSwgTWFoYXJhc2h0cmEsIEluZGlhIi4qLAoUChIJqwGa0m3J5zsRgJ4asdM_eJUSFAoSCXvS-CPhyOc7EXhqI5q0lnlD",
+    "gmaps_address": "Sangeet Samrat Naushad Ali Rd, Bandra West, Mumbai, Maharashtra, India"
   },
   {
     "id": "mumbai-five-gardens-walk",
@@ -44,8 +47,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Matunga",
-    "latitude": 19.0197,
-    "longitude": 72.8538,
+    "latitude": 19.023138,
+    "longitude": 72.852544,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Peaceful leafy residential area with wide pedestrian paths.",
@@ -67,7 +70,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ-2pNhtjP5zsRZVh2mEidMK0",
+    "gmaps_address": "Jame Jamshed Rd, Agrawal Nagar, Matunga East, Mumbai, Maharashtra 400019, India"
   },
   {
     "id": "mumbai-marine-drive-southern-walk",
@@ -79,8 +85,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Nariman Point",
-    "latitude": 18.9248,
-    "longitude": 72.8205,
+    "latitude": 18.925703,
+    "longitude": 72.818636,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Well-guarded public promenade. Ample seating benches.",
@@ -102,7 +108,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ229EGhTR5zsRjB3OGFb4ybo",
+    "gmaps_address": "Nariman Point, Mumbai, Maharashtra, India"
   },
   {
     "id": "mumbai-ballard-estate-walk",
@@ -137,7 +146,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJN75KdtrR5zsRdajmLCwLTdE",
+    "gmaps_address": "Ballard Estate, Fort, Mumbai, Maharashtra 400001, India"
   },
   {
     "id": "mumbai-ranwar-village-walk",
@@ -149,8 +161,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0528,
-    "longitude": 72.8295,
+    "latitude": 19.053502,
+    "longitude": 72.827268,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Pedestrian village alleyways. Respect residents' private verandas.",
@@ -172,7 +184,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJdZ1gmkDJ5zsRawlkRqg7MN8",
+    "gmaps_address": "Ranwar Village Square, Ranwar, Bandra West, Mumbai, Maharashtra 400050"
   },
   {
     "id": "mumbai-worli-sea-face-walk",
@@ -184,8 +199,8 @@
     "spot_tier": "iconic",
     "city": "Mumbai",
     "neighborhood": "Worli",
-    "latitude": 19.0142,
-    "longitude": 72.8135,
+    "latitude": 19.009143,
+    "longitude": 72.815728,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Wide lighted coastal path with ample seating benches. Safe late into the night.",
@@ -207,7 +222,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJv2zjHpjO5zsRDf0aPt35_uw",
+    "gmaps_address": "Worli Sea Face, Worli, Mumbai, Maharashtra 400030, India"
   },
   {
     "id": "mumbai-colaba-woods-forest-walk",
@@ -219,8 +237,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Cuffe Parade, Colaba",
-    "latitude": 18.9114,
-    "longitude": 72.8182,
+    "latitude": 18.913121,
+    "longitude": 72.82011,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Maintained green belt with gravel tracks. Nominal civic garden rules.",
@@ -242,7 +260,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJZRcr15PR5zsRSvh3q6p2P8Y",
+    "gmaps_address": "T.L, Sadhu Vaswani Marg, Police Station, Ganesh Murti Nagar, Cuffe Parade, Mumbai, Maharashtra 400005, India"
   },
   {
     "id": "mumbai-dadar-parsi-colony-walk",
@@ -277,7 +298,10 @@
     "source": "curated_walks",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ_5fIqCDP5zsRuC3VsERIVW0",
+    "gmaps_address": "Parsee Colony, Dadar, Mumbai, Maharashtra, India"
   },
   {
     "id": "mumbai-gamdevi-laburnum-walk",
@@ -289,8 +313,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Gamdevi / Grant Road",
-    "latitude": 18.9612,
-    "longitude": 72.8124,
+    "latitude": 18.958974,
+    "longitude": 72.81259,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Tranquil residential avenue with wide pedestrian footpaths. Zero honking.",
@@ -312,7 +336,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "EkRHYW1kZXZpIFJkICYgTGFidXJudW0gUmQsIEdhbWRldmksIE11bWJhaSwgTWFoYXJhc2h0cmEgNDAwMDA3LCBJbmRpYSJmImQKFAoSCQG5MDAMzuc7EW-vLcCoYeJaEhQKEgkBuTAwDM7nOxFvry3AqGHiWhoUChIJz8XmRgzO5zsRMSJPutOPApYaFAoSCQvmWW4Mzuc7ESm7GIFNqk4oIgoN8OhMCxXHUWYr",
+    "gmaps_address": "Gamdevi Rd & Laburnum Rd, Gamdevi, Mumbai, Maharashtra 400007, India"
   },
   {
     "id": "mumbai-joggers-park-clifftop",
@@ -324,8 +351,8 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Carter Road, Bandra West",
-    "latitude": 19.0618,
-    "longitude": 72.8244,
+    "latitude": 19.059534,
+    "longitude": 72.821403,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Maintained coastal park with dual clay and paved running tracks.",
@@ -347,7 +374,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJVTekgmnJ5zsRzFvr0Vq5H_w",
+    "gmaps_address": "Sangeet Samrat Naushad Ali Rd, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-cavel-village-lanes",
@@ -380,7 +410,10 @@
     "photo_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJk9iYphjO5zsRsbx1iDBl3r4",
+    "gmaps_address": "Dr Viegas St, Marine Lines East, Chira Bazaar, Kalbadevi, Mumbai, Maharashtra 400002, India"
   },
   {
     "id": "mumbai-oval-maidan-promenade",
@@ -413,7 +446,10 @@
     "photo_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJv3kUlsLR5zsRe6h9mMDeAmM",
+    "gmaps_address": "140, महर्षी कर्वे, रोड, Mantralaya, Churchgate, Mumbai, Maharashtra 400032, India"
   },
   {
     "id": "mumbai-chimbai-koliwada-walk",
@@ -425,8 +461,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Bandra West",
-    "latitude": 19.0565,
-    "longitude": 72.8242,
+    "latitude": 19.056565,
+    "longitude": 72.821855,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Active fishermen village. Wear comfortable walking shoes on stone ramps.",
@@ -446,7 +482,10 @@
     "photo_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJtQ3kA9fJ5zsRYuA11WJkidk",
+    "gmaps_address": "3R5F+279, 61, Chimbai Village, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "navi-mumbai-airoli-mangrove-boardwalk",

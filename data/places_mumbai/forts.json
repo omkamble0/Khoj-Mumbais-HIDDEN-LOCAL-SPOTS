@@ -9,7 +9,7 @@
     "spot_tier": "underrated",
     "city": "Mumbai",
     "neighborhood": "Worli Koliwada",
-    "latitude": 19.0252,
+    "latitude": 19.023712,
     "longitude": 72.8168,
     "access_type": "public",
     "safety_level": "high",
@@ -32,7 +32,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJcQEoO7DO5zsRILbfakTZbVI",
+    "gmaps_address": "Worli village, 2RF8+FPM, near worli, Worli Tip, fort, Mumbai, Maharashtra 400030, India"
   },
   {
     "id": "mumbai-castella-de-aguada",
@@ -67,7 +70,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJqb2PpU_J5zsRi8rDl8vwfqE",
+    "gmaps_address": "Lands End Garden, Bandra Fort Trail, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, India"
   },
   {
     "id": "mumbai-sewri-fort-mangrove",
@@ -102,7 +108,10 @@
     "source": "curated_nature",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJeTBiTgTP5zsRoiRhDO_DFtU",
+    "gmaps_address": "Sewree Fort, MPT, Sewri, Mumbai, Maharashtra 400015, India"
   },
   {
     "id": "mumbai-sion-hillock-fort",
@@ -114,8 +123,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Sion East",
-    "latitude": 19.0463,
-    "longitude": 72.8637,
+    "latitude": 19.046592,
+    "longitude": 72.867682,
     "access_type": "public",
     "safety_level": "high",
     "safety_notes": "Maintained by ASI with garden pathways. Gates close at sundown.",
@@ -137,7 +146,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJd5966M7I5zsRS6DZHR5GLmY",
+    "gmaps_address": "2VW8+4V9, East, Road No. 1, Sion East, Sion, Mumbai, Maharashtra 400022, India"
   },
   {
     "id": "mumbai-vasai-fort-quiet-bastions",
@@ -172,7 +184,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ5RryEQ2u5zsRKD3FQlxsjRc",
+    "gmaps_address": "Killa Rd, Police Colony, Naigaon West, Naigaon, Vasai-Virar, Maharashtra 401201, India"
   },
   {
     "id": "mumbai-belapur-fort-hill",
@@ -184,8 +199,8 @@
     "spot_tier": "hidden_gem",
     "city": "Navi Mumbai",
     "neighborhood": "CBD Belapur",
-    "latitude": 19.0189,
-    "longitude": 73.0381,
+    "latitude": 19.004862,
+    "longitude": 73.028337,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Gentle uphill trail. Lighted nearby but daytime visits recommended.",
@@ -207,7 +222,10 @@
     "source": "curated_heritage",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJ_RZzdAjD5zsR2UJfCR5-YmI",
+    "gmaps_address": "115, Uran Rd, Sector 32, Seawoods, Navi Mumbai, Maharashtra 400614, India"
   },
   {
     "id": "mumbai-madh-fort-ruins",
@@ -219,8 +237,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Madh Island",
-    "latitude": 19.1308,
-    "longitude": 72.7981,
+    "latitude": 19.148491,
+    "longitude": 72.789161,
     "access_type": "permissive",
     "safety_level": "medium",
     "safety_notes": "Secluded fishing coast. Best viewed from beach perimeter; rocky shores.",
@@ -242,7 +260,10 @@
     "source": "curated_forts",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJFQzEN8-15zsRXeJBEkLSHb0",
+    "gmaps_address": "Malad, Mumbai, Maharashtra 400061, India"
   },
   {
     "id": "mumbai-arnala-sea-fort",
@@ -254,8 +275,8 @@
     "spot_tier": "hidden_gem",
     "city": "Palghar / Virar",
     "neighborhood": "Arnala Island",
-    "latitude": 19.4678,
-    "longitude": 72.7336,
+    "latitude": 19.465946,
+    "longitude": 72.732252,
     "access_type": "trail_required",
     "safety_level": "medium",
     "safety_notes": "Reached by short passenger ferry from Arnala beach. Wear walking footwear.",
@@ -277,7 +298,10 @@
     "source": "curated_forts",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJq6qqPr6q5zsRQ6h9OynSwGk",
+    "gmaps_address": "Arnala, Maharashtra 401302, India"
   },
   {
     "id": "mumbai-ghodbunder-fort-ruins",
@@ -312,7 +336,10 @@
     "source": "curated_forts",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJbXylnw2w5zsR0M4OYytwC6k",
+    "gmaps_address": "Ghodbander Village, Ghodbunder, Mira Bhayandar, Maharashtra 401107, India"
   },
   {
     "id": "mumbai-riwa-fort-kala-killa",
@@ -324,8 +351,8 @@
     "spot_tier": "hidden_gem",
     "city": "Mumbai",
     "neighborhood": "Dharavi / Mahim Creek",
-    "latitude": 19.0494,
-    "longitude": 72.8582,
+    "latitude": 19.046742,
+    "longitude": 72.864414,
     "access_type": "public",
     "safety_level": "medium",
     "safety_notes": "Maintained by ASI inside municipal garden. Visit during daylight hours.",
@@ -347,7 +374,10 @@
     "source": "curated_underrated",
     "budget_tier": "free",
     "approx_cost": "Free",
-    "price_level": 0
+    "price_level": 0,
+    "gmaps_verified": true,
+    "gmaps_place_id": "ChIJj0R6etrI5zsRBVOUQqmFmyk",
+    "gmaps_address": "1, Budhiram Seth Chawl, Sion Railway Colony, Kala Qila, Dharavi, Mumbai, Maharashtra 400022, India"
   },
   {
     "id": "mumbai-mahim-fort-ruins",
