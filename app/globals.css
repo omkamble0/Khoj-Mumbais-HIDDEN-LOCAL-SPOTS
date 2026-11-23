@@ -252,15 +252,31 @@ body {
   z-index: 9999 !important;
 }
 
-/* Animated Dashed Commute Route */
+/* Animated Dashed Commute Route & Metro Connector */
 .commute-route-connector {
-  stroke-dasharray: 6, 8;
+  stroke-dasharray: 7, 7;
   animation: commuteDash 25s linear infinite;
+}
+.metro-route-connector {
+  stroke-dasharray: 6, 6;
+  animation: commuteDash 22s linear infinite;
 }
 @keyframes commuteDash {
   to {
     stroke-dashoffset: -500;
   }
+}
+
+.transit-connector-tooltip {
+  background: #141518 !important;
+  color: #faf6ee !important;
+  border: 1.5px solid #faf6ee !important;
+  border-radius: 8px !important;
+  font-family: monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 4px 8px !important;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5) !important;
 }
 
 /* Desi Matchbox Poster Texture Patterns */
