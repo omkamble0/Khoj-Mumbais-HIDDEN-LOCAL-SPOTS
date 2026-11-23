@@ -570,110 +570,40 @@ export default function DiscoveryMap({
     try {
       const transitProfile = getSanctuaryTransitProfile(selectedPlace.latitude, selectedPlace.longitude);
       const railStn = transitProfile.nearestRailway.station;
+      const railDist = transitProfile.nearestRailway.distanceMeters;
       const metroStn = transitProfile.nearestMetro?.station;
+      const metroDist = transitProfile.nearestMetro?.distanceMeters;
 
-      // 1. LIGHT RAILWAY CONNECTOR LINE (Crimson / Rose Local Railway)
-      const railCoords: [number, number][] = [
-        [selectedPlace.latitude, selectedPlace.longitude],
-        [railStn.latitude, railStn.longitude],
-      ];
+      // Identify the closest primary transit station (Local Train vs Metro)
+      const isMetroCloser = metroStn && metroDist !== undefined && metroDist < railDist;
+      const primaryStn = isMetroCloser ? metroStn : railStn;
+      const primaryDist = isMetroCloser ? metroDist : railDist;
+      const primaryWalkMin = isMetroCloser
+        ? transitProfile.nearestMetro!.walkMinutes
+        : transitProfile.nearestRailway.walkMinutes;
+      const isMetro = isMetroCloser;
 
-      // Soft light casing for clean, unobtrusive contrast
-      L.polyline(railCoords, {
-        color: '#ffffff',
-        weight: 4.5,
-        opacity: 0.6,
-      }).addTo(routeLayer);
-
-      // Light, elegant crimson dashed line
-      const railLine = L.polyline(railCoords, {
-        color: '#f43f5e', // Light rose/crimson
-        weight: 2.5,
-        dashArray: '6, 6',
-        className: 'commute-route-connector',
-        opacity: 0.85,
-      }).addTo(routeLayer);
-
-      railLine.bindTooltip(
-        `🚆 ${railStn.name} (${railStn.lines.join('/')}) · ${transitProfile.nearestRailway.distanceMeters}m (${transitProfile.nearestRailway.walkMinutes}m walk)`,
-        { permanent: false, direction: 'center', className: 'transit-connector-tooltip' }
-      );
-
-      // Distance pill badge floating along the midpoint of the railway line
-      const railMidLat = (selectedPlace.latitude + railStn.latitude) / 2;
-      const railMidLng = (selectedPlace.longitude + railStn.longitude) / 2;
-      const railDistBadge = L.divIcon({
-        className: 'transit-midpoint-badge',
-        html: `<div style="background:#ffffff;color:#be123c;border:1.5px solid #be123c;border-radius:12px;font-family:monospace;font-size:10px;font-weight:800;padding:2px 7px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.18);display:flex;align-items:center;gap:3px;transform:translate(-50%, -50%);">
-          <span>🚆 ${transitProfile.nearestRailway.distanceMeters}m</span>
-          <span style="color:#64748b;font-weight:600;">(${transitProfile.nearestRailway.walkMinutes}m walk)</span>
-        </div>`,
-        iconSize: [0, 0],
-      });
-      L.marker([railMidLat, railMidLng], { icon: railDistBadge, interactive: false }).addTo(routeLayer);
-
-      // Station name pill at railway station endpoint
-      const railBadgeIcon = L.divIcon({
-        className: 'station-distance-badge',
-        html: `<div style="background:#be123c;color:#fff;border:1.5px solid #141518;border-radius:8px;font-family:monospace;font-size:10px;font-weight:800;padding:2px 6px;white-space:nowrap;box-shadow:2px 2px 0px #141518;display:flex;align-items:center;gap:4px;">
-          <span>🚆 ${railStn.name}</span>
-        </div>`,
-        iconSize: [0, 0],
-        iconAnchor: [-8, 12],
-      });
-      L.marker([railStn.latitude, railStn.longitude], { icon: railBadgeIcon, interactive: false }).addTo(routeLayer);
-
-      // 2. LIGHT METRO CONNECTOR LINE (Sky Blue Metro Connector)
-      if (transitProfile.nearestMetro && metroStn && transitProfile.nearestMetro.distanceMeters <= 5000) {
-        const metroCoords: [number, number][] = [
+      // Only draw a walking route line if the station is within realistic walking/first-mile distance (<= 3.5 km)
+      if (primaryDist <= 3500) {
+        // Clean, subtle walking connection from Station -> Destination
+        const walkingLineCoords: [number, number][] = [
+          [primaryStn.latitude, primaryStn.longitude],
           [selectedPlace.latitude, selectedPlace.longitude],
-          [metroStn.latitude, metroStn.longitude],
         ];
 
-        // Soft light casing
-        L.polyline(metroCoords, {
-          color: '#ffffff',
-          weight: 4.5,
-          opacity: 0.6,
+        // Light, clean dashed walking path (No heavy casing, no invasive floating midpoint boxes)
+        const connector = L.polyline(walkingLineCoords, {
+          color: isMetro ? '#0284c7' : '#e11d48',
+          weight: 2,
+          dashArray: '4, 6',
+          opacity: 0.75,
         }).addTo(routeLayer);
 
-        // Light, elegant cyan/sky blue dashed line
-        const metroLine = L.polyline(metroCoords, {
-          color: '#0284c7', // Sky Blue
-          weight: 2.5,
-          dashArray: '6, 6',
-          className: 'metro-route-connector',
-          opacity: 0.85,
-        }).addTo(routeLayer);
-
-        metroLine.bindTooltip(
-          `🚇 ${metroStn.name} · ${transitProfile.nearestMetro.distanceMeters}m (${transitProfile.nearestMetro.walkMinutes}m walk)`,
-          { permanent: false, direction: 'center', className: 'transit-connector-tooltip' }
+        // Simple, clean tooltip on hover/tap
+        connector.bindTooltip(
+          `${isMetro ? '🚇' : '🚆'} ${primaryStn.name} → ${selectedPlace.name}: ${primaryDist}m (${primaryWalkMin}m walk)`,
+          { sticky: true, className: 'transit-connector-tooltip' }
         );
-
-        // Distance pill badge floating along the midpoint of the metro line
-        const metroMidLat = (selectedPlace.latitude + metroStn.latitude) / 2;
-        const metroMidLng = (selectedPlace.longitude + metroStn.longitude) / 2;
-        const metroDistBadge = L.divIcon({
-          className: 'transit-midpoint-badge',
-          html: `<div style="background:#ffffff;color:#0284c7;border:1.5px solid #0284c7;border-radius:12px;font-family:monospace;font-size:10px;font-weight:800;padding:2px 7px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.18);display:flex;align-items:center;gap:3px;transform:translate(-50%, -50%);">
-            <span>🚇 ${transitProfile.nearestMetro.distanceMeters}m</span>
-            <span style="color:#64748b;font-weight:600;">(${transitProfile.nearestMetro.walkMinutes}m walk)</span>
-          </div>`,
-          iconSize: [0, 0],
-        });
-        L.marker([metroMidLat, metroMidLng], { icon: metroDistBadge, interactive: false }).addTo(routeLayer);
-
-        // Station name pill at metro station endpoint
-        const metroBadgeIcon = L.divIcon({
-          className: 'station-distance-badge',
-          html: `<div style="background:#0284c7;color:#fff;border:1.5px solid #141518;border-radius:8px;font-family:monospace;font-size:10px;font-weight:800;padding:2px 6px;white-space:nowrap;box-shadow:2px 2px 0px #141518;display:flex;align-items:center;gap:4px;">
-            <span>🚇 ${metroStn.name}</span>
-          </div>`,
-          iconSize: [0, 0],
-          iconAnchor: [-8, -12],
-        });
-        L.marker([metroStn.latitude, metroStn.longitude], { icon: metroBadgeIcon, interactive: false }).addTo(routeLayer);
       }
     } catch (err) {
       console.warn('Error drawing transit connector route:', err);
@@ -819,24 +749,21 @@ export default function DiscoveryMap({
     try {
       const transitProfile = getSanctuaryTransitProfile(selectedPlace.latitude, selectedPlace.longitude);
       const railStn = transitProfile.nearestRailway.station;
+      const metroStn = transitProfile.nearestMetro?.station;
+      const isMetroCloser = metroStn && transitProfile.nearestMetro && transitProfile.nearestMetro.distanceMeters < transitProfile.nearestRailway.distanceMeters;
+      const primaryStn = isMetroCloser ? metroStn : railStn;
 
-      // Fit bounds to show the destination spot, nearest local train station, AND nearest metro station
-      const points: [number, number][] = [
+      // Fit bounds to cleanly frame the destination spot and its closest transit station
+      const bounds = L.latLngBounds([
         [selectedPlace.latitude, selectedPlace.longitude],
-        [railStn.latitude, railStn.longitude],
-      ];
-
-      if (transitProfile.nearestMetro && transitProfile.nearestMetro.distanceMeters <= 3500) {
-        points.push([transitProfile.nearestMetro.station.latitude, transitProfile.nearestMetro.station.longitude]);
-      }
-
-      const bounds = L.latLngBounds(points);
+        [primaryStn.latitude, primaryStn.longitude],
+      ]);
 
       const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
 
       map.fitBounds(bounds, {
         paddingTopLeft: [70, 70],
-        paddingBottomRight: isDesktop ? [480, 70] : [70, 260],
+        paddingBottomRight: isDesktop ? [480, 70] : [70, 180],
         maxZoom: 16,
         animate: true,
       });
