@@ -552,11 +552,11 @@ export default function PlaceCardDrawer({
               href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between gap-3 bg-white hover:bg-amber-50 text-sumi p-3 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all group active:scale-[0.99]"
+              className="w-full flex items-center justify-between gap-3 bg-white hover:bg-slate-50 text-sumi p-3 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-sm hover:shadow-md transition-all active:scale-[0.99]"
               title="Open official Google Maps place card with reviews, photos, and live ratings"
             >
               <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                <div className="w-10 h-10 rounded-xl bg-vermilion text-white flex items-center justify-center font-bold flex-shrink-0 border-2 border-sumi shadow-riso-sm group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-vermilion text-white flex items-center justify-center font-bold flex-shrink-0 border-2 border-sumi shadow-sm">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div className="min-w-0 text-left">
@@ -564,8 +564,8 @@ export default function PlaceCardDrawer({
                     <span className="font-mono font-black text-xs sm:text-sm tracking-wide uppercase text-sumi truncate">
                       GOOGLE MAPS LANDMARK & REVIEWS
                     </span>
-                    <span className="inline-flex items-center gap-0.5 text-[9px] sm:text-[10px] font-mono font-bold bg-amber-200 text-amber-950 px-1.5 py-0.5 rounded border border-amber-400">
-                      <Star className="w-2.5 h-2.5 fill-current text-amber-700" />
+                    <span className="inline-flex items-center gap-0.5 text-[9px] sm:text-[10px] font-mono font-bold bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded border border-amber-300">
+                      <Star className="w-2.5 h-2.5 fill-current text-amber-600" />
                       <span>OFFICIAL CARD</span>
                     </span>
                   </div>
@@ -574,7 +574,7 @@ export default function PlaceCardDrawer({
                   </p>
                 </div>
               </div>
-              <ArrowUpRight className="w-5 h-5 text-sumi group-hover:text-vermilion group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+              <ArrowUpRight className="w-5 h-5 text-slate-500 hover:text-sumi transition-colors flex-shrink-0" />
             </a>
 
             {/* 2. SECOND: Wander Here (Turn-by-Turn GPS Navigation) + Share + Report */}
@@ -583,16 +583,16 @@ export default function PlaceCardDrawer({
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider group active:scale-[0.99]"
+                className="flex-1 flex items-center justify-center gap-2 bg-sumi hover:bg-slate-800 text-white font-mono font-bold py-3 sm:py-3.5 px-3 sm:px-4 rounded-xl border-2 border-sumi shadow-sm hover:shadow-md transition-colors text-xs uppercase tracking-wider active:scale-[0.98]"
               >
-                <Navigation className="w-4 h-4 text-amber-300 group-hover:rotate-45 transition-transform" />
+                <Navigation className="w-4 h-4 text-amber-300" />
                 <span className="truncate">WANDER HERE (DIRECTIONS)</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+                <ArrowUpRight className="w-4 h-4 flex-shrink-0" />
               </a>
 
               <button
                 onClick={handleShare}
-                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-amber-100 shadow-riso-sm transition-all active:scale-95 flex-shrink-0"
+                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-700 hover:text-sumi hover:bg-slate-100 shadow-sm transition-colors active:scale-95 flex-shrink-0"
                 title="Share this spot"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
@@ -600,7 +600,7 @@ export default function PlaceCardDrawer({
 
               <button
                 onClick={() => onOpenReport(place)}
-                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-riso-sm transition-all active:scale-95 flex-shrink-0"
+                className="p-3 sm:p-3.5 rounded-xl border-2 border-sumi bg-wabi text-slate-500 hover:text-red-600 hover:bg-red-50 shadow-sm transition-colors active:scale-95 flex-shrink-0"
                 title="Report issue (closed, private property, unsafe)"
               >
                 <AlertTriangle className="w-4 h-4" />
@@ -611,9 +611,9 @@ export default function PlaceCardDrawer({
             {onOpenTransit && (
               <button
                 onClick={() => onOpenTransit(place)}
-                className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-sumi font-mono font-black py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider active:scale-[0.99]"
+                className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-sumi font-mono font-bold py-2.5 px-3 rounded-xl border-2 border-sumi shadow-sm hover:shadow-md transition-colors text-xs uppercase tracking-wider active:scale-[0.98]"
               >
-                <Train className="w-4 h-4 text-rose-600" />
+                <Train className="w-4 h-4 text-rose-700" />
                 <span>OPEN LOCAL TRAIN & METRO ROUTE</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -623,7 +623,7 @@ export default function PlaceCardDrawer({
             {onOpenSmartCommute && (
               <button
                 onClick={() => onOpenSmartCommute(place)}
-                className="w-full flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider active:scale-[0.99]"
+                className="w-full flex items-center justify-center gap-2 bg-sumi hover:bg-slate-800 text-white font-mono font-bold py-2.5 px-3 rounded-xl border-2 border-sumi shadow-sm hover:shadow-md transition-colors text-xs uppercase tracking-wider active:scale-[0.98]"
               >
                 <Zap className="w-4 h-4 text-amber-300" />
                 <span>PLAN FOOLPROOF COMMUTE (FAST/SLOW & CROWD RADAR)</span>
