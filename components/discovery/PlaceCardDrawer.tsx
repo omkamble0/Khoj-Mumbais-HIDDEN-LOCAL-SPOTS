@@ -24,6 +24,8 @@ import {
   Zap,
   MapPin,
   Star,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 
 interface PlaceCardDrawerProps {
@@ -58,6 +60,14 @@ export default function PlaceCardDrawer({
 }: PlaceCardDrawerProps) {
   const [isFavorited, setIsFavorited] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isMobileMinimized, setIsMobileMinimized] = useState(true);
+
+  // When a new place is selected, start in compact Peek Mode so the mobile map and transit lines are visible
+  useEffect(() => {
+    if (place) {
+      setIsMobileMinimized(true);
+    }
+  }, [place?.id]);
 
   const transitProfile = useMemo(() => {
     if (!place) return null;
@@ -133,9 +143,117 @@ export default function PlaceCardDrawer({
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:left-auto md:right-6 md:bottom-6 md:w-[540px] lg:w-[580px] pb-safe transition-transform duration-300 ease-out font-sans">
-      <div className="bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85dvh] md:max-h-[88vh] flex flex-col">
-        {/* Mobile Tactile Drag Pill */}
-        <div className="w-12 h-1.5 bg-sumi/30 rounded-full mx-auto my-2 md:hidden flex-shrink-0" />
+      {/* 1. MOBILE COMPACT PEEK CARD (Shown on mobile when minimized so map, pins & lines stay 100% visible) */}
+      {isMobileMinimized && (
+        <div className="md:hidden bg-wabi/95 backdrop-blur-xl rounded-t-3xl border-2 border-sumi shadow-riso p-3.5 flex flex-col gap-2.5 animate-in slide-in-from-bottom-2 duration-200">
+          {/* Top Bar: Tap to expand + Close */}
+          <div 
+            onClick={() => setIsMobileMinimized(false)}
+            className="w-full flex items-center justify-between cursor-pointer"
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-vermilion flex-shrink-0 animate-pulse" />
+              <span className="font-mono text-xs font-bold text-sumi truncate">
+                {place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}
+              </span>
+              {place.distance_meters !== undefined && (
+                <span className="font-mono text-[10px] bg-sumi/10 px-2 py-0.5 rounded font-bold text-slate-700 flex-shrink-0">
+                  {formatDistance(place.distance_meters)}
+                </span>
+              )}
+            </div>
+
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMobileMinimized(false);
+                }}
+                className="px-2 py-1 rounded-lg bg-amber-400 text-sumi border border-sumi font-mono text-[10px] font-black flex items-center gap-1 shadow-2xs hover:bg-amber-300"
+                title="Expand Full Details"
+              >
+                <span>EXPAND</span>
+                <ChevronUp className="w-3.5 h-3.5" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
+                className="p-1 rounded-lg text-slate-500 hover:text-sumi hover:bg-black/10"
+                title="Close Place"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Middle Row: Photo + Name + Transit Distances */}
+          <div 
+            onClick={() => setIsMobileMinimized(false)}
+            className="flex items-center gap-3 cursor-pointer"
+          >
+            <img
+              src={place.photo_url}
+              alt={place.name}
+              onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_IMAGE; }}
+              className="w-14 h-14 rounded-xl object-cover border-2 border-sumi shadow-xs flex-shrink-0"
+            />
+            <div className="min-w-0 flex-1">
+              <h3 className="font-sans font-bold text-sm text-sumi truncate leading-tight">
+                {place.name}
+              </h3>
+              {transitProfile && (
+                <div className="flex items-center gap-2 text-[11px] font-mono text-slate-700 mt-1 flex-wrap">
+                  <span className="text-rose-700 font-bold truncate">
+                    🚆 {transitProfile.nearestRailway.station.name} ({transitProfile.nearestRailway.distanceMeters}m)
+                  </span>
+                  {transitProfile.nearestMetro && (
+                    <span className="text-sky-700 font-bold truncate">
+                      🚇 {transitProfile.nearestMetro.station.name} ({transitProfile.nearestMetro.distanceMeters}m)
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Bottom Quick Action Bar */}
+          <div className="flex items-center gap-2 pt-0.5">
+            <a
+              href={googleMapsPlaceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 bg-white text-sumi border-2 border-sumi rounded-xl py-2 px-2 text-[11px] font-mono font-bold shadow-xs hover:bg-slate-50"
+            >
+              <MapPin className="w-3.5 h-3.5 text-vermilion" />
+              <span className="truncate">GOOGLE CARD</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+            </a>
+            <a
+              href={googleMapsDirectionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 bg-sumi text-white border-2 border-sumi rounded-xl py-2 px-2 text-[11px] font-mono font-bold shadow-xs hover:bg-slate-800"
+            >
+              <Navigation className="w-3.5 h-3.5 text-amber-300" />
+              <span className="truncate">DIRECTIONS</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      )}
+
+      {/* 2. FULL EXPANDED DRAWER (Always visible on desktop md:flex, or on mobile when !isMobileMinimized) */}
+      <div className={`bg-wabi/95 backdrop-blur-xl md:rounded-3xl rounded-t-3xl border-2 border-sumi shadow-riso overflow-hidden max-h-[85dvh] md:max-h-[88vh] flex-col ${isMobileMinimized ? 'hidden md:flex' : 'flex'}`}>
+        {/* Mobile Tactile Drag Pill (Tap to minimize back to peek card) */}
+        <div 
+          onClick={() => setIsMobileMinimized(true)}
+          className="w-full py-2 cursor-pointer md:hidden flex justify-center flex-shrink-0"
+          title="Tap to minimize to peek card"
+        >
+          <div className="w-12 h-1.5 bg-sumi/40 rounded-full hover:bg-sumi/60 transition-colors" />
+        </div>
 
         {/* 1. Cinematic Hero Photo (Expansive view) */}
         <div className="relative h-52 sm:h-64 md:h-72 w-full bg-sumi-900 flex-shrink-0 border-b-2 border-sumi overflow-hidden">
@@ -200,8 +318,16 @@ export default function PlaceCardDrawer({
               <Heart className={`w-4 h-4 ${isFavorited ? 'fill-current' : ''}`} />
             </button>
             <button
+              onClick={() => setIsMobileMinimized(true)}
+              className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors md:hidden"
+              title="Minimize to peek card (explore map & lines)"
+            >
+              <ChevronDown className="w-4 h-4" />
+            </button>
+            <button
               onClick={onClose}
               className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors"
+              title="Close place"
             >
               <X className="w-4 h-4" />
             </button>
