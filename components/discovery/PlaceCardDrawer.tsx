@@ -22,6 +22,8 @@ import {
   Train,
   ArrowRight,
   Zap,
+  MapPin,
+  Star,
 } from 'lucide-react';
 
 interface PlaceCardDrawerProps {
@@ -543,30 +545,39 @@ export default function PlaceCardDrawer({
             )}
           </div>
 
-          {/* Action Row (Wander Here, Local Transit, Share, Report, & Google Maps) */}
+          {/* Action Hub (1: Google Landmark & Reviews, 2: Wander Here, 3: Local Metro, 4: Plan Foolproof) */}
           <div className="pt-2 flex flex-col gap-2.5">
-            {onOpenSmartCommute && (
-              <button
-                onClick={() => onOpenSmartCommute(place)}
-                className="w-full flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider"
-              >
-                <Zap className="w-4 h-4 text-amber-300" />
-                <span>PLAN FOOLPROOF COMMUTE (FAST/SLOW & CROWD RADAR)</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            )}
+            {/* 1. FIRST & HIGHLIGHTED: Official Google Maps Landmark Card & Live Reviews */}
+            <a
+              href={googleMapsPlaceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-between gap-3 bg-white hover:bg-amber-50 text-sumi p-3 sm:p-3.5 rounded-2xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all group active:scale-[0.99]"
+              title="Open official Google Maps place card with reviews, photos, and live ratings"
+            >
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-xl bg-vermilion text-white flex items-center justify-center font-bold flex-shrink-0 border-2 border-sumi shadow-riso-sm group-hover:scale-105 transition-transform">
+                  <MapPin className="w-5 h-5 text-white" />
+                </div>
+                <div className="min-w-0 text-left">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="font-mono font-black text-xs sm:text-sm tracking-wide uppercase text-sumi truncate">
+                      GOOGLE MAPS LANDMARK & REVIEWS
+                    </span>
+                    <span className="inline-flex items-center gap-0.5 text-[9px] sm:text-[10px] font-mono font-bold bg-amber-200 text-amber-950 px-1.5 py-0.5 rounded border border-amber-400">
+                      <Star className="w-2.5 h-2.5 fill-current text-amber-700" />
+                      <span>OFFICIAL CARD</span>
+                    </span>
+                  </div>
+                  <p className="text-[11px] sm:text-xs text-slate-600 font-sans truncate mt-0.5">
+                    Live crowd ratings, guest reviews, food photos & menu
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-5 h-5 text-sumi group-hover:text-vermilion group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform flex-shrink-0" />
+            </a>
 
-            {onOpenTransit && (
-              <button
-                onClick={() => onOpenTransit(place)}
-                className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-sumi font-mono font-black py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider active:scale-[0.99]"
-              >
-                <Train className="w-4 h-4 text-rose-600" />
-                <span>OPEN LOCAL TRAIN & METRO ROUTE</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            )}
-
+            {/* 2. SECOND: Wander Here (Turn-by-Turn GPS Navigation) + Share + Report */}
             <div className="flex items-center gap-2 sm:gap-2.5">
               <a
                 href={googleMapsDirectionsUrl}
@@ -596,14 +607,29 @@ export default function PlaceCardDrawer({
               </button>
             </div>
 
-            <a
-              href={googleMapsPlaceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center text-[11px] sm:text-xs font-mono text-slate-500 hover:text-vermilion font-medium underline tracking-wide py-0.5 transition-colors"
-            >
-              Verify official landmark card & reviews on Google Maps ↗
-            </a>
+            {/* 3. THIRD: Open Local Train & Metro Route */}
+            {onOpenTransit && (
+              <button
+                onClick={() => onOpenTransit(place)}
+                className="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-sumi font-mono font-black py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider active:scale-[0.99]"
+              >
+                <Train className="w-4 h-4 text-rose-600" />
+                <span>OPEN LOCAL TRAIN & METRO ROUTE</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
+
+            {/* 4. FOURTH: Plan Foolproof Commute */}
+            {onOpenSmartCommute && (
+              <button
+                onClick={() => onOpenSmartCommute(place)}
+                className="w-full flex items-center justify-center gap-2 bg-sumi hover:bg-vermilion text-wabi font-mono font-bold py-2.5 px-3 rounded-xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider active:scale-[0.99]"
+              >
+                <Zap className="w-4 h-4 text-amber-300" />
+                <span>PLAN FOOLPROOF COMMUTE (FAST/SLOW & CROWD RADAR)</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
 
             {place.source === 'openstreetmap' && (
               <p className="text-center text-[10px] font-mono text-slate-400 pt-1">
