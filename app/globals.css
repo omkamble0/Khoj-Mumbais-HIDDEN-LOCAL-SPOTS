@@ -132,15 +132,18 @@ body {
 
 /* Custom Marker Smoothing & Adaptive Progressive Zoom */
 .place-name-pin {
-  will-change: transform;
+  contain: layout style;
 }
 
 .custom-pin {
   pointer-events: auto;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
   contain: layout style;
+}
+
+.custom-pin:hover,
+.place-name-pin:hover,
+.pin-selected {
+  will-change: transform;
 }
 
 /* In Overview & Neighborhoods (zoom < 14), non-selected pins condense into sleek tactile dots to avoid 60-pin text collisions in dense areas */

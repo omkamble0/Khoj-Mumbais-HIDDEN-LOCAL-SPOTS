@@ -59,9 +59,7 @@ const BRAND_SEARCH_ALIASES: Record<string, string[]> = {
 };
 
 export default function HomePage() {
-  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(
-    DEFAULT_MUMBAI_CENTER
-  );
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [allPlaces, setAllPlaces] = useState<Place[]>(
     Array.isArray(initialPlacesData) ? (initialPlacesData as Place[]) : []
   );
@@ -275,8 +273,8 @@ export default function HomePage() {
         setIsLocating(false);
       },
       (err) => {
-        console.warn('Geolocation denied, keeping Mumbai center:', err.message);
-        setUserLocation(DEFAULT_MUMBAI_CENTER);
+        console.warn('Geolocation denied or location off:', err.message);
+        setUserLocation(null);
         setIsLocating(false);
       },
       { timeout: 8000, enableHighAccuracy: true }

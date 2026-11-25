@@ -148,9 +148,10 @@ export default function DiscoveryMap({
       return;
     }
 
-    const bounds = map.getBounds().pad(0.25);
+    const bounds = map.getBounds().pad(0.15);
     const pool = markerPoolRef.current;
     const currentSelectedId = selectedPlaceRef.current?.id;
+    const currentZoom = map.getZoom();
 
     pool.forEach((marker, placeId) => {
       // 🎯 ISOLATED DESTINATION MODE:
@@ -165,14 +166,31 @@ export default function DiscoveryMap({
         return;
       }
 
-      // Normal mode: viewport spatial culling
+      // Normal mode: viewport spatial culling + Level of Detail (LOD) performance optimization
       const latLng = marker.getLatLng();
-      const isVisible = bounds.contains(latLng);
-      const isAttached = layer.hasLayer(marker);
+      const inBounds = bounds.contains(latLng);
 
-      if (isVisible && !isAttached) {
+      if (!inBounds) {
+        if (layer.hasLayer(marker)) layer.removeLayer(marker);
+        return;
+      }
+
+      // Dynamic Level-of-Detail (LOD):
+      // - zoom >= 14 (street/neighborhood): Show all 100% venues
+      // - zoom 12-13 (suburban overview): Show iconic + hidden gems + malls (priority >= 2)
+      // - zoom < 12 (regional/state overview): Show top flagship iconic anchors (priority >= 3)
+      const priority = (marker as any)._priority || 1;
+      let shouldShow = true;
+      if (currentZoom < 12) {
+        shouldShow = priority >= 3;
+      } else if (currentZoom < 14) {
+        shouldShow = priority >= 2;
+      }
+
+      const isAttached = layer.hasLayer(marker);
+      if (shouldShow && !isAttached) {
         layer.addLayer(marker);
-      } else if (!isVisible && isAttached) {
+      } else if (!shouldShow && isAttached) {
         layer.removeLayer(marker);
       }
     });
@@ -280,7 +298,19 @@ export default function DiscoveryMap({
   // Update User Location Marker & Radius
   useEffect(() => {
     const map = mapInstanceRef.current;
-    if (!map || !userLocation) return;
+    if (!map) return;
+
+    if (!userLocation) {
+      if (userMarkerRef.current) {
+        userMarkerRef.current.remove();
+        userMarkerRef.current = null;
+      }
+      if (radiusCircleRef.current) {
+        radiusCircleRef.current.remove();
+        radiusCircleRef.current = null;
+      }
+      return;
+    }
 
     try {
       const userIcon = L.divIcon({
@@ -655,6 +685,9 @@ export default function DiscoveryMap({
         const displayName = place.short_name || place.name.split(' ')[0] + ' ' + (place.name.split(' ')[1] || '');
 
         const isMallHub = place.hub_type === 'mall';
+        const isIconic = place.spot_tier === 'iconic';
+        const isHiddenGem = place.spot_tier === 'hidden_gem';
+        const priorityTier = isIconic || isMallHub ? 3 : isHiddenGem ? 2 : 1;
         const isDriveThru = place.hub_type === 'standalone_drive_thru';
         const customBadgeIcon = isMallHub ? '🏬' : isDriveThru ? '🍔' : null;
 
@@ -697,8 +730,9 @@ export default function DiscoveryMap({
 
         const marker = L.marker([place.latitude, place.longitude], {
           icon: customIcon,
-          zIndexOffset: isSelected ? 500 : 0,
+          zIndexOffset: isSelected ? 500 : priorityTier * 10,
         });
+        (marker as any)._priority = priorityTier;
 
         marker.on('mouseover', () => {
           marker.setZIndexOffset(1000);
