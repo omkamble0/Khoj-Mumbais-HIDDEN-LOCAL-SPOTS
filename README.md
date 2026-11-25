@@ -26,39 +26,7 @@
 
 ---
 
-## 🏛️ System Architecture
 
-```mermaid
-flowchart TD
-    subgraph Client ["Client Layer (Mobile & Desktop Web)"]
-        User["User Browser / PWA"]
-        L1["L1: IndexedDB Spatial Tile Cache"]
-        User <--> L1
-    end
-
-    subgraph Edge ["Global Edge Gateway (Vercel CDN)"]
-        EdgeCache["L2: Vercel Edge Cache (stale-while-revalidate)"]
-        APIRoute["Next.js Route Handlers (Edge Runtime)"]
-        L1 -->|Cache Miss| EdgeCache
-        EdgeCache -->|Miss / Revalidate| APIRoute
-    end
-
-    subgraph Database ["Spatial & Cloud Storage"]
-        Supabase["Supabase Postgres 16 (AWS Mumbai ap-south-1)"]
-        PostGIS["PostGIS Spatial GIST Index (ST_DWithin)"]
-        FTS["pg_trgm Fuzzy Text Search Engine"]
-        APIRoute --> Supabase
-        Supabase --- PostGIS
-        Supabase --- FTS
-    end
-
-    subgraph Fallback ["Zero-Downtime Resilience"]
-        DiskFallback["Statically Bundled Master Dataset (data/places_mumbai.json)"]
-        APIRoute -.->|DB Fallback| DiskFallback
-    end
-```
-
----
 
 ## 🛠️ Tech Stack & Tools
 
