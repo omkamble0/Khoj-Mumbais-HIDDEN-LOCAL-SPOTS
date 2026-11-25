@@ -1,5 +1,5 @@
 # KHOJ | खोज · Hyperlocal Discovery & Urban Transit Engine
-> **A high-performance geospatial web app mapping 610+ verified hidden sanctuaries, transit corridors, and dining flagships across the Mumbai Metropolitan Region.**
+> **A high-performance geospatial web app mapping 460+ verified hidden sanctuaries, heritage forts, viewpoints, and urban transit corridors across the Mumbai Metropolitan Region.**
 
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -15,7 +15,7 @@
 **KHOJ (खोज)** is an urban mobility and geospatial exploration platform designed specifically for Mumbai commuters, foodies, and explorers. It solves the fragmentation of local travel by combining curated hidden sanctuaries with station-by-station transit corridors (Western, Central, Harbour local lines and Metro Lines 1, 2A, 7, 3).
 
 ### Key Architectural Achievements:
-- **610+ Ground-Truth Verified Venues:** Station-by-station micro-batched spots (Bandra, Khar, Santacruz, Vile Parle, Juhu, Andheri, Goregaon, Malad) audited against Google Places API and OpenStreetMap with **0 ghost venues** and **0 cross-city drift**.
+- **460+ Ground-Truth Curated Sanctuaries:** Station-by-station micro-batched hidden gems, heritage forts, viewpoints, historic bazaars, and classic permit rooms audited against physical locations with **0 ghost venues**, **0 railway track markers**, and **0 cross-city drift**.
 - **Multi-Tier Edge & Spatial Architecture:** 
   - **L1 (Client):** IndexedDB browser caching for instant `<5ms` offline-resilient map reloads.
   - **L2 (Edge CDN):** Vercel Edge caching (`s-maxage=3600`) for sub-30ms global payload delivery.

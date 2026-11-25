@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     'Mumbai Local Train Routes',
     'Metro 3 Mumbai',
     'Hidden Gems Mumbai',
-    'Fast Food Corridors',
+    'Heritage Sanctuaries',
     'Urban Mobility',
     'Next.js 14',
     'PostGIS',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'KHOJ | खोज · Mumbai Discovery & Transit Engine',
     description:
-      'Explore 610+ verified hidden sanctuaries, local train corridors, and fast-food flagships across Mumbai with zero hallucinations and real-time station proximity.',
+      'Explore 460+ verified hidden sanctuaries, heritage forts, iconic bazaars, and local train corridors across Mumbai with zero hallucinations and real-time station proximity.',
     url: 'https://khoj-mumbai.vercel.app',
     siteName: 'KHOJ Mumbai',
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'KHOJ | खोज · Mumbai Discovery & Transit Engine',
     description:
-      'Explore 610+ verified hidden sanctuaries, local train corridors, and fast-food flagships across Mumbai.',
+      'Explore 460+ verified hidden sanctuaries, heritage forts, and local train corridors across Mumbai with zero hallucinations.',
     images: ['/images/mumbai_art_and_culture_banner_hd.png'],
   },
 };

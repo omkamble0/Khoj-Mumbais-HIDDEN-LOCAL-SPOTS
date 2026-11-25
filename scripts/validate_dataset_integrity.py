@@ -62,13 +62,12 @@ print(f"Shopping malls & hubs verified in master: {len(malls)}")
 if len(malls) < 25:
     errors.append(f"Expected at least 25 malls, found only {len(malls)}")
 
-# 6. Check fastfood flagships
-ff_master = [p for p in master if p.get('source') == 'curated_fastfood_network']
-print(f"Verified fastfood flagships in master: {len(ff_master)}")
-if len(ff_master) != len(ff):
-    errors.append(f"Fastfood mismatch: fastfood.json has {len(ff)} but master has {len(ff_master)}")
-elif len(ff_master) < 26:
-    errors.append(f"Expected at least 26 verified flagships, found {len(ff_master)}")
+# 6. Verify zero fake fast food chain pollution in master
+brands = ['mcdonald', 'burger king', 'kfc', 'subway', 'domino', 'pizza hut', 'tibbs', 'jumbo king', 'jumboking', 'taco bell']
+chains_found = [p for p in master if any(b in p['name'].lower() for b in brands) or p.get('source') == 'curated_fastfood_network']
+print(f"Generic fastfood chains in master (must be 0): {len(chains_found)}")
+if len(chains_found) > 0:
+    errors.append(f"Found {len(chains_found)} generic fast-food chains polluting hidden gems dataset")
 
 print("-" * 60)
 if errors:
