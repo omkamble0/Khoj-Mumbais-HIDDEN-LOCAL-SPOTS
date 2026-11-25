@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Place } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
 import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
-import { getSanctuaryTransitProfile } from '@/lib/transit';
+import { getSanctuaryTransitProfile, formatTransitDistance, formatTransitProximity } from '@/lib/transit';
 import {
   Navigation,
   ShieldCheck,
@@ -128,15 +128,13 @@ export default function PlaceCardDrawer({
 
   // Clean city name for accurate landmark knowledge graph search (e.g. Alibaug, Thane, Navi Mumbai, Matheran, Mumbai)
   const cleanCity = place.city ? place.city.replace(/\s*\/\s*MMR(\s*Coast)?/i, '').trim() : 'Mumbai';
-  const landmarkSearchQuery = encodeURIComponent(
-    [place.name, place.neighborhood, cleanCity].filter(Boolean).join(', ')
-  );
+  const cleanSearchTarget = [place.name, place.neighborhood, cleanCity].filter(Boolean).join(', ');
 
   // Directions link uses exact verified GPS coordinates for 100% foolproof turn-by-turn navigation
   const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.latitude},${place.longitude}`;
   
-  // Landmark card link opens Google Places knowledge card pinned strictly to verified coordinates
-  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${place.latitude},${place.longitude}+(${landmarkSearchQuery})`;
+  // Landmark card link opens Google Places knowledge card with verified business name, photos, and ratings
+  const googleMapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanSearchTarget)}`;
 
   const { window: currentVibeWindow } = getCurrentVibeWindow();
   const peakInfo = checkIsPlacePeakingNow(place, currentVibeWindow);
@@ -206,11 +204,11 @@ export default function PlaceCardDrawer({
               {transitProfile && (
                 <div className="flex items-center gap-2 text-[11px] font-mono text-slate-700 mt-1 flex-wrap">
                   <span className="text-rose-700 font-bold truncate">
-                    🚆 {transitProfile.nearestRailway.station.name} ({transitProfile.nearestRailway.distanceMeters}m)
+                    🚆 {transitProfile.nearestRailway.station.name} ({formatTransitDistance(transitProfile.nearestRailway.distanceMeters)})
                   </span>
                   {transitProfile.nearestMetro && (
                     <span className="text-sky-700 font-bold truncate">
-                      🚇 {transitProfile.nearestMetro.station.name} ({transitProfile.nearestMetro.distanceMeters}m)
+                      🚇 {transitProfile.nearestMetro.station.name} ({formatTransitDistance(transitProfile.nearestMetro.distanceMeters)})
                     </span>
                   )}
                 </div>
@@ -648,7 +646,7 @@ export default function PlaceCardDrawer({
                           🚆 {transitProfile.nearestRailway.station.name} ({transitProfile.nearestRailway.station.lines.join('/')})
                         </span>
                         <span className="font-mono text-[11px] text-slate-600 flex-shrink-0">
-                          {transitProfile.nearestRailway.distanceMeters}m · {transitProfile.nearestRailway.walkMinutes}m walk
+                          {formatTransitProximity(transitProfile.nearestRailway.distanceMeters, transitProfile.nearestRailway.walkMinutes)}
                         </span>
                       </div>
                     )}
@@ -658,7 +656,7 @@ export default function PlaceCardDrawer({
                           🚇 {transitProfile.nearestMetro.station.name}
                         </span>
                         <span className="font-mono text-[11px] text-slate-600 flex-shrink-0">
-                          {transitProfile.nearestMetro.distanceMeters}m · {transitProfile.nearestMetro.walkMinutes}m walk
+                          {formatTransitProximity(transitProfile.nearestMetro.distanceMeters, transitProfile.nearestMetro.walkMinutes)}
                         </span>
                       </div>
                     )}

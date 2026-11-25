@@ -14,6 +14,8 @@ import {
   SmartCommutePlan,
   TransitLineFilterChip,
   TRANSIT_FILTER_CHIPS,
+  formatTransitDistance,
+  formatTransitProximity,
 } from '@/lib/transit';
 import { Train, X, Compass, ExternalLink, Zap, MapPin } from 'lucide-react';
 import TactileSliderBar from '@/components/transit/TactileSliderBar';
@@ -583,27 +585,45 @@ export default function DiscoveryMap({
         : transitProfile.nearestRailway.walkMinutes;
       const isMetro = isMetroCloser;
 
-      // Only draw a walking route line if the station is within realistic walking/first-mile distance (<= 3.5 km)
-      if (primaryDist <= 3500) {
+      // Only draw a walking route line if the station is within realistic walking/first-mile distance (<= 4 km)
+      if (primaryDist <= 4000) {
         // Clean, subtle walking connection from Station -> Destination
         const walkingLineCoords: [number, number][] = [
           [primaryStn.latitude, primaryStn.longitude],
           [selectedPlace.latitude, selectedPlace.longitude],
         ];
 
-        // Light, clean dashed walking path (No heavy casing, no invasive floating midpoint boxes)
+        // Light, clean dashed walking path
         const connector = L.polyline(walkingLineCoords, {
           color: isMetro ? '#0284c7' : '#e11d48',
-          weight: 2,
-          dashArray: '4, 6',
-          opacity: 0.75,
+          weight: 2.5,
+          dashArray: '5, 7',
+          opacity: 0.8,
         }).addTo(routeLayer);
 
         // Simple, clean tooltip on hover/tap
         connector.bindTooltip(
-          `${isMetro ? '🚇' : '🚆'} ${primaryStn.name} → ${selectedPlace.name}: ${primaryDist}m (${primaryWalkMin}m walk)`,
+          `${isMetro ? '🚇' : '🚆'} ${primaryStn.name} → ${selectedPlace.name}: ${formatTransitProximity(primaryDist, primaryWalkMin)}`,
           { sticky: true, className: 'transit-connector-tooltip' }
         );
+
+        // Clear, readable station marker badge directly at the station so the user always has a clear sense of direction
+        const stationBadgeIcon = L.divIcon({
+          className: 'station-callout-badge',
+          html: `
+            <div style="display:inline-flex;align-items:center;gap:4px;background:#141518;color:#f8fafc;border:2px solid ${isMetro ? '#38bdf8' : '#fb7185'};padding:3px 8px;border-radius:12px;font-family:monospace;font-size:11px;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,0.35);white-space:nowrap;">
+              <span>${isMetro ? '🚇' : '🚆'}</span>
+              <span>${primaryStn.name}</span>
+              <span style="color:#fde047;font-size:10px;margin-left:2px;">${formatTransitDistance(primaryDist)}</span>
+            </div>
+          `,
+          iconSize: [130, 26],
+          iconAnchor: [65, 13],
+        });
+        L.marker([primaryStn.latitude, primaryStn.longitude], {
+          icon: stationBadgeIcon,
+          interactive: false,
+        }).addTo(routeLayer);
       }
     } catch (err) {
       console.warn('Error drawing transit connector route:', err);
@@ -753,20 +773,29 @@ export default function DiscoveryMap({
       const isMetroCloser = metroStn && transitProfile.nearestMetro && transitProfile.nearestMetro.distanceMeters < transitProfile.nearestRailway.distanceMeters;
       const primaryStn = isMetroCloser ? metroStn : railStn;
 
-      // Fit bounds to cleanly frame the destination spot and its closest transit station
-      const bounds = L.latLngBounds([
-        [selectedPlace.latitude, selectedPlace.longitude],
-        [primaryStn.latitude, primaryStn.longitude],
-      ]);
+      const primaryDist = isMetroCloser
+        ? transitProfile.nearestMetro!.distanceMeters
+        : transitProfile.nearestRailway.distanceMeters;
 
-      const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+      // Only frame station + place if within reasonable commuter proximity (<= 4 km)
+      if (primaryDist <= 4000) {
+        const bounds = L.latLngBounds([
+          [selectedPlace.latitude, selectedPlace.longitude],
+          [primaryStn.latitude, primaryStn.longitude],
+        ]);
 
-      map.fitBounds(bounds, {
-        paddingTopLeft: [70, 70],
-        paddingBottomRight: isDesktop ? [480, 70] : [70, 180],
-        maxZoom: 16,
-        animate: true,
-      });
+        const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+
+        map.fitBounds(bounds, {
+          paddingTopLeft: [70, 70],
+          paddingBottomRight: isDesktop ? [480, 70] : [70, 180],
+          maxZoom: 15,
+          animate: true,
+        });
+      } else {
+        // If station is far away (> 4 km), center comfortably on the place without disorienting zoom-out
+        map.setView([selectedPlace.latitude, selectedPlace.longitude], 15, { animate: true });
+      }
     } catch (err) {
       map.panTo([selectedPlace.latitude, selectedPlace.longitude], {
         animate: true,
