@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import {
   PlaceCategory,
   FilterState,
@@ -46,6 +47,7 @@ interface FilterBarProps {
   onTogglePlacesOverlay?: () => void;
   showTransitOverlay?: boolean;
   onToggleTransitOverlay?: (show: boolean) => void;
+  isEmbedded?: boolean;
 }
 
 interface CategoryConfig {
@@ -368,13 +370,19 @@ export default function FilterBar({
   onTogglePlacesOverlay,
   showTransitOverlay = false,
   onToggleTransitOverlay,
+  isEmbedded = false,
 }: FilterBarProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const filterIslandRef = useRef<HTMLDivElement>(null);
   const studioChipsRef = useRef<HTMLDivElement>(null);
   const presetContainerRef = useRef<HTMLDivElement>(null);
 
+  const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const [activeTab, setActiveTab] = useState<StudioTab>('transit');
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -470,7 +478,7 @@ export default function FilterBar({
       {/* ─────────────────────────────────────────────────────────────
           1. ELEGANT FLOATING ISLAND BAR (Tactile, 48px height)
           ───────────────────────────────────────────────────────────── */}
-      <div className="bg-wabi/95 backdrop-blur-md rounded-2xl border-2 border-sumi shadow-riso px-2 py-1.5 flex items-center gap-2 transition-all">
+      <div className={isEmbedded ? "flex items-center gap-2 transition-all min-w-0 flex-1" : "bg-wabi/95 backdrop-blur-md rounded-2xl border-2 border-sumi shadow-riso px-2 py-1.5 flex items-center gap-2 transition-all"}>
         {/* A. Dedicated Filter Studio Button */}
         <button
           onClick={() => setIsModalOpen((prev) => !prev)}
@@ -759,15 +767,15 @@ export default function FilterBar({
       {/* ─────────────────────────────────────────────────────────────
           3. CURATOR'S COMPACT FILTER STUDIO (Smart, Tabbed, Elevated)
           ───────────────────────────────────────────────────────────── */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex flex-col justify-end sm:justify-center sm:items-center p-0 sm:p-4">
+      {isModalOpen && mounted && createPortal(
+        <div className="fixed inset-0 z-[99999] flex flex-col justify-end sm:justify-center sm:items-center p-0 sm:p-4">
           {/* High-contrast backdrop overlay */}
           <div
             onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 bg-sumi/60 backdrop-blur-sm z-[100] transition-opacity animate-in fade-in duration-150"
+            className="fixed inset-0 bg-sumi/60 backdrop-blur-sm z-[99999] transition-opacity animate-in fade-in duration-150"
           />
 
-          <div className="relative w-full sm:max-w-xl max-h-[85dvh] sm:max-h-[80vh] bg-wabi rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 border-sumi shadow-riso shadow-2xl shadow-sumi/35 p-3.5 sm:p-4 z-[101] animate-in slide-in-from-bottom-4 sm:slide-in-from-top-2 duration-150 flex flex-col gap-2.5 overflow-y-auto pb-safe">
+          <div className="relative w-full sm:max-w-xl max-h-[85dvh] sm:max-h-[80vh] bg-wabi rounded-t-3xl sm:rounded-3xl border-t-2 sm:border-2 border-sumi shadow-riso shadow-2xl shadow-sumi/35 p-3.5 sm:p-4 z-[100000] animate-in slide-in-from-bottom-4 sm:slide-in-from-top-2 duration-150 flex flex-col gap-2.5 overflow-y-auto pb-safe">
             {/* Header Row */}
             <div className="flex items-center justify-between pb-2 border-b-2 border-sumi/15">
               <div className="flex items-center gap-2">
@@ -1286,7 +1294,8 @@ export default function FilterBar({
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

@@ -974,8 +974,8 @@ export default function DiscoveryMap({
         </div>
       )}
 
-      {/* Floating Places & Transit Layer Pure ON/OFF Toggle Buttons (Bottom-left, positioned above mobile bottom nav) */}
-      <div className={`absolute bottom-20 md:bottom-6 left-3 md:left-4 z-20 flex items-center gap-2 ${selectedPlace ? 'hidden md:flex' : 'flex'}`}>
+      {/* Floating Places & Transit Layer Pure ON/OFF Toggle Buttons (Bottom-left, zero clutter) */}
+      <div className={`absolute bottom-6 left-4 z-20 flex items-center gap-2 ${selectedPlace ? 'hidden md:flex' : 'flex'}`}>
         <button
           onClick={handleTogglePlaces}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${

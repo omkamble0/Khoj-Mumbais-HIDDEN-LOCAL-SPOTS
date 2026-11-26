@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import DynamicMap from '@/components/map/DynamicMap';
 import Header from '@/components/discovery/Header';
-import FilterBar from '@/components/discovery/FilterBar';
 import PlaceCardDrawer from '@/components/discovery/PlaceCardDrawer';
 import ZineLookbook from '@/components/discovery/ZineLookbook';
 import TransitNavigatorView from '@/components/transit/TransitNavigatorView';
@@ -11,7 +10,6 @@ import ReportModal from '@/components/discovery/ReportModal';
 import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
 import SmartCommuteModal from '@/components/transit/SmartCommuteModal';
-import MobileBottomNav from '@/components/navigation/MobileBottomNav';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 import {
@@ -301,7 +299,7 @@ export default function HomePage() {
 
   return (
     <div className={`relative w-screen bg-wabi flex flex-col font-sans ${viewMode === 'map' ? 'h-[100dvh] overflow-hidden' : 'min-h-[100dvh] overflow-y-auto'}`}>
-      {/* 1. Global App Header (At the top of the page - stays at top and scrolls away in lookbook) */}
+      {/* 1. Global App Header (Tier 1: Brand & Search & Actions, Tier 2: Views & Categories) */}
       <Header
         currentCity="Mumbai"
         onLocateMe={handleLocateMe}
@@ -317,28 +315,19 @@ export default function HomePage() {
           setIsSavedDrawerOpen(true);
         }}
         onOpenRoulette={() => setIsRouletteOpen(true)}
+        filters={filters}
+        onFilterChange={handleFilterChange}
+        showPlacesOverlay={showPlacesOverlay}
+        onTogglePlacesOverlay={() => setShowPlacesOverlay((prev) => !prev)}
+        showTransitOverlay={showTransitOverlay}
+        onToggleTransitOverlay={(v) => setShowTransitOverlay(v)}
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook vs Transit Navigator) */}
-      <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden pb-16 md:pb-0' : 'flex-1 pb-16 md:pb-0'}`}>
+      <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden' : 'flex-1'}`}>
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
-            {/* Docked Map Filter Island (Visible when browsing all spots; tucks away when a destination is selected) */}
-            {!selectedPlace && (
-              <div className="absolute top-3 left-3 right-3 sm:top-4 sm:left-6 sm:right-auto sm:max-w-2xl z-20 pointer-events-auto animate-in fade-in duration-200">
-                <FilterBar
-                  filters={filters}
-                  onChange={handleFilterChange}
-                  totalFound={filteredPlaces.length}
-                  showPlacesOverlay={showPlacesOverlay}
-                  onTogglePlacesOverlay={() => setShowPlacesOverlay((prev) => !prev)}
-                  showTransitOverlay={showTransitOverlay}
-                  onToggleTransitOverlay={(v) => setShowTransitOverlay(v)}
-                />
-              </div>
-            )}
-
-            {/* Map Canvas */}
+            {/* Map Canvas - Full height unobstructed map */}
             <DynamicMap
               places={filteredPlaces}
               userLocation={userLocation}
@@ -464,18 +453,6 @@ export default function HomePage() {
           setShowTransitOverlay(true);
           setViewMode('map');
         }}
-      />
-
-      {/* 8. Dedicated Mobile Thumb Navigation Dock */}
-      <MobileBottomNav
-        viewMode={viewMode}
-        onToggleView={(m) => setViewMode(m)}
-        onOpenRoulette={() => setIsRouletteOpen(true)}
-        onOpenSaved={() => {
-          refreshFavorites();
-          setIsSavedDrawerOpen(true);
-        }}
-        savedCount={savedPlaces.length}
       />
     </div>
   );
