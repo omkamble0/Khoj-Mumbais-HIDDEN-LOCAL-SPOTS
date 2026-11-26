@@ -176,15 +176,29 @@ export default function DiscoveryMap({
       }
 
       // Dynamic Level-of-Detail (LOD):
-      // - zoom >= 14 (street/neighborhood): Show all 100% venues
-      // - zoom 12-13 (suburban overview): Show iconic + hidden gems + malls (priority >= 2)
-      // - zoom < 12 (regional/state overview): Show top flagship iconic anchors (priority >= 3)
+      // On mobile screens (< 768px), Mumbai's narrow peninsula packs pins very tightly.
+      // - zoom < 13.5: Show only flagship iconic anchors (priority >= 3, ~35 pins) to prevent caterpillar clumping
+      // - zoom 13.5-14.5: Show iconic + hidden gems (priority >= 2)
+      // - zoom >= 14.5: Show full density (all places)
+      // On desktop:
+      // - zoom < 12: priority >= 3
+      // - zoom 12-14: priority >= 2
+      // - zoom >= 14: all places
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       const priority = (marker as any)._priority || 1;
       let shouldShow = true;
-      if (currentZoom < 12) {
-        shouldShow = priority >= 3;
-      } else if (currentZoom < 14) {
-        shouldShow = priority >= 2;
+      if (isMobile) {
+        if (currentZoom < 13.5) {
+          shouldShow = priority >= 3;
+        } else if (currentZoom < 14.5) {
+          shouldShow = priority >= 2;
+        }
+      } else {
+        if (currentZoom < 12) {
+          shouldShow = priority >= 3;
+        } else if (currentZoom < 14) {
+          shouldShow = priority >= 2;
+        }
       }
 
       const isAttached = layer.hasLayer(marker);
@@ -908,7 +922,7 @@ export default function DiscoveryMap({
       )}
 
       {/* Floating Places & Transit Layer Pure ON/OFF Toggle Buttons (Bottom-left, zero clutter) */}
-      <div className="absolute bottom-6 left-4 z-20 flex items-center gap-2">
+      <div className={`absolute bottom-6 left-4 z-20 flex items-center gap-2 ${selectedPlace ? 'hidden md:flex' : 'flex'}`}>
         <button
           onClick={handleTogglePlaces}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${

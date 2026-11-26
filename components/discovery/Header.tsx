@@ -49,10 +49,10 @@ export default function Header({
     <header className="relative w-full border-b-2 border-sumi shadow-sm font-sans flex-shrink-0 bg-wabi">
       {/* Main Navigation Bar with Mumbai Art & Culture Collage Banner Background */}
       <div 
-        className="relative w-full bg-cover bg-center overflow-hidden border-b-2 border-sumi shadow-sm min-h-[80px] sm:min-h-[88px] flex items-center"
+        className="relative w-full bg-cover bg-center overflow-hidden border-b-2 border-sumi shadow-sm min-h-[64px] sm:min-h-[88px] flex items-center"
         style={{ backgroundImage: `url('/images/mumbai_art_and_culture_banner_hd.png')` }}
       >
-        <div className="w-full h-full bg-sumi/5 py-2.5 sm:py-3">
+        <div className="w-full h-full bg-sumi/5 py-1.5 sm:py-3">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-4">
             {/* Brand & Mobile Action Bar */}
             <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-3">
@@ -155,7 +155,7 @@ export default function Header({
                   value={localQuery}
                   onChange={(e) => setLocalQuery(e.target.value)}
                   placeholder="Search ruins, cliffs, serene tanks, parks..."
-                  className="w-full pl-10 pr-9 py-2 sm:py-2.5 text-xs sm:text-sm font-sans font-medium bg-wabi/95 hover:bg-white focus:bg-white backdrop-blur-md rounded-2xl border-2 border-sumi focus:outline-none shadow-riso focus:shadow-riso-red text-sumi placeholder-slate-500 transition-all"
+                  className="w-full pl-10 pr-9 py-1.5 sm:py-2.5 text-xs sm:text-sm font-sans font-medium bg-wabi/95 hover:bg-white focus:bg-white backdrop-blur-md rounded-2xl border-2 border-sumi focus:outline-none shadow-riso focus:shadow-riso-red text-sumi placeholder-slate-500 transition-all"
                 />
                 {localQuery && (
                   <button
