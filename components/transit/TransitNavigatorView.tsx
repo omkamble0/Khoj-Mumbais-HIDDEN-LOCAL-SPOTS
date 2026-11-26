@@ -489,7 +489,14 @@ export default function TransitNavigatorView({
   const [stationCategoryFilter, setStationCategoryFilter] = useState<PlaceCategory | 'all'>('all');
   const [stationSortBy, setStationSortBy] = useState<'distance' | 'budget_asc' | 'budget_desc' | 'name'>('distance');
   const [stationCardViewSize, setStationCardViewSize] = useState<'small' | 'medium'>('small');
+  const [stationPage, setStationPage] = useState(1);
   const categoryScrollRef = useRef<HTMLDivElement>(null);
+  const stationSanctuariesContainerRef = useRef<HTMLDivElement>(null);
+
+  // Reset page when station, category, or sorting changes
+  useEffect(() => {
+    setStationPage(1);
+  }, [selectedStationId, stationCategoryFilter, stationSortBy]);
 
   // Categories available at this specific station
   const availableCategoriesAtStation = useMemo(() => {
@@ -526,6 +533,21 @@ export default function TransitNavigatorView({
 
     return list;
   }, [sanctuariesAtStation, stationCategoryFilter, stationSortBy]);
+
+  const STATION_PAGE_SIZE = 16;
+  const totalStationPages = Math.max(1, Math.ceil(displayedSanctuaries.length / STATION_PAGE_SIZE));
+  const safeStationPage = Math.min(stationPage, totalStationPages);
+  const stationStartIndex = (safeStationPage - 1) * STATION_PAGE_SIZE;
+  const paginatedSanctuaries = useMemo(() => {
+    return displayedSanctuaries.slice(stationStartIndex, stationStartIndex + STATION_PAGE_SIZE);
+  }, [displayedSanctuaries, stationStartIndex]);
+
+  const handleStationPageChange = (newPage: number) => {
+    setStationPage(newPage);
+    if (stationSanctuariesContainerRef.current) {
+      stationSanctuariesContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   // Search results for Sanctuary Direct Route Finder
   const sanctuarySearchResults = useMemo(() => {
@@ -1127,9 +1149,9 @@ export default function TransitNavigatorView({
           </div>
 
           {/* View Size Switcher & Sanctuaries Count Header */}
-          <div className="flex items-center justify-between pb-2 mb-3 border-b-2 border-sumi/15 font-mono">
+          <div ref={stationSanctuariesContainerRef} className="flex items-center justify-between pb-2 mb-3 border-b-2 border-sumi/15 font-mono scroll-mt-24">
             <span className="text-xs font-bold text-slate-700">
-              <span className="text-sumi font-black">{displayedSanctuaries.length}</span> SPOTS NEAR {activeStation.name.toUpperCase()}
+              SHOWING <span className="text-sumi font-black">{displayedSanctuaries.length > 0 ? `${stationStartIndex + 1}–${Math.min(stationStartIndex + STATION_PAGE_SIZE, displayedSanctuaries.length)}` : '0'}</span> OF <span className="text-sumi font-black">{displayedSanctuaries.length}</span> SPOTS NEAR {activeStation.name.toUpperCase()}
             </span>
             <div className="flex items-center gap-1 bg-white border-2 border-sumi rounded-xl p-0.5 shadow-2xs">
               <button
@@ -1175,7 +1197,7 @@ export default function TransitNavigatorView({
             </div>
           ) : stationCardViewSize === 'small' ? (
             <div className="max-w-4xl mx-auto flex flex-col gap-2.5">
-              {displayedSanctuaries.map((place: any) => {
+              {paginatedSanctuaries.map((place: any) => {
                 const theme = getDesiCardTheme(place);
                 return (
                   <div
@@ -1249,7 +1271,7 @@ export default function TransitNavigatorView({
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
-              {displayedSanctuaries.map((place: any) => {
+              {paginatedSanctuaries.map((place: any) => {
                 const theme = getDesiCardTheme(place);
                 return (
                   <div
@@ -1490,6 +1512,41 @@ export default function TransitNavigatorView({
                   </div>
                 );
               })}
+            </div>
+          )}
+
+          {/* Pagination Bar for Station Sanctuaries */}
+          {totalStationPages > 1 && (
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 bg-[#faf5eb] p-3.5 sm:p-4 rounded-2xl border-2 border-sumi shadow-riso font-mono">
+              <div className="text-xs text-slate-600 font-bold">
+                SHOWING <span className="text-sumi font-black">{stationStartIndex + 1}–{Math.min(stationStartIndex + STATION_PAGE_SIZE, displayedSanctuaries.length)}</span> OF <span className="text-sumi font-black">{displayedSanctuaries.length}</span> (PAGE {safeStationPage} OF {totalStationPages})
+              </div>
+
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <button
+                  type="button"
+                  onClick={() => handleStationPageChange(safeStationPage - 1)}
+                  disabled={safeStationPage === 1}
+                  className="px-3 py-1.5 rounded-xl border-2 border-sumi font-bold text-xs bg-white text-sumi hover:bg-amber-100 disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1 active:scale-95"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                  <span>PREV</span>
+                </button>
+
+                <span className="px-3 py-1.5 bg-sumi text-wabi rounded-xl font-black text-xs">
+                  {safeStationPage}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => handleStationPageChange(safeStationPage + 1)}
+                  disabled={safeStationPage === totalStationPages}
+                  className="px-3 py-1.5 rounded-xl border-2 border-sumi font-bold text-xs bg-white text-sumi hover:bg-amber-100 disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1 active:scale-95"
+                >
+                  <span>NEXT</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           )}
         </div>

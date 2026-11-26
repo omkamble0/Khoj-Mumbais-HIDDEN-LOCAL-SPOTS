@@ -57,7 +57,7 @@ export default function ZineLookbook({
   const [currentPage, setCurrentPage] = useState(1);
   const [viewSize, setViewSize] = useState<CardViewSize>('medium');
 
-  const pageSize = viewSize === 'small' ? 16 : 12;
+  const pageSize = 16;
   const totalPages = Math.max(1, Math.ceil(places.length / pageSize));
   const safeCurrentPage = Math.min(currentPage, totalPages);
   const startIndex = (safeCurrentPage - 1) * pageSize;
