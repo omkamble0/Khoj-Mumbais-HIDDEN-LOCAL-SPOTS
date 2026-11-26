@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Place, FilterState } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
-import { ArrowUpRight, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
-import FilterBar from './FilterBar';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Zap, List, LayoutGrid, Square, MapPin } from 'lucide-react';
 import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
 
 interface ZineLookbookProps {
@@ -13,6 +12,8 @@ interface ZineLookbookProps {
   filters: FilterState;
   onFilterChange: (updated: Partial<FilterState>) => void;
 }
+
+type CardViewSize = 'compact' | 'medium' | 'large';
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; border: string }> = {
   bars: { bg: '#9B1B30', text: '#F4B41A', border: '#141518' },
@@ -49,247 +50,362 @@ function getBudgetStamp(tier?: string, cost?: string) {
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80';
 
-const PAGE_SIZE = 9;
-
 export default function ZineLookbook({
   places,
   onSelectPlace,
-  filters,
-  onFilterChange,
 }: ZineLookbookProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [viewSize, setViewSize] = useState<CardViewSize>('medium');
+
+  const pageSize = viewSize === 'compact' ? 16 : viewSize === 'medium' ? 12 : 9;
+  const totalPages = Math.max(1, Math.ceil(places.length / pageSize));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const startIndex = (safeCurrentPage - 1) * pageSize;
+  const currentPlaces = places.slice(startIndex, startIndex + pageSize);
+
   const { window: currentWindow } = getCurrentVibeWindow();
 
-  // Automatically reset to page 1 whenever filters change or places count changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [places.length, filters.category, filters.spotTier, filters.radiusKm, filters.searchQuery]);
-
-  const totalPages = Math.ceil(places.length / PAGE_SIZE) || 1;
-  const safeCurrentPage = Math.min(currentPage, totalPages);
-  const startIndex = (safeCurrentPage - 1) * PAGE_SIZE;
-  const currentPlaces = places.slice(startIndex, startIndex + PAGE_SIZE);
-
   const handlePageChange = (newPage: number) => {
-    if (newPage < 1 || newPage > totalPages) return;
     setCurrentPage(newPage);
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="w-full px-3 sm:px-4 md:px-8 py-4 sm:py-6 bg-washi font-sans">
-      {/* Hero Header Banner */}
-      <div className="max-w-6xl mx-auto mb-4 sm:mb-6 bg-sumi text-wabi p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-sumi shadow-riso relative overflow-hidden">
+    <div className="w-full px-2.5 sm:px-4 md:px-8 py-3 sm:py-6 bg-washi font-sans select-none">
+      {/* ─────────────────────────────────────────────────────────────
+          1. Compact Editorial Header Banner
+          ───────────────────────────────────────────────────────────── */}
+      <div className="max-w-7xl mx-auto mb-3 sm:mb-5 bg-sumi text-wabi p-3.5 sm:p-5 md:p-6 rounded-2xl border-2 border-sumi shadow-riso relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2">
-            <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded text-[10px] sm:text-xs font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
-              KHOJ
+          <div className="flex flex-wrap items-center gap-1.5 mb-1">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-vermilion text-white tracking-wider uppercase">
+              KHOJ LOOKBOOK
             </span>
-            <span className="text-[10px] sm:text-xs font-mono text-slate-300">
-              Mumbai's HIDDEN LOCAL SPOTS
+            <span className="text-[10px] font-mono text-slate-300">
+              {places.length} Hidden Sanctuaries Curated
             </span>
           </div>
 
-          <h2 className="font-display font-normal text-3xl sm:text-4xl md:text-5xl tracking-wide text-wabi leading-tight mb-2">
+          <h2 className="font-display font-normal text-2xl sm:text-3xl md:text-4xl tracking-wide text-wabi leading-tight mb-1">
             Get Lost. <span className="italic font-normal text-amber-300">Feel Found.</span>
           </h2>
 
-          <p className="text-xs sm:text-sm md:text-base text-slate-200 font-sans leading-relaxed">
-            Curated quiet sanctuaries, Portuguese battlements engulfed by banyan roots, 66-million-year-old volcanic basalt columns, and sacred freshwater tanks where the city whispers.
+          <p className="text-xs sm:text-sm text-slate-200 font-sans leading-relaxed line-clamp-2 sm:line-clamp-none">
+            Curated quiet sanctuaries, Portuguese battlements engulfed by banyan roots, 66-million-year-old volcanic basalt columns, and sacred freshwater tanks.
           </p>
         </div>
       </div>
 
-      {/* Integrated Filter Bar (Never overlapping!) */}
-      <div className="max-w-6xl mx-auto mb-4 sm:mb-6">
-        <FilterBar
-          filters={filters}
-          onChange={onFilterChange}
-          totalFound={places.length}
-        />
+      {/* ─────────────────────────────────────────────────────────────
+          2. Tactile View Size Selector (Small / Medium / Large Cards)
+          ───────────────────────────────────────────────────────────── */}
+      <div className="max-w-7xl mx-auto mb-3.5 flex items-center justify-between gap-2 border-b-2 border-sumi/15 pb-2 font-mono">
+        <div className="text-xs text-slate-700 font-bold">
+          SHOWING <span className="text-sumi font-black">{startIndex + 1}–{Math.min(startIndex + pageSize, places.length)}</span> OF <span className="text-sumi font-black">{places.length}</span> SPOTS
+        </div>
+
+        {/* View Size Controls */}
+        <div className="flex items-center gap-1 bg-white border-2 border-sumi rounded-xl p-0.5 shadow-2xs">
+          <button
+            type="button"
+            onClick={() => setViewSize('compact')}
+            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
+              viewSize === 'compact'
+                ? 'bg-sumi text-wabi shadow-sm font-black'
+                : 'text-slate-600 hover:text-sumi'
+            }`}
+            title="Compact List View (fits 5 spots per screen on phone)"
+          >
+            <List className="w-3.5 h-3.5" />
+            <span className="text-[10px] hidden xs:inline">COMPACT</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setViewSize('medium')}
+            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
+              viewSize === 'medium'
+                ? 'bg-sumi text-wabi shadow-sm font-black'
+                : 'text-slate-600 hover:text-sumi'
+            }`}
+            title="Medium Grid View (2-column cards on phone)"
+          >
+            <LayoutGrid className="w-3.5 h-3.5" />
+            <span className="text-[10px] hidden xs:inline">GRID</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setViewSize('large')}
+            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
+              viewSize === 'large'
+                ? 'bg-sumi text-wabi shadow-sm font-black'
+                : 'text-slate-600 hover:text-sumi'
+            }`}
+            title="Large Editorial Magazine View"
+          >
+            <Square className="w-3.5 h-3.5" />
+            <span className="text-[10px] hidden xs:inline">LARGE</span>
+          </button>
+        </div>
       </div>
 
-      {/* Grid of Clean Editorial Cards (9 spots per page) */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 pb-12">
-        {currentPlaces.map((place) => {
-          return (
-            <article
-              key={place.id}
-              onClick={() => onSelectPlace(place)}
-              className="group cursor-pointer bg-wabi rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between active:scale-[0.99]"
-            >
-              {/* Card Media (Expansive, cinematic framing) */}
-              <div className="relative h-56 sm:h-64 md:h-72 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi flex-shrink-0">
-                <img
-                  src={place.photo_url}
-                  alt={place.name}
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
-                  }}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 contrast-105"
-                />
+      {/* ─────────────────────────────────────────────────────────────
+          3. SIZABLE CARDS CONTAINER: 3 DIFFERENT LAYOUT MODES
+          ───────────────────────────────────────────────────────────── */}
 
-                {/* Subtle Halftone Dot Texture */}
-                <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
-
-                {/* Floating Category, Tier Tag & Peak Radar on Top Left */}
-                <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-1.5 z-10 max-w-[85%]">
-                  {/* Authentic Category Badge */}
-                  <span
-                    style={{
-                      backgroundColor: CATEGORY_STYLES[place.category]?.bg || '#141518',
-                      color: CATEGORY_STYLES[place.category]?.text || '#FDFBF7',
-                      borderColor: '#141518',
-                    }}
-                    className="px-3 py-1 rounded-xl text-xs font-mono font-black uppercase tracking-wider backdrop-blur-md border-2 shadow-riso-sm"
-                  >
-                    {place.category.replace('_', ' ')}
+      {/* MODE A: COMPACT LIST VIEW (Fits 5 spots per screen on mobile phones!) */}
+      {viewSize === 'compact' && (
+        <div className="max-w-5xl mx-auto flex flex-col gap-2.5 pb-12">
+          {currentPlaces.map((place) => {
+            const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
+            return (
+              <article
+                key={place.id}
+                onClick={() => onSelectPlace(place)}
+                className="group cursor-pointer bg-wabi hover:bg-white rounded-2xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-0.5 transition-all p-2 sm:p-2.5 flex items-center gap-3 active:scale-[0.99]"
+              >
+                {/* Left Thumbnail */}
+                <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-sumi flex-shrink-0 bg-sumi-900 relative">
+                  <img
+                    src={place.photo_url}
+                    alt={place.name}
+                    loading="lazy"
+                    onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_IMAGE; }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  />
+                  <span className="absolute bottom-1 left-1 px-1 py-0.2 rounded text-[8px] font-mono font-bold bg-sumi/90 text-wabi uppercase">
+                    {place.category.slice(0, 4)}
                   </span>
+                </div>
 
-                  {/* Spot Tier Stamp */}
-                  <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border-2 border-sumi shadow-riso-sm ${place.spot_tier === 'iconic'
-                    ? 'bg-amber-400 text-sumi'
-                    : place.spot_tier === 'underrated'
-                      ? 'bg-cobalt text-white'
-                      : 'bg-vermilion text-white'
-                    }`}>
-                    {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
-                  </span>
-
-                  {/* Desi Bill / Ticket Stamp */}
-                  {(() => {
-                    const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
-                    return (
-                      <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border-2 shadow-riso-sm flex items-center gap-1 ${stamp.bg}`}>
-                        <span>{stamp.label}</span>
+                {/* Right Info */}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-1 text-[11px] font-mono text-slate-500">
+                    <span className="truncate font-semibold text-slate-700 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-vermilion" />
+                      <span>{place.neighborhood || place.city}</span>
+                    </span>
+                    {place.distance_meters !== undefined && (
+                      <span className="font-bold text-sumi flex-shrink-0">
+                        {formatDistance(place.distance_meters)}
                       </span>
-                    );
-                  })()}
+                    )}
+                  </div>
 
-                  {checkIsPlacePeakingNow(place, currentWindow).isPeaking && (
-                    <span className="px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase bg-emerald-600 text-white shadow-riso-sm flex items-center gap-1 border-2 border-sumi">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                      <span>{currentWindow.icon} PEAK</span>
+                  <h3 className="font-sans font-bold text-sm sm:text-base text-sumi truncate group-hover:text-vermilion transition-colors mt-0.5">
+                    {place.name}
+                  </h3>
+
+                  <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                    <span className={`px-1.5 py-0.2 rounded text-[9px] font-mono font-bold uppercase ${stamp.bg}`}>
+                      {stamp.label}
+                    </span>
+                    <span className="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold uppercase bg-sumi text-wabi">
+                      {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
+                    </span>
+                    {place.vibe_tags[0] && (
+                      <span className="text-[10px] font-mono text-slate-500 truncate">
+                        #{place.vibe_tags[0]}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right Arrow */}
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-vermilion group-hover:translate-x-0.5 transition-all flex-shrink-0 mr-1" />
+              </article>
+            );
+          })}
+        </div>
+      )}
+
+      {/* MODE B: MEDIUM 2-COLUMN GRID (Perfect for phone browsing!) */}
+      {viewSize === 'medium' && (
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-4 pb-12">
+          {currentPlaces.map((place) => {
+            const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
+            return (
+              <article
+                key={place.id}
+                onClick={() => onSelectPlace(place)}
+                className="group cursor-pointer bg-wabi rounded-2xl border-2 border-sumi shadow-riso-sm hover:shadow-riso hover:-translate-y-1 transition-all overflow-hidden flex flex-col justify-between active:scale-[0.99]"
+              >
+                {/* Photo Header */}
+                <div className="relative h-28 sm:h-36 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi flex-shrink-0">
+                  <img
+                    src={place.photo_url}
+                    alt={place.name}
+                    loading="lazy"
+                    onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_IMAGE; }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-1.5 left-1.5 flex flex-wrap gap-1 z-10">
+                    <span
+                      style={{
+                        backgroundColor: CATEGORY_STYLES[place.category]?.bg || '#141518',
+                        color: CATEGORY_STYLES[place.category]?.text || '#FDFBF7',
+                      }}
+                      className="px-1.5 py-0.5 rounded text-[9px] font-mono font-black uppercase border border-sumi"
+                    >
+                      {place.category.replace('_', ' ')}
+                    </span>
+                  </div>
+                  {place.distance_meters !== undefined && (
+                    <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-wabi/95 text-sumi border border-sumi/40 shadow-xs">
+                      {formatDistance(place.distance_meters)}
                     </span>
                   )}
                 </div>
 
-                {/* Distance Pill on Top Right */}
-                {place.distance_meters !== undefined && (
-                  <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 shadow-sm">
-                      {formatDistance(place.distance_meters)}
+                {/* Info Body */}
+                <div className="p-2 sm:p-3 flex flex-col justify-between flex-1 gap-1.5">
+                  <div>
+                    <span className="text-[10px] font-mono text-slate-500 truncate block">
+                      {place.neighborhood || place.city}
                     </span>
-                  </div>
-                )}
-              </div>
-
-              {/* Card Content (Expansive, spacious editorial layout with room to breathe) */}
-              <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between gap-5">
-                <div className="space-y-2.5">
-                  {/* Location Subtitle */}
-                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-slate-500">
-                    <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-vermilion inline-block flex-shrink-0"></span>
-                      <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
-                    </span>
-                    <span className="text-emerald-700 font-bold tracking-wider uppercase text-xs flex-shrink-0">
-                      {place.safety_level === 'high' ? 'Verified Safe' : 'Daylight Visit'}
-                    </span>
+                    <h3 className="font-sans font-bold text-xs sm:text-sm text-sumi line-clamp-1 group-hover:text-vermilion transition-colors">
+                      {place.name}
+                    </h3>
                   </div>
 
-                  {/* Place Title: Crisp, bold modern typography matching Image 3 (no forced squished text) */}
-                  <h3 className="font-sans font-bold text-xl sm:text-2xl text-sumi tracking-tight leading-snug group-hover:text-vermilion transition-colors">
-                    {place.name}
-                  </h3>
-
-                  {/* Narrative Snippet (Spacious and readable) */}
-                  <p className="text-sm sm:text-[15px] text-slate-700 leading-relaxed font-sans line-clamp-4 pt-1">
-                    {place.description}
-                  </p>
+                  <div className="flex items-center justify-between pt-1 border-t border-sumi/10">
+                    <span className={`px-1.5 py-0.2 rounded text-[8px] sm:text-[9px] font-mono font-black uppercase ${stamp.bg}`}>
+                      {stamp.label}
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-sumi group-hover:text-vermilion flex items-center">
+                      VIEW ➔
+                    </span>
+                  </div>
                 </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
 
-                {/* Footer Strip with Tags and Action */}
-                <div className="pt-4 border-t border-sumi/15 flex items-center justify-between">
-                  <div className="flex flex-wrap items-center gap-2">
-                    {place.vibe_tags.slice(0, 3).map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs font-mono bg-wabi-100 border border-sumi/20 px-3 py-1 rounded-lg text-slate-700 font-medium"
-                      >
-                        #{t}
+      {/* MODE C: LARGE EDITORIAL POSTER CARDS */}
+      {viewSize === 'large' && (
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 pb-12">
+          {currentPlaces.map((place) => {
+            const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
+            return (
+              <article
+                key={place.id}
+                onClick={() => onSelectPlace(place)}
+                className="group cursor-pointer bg-wabi rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between active:scale-[0.99]"
+              >
+                {/* Photo Media */}
+                <div className="relative h-56 sm:h-64 md:h-72 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi flex-shrink-0">
+                  <img
+                    src={place.photo_url}
+                    alt={place.name}
+                    loading="lazy"
+                    onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_IMAGE; }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-1.5 z-10 max-w-[85%]">
+                    <span
+                      style={{
+                        backgroundColor: CATEGORY_STYLES[place.category]?.bg || '#141518',
+                        color: CATEGORY_STYLES[place.category]?.text || '#FDFBF7',
+                      }}
+                      className="px-3 py-1 rounded-xl text-xs font-mono font-black uppercase tracking-wider border-2 border-sumi shadow-riso-sm"
+                    >
+                      {place.category.replace('_', ' ')}
+                    </span>
+                    <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase border-2 border-sumi shadow-riso-sm ${
+                      place.spot_tier === 'iconic' ? 'bg-amber-400 text-sumi' : place.spot_tier === 'underrated' ? 'bg-cobalt text-white' : 'bg-vermilion text-white'
+                    }`}>
+                      {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
+                    </span>
+                    <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase border-2 border-sumi shadow-riso-sm ${stamp.bg}`}>
+                      {stamp.label}
+                    </span>
+                  </div>
+                  {place.distance_meters !== undefined && (
+                    <div className="absolute top-3.5 right-3.5 z-10">
+                      <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-wabi/95 text-sumi border border-sumi/30 shadow-sm">
+                        {formatDistance(place.distance_meters)}
                       </span>
-                    ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Content */}
+                <div className="p-5 sm:p-7 flex flex-col flex-1 justify-between gap-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-slate-500">
+                      <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-vermilion flex-shrink-0" />
+                        <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
+                      </span>
+                      <span className="text-emerald-700 font-bold uppercase text-xs">
+                        {place.safety_level === 'high' ? 'Verified Safe' : 'Daylight Visit'}
+                      </span>
+                    </div>
+
+                    <h3 className="font-sans font-bold text-xl sm:text-2xl text-sumi tracking-tight leading-snug group-hover:text-vermilion transition-colors">
+                      {place.name}
+                    </h3>
+
+                    <p className="text-sm text-slate-700 leading-relaxed font-sans line-clamp-3">
+                      {place.description}
+                    </p>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-1 transition-all flex-shrink-0">
-                    VIEW SPOT <ArrowUpRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </div>
-            </article>
-          );
-        })}
-      </div>
+                  <div className="pt-3 border-t border-sumi/15 flex items-center justify-between">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {place.vibe_tags.slice(0, 3).map((t) => (
+                        <span key={t} className="text-xs font-mono bg-wabi-100 border border-sumi/20 px-2 py-0.5 rounded text-slate-700 font-medium">
+                          #{t}
+                        </span>
+                      ))}
+                    </div>
 
-      {/* Pagination Bar (Editorial 9-place pagination) */}
+                    <span className="inline-flex items-center gap-1 text-xs font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-1 transition-all">
+                      VIEW SPOT <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+
+      {/* ─────────────────────────────────────────────────────────────
+          4. Pagination Bar
+          ───────────────────────────────────────────────────────────── */}
       {totalPages > 1 && (
-        <div className="max-w-7xl mx-auto mb-24 flex flex-col sm:flex-row items-center justify-between gap-4 bg-wabi p-4 sm:p-5 rounded-2xl border-2 border-sumi shadow-riso font-mono">
+        <div className="max-w-7xl mx-auto mb-16 flex flex-col sm:flex-row items-center justify-between gap-3 bg-wabi p-3.5 sm:p-4 rounded-2xl border-2 border-sumi shadow-riso font-mono">
           <div className="text-xs text-slate-600 font-bold">
-            SHOWING <span className="text-sumi font-black">{startIndex + 1}–{Math.min(startIndex + PAGE_SIZE, places.length)}</span> OF <span className="text-sumi font-black">{places.length}</span> SANCTUARIES (PAGE {safeCurrentPage} OF {totalPages})
+            SHOWING <span className="text-sumi font-black">{startIndex + 1}–{Math.min(startIndex + pageSize, places.length)}</span> OF <span className="text-sumi font-black">{places.length}</span> (PAGE {safeCurrentPage} OF {totalPages})
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {/* Prev button */}
             <button
+              type="button"
               onClick={() => handlePageChange(safeCurrentPage - 1)}
               disabled={safeCurrentPage === 1}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-xl border-2 border-sumi text-xs font-bold transition-all disabled:opacity-30 disabled:pointer-events-none bg-wabi hover:bg-amber-100 shadow-riso-sm"
-              aria-label="Previous Page"
+              className="px-3 py-1.5 rounded-xl border-2 border-sumi font-bold text-xs bg-white text-sumi hover:bg-amber-100 disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-3.5 h-3.5" />
               <span>PREV</span>
             </button>
 
-            {/* Page Numbers */}
-            <div className="flex items-center gap-1">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => {
-                if (totalPages > 7) {
-                  if (p !== 1 && p !== totalPages && Math.abs(p - safeCurrentPage) > 1) {
-                    if (p === 2 || p === totalPages - 1) {
-                      return <span key={p} className="px-1 text-slate-400 font-bold">...</span>;
-                    }
-                    return null;
-                  }
-                }
-                return (
-                  <button
-                    key={p}
-                    onClick={() => handlePageChange(p)}
-                    className={`w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center border-2 transition-all ${safeCurrentPage === p
-                      ? 'bg-sumi text-wabi border-sumi shadow-riso-sm'
-                      : 'bg-wabi text-sumi border-sumi/30 hover:border-sumi hover:bg-amber-100'
-                      }`}
-                  >
-                    {p}
-                  </button>
-                );
-              })}
-            </div>
+            <span className="px-3 py-1.5 bg-sumi text-wabi rounded-xl font-black text-xs">
+              {safeCurrentPage}
+            </span>
 
-            {/* Next button */}
             <button
+              type="button"
               onClick={() => handlePageChange(safeCurrentPage + 1)}
               disabled={safeCurrentPage === totalPages}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-xl border-2 border-sumi text-xs font-bold transition-all disabled:opacity-30 disabled:pointer-events-none bg-wabi hover:bg-amber-100 shadow-riso-sm"
-              aria-label="Next Page"
+              className="px-3 py-1.5 rounded-xl border-2 border-sumi font-bold text-xs bg-white text-sumi hover:bg-amber-100 disabled:opacity-40 disabled:pointer-events-none transition-all flex items-center gap-1"
             >
               <span>NEXT</span>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
