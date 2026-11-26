@@ -266,69 +266,84 @@ export default function PlaceCardDrawer({
           {/* Subtle Halftone Dot Pattern */}
           <div className="absolute inset-0 bg-riso-dots opacity-20 pointer-events-none" />
           
-          {/* Soft bottom vignette gradient for smooth transition */}
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-sumi/60 to-transparent pointer-events-none" />
+          {/* Top dark gradient vignette for readable buttons */}
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-10" />
 
-          {/* Floating Top Left Badges */}
-          <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-2 z-10">
-            <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-sumi/90 text-wabi backdrop-blur-md border border-white/20 shadow-sm">
-              {place.category.toUpperCase()}
-            </span>
-            <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase backdrop-blur-md border shadow-sm ${
-              place.spot_tier === 'iconic'
-                ? 'bg-amber-400 text-sumi border-amber-500/50'
-                : place.spot_tier === 'underrated'
-                ? 'bg-cobalt text-white border-blue-400/50'
-                : 'bg-vermilion text-white border-rose-400/50'
-            }`}>
-              {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
-            </span>
-            {place.distance_meters !== undefined && (
-              <span className="text-xs font-mono font-bold bg-wabi/95 text-sumi backdrop-blur-md border border-sumi/30 px-3 py-1 rounded-xl shadow-sm">
-                {formatDistance(place.distance_meters)}
+          {/* Bottom dark gradient vignette for bottom badges */}
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/70 to-transparent pointer-events-none z-10" />
+
+          {/* Top Header Bar Over Photo */}
+          <div className="absolute top-2.5 sm:top-3.5 inset-x-2.5 sm:inset-x-3.5 flex items-center justify-between gap-2 z-20 pointer-events-none">
+            {/* Top Left: Category & Tier Badges (Compact & clean, never overlaps) */}
+            <div className="flex items-center gap-1.5 min-w-0 pointer-events-auto">
+              <span className="px-2.5 py-1 rounded-lg text-xs font-mono font-black uppercase tracking-wider bg-sumi/90 text-wabi border border-white/20 shadow-sm truncate">
+                {place.category.toUpperCase()}
               </span>
-            )}
-            {place.approx_cost && (
-              <span className="text-xs font-mono font-bold bg-amber-400 text-sumi backdrop-blur-md border border-amber-500/50 px-2.5 py-1 rounded-xl shadow-sm flex items-center gap-1">
-                <span>🪙</span>
-                <span>{place.approx_cost}</span>
+              <span className={`px-2 py-1 rounded-lg text-xs font-mono font-black uppercase border shadow-sm truncate ${
+                place.spot_tier === 'iconic'
+                  ? 'bg-amber-400 text-sumi border-amber-500/50'
+                  : place.spot_tier === 'underrated'
+                  ? 'bg-cobalt text-white border-blue-400/50'
+                  : 'bg-vermilion text-white border-rose-400/50'
+              }`}>
+                {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
               </span>
-            )}
-            {peakInfo.isPeaking && (
-              <span className="text-xs font-mono font-bold bg-emerald-600 text-white backdrop-blur-md border border-emerald-400 px-3 py-1 rounded-xl shadow-md flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                <span>{currentVibeWindow.icon} PEAK TIME NOW</span>
-              </span>
-            )}
+            </div>
+
+            {/* Top Right: Unified Glass Action Cluster (Save, Minimize, Close) */}
+            <div className="flex items-center gap-1 bg-sumi/80 backdrop-blur-md border border-white/20 rounded-xl p-0.5 shadow-sm pointer-events-auto flex-shrink-0">
+              <button
+                type="button"
+                onClick={toggleFavorite}
+                className={`p-1.5 rounded-lg transition-all active:scale-95 ${
+                  isFavorited
+                    ? 'bg-vermilion text-white'
+                    : 'text-white hover:bg-white/20'
+                }`}
+                title="Save to favorites"
+              >
+                <Heart className={`w-4 h-4 ${isFavorited ? 'fill-current' : ''}`} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsMobileMinimized(true)}
+                className="p-1.5 rounded-lg text-white hover:bg-white/20 active:scale-95 transition-colors md:hidden"
+                title="Minimize to peek card (explore map & lines)"
+              >
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="p-1.5 rounded-lg text-white hover:bg-white/20 active:scale-95 transition-colors"
+                title="Close place"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
-          {/* Floating Top Right Actions */}
-          <div className="absolute top-3.5 right-3.5 flex items-center gap-2 z-10">
-            <button
-              onClick={toggleFavorite}
-              className={`p-2.5 rounded-xl border border-sumi/40 backdrop-blur-md shadow-md transition-all active:scale-95 ${
-                isFavorited
-                  ? 'bg-vermilion text-white'
-                  : 'bg-wabi/90 text-sumi hover:bg-white'
-              }`}
-              title="Save to favorites"
-            >
-              <Heart className={`w-4 h-4 ${isFavorited ? 'fill-current' : ''}`} />
-            </button>
-            <button
-              onClick={() => setIsMobileMinimized(true)}
-              className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors md:hidden"
-              title="Minimize to peek card (explore map & lines)"
-            >
-              <ChevronDown className="w-4 h-4" />
-            </button>
-            <button
-              onClick={onClose}
-              className="p-2.5 rounded-xl bg-wabi/90 backdrop-blur-md text-sumi border border-sumi/40 shadow-md hover:bg-white active:scale-95 transition-colors"
-              title="Close place"
-            >
-              <X className="w-4 h-4" />
-            </button>
+          {/* Bottom Badges Over Photo (Clean, positioned at bottom corners) */}
+          <div className="absolute bottom-2.5 sm:bottom-3.5 inset-x-2.5 sm:inset-x-3.5 flex items-center justify-between gap-2 z-20 pointer-events-none">
+            {place.distance_meters !== undefined ? (
+              <span className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono font-bold bg-black/60 text-white backdrop-blur-md border border-white/20 shadow-sm pointer-events-auto">
+                📍 {formatDistance(place.distance_meters)} away
+              </span>
+            ) : <span />}
+
+            <div className="flex items-center gap-1.5 pointer-events-auto">
+              {place.approx_cost && (
+                <span className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono font-bold bg-amber-400 text-sumi border border-amber-600 shadow-sm">
+                  🪙 {place.approx_cost}
+                </span>
+              )}
+              {peakInfo.isPeaking && (
+                <span className="px-2 py-0.5 rounded-lg text-[10px] font-mono font-black uppercase bg-emerald-600 text-white border border-emerald-400 shadow-sm flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <span>PEAK TIME</span>
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
