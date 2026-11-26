@@ -482,7 +482,7 @@ export default function FilterBar({
         {/* A. Dedicated Filter Studio Button */}
         <button
           onClick={() => setIsModalOpen((prev) => !prev)}
-          className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-mono font-bold tracking-wide transition-all border-2 flex-shrink-0 active:scale-95 ${isModalOpen || activeSecondaryCount > 0
+          className={`flex items-center gap-1.5 ${isEmbedded ? 'px-2 py-0.5 sm:px-2.5 sm:py-1' : 'px-3 py-2'} rounded-xl text-xs font-mono font-bold tracking-wide transition-all border-2 flex-shrink-0 active:scale-95 ${isModalOpen || activeSecondaryCount > 0
             ? 'bg-amber-400 text-sumi border-sumi shadow-riso-sm font-black'
             : 'bg-white text-sumi border-sumi/40 hover:border-sumi hover:bg-wabi-100 hover:-translate-y-0.5'
             }`}
