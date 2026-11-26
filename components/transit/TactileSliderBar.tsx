@@ -9,6 +9,7 @@ export interface TactileSliderBarProps {
   accentColor?: string;
   trackLabel?: string;
   className?: string;
+  subtle?: boolean;
 }
 
 export default function TactileSliderBar({
@@ -17,6 +18,7 @@ export default function TactileSliderBar({
   accentColor = 'bg-sumi',
   trackLabel,
   className = '',
+  subtle = true,
 }: TactileSliderBarProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState({
@@ -147,31 +149,66 @@ export default function TactileSliderBar({
   const scrollRatio = canScroll && maxScroll > 0 ? Math.max(0, Math.min(1, scrollProgress.scrollLeft / maxScroll)) : 0;
 
   const rawRatio = scrollProgress.scrollWidth > 0 ? (scrollProgress.clientWidth / scrollProgress.scrollWidth) * 100 : 100;
-  const thumbWidthPercent = canScroll ? Math.max(12, Math.min(65, isNaN(rawRatio) ? 20 : rawRatio)) : 100;
+  const thumbWidthPercent = canScroll ? Math.max(16, Math.min(65, isNaN(rawRatio) ? 25 : rawRatio)) : 100;
   const thumbLeftPercent = canScroll ? scrollRatio * (100 - thumbWidthPercent) : 0;
+
+  // Don't occupy any vertical screen space if the content doesn't overflow
+  if (!canScroll) {
+    return null;
+  }
+
+  // Subtle Minimalist Micro-Indicator (Default across mobile & compact headers)
+  if (subtle) {
+    return (
+      <div
+        className={`flex items-center justify-center select-none w-full py-0.5 ${className}`}
+        aria-label={trackLabel || 'Horizontal scrolling indicator'}
+      >
+        {/* Subtle Hairline Micro-Track (only 3.5px tall, unobtrusive) */}
+        <div
+          ref={trackRef}
+          onPointerDown={handleTrackPointerDown}
+          className="relative w-20 sm:w-28 h-1 bg-sumi/15 hover:bg-sumi/25 rounded-full cursor-pointer overflow-hidden transition-colors"
+          title="Glide horizontally to explore more"
+        >
+          {/* Subtle Gliding Indicator Thumb */}
+          <div
+            onPointerDown={handleThumbPointerDown}
+            style={{
+              width: `${thumbWidthPercent}%`,
+              left: `${thumbLeftPercent}%`,
+            }}
+            className={`absolute top-0 bottom-0 rounded-full transition-all cursor-grab active:cursor-grabbing ${
+              isDragging ? 'bg-vermilion' : accentColor || 'bg-sumi/60'
+            }`}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
-      className={`flex items-center gap-1.5 pt-1 select-none w-full ${className}`}
+      className={`flex items-center gap-1.5 pt-0.5 select-none w-full ${className}`}
       aria-label={trackLabel || 'Horizontal sliding bar'}
     >
-      {/* Left Glide Step Button */}
+      {/* Left Glide Step Button (Hidden on mobile phones where natural swipe gesture is preferred) */}
       <button
         type="button"
         onClick={() => handleStep('left')}
-        disabled={!canScroll || scrollProgress.scrollLeft <= 4}
-        className="w-6 h-6 rounded-lg border-2 border-sumi bg-wabi hover:bg-white text-sumi flex items-center justify-center shadow-riso-sm disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 flex-shrink-0"
+        disabled={scrollProgress.scrollLeft <= 4}
+        className="hidden sm:flex w-5 h-5 rounded-md border border-sumi/40 bg-wabi hover:bg-white text-sumi items-center justify-center shadow-2xs disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 flex-shrink-0"
         title="Scroll left"
       >
-        <ChevronLeft className="w-3.5 h-3.5 stroke-[2.5]" />
+        <ChevronLeft className="w-3 h-3 stroke-[2.5]" />
       </button>
 
       {/* Tactile Sliding Track */}
       <div
         ref={trackRef}
         onPointerDown={handleTrackPointerDown}
-        className="relative flex-1 h-3.5 bg-sumi/10 hover:bg-sumi/15 rounded-full border-2 border-sumi cursor-pointer overflow-hidden transition-colors"
-        title={canScroll ? 'Click or drag to glide horizontally' : 'All items in view'}
+        className="relative flex-1 h-1.5 sm:h-2 bg-sumi/10 hover:bg-sumi/15 rounded-full cursor-pointer overflow-hidden transition-colors"
+        title="Click or drag to glide horizontally"
       >
         {/* Draggable Sliding Thumb */}
         <div
@@ -180,34 +217,23 @@ export default function TactileSliderBar({
             width: `${thumbWidthPercent}%`,
             left: `${thumbLeftPercent}%`,
           }}
-          className={`absolute top-0.5 bottom-0.5 rounded-full border border-sumi shadow-riso-sm transition-transform cursor-grab active:cursor-grabbing flex items-center justify-center ${
+          className={`absolute top-0 bottom-0 rounded-full transition-transform cursor-grab active:cursor-grabbing ${
             isDragging
-              ? 'bg-vermilion scale-y-110 shadow-riso'
-              : !canScroll
-                ? 'bg-sumi/40 pointer-events-none'
-                : `${accentColor} hover:bg-vermilion text-wabi`
+              ? 'bg-vermilion scale-y-110 shadow-sm'
+              : `${accentColor} hover:bg-vermilion text-wabi`
           }`}
-        >
-          {/* Subtle tactile grip ridges inside the thumb */}
-          {canScroll && (
-            <div className="flex items-center justify-center gap-0.5 opacity-80 pointer-events-none">
-              <span className="w-0.5 h-1.5 bg-wabi/80 rounded-full" />
-              <span className="w-0.5 h-1.5 bg-wabi/80 rounded-full" />
-              <span className="w-0.5 h-1.5 bg-wabi/80 rounded-full" />
-            </div>
-          )}
-        </div>
+        />
       </div>
 
-      {/* Right Glide Step Button */}
+      {/* Right Glide Step Button (Hidden on mobile phones where natural swipe gesture is preferred) */}
       <button
         type="button"
         onClick={() => handleStep('right')}
-        disabled={!canScroll || scrollProgress.scrollLeft >= maxScroll - 4}
-        className="w-6 h-6 rounded-lg border-2 border-sumi bg-wabi hover:bg-white text-sumi flex items-center justify-center shadow-riso-sm disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 flex-shrink-0"
+        disabled={scrollProgress.scrollLeft >= maxScroll - 4}
+        className="hidden sm:flex w-5 h-5 rounded-md border border-sumi/40 bg-wabi hover:bg-white text-sumi items-center justify-center shadow-2xs disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95 flex-shrink-0"
         title="Scroll right"
       >
-        <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
+        <ChevronRight className="w-3 h-3 stroke-[2.5]" />
       </button>
     </div>
   );

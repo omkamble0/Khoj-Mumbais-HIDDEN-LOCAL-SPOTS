@@ -258,14 +258,14 @@ export default function Header({
           )}
         </div>
 
-        {/* Tactile Glide Slider Indicator for the Ribbon */}
-        <div className="max-w-7xl mx-auto pt-0.5">
+        {/* Subtle Glide Slider Indicator for the Ribbon */}
+        <div className="max-w-7xl mx-auto">
           <TactileSliderBar
             containerRef={ribbonContainerRef}
             variant="lines"
-            accentColor="bg-sumi"
+            accentColor="bg-vermilion"
             trackLabel="GLIDE VIEWS & FILTERS"
-            className="pt-0.5"
+            subtle={true}
           />
         </div>
       </div>
