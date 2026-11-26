@@ -556,7 +556,7 @@ export default function TransitNavigatorView({
   }, [activeSanctuary, tripOriginStationId]);
 
   return (
-    <div className="w-full px-3 sm:px-6 md:px-10 py-6 sm:py-8 bg-washi font-sans min-h-screen space-y-8">
+    <div className="w-full px-3 sm:px-6 md:px-10 py-6 sm:py-8 pb-24 md:pb-12 bg-washi font-sans min-h-screen space-y-8">
       {/* ─────────────────────────────────────────────────────────────
           1. HERO BANNER: The Lifeline of Mumbai
           ───────────────────────────────────────────────────────────── */}

@@ -60,6 +60,41 @@ const CATEGORY_COLORS: Record<string, { dot: string; border: string; bg: string 
   bazaars: { dot: '#ea580c', border: '#c2410c', bg: '#ffedd5' },    // Terracotta
 };
 
+// Top 28 City-Level Flagship Anchors (Zero mall chains) for spacious mobile overview
+const MUMBAI_FLAGSHIP_ANCHORS = [
+  'gateway of india',
+  'marine drive',
+  'bandra fort',
+  'kanheri caves',
+  'juhu beach',
+  'haji ali',
+  'worli fort',
+  'prithvi theatre',
+  'asiatic society',
+  'elephanta caves',
+  'mount mary',
+  'chhatrapati shivaji maharaj terminus',
+  'sassoon docks',
+  'banganga tank',
+  'sewri fort',
+  'hanging gardens',
+  'chor bazaar',
+  'dadar flower market',
+  'colaba causeway',
+  'crawford market',
+  'carter road promenade',
+  'gilbert hill',
+  'sanjay gandhi national park',
+  'global vipassana pagoda',
+  'powai lake promenade',
+  'versova beach',
+  'khotachiwadi',
+  'madh fort',
+  'walkeshwar temple',
+  'mahalaxmi temple',
+  'shivaji park',
+];
+
 // Generous India Geographical Bounding Box (Lat: 5.0°N to 38.0°N, Lng: 65.0°E to 100.0°E)
 const INDIA_BOUNDS: L.LatLngBoundsExpression = [
   [5.0, 65.0],
@@ -177,27 +212,37 @@ export default function DiscoveryMap({
 
       // Dynamic Level-of-Detail (LOD):
       // On mobile screens (< 768px), Mumbai's narrow peninsula packs pins very tightly.
-      // - zoom < 13.5: Show only flagship iconic anchors (priority >= 3, ~35 pins) to prevent caterpillar clumping
-      // - zoom 13.5-14.5: Show iconic + hidden gems (priority >= 2)
-      // - zoom >= 14.5: Show full density (all places)
+      // - zoom < 12.8: Show ONLY top 28 city-wide flagship anchors (priority >= 4, zero malls, spacious breathing room)
+      // - zoom 12.8-14.0: Show iconic sanctuaries (priority >= 3)
+      // - zoom 14.0-15.0: Show hidden gems & underrated spots (priority >= 2)
+      // - zoom >= 15.0: Show full density (all places, mall hubs & secret nooks)
       // On desktop:
-      // - zoom < 12: priority >= 3
-      // - zoom 12-14: priority >= 2
-      // - zoom >= 14: all places
+      // - zoom < 12: priority >= 4
+      // - zoom 12-13.5: priority >= 3
+      // - zoom 13.5-14.5: priority >= 2
+      // - zoom >= 14.5: all places
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       const priority = (marker as any)._priority || 1;
       let shouldShow = true;
       if (isMobile) {
-        if (currentZoom < 13.5) {
+        if (currentZoom < 12.8) {
+          shouldShow = priority >= 4;
+        } else if (currentZoom < 14) {
           shouldShow = priority >= 3;
-        } else if (currentZoom < 14.5) {
+        } else if (currentZoom < 15) {
           shouldShow = priority >= 2;
+        } else {
+          shouldShow = true;
         }
       } else {
         if (currentZoom < 12) {
+          shouldShow = priority >= 4;
+        } else if (currentZoom < 13.5) {
           shouldShow = priority >= 3;
-        } else if (currentZoom < 14) {
+        } else if (currentZoom < 14.5) {
           shouldShow = priority >= 2;
+        } else {
+          shouldShow = true;
         }
       }
 
@@ -701,7 +746,15 @@ export default function DiscoveryMap({
         const isMallHub = place.hub_type === 'mall';
         const isIconic = place.spot_tier === 'iconic';
         const isHiddenGem = place.spot_tier === 'hidden_gem';
-        const priorityTier = isIconic || isMallHub ? 3 : isHiddenGem ? 2 : 1;
+        const nameLower = (place.name || '').toLowerCase();
+        const isFlagship = MUMBAI_FLAGSHIP_ANCHORS.some((anchor) => nameLower.includes(anchor));
+        const priorityTier = isFlagship
+          ? 4
+          : isIconic && !isMallHub
+          ? 3
+          : isHiddenGem
+          ? 2
+          : 1;
         const isDriveThru = place.hub_type === 'standalone_drive_thru';
         const customBadgeIcon = isMallHub ? '🏬' : isDriveThru ? '🍔' : null;
 
@@ -921,8 +974,8 @@ export default function DiscoveryMap({
         </div>
       )}
 
-      {/* Floating Places & Transit Layer Pure ON/OFF Toggle Buttons (Bottom-left, zero clutter) */}
-      <div className={`absolute bottom-6 left-4 z-20 flex items-center gap-2 ${selectedPlace ? 'hidden md:flex' : 'flex'}`}>
+      {/* Floating Places & Transit Layer Pure ON/OFF Toggle Buttons (Bottom-left, positioned above mobile bottom nav) */}
+      <div className={`absolute bottom-20 md:bottom-6 left-3 md:left-4 z-20 flex items-center gap-2 ${selectedPlace ? 'hidden md:flex' : 'flex'}`}>
         <button
           onClick={handleTogglePlaces}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm font-mono text-xs font-bold transition-all active:scale-95 ${

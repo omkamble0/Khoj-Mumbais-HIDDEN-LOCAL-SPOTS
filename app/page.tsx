@@ -11,6 +11,7 @@ import ReportModal from '@/components/discovery/ReportModal';
 import SavedPlacesDrawer from '@/components/discovery/SavedPlacesDrawer';
 import RastaRouletteModal from '@/components/discovery/RastaRouletteModal';
 import SmartCommuteModal from '@/components/transit/SmartCommuteModal';
+import MobileBottomNav from '@/components/navigation/MobileBottomNav';
 import { Place, FilterState } from '@/lib/types';
 import { calculateDistanceMeters, computeCompositeScore } from '@/lib/scoring';
 import {
@@ -319,7 +320,7 @@ export default function HomePage() {
       />
 
       {/* 2. Interactive Workspace (Map vs Zine Lookbook vs Transit Navigator) */}
-      <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden' : 'flex-1'}`}>
+      <main className={`relative w-full ${viewMode === 'map' ? 'flex-1 overflow-hidden pb-16 md:pb-0' : 'flex-1 pb-16 md:pb-0'}`}>
         {viewMode === 'map' ? (
           <div className="w-full h-full relative z-0">
             {/* Docked Map Filter Island (Visible when browsing all spots; tucks away when a destination is selected) */}
@@ -463,6 +464,18 @@ export default function HomePage() {
           setShowTransitOverlay(true);
           setViewMode('map');
         }}
+      />
+
+      {/* 8. Dedicated Mobile Thumb Navigation Dock */}
+      <MobileBottomNav
+        viewMode={viewMode}
+        onToggleView={(m) => setViewMode(m)}
+        onOpenRoulette={() => setIsRouletteOpen(true)}
+        onOpenSaved={() => {
+          refreshFavorites();
+          setIsSavedDrawerOpen(true);
+        }}
+        savedCount={savedPlaces.length}
       />
     </div>
   );

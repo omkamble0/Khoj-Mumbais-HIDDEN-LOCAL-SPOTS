@@ -54,96 +54,65 @@ export default function Header({
       >
         <div className="w-full h-full bg-sumi/5 py-1.5 sm:py-3">
           <div className="max-w-7xl mx-auto px-3 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-2.5 sm:gap-4">
-            {/* Brand & Mobile Action Bar */}
-            <div className="flex items-center justify-between w-full md:w-auto gap-2 sm:gap-3">
-              {/* Elevated Tactile 3D Pop-up Brand Pill (matches SAVED, MAP VIEW, LOOKBOOK) */}
+            {/* Desktop Brand Pill */}
+            <div className="hidden md:flex items-center gap-3">
               <a 
                 href="/" 
-                className="flex items-center gap-2.5 sm:gap-3 bg-wabi/95 hover:bg-white backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all group flex-shrink-0"
+                className="flex items-center gap-3 bg-wabi/95 hover:bg-white backdrop-blur-md px-4 py-2 rounded-2xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-0.5 transition-all group flex-shrink-0"
                 title="KHOJ Mumbai - Discover Hidden & Underrated Sanctuaries"
               >
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0 group-hover:scale-105 transition-transform">
-                  <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="w-9 h-9 rounded-xl bg-vermilion flex items-center justify-center text-white border-2 border-sumi shadow-riso-sm flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <Compass className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <span className="font-ananda font-normal text-xl sm:text-2xl lg:text-3xl tracking-wide text-sumi leading-none">
+                  <div className="flex items-center gap-2">
+                    <span className="font-ananda font-normal text-2xl lg:text-3xl tracking-wide text-sumi leading-none">
                       KHOJ<span className="text-vermilion">.</span>
                     </span>
-                    <span className="font-marathi text-sm sm:text-base lg:text-lg text-slate-700 tracking-normal font-medium leading-none">
+                    <span className="font-marathi text-base lg:text-lg text-slate-700 tracking-normal font-medium leading-none">
                       खोज
                     </span>
-                    <span className="px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] lg:text-xs font-mono font-bold bg-sumi text-wabi uppercase shadow-sm">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] lg:text-xs font-mono font-bold bg-sumi text-wabi uppercase shadow-sm">
                       Mumbai
                     </span>
                   </div>
-                  <p className="text-[9px] sm:text-[10px] lg:text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold mt-0.5">
+                  <p className="text-[10px] lg:text-xs font-mono uppercase tracking-wider text-slate-600 font-semibold mt-0.5">
                     Hidden & Underrated Places
                   </p>
                 </div>
               </a>
+            </div>
 
-              {/* Mobile Actions: Near Me, Saved & View Toggle */}
-              <div className="flex md:hidden items-center gap-1.5">
-                <button
-                  onClick={onOpenRoulette}
-                  className="p-1.5 sm:p-2 bg-vermilion text-white border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold hover:bg-vermilion/90 flex items-center justify-center active:scale-95 transition-transform"
-                  title="Roll Rasta Roulette"
-                  aria-label="Roll Rasta Roulette"
-                >
-                  <Dices className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-                </button>
-
-                <button
-                  onClick={onLocateMe}
-                  disabled={isLocating}
-                  className="p-1.5 sm:p-2 bg-wabi/95 border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold text-sumi hover:bg-white flex items-center justify-center active:scale-95 transition-transform"
-                  title="Recenter to my location"
-                  aria-label="Find spots near me"
-                >
-                  <LocateFixed className={`w-3.5 h-3.5 sm:w-4 sm:h-4 text-vermilion ${isLocating ? 'animate-spin' : ''}`} />
-                </button>
-
-                <button
-                  onClick={onOpenSaved}
-                  className="flex items-center gap-1 px-2 py-1.5 bg-wabi/95 border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold text-sumi hover:bg-white active:scale-95 transition-transform"
-                  title="View saved sanctuaries"
-                >
-                  <Heart className={`w-3.5 h-3.5 ${savedCount > 0 ? 'text-vermilion fill-current' : 'text-slate-500'}`} />
-                  <span className="font-mono text-xs">{savedCount}</span>
-                </button>
-
-                <div className="flex items-center bg-wabi-100/90 border-2 border-sumi rounded-xl p-0.5 shadow-riso-sm">
-                  <button
-                    onClick={() => onToggleView('map')}
-                    className={`flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
-                      viewMode === 'map' ? 'bg-sumi text-wabi shadow-sm' : 'text-sumi'
-                    }`}
-                  >
-                    <Map className="w-3 h-3" />
-                    <span className="text-[10px] font-mono">MAP</span>
-                  </button>
-                  <button
-                    onClick={() => onToggleView('zine')}
-                    className={`flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
-                      viewMode === 'zine' ? 'bg-vermilion text-white shadow-sm' : 'text-sumi'
-                    }`}
-                  >
-                    <LayoutGrid className="w-3 h-3" />
-                    <span className="text-[10px] font-mono">ZINE</span>
-                  </button>
-                  <button
-                    onClick={() => onToggleView('transit')}
-                    className={`flex items-center gap-1 px-1.5 sm:px-2 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
-                      viewMode === 'transit' ? 'bg-amber-400 text-sumi shadow-sm font-black' : 'text-sumi'
-                    }`}
-                    title="Mumbai Local Train & Metro"
-                  >
-                    <Train className="w-3 h-3 text-rose-600" />
-                    <span className="text-[10px] font-mono">METRO</span>
-                  </button>
+            {/* Mobile Header Top Row: Brand on left, Near Me on right */}
+            <div className="flex md:hidden items-center justify-between w-full gap-2">
+              <a 
+                href="/" 
+                className="flex items-center gap-2 bg-wabi/95 px-2.5 py-1.5 rounded-xl border-2 border-sumi shadow-riso-sm"
+              >
+                <div className="w-7 h-7 rounded-lg bg-vermilion flex items-center justify-center text-white border border-sumi shadow-xs">
+                  <Compass className="w-4 h-4 text-white" />
                 </div>
-              </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="font-ananda font-bold text-lg text-sumi leading-none">
+                    KHOJ<span className="text-vermilion">.</span>
+                  </span>
+                  <span className="font-marathi text-xs text-slate-700 leading-none">खोज</span>
+                  <span className="px-1 py-0.2 rounded text-[8px] font-mono font-black bg-sumi text-wabi uppercase">
+                    MUMBAI
+                  </span>
+                </div>
+              </a>
+
+              <button
+                type="button"
+                onClick={onLocateMe}
+                disabled={isLocating}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-wabi/95 border-2 border-sumi rounded-xl shadow-riso-sm text-xs font-mono font-bold text-sumi hover:bg-white active:scale-95 transition-transform"
+                title="Recenter to my location"
+              >
+                <LocateFixed className={`w-3.5 h-3.5 text-vermilion ${isLocating ? 'animate-spin' : ''}`} />
+                <span className="text-[10px] font-mono font-black">NEAR ME</span>
+              </button>
             </div>
 
             {/* Search Bar (Centered over the lined notebook section) */}
