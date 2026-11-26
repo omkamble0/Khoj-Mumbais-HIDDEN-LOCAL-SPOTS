@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Place, FilterState } from '@/lib/types';
 import { formatDistance } from '@/lib/scoring';
-import { ArrowUpRight, ChevronLeft, ChevronRight, Zap, List, LayoutGrid, Square, MapPin } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Zap, List, LayoutGrid, MapPin } from 'lucide-react';
 import { getCurrentVibeWindow, checkIsPlacePeakingNow } from '@/lib/vibeRadar';
 
 interface ZineLookbookProps {
@@ -13,7 +13,7 @@ interface ZineLookbookProps {
   onFilterChange: (updated: Partial<FilterState>) => void;
 }
 
-type CardViewSize = 'compact' | 'medium' | 'large';
+type CardViewSize = 'small' | 'medium';
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; border: string }> = {
   bars: { bg: '#9B1B30', text: '#F4B41A', border: '#141518' },
@@ -57,7 +57,7 @@ export default function ZineLookbook({
   const [currentPage, setCurrentPage] = useState(1);
   const [viewSize, setViewSize] = useState<CardViewSize>('medium');
 
-  const pageSize = viewSize === 'compact' ? 16 : viewSize === 'medium' ? 12 : 9;
+  const pageSize = viewSize === 'small' ? 16 : 12;
   const totalPages = Math.max(1, Math.ceil(places.length / pageSize));
   const safeCurrentPage = Math.min(currentPage, totalPages);
   const startIndex = (safeCurrentPage - 1) * pageSize;
@@ -97,33 +97,33 @@ export default function ZineLookbook({
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          2. Tactile View Size Selector (Small / Medium / Large Cards)
+          2. Tactile View Size Selector (Small / Medium)
           ───────────────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto mb-3.5 flex items-center justify-between gap-2 border-b-2 border-sumi/15 pb-2 font-mono">
         <div className="text-xs text-slate-700 font-bold">
           SHOWING <span className="text-sumi font-black">{startIndex + 1}–{Math.min(startIndex + pageSize, places.length)}</span> OF <span className="text-sumi font-black">{places.length}</span> SPOTS
         </div>
 
-        {/* View Size Controls */}
+        {/* View Size Controls: ONLY SMALL & MEDIUM */}
         <div className="flex items-center gap-1 bg-white border-2 border-sumi rounded-xl p-0.5 shadow-2xs">
           <button
             type="button"
-            onClick={() => setViewSize('compact')}
-            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
-              viewSize === 'compact'
+            onClick={() => setViewSize('small')}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
+              viewSize === 'small'
                 ? 'bg-sumi text-wabi shadow-sm font-black'
                 : 'text-slate-600 hover:text-sumi'
             }`}
-            title="Compact List View (fits 5 spots per screen on phone)"
+            title="Small List View (fits 5 spots per screen on phone)"
           >
             <List className="w-3.5 h-3.5" />
-            <span className="text-[10px] hidden xs:inline">COMPACT</span>
+            <span className="text-[11px]">SMALL</span>
           </button>
 
           <button
             type="button"
             onClick={() => setViewSize('medium')}
-            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
               viewSize === 'medium'
                 ? 'bg-sumi text-wabi shadow-sm font-black'
                 : 'text-slate-600 hover:text-sumi'
@@ -131,31 +131,17 @@ export default function ZineLookbook({
             title="Medium Grid View (2-column cards on phone)"
           >
             <LayoutGrid className="w-3.5 h-3.5" />
-            <span className="text-[10px] hidden xs:inline">GRID</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setViewSize('large')}
-            className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold transition-all active:scale-95 ${
-              viewSize === 'large'
-                ? 'bg-sumi text-wabi shadow-sm font-black'
-                : 'text-slate-600 hover:text-sumi'
-            }`}
-            title="Large Editorial Magazine View"
-          >
-            <Square className="w-3.5 h-3.5" />
-            <span className="text-[10px] hidden xs:inline">LARGE</span>
+            <span className="text-[11px]">MEDIUM</span>
           </button>
         </div>
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          3. SIZABLE CARDS CONTAINER: 3 DIFFERENT LAYOUT MODES
+          3. SIZABLE CARDS CONTAINER: SMALL & MEDIUM MODES
           ───────────────────────────────────────────────────────────── */}
 
-      {/* MODE A: COMPACT LIST VIEW (Fits 5 spots per screen on mobile phones!) */}
-      {viewSize === 'compact' && (
+      {/* MODE A: SMALL COMPACT LIST VIEW */}
+      {viewSize === 'small' && (
         <div className="max-w-5xl mx-auto flex flex-col gap-2.5 pb-12">
           {currentPlaces.map((place) => {
             const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
@@ -275,96 +261,6 @@ export default function ZineLookbook({
                     </span>
                     <span className="text-[10px] font-mono font-bold text-sumi group-hover:text-vermilion flex items-center">
                       VIEW ➔
-                    </span>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      )}
-
-      {/* MODE C: LARGE EDITORIAL POSTER CARDS */}
-      {viewSize === 'large' && (
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 pb-12">
-          {currentPlaces.map((place) => {
-            const stamp = getBudgetStamp(place.budget_tier, place.approx_cost);
-            return (
-              <article
-                key={place.id}
-                onClick={() => onSelectPlace(place)}
-                className="group cursor-pointer bg-wabi rounded-3xl border-2 border-sumi shadow-riso hover:shadow-riso-red hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between active:scale-[0.99]"
-              >
-                {/* Photo Media */}
-                <div className="relative h-56 sm:h-64 md:h-72 w-full bg-sumi-900 overflow-hidden border-b-2 border-sumi flex-shrink-0">
-                  <img
-                    src={place.photo_url}
-                    alt={place.name}
-                    loading="lazy"
-                    onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_IMAGE; }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-3.5 left-3.5 flex flex-wrap items-center gap-1.5 z-10 max-w-[85%]">
-                    <span
-                      style={{
-                        backgroundColor: CATEGORY_STYLES[place.category]?.bg || '#141518',
-                        color: CATEGORY_STYLES[place.category]?.text || '#FDFBF7',
-                      }}
-                      className="px-3 py-1 rounded-xl text-xs font-mono font-black uppercase tracking-wider border-2 border-sumi shadow-riso-sm"
-                    >
-                      {place.category.replace('_', ' ')}
-                    </span>
-                    <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase border-2 border-sumi shadow-riso-sm ${
-                      place.spot_tier === 'iconic' ? 'bg-amber-400 text-sumi' : place.spot_tier === 'underrated' ? 'bg-cobalt text-white' : 'bg-vermilion text-white'
-                    }`}>
-                      {place.spot_tier === 'iconic' ? '★ ICONIC' : place.spot_tier === 'underrated' ? '● UNDERRATED' : '✦ HIDDEN'}
-                    </span>
-                    <span className={`px-2.5 py-1 rounded-xl text-xs font-mono font-black uppercase border-2 border-sumi shadow-riso-sm ${stamp.bg}`}>
-                      {stamp.label}
-                    </span>
-                  </div>
-                  {place.distance_meters !== undefined && (
-                    <div className="absolute top-3.5 right-3.5 z-10">
-                      <span className="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-wabi/95 text-sumi border border-sumi/30 shadow-sm">
-                        {formatDistance(place.distance_meters)}
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5 sm:p-7 flex flex-col flex-1 justify-between gap-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between text-xs sm:text-sm font-mono text-slate-500">
-                      <span className="font-semibold text-slate-700 tracking-wide flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-vermilion flex-shrink-0" />
-                        <span>{place.neighborhood ? `${place.neighborhood}, ${place.city}` : place.city}</span>
-                      </span>
-                      <span className="text-emerald-700 font-bold uppercase text-xs">
-                        {place.safety_level === 'high' ? 'Verified Safe' : 'Daylight Visit'}
-                      </span>
-                    </div>
-
-                    <h3 className="font-sans font-bold text-xl sm:text-2xl text-sumi tracking-tight leading-snug group-hover:text-vermilion transition-colors">
-                      {place.name}
-                    </h3>
-
-                    <p className="text-sm text-slate-700 leading-relaxed font-sans line-clamp-3">
-                      {place.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-sumi/15 flex items-center justify-between">
-                    <div className="flex flex-wrap items-center gap-1.5">
-                      {place.vibe_tags.slice(0, 3).map((t) => (
-                        <span key={t} className="text-xs font-mono bg-wabi-100 border border-sumi/20 px-2 py-0.5 rounded text-slate-700 font-medium">
-                          #{t}
-                        </span>
-                      ))}
-                    </div>
-
-                    <span className="inline-flex items-center gap-1 text-xs font-mono font-bold text-sumi group-hover:text-vermilion group-hover:translate-x-1 transition-all">
-                      VIEW SPOT <ArrowUpRight className="w-4 h-4" />
                     </span>
                   </div>
                 </div>
