@@ -1,5 +1,5 @@
 # KHOJ | खोज · Hyperlocal Discovery & Urban Transit Engine
-> **A high-performance geospatial web app mapping 460+ verified hidden sanctuaries, heritage forts, viewpoints, and urban transit corridors across the Mumbai Metropolitan Region.**  LINK - (https://khoj-dusky.vercel.app/)
+> **A high-performance geospatial web app mapping 460+ verified hidden sanctuaries, heritage forts, viewpoints, and urban transit corridors across the Mumbai Metropolitan Region.**  LINK - [(https://khoj-dusky.vercel.app/)](https://khoj-dusky.vercel.app/)
 
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
